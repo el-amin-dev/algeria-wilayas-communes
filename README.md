@@ -2,9 +2,10 @@
 
 Up-to-date administrative divisions of **Algeria** — **69 wilayas**, **591 daïras**, and **1541 communes** — reflecting the **2025/2026 reform (Loi 26-06)**. Every name in **Arabic, French, and English**, with **postal codes** where available.
 
-Plain JSON. No framework, no runtime, no lock-in. Use it from **jq, JavaScript/TypeScript, Python, Java**, or anything that reads a file.
+Plain JSON. No framework, no runtime, no lock-in. Use it from **npm, jq, JavaScript/TypeScript, Python, Java**, or anything that reads a file.
 
 [![CI](https://github.com/el-amin-dev/algeria-wilayas-communes/actions/workflows/ci.yml/badge.svg)](https://github.com/el-amin-dev/algeria-wilayas-communes/actions/workflows/ci.yml)
+[![npm](https://img.shields.io/npm/v/algeria-wilayas-communes)](https://www.npmjs.com/package/algeria-wilayas-communes)
 ![Wilayas](https://img.shields.io/badge/wilayas-69-brightgreen)
 ![Communes](https://img.shields.io/badge/communes-1541-brightgreen)
 ![License](https://img.shields.io/badge/license-CC0--1.0-blue)
@@ -44,9 +45,36 @@ All records carry `nom_ar`, `nom_fr`, `nom_en`. Note: Algerian place names use t
 
 ---
 
-## Quick start
+## Install
 
-You can consume the data straight from GitHub or a CDN — no install needed.
+### npm (JavaScript / TypeScript)
+
+```bash
+npm install algeria-wilayas-communes
+```
+
+```js
+import {
+  getWilayas,
+  getCommunes,
+  byWilaya,
+  findByPostalCode,
+  findCommune,
+} from "algeria-wilayas-communes";
+
+getWilayas().length;              // 69
+byWilaya(16).nom_en;              // "Algiers"
+findByPostalCode("16000");        // [{ ...commune }]
+findCommune("adrar");             // communes matching "adrar"
+```
+
+Fully typed — TypeScript users get autocomplete out of the box.
+
+---
+
+## Quick start (no install)
+
+Consume the data straight from GitHub or a CDN.
 
 - **Raw:** `https://raw.githubusercontent.com/el-amin-dev/algeria-wilayas-communes/main/data/<file>`
 - **CDN (jsDelivr):** `https://cdn.jsdelivr.net/gh/el-amin-dev/algeria-wilayas-communes@main/data/<file>`
@@ -65,7 +93,7 @@ curl -s https://raw.githubusercontent.com/el-amin-dev/algeria-wilayas-communes/m
 jq '.communes[] | select(.code_postal == "16000")' data/communes.json
 ```
 
-### JavaScript / TypeScript
+### JavaScript / TypeScript (without the package)
 
 ```js
 const url = "https://cdn.jsdelivr.net/gh/el-amin-dev/algeria-wilayas-communes@main/data/wilayas.json";
