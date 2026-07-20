@@ -31,6 +31,7 @@ Issues = "https://github.com/el-amin-dev/algeria-wilayas-communes/issues"
 [tool.hatch.build.targets.wheel]
 packages = ["src/algeria_wilayas_communes"]
 
-# Data is copied in from the repo's /data before build (CI does this).
-[tool.hatch.build.targets.wheel.force-include]
-"src/algeria_wilayas_communes/data" = "algeria_wilayas_communes/data"
+# The data dir is copied/symlinked into the package but is gitignored;
+# `artifacts` forces its inclusion in the built wheel (no path remap, no duplicate).
+[tool.hatch.build]
+artifacts = ["src/algeria_wilayas_communes/data/**"]
