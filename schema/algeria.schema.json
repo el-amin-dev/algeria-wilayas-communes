@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/el-amin-dev/algeria-wilayas-communes/schema/algeria.schema.json",
+  "title": "Algeria administrative divisions (wilaya > daira > commune)",
+  "type": "object",
+  "required": ["pays", "langues", "nb_wilayas", "nb_dairas", "nb_communes", "wilayas"],
+  "properties": {
+    "pays": {
+      "type": "object",
+      "required": ["nom_ar", "nom_fr", "nom_en", "code_iso"],
+      "properties": {
+        "nom_ar": { "type": "string" },
+        "nom_fr": { "type": "string" },
+        "nom_en": { "type": "string" },
+        "code_iso": { "type": "string", "const": "DZ" }
+      }
+    },
+    "langues": {
+      "type": "array",
+      "items": { "type": "string", "enum": ["ar", "fr", "en"] }
+    },
+    "reforme": { "type": "string" },
+    "hierarchie": { "type": "string" },
+    "nb_wilayas": { "type": "integer", "const": 69 },
+    "nb_dairas": { "type": "integer" },
+    "nb_communes": { "type": "integer", "const": 1541 },
+    "codes_postaux_renseignes": { "type": "integer" },
+    "codes_postaux_manquants": { "type": "integer" },
+    "note_daira": { "type": "string" },
+    "sources": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "wilayas": {
+      "type": "array",
+      "minItems": 69,
+      "maxItems": 69,
+      "items": { "$ref": "#/$defs/wilaya" }
+    }
+  },
+  "$defs": {
+    "wilaya": {
+      "type": "object",
+      "required": ["wilaya_num", "code", "nom_ar", "nom_fr", "nom_en", "nb_dairas", "nb_communes", "dairas"],
+      "properties": {
+        "wilaya_num": { "type": "integer", "minimum": 1, "maximum": 69 },
+        "code": { "type": "string", "pattern": "^[0-9]{2}$" },
+        "nom_ar": { "type": "string", "minLength": 1 },
+        "nom_fr": { "type": "string", "minLength": 1 },
+        "nom_en": { "type": "string", "minLength": 1 },
+        "nb_dairas": { "type": "integer", "minimum": 1 },
+        "nb_communes": { "type": "integer", "minimum": 1 },
+        "dairas": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/daira" }
+        }
+      }
+    },
+    "daira": {
+      "type": "object",
+      "required": ["nom_ar", "nom_fr", "nom_en", "nb_communes", "communes"],
+      "properties": {
+        "nom_ar": { "type": "string", "minLength": 1 },
+        "nom_fr": { "type": "string", "minLength": 1 },
+        "nom_en": { "type": "string", "minLength": 1 },
+        "nb_communes": { "type": "integer", "minimum": 1 },
+        "communes": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/commune" }
+        }
+      }
+    },
+    "commune": {
+      "type": "object",
+      "required": ["nom_ar", "nom_fr", "nom_en", "code_postal"],
+      "properties": {
+        "nom_ar": { "type": "string", "minLength": 1 },
+        "nom_fr": { "type": "string", "minLength": 1 },
+        "nom_en": { "type": "string", "minLength": 1 },
+        "code_postal": {
+          "type": ["string", "null"],
+          "pattern": "^[0-9]{5}$"
+        }
+      }
+    }
+  }
+}
