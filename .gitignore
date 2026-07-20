@@ -28,3 +28,4 @@ target/
 # Logs / temp
 *.log
 tmp/
+packages/js/data/
