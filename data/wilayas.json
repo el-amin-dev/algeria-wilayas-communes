@@ -1,0 +1,631 @@
+{
+  "langues": [
+    "ar",
+    "fr",
+    "en"
+  ],
+  "nb_wilayas": 69,
+  "wilayas": [
+    {
+      "wilaya_num": 1,
+      "code": "01",
+      "nom_ar": "أدرار",
+      "nom_fr": "Adrar",
+      "nom_en": "Adrar",
+      "nb_dairas": 6,
+      "nb_communes": 16
+    },
+    {
+      "wilaya_num": 2,
+      "code": "02",
+      "nom_ar": "الشلف",
+      "nom_fr": "Chlef",
+      "nom_en": "Chlef",
+      "nb_dairas": 13,
+      "nb_communes": 35
+    },
+    {
+      "wilaya_num": 3,
+      "code": "03",
+      "nom_ar": "الأغواط",
+      "nom_fr": "Laghouat",
+      "nom_en": "Laghouat",
+      "nb_dairas": 5,
+      "nb_communes": 12
+    },
+    {
+      "wilaya_num": 4,
+      "code": "04",
+      "nom_ar": "أم البواقي",
+      "nom_fr": "Oum El Bouaghi",
+      "nom_en": "Oum El Bouaghi",
+      "nb_dairas": 12,
+      "nb_communes": 29
+    },
+    {
+      "wilaya_num": 5,
+      "code": "05",
+      "nom_ar": "باتنة",
+      "nom_fr": "Batna",
+      "nom_en": "Batna",
+      "nb_dairas": 18,
+      "nb_communes": 53
+    },
+    {
+      "wilaya_num": 6,
+      "code": "06",
+      "nom_ar": "بجاية",
+      "nom_fr": "Bejaia",
+      "nom_en": "Bejaia",
+      "nb_dairas": 19,
+      "nb_communes": 52
+    },
+    {
+      "wilaya_num": 7,
+      "code": "07",
+      "nom_ar": "بسكرة",
+      "nom_fr": "Biskra",
+      "nom_en": "Biskra",
+      "nb_dairas": 7,
+      "nb_communes": 22
+    },
+    {
+      "wilaya_num": 8,
+      "code": "08",
+      "nom_ar": "بشار",
+      "nom_fr": "Bechar",
+      "nom_en": "Bechar",
+      "nb_dairas": 7,
+      "nb_communes": 12
+    },
+    {
+      "wilaya_num": 9,
+      "code": "09",
+      "nom_ar": "البليدة",
+      "nom_fr": "Blida",
+      "nom_en": "Blida",
+      "nb_dairas": 10,
+      "nb_communes": 25
+    },
+    {
+      "wilaya_num": 10,
+      "code": "10",
+      "nom_ar": "البويرة",
+      "nom_fr": "Bouira",
+      "nom_en": "Bouira",
+      "nb_dairas": 12,
+      "nb_communes": 45
+    },
+    {
+      "wilaya_num": 11,
+      "code": "11",
+      "nom_ar": "تمنراست",
+      "nom_fr": "Tamanrasset",
+      "nom_en": "Tamanrasset",
+      "nb_dairas": 3,
+      "nb_communes": 5
+    },
+    {
+      "wilaya_num": 12,
+      "code": "12",
+      "nom_ar": "تبسة",
+      "nom_fr": "Tebessa",
+      "nom_en": "Tebessa",
+      "nb_dairas": 10,
+      "nb_communes": 24
+    },
+    {
+      "wilaya_num": 13,
+      "code": "13",
+      "nom_ar": "تلمسان",
+      "nom_fr": "Tlemcen",
+      "nom_en": "Tlemcen",
+      "nb_dairas": 19,
+      "nb_communes": 49
+    },
+    {
+      "wilaya_num": 14,
+      "code": "14",
+      "nom_ar": "تيارت",
+      "nom_fr": "Tiaret",
+      "nom_en": "Tiaret",
+      "nb_dairas": 13,
+      "nb_communes": 36
+    },
+    {
+      "wilaya_num": 15,
+      "code": "15",
+      "nom_ar": "تيزي وزو",
+      "nom_fr": "Tizi Ouzou",
+      "nom_en": "Tizi Ouzou",
+      "nb_dairas": 21,
+      "nb_communes": 67
+    },
+    {
+      "wilaya_num": 16,
+      "code": "16",
+      "nom_ar": "الجزائر",
+      "nom_fr": "Alger",
+      "nom_en": "Algiers",
+      "nb_dairas": 15,
+      "nb_communes": 57
+    },
+    {
+      "wilaya_num": 17,
+      "code": "17",
+      "nom_ar": "الجلفة",
+      "nom_fr": "Djelfa",
+      "nom_en": "Djelfa",
+      "nb_dairas": 6,
+      "nb_communes": 18
+    },
+    {
+      "wilaya_num": 18,
+      "code": "18",
+      "nom_ar": "جيجل",
+      "nom_fr": "Jijel",
+      "nom_en": "Jijel",
+      "nb_dairas": 11,
+      "nb_communes": 28
+    },
+    {
+      "wilaya_num": 19,
+      "code": "19",
+      "nom_ar": "سطيف",
+      "nom_fr": "Setif",
+      "nom_en": "Setif",
+      "nb_dairas": 20,
+      "nb_communes": 60
+    },
+    {
+      "wilaya_num": 20,
+      "code": "20",
+      "nom_ar": "سعيدة",
+      "nom_fr": "Saida",
+      "nom_en": "Saida",
+      "nb_dairas": 8,
+      "nb_communes": 16
+    },
+    {
+      "wilaya_num": 21,
+      "code": "21",
+      "nom_ar": "سكيكدة",
+      "nom_fr": "Skikda",
+      "nom_en": "Skikda",
+      "nb_dairas": 14,
+      "nb_communes": 38
+    },
+    {
+      "wilaya_num": 22,
+      "code": "22",
+      "nom_ar": "سيدي بلعباس",
+      "nom_fr": "Sidi Bel Abbes",
+      "nom_en": "Sidi Bel Abbes",
+      "nb_dairas": 15,
+      "nb_communes": 52
+    },
+    {
+      "wilaya_num": 23,
+      "code": "23",
+      "nom_ar": "عنابة",
+      "nom_fr": "Annaba",
+      "nom_en": "Annaba",
+      "nb_dairas": 7,
+      "nb_communes": 12
+    },
+    {
+      "wilaya_num": 24,
+      "code": "24",
+      "nom_ar": "قالمة",
+      "nom_fr": "Guelma",
+      "nom_en": "Guelma",
+      "nb_dairas": 10,
+      "nb_communes": 34
+    },
+    {
+      "wilaya_num": 25,
+      "code": "25",
+      "nom_ar": "قسنطينة",
+      "nom_fr": "Constantine",
+      "nom_en": "Constantine",
+      "nb_dairas": 6,
+      "nb_communes": 12
+    },
+    {
+      "wilaya_num": 26,
+      "code": "26",
+      "nom_ar": "المدية",
+      "nom_fr": "Medea",
+      "nom_en": "Medea",
+      "nb_dairas": 14,
+      "nb_communes": 43
+    },
+    {
+      "wilaya_num": 27,
+      "code": "27",
+      "nom_ar": "مستغانم",
+      "nom_fr": "Mostaganem",
+      "nom_en": "Mostaganem",
+      "nb_dairas": 11,
+      "nb_communes": 32
+    },
+    {
+      "wilaya_num": 28,
+      "code": "28",
+      "nom_ar": "المسيلة",
+      "nom_fr": "M'Sila",
+      "nom_en": "M'Sila",
+      "nb_dairas": 9,
+      "nb_communes": 24
+    },
+    {
+      "wilaya_num": 29,
+      "code": "29",
+      "nom_ar": "معسكر",
+      "nom_fr": "Mascara",
+      "nom_en": "Mascara",
+      "nb_dairas": 18,
+      "nb_communes": 47
+    },
+    {
+      "wilaya_num": 30,
+      "code": "30",
+      "nom_ar": "ورقلة",
+      "nom_fr": "Ouargla",
+      "nom_en": "Ouargla",
+      "nb_dairas": 6,
+      "nb_communes": 8
+    },
+    {
+      "wilaya_num": 31,
+      "code": "31",
+      "nom_ar": "وهران",
+      "nom_fr": "Oran",
+      "nom_en": "Oran",
+      "nb_dairas": 10,
+      "nb_communes": 26
+    },
+    {
+      "wilaya_num": 32,
+      "code": "32",
+      "nom_ar": "البيض",
+      "nom_fr": "El Bayadh",
+      "nom_en": "El Bayadh",
+      "nb_dairas": 8,
+      "nb_communes": 15
+    },
+    {
+      "wilaya_num": 33,
+      "code": "33",
+      "nom_ar": "إليزي",
+      "nom_fr": "Illizi",
+      "nom_en": "Illizi",
+      "nb_dairas": 2,
+      "nb_communes": 4
+    },
+    {
+      "wilaya_num": 34,
+      "code": "34",
+      "nom_ar": "برج بوعريريج",
+      "nom_fr": "Bordj Bou Arreridj",
+      "nom_en": "Bordj Bou Arreridj",
+      "nb_dairas": 11,
+      "nb_communes": 34
+    },
+    {
+      "wilaya_num": 35,
+      "code": "35",
+      "nom_ar": "بومرداس",
+      "nom_fr": "Boumerdes",
+      "nom_en": "Boumerdes",
+      "nb_dairas": 10,
+      "nb_communes": 32
+    },
+    {
+      "wilaya_num": 36,
+      "code": "36",
+      "nom_ar": "الطارف",
+      "nom_fr": "El Tarf",
+      "nom_en": "El Tarf",
+      "nb_dairas": 9,
+      "nb_communes": 24
+    },
+    {
+      "wilaya_num": 37,
+      "code": "37",
+      "nom_ar": "تندوف",
+      "nom_fr": "Tindouf",
+      "nom_en": "Tindouf",
+      "nb_dairas": 1,
+      "nb_communes": 2
+    },
+    {
+      "wilaya_num": 38,
+      "code": "38",
+      "nom_ar": "تيسمسيلت",
+      "nom_fr": "Tissemsilt",
+      "nom_en": "Tissemsilt",
+      "nb_dairas": 10,
+      "nb_communes": 22
+    },
+    {
+      "wilaya_num": 39,
+      "code": "39",
+      "nom_ar": "الوادي",
+      "nom_fr": "El Oued",
+      "nom_en": "El Oued",
+      "nb_dairas": 11,
+      "nb_communes": 22
+    },
+    {
+      "wilaya_num": 40,
+      "code": "40",
+      "nom_ar": "خنشلة",
+      "nom_fr": "Khenchela",
+      "nom_en": "Khenchela",
+      "nb_dairas": 8,
+      "nb_communes": 21
+    },
+    {
+      "wilaya_num": 41,
+      "code": "41",
+      "nom_ar": "سوق أهراس",
+      "nom_fr": "Souk Ahras",
+      "nom_en": "Souk Ahras",
+      "nb_dairas": 10,
+      "nb_communes": 26
+    },
+    {
+      "wilaya_num": 42,
+      "code": "42",
+      "nom_ar": "تيبازة",
+      "nom_fr": "Tipaza",
+      "nom_en": "Tipaza",
+      "nb_dairas": 11,
+      "nb_communes": 28
+    },
+    {
+      "wilaya_num": 43,
+      "code": "43",
+      "nom_ar": "ميلة",
+      "nom_fr": "Mila",
+      "nom_en": "Mila",
+      "nb_dairas": 13,
+      "nb_communes": 32
+    },
+    {
+      "wilaya_num": 44,
+      "code": "44",
+      "nom_ar": "عين الدفلى",
+      "nom_fr": "Ain Defla",
+      "nom_en": "Ain Defla",
+      "nb_dairas": 15,
+      "nb_communes": 36
+    },
+    {
+      "wilaya_num": 45,
+      "code": "45",
+      "nom_ar": "النعامة",
+      "nom_fr": "Naama",
+      "nom_en": "Naama",
+      "nb_dairas": 7,
+      "nb_communes": 12
+    },
+    {
+      "wilaya_num": 46,
+      "code": "46",
+      "nom_ar": "عين تموشنت",
+      "nom_fr": "Ain Temouchent",
+      "nom_en": "Ain Temouchent",
+      "nb_dairas": 9,
+      "nb_communes": 28
+    },
+    {
+      "wilaya_num": 47,
+      "code": "47",
+      "nom_ar": "غرداية",
+      "nom_fr": "Ghardaia",
+      "nom_en": "Ghardaia",
+      "nb_dairas": 8,
+      "nb_communes": 10
+    },
+    {
+      "wilaya_num": 48,
+      "code": "48",
+      "nom_ar": "غليزان",
+      "nom_fr": "Relizane",
+      "nom_en": "Relizane",
+      "nb_dairas": 16,
+      "nb_communes": 38
+    },
+    {
+      "wilaya_num": 49,
+      "code": "49",
+      "nom_ar": "تيميمون",
+      "nom_fr": "Timimoun",
+      "nom_en": "Timimoun",
+      "nb_dairas": 6,
+      "nb_communes": 10
+    },
+    {
+      "wilaya_num": 50,
+      "code": "50",
+      "nom_ar": "برج باجي مختار",
+      "nom_fr": "Bordj Badji Mokhtar",
+      "nom_en": "Bordj Badji Mokhtar",
+      "nb_dairas": 1,
+      "nb_communes": 2
+    },
+    {
+      "wilaya_num": 51,
+      "code": "51",
+      "nom_ar": "أولاد جلال",
+      "nom_fr": "Ouled Djellal",
+      "nom_en": "Ouled Djellal",
+      "nb_dairas": 4,
+      "nb_communes": 6
+    },
+    {
+      "wilaya_num": 52,
+      "code": "52",
+      "nom_ar": "بني عباس",
+      "nom_fr": "Beni Abbes",
+      "nom_en": "Beni Abbes",
+      "nb_dairas": 5,
+      "nb_communes": 9
+    },
+    {
+      "wilaya_num": 53,
+      "code": "53",
+      "nom_ar": "عين صالح",
+      "nom_fr": "In Salah",
+      "nom_en": "In Salah",
+      "nb_dairas": 2,
+      "nb_communes": 3
+    },
+    {
+      "wilaya_num": 54,
+      "code": "54",
+      "nom_ar": "عين قزام",
+      "nom_fr": "In Guezzam",
+      "nom_en": "In Guezzam",
+      "nb_dairas": 2,
+      "nb_communes": 2
+    },
+    {
+      "wilaya_num": 55,
+      "code": "55",
+      "nom_ar": "تقرت",
+      "nom_fr": "Touggourt",
+      "nom_en": "Touggourt",
+      "nb_dairas": 6,
+      "nb_communes": 13
+    },
+    {
+      "wilaya_num": 56,
+      "code": "56",
+      "nom_ar": "جانت",
+      "nom_fr": "Djanet",
+      "nom_en": "Djanet",
+      "nb_dairas": 1,
+      "nb_communes": 2
+    },
+    {
+      "wilaya_num": 57,
+      "code": "57",
+      "nom_ar": "المغير",
+      "nom_fr": "El M'Ghair",
+      "nom_en": "El M'Ghair",
+      "nb_dairas": 2,
+      "nb_communes": 8
+    },
+    {
+      "wilaya_num": 58,
+      "code": "58",
+      "nom_ar": "المنيعة",
+      "nom_fr": "El Meniaa",
+      "nom_en": "El Meniaa",
+      "nb_dairas": 2,
+      "nb_communes": 3
+    },
+    {
+      "wilaya_num": 59,
+      "code": "59",
+      "nom_ar": "أفلو",
+      "nom_fr": "Aflou",
+      "nom_en": "Aflou",
+      "nb_dairas": 5,
+      "nb_communes": 12
+    },
+    {
+      "wilaya_num": 60,
+      "code": "60",
+      "nom_ar": "الأبيض سيدي الشيخ",
+      "nom_fr": "El Abiodh Sidi Cheikh",
+      "nom_en": "El Abiodh Sidi Cheikh",
+      "nb_dairas": 5,
+      "nb_communes": 7
+    },
+    {
+      "wilaya_num": 61,
+      "code": "61",
+      "nom_ar": "العريشة",
+      "nom_fr": "El Aricha",
+      "nom_en": "El Aricha",
+      "nb_dairas": 2,
+      "nb_communes": 4
+    },
+    {
+      "wilaya_num": 62,
+      "code": "62",
+      "nom_ar": "القنطرة",
+      "nom_fr": "El Kantara",
+      "nom_en": "El Kantara",
+      "nb_dairas": 3,
+      "nb_communes": 5
+    },
+    {
+      "wilaya_num": 63,
+      "code": "63",
+      "nom_ar": "بريكة",
+      "nom_fr": "Barika",
+      "nom_en": "Barika",
+      "nb_dairas": 3,
+      "nb_communes": 8
+    },
+    {
+      "wilaya_num": 64,
+      "code": "64",
+      "nom_ar": "بوسعادة",
+      "nom_fr": "Bou Saada",
+      "nom_en": "Bou Saada",
+      "nb_dairas": 11,
+      "nb_communes": 23
+    },
+    {
+      "wilaya_num": 65,
+      "code": "65",
+      "nom_ar": "بير العاتر",
+      "nom_fr": "Bir El Ater",
+      "nom_en": "Bir El Ater",
+      "nb_dairas": 2,
+      "nb_communes": 4
+    },
+    {
+      "wilaya_num": 66,
+      "code": "66",
+      "nom_ar": "قصر البخاري",
+      "nom_fr": "Ksar El Boukhari",
+      "nom_en": "Ksar El Boukhari",
+      "nb_dairas": 6,
+      "nb_communes": 21
+    },
+    {
+      "wilaya_num": 67,
+      "code": "67",
+      "nom_ar": "قصر الشلالة",
+      "nom_fr": "Ksar Chellala",
+      "nom_en": "Ksar Chellala",
+      "nb_dairas": 3,
+      "nb_communes": 6
+    },
+    {
+      "wilaya_num": 68,
+      "code": "68",
+      "nom_ar": "عين وسارة",
+      "nom_fr": "Ain Oussara",
+      "nom_en": "Ain Oussara",
+      "nb_dairas": 4,
+      "nb_communes": 10
+    },
+    {
+      "wilaya_num": 69,
+      "code": "69",
+      "nom_ar": "مسعد",
+      "nom_fr": "Messaad",
+      "nom_en": "Messaad",
+      "nb_dairas": 2,
+      "nb_communes": 8
+    }
+  ]
+}
