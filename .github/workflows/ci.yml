@@ -1,0 +1,38 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    name: Validate dataset
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install jq
+        run: sudo apt-get update && sudo apt-get install -y jq
+
+      - name: Check all JSON files are valid
+        run: |
+          find data schema -name '*.json' -print0 \
+            | xargs -0 -I{} sh -c 'jq empty "{}" || { echo "Invalid JSON: {}"; exit 1; }'
+
+      - name: Install schema validator
+        run: pip install check-jsonschema
+
+      - name: Validate source against JSON Schema
+        run: check-jsonschema --schemafile schema/algeria.schema.json data/algeria.json
+
+      - name: Run integrity checks
+        run: python3 scripts/validate.py
