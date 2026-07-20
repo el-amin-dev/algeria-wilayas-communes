@@ -1,0 +1,36 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "algeria-wilayas-communes"
+version = "1.0.0"
+description = "Algeria administrative divisions — 69 wilayas, daïras and 1541 communes (2025/2026 reform) with Arabic/French/English names and postal codes."
+readme = "README.md"
+requires-python = ">=3.8"
+license = "CC0-1.0"
+authors = [{ name = "El Amin" }]
+keywords = [
+  "algeria", "wilaya", "wilayas", "commune", "communes",
+  "daira", "dairas", "postal-code", "algeria-cities",
+  "administrative-divisions", "dz", "dataset",
+]
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "Intended Audience :: Developers",
+  "Programming Language :: Python :: 3",
+  "Topic :: Scientific/Engineering :: GIS",
+  "Typing :: Typed",
+]
+
+[project.urls]
+Homepage = "https://github.com/el-amin-dev/algeria-wilayas-communes"
+Repository = "https://github.com/el-amin-dev/algeria-wilayas-communes"
+Issues = "https://github.com/el-amin-dev/algeria-wilayas-communes/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/algeria_wilayas_communes"]
+
+# Data is copied in from the repo's /data before build (CI does this).
+[tool.hatch.build.targets.wheel.force-include]
+"src/algeria_wilayas_communes/data" = "algeria_wilayas_communes/data"

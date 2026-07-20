@@ -29,3 +29,4 @@ target/
 *.log
 tmp/
 packages/js/data/
+packages/python/src/algeria_wilayas_communes/data/
