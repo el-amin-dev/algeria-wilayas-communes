@@ -1,0 +1,437 @@
+{
+  "wilaya_num": 29,
+  "code": "29",
+  "nom_ar": "معسكر",
+  "nom_fr": "Mascara",
+  "nom_en": "Mascara",
+  "nb_dairas": 18,
+  "nb_communes": 47,
+  "dairas": [
+    {
+      "nom_ar": "وادي الأبطال",
+      "nom_fr": "Oued El Abtal",
+      "nom_en": "Oued El Abtal",
+      "communes": [
+        {
+          "nom_ar": "وادي الأبطال",
+          "nom_fr": "Oued El Abtal",
+          "nom_en": "Oued El Abtal",
+          "code_postal": "29016"
+        },
+        {
+          "nom_ar": "سيدي عبد الجبار",
+          "nom_fr": "Sidi Abdeldjebar",
+          "nom_en": "Sidi Abdeldjebar",
+          "code_postal": "29065"
+        },
+        {
+          "nom_ar": "عين فراح",
+          "nom_fr": "Ain Ferah",
+          "nom_en": "Ain Ferah",
+          "code_postal": "29032"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "المحمدية",
+      "nom_fr": "Mohammadia",
+      "nom_en": "Mohammadia",
+      "communes": [
+        {
+          "nom_ar": "سيدي عبد المومن",
+          "nom_fr": "Sidi Abdelmoumene",
+          "nom_en": "Sidi Abdelmoumene",
+          "code_postal": "29054"
+        },
+        {
+          "nom_ar": "سجرارة",
+          "nom_fr": "Sedjerara",
+          "nom_en": "Sedjerara",
+          "code_postal": "29062"
+        },
+        {
+          "nom_ar": "مقطع الدوز",
+          "nom_fr": "Mocta-Douz",
+          "nom_en": "Mocta-Douz",
+          "code_postal": "29027"
+        },
+        {
+          "nom_ar": "فراقيق",
+          "nom_fr": "Ferraguig",
+          "nom_en": "Ferraguig",
+          "code_postal": "29046"
+        },
+        {
+          "nom_ar": "الغمري",
+          "nom_fr": "El Ghomri",
+          "nom_en": "El Ghomri",
+          "code_postal": "29023"
+        }
+      ],
+      "nb_communes": 5
+    },
+    {
+      "nom_ar": "الدار البيضاء",
+      "nom_fr": "Dar El Beida",
+      "nom_en": "Dar El Beida",
+      "communes": [
+        {
+          "nom_ar": "المحمدية",
+          "nom_fr": "Mohammadia",
+          "nom_en": "Mohammadia",
+          "code_postal": "16058"
+        }
+      ],
+      "nb_communes": 1
+    },
+    {
+      "nom_ar": "تيغنيف",
+      "nom_fr": "Tighennif",
+      "nom_en": "Tighennif",
+      "communes": [
+        {
+          "nom_ar": "تيغنيف",
+          "nom_fr": "Tighennif",
+          "nom_en": "Tighennif",
+          "code_postal": "29004"
+        },
+        {
+          "nom_ar": "سيدي قادة",
+          "nom_fr": "Sidi Kada",
+          "nom_en": "Sidi Kada",
+          "code_postal": "29030"
+        },
+        {
+          "nom_ar": "السهايلية",
+          "nom_fr": "Sehailia",
+          "nom_en": "Sehailia",
+          "code_postal": "29063"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "زهانة",
+      "nom_fr": "Zahana",
+      "nom_en": "Zahana",
+      "communes": [
+        {
+          "nom_ar": "زهانة",
+          "nom_fr": "Zahana",
+          "nom_en": "Zahana",
+          "code_postal": "29019"
+        },
+        {
+          "nom_ar": "القعدة",
+          "nom_fr": "El Gaada",
+          "nom_en": "El Gaada",
+          "code_postal": "29041"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "عقاز",
+      "nom_fr": "Oggaz",
+      "nom_en": "Oggaz",
+      "communes": [
+        {
+          "nom_ar": "رأس عين عميروش",
+          "nom_fr": "Ras El Ain Amirouche",
+          "nom_en": "Ras El Ain Amirouche",
+          "code_postal": "29060"
+        },
+        {
+          "nom_ar": "عقاز",
+          "nom_fr": "Oggaz",
+          "nom_en": "Oggaz",
+          "code_postal": "29029"
+        },
+        {
+          "nom_ar": "العلايمية",
+          "nom_fr": "Alaimia",
+          "nom_en": "Alaimia",
+          "code_postal": "29036"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "سيق",
+      "nom_fr": "Sig",
+      "nom_en": "Sig",
+      "communes": [
+        {
+          "nom_ar": "سيق",
+          "nom_fr": "Sig",
+          "nom_en": "Sig",
+          "code_postal": "29001"
+        },
+        {
+          "nom_ar": "الشرفاء",
+          "nom_fr": "Chorfa",
+          "nom_en": "Chorfa",
+          "code_postal": "29039"
+        },
+        {
+          "nom_ar": "بوهني",
+          "nom_fr": "Bou Henni",
+          "nom_en": "Bou Henni",
+          "code_postal": "29022"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "عين فارس",
+      "nom_fr": "Ain Fares",
+      "nom_en": "Ain Fares",
+      "communes": [
+        {
+          "nom_ar": "المأمونية",
+          "nom_fr": "El Mamounia",
+          "nom_en": "El Mamounia",
+          "code_postal": "29056"
+        }
+      ],
+      "nb_communes": 1
+    },
+    {
+      "nom_ar": "بوحنيفية",
+      "nom_fr": "Bouhanifia",
+      "nom_en": "Bouhanifia",
+      "communes": [
+        {
+          "nom_ar": "القطنة",
+          "nom_fr": "El Gueitena",
+          "nom_en": "El Gueitena",
+          "code_postal": "29042"
+        },
+        {
+          "nom_ar": "بوحنيفية",
+          "nom_fr": "Bouhanifia",
+          "nom_en": "Bouhanifia",
+          "code_postal": "29005"
+        },
+        {
+          "nom_ar": "حسين",
+          "nom_fr": "Hacine",
+          "nom_en": "Hacine",
+          "code_postal": "29014"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "عين الملح",
+      "nom_fr": "Ain El Melh",
+      "nom_en": "Ain El Melh",
+      "communes": [
+        {
+          "nom_ar": "عين فارس",
+          "nom_fr": "Ain Fares",
+          "nom_en": "Ain Fares",
+          "code_postal": "28023"
+        }
+      ],
+      "nb_communes": 1
+    },
+    {
+      "nom_ar": "عوف",
+      "nom_fr": "Aouf",
+      "nom_en": "Aouf",
+      "communes": [
+        {
+          "nom_ar": "غروس",
+          "nom_fr": "Gharrous",
+          "nom_en": "Gharrous",
+          "code_postal": "29047"
+        },
+        {
+          "nom_ar": "بنيان",
+          "nom_fr": "Benian",
+          "nom_en": "Benian",
+          "code_postal": "29038"
+        },
+        {
+          "nom_ar": "عوف",
+          "nom_fr": "Aouf",
+          "nom_en": "Aouf",
+          "code_postal": "29021"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "وادي التاغية",
+      "nom_fr": "Oued Taria",
+      "nom_en": "Oued Taria",
+      "communes": [
+        {
+          "nom_ar": "قرجوم",
+          "nom_fr": "Guerdjoum",
+          "nom_en": "Guerdjoum",
+          "code_postal": "29050"
+        },
+        {
+          "nom_ar": "وادي التاغية",
+          "nom_fr": "Oued Taria",
+          "nom_en": "Oued Taria",
+          "code_postal": "29017"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "عين فكان",
+      "nom_fr": "Ain Fekan",
+      "nom_en": "Ain Fekan",
+      "communes": [
+        {
+          "nom_ar": "عين أفرص",
+          "nom_fr": "Ain Frass",
+          "nom_en": "Ain Frass",
+          "code_postal": "29034"
+        },
+        {
+          "nom_ar": "عين فكان",
+          "nom_fr": "Ain Fekan",
+          "nom_en": "Ain Fekan",
+          "code_postal": "29011"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "البرج",
+      "nom_fr": "El Bordj",
+      "nom_en": "El Bordj",
+      "communes": [
+        {
+          "nom_ar": "خلوية",
+          "nom_fr": "Khalouia",
+          "nom_en": "Khalouia",
+          "code_postal": "29025"
+        },
+        {
+          "nom_ar": "المنور",
+          "nom_fr": "El Menaouer",
+          "nom_en": "El Menaouer",
+          "code_postal": "29044"
+        },
+        {
+          "nom_ar": "البرج",
+          "nom_fr": "El Bordj",
+          "nom_en": "El Bordj",
+          "code_postal": "29012"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "غريس",
+      "nom_fr": "Ghriss",
+      "nom_en": "Ghriss",
+      "communes": [
+        {
+          "nom_ar": "سيدي بوسعيد",
+          "nom_fr": "Sidi Boussaid",
+          "nom_en": "Sidi Boussaid",
+          "code_postal": "29069"
+        },
+        {
+          "nom_ar": "المطمور",
+          "nom_fr": "Matemore",
+          "nom_en": "Matemore",
+          "code_postal": "29026"
+        },
+        {
+          "nom_ar": "ماقضة",
+          "nom_fr": "Makhda",
+          "nom_en": "Makhda",
+          "code_postal": "29055"
+        },
+        {
+          "nom_ar": "غريس",
+          "nom_fr": "Ghriss",
+          "nom_en": "Ghriss",
+          "code_postal": "29006"
+        },
+        {
+          "nom_ar": "ماوسة",
+          "nom_fr": "Maoussa",
+          "nom_en": "Maoussa",
+          "code_postal": "29015"
+        }
+      ],
+      "nb_communes": 5
+    },
+    {
+      "nom_ar": "معسكر",
+      "nom_fr": "Mascara",
+      "nom_en": "Mascara",
+      "communes": [
+        {
+          "nom_ar": "معسكر",
+          "nom_fr": "Mascara",
+          "nom_en": "Mascara",
+          "code_postal": "29000"
+        }
+      ],
+      "nb_communes": 1
+    },
+    {
+      "nom_ar": "تيزي",
+      "nom_fr": "Tizi",
+      "nom_en": "Tizi",
+      "communes": [
+        {
+          "nom_ar": "القرط",
+          "nom_fr": "El Keurt",
+          "nom_en": "El Keurt",
+          "code_postal": "29043"
+        },
+        {
+          "nom_ar": "فروحة",
+          "nom_fr": "Froha",
+          "nom_en": "Froha",
+          "code_postal": "29024"
+        },
+        {
+          "nom_ar": "تيزي",
+          "nom_fr": "Tizi",
+          "nom_en": "Tizi",
+          "code_postal": null
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "الحشم",
+      "nom_fr": "Hachem",
+      "nom_en": "Hachem",
+      "communes": [
+        {
+          "nom_ar": "الحشم",
+          "nom_fr": "El Hachem",
+          "nom_en": "El Hachem",
+          "code_postal": "29013"
+        },
+        {
+          "nom_ar": "نسمط",
+          "nom_fr": "Nesmot",
+          "nom_en": "Nesmot",
+          "code_postal": "29058"
+        },
+        {
+          "nom_ar": "زلامطة",
+          "nom_fr": "Zelamta",
+          "nom_en": "Zelamta",
+          "code_postal": "29057"
+        }
+      ],
+      "nb_communes": 3
+    }
+  ]
+}

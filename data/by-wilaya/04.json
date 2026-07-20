@@ -1,0 +1,281 @@
+{
+  "wilaya_num": 4,
+  "code": "04",
+  "nom_ar": "أم البواقي",
+  "nom_fr": "Oum El Bouaghi",
+  "nom_en": "Oum El Bouaghi",
+  "nb_dairas": 12,
+  "nb_communes": 29,
+  "dairas": [
+    {
+      "nom_ar": "فكيرينة",
+      "nom_fr": "F'kirina",
+      "nom_en": "F'kirina",
+      "communes": [
+        {
+          "nom_ar": "فكيرينة",
+          "nom_fr": "Fkirina",
+          "nom_en": "Fkirina",
+          "code_postal": "04013"
+        },
+        {
+          "nom_ar": "وادي نيني",
+          "nom_fr": "Oued Nini",
+          "nom_en": "Oued Nini",
+          "code_postal": "04047"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "عين فكرون",
+      "nom_fr": "Ain Fekroun",
+      "nom_en": "Ain Fekroun",
+      "communes": [
+        {
+          "nom_ar": "الفجوج بوغرارة سعودي",
+          "nom_fr": "El Fedjoudj Boughrara Sa",
+          "nom_en": "El Fedjoudj Boughrara Sa",
+          "code_postal": "04042"
+        },
+        {
+          "nom_ar": "عين فكرون",
+          "nom_fr": "Ain Fekroun",
+          "nom_en": "Ain Fekroun",
+          "code_postal": "04005"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "مسكيانة",
+      "nom_fr": "Meskiana",
+      "nom_en": "Meskiana",
+      "communes": [
+        {
+          "nom_ar": "الرحية",
+          "nom_fr": "Rahia",
+          "nom_en": "Rahia",
+          "code_postal": "04045"
+        },
+        {
+          "nom_ar": "مسكيانة",
+          "nom_fr": "Meskiana",
+          "nom_en": "Meskiana",
+          "code_postal": "04004"
+        },
+        {
+          "nom_ar": "البلالة",
+          "nom_fr": "El Belala",
+          "nom_en": "El Belala",
+          "code_postal": "04044"
+        },
+        {
+          "nom_ar": "بحير الشرقي",
+          "nom_fr": "Behir Chergui",
+          "nom_en": "Behir Chergui",
+          "code_postal": "04026"
+        }
+      ],
+      "nb_communes": 4
+    },
+    {
+      "nom_ar": "قصر الصباحي",
+      "nom_fr": "Ksar Sbahi",
+      "nom_en": "Ksar Sbahi",
+      "communes": [
+        {
+          "nom_ar": "قصر الصباحي",
+          "nom_fr": "Ksar Sbahi",
+          "nom_en": "Ksar Sbahi",
+          "code_postal": "04018"
+        }
+      ],
+      "nb_communes": 1
+    },
+    {
+      "nom_ar": "سوق نعمان",
+      "nom_fr": "Souk Naamane",
+      "nom_en": "Souk Naamane",
+      "communes": [
+        {
+          "nom_ar": "سوق نعمان",
+          "nom_fr": "Souk Naamane",
+          "nom_en": "Souk Naamane",
+          "code_postal": "04010"
+        },
+        {
+          "nom_ar": "أولاد زواي",
+          "nom_fr": "Ouled Zouai",
+          "nom_en": "Ouled Zouai",
+          "code_postal": null
+        },
+        {
+          "nom_ar": "بئر الشهداء",
+          "nom_fr": "Bir Chouhada",
+          "nom_en": "Bir Chouhada",
+          "code_postal": "04021"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "أم البواقي",
+      "nom_fr": "Oum El Bouaghi",
+      "nom_en": "Oum El Bouaghi",
+      "communes": [
+        {
+          "nom_ar": "أم البواقي",
+          "nom_fr": "Oum El Bouaghi",
+          "nom_en": "Oum El Bouaghi",
+          "code_postal": "04000"
+        },
+        {
+          "nom_ar": "عين الزيتون",
+          "nom_fr": "Ain Zitoun",
+          "nom_en": "Ain Zitoun",
+          "code_postal": "04023"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "عين ببوش",
+      "nom_fr": "Ain Babouche",
+      "nom_en": "Ain Babouche",
+      "communes": [
+        {
+          "nom_ar": "عين ببوش",
+          "nom_fr": "Ain Babouche",
+          "nom_en": "Ain Babouche",
+          "code_postal": "04020"
+        },
+        {
+          "nom_ar": "عين الديس",
+          "nom_fr": "Ain Diss",
+          "nom_en": "Ain Diss",
+          "code_postal": "04025"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "عين البيضاء",
+      "nom_fr": "Ain Beida",
+      "nom_en": "Ain Beida",
+      "communes": [
+        {
+          "nom_ar": "عين البيضاء",
+          "nom_fr": "Ain Beida",
+          "nom_en": "Ain Beida",
+          "code_postal": "04001"
+        },
+        {
+          "nom_ar": "بريش",
+          "nom_fr": "Berriche",
+          "nom_en": "Berriche",
+          "code_postal": "04022"
+        },
+        {
+          "nom_ar": "الزرق",
+          "nom_fr": "Zorg",
+          "nom_en": "Zorg",
+          "code_postal": "04024"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "عين مليلة",
+      "nom_fr": "Ain M'lila",
+      "nom_en": "Ain M'lila",
+      "communes": [
+        {
+          "nom_ar": "عين مليلة",
+          "nom_fr": "Ain M'lila",
+          "nom_en": "Ain M'lila",
+          "code_postal": "04002"
+        },
+        {
+          "nom_ar": "أولاد قاسم",
+          "nom_fr": "Ouled Gacem",
+          "nom_en": "Ouled Gacem",
+          "code_postal": "04041"
+        },
+        {
+          "nom_ar": "أولاد حملة",
+          "nom_fr": "Ouled Hamla",
+          "nom_en": "Ouled Hamla",
+          "code_postal": "04019"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "سيقوس",
+      "nom_fr": "Sigus",
+      "nom_en": "Sigus",
+      "communes": [
+        {
+          "nom_ar": "العامرية",
+          "nom_fr": "El Amiria",
+          "nom_en": "El Amiria",
+          "code_postal": "04038"
+        },
+        {
+          "nom_ar": "سيقوس",
+          "nom_fr": "Sigus",
+          "nom_en": "Sigus",
+          "code_postal": "04011"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "الضلعة",
+      "nom_fr": "Dhalaa",
+      "nom_en": "Dhalaa",
+      "communes": [
+        {
+          "nom_ar": "الضلعة",
+          "nom_fr": "Dhalaa",
+          "nom_en": "Dhalaa",
+          "code_postal": "04008"
+        },
+        {
+          "nom_ar": "الجازية",
+          "nom_fr": "El Djazia",
+          "nom_en": "El Djazia",
+          "code_postal": "04040"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "عين كرشة",
+      "nom_fr": "Ain Kercha",
+      "nom_en": "Ain Kercha",
+      "communes": [
+        {
+          "nom_ar": "عين كرشة",
+          "nom_fr": "Ain Kercha",
+          "nom_en": "Ain Kercha",
+          "code_postal": "04006"
+        },
+        {
+          "nom_ar": "الحرملية",
+          "nom_fr": "El Harmilia",
+          "nom_en": "El Harmilia",
+          "code_postal": "04032"
+        },
+        {
+          "nom_ar": "هنشير تومغني",
+          "nom_fr": "Hanchir Toumghani",
+          "nom_en": "Hanchir Toumghani",
+          "code_postal": "04012"
+        }
+      ],
+      "nb_communes": 3
+    }
+  ]
+}

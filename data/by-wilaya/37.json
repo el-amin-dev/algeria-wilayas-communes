@@ -1,0 +1,31 @@
+{
+  "wilaya_num": 37,
+  "code": "37",
+  "nom_ar": "تندوف",
+  "nom_fr": "Tindouf",
+  "nom_en": "Tindouf",
+  "nb_dairas": 1,
+  "nb_communes": 2,
+  "dairas": [
+    {
+      "nom_ar": "تندوف",
+      "nom_fr": "Tindouf",
+      "nom_en": "Tindouf",
+      "communes": [
+        {
+          "nom_ar": "تندوف",
+          "nom_fr": "Tindouf",
+          "nom_en": "Tindouf",
+          "code_postal": "37000"
+        },
+        {
+          "nom_ar": "أم العسل",
+          "nom_fr": "Oum El Assel",
+          "nom_en": "Oum El Assel",
+          "code_postal": "37003"
+        }
+      ],
+      "nb_communes": 2
+    }
+  ]
+}

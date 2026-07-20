@@ -1,0 +1,251 @@
+{
+  "wilaya_num": 46,
+  "code": "46",
+  "nom_ar": "عين تموشنت",
+  "nom_fr": "Ain Temouchent",
+  "nom_en": "Ain Temouchent",
+  "nb_dairas": 9,
+  "nb_communes": 28,
+  "dairas": [
+    {
+      "nom_ar": "عين الأربعاء",
+      "nom_fr": "Ain Larbaa",
+      "nom_en": "Ain Larbaa",
+      "communes": [
+        {
+          "nom_ar": "سيدي بومدين",
+          "nom_fr": "Sidi Boumediene",
+          "nom_en": "Sidi Boumediene",
+          "code_postal": "46051"
+        },
+        {
+          "nom_ar": "تامزورة",
+          "nom_fr": "Tamzoura",
+          "nom_en": "Tamzoura",
+          "code_postal": "46026"
+        },
+        {
+          "nom_ar": "وادي الصباح",
+          "nom_fr": "Oued Sebbah",
+          "nom_en": "Oued Sebbah",
+          "code_postal": "46023"
+        },
+        {
+          "nom_ar": "عين الأربعاء",
+          "nom_fr": "Ain El Arbaa",
+          "nom_en": "Ain El Arbaa",
+          "code_postal": "46009"
+        }
+      ],
+      "nb_communes": 4
+    },
+    {
+      "nom_ar": "المالح",
+      "nom_fr": "El Maleh",
+      "nom_en": "El Maleh",
+      "communes": [
+        {
+          "nom_ar": "شعبة اللحم",
+          "nom_fr": "Chaabat El Ham",
+          "nom_en": "Chaabat El Ham",
+          "code_postal": "46011"
+        },
+        {
+          "nom_ar": "المالح",
+          "nom_fr": "El Maleh",
+          "nom_en": "El Maleh",
+          "code_postal": "46067"
+        },
+        {
+          "nom_ar": "أولاد الكيحل",
+          "nom_fr": "Ouled Kihal",
+          "nom_en": "Ouled Kihal",
+          "code_postal": "46038"
+        },
+        {
+          "nom_ar": "تارقة",
+          "nom_fr": "Terga",
+          "nom_en": "Terga",
+          "code_postal": "46015"
+        }
+      ],
+      "nb_communes": 4
+    },
+    {
+      "nom_ar": "حمام بوحجر",
+      "nom_fr": "Hammam Bou Hadjar",
+      "nom_en": "Hammam Bou Hadjar",
+      "communes": [
+        {
+          "nom_ar": "شنتوف",
+          "nom_fr": "Chentouf",
+          "nom_en": "Chentouf",
+          "code_postal": null
+        },
+        {
+          "nom_ar": "الحساسنة",
+          "nom_fr": "Hassasna",
+          "nom_en": "Hassasna",
+          "code_postal": "20003"
+        },
+        {
+          "nom_ar": "وادي برقش",
+          "nom_fr": "Oued Berkeche",
+          "nom_en": "Oued Berkeche",
+          "code_postal": "46022"
+        },
+        {
+          "nom_ar": "حمام بوحجر",
+          "nom_fr": "Hammam Bou Hadjar",
+          "nom_en": "Hammam Bou Hadjar",
+          "code_postal": "46005"
+        }
+      ],
+      "nb_communes": 4
+    },
+    {
+      "nom_ar": "العامرية",
+      "nom_fr": "El Amria",
+      "nom_en": "El Amria",
+      "communes": [
+        {
+          "nom_ar": "العامرية",
+          "nom_fr": "El Amria",
+          "nom_en": "El Amria",
+          "code_postal": "46006"
+        },
+        {
+          "nom_ar": "حاسي الغلة",
+          "nom_fr": "Hassi El Ghella",
+          "nom_en": "Hassi El Ghella",
+          "code_postal": "46012"
+        },
+        {
+          "nom_ar": "أولاد بوجمعة",
+          "nom_fr": "Ouled Boudjemaa",
+          "nom_en": "Ouled Boudjemaa",
+          "code_postal": "46043"
+        },
+        {
+          "nom_ar": "المساعيد",
+          "nom_fr": "El Messaid",
+          "nom_en": "El Messaid",
+          "code_postal": "46035"
+        },
+        {
+          "nom_ar": "بوزجار",
+          "nom_fr": "Bouzedjar",
+          "nom_en": "Bouzedjar",
+          "code_postal": "46033"
+        }
+      ],
+      "nb_communes": 5
+    },
+    {
+      "nom_ar": "عين الكيحل",
+      "nom_fr": "Ain Kihel",
+      "nom_en": "Ain Kihel",
+      "communes": [
+        {
+          "nom_ar": "أغلال",
+          "nom_fr": "Aghlal",
+          "nom_en": "Aghlal",
+          "code_postal": "46016"
+        },
+        {
+          "nom_ar": "عين الكيحل",
+          "nom_fr": "Ain Kihal",
+          "nom_en": "Ain Kihal",
+          "code_postal": "46008"
+        },
+        {
+          "nom_ar": "عين الطلبة",
+          "nom_fr": "Ain Tolba",
+          "nom_en": "Ain Tolba",
+          "code_postal": "46010"
+        },
+        {
+          "nom_ar": "عقب الليل",
+          "nom_fr": "Aoubellil",
+          "nom_en": "Aoubellil",
+          "code_postal": "46017"
+        }
+      ],
+      "nb_communes": 4
+    },
+    {
+      "nom_ar": "بني صاف",
+      "nom_fr": "Beni Saf",
+      "nom_en": "Beni Saf",
+      "communes": [
+        {
+          "nom_ar": "بني صاف",
+          "nom_fr": "Beni Saf",
+          "nom_en": "Beni Saf",
+          "code_postal": "46001"
+        },
+        {
+          "nom_ar": "سيدي صافي",
+          "nom_fr": "Sidi Safi",
+          "nom_en": "Sidi Safi",
+          "code_postal": "46025"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "الطاهير",
+      "nom_fr": "Taher",
+      "nom_en": "Taher",
+      "communes": [
+        {
+          "nom_ar": "الأمير عبد القادر",
+          "nom_fr": "Emir Abdelkader",
+          "nom_en": "Emir Abdelkader",
+          "code_postal": "18010"
+        }
+      ],
+      "nb_communes": 1
+    },
+    {
+      "nom_ar": "ولهاصة الغرابة",
+      "nom_fr": "Oulhassa Gheraba",
+      "nom_en": "Oulhassa Gheraba",
+      "communes": [
+        {
+          "nom_ar": "ولهاصة الغرابة",
+          "nom_fr": "Oulhaca El Gheraba",
+          "nom_en": "Oulhaca El Gheraba",
+          "code_postal": "46053"
+        },
+        {
+          "nom_ar": "سيدي ورياش",
+          "nom_fr": "Sidi Ouriache",
+          "nom_en": "Sidi Ouriache",
+          "code_postal": "46024"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "عين تموشنت",
+      "nom_fr": "Ain Temouchent",
+      "nom_en": "Ain Temouchent",
+      "communes": [
+        {
+          "nom_ar": "سيدي بن عدة",
+          "nom_fr": "Sidi Ben Adda",
+          "nom_en": "Sidi Ben Adda",
+          "code_postal": "46013"
+        },
+        {
+          "nom_ar": "عين تموشنت",
+          "nom_fr": "Ain Temouchent",
+          "nom_en": "Ain Temouchent",
+          "code_postal": "46000"
+        }
+      ],
+      "nb_communes": 2
+    }
+  ]
+}

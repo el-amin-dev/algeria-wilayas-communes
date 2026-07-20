@@ -1,0 +1,241 @@
+{
+  "wilaya_num": 9,
+  "code": "09",
+  "nom_ar": "البليدة",
+  "nom_fr": "Blida",
+  "nom_en": "Blida",
+  "nb_dairas": 10,
+  "nb_communes": 25,
+  "dairas": [
+    {
+      "nom_ar": "أولاد يعيش",
+      "nom_fr": "Ouled Yaich",
+      "nom_en": "Ouled Yaich",
+      "communes": [
+        {
+          "nom_ar": "بني مراد",
+          "nom_fr": "Beni Mered",
+          "nom_en": "Beni Mered",
+          "code_postal": "09003"
+        },
+        {
+          "nom_ar": "أولاد يعيش",
+          "nom_fr": "Ouled Yaich",
+          "nom_en": "Ouled Yaich",
+          "code_postal": "09015"
+        },
+        {
+          "nom_ar": "الشريعة",
+          "nom_fr": "Chrea",
+          "nom_en": "Chrea",
+          "code_postal": "09027"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "بوقرة",
+      "nom_fr": "Bougara",
+      "nom_en": "Bougara",
+      "communes": [
+        {
+          "nom_ar": "اولاد سلامة",
+          "nom_fr": "Ouled Slama",
+          "nom_en": "Ouled Slama",
+          "code_postal": "09033"
+        },
+        {
+          "nom_ar": "حمام ملوان",
+          "nom_fr": "Hammam Elouane",
+          "nom_en": "Hammam Elouane",
+          "code_postal": "09030"
+        },
+        {
+          "nom_ar": "بوقرة",
+          "nom_fr": "Bougara",
+          "nom_en": "Bougara",
+          "code_postal": "09008"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "موزاية",
+      "nom_fr": "Mouzaia",
+      "nom_en": "Mouzaia",
+      "communes": [
+        {
+          "nom_ar": "موزاية",
+          "nom_fr": "Mouzaia",
+          "nom_en": "Mouzaia",
+          "code_postal": "09013"
+        },
+        {
+          "nom_ar": "الشفة",
+          "nom_fr": "Chiffa",
+          "nom_en": "Chiffa",
+          "code_postal": "09010"
+        },
+        {
+          "nom_ar": "عين الرمانة",
+          "nom_fr": "Ain Romana",
+          "nom_en": "Ain Romana",
+          "code_postal": "09023"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "الأربعاء",
+      "nom_fr": "Larbaa",
+      "nom_en": "Larbaa",
+      "communes": [
+        {
+          "nom_ar": "صوحان",
+          "nom_fr": "Souhane",
+          "nom_en": "Souhane",
+          "code_postal": "09034"
+        },
+        {
+          "nom_ar": "الأربعاء",
+          "nom_fr": "Larbaa",
+          "nom_en": "Larbaa",
+          "code_postal": "09002"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "بوفاريك",
+      "nom_fr": "Boufarik",
+      "nom_en": "Boufarik",
+      "communes": [
+        {
+          "nom_ar": "الصومعة",
+          "nom_fr": "Soumaa",
+          "nom_en": "Soumaa",
+          "code_postal": "09022"
+        },
+        {
+          "nom_ar": "قرواو",
+          "nom_fr": "Guerrouaou",
+          "nom_en": "Guerrouaou",
+          "code_postal": "09029"
+        },
+        {
+          "nom_ar": "بوفاريك",
+          "nom_fr": "Boufarik",
+          "nom_en": "Boufarik",
+          "code_postal": "09001"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "مفتاح",
+      "nom_fr": "Meftah",
+      "nom_en": "Meftah",
+      "communes": [
+        {
+          "nom_ar": "مفتاح",
+          "nom_fr": "Meftah",
+          "nom_en": "Meftah",
+          "code_postal": "09012"
+        },
+        {
+          "nom_ar": "جبابرة",
+          "nom_fr": "Djebabra",
+          "nom_en": "Djebabra",
+          "code_postal": "09028"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "العفرون",
+      "nom_fr": "El Affroun",
+      "nom_en": "El Affroun",
+      "communes": [
+        {
+          "nom_ar": "وادي جر",
+          "nom_fr": "Oued  Djer",
+          "nom_en": "Oued  Djer",
+          "code_postal": "09032"
+        },
+        {
+          "nom_ar": "العفرون",
+          "nom_fr": "El-Affroun",
+          "nom_en": "El-Affroun",
+          "code_postal": "09011"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "وادي العلايق",
+      "nom_fr": "Oued El Alleug",
+      "nom_en": "Oued El Alleug",
+      "communes": [
+        {
+          "nom_ar": "وادي العلايق",
+          "nom_fr": "Oued El Alleug",
+          "nom_en": "Oued El Alleug",
+          "code_postal": "09014"
+        },
+        {
+          "nom_ar": "بن خليل",
+          "nom_fr": "Benkhelil",
+          "nom_en": "Benkhelil",
+          "code_postal": "09025"
+        },
+        {
+          "nom_ar": "بني تامو",
+          "nom_fr": "Beni-Tamou",
+          "nom_en": "Beni-Tamou",
+          "code_postal": "09024"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "بوعينان",
+      "nom_fr": "Bouinan",
+      "nom_en": "Bouinan",
+      "communes": [
+        {
+          "nom_ar": "الشبلي",
+          "nom_fr": "Chebli",
+          "nom_en": "Chebli",
+          "code_postal": "09009"
+        },
+        {
+          "nom_ar": "بوعينان",
+          "nom_fr": "Bouinan",
+          "nom_en": "Bouinan",
+          "code_postal": "09020"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "البليدة",
+      "nom_fr": "Blida",
+      "nom_en": "Blida",
+      "communes": [
+        {
+          "nom_ar": "بوعرفة",
+          "nom_fr": "Bouarfa",
+          "nom_en": "Bouarfa",
+          "code_postal": "09019"
+        },
+        {
+          "nom_ar": "البليدة",
+          "nom_fr": "Blida",
+          "nom_en": "Blida",
+          "code_postal": "09000"
+        }
+      ],
+      "nb_communes": 2
+    }
+  ]
+}

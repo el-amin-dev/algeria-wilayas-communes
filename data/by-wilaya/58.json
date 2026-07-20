@@ -1,0 +1,45 @@
+{
+  "wilaya_num": 58,
+  "code": "58",
+  "nom_ar": "المنيعة",
+  "nom_fr": "El Meniaa",
+  "nom_en": "El Meniaa",
+  "nb_dairas": 2,
+  "nb_communes": 3,
+  "dairas": [
+    {
+      "nom_ar": "المنيعة",
+      "nom_fr": "El Menia",
+      "nom_en": "El Menia",
+      "communes": [
+        {
+          "nom_ar": "المنيعة",
+          "nom_fr": "El Meniaa",
+          "nom_en": "El Meniaa",
+          "code_postal": "47001"
+        },
+        {
+          "nom_ar": "حاسي القارة",
+          "nom_fr": "Hassi Gara",
+          "nom_en": "Hassi Gara",
+          "code_postal": "47006"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "المنصورة",
+      "nom_fr": "Mansourah",
+      "nom_en": "Mansourah",
+      "communes": [
+        {
+          "nom_ar": "حاسي الفحل",
+          "nom_fr": "Hassi Fehal",
+          "nom_en": "Hassi Fehal",
+          "code_postal": "47021"
+        }
+      ],
+      "nb_communes": 1
+    }
+  ]
+}

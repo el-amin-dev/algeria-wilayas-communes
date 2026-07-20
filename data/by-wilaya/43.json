@@ -1,0 +1,307 @@
+{
+  "wilaya_num": 43,
+  "code": "43",
+  "nom_ar": "ميلة",
+  "nom_fr": "Mila",
+  "nom_en": "Mila",
+  "nb_dairas": 13,
+  "nb_communes": 32,
+  "dairas": [
+    {
+      "nom_ar": "التلاغمة",
+      "nom_fr": "Teleghma",
+      "nom_en": "Teleghma",
+      "communes": [
+        {
+          "nom_ar": "مشيرة",
+          "nom_fr": "El Mechira",
+          "nom_en": "El Mechira",
+          "code_postal": "43026"
+        },
+        {
+          "nom_ar": "التلاغمة",
+          "nom_fr": "Teleghma",
+          "nom_en": "Teleghma",
+          "code_postal": "43008"
+        },
+        {
+          "nom_ar": "وادي سقان",
+          "nom_fr": "Oued Seguen",
+          "nom_en": "Oued Seguen",
+          "code_postal": "43031"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "عين البيضاء أحريش",
+      "nom_fr": "Ain Beida Harriche",
+      "nom_en": "Ain Beida Harriche",
+      "communes": [
+        {
+          "nom_ar": "العياضي برباس",
+          "nom_fr": "El Ayadi Barbes",
+          "nom_en": "El Ayadi Barbes",
+          "code_postal": "43050"
+        },
+        {
+          "nom_ar": " عين البيضاء أحريش",
+          "nom_fr": "Ain Beida Harriche",
+          "nom_en": "Ain Beida Harriche",
+          "code_postal": "43014"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "ترعي باينان",
+      "nom_fr": "Terrai Bainen",
+      "nom_en": "Terrai Bainen",
+      "communes": [
+        {
+          "nom_ar": "تسالة لمطاعي",
+          "nom_fr": "Tassala Lematai",
+          "nom_en": "Tassala Lematai",
+          "code_postal": "43034"
+        },
+        {
+          "nom_ar": "ترعي باينان",
+          "nom_fr": "Terrai Bainen",
+          "nom_en": "Terrai Bainen",
+          "code_postal": "43018"
+        },
+        {
+          "nom_ar": "اعميرة اراس",
+          "nom_fr": "Amira Arres",
+          "nom_en": "Amira Arres",
+          "code_postal": "43017"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "تسدان حدادة",
+      "nom_fr": "Tassadane Haddada",
+      "nom_en": "Tassadane Haddada",
+      "communes": [
+        {
+          "nom_ar": "تسدان حدادة",
+          "nom_fr": "Tassadane Haddada",
+          "nom_en": "Tassadane Haddada",
+          "code_postal": "43033"
+        },
+        {
+          "nom_ar": "مينار زارزة",
+          "nom_fr": "Minar Zarza",
+          "nom_en": "Minar Zarza",
+          "code_postal": "43036"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "سيدي مروان",
+      "nom_fr": "Sidi Merouane",
+      "nom_en": "Sidi Merouane",
+      "communes": [
+        {
+          "nom_ar": "سيدي مروان",
+          "nom_fr": "Sidi Merouane",
+          "nom_en": "Sidi Merouane",
+          "code_postal": "43010"
+        },
+        {
+          "nom_ar": "الشيقارة",
+          "nom_fr": "Chigara",
+          "nom_en": "Chigara",
+          "code_postal": "43025"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "القرارم قوقة",
+      "nom_fr": "Grarem Gouga",
+      "nom_en": "Grarem Gouga",
+      "communes": [
+        {
+          "nom_ar": "حمالة",
+          "nom_fr": "Hamala",
+          "nom_en": "Hamala",
+          "code_postal": "43052"
+        },
+        {
+          "nom_ar": "القرارم قوقة",
+          "nom_fr": "Grarem Gouga",
+          "nom_en": "Grarem Gouga",
+          "code_postal": "43004"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "الرواشد",
+      "nom_fr": "Rouached",
+      "nom_en": "Rouached",
+      "communes": [
+        {
+          "nom_ar": "تيبرقنت",
+          "nom_fr": "Tiberguent",
+          "nom_en": "Tiberguent",
+          "code_postal": "43035"
+        },
+        {
+          "nom_ar": "الرواشد",
+          "nom_fr": "Rouached",
+          "nom_en": "Rouached",
+          "code_postal": "43009"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "بوحاتم",
+      "nom_fr": "Bouhatem",
+      "nom_en": "Bouhatem",
+      "communes": [
+        {
+          "nom_ar": "دراحي بوصلاح",
+          "nom_fr": "Derrahi Bousselah",
+          "nom_en": "Derrahi Bousselah",
+          "code_postal": "43046"
+        },
+        {
+          "nom_ar": "بوحاتم",
+          "nom_fr": "Bouhatem",
+          "nom_en": "Bouhatem",
+          "code_postal": "43022"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "وادي النجاء",
+      "nom_fr": "Oued Endja",
+      "nom_en": "Oued Endja",
+      "communes": [
+        {
+          "nom_ar": "زغاية",
+          "nom_fr": "Zeghaia",
+          "nom_en": "Zeghaia",
+          "code_postal": "43012"
+        },
+        {
+          "nom_ar": "وادي النجاء",
+          "nom_fr": "Oued Endja",
+          "nom_en": "Oued Endja",
+          "code_postal": "43006"
+        },
+        {
+          "nom_ar": "أحمد راشدي",
+          "nom_fr": "Ahmed Rachedi",
+          "nom_en": "Ahmed Rachedi",
+          "code_postal": "43013"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "تاجنانت",
+      "nom_fr": "Tadjenanet",
+      "nom_en": "Tadjenanet",
+      "communes": [
+        {
+          "nom_ar": "تاجنانت",
+          "nom_fr": "Tadjenanet",
+          "nom_en": "Tadjenanet",
+          "code_postal": "43007"
+        },
+        {
+          "nom_ar": "أولاد اخلوف",
+          "nom_fr": "Ouled Khalouf",
+          "nom_en": "Ouled Khalouf",
+          "code_postal": "43032"
+        },
+        {
+          "nom_ar": "بن يحي عبد الرحمن",
+          "nom_fr": "Benyahia Abderrahmane",
+          "nom_en": "Benyahia Abderrahmane",
+          "code_postal": "43020"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "شلغوم العيد",
+      "nom_fr": "Chelghoum Laid",
+      "nom_en": "Chelghoum Laid",
+      "communes": [
+        {
+          "nom_ar": "عين الملوك",
+          "nom_fr": "Ain Mellouk",
+          "nom_en": "Ain Mellouk",
+          "code_postal": "43015"
+        },
+        {
+          "nom_ar": "وادي العثمانية",
+          "nom_fr": "Oued Athmenia",
+          "nom_en": "Oued Athmenia",
+          "code_postal": "43005"
+        },
+        {
+          "nom_ar": "شلغوم العيد",
+          "nom_fr": "Chelghoum Laid",
+          "nom_en": "Chelghoum Laid",
+          "code_postal": "43001"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "ميلة",
+      "nom_fr": "Mila",
+      "nom_en": "Mila",
+      "communes": [
+        {
+          "nom_ar": "عين التين",
+          "nom_fr": "Ain Tine",
+          "nom_en": "Ain Tine",
+          "code_postal": "43016"
+        },
+        {
+          "nom_ar": "سيدي خليفة",
+          "nom_fr": "Sidi Khelifa",
+          "nom_en": "Sidi Khelifa",
+          "code_postal": "43058"
+        },
+        {
+          "nom_ar": "ميلة",
+          "nom_fr": "Mila",
+          "nom_en": "Mila",
+          "code_postal": "43000"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "فرجيوة",
+      "nom_fr": "Ferdjioua",
+      "nom_en": "Ferdjioua",
+      "communes": [
+        {
+          "nom_ar": "يحي بني قشة",
+          "nom_fr": "Yahia Beniguecha",
+          "nom_en": "Yahia Beniguecha",
+          "code_postal": "43071"
+        },
+        {
+          "nom_ar": "فرجيوة",
+          "nom_fr": "Ferdjioua",
+          "nom_en": "Ferdjioua",
+          "code_postal": "43002"
+        }
+      ],
+      "nb_communes": 2
+    }
+  ]
+}

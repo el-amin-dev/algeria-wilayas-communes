@@ -1,0 +1,531 @@
+{
+  "wilaya_num": 19,
+  "code": "19",
+  "nom_ar": "سطيف",
+  "nom_fr": "Setif",
+  "nom_en": "Setif",
+  "nb_dairas": 20,
+  "nb_communes": 60,
+  "dairas": [
+    {
+      "nom_ar": "صالح باي",
+      "nom_fr": "Salah Bey",
+      "nom_en": "Salah Bey",
+      "communes": [
+        {
+          "nom_ar": "الرصفة",
+          "nom_fr": "Rosfa",
+          "nom_en": "Rosfa",
+          "code_postal": "19060"
+        },
+        {
+          "nom_ar": "بوطالب",
+          "nom_fr": "Boutaleb",
+          "nom_en": "Boutaleb",
+          "code_postal": "19089"
+        },
+        {
+          "nom_ar": "الحامة",
+          "nom_fr": "Hamma",
+          "nom_en": "Hamma",
+          "code_postal": "19015"
+        },
+        {
+          "nom_ar": "أولاد تبان",
+          "nom_fr": "Ouled Tebben",
+          "nom_en": "Ouled Tebben",
+          "code_postal": "19030"
+        },
+        {
+          "nom_ar": "صالح باي",
+          "nom_fr": "Salah Bey",
+          "nom_en": "Salah Bey",
+          "code_postal": "19013"
+        }
+      ],
+      "nb_communes": 5
+    },
+    {
+      "nom_ar": "عموشة",
+      "nom_fr": "Amoucha",
+      "nom_en": "Amoucha",
+      "communes": [
+        {
+          "nom_ar": "واد البارد",
+          "nom_fr": "Oued El Bared",
+          "nom_en": "Oued El Bared",
+          "code_postal": "19115"
+        },
+        {
+          "nom_ar": "تيزي نبشار",
+          "nom_fr": "Tizi N'bechar",
+          "nom_en": "Tizi N'bechar",
+          "code_postal": "19068"
+        },
+        {
+          "nom_ar": "عموشة",
+          "nom_fr": "Amoucha",
+          "nom_en": "Amoucha",
+          "code_postal": "19009"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "عين أرنات",
+      "nom_fr": "Ain Arnat",
+      "nom_en": "Ain Arnat",
+      "communes": [
+        {
+          "nom_ar": "مزلوق",
+          "nom_fr": "Mezloug",
+          "nom_en": "Mezloug",
+          "code_postal": "19056"
+        },
+        {
+          "nom_ar": "أوريسيا",
+          "nom_fr": "El Ouricia",
+          "nom_en": "El Ouricia",
+          "code_postal": "19047"
+        },
+        {
+          "nom_ar": "عين عباسة",
+          "nom_fr": "Ain Abessa",
+          "nom_en": "Ain Abessa",
+          "code_postal": "19016"
+        },
+        {
+          "nom_ar": "عين أرنات",
+          "nom_fr": "Ain Arnat",
+          "nom_en": "Ain Arnat",
+          "code_postal": "19017"
+        }
+      ],
+      "nb_communes": 4
+    },
+    {
+      "nom_ar": "عين ولمان",
+      "nom_fr": "Ain Oulmene",
+      "nom_en": "Ain Oulmene",
+      "communes": [
+        {
+          "nom_ar": "قلال",
+          "nom_fr": "Guellal",
+          "nom_en": "Guellal",
+          "code_postal": "19050"
+        },
+        {
+          "nom_ar": "قصر الابطال",
+          "nom_fr": "Kasr El Abtal",
+          "nom_en": "Kasr El Abtal",
+          "code_postal": "19054"
+        },
+        {
+          "nom_ar": "أولاد سي أحمد",
+          "nom_fr": "Ouled Si Ahmed",
+          "nom_en": "Ouled Si Ahmed",
+          "code_postal": "19121"
+        },
+        {
+          "nom_ar": "عين ولمان",
+          "nom_fr": "Ain Oulmene",
+          "nom_en": "Ain Oulmene",
+          "code_postal": "19002"
+        }
+      ],
+      "nb_communes": 4
+    },
+    {
+      "nom_ar": "بوعنداس",
+      "nom_fr": "Bouandas",
+      "nom_en": "Bouandas",
+      "communes": [
+        {
+          "nom_ar": "أيت نوال مزادة",
+          "nom_fr": "Ait Naoual Mezada",
+          "nom_en": "Ait Naoual Mezada",
+          "code_postal": "19076"
+        },
+        {
+          "nom_ar": "ايت تيزي",
+          "nom_fr": "Ait-Tizi",
+          "nom_en": "Ait-Tizi",
+          "code_postal": "19077"
+        },
+        {
+          "nom_ar": "بوعنداس",
+          "nom_fr": "Bouandas",
+          "nom_en": "Bouandas",
+          "code_postal": "19012"
+        },
+        {
+          "nom_ar": "بوسلام",
+          "nom_fr": "Bousselam",
+          "nom_en": "Bousselam",
+          "code_postal": "19052"
+        }
+      ],
+      "nb_communes": 4
+    },
+    {
+      "nom_ar": "حمام السخنة",
+      "nom_fr": "Hammam Sokhna",
+      "nom_en": "Hammam Sokhna",
+      "communes": [
+        {
+          "nom_ar": "حمام السخنة",
+          "nom_fr": "Hamam Soukhna",
+          "nom_en": "Hamam Soukhna",
+          "code_postal": "19059"
+        },
+        {
+          "nom_ar": "الطاية",
+          "nom_fr": "Taya",
+          "nom_en": "Taya",
+          "code_postal": "19067"
+        },
+        {
+          "nom_ar": "التلة",
+          "nom_fr": "Tella",
+          "nom_en": "Tella",
+          "code_postal": "19087"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "عين أزال",
+      "nom_fr": "Ain Azel",
+      "nom_en": "Ain Azel",
+      "communes": [
+        {
+          "nom_ar": "عين أزال",
+          "nom_fr": "Ain Azel",
+          "nom_en": "Ain Azel",
+          "code_postal": "19007"
+        },
+        {
+          "nom_ar": "عين الحجر",
+          "nom_fr": "Ain Lahdjar",
+          "nom_en": "Ain Lahdjar",
+          "code_postal": "19018"
+        },
+        {
+          "nom_ar": "بيضاء برج",
+          "nom_fr": "Beidha Bordj",
+          "nom_en": "Beidha Bordj",
+          "code_postal": "19021"
+        },
+        {
+          "nom_ar": "بئر حدادة",
+          "nom_fr": "Bir Haddada",
+          "nom_en": "Bir Haddada",
+          "code_postal": "19039"
+        }
+      ],
+      "nb_communes": 4
+    },
+    {
+      "nom_ar": "قنزات",
+      "nom_fr": "Guenzet",
+      "nom_en": "Guenzet",
+      "communes": [
+        {
+          "nom_ar": "قنزات",
+          "nom_fr": "Guenzet",
+          "nom_en": "Guenzet",
+          "code_postal": "19026"
+        },
+        {
+          "nom_ar": "حربيل",
+          "nom_fr": "Harbil",
+          "nom_en": "Harbil",
+          "code_postal": "19032"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "بوقاعة",
+      "nom_fr": "Bougaa",
+      "nom_en": "Bougaa",
+      "communes": [
+        {
+          "nom_ar": "عين الروى",
+          "nom_fr": "Ain-Roua",
+          "nom_en": "Ain-Roua",
+          "code_postal": "19019"
+        },
+        {
+          "nom_ar": "بني وسين",
+          "nom_fr": "Beni Oussine",
+          "nom_en": "Beni Oussine",
+          "code_postal": "19037"
+        },
+        {
+          "nom_ar": "بوقاعة",
+          "nom_fr": "Bougaa",
+          "nom_en": "Bougaa",
+          "code_postal": "19003"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "حمام قرقور",
+      "nom_fr": "Hammam Guergour",
+      "nom_en": "Hammam Guergour",
+      "communes": [
+        {
+          "nom_ar": "ذراع قبيلة",
+          "nom_fr": "Draa-Kebila",
+          "nom_en": "Draa-Kebila",
+          "code_postal": "19029"
+        },
+        {
+          "nom_ar": "حمام قرقور",
+          "nom_fr": "Hammam Guergour",
+          "nom_en": "Hammam Guergour",
+          "code_postal": "19051"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "سطيف",
+      "nom_fr": "Setif",
+      "nom_en": "Setif",
+      "communes": [
+        {
+          "nom_ar": "سطيف",
+          "nom_fr": "Setif",
+          "nom_en": "Setif",
+          "code_postal": "19000"
+        }
+      ],
+      "nb_communes": 1
+    },
+    {
+      "nom_ar": "عين الكبيرة",
+      "nom_fr": "Ain El Kebira",
+      "nom_en": "Ain El Kebira",
+      "communes": [
+        {
+          "nom_ar": "عين الكبيرة",
+          "nom_fr": "Ain El Kebira",
+          "nom_en": "Ain El Kebira",
+          "code_postal": "19008"
+        },
+        {
+          "nom_ar": "الدهامشة",
+          "nom_fr": "Dehamcha",
+          "nom_en": "Dehamcha",
+          "code_postal": "19041"
+        },
+        {
+          "nom_ar": "أولاد عدوان",
+          "nom_fr": "Ouled Addouane",
+          "nom_en": "Ouled Addouane",
+          "code_postal": "19053"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "بني عزيز",
+      "nom_fr": "Beni Aziz",
+      "nom_en": "Beni Aziz",
+      "communes": [
+        {
+          "nom_ar": "عين السبت",
+          "nom_fr": "Ain-Sebt",
+          "nom_en": "Ain-Sebt",
+          "code_postal": "19033"
+        },
+        {
+          "nom_ar": "بني عزيز",
+          "nom_fr": "Beni-Aziz",
+          "nom_en": "Beni-Aziz",
+          "code_postal": "19010"
+        },
+        {
+          "nom_ar": "معاوية",
+          "nom_fr": "Maaouia",
+          "nom_en": "Maaouia",
+          "code_postal": "19055"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "بئر العرش",
+      "nom_fr": "Bir El Arch",
+      "nom_en": "Bir El Arch",
+      "communes": [
+        {
+          "nom_ar": "بلاعة",
+          "nom_fr": "Bellaa",
+          "nom_en": "Bellaa",
+          "code_postal": "19022"
+        },
+        {
+          "nom_ar": "بئر العرش",
+          "nom_fr": "Bir-El-Arch",
+          "nom_en": "Bir-El-Arch",
+          "code_postal": "19024"
+        },
+        {
+          "nom_ar": "الولجة",
+          "nom_fr": "El-Ouldja",
+          "nom_en": "El-Ouldja",
+          "code_postal": "19046"
+        },
+        {
+          "nom_ar": "تاشودة",
+          "nom_fr": "Tachouda",
+          "nom_en": "Tachouda",
+          "code_postal": "19125"
+        }
+      ],
+      "nb_communes": 4
+    },
+    {
+      "nom_ar": "ماوكلان",
+      "nom_fr": "Maoklane",
+      "nom_en": "Maoklane",
+      "communes": [
+        {
+          "nom_ar": "تالة إيفاسن",
+          "nom_fr": "Tala-Ifacene",
+          "nom_en": "Tala-Ifacene",
+          "code_postal": "19069"
+        },
+        {
+          "nom_ar": "ماوكلان",
+          "nom_fr": "Maouaklane",
+          "nom_en": "Maouaklane",
+          "code_postal": "19028"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "بابور",
+      "nom_fr": "Babor",
+      "nom_en": "Babor",
+      "communes": [
+        {
+          "nom_ar": "سرج الغول",
+          "nom_fr": "Serdj-El-Ghoul",
+          "nom_en": "Serdj-El-Ghoul",
+          "code_postal": "19086"
+        },
+        {
+          "nom_ar": "بابور",
+          "nom_fr": "Babor",
+          "nom_en": "Babor",
+          "code_postal": "19020"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "قجال",
+      "nom_fr": "Guidjel",
+      "nom_en": "Guidjel",
+      "communes": [
+        {
+          "nom_ar": "قجال",
+          "nom_fr": "Guidjel",
+          "nom_en": "Guidjel",
+          "code_postal": "19027"
+        },
+        {
+          "nom_ar": "أولاد صابر",
+          "nom_fr": "Ouled Sabor",
+          "nom_en": "Ouled Sabor",
+          "code_postal": "19120"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "العلمة",
+      "nom_fr": "El Eulma",
+      "nom_en": "El Eulma",
+      "communes": [
+        {
+          "nom_ar": "بازر سكرة",
+          "nom_fr": "Bazer-Sakra",
+          "nom_en": "Bazer-Sakra",
+          "code_postal": "19036"
+        },
+        {
+          "nom_ar": "العلمة",
+          "nom_fr": "El Eulma",
+          "nom_en": "El Eulma",
+          "code_postal": "19001"
+        },
+        {
+          "nom_ar": "قلتة زرقاء",
+          "nom_fr": "Guelta Zerka",
+          "nom_en": "Guelta Zerka",
+          "code_postal": null
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "جميلة",
+      "nom_fr": "Djemila",
+      "nom_en": "Djemila",
+      "communes": [
+        {
+          "nom_ar": "بني فودة",
+          "nom_fr": "Beni Fouda",
+          "nom_en": "Beni Fouda",
+          "code_postal": "19023"
+        },
+        {
+          "nom_ar": "جميلة",
+          "nom_fr": "Djemila",
+          "nom_en": "Djemila",
+          "code_postal": "19025"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "بني ورتيلان",
+      "nom_fr": "Beni Ourtilane",
+      "nom_en": "Beni Ourtilane",
+      "communes": [
+        {
+          "nom_ar": "عين لقراج",
+          "nom_fr": "Ain-Legradj",
+          "nom_en": "Ain-Legradj",
+          "code_postal": "19035"
+        },
+        {
+          "nom_ar": "بني شبانة",
+          "nom_fr": "Beni Chebana",
+          "nom_en": "Beni Chebana",
+          "code_postal": "19031"
+        },
+        {
+          "nom_ar": "بني ورتيلان",
+          "nom_fr": "Beni Ourtilane",
+          "nom_en": "Beni Ourtilane",
+          "code_postal": "19011"
+        },
+        {
+          "nom_ar": "بني موحلي",
+          "nom_fr": "Beni-Mouhli",
+          "nom_en": "Beni-Mouhli",
+          "code_postal": "19038"
+        }
+      ],
+      "nb_communes": 4
+    }
+  ]
+}

@@ -1,0 +1,123 @@
+{
+  "wilaya_num": 59,
+  "code": "59",
+  "nom_ar": "أفلو",
+  "nom_fr": "Aflou",
+  "nom_en": "Aflou",
+  "nb_dairas": 5,
+  "nb_communes": 12,
+  "dairas": [
+    {
+      "nom_ar": "قتلة سيدي سعيد",
+      "nom_fr": "Gueltat Sidi Saad",
+      "nom_en": "Gueltat Sidi Saad",
+      "communes": [
+        {
+          "nom_ar": "البيضاء",
+          "nom_fr": "El Beidha",
+          "nom_en": "El Beidha",
+          "code_postal": "03013"
+        },
+        {
+          "nom_ar": "قلتة سيدي سعد",
+          "nom_fr": "Gueltat Sidi Saad",
+          "nom_en": "Gueltat Sidi Saad",
+          "code_postal": "03025"
+        },
+        {
+          "nom_ar": "عين سيدي علي",
+          "nom_fr": "Ain Sidi Ali",
+          "nom_en": "Ain Sidi Ali",
+          "code_postal": "03028"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "بريدة",
+      "nom_fr": "Brida",
+      "nom_en": "Brida",
+      "communes": [
+        {
+          "nom_ar": "بريدة",
+          "nom_fr": "Brida",
+          "nom_en": "Brida",
+          "code_postal": "03005"
+        },
+        {
+          "nom_ar": "الحاج مشري",
+          "nom_fr": "Hadj Mechri",
+          "nom_en": "Hadj Mechri",
+          "code_postal": "03038"
+        },
+        {
+          "nom_ar": "تاويالة",
+          "nom_fr": "Taouiala",
+          "nom_en": "Taouiala",
+          "code_postal": "03026"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "الغيشة",
+      "nom_fr": "El Ghicha",
+      "nom_en": "El Ghicha",
+      "communes": [
+        {
+          "nom_ar": "الغيشة",
+          "nom_fr": "El Ghicha",
+          "nom_en": "El Ghicha",
+          "code_postal": "03023"
+        }
+      ],
+      "nb_communes": 1
+    },
+    {
+      "nom_ar": "أفلو",
+      "nom_fr": "Aflou",
+      "nom_en": "Aflou",
+      "communes": [
+        {
+          "nom_ar": "سبقاق",
+          "nom_fr": "Sebgag",
+          "nom_en": "Sebgag",
+          "code_postal": "03034"
+        },
+        {
+          "nom_ar": "سيدي بوزيد",
+          "nom_fr": "Sidi Bouzid",
+          "nom_en": "Sidi Bouzid",
+          "code_postal": "03024"
+        },
+        {
+          "nom_ar": "أفلو",
+          "nom_fr": "Aflou",
+          "nom_en": "Aflou",
+          "code_postal": "03001"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "وادي مرة",
+      "nom_fr": "Oued Morra",
+      "nom_en": "Oued Morra",
+      "communes": [
+        {
+          "nom_ar": "وادي مرة",
+          "nom_fr": "Oued Morra",
+          "nom_en": "Oued Morra",
+          "code_postal": "03027"
+        },
+        {
+          "nom_ar": "وادي مزي",
+          "nom_fr": "Oued M'zi",
+          "nom_en": "Oued M'zi",
+          "code_postal": "03041"
+        }
+      ],
+      "nb_communes": 2
+    }
+  ]
+}

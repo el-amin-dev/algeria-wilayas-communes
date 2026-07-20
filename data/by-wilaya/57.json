@@ -1,0 +1,75 @@
+{
+  "wilaya_num": 57,
+  "code": "57",
+  "nom_ar": "المغير",
+  "nom_fr": "El M'Ghair",
+  "nom_en": "El M'Ghair",
+  "nb_dairas": 2,
+  "nb_communes": 8,
+  "dairas": [
+    {
+      "nom_ar": "المغير",
+      "nom_fr": "El Meghaier",
+      "nom_en": "El Meghaier",
+      "communes": [
+        {
+          "nom_ar": "أم الطيور",
+          "nom_fr": "Oum Touyour",
+          "nom_en": "Oum Touyour",
+          "code_postal": "39034"
+        },
+        {
+          "nom_ar": "المغير",
+          "nom_fr": "El-M'ghaier",
+          "nom_en": "El-M'ghaier",
+          "code_postal": "39005"
+        },
+        {
+          "nom_ar": "سطيل",
+          "nom_fr": "Still",
+          "nom_en": "Still",
+          "code_postal": "39039"
+        },
+        {
+          "nom_ar": "سيدي خليل",
+          "nom_fr": "Sidi Khelil",
+          "nom_en": "Sidi Khelil",
+          "code_postal": "39038"
+        }
+      ],
+      "nb_communes": 4
+    },
+    {
+      "nom_ar": "جامعة",
+      "nom_fr": "Djamaa",
+      "nom_en": "Djamaa",
+      "communes": [
+        {
+          "nom_ar": "سيدي عمران",
+          "nom_fr": "Sidi Amrane",
+          "nom_en": "Sidi Amrane",
+          "code_postal": "39021"
+        },
+        {
+          "nom_ar": "المرارة",
+          "nom_fr": "M'rara",
+          "nom_en": "M'rara",
+          "code_postal": "39067"
+        },
+        {
+          "nom_ar": "جامعة",
+          "nom_fr": "Djamaa",
+          "nom_en": "Djamaa",
+          "code_postal": "39004"
+        },
+        {
+          "nom_ar": "تندلة",
+          "nom_fr": "Tenedla",
+          "nom_en": "Tenedla",
+          "code_postal": "39042"
+        }
+      ],
+      "nb_communes": 4
+    }
+  ]
+}

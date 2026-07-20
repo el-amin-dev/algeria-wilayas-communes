@@ -1,0 +1,267 @@
+{
+  "wilaya_num": 18,
+  "code": "18",
+  "nom_ar": "جيجل",
+  "nom_fr": "Jijel",
+  "nom_en": "Jijel",
+  "nb_dairas": 11,
+  "nb_communes": 28,
+  "dairas": [
+    {
+      "nom_ar": "جيجل",
+      "nom_fr": "Jijel",
+      "nom_en": "Jijel",
+      "communes": [
+        {
+          "nom_ar": "جيجل",
+          "nom_fr": "Jijel",
+          "nom_en": "Jijel",
+          "code_postal": "18000"
+        }
+      ],
+      "nb_communes": 1
+    },
+    {
+      "nom_ar": "العوانة",
+      "nom_fr": "El Aouana",
+      "nom_en": "El Aouana",
+      "communes": [
+        {
+          "nom_ar": "العوانة",
+          "nom_fr": "El Aouana",
+          "nom_en": "El Aouana",
+          "code_postal": "18005"
+        },
+        {
+          "nom_ar": "سلمى بن زيادة",
+          "nom_fr": "Selma Benziada",
+          "nom_en": "Selma Benziada",
+          "code_postal": "18049"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "زيامة منصورية",
+      "nom_fr": "Ziamah Mansouriah",
+      "nom_en": "Ziamah Mansouriah",
+      "communes": [
+        {
+          "nom_ar": "أراقن سويسي",
+          "nom_fr": "Erraguene Souissi",
+          "nom_en": "Erraguene Souissi",
+          "code_postal": "18032"
+        },
+        {
+          "nom_ar": "زيامة منصورية",
+          "nom_fr": "Ziama Mansouriah",
+          "nom_en": "Ziama Mansouriah",
+          "code_postal": "18007"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "الطاهير",
+      "nom_fr": "Taher",
+      "nom_en": "Taher",
+      "communes": [
+        {
+          "nom_ar": "بوسيف أولاد عسكر",
+          "nom_fr": "Boussif Ouled Askeur",
+          "nom_en": "Boussif Ouled Askeur",
+          "code_postal": "18036"
+        },
+        {
+          "nom_ar": "الشحنة",
+          "nom_fr": "Chahna",
+          "nom_en": "Chahna",
+          "code_postal": "18027"
+        },
+        {
+          "nom_ar": "الامير عبد القادر",
+          "nom_fr": "Emir Abdelkader",
+          "nom_en": "Emir Abdelkader",
+          "code_postal": "18010"
+        },
+        {
+          "nom_ar": "وجانة",
+          "nom_fr": "Oudjana",
+          "nom_en": "Oudjana",
+          "code_postal": "18047"
+        },
+        {
+          "nom_ar": "الطاهير",
+          "nom_fr": "Taher",
+          "nom_en": "Taher",
+          "code_postal": "18002"
+        }
+      ],
+      "nb_communes": 5
+    },
+    {
+      "nom_ar": "الشقفة",
+      "nom_fr": "Chekfa",
+      "nom_en": "Chekfa",
+      "communes": [
+        {
+          "nom_ar": "الشقفة",
+          "nom_fr": "Chekfa",
+          "nom_en": "Chekfa",
+          "code_postal": "18003"
+        },
+        {
+          "nom_ar": "القنار نشفي",
+          "nom_fr": "El Kennar Nouchfi",
+          "nom_en": "El Kennar Nouchfi",
+          "code_postal": "18030"
+        },
+        {
+          "nom_ar": "سيدي عبد العزيز",
+          "nom_fr": "Sidi Abdelaziz",
+          "nom_en": "Sidi Abdelaziz",
+          "code_postal": "18017"
+        },
+        {
+          "nom_ar": "برج الطهر",
+          "nom_fr": "Bordj T'har",
+          "nom_en": "Bordj T'har",
+          "code_postal": "18041"
+        }
+      ],
+      "nb_communes": 4
+    },
+    {
+      "nom_ar": "الميلية",
+      "nom_fr": "El Milia",
+      "nom_en": "El Milia",
+      "communes": [
+        {
+          "nom_ar": "الميلية",
+          "nom_fr": "El Milia",
+          "nom_en": "El Milia",
+          "code_postal": "18001"
+        },
+        {
+          "nom_ar": "أولاد يحيى خدروش",
+          "nom_fr": "Ouled Yahia Khadrouch",
+          "nom_en": "Ouled Yahia Khadrouch",
+          "code_postal": "18021"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "سيدي معروف",
+      "nom_fr": "Sidi Marouf",
+      "nom_en": "Sidi Marouf",
+      "communes": [
+        {
+          "nom_ar": "أولاد رابح",
+          "nom_fr": "Ouled Rabah",
+          "nom_en": "Ouled Rabah",
+          "code_postal": "18046"
+        },
+        {
+          "nom_ar": "سيدي معروف",
+          "nom_fr": "Sidi Marouf",
+          "nom_en": "Sidi Marouf",
+          "code_postal": "18018"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "السطارة",
+      "nom_fr": "Settara",
+      "nom_en": "Settara",
+      "communes": [
+        {
+          "nom_ar": "غبالة",
+          "nom_fr": "Ghebala",
+          "nom_en": "Ghebala",
+          "code_postal": "18026"
+        },
+        {
+          "nom_ar": "السطارة",
+          "nom_fr": "Settara",
+          "nom_en": "Settara",
+          "code_postal": "18016"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "العنصر",
+      "nom_fr": "El Ancer",
+      "nom_en": "El Ancer",
+      "communes": [
+        {
+          "nom_ar": "بوراوي بلهادف",
+          "nom_fr": "Bouraoui Belhadef",
+          "nom_en": "Bouraoui Belhadef",
+          "code_postal": "18023"
+        },
+        {
+          "nom_ar": "العنصر",
+          "nom_fr": "El Ancer",
+          "nom_en": "El Ancer",
+          "code_postal": "18004"
+        },
+        {
+          "nom_ar": "خيري واد عجول",
+          "nom_fr": "Khiri Oued Adjoul",
+          "nom_en": "Khiri Oued Adjoul",
+          "code_postal": "18024"
+        },
+        {
+          "nom_ar": "الجمعة بني حبيبي",
+          "nom_fr": "Djemaa Beni Habibi",
+          "nom_en": "Djemaa Beni Habibi",
+          "code_postal": "18029"
+        }
+      ],
+      "nb_communes": 4
+    },
+    {
+      "nom_ar": "جيملة",
+      "nom_fr": "Djimla",
+      "nom_en": "Djimla",
+      "communes": [
+        {
+          "nom_ar": "جيملة",
+          "nom_fr": "Djimla",
+          "nom_en": "Djimla",
+          "code_postal": "18031"
+        },
+        {
+          "nom_ar": "بودريعة بني  ياجيس",
+          "nom_fr": "Boudria Beniyadjis",
+          "nom_en": "Boudria Beniyadjis",
+          "code_postal": "18025"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "تاكسنة",
+      "nom_fr": "Texenna",
+      "nom_en": "Texenna",
+      "communes": [
+        {
+          "nom_ar": "قاوس",
+          "nom_fr": "Kaous",
+          "nom_en": "Kaous",
+          "code_postal": "18015"
+        },
+        {
+          "nom_ar": "تاكسنة",
+          "nom_fr": "Texenna",
+          "nom_en": "Texenna",
+          "code_postal": "18006"
+        }
+      ],
+      "nb_communes": 2
+    }
+  ]
+}

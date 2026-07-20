@@ -1,0 +1,295 @@
+{
+  "wilaya_num": 24,
+  "code": "24",
+  "nom_ar": "قالمة",
+  "nom_fr": "Guelma",
+  "nom_en": "Guelma",
+  "nb_dairas": 10,
+  "nb_communes": 34,
+  "dairas": [
+    {
+      "nom_ar": "قلعة بوصبع",
+      "nom_fr": "Guelaat Bousbaa",
+      "nom_en": "Guelaat Bousbaa",
+      "communes": [
+        {
+          "nom_ar": "نشماية",
+          "nom_fr": "Nechmaya",
+          "nom_en": "Nechmaya",
+          "code_postal": "24027"
+        },
+        {
+          "nom_ar": "بومهرة أحمد",
+          "nom_fr": "Boumahra Ahmed",
+          "nom_en": "Boumahra Ahmed",
+          "code_postal": "24005"
+        },
+        {
+          "nom_ar": "جبالة الخميسي",
+          "nom_fr": "Djeballah Khemissi",
+          "nom_en": "Djeballah Khemissi",
+          "code_postal": "24039"
+        },
+        {
+          "nom_ar": "بلخير",
+          "nom_fr": "Belkheir",
+          "nom_en": "Belkheir",
+          "code_postal": "24015"
+        },
+        {
+          "nom_ar": "بني مزلين",
+          "nom_fr": "Beni Mezline",
+          "nom_en": "Beni Mezline",
+          "code_postal": null
+        },
+        {
+          "nom_ar": "قلعة بوصبع",
+          "nom_fr": "Guelaat Bou Sbaa",
+          "nom_en": "Guelaat Bou Sbaa",
+          "code_postal": "24020"
+        }
+      ],
+      "nb_communes": 6
+    },
+    {
+      "nom_ar": "حمام دباغ",
+      "nom_fr": "Hammam Debagh",
+      "nom_en": "Hammam Debagh",
+      "communes": [
+        {
+          "nom_ar": "بوحمدان",
+          "nom_fr": "Bou Hamdane",
+          "nom_en": "Bou Hamdane",
+          "code_postal": null
+        },
+        {
+          "nom_ar": "حمام دباغ",
+          "nom_fr": "Hammam Debagh",
+          "nom_en": "Hammam Debagh",
+          "code_postal": "24007"
+        },
+        {
+          "nom_ar": "الركنية",
+          "nom_fr": "Roknia",
+          "nom_en": "Roknia",
+          "code_postal": "24028"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "حمام النبايل",
+      "nom_fr": "Hammam N'bails",
+      "nom_en": "Hammam N'bails",
+      "communes": [
+        {
+          "nom_ar": "الدهوارة",
+          "nom_fr": "Dahouara",
+          "nom_en": "Dahouara",
+          "code_postal": "24031"
+        },
+        {
+          "nom_ar": "حمام النبايل",
+          "nom_fr": "Hammam N'bail",
+          "nom_en": "Hammam N'bail",
+          "code_postal": "24024"
+        },
+        {
+          "nom_ar": "وادي الشحم",
+          "nom_fr": "Oued Cheham",
+          "nom_en": "Oued Cheham",
+          "code_postal": "24009"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "قالمة",
+      "nom_fr": "Guelma",
+      "nom_en": "Guelma",
+      "communes": [
+        {
+          "nom_ar": "قالمة",
+          "nom_fr": "Guelma",
+          "nom_en": "Guelma",
+          "code_postal": "24000"
+        },
+        {
+          "nom_ar": "بن جراح",
+          "nom_fr": "Bendjarah",
+          "nom_en": "Bendjarah",
+          "code_postal": "24034"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "بوشقوف",
+      "nom_fr": "Bouchegouf",
+      "nom_en": "Bouchegouf",
+      "communes": [
+        {
+          "nom_ar": "عين بن بيضاء",
+          "nom_fr": "Ain Ben Beida",
+          "nom_en": "Ain Ben Beida",
+          "code_postal": "24011"
+        },
+        {
+          "nom_ar": "بوشقوف",
+          "nom_fr": "Bouchegouf",
+          "nom_en": "Bouchegouf",
+          "code_postal": "24002"
+        },
+        {
+          "nom_ar": "مجاز الصفاء",
+          "nom_fr": "Medjez Sfa",
+          "nom_en": "Medjez Sfa",
+          "code_postal": "24026"
+        },
+        {
+          "nom_ar": "وادي فراغة",
+          "nom_fr": "Oued Ferragha",
+          "nom_en": "Oued Ferragha",
+          "code_postal": "24038"
+        }
+      ],
+      "nb_communes": 4
+    },
+    {
+      "nom_ar": "هيليوبوليس",
+      "nom_fr": "Heliopolis",
+      "nom_en": "Heliopolis",
+      "communes": [
+        {
+          "nom_ar": "بوعاتي محمود",
+          "nom_fr": "Bouati Mahmoud",
+          "nom_en": "Bouati Mahmoud",
+          "code_postal": "24018"
+        },
+        {
+          "nom_ar": "الفجوج",
+          "nom_fr": "El Fedjoudj",
+          "nom_en": "El Fedjoudj",
+          "code_postal": "24019"
+        },
+        {
+          "nom_ar": "هيليوبوليس",
+          "nom_fr": "Heliopolis",
+          "nom_en": "Heliopolis",
+          "code_postal": "24008"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "عين حساينية",
+      "nom_fr": "Ain Hessainia",
+      "nom_en": "Ain Hessainia",
+      "communes": [
+        {
+          "nom_ar": "مجاز عمار",
+          "nom_fr": "Medjez Amar",
+          "nom_en": "Medjez Amar",
+          "code_postal": "24043"
+        },
+        {
+          "nom_ar": "هواري بومدين",
+          "nom_fr": "Houari Boumedienne",
+          "nom_en": "Houari Boumedienne",
+          "code_postal": "24025"
+        },
+        {
+          "nom_ar": "رأس العقبة",
+          "nom_fr": "Ras El Agba",
+          "nom_en": "Ras El Agba",
+          "code_postal": "24049"
+        },
+        {
+          "nom_ar": "سلاوة عنونة",
+          "nom_fr": "Sellaoua Announa",
+          "nom_en": "Sellaoua Announa",
+          "code_postal": "24029"
+        }
+      ],
+      "nb_communes": 4
+    },
+    {
+      "nom_ar": "وادي الزناتي",
+      "nom_fr": "Oued Zenati",
+      "nom_en": "Oued Zenati",
+      "communes": [
+        {
+          "nom_ar": "برج صباط",
+          "nom_fr": "Bordj Sabath",
+          "nom_en": "Bordj Sabath",
+          "code_postal": "24017"
+        },
+        {
+          "nom_ar": "وادي الزناتي",
+          "nom_fr": "Oued Zenati",
+          "nom_en": "Oued Zenati",
+          "code_postal": "24001"
+        },
+        {
+          "nom_ar": "عين رقادة",
+          "nom_fr": "Ain Regada",
+          "nom_en": "Ain Regada",
+          "code_postal": "24014"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "عين مخلوف",
+      "nom_fr": "Ain Makhlouf",
+      "nom_en": "Ain Makhlouf",
+      "communes": [
+        {
+          "nom_ar": "عين العربي",
+          "nom_fr": "Ain Larbi",
+          "nom_en": "Ain Larbi",
+          "code_postal": "24012"
+        },
+        {
+          "nom_ar": "عين مخلوف",
+          "nom_fr": "Ain Makhlouf",
+          "nom_en": "Ain Makhlouf",
+          "code_postal": "24013"
+        },
+        {
+          "nom_ar": "تاملوكة",
+          "nom_fr": "Tamlouka",
+          "nom_en": "Tamlouka",
+          "code_postal": "24010"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "خزارة",
+      "nom_fr": "Khezaras",
+      "nom_en": "Khezaras",
+      "communes": [
+        {
+          "nom_ar": "عين صندل",
+          "nom_fr": "Ain Sandel",
+          "nom_en": "Ain Sandel",
+          "code_postal": "24032"
+        },
+        {
+          "nom_ar": "بوحشانة",
+          "nom_fr": "Bou Hachana",
+          "nom_en": "Bou Hachana",
+          "code_postal": "24037"
+        },
+        {
+          "nom_ar": "لخزارة",
+          "nom_fr": "Khezaras",
+          "nom_en": "Khezaras",
+          "code_postal": null
+        }
+      ],
+      "nb_communes": 3
+    }
+  ]
+}

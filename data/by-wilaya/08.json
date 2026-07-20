@@ -1,0 +1,139 @@
+{
+  "wilaya_num": 8,
+  "code": "08",
+  "nom_ar": "بشار",
+  "nom_fr": "Bechar",
+  "nom_en": "Bechar",
+  "nb_dairas": 7,
+  "nb_communes": 12,
+  "dairas": [
+    {
+      "nom_ar": "بشار",
+      "nom_fr": "Bechar",
+      "nom_en": "Bechar",
+      "communes": [
+        {
+          "nom_ar": "بشار",
+          "nom_fr": "Bechar",
+          "nom_en": "Bechar",
+          "code_postal": "08000"
+        }
+      ],
+      "nb_communes": 1
+    },
+    {
+      "nom_ar": "لحمر",
+      "nom_fr": "Lahmar",
+      "nom_en": "Lahmar",
+      "communes": [
+        {
+          "nom_ar": "بوكايس",
+          "nom_fr": "Boukais",
+          "nom_en": "Boukais",
+          "code_postal": "08034"
+        },
+        {
+          "nom_ar": "لحمر",
+          "nom_fr": "Lahmar",
+          "nom_en": "Lahmar",
+          "code_postal": "08026"
+        },
+        {
+          "nom_ar": "موغل",
+          "nom_fr": "Mogheul",
+          "nom_en": "Mogheul",
+          "code_postal": "08042"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "القنادسة",
+      "nom_fr": "Kenadsa",
+      "nom_en": "Kenadsa",
+      "communes": [
+        {
+          "nom_ar": "المريجة",
+          "nom_fr": "Meridja",
+          "nom_en": "Meridja",
+          "code_postal": "08041"
+        },
+        {
+          "nom_ar": "القنادسة",
+          "nom_fr": "Kenadsa",
+          "nom_en": "Kenadsa",
+          "code_postal": "08011"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "تاغيت",
+      "nom_fr": "Taghit",
+      "nom_en": "Taghit",
+      "communes": [
+        {
+          "nom_ar": "تاغيت",
+          "nom_fr": "Taghit",
+          "nom_en": "Taghit",
+          "code_postal": "08030"
+        }
+      ],
+      "nb_communes": 1
+    },
+    {
+      "nom_ar": "العبادلة",
+      "nom_fr": "Abadla",
+      "nom_en": "Abadla",
+      "communes": [
+        {
+          "nom_ar": "العبادلة",
+          "nom_fr": "Abadla",
+          "nom_en": "Abadla",
+          "code_postal": "08003"
+        },
+        {
+          "nom_ar": "عرق فراج",
+          "nom_fr": "Erg-Ferradj",
+          "nom_en": "Erg-Ferradj",
+          "code_postal": "08023"
+        },
+        {
+          "nom_ar": "مشرع هواري بومدين",
+          "nom_fr": "Machraa-Houari-Boumediene",
+          "nom_en": "Machraa-Houari-Boumediene",
+          "code_postal": "08027"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "بني ونيف",
+      "nom_fr": "Beni Ounif",
+      "nom_en": "Beni Ounif",
+      "communes": [
+        {
+          "nom_ar": "بني ونيف",
+          "nom_fr": "Beni-Ounif",
+          "nom_en": "Beni-Ounif",
+          "code_postal": "08010"
+        }
+      ],
+      "nb_communes": 1
+    },
+    {
+      "nom_ar": "تبلبالة",
+      "nom_fr": "Tabelbala",
+      "nom_en": "Tabelbala",
+      "communes": [
+        {
+          "nom_ar": "تبلبالة",
+          "nom_fr": "Tabelbala",
+          "nom_en": "Tabelbala",
+          "code_postal": "08029"
+        }
+      ],
+      "nb_communes": 1
+    }
+  ]
+}

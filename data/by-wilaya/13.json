@@ -1,0 +1,457 @@
+{
+  "wilaya_num": 13,
+  "code": "13",
+  "nom_ar": "تلمسان",
+  "nom_fr": "Tlemcen",
+  "nom_en": "Tlemcen",
+  "nb_dairas": 19,
+  "nb_communes": 49,
+  "dairas": [
+    {
+      "nom_ar": "باب العسة",
+      "nom_fr": "Bab El Assa",
+      "nom_en": "Bab El Assa",
+      "communes": [
+        {
+          "nom_ar": "باب العسة",
+          "nom_fr": "Bab El Assa",
+          "nom_en": "Bab El Assa",
+          "code_postal": "13014"
+        },
+        {
+          "nom_ar": "سوق الثلاثاء",
+          "nom_fr": "Souk Tleta",
+          "nom_en": "Souk Tleta",
+          "code_postal": "13078"
+        },
+        {
+          "nom_ar": "السواني",
+          "nom_fr": "Souani",
+          "nom_en": "Souani",
+          "code_postal": "13046"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "منصورة",
+      "nom_fr": "Mansourah",
+      "nom_en": "Mansourah",
+      "communes": [
+        {
+          "nom_ar": "تيرني بني هديل",
+          "nom_fr": "Terny Beni Hediel",
+          "nom_en": "Terny Beni Hediel",
+          "code_postal": "13079"
+        },
+        {
+          "nom_ar": "منصورة",
+          "nom_fr": "Mansourah",
+          "nom_en": "Mansourah",
+          "code_postal": "13062"
+        },
+        {
+          "nom_ar": "بني مستر",
+          "nom_fr": "Beni Mester",
+          "nom_en": "Beni Mester",
+          "code_postal": "13038"
+        },
+        {
+          "nom_ar": "عين غرابة",
+          "nom_fr": "Ain Ghoraba",
+          "nom_en": "Ain Ghoraba",
+          "code_postal": "13023"
+        }
+      ],
+      "nb_communes": 4
+    },
+    {
+      "nom_ar": "شتوان",
+      "nom_fr": "Chetouane",
+      "nom_en": "Chetouane",
+      "communes": [
+        {
+          "nom_ar": "شتوان",
+          "nom_fr": "Chetouane",
+          "nom_en": "Chetouane",
+          "code_postal": "13048"
+        },
+        {
+          "nom_ar": "عمير",
+          "nom_fr": "Amieur",
+          "nom_en": "Amieur",
+          "code_postal": "13058"
+        },
+        {
+          "nom_ar": "عين فزة",
+          "nom_fr": "Ain Fezza",
+          "nom_en": "Ain Fezza",
+          "code_postal": "13022"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "هنين",
+      "nom_fr": "Honnaine",
+      "nom_en": "Honnaine",
+      "communes": [
+        {
+          "nom_ar": "هنين",
+          "nom_fr": "Honnaine",
+          "nom_en": "Honnaine",
+          "code_postal": "13015"
+        },
+        {
+          "nom_ar": "بني خلاد",
+          "nom_fr": "Beni Khellad",
+          "nom_en": "Beni Khellad",
+          "code_postal": "13074"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "ندرومة",
+      "nom_fr": "Nedroma",
+      "nom_en": "Nedroma",
+      "communes": [
+        {
+          "nom_ar": "ندرومة",
+          "nom_fr": "Nedroma",
+          "nom_en": "Nedroma",
+          "code_postal": "13004"
+        },
+        {
+          "nom_ar": "جبالة",
+          "nom_fr": "Djebala",
+          "nom_en": "Djebala",
+          "code_postal": "13029"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "مرسى بن مهيدي",
+      "nom_fr": "Marsa Ben Mehdi",
+      "nom_en": "Marsa Ben Mehdi",
+      "communes": [
+        {
+          "nom_ar": "مسيردة الفواقة",
+          "nom_fr": "M'sirda Fouaga",
+          "nom_en": "M'sirda Fouaga",
+          "code_postal": "13024"
+        },
+        {
+          "nom_ar": "مرسى بن مهيدي",
+          "nom_fr": "Marsa Ben M'hidi",
+          "nom_en": "Marsa Ben M'hidi",
+          "code_postal": "13017"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "بني بوسعيد",
+      "nom_fr": "Beni Boussaid",
+      "nom_en": "Beni Boussaid",
+      "communes": [
+        {
+          "nom_ar": "سيدي مجاهد",
+          "nom_fr": "Sidi Medjahed",
+          "nom_en": "Sidi Medjahed",
+          "code_postal": "13044"
+        },
+        {
+          "nom_ar": "بني بوسعيد",
+          "nom_fr": "Beni Boussaid",
+          "nom_en": "Beni Boussaid",
+          "code_postal": null
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "سبدو",
+      "nom_fr": "Sebdou",
+      "nom_en": "Sebdou",
+      "communes": [
+        {
+          "nom_ar": "سبدو",
+          "nom_fr": "Sebdou",
+          "nom_en": "Sebdou",
+          "code_postal": "13006"
+        }
+      ],
+      "nb_communes": 1
+    },
+    {
+      "nom_ar": "صبرة",
+      "nom_fr": "Sabra",
+      "nom_en": "Sabra",
+      "communes": [
+        {
+          "nom_ar": "بوحلو",
+          "nom_fr": "Bouhlou",
+          "nom_en": "Bouhlou",
+          "code_postal": "13026"
+        },
+        {
+          "nom_ar": "صبرة",
+          "nom_fr": "Sabra",
+          "nom_en": "Sabra",
+          "code_postal": "13011"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "مغنية",
+      "nom_fr": "Maghnia",
+      "nom_en": "Maghnia",
+      "communes": [
+        {
+          "nom_ar": "مغنية",
+          "nom_fr": "Maghnia",
+          "nom_en": "Maghnia",
+          "code_postal": "13001"
+        },
+        {
+          "nom_ar": "حمام بوغرارة",
+          "nom_fr": "Hammam Boughrara",
+          "nom_en": "Hammam Boughrara",
+          "code_postal": "13036"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "الحناية",
+      "nom_fr": "Hennaya",
+      "nom_en": "Hennaya",
+      "communes": [
+        {
+          "nom_ar": "زناتة",
+          "nom_fr": "Zenata",
+          "nom_en": "Zenata",
+          "code_postal": "13051"
+        },
+        {
+          "nom_ar": "أولاد رياح",
+          "nom_fr": "Ouled Riyah",
+          "nom_en": "Ouled Riyah",
+          "code_postal": "13070"
+        },
+        {
+          "nom_ar": "الحناية",
+          "nom_fr": "Hennaya",
+          "nom_en": "Hennaya",
+          "code_postal": "13009"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "بن سكران",
+      "nom_fr": "Bensekrane",
+      "nom_en": "Bensekrane",
+      "communes": [
+        {
+          "nom_ar": "سيدي العبدلي",
+          "nom_fr": "Sidi Abdelli",
+          "nom_en": "Sidi Abdelli",
+          "code_postal": "13019"
+        },
+        {
+          "nom_ar": "بن سكران",
+          "nom_fr": "Bensekrane",
+          "nom_en": "Bensekrane",
+          "code_postal": "13008"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "فلاوسن",
+      "nom_fr": "Fellaoucene",
+      "nom_en": "Fellaoucene",
+      "communes": [
+        {
+          "nom_ar": "فلاوسن",
+          "nom_fr": "Fellaoucene",
+          "nom_en": "Fellaoucene",
+          "code_postal": "13035"
+        },
+        {
+          "nom_ar": "عين الكبيرة",
+          "nom_fr": "Ain Kebira",
+          "nom_en": "Ain Kebira",
+          "code_postal": "13049"
+        },
+        {
+          "nom_ar": "عين فتاح",
+          "nom_fr": "Ain Fetah",
+          "nom_en": "Ain Fetah",
+          "code_postal": "13028"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "تلمسان",
+      "nom_fr": "Tlemcen",
+      "nom_en": "Tlemcen",
+      "communes": [
+        {
+          "nom_ar": "تلمسان",
+          "nom_fr": "Tlemcen",
+          "nom_en": "Tlemcen",
+          "code_postal": "13000"
+        }
+      ],
+      "nb_communes": 1
+    },
+    {
+      "nom_ar": "عين تالوت",
+      "nom_fr": "Ain Tellout",
+      "nom_en": "Ain Tellout",
+      "communes": [
+        {
+          "nom_ar": "عين النحالة",
+          "nom_fr": "Ain Nehala",
+          "nom_en": "Ain Nehala",
+          "code_postal": "13054"
+        },
+        {
+          "nom_ar": "عين تالوت",
+          "nom_fr": "Ain Tellout",
+          "nom_en": "Ain Tellout",
+          "code_postal": "13012"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "الرمشي",
+      "nom_fr": "Remchi",
+      "nom_en": "Remchi",
+      "communes": [
+        {
+          "nom_ar": "عين يوسف",
+          "nom_fr": "Ain Youcef",
+          "nom_en": "Ain Youcef",
+          "code_postal": "13013"
+        },
+        {
+          "nom_ar": "بني وارسوس",
+          "nom_fr": "Beni Ouarsous",
+          "nom_en": "Beni Ouarsous",
+          "code_postal": "13025"
+        },
+        {
+          "nom_ar": "الفحول",
+          "nom_fr": "El Fehoul",
+          "nom_en": "El Fehoul",
+          "code_postal": "13033"
+        },
+        {
+          "nom_ar": "الرمشي",
+          "nom_fr": "Remchi",
+          "nom_en": "Remchi",
+          "code_postal": "13005"
+        },
+        {
+          "nom_ar": "سبعة شيوخ",
+          "nom_fr": "Sebbaa Chioukh",
+          "nom_en": "Sebbaa Chioukh",
+          "code_postal": "13042"
+        }
+      ],
+      "nb_communes": 5
+    },
+    {
+      "nom_ar": "الغزوات",
+      "nom_fr": "Ghazaouet",
+      "nom_en": "Ghazaouet",
+      "communes": [
+        {
+          "nom_ar": "دار يغمراسن",
+          "nom_fr": "Dar Yaghmoracen",
+          "nom_en": "Dar Yaghmoracen",
+          "code_postal": "13032"
+        },
+        {
+          "nom_ar": "الغزوات",
+          "nom_fr": "Ghazaouet",
+          "nom_en": "Ghazaouet",
+          "code_postal": "13002"
+        },
+        {
+          "nom_ar": "السواحلية",
+          "nom_fr": "Souahlia",
+          "nom_en": "Souahlia",
+          "code_postal": "13020"
+        },
+        {
+          "nom_ar": "تيانت",
+          "nom_fr": "Tianet",
+          "nom_en": "Tianet",
+          "code_postal": "13047"
+        }
+      ],
+      "nb_communes": 4
+    },
+    {
+      "nom_ar": "أولاد ميمون",
+      "nom_fr": "Ouled Mimoun",
+      "nom_en": "Ouled Mimoun",
+      "communes": [
+        {
+          "nom_ar": "بني صميل",
+          "nom_fr": "Beni Smiel",
+          "nom_en": "Beni Smiel",
+          "code_postal": "13083"
+        },
+        {
+          "nom_ar": "وادي الخضر",
+          "nom_fr": "Oued Lakhdar",
+          "nom_en": "Oued Lakhdar",
+          "code_postal": "13068"
+        },
+        {
+          "nom_ar": "أولاد ميمون",
+          "nom_fr": "Ouled Mimoun",
+          "nom_en": "Ouled Mimoun",
+          "code_postal": "13010"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "بني سنوس",
+      "nom_fr": "Beni Snous",
+      "nom_en": "Beni Snous",
+      "communes": [
+        {
+          "nom_ar": "بني بهدل",
+          "nom_fr": "Beni Bahdel",
+          "nom_en": "Beni Bahdel",
+          "code_postal": "13060"
+        },
+        {
+          "nom_ar": "بني سنوس",
+          "nom_fr": "Beni Snous",
+          "nom_en": "Beni Snous",
+          "code_postal": "13037"
+        },
+        {
+          "nom_ar": "العزايل",
+          "nom_fr": "Azail",
+          "nom_en": "Azail",
+          "code_postal": "13080"
+        }
+      ],
+      "nb_communes": 3
+    }
+  ]
+}

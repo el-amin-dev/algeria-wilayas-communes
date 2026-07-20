@@ -1,0 +1,237 @@
+{
+  "wilaya_num": 64,
+  "code": "64",
+  "nom_ar": "بوسعادة",
+  "nom_fr": "Bou Saada",
+  "nom_en": "Bou Saada",
+  "nb_dairas": 11,
+  "nb_communes": 23,
+  "dairas": [
+    {
+      "nom_ar": "عين الحجل",
+      "nom_fr": "Ain El Hadjel",
+      "nom_en": "Ain El Hadjel",
+      "communes": [
+        {
+          "nom_ar": "سيدي هجرس",
+          "nom_fr": "Sidi Hadjeres",
+          "nom_en": "Sidi Hadjeres",
+          "code_postal": "28036"
+        }
+      ],
+      "nb_communes": 1
+    },
+    {
+      "nom_ar": "بوسعادة",
+      "nom_fr": "Bousaada",
+      "nom_en": "Bousaada",
+      "communes": [
+        {
+          "nom_ar": "بوسعادة",
+          "nom_fr": "Bou Saada",
+          "nom_en": "Bou Saada",
+          "code_postal": "28001"
+        },
+        {
+          "nom_ar": "الهامل",
+          "nom_fr": "El Hamel",
+          "nom_en": "El Hamel",
+          "code_postal": "28015"
+        },
+        {
+          "nom_ar": "ولتام",
+          "nom_fr": "Oulteme",
+          "nom_en": "Oulteme",
+          "code_postal": "28054"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "أولاد سيدي ابراهيم",
+      "nom_fr": "Ouled Sidi Brahim",
+      "nom_en": "Ouled Sidi Brahim",
+      "communes": [
+        {
+          "nom_ar": "بن زوه",
+          "nom_fr": "Benzouh",
+          "nom_en": "Benzouh",
+          "code_postal": "28028"
+        },
+        {
+          "nom_ar": "أولاد سيدي ابراهيم",
+          "nom_fr": "Ouled Sidi Brahim",
+          "nom_en": "Ouled Sidi Brahim",
+          "code_postal": "28032"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "سيدي عامر",
+      "nom_fr": "Sidi Ameur",
+      "nom_en": "Sidi Ameur",
+      "communes": [
+        {
+          "nom_ar": "سيدي عامر",
+          "nom_fr": "Sidi Ameur",
+          "nom_en": "Sidi Ameur",
+          "code_postal": null
+        },
+        {
+          "nom_ar": "تامسة",
+          "nom_fr": "Tamsa",
+          "nom_en": "Tamsa",
+          "code_postal": "28065"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "بن سرور",
+      "nom_fr": "Ben Srour",
+      "nom_en": "Ben Srour",
+      "communes": [
+        {
+          "nom_ar": "بن سرور",
+          "nom_fr": "Ben Srour",
+          "nom_en": "Ben Srour",
+          "code_postal": "28009"
+        },
+        {
+          "nom_ar": "محمد بوضياف",
+          "nom_fr": "Mohamed Boudiaf",
+          "nom_en": "Mohamed Boudiaf",
+          "code_postal": "28033"
+        },
+        {
+          "nom_ar": "أولاد سليمان",
+          "nom_fr": "Ouled Slimane",
+          "nom_en": "Ouled Slimane",
+          "code_postal": "28031"
+        },
+        {
+          "nom_ar": "زرزور",
+          "nom_fr": "Zarzour",
+          "nom_en": "Zarzour",
+          "code_postal": "28067"
+        }
+      ],
+      "nb_communes": 4
+    },
+    {
+      "nom_ar": "عين الملح",
+      "nom_fr": "Ain El Melh",
+      "nom_en": "Ain El Melh",
+      "communes": [
+        {
+          "nom_ar": "عين الملح",
+          "nom_fr": "Ain El Melh",
+          "nom_en": "Ain El Melh",
+          "code_postal": "28004"
+        },
+        {
+          "nom_ar": "عين فارس",
+          "nom_fr": "Ain Fares",
+          "nom_en": "Ain Fares",
+          "code_postal": "28023"
+        },
+        {
+          "nom_ar": "عين الريش",
+          "nom_fr": "Ain Rich",
+          "nom_en": "Ain Rich",
+          "code_postal": "28025"
+        },
+        {
+          "nom_ar": "بئر فضة",
+          "nom_fr": "Bir Foda",
+          "nom_en": "Bir Foda",
+          "code_postal": "28043"
+        }
+      ],
+      "nb_communes": 4
+    },
+    {
+      "nom_ar": "سيدي امحمد",
+      "nom_fr": "Sidi M'hamed",
+      "nom_en": "Sidi M'hamed",
+      "communes": [
+        {
+          "nom_ar": "سيدي امحمد",
+          "nom_fr": "Sidi M'hamed",
+          "nom_en": "Sidi M'hamed",
+          "code_postal": "16002"
+        }
+      ],
+      "nb_communes": 1
+    },
+    {
+      "nom_ar": "امجدل",
+      "nom_fr": "Medjedel",
+      "nom_en": "Medjedel",
+      "communes": [
+        {
+          "nom_ar": "امجدل",
+          "nom_fr": "Medjedel",
+          "nom_en": "Medjedel",
+          "code_postal": "28016"
+        },
+        {
+          "nom_ar": "مناعة",
+          "nom_fr": "Menaa",
+          "nom_en": "Menaa",
+          "code_postal": "05012"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "جبل مساعد",
+      "nom_fr": "Djebel Messaad",
+      "nom_en": "Djebel Messaad",
+      "communes": [
+        {
+          "nom_ar": "سليم",
+          "nom_fr": "Slim",
+          "nom_en": "Slim",
+          "code_postal": "28037"
+        }
+      ],
+      "nb_communes": 1
+    },
+    {
+      "nom_ar": "أولاد دراج",
+      "nom_fr": "Ouled Derradj",
+      "nom_en": "Ouled Derradj",
+      "communes": [
+        {
+          "nom_ar": "المعاضيد",
+          "nom_fr": "Maadid",
+          "nom_en": "Maadid",
+          "code_postal": "28011"
+        },
+        {
+          "nom_ar": "المطارفة",
+          "nom_fr": "M'tarfa",
+          "nom_en": "M'tarfa",
+          "code_postal": "01033"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "شلال",
+      "nom_fr": "Chellal",
+      "nom_en": "Chellal",
+      "communes": [
+        {
+          "nom_ar": "معاريف",
+          "nom_fr": "Maarif",
+          "nom_en": "Maarif",
+          "code_postal": "28041"
+        }
+      ],
+      "nb_communes": 1
+    }
+  ]
+}

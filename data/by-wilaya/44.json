@@ -1,0 +1,347 @@
+{
+  "wilaya_num": 44,
+  "code": "44",
+  "nom_ar": "عين الدفلى",
+  "nom_fr": "Ain Defla",
+  "nom_en": "Ain Defla",
+  "nb_dairas": 15,
+  "nb_communes": 36,
+  "dairas": [
+    {
+      "nom_ar": "خميس",
+      "nom_fr": "Khemis",
+      "nom_en": "Khemis",
+      "communes": [
+        {
+          "nom_ar": "خميس مليانة",
+          "nom_fr": "Khemis-Miliana",
+          "nom_en": "Khemis-Miliana",
+          "code_postal": "44001"
+        },
+        {
+          "nom_ar": "سيدي الأخضر",
+          "nom_fr": "Sidi-Lakhdar",
+          "nom_en": "Sidi-Lakhdar",
+          "code_postal": "27007"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "حمام ريغة",
+      "nom_fr": "Hammam Righa",
+      "nom_en": "Hammam Righa",
+      "communes": [
+        {
+          "nom_ar": "عين البنيان",
+          "nom_fr": "Ain-Benian",
+          "nom_en": "Ain-Benian",
+          "code_postal": "44035"
+        },
+        {
+          "nom_ar": "عين التركي",
+          "nom_fr": "Ain-Torki",
+          "nom_en": "Ain-Torki",
+          "code_postal": "44020"
+        },
+        {
+          "nom_ar": "حمام ريغة",
+          "nom_fr": "Hammam-Righa",
+          "nom_en": "Hammam-Righa",
+          "code_postal": "44023"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "جليدة",
+      "nom_fr": "Djelida",
+      "nom_en": "Djelida",
+      "communes": [
+        {
+          "nom_ar": "بوراشد",
+          "nom_fr": "Bourached",
+          "nom_en": "Bourached",
+          "code_postal": "44044"
+        },
+        {
+          "nom_ar": "جليدة",
+          "nom_fr": "Djelida",
+          "nom_en": "Djelida",
+          "code_postal": "44009"
+        },
+        {
+          "nom_ar": "جمعة أولاد الشيخ",
+          "nom_fr": "Djemaa Ouled Cheikh",
+          "nom_en": "Djemaa Ouled Cheikh",
+          "code_postal": "44047"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "بومدفع",
+      "nom_fr": "Boumedfaa",
+      "nom_en": "Boumedfaa",
+      "communes": [
+        {
+          "nom_ar": "الحسينية",
+          "nom_fr": "Hoceinia",
+          "nom_en": "Hoceinia",
+          "code_postal": "44048"
+        },
+        {
+          "nom_ar": "بومدفع",
+          "nom_fr": "Boumedfaa",
+          "nom_en": "Boumedfaa",
+          "code_postal": "44004"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "العامرة",
+      "nom_fr": "El Amra",
+      "nom_en": "El Amra",
+      "communes": [
+        {
+          "nom_ar": "عريب",
+          "nom_fr": "Arib",
+          "nom_en": "Arib",
+          "code_postal": "44008"
+        },
+        {
+          "nom_ar": "العامرة",
+          "nom_fr": "El-Amra",
+          "nom_en": "El-Amra",
+          "code_postal": "44010"
+        },
+        {
+          "nom_ar": "المخاطرية",
+          "nom_fr": "Mekhatria",
+          "nom_en": "Mekhatria",
+          "code_postal": "44050"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "العطاف",
+      "nom_fr": "El Attaf",
+      "nom_en": "El Attaf",
+      "communes": [
+        {
+          "nom_ar": "العطاف",
+          "nom_fr": "El-Attaf",
+          "nom_en": "El-Attaf",
+          "code_postal": "44002"
+        },
+        {
+          "nom_ar": "تبركانين",
+          "nom_fr": "Tiberkanine",
+          "nom_en": "Tiberkanine",
+          "code_postal": "44030"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "العبادية",
+      "nom_fr": "El Abadia",
+      "nom_en": "El Abadia",
+      "communes": [
+        {
+          "nom_ar": "عين بويحيى",
+          "nom_fr": "Ain-Bouyahia",
+          "nom_en": "Ain-Bouyahia",
+          "code_postal": "44032"
+        },
+        {
+          "nom_ar": "العبادية",
+          "nom_fr": "El-Abadia",
+          "nom_en": "El-Abadia",
+          "code_postal": "44006"
+        },
+        {
+          "nom_ar": "تاشتة زقاغة",
+          "nom_fr": "Tacheta Zegagha",
+          "nom_en": "Tacheta Zegagha",
+          "code_postal": "44028"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "جندل",
+      "nom_fr": "Djendel",
+      "nom_en": "Djendel",
+      "communes": [
+        {
+          "nom_ar": "بربوش",
+          "nom_fr": "Birbouche",
+          "nom_en": "Birbouche",
+          "code_postal": "44042"
+        },
+        {
+          "nom_ar": "جندل",
+          "nom_fr": "Djendel",
+          "nom_en": "Djendel",
+          "code_postal": "44005"
+        },
+        {
+          "nom_ar": "وادي الشرفاء",
+          "nom_fr": "Oued Chorfa",
+          "nom_en": "Oued Chorfa",
+          "code_postal": "44024"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "مليانة",
+      "nom_fr": "Miliana",
+      "nom_en": "Miliana",
+      "communes": [
+        {
+          "nom_ar": "بن علال",
+          "nom_fr": "Ben Allal",
+          "nom_en": "Ben Allal",
+          "code_postal": "44040"
+        },
+        {
+          "nom_ar": "مليانة",
+          "nom_fr": "Miliana",
+          "nom_en": "Miliana",
+          "code_postal": "44003"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "عين الاشياخ",
+      "nom_fr": "Ain Lechiakh",
+      "nom_en": "Ain Lechiakh",
+      "communes": [
+        {
+          "nom_ar": "عين الاشياخ",
+          "nom_fr": "Ain-Lechiakh",
+          "nom_en": "Ain-Lechiakh",
+          "code_postal": "44018"
+        },
+        {
+          "nom_ar": "واد الجمعة",
+          "nom_fr": "Oued Djemaa",
+          "nom_en": "Oued Djemaa",
+          "code_postal": "44049"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "أولاد ابراهيم",
+      "nom_fr": "Ouled Brahim",
+      "nom_en": "Ouled Brahim",
+      "communes": [
+        {
+          "nom_ar": "عين السلطان",
+          "nom_fr": "Ain-Soltane",
+          "nom_en": "Ain-Soltane",
+          "code_postal": "20029"
+        }
+      ],
+      "nb_communes": 1
+    },
+    {
+      "nom_ar": "الروينة",
+      "nom_fr": "Rouina",
+      "nom_en": "Rouina",
+      "communes": [
+        {
+          "nom_ar": "الماين",
+          "nom_fr": "El-Maine",
+          "nom_en": "El-Maine",
+          "code_postal": "44051"
+        },
+        {
+          "nom_ar": "الروينة",
+          "nom_fr": "Rouina",
+          "nom_en": "Rouina",
+          "code_postal": "44017"
+        },
+        {
+          "nom_ar": "زدين",
+          "nom_fr": "Zeddine",
+          "nom_en": "Zeddine",
+          "code_postal": "44031"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "برج الأمير خالد",
+      "nom_fr": "Bordj El Emir Khaled",
+      "nom_en": "Bordj El Emir Khaled",
+      "communes": [
+        {
+          "nom_ar": "بئر ولد خليفة",
+          "nom_fr": "Bir-Ould-Khelifa",
+          "nom_en": "Bir-Ould-Khelifa",
+          "code_postal": "44043"
+        },
+        {
+          "nom_ar": "برج الأمير خالد",
+          "nom_fr": "Bordj-Emir-Khaled",
+          "nom_en": "Bordj-Emir-Khaled",
+          "code_postal": "44021"
+        },
+        {
+          "nom_ar": "طارق بن زياد",
+          "nom_fr": "Tarik-Ibn-Ziad",
+          "nom_en": "Tarik-Ibn-Ziad",
+          "code_postal": "44029"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "بطحية",
+      "nom_fr": "Bathia",
+      "nom_en": "Bathia",
+      "communes": [
+        {
+          "nom_ar": "بطحية",
+          "nom_fr": "Bathia",
+          "nom_en": "Bathia",
+          "code_postal": "44041"
+        },
+        {
+          "nom_ar": "بلعاص",
+          "nom_fr": "Belaas",
+          "nom_en": "Belaas",
+          "code_postal": "44038"
+        },
+        {
+          "nom_ar": "الحسانية",
+          "nom_fr": "Hassania",
+          "nom_en": "Hassania",
+          "code_postal": "44022"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "عين الدفلى",
+      "nom_fr": "Ain Defla",
+      "nom_en": "Ain Defla",
+      "communes": [
+        {
+          "nom_ar": "عين الدفلى",
+          "nom_fr": "Ain-Defla",
+          "nom_en": "Ain-Defla",
+          "code_postal": "44000"
+        }
+      ],
+      "nb_communes": 1
+    }
+  ]
+}

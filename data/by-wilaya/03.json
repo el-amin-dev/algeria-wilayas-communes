@@ -1,0 +1,123 @@
+{
+  "wilaya_num": 3,
+  "code": "03",
+  "nom_ar": "الأغواط",
+  "nom_fr": "Laghouat",
+  "nom_en": "Laghouat",
+  "nb_dairas": 5,
+  "nb_communes": 12,
+  "dairas": [
+    {
+      "nom_ar": "عين ماضي",
+      "nom_fr": "Ain Madhi",
+      "nom_en": "Ain Madhi",
+      "communes": [
+        {
+          "nom_ar": "تاجموت",
+          "nom_fr": "Tadjemout",
+          "nom_en": "Tadjemout",
+          "code_postal": "03007"
+        },
+        {
+          "nom_ar": "تاجرونة",
+          "nom_fr": "Tadjrouna",
+          "nom_en": "Tadjrouna",
+          "code_postal": "03011"
+        },
+        {
+          "nom_ar": "عين ماضي",
+          "nom_fr": "Ain Madhi",
+          "nom_en": "Ain Madhi",
+          "code_postal": "03012"
+        },
+        {
+          "nom_ar": "الحويطة",
+          "nom_fr": "El Haouaita",
+          "nom_en": "El Haouaita",
+          "code_postal": "03040"
+        },
+        {
+          "nom_ar": "الخنق",
+          "nom_fr": "Kheneg",
+          "nom_en": "Kheneg",
+          "code_postal": "03010"
+        }
+      ],
+      "nb_communes": 5
+    },
+    {
+      "nom_ar": "الأغواط",
+      "nom_fr": "Laghouat",
+      "nom_en": "Laghouat",
+      "communes": [
+        {
+          "nom_ar": "الأغواط",
+          "nom_fr": "Laghouat",
+          "nom_en": "Laghouat",
+          "code_postal": "03000"
+        }
+      ],
+      "nb_communes": 1
+    },
+    {
+      "nom_ar": "قصر الحيران",
+      "nom_fr": "Ksar El Hirane",
+      "nom_en": "Ksar El Hirane",
+      "communes": [
+        {
+          "nom_ar": "قصر الحيران",
+          "nom_fr": "Ksar El Hirane",
+          "nom_en": "Ksar El Hirane",
+          "code_postal": "03003"
+        },
+        {
+          "nom_ar": "بن ناصر بن شهرة",
+          "nom_fr": "Benacer Benchohra",
+          "nom_en": "Benacer Benchohra",
+          "code_postal": "03033"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "سيدي مخلوف",
+      "nom_fr": "Sidi Makhlouf",
+      "nom_en": "Sidi Makhlouf",
+      "communes": [
+        {
+          "nom_ar": "العسافية",
+          "nom_fr": "El Assafia",
+          "nom_en": "El Assafia",
+          "code_postal": "03014"
+        },
+        {
+          "nom_ar": "سيدي مخلوف",
+          "nom_fr": "Sidi Makhlouf",
+          "nom_en": "Sidi Makhlouf",
+          "code_postal": "03019"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "حاسي الرمل",
+      "nom_fr": "Hassi R'mel",
+      "nom_en": "Hassi R'mel",
+      "communes": [
+        {
+          "nom_ar": "حاسي الدلاعة",
+          "nom_fr": "Hassi Delaa",
+          "nom_en": "Hassi Delaa",
+          "code_postal": "03022"
+        },
+        {
+          "nom_ar": "حاسي الرمل",
+          "nom_fr": "Hassi R'mel",
+          "nom_en": "Hassi R'mel",
+          "code_postal": "03004"
+        }
+      ],
+      "nb_communes": 2
+    }
+  ]
+}

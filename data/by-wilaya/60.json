@@ -1,0 +1,93 @@
+{
+  "wilaya_num": 60,
+  "code": "60",
+  "nom_ar": "الأبيض سيدي الشيخ",
+  "nom_fr": "El Abiodh Sidi Cheikh",
+  "nom_en": "El Abiodh Sidi Cheikh",
+  "nb_dairas": 5,
+  "nb_communes": 7,
+  "dairas": [
+    {
+      "nom_ar": "بريزينة",
+      "nom_fr": "Brezina",
+      "nom_en": "Brezina",
+      "communes": [
+        {
+          "nom_ar": "بريزينة",
+          "nom_fr": "Brezina",
+          "nom_en": "Brezina",
+          "code_postal": "32002"
+        },
+        {
+          "nom_ar": "الغاسول",
+          "nom_fr": "Ghassoul",
+          "nom_en": "Ghassoul",
+          "code_postal": "32017"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "الأبيض سيدي الشيخ",
+      "nom_fr": "Labiodh Sidi Cheikh",
+      "nom_en": "Labiodh Sidi Cheikh",
+      "communes": [
+        {
+          "nom_ar": "الأبيض سيدي الشيخ",
+          "nom_fr": "Labiodh Sidi Cheikh",
+          "nom_en": "Labiodh Sidi Cheikh",
+          "code_postal": "32003"
+        },
+        {
+          "nom_ar": "اربوات",
+          "nom_fr": "Arbaouat",
+          "nom_en": "Arbaouat",
+          "code_postal": "32005"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "بوسمغون",
+      "nom_fr": "Boussemghoun",
+      "nom_en": "Boussemghoun",
+      "communes": [
+        {
+          "nom_ar": "بوسمغون",
+          "nom_fr": "Boussemghoun",
+          "nom_en": "Boussemghoun",
+          "code_postal": "32014"
+        }
+      ],
+      "nb_communes": 1
+    },
+    {
+      "nom_ar": "رقاصة",
+      "nom_fr": "Rogassa",
+      "nom_en": "Rogassa",
+      "communes": [
+        {
+          "nom_ar": "الشقيق",
+          "nom_fr": "Cheguig",
+          "nom_en": "Cheguig",
+          "code_postal": "32022"
+        }
+      ],
+      "nb_communes": 1
+    },
+    {
+      "nom_ar": "شلالة",
+      "nom_fr": "Chellala",
+      "nom_en": "Chellala",
+      "communes": [
+        {
+          "nom_ar": "شلالة",
+          "nom_fr": "Chellala",
+          "nom_en": "Chellala",
+          "code_postal": "32015"
+        }
+      ],
+      "nb_communes": 1
+    }
+  ]
+}

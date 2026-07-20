@@ -1,0 +1,267 @@
+{
+  "wilaya_num": 42,
+  "code": "42",
+  "nom_ar": "تيبازة",
+  "nom_fr": "Tipaza",
+  "nom_en": "Tipaza",
+  "nb_dairas": 11,
+  "nb_communes": 28,
+  "dairas": [
+    {
+      "nom_ar": "حجوط",
+      "nom_fr": "Hadjout",
+      "nom_en": "Hadjout",
+      "communes": [
+        {
+          "nom_ar": "حجوط",
+          "nom_fr": "Hadjout",
+          "nom_en": "Hadjout",
+          "code_postal": "42001"
+        },
+        {
+          "nom_ar": "مراد",
+          "nom_fr": "Merad",
+          "nom_en": "Merad",
+          "code_postal": "42019"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "سيدي أعمر",
+      "nom_fr": "Sidi Amar",
+      "nom_en": "Sidi Amar",
+      "communes": [
+        {
+          "nom_ar": "مناصر",
+          "nom_fr": "Menaceur",
+          "nom_en": "Menaceur",
+          "code_postal": "42018"
+        },
+        {
+          "nom_ar": "الناظور",
+          "nom_fr": "Nador",
+          "nom_en": "Nador",
+          "code_postal": "42039"
+        },
+        {
+          "nom_ar": "سيدي عامر",
+          "nom_fr": "Sidi-Amar",
+          "nom_en": "Sidi-Amar",
+          "code_postal": "20019"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "قوراية",
+      "nom_fr": "Gouraya",
+      "nom_en": "Gouraya",
+      "communes": [
+        {
+          "nom_ar": "أغبال",
+          "nom_fr": "Aghbal",
+          "nom_en": "Aghbal",
+          "code_postal": "42035"
+        },
+        {
+          "nom_ar": "قوراية",
+          "nom_fr": "Gouraya",
+          "nom_en": "Gouraya",
+          "code_postal": "42007"
+        },
+        {
+          "nom_ar": "مسلمون",
+          "nom_fr": "Messelmoun",
+          "nom_en": "Messelmoun",
+          "code_postal": "42036"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "شرشال",
+      "nom_fr": "Cherchell",
+      "nom_en": "Cherchell",
+      "communes": [
+        {
+          "nom_ar": "شرشال",
+          "nom_fr": "Cherchell",
+          "nom_en": "Cherchell",
+          "code_postal": "42002"
+        },
+        {
+          "nom_ar": "حجرة النص",
+          "nom_fr": "Hadjret Ennous",
+          "nom_en": "Hadjret Ennous",
+          "code_postal": "42029"
+        },
+        {
+          "nom_ar": "سيدي غيلاس",
+          "nom_fr": "Sidi Ghiles",
+          "nom_en": "Sidi Ghiles",
+          "code_postal": "42021"
+        },
+        {
+          "nom_ar": "سيدي سميان",
+          "nom_fr": "Sidi Semiane",
+          "nom_en": "Sidi Semiane",
+          "code_postal": "42041"
+        }
+      ],
+      "nb_communes": 4
+    },
+    {
+      "nom_ar": "الداموس",
+      "nom_fr": "Damous",
+      "nom_en": "Damous",
+      "communes": [
+        {
+          "nom_ar": "الداموس",
+          "nom_fr": "Damous",
+          "nom_en": "Damous",
+          "code_postal": "42014"
+        },
+        {
+          "nom_ar": "الأرهاط",
+          "nom_fr": "Larhat",
+          "nom_en": "Larhat",
+          "code_postal": "42017"
+        },
+        {
+          "nom_ar": "بني ميلك",
+          "nom_fr": "Beni Mileuk",
+          "nom_en": "Beni Mileuk",
+          "code_postal": "42024"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "فوكة",
+      "nom_fr": "Fouka",
+      "nom_en": "Fouka",
+      "communes": [
+        {
+          "nom_ar": "فوكة",
+          "nom_fr": "Fouka",
+          "nom_en": "Fouka",
+          "code_postal": "42006"
+        },
+        {
+          "nom_ar": "دواودة",
+          "nom_fr": "Douaouda",
+          "nom_en": "Douaouda",
+          "code_postal": "42015"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "بواسماعيل",
+      "nom_fr": "Bou Ismail",
+      "nom_en": "Bou Ismail",
+      "communes": [
+        {
+          "nom_ar": "عين تاقورايت",
+          "nom_fr": "Ain Tagourait",
+          "nom_en": "Ain Tagourait",
+          "code_postal": "42023"
+        },
+        {
+          "nom_ar": "بوهارون",
+          "nom_fr": "Bou Haroun",
+          "nom_en": "Bou Haroun",
+          "code_postal": "42009"
+        },
+        {
+          "nom_ar": "بواسماعيل",
+          "nom_fr": "Bou Ismail",
+          "nom_en": "Bou Ismail",
+          "code_postal": "42004"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "خميستي",
+      "nom_fr": "Khemisti",
+      "nom_en": "Khemisti",
+      "communes": [
+        {
+          "nom_ar": "خميستي",
+          "nom_fr": "Khemisti",
+          "nom_en": "Khemisti",
+          "code_postal": "38016"
+        }
+      ],
+      "nb_communes": 1
+    },
+    {
+      "nom_ar": "أحمر العين",
+      "nom_fr": "Ahmar El Ain",
+      "nom_en": "Ahmar El Ain",
+      "communes": [
+        {
+          "nom_ar": "أحمر العين",
+          "nom_fr": "Ahmer El Ain",
+          "nom_en": "Ahmer El Ain",
+          "code_postal": "42005"
+        },
+        {
+          "nom_ar": "بورقيقة",
+          "nom_fr": "Bourkika",
+          "nom_en": "Bourkika",
+          "code_postal": "42011"
+        },
+        {
+          "nom_ar": "سيدي راشد",
+          "nom_fr": "Sidi Rached",
+          "nom_en": "Sidi Rached",
+          "code_postal": "42040"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "القليعة",
+      "nom_fr": "Kolea",
+      "nom_en": "Kolea",
+      "communes": [
+        {
+          "nom_ar": "الحطاطبة",
+          "nom_fr": "Attatba",
+          "nom_en": "Attatba",
+          "code_postal": "42008"
+        },
+        {
+          "nom_ar": "الشعيبة",
+          "nom_fr": "Chaiba",
+          "nom_en": "Chaiba",
+          "code_postal": "42047"
+        },
+        {
+          "nom_ar": "القليعة",
+          "nom_fr": "Kolea",
+          "nom_en": "Kolea",
+          "code_postal": "42003"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "تيبازة",
+      "nom_fr": "Tipaza",
+      "nom_en": "Tipaza",
+      "communes": [
+        {
+          "nom_ar": "تيبازة",
+          "nom_fr": "Tipaza",
+          "nom_en": "Tipaza",
+          "code_postal": "42000"
+        }
+      ],
+      "nb_communes": 1
+    }
+  ]
+}

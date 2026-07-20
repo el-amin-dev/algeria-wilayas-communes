@@ -1,0 +1,31 @@
+{
+  "wilaya_num": 56,
+  "code": "56",
+  "nom_ar": "جانت",
+  "nom_fr": "Djanet",
+  "nom_en": "Djanet",
+  "nb_dairas": 1,
+  "nb_communes": 2,
+  "dairas": [
+    {
+      "nom_ar": "جانت",
+      "nom_fr": "Djanet",
+      "nom_en": "Djanet",
+      "communes": [
+        {
+          "nom_ar": "جانت",
+          "nom_fr": "Djanet",
+          "nom_en": "Djanet",
+          "code_postal": "33002"
+        },
+        {
+          "nom_ar": "برج الحواس",
+          "nom_fr": "Bordj El Haouass",
+          "nom_en": "Bordj El Haouass",
+          "code_postal": "33008"
+        }
+      ],
+      "nb_communes": 2
+    }
+  ]
+}

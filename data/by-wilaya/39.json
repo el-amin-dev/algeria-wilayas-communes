@@ -1,0 +1,231 @@
+{
+  "wilaya_num": 39,
+  "code": "39",
+  "nom_ar": "الوادي",
+  "nom_fr": "El Oued",
+  "nom_en": "El Oued",
+  "nb_dairas": 11,
+  "nb_communes": 22,
+  "dairas": [
+    {
+      "nom_ar": "الطالب العربي",
+      "nom_fr": "Taleb Larbi",
+      "nom_en": "Taleb Larbi",
+      "communes": [
+        {
+          "nom_ar": "دوار الماء",
+          "nom_fr": "Douar El Maa",
+          "nom_en": "Douar El Maa",
+          "code_postal": "39024"
+        },
+        {
+          "nom_ar": "بن  قشة",
+          "nom_fr": "Ben Guecha",
+          "nom_en": "Ben Guecha",
+          "code_postal": "39048"
+        },
+        {
+          "nom_ar": "الطالب العربي",
+          "nom_fr": "Taleb Larbi",
+          "nom_en": "Taleb Larbi",
+          "code_postal": "39019"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "العقلة",
+      "nom_fr": "El Ogla",
+      "nom_en": "El Ogla",
+      "communes": [
+        {
+          "nom_ar": "العقلة",
+          "nom_fr": "El Ogla",
+          "nom_en": "El Ogla",
+          "code_postal": "12015"
+        }
+      ],
+      "nb_communes": 1
+    },
+    {
+      "nom_ar": "المقرن",
+      "nom_fr": "Magrane",
+      "nom_en": "Magrane",
+      "communes": [
+        {
+          "nom_ar": "المقرن",
+          "nom_fr": "Magrane",
+          "nom_en": "Magrane",
+          "code_postal": "39015"
+        },
+        {
+          "nom_ar": "سيدي عون",
+          "nom_fr": "Sidi Aoun",
+          "nom_en": "Sidi Aoun",
+          "code_postal": "39037"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "اميه وانسة",
+      "nom_fr": "Mih Ouensa",
+      "nom_en": "Mih Ouensa",
+      "communes": [
+        {
+          "nom_ar": "اميه وانسة",
+          "nom_fr": "Mih Ouansa",
+          "nom_en": "Mih Ouansa",
+          "code_postal": "39030"
+        },
+        {
+          "nom_ar": "وادي العلندة",
+          "nom_fr": "Oued El Alenda",
+          "nom_en": "Oued El Alenda",
+          "code_postal": "39033"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "الوادي",
+      "nom_fr": "El Oued",
+      "nom_en": "El Oued",
+      "communes": [
+        {
+          "nom_ar": "كوينين",
+          "nom_fr": "Kouinine",
+          "nom_en": "Kouinine",
+          "code_postal": "39014"
+        },
+        {
+          "nom_ar": "الوادي",
+          "nom_fr": "El-Oued",
+          "nom_en": "El-Oued",
+          "code_postal": "39000"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "البياضة",
+      "nom_fr": "Bayadha",
+      "nom_en": "Bayadha",
+      "communes": [
+        {
+          "nom_ar": "البياضة",
+          "nom_fr": "Bayadha",
+          "nom_en": "Bayadha",
+          "code_postal": "39007"
+        }
+      ],
+      "nb_communes": 1
+    },
+    {
+      "nom_ar": "الرباح",
+      "nom_fr": "Robbah",
+      "nom_en": "Robbah",
+      "communes": [
+        {
+          "nom_ar": "النخلة",
+          "nom_fr": "Nakhla",
+          "nom_en": "Nakhla",
+          "code_postal": "39031"
+        },
+        {
+          "nom_ar": "الرباح",
+          "nom_fr": "Robbah",
+          "nom_en": "Robbah",
+          "code_postal": "39017"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "قمار",
+      "nom_fr": "Guemar",
+      "nom_en": "Guemar",
+      "communes": [
+        {
+          "nom_ar": "قمار",
+          "nom_fr": "Guemar",
+          "nom_en": "Guemar",
+          "code_postal": "39002"
+        },
+        {
+          "nom_ar": "ورماس",
+          "nom_fr": "Ourmes",
+          "nom_en": "Ourmes",
+          "code_postal": "39035"
+        },
+        {
+          "nom_ar": "تغزوت",
+          "nom_fr": "Taghzout",
+          "nom_en": "Taghzout",
+          "code_postal": "39083"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "الرقيبة",
+      "nom_fr": "Reguiba",
+      "nom_en": "Reguiba",
+      "communes": [
+        {
+          "nom_ar": "الحمراية",
+          "nom_fr": "Hamraia",
+          "nom_en": "Hamraia",
+          "code_postal": "39061"
+        },
+        {
+          "nom_ar": "الرقيبة",
+          "nom_fr": "Reguiba",
+          "nom_en": "Reguiba",
+          "code_postal": "39016"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "الدبيلة",
+      "nom_fr": "Debila",
+      "nom_en": "Debila",
+      "communes": [
+        {
+          "nom_ar": "الدبيلة",
+          "nom_fr": "Debila",
+          "nom_en": "Debila",
+          "code_postal": "39003"
+        },
+        {
+          "nom_ar": "حساني عبد الكريم",
+          "nom_fr": "Hassani Abdelkrim",
+          "nom_en": "Hassani Abdelkrim",
+          "code_postal": "39020"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "حاسي خليفة",
+      "nom_fr": "Hassi Khalifa",
+      "nom_en": "Hassi Khalifa",
+      "communes": [
+        {
+          "nom_ar": "حاسي خليفة",
+          "nom_fr": "Hassi Khalifa",
+          "nom_en": "Hassi Khalifa",
+          "code_postal": "39013"
+        },
+        {
+          "nom_ar": "الطريفاوي",
+          "nom_fr": "Trifaoui",
+          "nom_en": "Trifaoui",
+          "code_postal": "39044"
+        }
+      ],
+      "nb_communes": 2
+    }
+  ]
+}

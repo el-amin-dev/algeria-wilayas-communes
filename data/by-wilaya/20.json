@@ -1,0 +1,171 @@
+{
+  "wilaya_num": 20,
+  "code": "20",
+  "nom_ar": "سعيدة",
+  "nom_fr": "Saida",
+  "nom_en": "Saida",
+  "nb_dairas": 8,
+  "nb_communes": 16,
+  "dairas": [
+    {
+      "nom_ar": "سعيدة",
+      "nom_fr": "Saida",
+      "nom_en": "Saida",
+      "communes": [
+        {
+          "nom_ar": "سعيدة",
+          "nom_fr": "Saida",
+          "nom_en": "Saida",
+          "code_postal": "20000"
+        }
+      ],
+      "nb_communes": 1
+    },
+    {
+      "nom_ar": "أولاد ابراهيم",
+      "nom_fr": "Ouled Brahim",
+      "nom_en": "Ouled Brahim",
+      "communes": [
+        {
+          "nom_ar": "تيرسين",
+          "nom_fr": "Tircine",
+          "nom_en": "Tircine",
+          "code_postal": "20035"
+        },
+        {
+          "nom_ar": "أولاد إبراهيم",
+          "nom_fr": "Ouled Brahim",
+          "nom_en": "Ouled Brahim",
+          "code_postal": "20002"
+        },
+        {
+          "nom_ar": "عين السلطان",
+          "nom_fr": "Ain Soltane",
+          "nom_en": "Ain Soltane",
+          "code_postal": "20029"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "سور الغزلان",
+      "nom_fr": "Sour El Ghozlane",
+      "nom_en": "Sour El Ghozlane",
+      "communes": [
+        {
+          "nom_ar": "المعمورة",
+          "nom_fr": "Maamora",
+          "nom_en": "Maamora",
+          "code_postal": "10071"
+        }
+      ],
+      "nb_communes": 1
+    },
+    {
+      "nom_ar": "الحساسنة",
+      "nom_fr": "El Hassasna",
+      "nom_en": "El Hassasna",
+      "communes": [
+        {
+          "nom_ar": "الحساسنة",
+          "nom_fr": "El Hassasna",
+          "nom_en": "El Hassasna",
+          "code_postal": "20003"
+        },
+        {
+          "nom_ar": "عين السخونة",
+          "nom_fr": "Ain Sekhouna",
+          "nom_en": "Ain Sekhouna",
+          "code_postal": "20009"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "سيدي بوبكر",
+      "nom_fr": "Sidi Boubekeur",
+      "nom_en": "Sidi Boubekeur",
+      "communes": [
+        {
+          "nom_ar": "سيدي بوبكر",
+          "nom_fr": "Sidi Boubekeur",
+          "nom_en": "Sidi Boubekeur",
+          "code_postal": "20007"
+        },
+        {
+          "nom_ar": "أولاد خالد",
+          "nom_fr": "Ouled Khaled",
+          "nom_en": "Ouled Khaled",
+          "code_postal": "20004"
+        },
+        {
+          "nom_ar": "هونت",
+          "nom_fr": "Hounet",
+          "nom_en": "Hounet",
+          "code_postal": "20025"
+        },
+        {
+          "nom_ar": "سيدي عمر",
+          "nom_fr": "Sidi Amar",
+          "nom_en": "Sidi Amar",
+          "code_postal": "20019"
+        }
+      ],
+      "nb_communes": 4
+    },
+    {
+      "nom_ar": "يوب",
+      "nom_fr": "Youb",
+      "nom_en": "Youb",
+      "communes": [
+        {
+          "nom_ar": "يوب",
+          "nom_fr": "Youb",
+          "nom_en": "Youb",
+          "code_postal": "20008"
+        },
+        {
+          "nom_ar": "دوي ثابت",
+          "nom_fr": "Doui Thabet",
+          "nom_en": "Doui Thabet",
+          "code_postal": "20023"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "عين الحجر",
+      "nom_fr": "Ain El Hadjar",
+      "nom_en": "Ain El Hadjar",
+      "communes": [
+        {
+          "nom_ar": "سيدي احمد",
+          "nom_fr": "Sidi Ahmed",
+          "nom_en": "Sidi Ahmed",
+          "code_postal": "20012"
+        },
+        {
+          "nom_ar": "مولاي العربي",
+          "nom_fr": "Moulay Larbi",
+          "nom_en": "Moulay Larbi",
+          "code_postal": "20014"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "عين بسام",
+      "nom_fr": "Ain Bessem",
+      "nom_en": "Ain Bessem",
+      "communes": [
+        {
+          "nom_ar": "عين الحجر",
+          "nom_fr": "Ain El Hadjar",
+          "nom_en": "Ain El Hadjar",
+          "code_postal": "10031"
+        }
+      ],
+      "nb_communes": 1
+    }
+  ]
+}

@@ -1,0 +1,119 @@
+{
+  "wilaya_num": 49,
+  "code": "49",
+  "nom_ar": "تيميمون",
+  "nom_fr": "Timimoun",
+  "nom_en": "Timimoun",
+  "nb_dairas": 6,
+  "nb_communes": 10,
+  "dairas": [
+    {
+      "nom_ar": "تنركوك",
+      "nom_fr": "Tinerkouk",
+      "nom_en": "Tinerkouk",
+      "communes": [
+        {
+          "nom_ar": "تنركوك",
+          "nom_fr": "Tinerkouk",
+          "nom_en": "Tinerkouk",
+          "code_postal": "01013"
+        },
+        {
+          "nom_ar": "قصر قدور",
+          "nom_fr": "Ksar Kaddour",
+          "nom_en": "Ksar Kaddour",
+          "code_postal": "01035"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "تيميمون",
+      "nom_fr": "Timimoun",
+      "nom_en": "Timimoun",
+      "communes": [
+        {
+          "nom_ar": "تيميمون",
+          "nom_fr": "Timimoun",
+          "nom_en": "Timimoun",
+          "code_postal": "01001"
+        },
+        {
+          "nom_ar": "أولاد السعيد",
+          "nom_fr": "Ouled Said",
+          "nom_en": "Ouled Said",
+          "code_postal": "01039"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "أوقروت",
+      "nom_fr": "Aougrout",
+      "nom_en": "Aougrout",
+      "communes": [
+        {
+          "nom_ar": "المطارفة",
+          "nom_fr": "Metarfa",
+          "nom_en": "Metarfa",
+          "code_postal": "01033"
+        },
+        {
+          "nom_ar": "أوقروت",
+          "nom_fr": "Aougrout",
+          "nom_en": "Aougrout",
+          "code_postal": "01012"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "شروين",
+      "nom_fr": "Charouine",
+      "nom_en": "Charouine",
+      "communes": [
+        {
+          "nom_ar": "طالمين",
+          "nom_fr": "Talmine",
+          "nom_en": "Talmine",
+          "code_postal": "01034"
+        },
+        {
+          "nom_ar": "شروين",
+          "nom_fr": "Charouine",
+          "nom_en": "Charouine",
+          "code_postal": "01014"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "الناصرية",
+      "nom_fr": "Naciria",
+      "nom_en": "Naciria",
+      "communes": [
+        {
+          "nom_ar": "أولاد عيسى",
+          "nom_fr": "Ouled Aissa",
+          "nom_en": "Ouled Aissa",
+          "code_postal": "01051"
+        }
+      ],
+      "nb_communes": 1
+    },
+    {
+      "nom_ar": "مسعد",
+      "nom_fr": "Messaad",
+      "nom_en": "Messaad",
+      "communes": [
+        {
+          "nom_ar": "دلدول",
+          "nom_fr": "Deldoul",
+          "nom_en": "Deldoul",
+          "code_postal": "17046"
+        }
+      ],
+      "nb_communes": 1
+    }
+  ]
+}

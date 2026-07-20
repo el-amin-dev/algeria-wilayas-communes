@@ -1,0 +1,247 @@
+{
+  "wilaya_num": 31,
+  "code": "31",
+  "nom_ar": "وهران",
+  "nom_fr": "Oran",
+  "nom_en": "Oran",
+  "nb_dairas": 10,
+  "nb_communes": 26,
+  "dairas": [
+    {
+      "nom_ar": "السانية",
+      "nom_fr": "Es Senia",
+      "nom_en": "Es Senia",
+      "communes": [
+        {
+          "nom_ar": "سيدي الشحمي",
+          "nom_fr": "Sidi Chami",
+          "nom_en": "Sidi Chami",
+          "code_postal": "31038"
+        },
+        {
+          "nom_ar": "الكرمة",
+          "nom_fr": "El Kerma",
+          "nom_en": "El Kerma",
+          "code_postal": "31026"
+        },
+        {
+          "nom_ar": "السانية",
+          "nom_fr": "Es Senia",
+          "nom_en": "Es Senia",
+          "code_postal": "31005"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "قديل",
+      "nom_fr": "Gdyel",
+      "nom_en": "Gdyel",
+      "communes": [
+        {
+          "nom_ar": "حاسي مفسوخ",
+          "nom_fr": "Hassi Mefsoukh",
+          "nom_en": "Hassi Mefsoukh",
+          "code_postal": "31046"
+        },
+        {
+          "nom_ar": "قديل",
+          "nom_fr": "Gdyel",
+          "nom_en": "Gdyel",
+          "code_postal": "31017"
+        },
+        {
+          "nom_ar": "بن فريحة",
+          "nom_fr": "Ben Freha",
+          "nom_en": "Ben Freha",
+          "code_postal": "31027"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "بئر الجير",
+      "nom_fr": "Bir El Djir",
+      "nom_en": "Bir El Djir",
+      "communes": [
+        {
+          "nom_ar": "بئر الجير",
+          "nom_fr": "Bir El Djir",
+          "nom_en": "Bir El Djir",
+          "code_postal": "31001"
+        },
+        {
+          "nom_ar": "حاسي بن عقبة",
+          "nom_fr": "Hassi Ben Okba",
+          "nom_en": "Hassi Ben Okba",
+          "code_postal": "31049"
+        },
+        {
+          "nom_ar": "حاسي بونيف",
+          "nom_fr": "Hassi Bounif",
+          "nom_en": "Hassi Bounif",
+          "code_postal": "31028"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "أرزيو",
+      "nom_fr": "Arzew",
+      "nom_en": "Arzew",
+      "communes": [
+        {
+          "nom_ar": "أرزيو",
+          "nom_fr": "Arzew",
+          "nom_en": "Arzew",
+          "code_postal": "31004"
+        },
+        {
+          "nom_ar": "سيدي بن يبقى",
+          "nom_fr": "Sidi Ben Yebka",
+          "nom_en": "Sidi Ben Yebka",
+          "code_postal": "31058"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "بطيوة",
+      "nom_fr": "Bethioua",
+      "nom_en": "Bethioua",
+      "communes": [
+        {
+          "nom_ar": "عين البية",
+          "nom_fr": "Ain Biya",
+          "nom_en": "Ain Biya",
+          "code_postal": "31040"
+        },
+        {
+          "nom_ar": "بطيوة",
+          "nom_fr": "Bethioua",
+          "nom_en": "Bethioua",
+          "code_postal": "31015"
+        },
+        {
+          "nom_ar": "مرسى الحجاج",
+          "nom_fr": "Marsat El Hadjadj",
+          "nom_en": "Marsat El Hadjadj",
+          "code_postal": "31030"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "البويرة",
+      "nom_fr": "Bouira",
+      "nom_en": "Bouira",
+      "communes": [
+        {
+          "nom_ar": "عين الترك",
+          "nom_fr": "Ain Turk",
+          "nom_en": "Ain Turk",
+          "code_postal": "10033"
+        }
+      ],
+      "nb_communes": 1
+    },
+    {
+      "nom_ar": "وهران",
+      "nom_fr": "Oran",
+      "nom_en": "Oran",
+      "communes": [
+        {
+          "nom_ar": "وهران",
+          "nom_fr": "Oran",
+          "nom_en": "Oran",
+          "code_postal": "31000"
+        }
+      ],
+      "nb_communes": 1
+    },
+    {
+      "nom_ar": "عين الترك",
+      "nom_fr": "Ain Turk",
+      "nom_en": "Ain Turk",
+      "communes": [
+        {
+          "nom_ar": "العنصر",
+          "nom_fr": "El Ancor",
+          "nom_en": "El Ancor",
+          "code_postal": "31043"
+        },
+        {
+          "nom_ar": "المرسى الكبير",
+          "nom_fr": "Mers El Kebir",
+          "nom_en": "Mers El Kebir",
+          "code_postal": "31019"
+        },
+        {
+          "nom_ar": "بوسفر",
+          "nom_fr": "Bousfer",
+          "nom_en": "Bousfer",
+          "code_postal": "31025"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "وادي تليلات",
+      "nom_fr": "Oued Tlelat",
+      "nom_en": "Oued Tlelat",
+      "communes": [
+        {
+          "nom_ar": "بوفاتيس",
+          "nom_fr": "Boufatis",
+          "nom_en": "Boufatis",
+          "code_postal": "31024"
+        },
+        {
+          "nom_ar": "البراية",
+          "nom_fr": "El Braya",
+          "nom_en": "El Braya",
+          "code_postal": "31070"
+        },
+        {
+          "nom_ar": "وادي تليلات",
+          "nom_fr": "Oued Tlelat",
+          "nom_en": "Oued Tlelat",
+          "code_postal": "31037"
+        },
+        {
+          "nom_ar": "طفراوي",
+          "nom_fr": "Tafraoui",
+          "nom_en": "Tafraoui",
+          "code_postal": "31077"
+        }
+      ],
+      "nb_communes": 4
+    },
+    {
+      "nom_ar": "بوتليليس",
+      "nom_fr": "Boutlelis",
+      "nom_en": "Boutlelis",
+      "communes": [
+        {
+          "nom_ar": "عين الكرمة",
+          "nom_fr": "Ain Kerma",
+          "nom_en": "Ain Kerma",
+          "code_postal": "31059"
+        },
+        {
+          "nom_ar": "بوتليليس",
+          "nom_fr": "Boutlelis",
+          "nom_en": "Boutlelis",
+          "code_postal": "31016"
+        },
+        {
+          "nom_ar": "مسرغين",
+          "nom_fr": "Messerghin",
+          "nom_en": "Messerghin",
+          "code_postal": "31031"
+        }
+      ],
+      "nb_communes": 3
+    }
+  ]
+}

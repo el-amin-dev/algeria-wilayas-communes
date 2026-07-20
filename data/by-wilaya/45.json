@@ -1,0 +1,139 @@
+{
+  "wilaya_num": 45,
+  "code": "45",
+  "nom_ar": "النعامة",
+  "nom_fr": "Naama",
+  "nom_en": "Naama",
+  "nb_dairas": 7,
+  "nb_communes": 12,
+  "dairas": [
+    {
+      "nom_ar": "عين الصفراء",
+      "nom_fr": "Ain Sefra",
+      "nom_en": "Ain Sefra",
+      "communes": [
+        {
+          "nom_ar": "تيوت",
+          "nom_fr": "Tiout",
+          "nom_en": "Tiout",
+          "code_postal": "45030"
+        },
+        {
+          "nom_ar": "عين الصفراء",
+          "nom_fr": "Ain Sefra",
+          "nom_en": "Ain Sefra",
+          "code_postal": "45001"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "مغرار",
+      "nom_fr": "Moghrar",
+      "nom_en": "Moghrar",
+      "communes": [
+        {
+          "nom_ar": "مغرار",
+          "nom_fr": "Moghrar",
+          "nom_en": "Moghrar",
+          "code_postal": "45014"
+        },
+        {
+          "nom_ar": "جنين بورزق",
+          "nom_fr": "Djenienne Bourezg",
+          "nom_en": "Djenienne Bourezg",
+          "code_postal": "45013"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "عسلة",
+      "nom_fr": "Asla",
+      "nom_en": "Asla",
+      "communes": [
+        {
+          "nom_ar": "عسلة",
+          "nom_fr": "Asla",
+          "nom_en": "Asla",
+          "code_postal": "45012"
+        }
+      ],
+      "nb_communes": 1
+    },
+    {
+      "nom_ar": "مكمن بن عمار",
+      "nom_fr": "Mekmen Ben Amar",
+      "nom_en": "Mekmen Ben Amar",
+      "communes": [
+        {
+          "nom_ar": "القصدير",
+          "nom_fr": "Kasdir",
+          "nom_en": "Kasdir",
+          "code_postal": "45024"
+        },
+        {
+          "nom_ar": "مكمن بن عمار",
+          "nom_fr": "Makmen Ben Amar",
+          "nom_en": "Makmen Ben Amar",
+          "code_postal": "45005"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "المشرية",
+      "nom_fr": "Mecheria",
+      "nom_en": "Mecheria",
+      "communes": [
+        {
+          "nom_ar": "المشرية",
+          "nom_fr": "Mecheria",
+          "nom_en": "Mecheria",
+          "code_postal": "45002"
+        },
+        {
+          "nom_ar": "البيوض",
+          "nom_fr": "El Biodh",
+          "nom_en": "El Biodh",
+          "code_postal": "45004"
+        },
+        {
+          "nom_ar": "عين بن خليل",
+          "nom_fr": "Ain Ben Khelil",
+          "nom_en": "Ain Ben Khelil",
+          "code_postal": "45008"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "النعامة",
+      "nom_fr": "Naama",
+      "nom_en": "Naama",
+      "communes": [
+        {
+          "nom_ar": "النعامة",
+          "nom_fr": "Naama",
+          "nom_en": "Naama",
+          "code_postal": "45000"
+        }
+      ],
+      "nb_communes": 1
+    },
+    {
+      "nom_ar": "سفيسيفة",
+      "nom_fr": "Sfissifa",
+      "nom_en": "Sfissifa",
+      "communes": [
+        {
+          "nom_ar": "سفيسيفة",
+          "nom_fr": "Sfissifa",
+          "nom_en": "Sfissifa",
+          "code_postal": "45021"
+        }
+      ],
+      "nb_communes": 1
+    }
+  ]
+}

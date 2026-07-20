@@ -1,0 +1,199 @@
+{
+  "wilaya_num": 7,
+  "code": "07",
+  "nom_ar": "بسكرة",
+  "nom_fr": "Biskra",
+  "nom_en": "Biskra",
+  "nb_dairas": 7,
+  "nb_communes": 22,
+  "dairas": [
+    {
+      "nom_ar": "زريبة الوادي",
+      "nom_fr": "Zeribet El Oued",
+      "nom_en": "Zeribet El Oued",
+      "communes": [
+        {
+          "nom_ar": "الفيض",
+          "nom_fr": "El Feidh",
+          "nom_en": "El Feidh",
+          "code_postal": "07026"
+        },
+        {
+          "nom_ar": "خنقة سيدي ناجي",
+          "nom_fr": "Khenguet Sidi Nadji",
+          "nom_en": "Khenguet Sidi Nadji",
+          "code_postal": "07032"
+        },
+        {
+          "nom_ar": "زريبة الوادي",
+          "nom_fr": "Zeribet El Oued",
+          "nom_en": "Zeribet El Oued",
+          "code_postal": "07012"
+        },
+        {
+          "nom_ar": "المزيرعة",
+          "nom_fr": "Meziraa",
+          "nom_en": "Meziraa",
+          "code_postal": "07043"
+        }
+      ],
+      "nb_communes": 4
+    },
+    {
+      "nom_ar": "طولقة",
+      "nom_fr": "Tolga",
+      "nom_en": "Tolga",
+      "communes": [
+        {
+          "nom_ar": "ليشانة",
+          "nom_fr": "Lichana",
+          "nom_en": "Lichana",
+          "code_postal": "07009"
+        },
+        {
+          "nom_ar": "بوشقرون",
+          "nom_fr": "Bouchakroun",
+          "nom_en": "Bouchakroun",
+          "code_postal": "07022"
+        },
+        {
+          "nom_ar": "برج بن عزوز",
+          "nom_fr": "Bordj Ben Azzouz",
+          "nom_en": "Bordj Ben Azzouz",
+          "code_postal": "07021"
+        },
+        {
+          "nom_ar": "طولقة",
+          "nom_fr": "Tolga",
+          "nom_en": "Tolga",
+          "code_postal": "07003"
+        }
+      ],
+      "nb_communes": 4
+    },
+    {
+      "nom_ar": "أورلال",
+      "nom_fr": "Ourlal",
+      "nom_en": "Ourlal",
+      "communes": [
+        {
+          "nom_ar": "مخادمة",
+          "nom_fr": "Mekhadma",
+          "nom_en": "Mekhadma",
+          "code_postal": "07034"
+        },
+        {
+          "nom_ar": "مليلي",
+          "nom_fr": "M'lili",
+          "nom_en": "M'lili",
+          "code_postal": "07068"
+        },
+        {
+          "nom_ar": "أورلال",
+          "nom_fr": "Ourlal",
+          "nom_en": "Ourlal",
+          "code_postal": "07011"
+        },
+        {
+          "nom_ar": "أوماش",
+          "nom_fr": "Oumache",
+          "nom_en": "Oumache",
+          "code_postal": "07035"
+        },
+        {
+          "nom_ar": "ليوة",
+          "nom_fr": "Lioua",
+          "nom_en": "Lioua",
+          "code_postal": "07033"
+        }
+      ],
+      "nb_communes": 5
+    },
+    {
+      "nom_ar": "بسكرة",
+      "nom_fr": "Biskra",
+      "nom_en": "Biskra",
+      "communes": [
+        {
+          "nom_ar": "بسكرة",
+          "nom_fr": "Biskra",
+          "nom_en": "Biskra",
+          "code_postal": "07000"
+        },
+        {
+          "nom_ar": "الحاجب",
+          "nom_fr": "El Hadjab",
+          "nom_en": "El Hadjab",
+          "code_postal": "07037"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "فوغالة",
+      "nom_fr": "Foughala",
+      "nom_en": "Foughala",
+      "communes": [
+        {
+          "nom_ar": "فوغالة",
+          "nom_fr": "Foughala",
+          "nom_en": "Foughala",
+          "code_postal": "07031"
+        },
+        {
+          "nom_ar": "الغروس",
+          "nom_fr": "El Ghrous",
+          "nom_en": "El Ghrous",
+          "code_postal": "07027"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "سيدي عقبة",
+      "nom_fr": "Sidi Okba",
+      "nom_en": "Sidi Okba",
+      "communes": [
+        {
+          "nom_ar": "عين الناقة",
+          "nom_fr": "Ain Naga",
+          "nom_en": "Ain Naga",
+          "code_postal": "07039"
+        },
+        {
+          "nom_ar": "شتمة",
+          "nom_fr": "Chetma",
+          "nom_en": "Chetma",
+          "code_postal": "07024"
+        },
+        {
+          "nom_ar": "الحوش",
+          "nom_fr": "El Haouch",
+          "nom_en": "El Haouch",
+          "code_postal": "07028"
+        },
+        {
+          "nom_ar": "سيدي عقبة",
+          "nom_fr": "Sidi Okba",
+          "nom_en": "Sidi Okba",
+          "code_postal": "07005"
+        }
+      ],
+      "nb_communes": 4
+    },
+    {
+      "nom_ar": "مشونش",
+      "nom_fr": "Mechouneche",
+      "nom_en": "Mechouneche",
+      "communes": [
+        {
+          "nom_ar": "مشونش",
+          "nom_fr": "M'chouneche",
+          "nom_en": "M'chouneche",
+          "code_postal": "07010"
+        }
+      ],
+      "nb_communes": 1
+    }
+  ]
+}

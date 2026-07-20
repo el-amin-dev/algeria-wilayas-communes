@@ -1,0 +1,367 @@
+{
+  "wilaya_num": 48,
+  "code": "48",
+  "nom_ar": "غليزان",
+  "nom_fr": "Relizane",
+  "nom_en": "Relizane",
+  "nb_dairas": 16,
+  "nb_communes": 38,
+  "dairas": [
+    {
+      "nom_ar": "مازونة",
+      "nom_fr": "Mazouna",
+      "nom_en": "Mazouna",
+      "communes": [
+        {
+          "nom_ar": "القطار",
+          "nom_fr": "El-Guettar",
+          "nom_en": "El-Guettar",
+          "code_postal": "48016"
+        },
+        {
+          "nom_ar": "مازونة",
+          "nom_fr": "Mazouna",
+          "nom_en": "Mazouna",
+          "code_postal": "48002"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "عمي موسى",
+      "nom_fr": "Ammi Moussa",
+      "nom_en": "Ammi Moussa",
+      "communes": [
+        {
+          "nom_ar": "أولاد يعيش",
+          "nom_fr": "Ouled Aiche",
+          "nom_en": "Ouled Aiche",
+          "code_postal": "48019"
+        },
+        {
+          "nom_ar": "عمي موسى",
+          "nom_fr": "Ammi Moussa",
+          "nom_en": "Ammi Moussa",
+          "code_postal": "48004"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "زمورة",
+      "nom_fr": "Zemmoura",
+      "nom_en": "Zemmoura",
+      "communes": [
+        {
+          "nom_ar": "بني درقن",
+          "nom_fr": "Beni Dergoun",
+          "nom_en": "Beni Dergoun",
+          "code_postal": "48039"
+        },
+        {
+          "nom_ar": "دار بن عبد الله",
+          "nom_fr": "Dar Ben Abdelah",
+          "nom_en": "Dar Ben Abdelah",
+          "code_postal": "48044"
+        },
+        {
+          "nom_ar": "زمورة",
+          "nom_fr": "Zemmoura",
+          "nom_en": "Zemmoura",
+          "code_postal": "48008"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "جديوية",
+      "nom_fr": "Djidiouia",
+      "nom_en": "Djidiouia",
+      "communes": [
+        {
+          "nom_ar": "جديوية",
+          "nom_fr": "Djidiouia",
+          "nom_en": "Djidiouia",
+          "code_postal": "48005"
+        },
+        {
+          "nom_ar": "حمري",
+          "nom_fr": "Hamri",
+          "nom_en": "Hamri",
+          "code_postal": "48051"
+        },
+        {
+          "nom_ar": "أولاد سيدي الميهوب",
+          "nom_fr": "Ouled Sidi Mihoub",
+          "nom_en": "Ouled Sidi Mihoub",
+          "code_postal": "48061"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "المطمر",
+      "nom_fr": "El Matmar",
+      "nom_en": "El Matmar",
+      "communes": [
+        {
+          "nom_ar": "بلعسل بوزقزة",
+          "nom_fr": "Belaassel Bouzagza",
+          "nom_en": "Belaassel Bouzagza",
+          "code_postal": "48036"
+        },
+        {
+          "nom_ar": "المطمر",
+          "nom_fr": "El-Matmar",
+          "nom_en": "El-Matmar",
+          "code_postal": "48009"
+        },
+        {
+          "nom_ar": "سيدي  خطاب",
+          "nom_fr": "Sidi Khettab",
+          "nom_en": "Sidi Khettab",
+          "code_postal": "48029"
+        },
+        {
+          "nom_ar": "سيدي امحمد بن عودة",
+          "nom_fr": "Sidi M'hamed Benaouda",
+          "nom_en": "Sidi M'hamed Benaouda",
+          "code_postal": "48030"
+        }
+      ],
+      "nb_communes": 4
+    },
+    {
+      "nom_ar": "عين طارق",
+      "nom_fr": "Ain Tarek",
+      "nom_en": "Ain Tarek",
+      "communes": [
+        {
+          "nom_ar": "عين طارق",
+          "nom_fr": "Ain-Tarek",
+          "nom_en": "Ain-Tarek",
+          "code_postal": "48015"
+        },
+        {
+          "nom_ar": "حد الشكالة",
+          "nom_fr": "Had Echkalla",
+          "nom_en": "Had Echkalla",
+          "code_postal": "48050"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "بئر العرش",
+      "nom_fr": "Bir El Arch",
+      "nom_en": "Bir El Arch",
+      "communes": [
+        {
+          "nom_ar": "الولجة",
+          "nom_fr": "El Ouldja",
+          "nom_en": "El Ouldja",
+          "code_postal": "19046"
+        }
+      ],
+      "nb_communes": 1
+    },
+    {
+      "nom_ar": "يلل",
+      "nom_fr": "Yellel",
+      "nom_en": "Yellel",
+      "communes": [
+        {
+          "nom_ar": "عين الرحمة",
+          "nom_fr": "Ain Rahma",
+          "nom_en": "Ain Rahma",
+          "code_postal": "48033"
+        },
+        {
+          "nom_ar": "القلعة",
+          "nom_fr": "Kalaa",
+          "nom_en": "Kalaa",
+          "code_postal": "48018"
+        },
+        {
+          "nom_ar": "سيدي سعادة",
+          "nom_fr": "Sidi Saada",
+          "nom_en": "Sidi Saada",
+          "code_postal": "48067"
+        },
+        {
+          "nom_ar": "يلل",
+          "nom_fr": "Yellel",
+          "nom_en": "Yellel",
+          "code_postal": "48006"
+        }
+      ],
+      "nb_communes": 4
+    },
+    {
+      "nom_ar": "الثنية",
+      "nom_fr": "Thenia",
+      "nom_en": "Thenia",
+      "communes": [
+        {
+          "nom_ar": "سوق الحد",
+          "nom_fr": "Souk El Had",
+          "nom_en": "Souk El Had",
+          "code_postal": null
+        }
+      ],
+      "nb_communes": 1
+    },
+    {
+      "nom_ar": "منداس",
+      "nom_fr": "Mendes",
+      "nom_en": "Mendes",
+      "communes": [
+        {
+          "nom_ar": "منداس",
+          "nom_fr": "Mendes",
+          "nom_en": "Mendes",
+          "code_postal": "48012"
+        },
+        {
+          "nom_ar": "وادي السلام",
+          "nom_fr": "Oued Essalem",
+          "nom_en": "Oued Essalem",
+          "code_postal": "48022"
+        },
+        {
+          "nom_ar": "سيدي لزرق",
+          "nom_fr": "Sidi Lazreg",
+          "nom_en": "Sidi Lazreg",
+          "code_postal": "48065"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "وادي رهيو",
+      "nom_fr": "Oued Rhiou",
+      "nom_en": "Oued Rhiou",
+      "communes": [
+        {
+          "nom_ar": "واريزان",
+          "nom_fr": "Ouarizane",
+          "nom_en": "Ouarizane",
+          "code_postal": "48013"
+        },
+        {
+          "nom_ar": "مرجة سيدي عابد",
+          "nom_fr": "Merdja Sidi Abed",
+          "nom_en": "Merdja Sidi Abed",
+          "code_postal": "48056"
+        },
+        {
+          "nom_ar": "وادي رهيو",
+          "nom_fr": "Oued-Rhiou",
+          "nom_en": "Oued-Rhiou",
+          "code_postal": "48001"
+        },
+        {
+          "nom_ar": "لحلاف",
+          "nom_fr": "Lahlef",
+          "nom_en": "Lahlef",
+          "code_postal": "48020"
+        }
+      ],
+      "nb_communes": 4
+    },
+    {
+      "nom_ar": "غليزان",
+      "nom_fr": "Relizane",
+      "nom_en": "Relizane",
+      "communes": [
+        {
+          "nom_ar": "بن داود",
+          "nom_fr": "Bendaoud",
+          "nom_en": "Bendaoud",
+          "code_postal": "48053"
+        },
+        {
+          "nom_ar": "غليزان",
+          "nom_fr": "Relizane",
+          "nom_en": "Relizane",
+          "code_postal": "48000"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "عين جاسر",
+      "nom_fr": "Ain Djasser",
+      "nom_en": "Ain Djasser",
+      "communes": [
+        {
+          "nom_ar": "الحاسي",
+          "nom_fr": "El Hassi",
+          "nom_en": "El Hassi",
+          "code_postal": "05116"
+        }
+      ],
+      "nb_communes": 1
+    },
+    {
+      "nom_ar": "سيدي أمحمد بن علي",
+      "nom_fr": "Sidi M'hamed Ben Ali",
+      "nom_en": "Sidi M'hamed Ben Ali",
+      "communes": [
+        {
+          "nom_ar": "سيدي أمحمد بن علي",
+          "nom_fr": "Sidi M'hamed Benali",
+          "nom_en": "Sidi M'hamed Benali",
+          "code_postal": "48003"
+        },
+        {
+          "nom_ar": "مديونة",
+          "nom_fr": "Mediouna",
+          "nom_en": "Mediouna",
+          "code_postal": "48011"
+        },
+        {
+          "nom_ar": "بني زنطيس",
+          "nom_fr": "Beni Zentis",
+          "nom_en": "Beni Zentis",
+          "code_postal": "48041"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "الحمادنة",
+      "nom_fr": "El H'madna",
+      "nom_en": "El H'madna",
+      "communes": [
+        {
+          "nom_ar": "وادي الجمعة",
+          "nom_fr": "Oued El Djemaa",
+          "nom_en": "Oued El Djemaa",
+          "code_postal": "48021"
+        },
+        {
+          "nom_ar": "الحمادنة",
+          "nom_fr": "El H'madna",
+          "nom_en": "El H'madna",
+          "code_postal": "48017"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "الرمكة",
+      "nom_fr": "Ramka",
+      "nom_en": "Ramka",
+      "communes": [
+        {
+          "nom_ar": "الرمكة",
+          "nom_fr": "Ramka",
+          "nom_en": "Ramka",
+          "code_postal": "48024"
+        }
+      ],
+      "nb_communes": 1
+    }
+  ]
+}

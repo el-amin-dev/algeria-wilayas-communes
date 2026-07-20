@@ -1,0 +1,39 @@
+{
+  "wilaya_num": 54,
+  "code": "54",
+  "nom_ar": "عين قزام",
+  "nom_fr": "In Guezzam",
+  "nom_en": "In Guezzam",
+  "nb_dairas": 2,
+  "nb_communes": 2,
+  "dairas": [
+    {
+      "nom_ar": "تين زواتين",
+      "nom_fr": "Tin Zouatine",
+      "nom_en": "Tin Zouatine",
+      "communes": [
+        {
+          "nom_ar": "تين زواتين",
+          "nom_fr": "Tin Zouatine",
+          "nom_en": "Tin Zouatine",
+          "code_postal": "11011"
+        }
+      ],
+      "nb_communes": 1
+    },
+    {
+      "nom_ar": "عين قزام",
+      "nom_fr": "In Guezzam",
+      "nom_en": "In Guezzam",
+      "communes": [
+        {
+          "nom_ar": "عين قزام",
+          "nom_fr": "Ain Guezzam",
+          "nom_en": "Ain Guezzam",
+          "code_postal": "11005"
+        }
+      ],
+      "nb_communes": 1
+    }
+  ]
+}

@@ -1,0 +1,475 @@
+{
+  "wilaya_num": 6,
+  "code": "06",
+  "nom_ar": "بجاية",
+  "nom_fr": "Bejaia",
+  "nom_en": "Bejaia",
+  "nb_dairas": 19,
+  "nb_communes": 52,
+  "dairas": [
+    {
+      "nom_ar": "سيدي عيش",
+      "nom_fr": "Sidi Aich",
+      "nom_en": "Sidi Aich",
+      "communes": [
+        {
+          "nom_ar": "سيدي عياد",
+          "nom_fr": "Sidi Ayad",
+          "nom_en": "Sidi Ayad",
+          "code_postal": "06085"
+        },
+        {
+          "nom_ar": "الفلاي",
+          "nom_fr": "Leflaye",
+          "nom_en": "Leflaye",
+          "code_postal": "06043"
+        },
+        {
+          "nom_ar": "سيدي عيش",
+          "nom_fr": "Sidi-Aich",
+          "nom_en": "Sidi-Aich",
+          "code_postal": "06005"
+        },
+        {
+          "nom_ar": "تيفرة",
+          "nom_fr": "Tifra",
+          "nom_en": "Tifra",
+          "code_postal": "06028"
+        },
+        {
+          "nom_ar": "تينبدار",
+          "nom_fr": "Tinebdar",
+          "nom_en": "Tinebdar",
+          "code_postal": "06037"
+        }
+      ],
+      "nb_communes": 5
+    },
+    {
+      "nom_ar": "برباشة",
+      "nom_fr": "Barbacha",
+      "nom_en": "Barbacha",
+      "communes": [
+        {
+          "nom_ar": "برباشة",
+          "nom_fr": "Barbacha",
+          "nom_en": "Barbacha",
+          "code_postal": "06009"
+        },
+        {
+          "nom_ar": "كنديرة",
+          "nom_fr": "Kendira",
+          "nom_en": "Kendira",
+          "code_postal": "06032"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "القصر",
+      "nom_fr": "El Kseur",
+      "nom_en": "El Kseur",
+      "communes": [
+        {
+          "nom_ar": "القصر",
+          "nom_fr": "El Kseur",
+          "nom_en": "El Kseur",
+          "code_postal": "06003"
+        },
+        {
+          "nom_ar": "فناية الماثن",
+          "nom_fr": "Fenaia Il Maten",
+          "nom_en": "Fenaia Il Maten",
+          "code_postal": "06041"
+        },
+        {
+          "nom_ar": "توجة",
+          "nom_fr": "Toudja",
+          "nom_en": "Toudja",
+          "code_postal": "06030"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "خراطة",
+      "nom_fr": "Kherrata",
+      "nom_en": "Kherrata",
+      "communes": [
+        {
+          "nom_ar": "ذراع القايد",
+          "nom_fr": "Dra El Caid",
+          "nom_en": "Dra El Caid",
+          "code_postal": "06070"
+        },
+        {
+          "nom_ar": "خراطة",
+          "nom_fr": "Kherrata",
+          "nom_en": "Kherrata",
+          "code_postal": "06004"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "بجاية",
+      "nom_fr": "Bejaia",
+      "nom_en": "Bejaia",
+      "communes": [
+        {
+          "nom_ar": "بجاية",
+          "nom_fr": "Bejaia",
+          "nom_en": "Bejaia",
+          "code_postal": "06000"
+        },
+        {
+          "nom_ar": "وادي غير",
+          "nom_fr": "Oued Ghir",
+          "nom_en": "Oued Ghir",
+          "code_postal": "06017"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "بني معوش",
+      "nom_fr": "Beni Maouche",
+      "nom_en": "Beni Maouche",
+      "communes": [
+        {
+          "nom_ar": "بني معوش",
+          "nom_fr": "Benimaouche",
+          "nom_en": "Benimaouche",
+          "code_postal": "06024"
+        }
+      ],
+      "nb_communes": 1
+    },
+    {
+      "nom_ar": "أميزور",
+      "nom_fr": "Amizour",
+      "nom_en": "Amizour",
+      "communes": [
+        {
+          "nom_ar": "بني جليل",
+          "nom_fr": "Beni Djellil",
+          "nom_en": "Beni Djellil",
+          "code_postal": "06067"
+        },
+        {
+          "nom_ar": "فرعون",
+          "nom_fr": "Feraoun",
+          "nom_en": "Feraoun",
+          "code_postal": "06033"
+        },
+        {
+          "nom_ar": "سمعون",
+          "nom_fr": "Smaoun",
+          "nom_en": "Smaoun",
+          "code_postal": "06020"
+        },
+        {
+          "nom_ar": "أميزور",
+          "nom_fr": "Amizour",
+          "nom_en": "Amizour",
+          "code_postal": "06008"
+        }
+      ],
+      "nb_communes": 4
+    },
+    {
+      "nom_ar": "تيمزريت",
+      "nom_fr": "Timezrit",
+      "nom_en": "Timezrit",
+      "communes": [
+        {
+          "nom_ar": "تيمزريت",
+          "nom_fr": "Timezrit",
+          "nom_en": "Timezrit",
+          "code_postal": "06019"
+        }
+      ],
+      "nb_communes": 1
+    },
+    {
+      "nom_ar": "سوق الإثنين",
+      "nom_fr": "Souk El Tenine",
+      "nom_en": "Souk El Tenine",
+      "communes": [
+        {
+          "nom_ar": "مالبو",
+          "nom_fr": "Melbou",
+          "nom_en": "Melbou",
+          "code_postal": "06076"
+        },
+        {
+          "nom_ar": "سوق لإثنين",
+          "nom_fr": "Souk El Tenine",
+          "nom_en": "Souk El Tenine",
+          "code_postal": "06012"
+        },
+        {
+          "nom_ar": "تامريجت",
+          "nom_fr": "Tamridjet",
+          "nom_en": "Tamridjet",
+          "code_postal": "06077"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "تيشي",
+      "nom_fr": "Tichy",
+      "nom_en": "Tichy",
+      "communes": [
+        {
+          "nom_ar": "بوخليفة",
+          "nom_fr": "Boukhelifa",
+          "nom_en": "Boukhelifa",
+          "code_postal": "06059"
+        },
+        {
+          "nom_ar": "تالة حمزة",
+          "nom_fr": "Tala Hamza",
+          "nom_en": "Tala Hamza",
+          "code_postal": "06066"
+        },
+        {
+          "nom_ar": "تيشي",
+          "nom_fr": "Tichy",
+          "nom_en": "Tichy",
+          "code_postal": "06023"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "إغيل علي",
+      "nom_fr": "Ighil Ali",
+      "nom_en": "Ighil Ali",
+      "communes": [
+        {
+          "nom_ar": "أيت رزين",
+          "nom_fr": "Ait R'zine",
+          "nom_en": "Ait R'zine",
+          "code_postal": "06013"
+        },
+        {
+          "nom_ar": "إغيل علي",
+          "nom_fr": "Ighil-Ali",
+          "nom_en": "Ighil-Ali",
+          "code_postal": "06014"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "درقينة",
+      "nom_fr": "Darguina",
+      "nom_en": "Darguina",
+      "communes": [
+        {
+          "nom_ar": "أيت إسماعيل",
+          "nom_fr": "Ait-Smail",
+          "nom_en": "Ait-Smail",
+          "code_postal": "06044"
+        },
+        {
+          "nom_ar": "درقينة",
+          "nom_fr": "Darguina",
+          "nom_en": "Darguina",
+          "code_postal": "06016"
+        },
+        {
+          "nom_ar": "تاسكريوت",
+          "nom_fr": "Taskriout",
+          "nom_en": "Taskriout",
+          "code_postal": "06015"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "أوقاس",
+      "nom_fr": "Aokas",
+      "nom_en": "Aokas",
+      "communes": [
+        {
+          "nom_ar": "أوقاس",
+          "nom_fr": "Aokas",
+          "nom_en": "Aokas",
+          "code_postal": "06007"
+        },
+        {
+          "nom_ar": "تيزي نبربر",
+          "nom_fr": "Tizi-N'berber",
+          "nom_en": "Tizi-N'berber",
+          "code_postal": "06058"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "أدكار",
+      "nom_fr": "Adekar",
+      "nom_en": "Adekar",
+      "communes": [
+        {
+          "nom_ar": "أدكار",
+          "nom_fr": "Adekar",
+          "nom_en": "Adekar",
+          "code_postal": "06021"
+        },
+        {
+          "nom_ar": "بني كسيلة",
+          "nom_fr": "Beni K'sila",
+          "nom_en": "Beni K'sila",
+          "code_postal": "06027"
+        },
+        {
+          "nom_ar": "تاوريرت إغيل",
+          "nom_fr": "Taourit Ighil",
+          "nom_en": "Taourit Ighil",
+          "code_postal": "06035"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "أقبو",
+      "nom_fr": "Akbou",
+      "nom_en": "Akbou",
+      "communes": [
+        {
+          "nom_ar": "أقبو",
+          "nom_fr": "Akbou",
+          "nom_en": "Akbou",
+          "code_postal": "06001"
+        },
+        {
+          "nom_ar": "شلاطة",
+          "nom_fr": "Chellata",
+          "nom_en": "Chellata",
+          "code_postal": "06052"
+        },
+        {
+          "nom_ar": "اغرم",
+          "nom_fr": "Ighram",
+          "nom_en": "Ighram",
+          "code_postal": "06048"
+        },
+        {
+          "nom_ar": "تامقرة",
+          "nom_fr": "Tamokra",
+          "nom_en": "Tamokra",
+          "code_postal": "06053"
+        }
+      ],
+      "nb_communes": 4
+    },
+    {
+      "nom_ar": "صدوق",
+      "nom_fr": "Seddouk",
+      "nom_en": "Seddouk",
+      "communes": [
+        {
+          "nom_ar": "أمالو",
+          "nom_fr": "Amalou",
+          "nom_en": "Amalou",
+          "code_postal": "06034"
+        },
+        {
+          "nom_ar": "بوحمزة",
+          "nom_fr": "Bouhamza",
+          "nom_en": "Bouhamza",
+          "code_postal": "06031"
+        },
+        {
+          "nom_ar": "مسيسنة",
+          "nom_fr": "M'cisna",
+          "nom_en": "M'cisna",
+          "code_postal": "06038"
+        },
+        {
+          "nom_ar": "صدوق",
+          "nom_fr": "Seddouk",
+          "nom_en": "Seddouk",
+          "code_postal": "06011"
+        }
+      ],
+      "nb_communes": 4
+    },
+    {
+      "nom_ar": "تازملت",
+      "nom_fr": "Tazmalt",
+      "nom_en": "Tazmalt",
+      "communes": [
+        {
+          "nom_ar": "بني مليكش",
+          "nom_fr": "Beni-Mallikeche",
+          "nom_en": "Beni-Mallikeche",
+          "code_postal": "06039"
+        },
+        {
+          "nom_ar": "بو جليل",
+          "nom_fr": "Boudjellil",
+          "nom_en": "Boudjellil",
+          "code_postal": "06018"
+        },
+        {
+          "nom_ar": "تازمالت",
+          "nom_fr": "Tazmalt",
+          "nom_en": "Tazmalt",
+          "code_postal": "06006"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "شميني",
+      "nom_fr": "Chemini",
+      "nom_en": "Chemini",
+      "communes": [
+        {
+          "nom_ar": "أكفادو",
+          "nom_fr": "Akfadou",
+          "nom_en": "Akfadou",
+          "code_postal": "06025"
+        },
+        {
+          "nom_ar": "شميني",
+          "nom_fr": "Chemini",
+          "nom_en": "Chemini",
+          "code_postal": "06022"
+        },
+        {
+          "nom_ar": "سوق اوفلا",
+          "nom_fr": "Souk Oufella",
+          "nom_en": "Souk Oufella",
+          "code_postal": "06036"
+        },
+        {
+          "nom_ar": "طيبان",
+          "nom_fr": "Tibane",
+          "nom_en": "Tibane",
+          "code_postal": "06087"
+        }
+      ],
+      "nb_communes": 4
+    },
+    {
+      "nom_ar": "إفري أوزلاقن",
+      "nom_fr": "Ifri Ouzellaguene",
+      "nom_en": "Ifri Ouzellaguene",
+      "communes": [
+        {
+          "nom_ar": "أوزلاقن",
+          "nom_fr": "Ouzellaguen",
+          "nom_en": "Ouzellaguen",
+          "code_postal": "06010"
+        }
+      ],
+      "nb_communes": 1
+    }
+  ]
+}

@@ -1,0 +1,473 @@
+{
+  "wilaya_num": 16,
+  "code": "16",
+  "nom_ar": "الجزائر",
+  "nom_fr": "Alger",
+  "nom_en": "Algiers",
+  "nb_dairas": 15,
+  "nb_communes": 57,
+  "dairas": [
+    {
+      "nom_ar": "حسين داي",
+      "nom_fr": "Hussein Dey",
+      "nom_en": "Hussein Dey",
+      "communes": [
+        {
+          "nom_ar": "حسين داي",
+          "nom_fr": "Hussein Dey",
+          "nom_en": "Hussein Dey",
+          "code_postal": "16005"
+        },
+        {
+          "nom_ar": "القبة",
+          "nom_fr": "Kouba",
+          "nom_en": "Kouba",
+          "code_postal": "16006"
+        },
+        {
+          "nom_ar": "محمد بلوزداد",
+          "nom_fr": "Mohamed Belouzdad",
+          "nom_en": "Mohamed Belouzdad",
+          "code_postal": "16151"
+        },
+        {
+          "nom_ar": "المغارية",
+          "nom_fr": "El Magharia",
+          "nom_en": "El Magharia",
+          "code_postal": "16053"
+        }
+      ],
+      "nb_communes": 4
+    },
+    {
+      "nom_ar": "براقي",
+      "nom_fr": "Baraki",
+      "nom_en": "Baraki",
+      "communes": [
+        {
+          "nom_ar": "الكاليتوس",
+          "nom_fr": "Les Eucalyptus",
+          "nom_en": "Les Eucalyptus",
+          "code_postal": "16057"
+        },
+        {
+          "nom_ar": "سيدي موسى",
+          "nom_fr": "Sidi Moussa",
+          "nom_en": "Sidi Moussa",
+          "code_postal": "16189"
+        },
+        {
+          "nom_ar": "براقي",
+          "nom_fr": "Baraki",
+          "nom_en": "Baraki",
+          "code_postal": "16027"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "الدار البيضاء",
+      "nom_fr": "Dar El Beida",
+      "nom_en": "Dar El Beida",
+      "communes": [
+        {
+          "nom_ar": "عين طاية",
+          "nom_fr": "Ain Taya",
+          "nom_en": "Ain Taya",
+          "code_postal": "16019"
+        },
+        {
+          "nom_ar": "باب الزوار",
+          "nom_fr": "Bab Ezzouar",
+          "nom_en": "Bab Ezzouar",
+          "code_postal": "16024"
+        },
+        {
+          "nom_ar": "برج الكيفان",
+          "nom_fr": "Bordj El Kiffan",
+          "nom_en": "Bordj El Kiffan",
+          "code_postal": "16031"
+        },
+        {
+          "nom_ar": "الدار البيضاء",
+          "nom_fr": "Dar El Beida",
+          "nom_en": "Dar El Beida",
+          "code_postal": "16033"
+        },
+        {
+          "nom_ar": "المحمدية",
+          "nom_fr": "Mohammadia",
+          "nom_en": "Mohammadia",
+          "code_postal": "16058"
+        },
+        {
+          "nom_ar": "برج البحري",
+          "nom_fr": "Bordj El Bahri",
+          "nom_en": "Bordj El Bahri",
+          "code_postal": "16046"
+        }
+      ],
+      "nb_communes": 6
+    },
+    {
+      "nom_ar": "المرسى",
+      "nom_fr": "El Marsa",
+      "nom_en": "El Marsa",
+      "communes": [
+        {
+          "nom_ar": "المرسى",
+          "nom_fr": "El Marsa",
+          "nom_en": "El Marsa",
+          "code_postal": "02015"
+        }
+      ],
+      "nb_communes": 1
+    },
+    {
+      "nom_ar": "بئر توتة",
+      "nom_fr": "Birtouta",
+      "nom_en": "Birtouta",
+      "communes": [
+        {
+          "nom_ar": "بئر توتة",
+          "nom_fr": "Bir Touta",
+          "nom_en": "Bir Touta",
+          "code_postal": "16045"
+        },
+        {
+          "nom_ar": "اولاد شبل",
+          "nom_fr": "Ouled Chebel",
+          "nom_en": "Ouled Chebel",
+          "code_postal": "16118"
+        },
+        {
+          "nom_ar": "تسالة المرجة",
+          "nom_fr": "Tessala El Merdja",
+          "nom_en": "Tessala El Merdja",
+          "code_postal": "16099"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "الرويبة",
+      "nom_fr": "Rouiba",
+      "nom_en": "Rouiba",
+      "communes": [
+        {
+          "nom_ar": "هراوة",
+          "nom_fr": "Herraoua",
+          "nom_en": "Herraoua",
+          "code_postal": "16116"
+        },
+        {
+          "nom_ar": "رغاية",
+          "nom_fr": "Reghaia",
+          "nom_en": "Reghaia",
+          "code_postal": "16036"
+        },
+        {
+          "nom_ar": "الرويبة",
+          "nom_fr": "Rouiba",
+          "nom_en": "Rouiba",
+          "code_postal": "16017"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "زرالدة",
+      "nom_fr": "Zeralda",
+      "nom_en": "Zeralda",
+      "communes": [
+        {
+          "nom_ar": "المعالمة",
+          "nom_fr": "Maalma",
+          "nom_en": "Maalma",
+          "code_postal": "16093"
+        },
+        {
+          "nom_ar": "الرحمانية",
+          "nom_fr": "Rahmania",
+          "nom_en": "Rahmania",
+          "code_postal": "16121"
+        },
+        {
+          "nom_ar": "سويدانية",
+          "nom_fr": "Souidania",
+          "nom_en": "Souidania",
+          "code_postal": "16097"
+        },
+        {
+          "nom_ar": "سطاوالي",
+          "nom_fr": "Staoueli",
+          "nom_en": "Staoueli",
+          "code_postal": "16062"
+        },
+        {
+          "nom_ar": "زرالدة",
+          "nom_fr": "Zeralda",
+          "nom_en": "Zeralda",
+          "code_postal": "16063"
+        }
+      ],
+      "nb_communes": 5
+    },
+    {
+      "nom_ar": "الدرارية",
+      "nom_fr": "Draria",
+      "nom_en": "Draria",
+      "communes": [
+        {
+          "nom_ar": "بابا حسن",
+          "nom_fr": "Baba Hassen",
+          "nom_en": "Baba Hassen",
+          "code_postal": "16081"
+        },
+        {
+          "nom_ar": "الدويرة",
+          "nom_fr": "Douira",
+          "nom_en": "Douira",
+          "code_postal": "16049"
+        },
+        {
+          "nom_ar": "الدرارية",
+          "nom_fr": "Draria",
+          "nom_en": "Draria",
+          "code_postal": "16050"
+        },
+        {
+          "nom_ar": "العاشور",
+          "nom_fr": "El Achour",
+          "nom_en": "El Achour",
+          "code_postal": "16104"
+        },
+        {
+          "nom_ar": "الخرايسية",
+          "nom_fr": "Khraissia",
+          "nom_en": "Khraissia",
+          "code_postal": "16091"
+        }
+      ],
+      "nb_communes": 5
+    },
+    {
+      "nom_ar": "الشراقة",
+      "nom_fr": "Cheraga",
+      "nom_en": "Cheraga",
+      "communes": [
+        {
+          "nom_ar": "عين بنيان",
+          "nom_fr": "Ain Benian",
+          "nom_en": "Ain Benian",
+          "code_postal": "16018"
+        },
+        {
+          "nom_ar": "الشراقة",
+          "nom_fr": "Cheraga",
+          "nom_en": "Cheraga",
+          "code_postal": "16014"
+        },
+        {
+          "nom_ar": "دالي ابراهيم",
+          "nom_fr": "Dely Ibrahim",
+          "nom_en": "Dely Ibrahim",
+          "code_postal": "16047"
+        },
+        {
+          "nom_ar": "اولاد فايت",
+          "nom_fr": "Ouled Fayet",
+          "nom_en": "Ouled Fayet",
+          "code_postal": "16094"
+        }
+      ],
+      "nb_communes": 4
+    },
+    {
+      "nom_ar": "بئر مقدم",
+      "nom_fr": "Bir Mokadem",
+      "nom_en": "Bir Mokadem",
+      "communes": [
+        {
+          "nom_ar": "الحمامات",
+          "nom_fr": "Hammamet",
+          "nom_en": "Hammamet",
+          "code_postal": "12016"
+        }
+      ],
+      "nb_communes": 1
+    },
+    {
+      "nom_ar": "سيدي امحمد",
+      "nom_fr": "Sidi M'hamed",
+      "nom_en": "Sidi M'hamed",
+      "communes": [
+        {
+          "nom_ar": "الجزائر الوسطى",
+          "nom_fr": "Alger Centre",
+          "nom_en": "Alger Centre",
+          "code_postal": "16000"
+        },
+        {
+          "nom_ar": "المدنية",
+          "nom_fr": "El Madania",
+          "nom_en": "El Madania",
+          "code_postal": "16015"
+        },
+        {
+          "nom_ar": "المرادية",
+          "nom_fr": "El Mouradia",
+          "nom_en": "El Mouradia",
+          "code_postal": "16035"
+        },
+        {
+          "nom_ar": "سيدي امحمد",
+          "nom_fr": "Sidi M'hamed",
+          "nom_en": "Sidi M'hamed",
+          "code_postal": "16002"
+        }
+      ],
+      "nb_communes": 4
+    },
+    {
+      "nom_ar": "بئر مراد رايس",
+      "nom_fr": "Bir Mourad Rais",
+      "nom_en": "Bir Mourad Rais",
+      "communes": [
+        {
+          "nom_ar": "السحاولة",
+          "nom_fr": "Sehaoula",
+          "nom_en": "Sehaoula",
+          "code_postal": "16095"
+        },
+        {
+          "nom_ar": "بئر مراد رايس",
+          "nom_fr": "Bir Mourad Rais",
+          "nom_en": "Bir Mourad Rais",
+          "code_postal": "16013"
+        },
+        {
+          "nom_ar": "بئر خادم",
+          "nom_fr": "Birkhadem",
+          "nom_en": "Birkhadem",
+          "code_postal": "16029"
+        },
+        {
+          "nom_ar": "جسر قسنطينة",
+          "nom_fr": "Djasr Kasentina",
+          "nom_en": "Djasr Kasentina",
+          "code_postal": "16048"
+        },
+        {
+          "nom_ar": "حيدرة",
+          "nom_fr": "Hydra",
+          "nom_en": "Hydra",
+          "code_postal": "16016"
+        }
+      ],
+      "nb_communes": 5
+    },
+    {
+      "nom_ar": "باب الوادي",
+      "nom_fr": "Bab El Oued",
+      "nom_en": "Bab El Oued",
+      "communes": [
+        {
+          "nom_ar": "بولوغين بن زيري",
+          "nom_fr": "Bologhine Ibnou Ziri",
+          "nom_en": "Bologhine Ibnou Ziri",
+          "code_postal": "16030"
+        },
+        {
+          "nom_ar": "القصبة",
+          "nom_fr": "Casbah",
+          "nom_en": "Casbah",
+          "code_postal": "16001"
+        },
+        {
+          "nom_ar": "وادي قريش",
+          "nom_fr": "Oued Koriche",
+          "nom_en": "Oued Koriche",
+          "code_postal": "16182"
+        },
+        {
+          "nom_ar": "الرايس حميدو",
+          "nom_fr": "Rais Hamidou",
+          "nom_en": "Rais Hamidou",
+          "code_postal": "16060"
+        },
+        {
+          "nom_ar": "باب الوادي",
+          "nom_fr": "Bab El Oued",
+          "nom_en": "Bab El Oued",
+          "code_postal": "16008"
+        }
+      ],
+      "nb_communes": 5
+    },
+    {
+      "nom_ar": "بوزريعة",
+      "nom_fr": "Bouzareah",
+      "nom_en": "Bouzareah",
+      "communes": [
+        {
+          "nom_ar": "ابن عكنون",
+          "nom_fr": "Ben Aknoun",
+          "nom_en": "Ben Aknoun",
+          "code_postal": "16028"
+        },
+        {
+          "nom_ar": "بني مسوس",
+          "nom_fr": "Beni Messous",
+          "nom_en": "Beni Messous",
+          "code_postal": "16044"
+        },
+        {
+          "nom_ar": "بوزريعة",
+          "nom_fr": "Bouzareah",
+          "nom_en": "Bouzareah",
+          "code_postal": "16032"
+        },
+        {
+          "nom_ar": "الابيار",
+          "nom_fr": "El Biar",
+          "nom_en": "El Biar",
+          "code_postal": "16003"
+        }
+      ],
+      "nb_communes": 4
+    },
+    {
+      "nom_ar": "الحراش",
+      "nom_fr": "El Harrach",
+      "nom_en": "El Harrach",
+      "communes": [
+        {
+          "nom_ar": "باش جراح",
+          "nom_fr": "Bachedjerah",
+          "nom_en": "Bachedjerah",
+          "code_postal": "16026"
+        },
+        {
+          "nom_ar": "بوروبة",
+          "nom_fr": "Bourouba",
+          "nom_en": "Bourouba",
+          "code_postal": "16054"
+        },
+        {
+          "nom_ar": "الحراش",
+          "nom_fr": "El Harrach",
+          "nom_en": "El Harrach",
+          "code_postal": "16004"
+        },
+        {
+          "nom_ar": "وادي السمار",
+          "nom_fr": "Oued Smar",
+          "nom_en": "Oued Smar",
+          "code_postal": "16059"
+        }
+      ],
+      "nb_communes": 4
+    }
+  ]
+}

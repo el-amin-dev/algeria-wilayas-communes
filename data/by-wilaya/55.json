@@ -1,0 +1,137 @@
+{
+  "wilaya_num": 55,
+  "code": "55",
+  "nom_ar": "تقرت",
+  "nom_fr": "Touggourt",
+  "nom_en": "Touggourt",
+  "nb_dairas": 6,
+  "nb_communes": 13,
+  "dairas": [
+    {
+      "nom_ar": "تماسين",
+      "nom_fr": "Temacine",
+      "nom_en": "Temacine",
+      "communes": [
+        {
+          "nom_ar": "تماسين",
+          "nom_fr": "Temacine",
+          "nom_en": "Temacine",
+          "code_postal": "30003"
+        },
+        {
+          "nom_ar": "بلدة اعمر",
+          "nom_fr": "Blidet Amor",
+          "nom_en": "Blidet Amor",
+          "code_postal": "30005"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "بوعلام",
+      "nom_fr": "Boualem",
+      "nom_en": "Boualem",
+      "communes": [
+        {
+          "nom_ar": "سيدي سليمان",
+          "nom_fr": "Sidi Slimane",
+          "nom_en": "Sidi Slimane",
+          "code_postal": "30030"
+        }
+      ],
+      "nb_communes": 1
+    },
+    {
+      "nom_ar": "المقارين",
+      "nom_fr": "Megarine",
+      "nom_en": "Megarine",
+      "communes": [
+        {
+          "nom_ar": "المقارين",
+          "nom_fr": "Megarine",
+          "nom_en": "Megarine",
+          "code_postal": "30009"
+        }
+      ],
+      "nb_communes": 1
+    },
+    {
+      "nom_ar": "تقرت",
+      "nom_fr": "Touggourt",
+      "nom_en": "Touggourt",
+      "communes": [
+        {
+          "nom_ar": "النزلة",
+          "nom_fr": "Nezla",
+          "nom_en": "Nezla",
+          "code_postal": "30004"
+        },
+        {
+          "nom_ar": "تبسبست",
+          "nom_fr": "Tebesbest",
+          "nom_en": "Tebesbest",
+          "code_postal": "30058"
+        },
+        {
+          "nom_ar": "تقرت",
+          "nom_fr": "Touggourt",
+          "nom_en": "Touggourt",
+          "code_postal": "30002"
+        },
+        {
+          "nom_ar": "الزاوية العابدية",
+          "nom_fr": "Zaouia El Abidia",
+          "nom_en": "Zaouia El Abidia",
+          "code_postal": "30018"
+        }
+      ],
+      "nb_communes": 4
+    },
+    {
+      "nom_ar": "الطيبات",
+      "nom_fr": "Taibet",
+      "nom_en": "Taibet",
+      "communes": [
+        {
+          "nom_ar": "الطيبات",
+          "nom_fr": "Taibet",
+          "nom_en": "Taibet",
+          "code_postal": "30015"
+        },
+        {
+          "nom_ar": "بن ناصر",
+          "nom_fr": "Benaceur",
+          "nom_en": "Benaceur",
+          "code_postal": "30020"
+        },
+        {
+          "nom_ar": "المنقر",
+          "nom_fr": "M'naguer",
+          "nom_en": "M'naguer",
+          "code_postal": "30029"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "الحجيرة",
+      "nom_fr": "El-Hadjira",
+      "nom_en": "El-Hadjira",
+      "communes": [
+        {
+          "nom_ar": "العالية",
+          "nom_fr": "El Alia",
+          "nom_en": "El Alia",
+          "code_postal": "30023"
+        },
+        {
+          "nom_ar": "الحجيرة",
+          "nom_fr": "El-Hadjira",
+          "nom_en": "El-Hadjira",
+          "code_postal": "30006"
+        }
+      ],
+      "nb_communes": 2
+    }
+  ]
+}

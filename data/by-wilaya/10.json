@@ -1,0 +1,377 @@
+{
+  "wilaya_num": 10,
+  "code": "10",
+  "nom_ar": "البويرة",
+  "nom_fr": "Bouira",
+  "nom_en": "Bouira",
+  "nb_dairas": 12,
+  "nb_communes": 45,
+  "dairas": [
+    {
+      "nom_ar": "عين بسام",
+      "nom_fr": "Ain Bessem",
+      "nom_en": "Ain Bessem",
+      "communes": [
+        {
+          "nom_ar": "عين العلوي",
+          "nom_fr": "Ain Laloui",
+          "nom_en": "Ain Laloui",
+          "code_postal": "10032"
+        },
+        {
+          "nom_ar": "عين الحجر",
+          "nom_fr": "Ain El Hadjar",
+          "nom_en": "Ain El Hadjar",
+          "code_postal": "10031"
+        },
+        {
+          "nom_ar": "عين بسام",
+          "nom_fr": "Ain-Bessem",
+          "nom_en": "Ain-Bessem",
+          "code_postal": "10005"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "برج أوخريص",
+      "nom_fr": "Bordj Okhriss",
+      "nom_en": "Bordj Okhriss",
+      "communes": [
+        {
+          "nom_ar": "الحجرة الزرقاء",
+          "nom_fr": "Hadjera Zerga",
+          "nom_en": "Hadjera Zerga",
+          "code_postal": "10065"
+        },
+        {
+          "nom_ar": "مزدور",
+          "nom_fr": "Mezdour",
+          "nom_en": "Mezdour",
+          "code_postal": "10040"
+        },
+        {
+          "nom_ar": "تاقديت",
+          "nom_fr": "Taguedite",
+          "nom_en": "Taguedite",
+          "code_postal": "10045"
+        },
+        {
+          "nom_ar": "برج أوخريص",
+          "nom_fr": "Bordj Okhriss",
+          "nom_en": "Bordj Okhriss",
+          "code_postal": "10014"
+        }
+      ],
+      "nb_communes": 4
+    },
+    {
+      "nom_ar": "سور الغزلان",
+      "nom_fr": "Sour El Ghozlane",
+      "nom_en": "Sour El Ghozlane",
+      "communes": [
+        {
+          "nom_ar": "ريدان",
+          "nom_fr": "Ridane",
+          "nom_en": "Ridane",
+          "code_postal": "10083"
+        },
+        {
+          "nom_ar": "المعمورة",
+          "nom_fr": "Maamora",
+          "nom_en": "Maamora",
+          "code_postal": "10071"
+        },
+        {
+          "nom_ar": "الحاكمية",
+          "nom_fr": "El-Hakimia",
+          "nom_en": "El-Hakimia",
+          "code_postal": "10058"
+        },
+        {
+          "nom_ar": "ديرة",
+          "nom_fr": "Dirah",
+          "nom_en": "Dirah",
+          "code_postal": "10020"
+        },
+        {
+          "nom_ar": "الدشمية",
+          "nom_fr": "Dechmia",
+          "nom_en": "Dechmia",
+          "code_postal": "10057"
+        },
+        {
+          "nom_ar": "سور الغزلان",
+          "nom_fr": "Sour El Ghozlane",
+          "nom_en": "Sour El Ghozlane",
+          "code_postal": "10004"
+        }
+      ],
+      "nb_communes": 6
+    },
+    {
+      "nom_ar": "بشلول",
+      "nom_fr": "Bechloul",
+      "nom_en": "Bechloul",
+      "communes": [
+        {
+          "nom_ar": "أهل القصر",
+          "nom_fr": "Ahl El Ksar",
+          "nom_en": "Ahl El Ksar",
+          "code_postal": "10008"
+        },
+        {
+          "nom_ar": "بشلول",
+          "nom_fr": "Bechloul",
+          "nom_en": "Bechloul",
+          "code_postal": "10012"
+        },
+        {
+          "nom_ar": "العجيبة",
+          "nom_fr": "El Adjiba",
+          "nom_en": "El Adjiba",
+          "code_postal": "10021"
+        },
+        {
+          "nom_ar": "الأسنام",
+          "nom_fr": "El Asnam",
+          "nom_en": "El Asnam",
+          "code_postal": "10022"
+        },
+        {
+          "nom_ar": "أولاد راشد",
+          "nom_fr": "Ouled Rached",
+          "nom_en": "Ouled Rached",
+          "code_postal": null
+        }
+      ],
+      "nb_communes": 5
+    },
+    {
+      "nom_ar": "مشد الله",
+      "nom_fr": "M'chedallah",
+      "nom_en": "M'chedallah",
+      "communes": [
+        {
+          "nom_ar": "آث  منصور",
+          "nom_fr": "Ath Mansour",
+          "nom_en": "Ath Mansour",
+          "code_postal": "10011"
+        },
+        {
+          "nom_ar": "سحاريج",
+          "nom_fr": "Saharidj",
+          "nom_en": "Saharidj",
+          "code_postal": "10043"
+        },
+        {
+          "nom_ar": "أمشدالة",
+          "nom_fr": "M Chedallah",
+          "nom_en": "M Chedallah",
+          "code_postal": "10003"
+        },
+        {
+          "nom_ar": "حنيف",
+          "nom_fr": "Hanif",
+          "nom_en": "Hanif",
+          "code_postal": "10030"
+        },
+        {
+          "nom_ar": "شرفة",
+          "nom_fr": "Chorfa",
+          "nom_en": "Chorfa",
+          "code_postal": "10019"
+        },
+        {
+          "nom_ar": "أغبالو",
+          "nom_fr": "Aghbalou",
+          "nom_en": "Aghbalou",
+          "code_postal": "10007"
+        }
+      ],
+      "nb_communes": 6
+    },
+    {
+      "nom_ar": "بئر غبالو",
+      "nom_fr": "Bir Ghbalou",
+      "nom_en": "Bir Ghbalou",
+      "communes": [
+        {
+          "nom_ar": "روراوة",
+          "nom_fr": "Raouraoua",
+          "nom_en": "Raouraoua",
+          "code_postal": "10042"
+        },
+        {
+          "nom_ar": "الخبوزية",
+          "nom_fr": "El Khabouzia",
+          "nom_en": "El Khabouzia",
+          "code_postal": "10038"
+        },
+        {
+          "nom_ar": "بئر غبالو",
+          "nom_fr": "Bir Ghbalou",
+          "nom_en": "Bir Ghbalou",
+          "code_postal": "10013"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "البويرة",
+      "nom_fr": "Bouira",
+      "nom_en": "Bouira",
+      "communes": [
+        {
+          "nom_ar": "البويرة",
+          "nom_fr": "Bouira",
+          "nom_en": "Bouira",
+          "code_postal": "10000"
+        },
+        {
+          "nom_ar": "عين الترك",
+          "nom_fr": "Ain Turk",
+          "nom_en": "Ain Turk",
+          "code_postal": "10033"
+        },
+        {
+          "nom_ar": "أيت لعزيز",
+          "nom_fr": "Ait Laaziz",
+          "nom_en": "Ait Laaziz",
+          "code_postal": "10034"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "سوق الخميس",
+      "nom_fr": "Souk El Khemis",
+      "nom_en": "Souk El Khemis",
+      "communes": [
+        {
+          "nom_ar": "المقراني",
+          "nom_fr": "El-Mokrani",
+          "nom_en": "El-Mokrani",
+          "code_postal": "10060"
+        },
+        {
+          "nom_ar": "سوق الخميس",
+          "nom_fr": "Souk El Khemis",
+          "nom_en": "Souk El Khemis",
+          "code_postal": "10044"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "القادرية",
+      "nom_fr": "Kadiria",
+      "nom_en": "Kadiria",
+      "communes": [
+        {
+          "nom_ar": "أعمر",
+          "nom_fr": "Aomar",
+          "nom_en": "Aomar",
+          "code_postal": "10010"
+        },
+        {
+          "nom_ar": "جباحية",
+          "nom_fr": "Djebahia",
+          "nom_en": "Djebahia",
+          "code_postal": "10036"
+        },
+        {
+          "nom_ar": "قادرية",
+          "nom_fr": "Kadiria",
+          "nom_en": "Kadiria",
+          "code_postal": "10006"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "الهاشمية",
+      "nom_fr": "El Hachimia",
+      "nom_en": "El Hachimia",
+      "communes": [
+        {
+          "nom_ar": "الهاشمية",
+          "nom_fr": "El Hachimia",
+          "nom_en": "El Hachimia",
+          "code_postal": "10023"
+        },
+        {
+          "nom_ar": "وادي البردي",
+          "nom_fr": "Oued El Berdi",
+          "nom_en": "Oued El Berdi",
+          "code_postal": "10075"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "الحيزر",
+      "nom_fr": "Haizer",
+      "nom_en": "Haizer",
+      "communes": [
+        {
+          "nom_ar": "حيزر",
+          "nom_fr": "Haizer",
+          "nom_en": "Haizer",
+          "code_postal": "10024"
+        },
+        {
+          "nom_ar": "تاغزوت",
+          "nom_fr": "Taghzout",
+          "nom_en": "Taghzout",
+          "code_postal": "10055"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "الأخضرية",
+      "nom_fr": "Lakhdaria",
+      "nom_en": "Lakhdaria",
+      "communes": [
+        {
+          "nom_ar": "بودربالة",
+          "nom_fr": "Bouderbala",
+          "nom_en": "Bouderbala",
+          "code_postal": "10016"
+        },
+        {
+          "nom_ar": "بوكرم",
+          "nom_fr": "Boukram",
+          "nom_en": "Boukram",
+          "code_postal": "10054"
+        },
+        {
+          "nom_ar": "قرومة",
+          "nom_fr": "Guerrouma",
+          "nom_en": "Guerrouma",
+          "code_postal": "10037"
+        },
+        {
+          "nom_ar": "الأخضرية",
+          "nom_fr": "Lakhdaria",
+          "nom_en": "Lakhdaria",
+          "code_postal": "10002"
+        },
+        {
+          "nom_ar": "معلة",
+          "nom_fr": "Maala",
+          "nom_en": "Maala",
+          "code_postal": "10039"
+        },
+        {
+          "nom_ar": "زبربر",
+          "nom_fr": "Z'barbar (El Isseri )",
+          "nom_en": "Z'barbar (El Isseri )",
+          "code_postal": "10047"
+        }
+      ],
+      "nb_communes": 6
+    }
+  ]
+}

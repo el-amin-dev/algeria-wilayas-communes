@@ -1,0 +1,331 @@
+{
+  "wilaya_num": 14,
+  "code": "14",
+  "nom_ar": "تيارت",
+  "nom_fr": "Tiaret",
+  "nom_en": "Tiaret",
+  "nb_dairas": 13,
+  "nb_communes": 36,
+  "dairas": [
+    {
+      "nom_ar": "مهدية",
+      "nom_fr": "Mahdia",
+      "nom_en": "Mahdia",
+      "communes": [
+        {
+          "nom_ar": "مهدية",
+          "nom_fr": "Mahdia",
+          "nom_en": "Mahdia",
+          "code_postal": "14004"
+        },
+        {
+          "nom_ar": "عين دزاريت",
+          "nom_fr": "Ain Dzarit",
+          "nom_en": "Ain Dzarit",
+          "code_postal": "14017"
+        },
+        {
+          "nom_ar": "السبعين",
+          "nom_fr": "Sebaine",
+          "nom_en": "Sebaine",
+          "code_postal": "14030"
+        },
+        {
+          "nom_ar": "الناظورة",
+          "nom_fr": "Nadorah",
+          "nom_en": "Nadorah",
+          "code_postal": "14058"
+        }
+      ],
+      "nb_communes": 4
+    },
+    {
+      "nom_ar": "السوقر",
+      "nom_fr": "Sougueur",
+      "nom_en": "Sougueur",
+      "communes": [
+        {
+          "nom_ar": "الفايجة",
+          "nom_fr": "Faidja",
+          "nom_en": "Faidja",
+          "code_postal": "14049"
+        },
+        {
+          "nom_ar": "سي عبد الغني",
+          "nom_fr": "Si Abdelghani",
+          "nom_en": "Si Abdelghani",
+          "code_postal": "14027"
+        },
+        {
+          "nom_ar": "السوقر",
+          "nom_fr": "Sougueur",
+          "nom_en": "Sougueur",
+          "code_postal": "14003"
+        },
+        {
+          "nom_ar": "توسنينة",
+          "nom_fr": "Tousnina",
+          "nom_en": "Tousnina",
+          "code_postal": "14037"
+        }
+      ],
+      "nb_communes": 4
+    },
+    {
+      "nom_ar": "مغيلة",
+      "nom_fr": "Meghila",
+      "nom_en": "Meghila",
+      "communes": [
+        {
+          "nom_ar": "مغيلة",
+          "nom_fr": "Meghila",
+          "nom_en": "Meghila",
+          "code_postal": "14024"
+        },
+        {
+          "nom_ar": "السبت",
+          "nom_fr": "Sebt",
+          "nom_en": "Sebt",
+          "code_postal": "21018"
+        },
+        {
+          "nom_ar": "سيدي حسني",
+          "nom_fr": "Sidi Hosni",
+          "nom_en": "Sidi Hosni",
+          "code_postal": "14029"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "فرندة",
+      "nom_fr": "Frenda",
+      "nom_en": "Frenda",
+      "communes": [
+        {
+          "nom_ar": "عين الحديد",
+          "nom_fr": "Ain El Hadid",
+          "nom_en": "Ain El Hadid",
+          "code_postal": "14008"
+        },
+        {
+          "nom_ar": "فرندة",
+          "nom_fr": "Frenda",
+          "nom_en": "Frenda",
+          "code_postal": "14001"
+        },
+        {
+          "nom_ar": "تخمرت",
+          "nom_fr": "Takhemaret",
+          "nom_en": "Takhemaret",
+          "code_postal": "14015"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "عين كرمس",
+      "nom_fr": "Ain Kermes",
+      "nom_en": "Ain Kermes",
+      "communes": [
+        {
+          "nom_ar": "عين كرمس",
+          "nom_fr": "Ain Kermes",
+          "nom_en": "Ain Kermes",
+          "code_postal": "14009"
+        },
+        {
+          "nom_ar": "جبيلات الرصفاء",
+          "nom_fr": "Djebilet Rosfa",
+          "nom_en": "Djebilet Rosfa",
+          "code_postal": "14061"
+        },
+        {
+          "nom_ar": "مادنة",
+          "nom_fr": "Madna",
+          "nom_en": "Madna",
+          "code_postal": "14055"
+        },
+        {
+          "nom_ar": "مدريسة",
+          "nom_fr": "Medrissa",
+          "nom_en": "Medrissa",
+          "code_postal": "14013"
+        }
+      ],
+      "nb_communes": 4
+    },
+    {
+      "nom_ar": "تنس",
+      "nom_fr": "Tenes",
+      "nom_en": "Tenes",
+      "communes": [
+        {
+          "nom_ar": "سيدي عبد الرحمن",
+          "nom_fr": "Sidi Abderrahmane",
+          "nom_en": "Sidi Abderrahmane",
+          "code_postal": "02066"
+        }
+      ],
+      "nb_communes": 1
+    },
+    {
+      "nom_ar": "رحوية",
+      "nom_fr": "Rahouia",
+      "nom_en": "Rahouia",
+      "communes": [
+        {
+          "nom_ar": "قرطوفة",
+          "nom_fr": "Guertoufa",
+          "nom_en": "Guertoufa",
+          "code_postal": "14019"
+        },
+        {
+          "nom_ar": "الرحوية",
+          "nom_fr": "Rahouia",
+          "nom_en": "Rahouia",
+          "code_postal": "14005"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "وادي ليلي",
+      "nom_fr": "Oued Lili",
+      "nom_en": "Oued Lili",
+      "communes": [
+        {
+          "nom_ar": "وادي ليلي",
+          "nom_fr": "Oued Lilli",
+          "nom_en": "Oued Lilli",
+          "code_postal": "14014"
+        },
+        {
+          "nom_ar": "سيدي علي ملال",
+          "nom_fr": "Sidi Ali Mellal",
+          "nom_en": "Sidi Ali Mellal",
+          "code_postal": "14064"
+        },
+        {
+          "nom_ar": "تيدة",
+          "nom_fr": "Tidda",
+          "nom_en": "Tidda",
+          "code_postal": "14071"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "مشرع الصفا",
+      "nom_fr": "Mechraa Sfa",
+      "nom_en": "Mechraa Sfa",
+      "communes": [
+        {
+          "nom_ar": "جيلالي بن عمار",
+          "nom_fr": "Djillali Ben Amar",
+          "nom_en": "Djillali Ben Amar",
+          "code_postal": "14016"
+        },
+        {
+          "nom_ar": "مشرع الصفا",
+          "nom_fr": "Mechraa Safa",
+          "nom_en": "Mechraa Safa",
+          "code_postal": "14012"
+        },
+        {
+          "nom_ar": "تاقدمت",
+          "nom_fr": "Tagdempt",
+          "nom_en": "Tagdempt",
+          "code_postal": "14068"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "تيارت",
+      "nom_fr": "Tiaret",
+      "nom_en": "Tiaret",
+      "communes": [
+        {
+          "nom_ar": "تيارت",
+          "nom_fr": "Tiaret",
+          "nom_en": "Tiaret",
+          "code_postal": "14000"
+        }
+      ],
+      "nb_communes": 1
+    },
+    {
+      "nom_ar": "مدروسة",
+      "nom_fr": "Medroussa",
+      "nom_en": "Medroussa",
+      "communes": [
+        {
+          "nom_ar": "مدروسة",
+          "nom_fr": "Medroussa",
+          "nom_en": "Medroussa",
+          "code_postal": "14023"
+        },
+        {
+          "nom_ar": "ملاكو",
+          "nom_fr": "Mellakou",
+          "nom_en": "Mellakou",
+          "code_postal": "14025"
+        },
+        {
+          "nom_ar": "سيدي بختي",
+          "nom_fr": "Sidi Bakhti",
+          "nom_en": "Sidi Bakhti",
+          "code_postal": "14065"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "عين الذهب",
+      "nom_fr": "Ain Deheb",
+      "nom_en": "Ain Deheb",
+      "communes": [
+        {
+          "nom_ar": "عين الذهب",
+          "nom_fr": "Ain Deheb",
+          "nom_en": "Ain Deheb",
+          "code_postal": "14007"
+        },
+        {
+          "nom_ar": "شحيمة",
+          "nom_fr": "Chehaima",
+          "nom_en": "Chehaima",
+          "code_postal": "14046"
+        },
+        {
+          "nom_ar": "النعيمة",
+          "nom_fr": "Naima",
+          "nom_en": "Naima",
+          "code_postal": "14060"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "دحموني",
+      "nom_fr": "Dahmouni",
+      "nom_en": "Dahmouni",
+      "communes": [
+        {
+          "nom_ar": "عين بوشقيف",
+          "nom_fr": "Ain Bouchekif",
+          "nom_en": "Ain Bouchekif",
+          "code_postal": "14040"
+        },
+        {
+          "nom_ar": "دحموني",
+          "nom_fr": "Dahmouni",
+          "nom_en": "Dahmouni",
+          "code_postal": "14010"
+        }
+      ],
+      "nb_communes": 2
+    }
+  ]
+}

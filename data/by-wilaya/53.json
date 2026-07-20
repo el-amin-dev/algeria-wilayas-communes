@@ -1,0 +1,45 @@
+{
+  "wilaya_num": 53,
+  "code": "53",
+  "nom_ar": "عين صالح",
+  "nom_fr": "In Salah",
+  "nom_en": "In Salah",
+  "nb_dairas": 2,
+  "nb_communes": 3,
+  "dairas": [
+    {
+      "nom_ar": "إينغر",
+      "nom_fr": "In Ghar",
+      "nom_en": "In Ghar",
+      "communes": [
+        {
+          "nom_ar": "إينغر",
+          "nom_fr": "Inghar",
+          "nom_en": "Inghar",
+          "code_postal": "11004"
+        }
+      ],
+      "nb_communes": 1
+    },
+    {
+      "nom_ar": "عين صالح",
+      "nom_fr": "In Salah",
+      "nom_en": "In Salah",
+      "communes": [
+        {
+          "nom_ar": "عين صالح",
+          "nom_fr": "Ain Salah",
+          "nom_en": "Ain Salah",
+          "code_postal": "11001"
+        },
+        {
+          "nom_ar": "فقارة الزوى",
+          "nom_fr": "Foggaret Ezzoua",
+          "nom_en": "Foggaret Ezzoua",
+          "code_postal": "11016"
+        }
+      ],
+      "nb_communes": 2
+    }
+  ]
+}

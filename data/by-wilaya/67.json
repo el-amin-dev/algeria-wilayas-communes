@@ -1,0 +1,71 @@
+{
+  "wilaya_num": 67,
+  "code": "67",
+  "nom_ar": "قصر الشلالة",
+  "nom_fr": "Ksar Chellala",
+  "nom_en": "Ksar Chellala",
+  "nb_dairas": 3,
+  "nb_communes": 6,
+  "dairas": [
+    {
+      "nom_ar": "قصر الشلالة",
+      "nom_fr": "Ksar Chellala",
+      "nom_en": "Ksar Chellala",
+      "communes": [
+        {
+          "nom_ar": "قصر الشلالة",
+          "nom_fr": "Ksar Chellala",
+          "nom_en": "Ksar Chellala",
+          "code_postal": "14002"
+        },
+        {
+          "nom_ar": "سرغين",
+          "nom_fr": "Serghine",
+          "nom_en": "Serghine",
+          "code_postal": "14051"
+        },
+        {
+          "nom_ar": "زمالة  الأمير عبد القادر",
+          "nom_fr": "Zmalet El Emir Abdelkade",
+          "nom_en": "Zmalet El Emir Abdelkade",
+          "code_postal": "14038"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "بوقرة",
+      "nom_fr": "Bougara",
+      "nom_en": "Bougara",
+      "communes": [
+        {
+          "nom_ar": "بوقرة",
+          "nom_fr": "Bougara",
+          "nom_en": "Bougara",
+          "code_postal": "09008"
+        }
+      ],
+      "nb_communes": 1
+    },
+    {
+      "nom_ar": "حمادية",
+      "nom_fr": "Hamadia",
+      "nom_en": "Hamadia",
+      "communes": [
+        {
+          "nom_ar": "حمادية",
+          "nom_fr": "Hamadia",
+          "nom_en": "Hamadia",
+          "code_postal": "14020"
+        },
+        {
+          "nom_ar": "الرشايقة",
+          "nom_fr": "Rechaiga",
+          "nom_en": "Rechaiga",
+          "code_postal": "14026"
+        }
+      ],
+      "nb_communes": 2
+    }
+  ]
+}

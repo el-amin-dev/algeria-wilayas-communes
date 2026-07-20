@@ -1,0 +1,227 @@
+{
+  "wilaya_num": 36,
+  "code": "36",
+  "nom_ar": "الطارف",
+  "nom_fr": "El Tarf",
+  "nom_en": "El Tarf",
+  "nb_dairas": 9,
+  "nb_communes": 24,
+  "dairas": [
+    {
+      "nom_ar": "الطارف",
+      "nom_fr": "El Tarf",
+      "nom_en": "El Tarf",
+      "communes": [
+        {
+          "nom_ar": "عين العسل",
+          "nom_fr": "Ain El Assel",
+          "nom_en": "Ain El Assel",
+          "code_postal": "36010"
+        },
+        {
+          "nom_ar": "بوقوس",
+          "nom_fr": "Bougous",
+          "nom_en": "Bougous",
+          "code_postal": "36029"
+        },
+        {
+          "nom_ar": "الطارف",
+          "nom_fr": "El Tarf",
+          "nom_en": "El Tarf",
+          "code_postal": "36000"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "الزيتونة",
+      "nom_fr": "Zitouna",
+      "nom_en": "Zitouna",
+      "communes": [
+        {
+          "nom_ar": "الزيتونة",
+          "nom_fr": "Zitouna",
+          "nom_en": "Zitouna",
+          "code_postal": "21028"
+        }
+      ],
+      "nb_communes": 1
+    },
+    {
+      "nom_ar": "البسباس",
+      "nom_fr": "Besbes",
+      "nom_en": "Besbes",
+      "communes": [
+        {
+          "nom_ar": "البسباس",
+          "nom_fr": "Besbes",
+          "nom_en": "Besbes",
+          "code_postal": "36017"
+        },
+        {
+          "nom_ar": "زريزر",
+          "nom_fr": "Zerizer",
+          "nom_en": "Zerizer",
+          "code_postal": "36015"
+        },
+        {
+          "nom_ar": "عصفور",
+          "nom_fr": "Asfour",
+          "nom_en": "Asfour",
+          "code_postal": "36012"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "بوتليليس",
+      "nom_fr": "Boutlelis",
+      "nom_en": "Boutlelis",
+      "communes": [
+        {
+          "nom_ar": "عين الكرمة",
+          "nom_fr": "Ain Kerma",
+          "nom_en": "Ain Kerma",
+          "code_postal": "31059"
+        }
+      ],
+      "nb_communes": 1
+    },
+    {
+      "nom_ar": "بوحجار",
+      "nom_fr": "Bouhadjar",
+      "nom_en": "Bouhadjar",
+      "communes": [
+        {
+          "nom_ar": "بوحجار",
+          "nom_fr": "Bouhadjar",
+          "nom_en": "Bouhadjar",
+          "code_postal": "36005"
+        },
+        {
+          "nom_ar": "حمام بني صالح",
+          "nom_fr": "Hammam Beni Salah",
+          "nom_en": "Hammam Beni Salah",
+          "code_postal": "36036"
+        },
+        {
+          "nom_ar": "وادي الزيتون",
+          "nom_fr": "Oued Zitoun",
+          "nom_en": "Oued Zitoun",
+          "code_postal": "36044"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "بن مهيدي",
+      "nom_fr": "Ben M'hidi",
+      "nom_en": "Ben M'hidi",
+      "communes": [
+        {
+          "nom_ar": "بن مهيدي",
+          "nom_fr": "Ben M Hidi",
+          "nom_en": "Ben M Hidi",
+          "code_postal": "36003"
+        },
+        {
+          "nom_ar": "بريحان",
+          "nom_fr": "Berrihane",
+          "nom_en": "Berrihane",
+          "code_postal": "36027"
+        },
+        {
+          "nom_ar": "الشط",
+          "nom_fr": "Echatt",
+          "nom_en": "Echatt",
+          "code_postal": "36025"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "الذرعان",
+      "nom_fr": "Drean",
+      "nom_en": "Drean",
+      "communes": [
+        {
+          "nom_ar": "شبيطة مختار",
+          "nom_fr": "Chebaita Mokhtar",
+          "nom_en": "Chebaita Mokhtar",
+          "code_postal": "36013"
+        },
+        {
+          "nom_ar": "شحاني",
+          "nom_fr": "Chihani",
+          "nom_en": "Chihani",
+          "code_postal": "36014"
+        },
+        {
+          "nom_ar": "الذرعـان",
+          "nom_fr": "Drean",
+          "nom_en": "Drean",
+          "code_postal": "36001"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "القالة",
+      "nom_fr": "El Kala",
+      "nom_en": "El Kala",
+      "communes": [
+        {
+          "nom_ar": "العيون",
+          "nom_fr": "El Aioun",
+          "nom_en": "El Aioun",
+          "code_postal": "36018"
+        },
+        {
+          "nom_ar": "القالة",
+          "nom_fr": "El Kala",
+          "nom_en": "El Kala",
+          "code_postal": "36002"
+        },
+        {
+          "nom_ar": "السوارخ",
+          "nom_fr": "Souarekh",
+          "nom_en": "Souarekh",
+          "code_postal": "36020"
+        },
+        {
+          "nom_ar": "رمل السوق",
+          "nom_fr": "Raml Souk",
+          "nom_en": "Raml Souk",
+          "code_postal": "36021"
+        }
+      ],
+      "nb_communes": 4
+    },
+    {
+      "nom_ar": "بوثلجة",
+      "nom_fr": "Bouteldja",
+      "nom_en": "Bouteldja",
+      "communes": [
+        {
+          "nom_ar": "بوثلجة",
+          "nom_fr": "Bouteldja",
+          "nom_en": "Bouteldja",
+          "code_postal": "36006"
+        },
+        {
+          "nom_ar": "الشافية",
+          "nom_fr": "Chefia",
+          "nom_en": "Chefia",
+          "code_postal": "36032"
+        },
+        {
+          "nom_ar": "بحيرة الطيور",
+          "nom_fr": "Lac Des Oiseaux",
+          "nom_en": "Lac Des Oiseaux",
+          "code_postal": "36019"
+        }
+      ],
+      "nb_communes": 3
+    }
+  ]
+}

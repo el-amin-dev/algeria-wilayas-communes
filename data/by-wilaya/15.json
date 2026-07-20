@@ -1,0 +1,581 @@
+{
+  "wilaya_num": 15,
+  "code": "15",
+  "nom_ar": "تيزي وزو",
+  "nom_fr": "Tizi Ouzou",
+  "nom_en": "Tizi Ouzou",
+  "nb_dairas": 21,
+  "nb_communes": 67,
+  "dairas": [
+    {
+      "nom_ar": "تيقزيرت",
+      "nom_fr": "Tigzirt",
+      "nom_en": "Tigzirt",
+      "communes": [
+        {
+          "nom_ar": "ميزرانـــة",
+          "nom_fr": "Mizrana",
+          "nom_en": "Mizrana",
+          "code_postal": "15061"
+        },
+        {
+          "nom_ar": "إفليـــسن",
+          "nom_fr": "Iflissen",
+          "nom_en": "Iflissen",
+          "code_postal": "15068"
+        },
+        {
+          "nom_ar": "تيقـزيرت",
+          "nom_fr": "Tigzirt",
+          "nom_en": "Tigzirt",
+          "code_postal": "15019"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "بوزقن",
+      "nom_fr": "Bouzeguene",
+      "nom_en": "Bouzeguene",
+      "communes": [
+        {
+          "nom_ar": "إيجــار",
+          "nom_fr": "Idjeur",
+          "nom_en": "Idjeur",
+          "code_postal": "15035"
+        },
+        {
+          "nom_ar": "بني زيكــي",
+          "nom_fr": "Beni-Zikki",
+          "nom_en": "Beni-Zikki",
+          "code_postal": "15118"
+        },
+        {
+          "nom_ar": "إيلولة أومـــالو",
+          "nom_fr": "Illoula Oumalou",
+          "nom_en": "Illoula Oumalou",
+          "code_postal": "15037"
+        },
+        {
+          "nom_ar": "بوزقــن",
+          "nom_fr": "Bouzeguene",
+          "nom_en": "Bouzeguene",
+          "code_postal": "15009"
+        }
+      ],
+      "nb_communes": 4
+    },
+    {
+      "nom_ar": "بني دوالة",
+      "nom_fr": "Beni Douala",
+      "nom_en": "Beni Douala",
+      "communes": [
+        {
+          "nom_ar": "بني دوالة",
+          "nom_fr": "Beni-Douala",
+          "nom_en": "Beni-Douala",
+          "code_postal": "15011"
+        },
+        {
+          "nom_ar": "بني عيسي",
+          "nom_fr": "Beni-Aissi",
+          "nom_en": "Beni-Aissi",
+          "code_postal": "15069"
+        },
+        {
+          "nom_ar": "أيت محمود",
+          "nom_fr": "Ait-Mahmoud",
+          "nom_en": "Ait-Mahmoud",
+          "code_postal": "15044"
+        },
+        {
+          "nom_ar": "بنــــي زمنزار",
+          "nom_fr": "Beni Zmenzer",
+          "nom_en": "Beni Zmenzer",
+          "code_postal": "15028"
+        }
+      ],
+      "nb_communes": 4
+    },
+    {
+      "nom_ar": "واضية",
+      "nom_fr": "Ouadhias",
+      "nom_en": "Ouadhias",
+      "communes": [
+        {
+          "nom_ar": "أقني قغران",
+          "nom_fr": "Agouni-Gueghrane",
+          "nom_en": "Agouni-Gueghrane",
+          "code_postal": "15022"
+        },
+        {
+          "nom_ar": "أيت بــوادو",
+          "nom_fr": "Ait Bouaddou",
+          "nom_en": "Ait Bouaddou",
+          "code_postal": "15024"
+        },
+        {
+          "nom_ar": "واضية",
+          "nom_fr": "Ouadhias",
+          "nom_en": "Ouadhias",
+          "code_postal": "15016"
+        },
+        {
+          "nom_ar": "تيزي نثلاثة",
+          "nom_fr": "Tizi N'tleta",
+          "nom_en": "Tizi N'tleta",
+          "code_postal": "15049"
+        }
+      ],
+      "nb_communes": 4
+    },
+    {
+      "nom_ar": "أزفون",
+      "nom_fr": "Azeffoun",
+      "nom_en": "Azeffoun",
+      "communes": [
+        {
+          "nom_ar": "أغريب",
+          "nom_fr": "Aghribs",
+          "nom_en": "Aghribs",
+          "code_postal": "15021"
+        },
+        {
+          "nom_ar": "أيت شافع",
+          "nom_fr": "Ait-Chafaa",
+          "nom_en": "Ait-Chafaa",
+          "code_postal": "15059"
+        },
+        {
+          "nom_ar": "أقرو",
+          "nom_fr": "Akerrou",
+          "nom_en": "Akerrou",
+          "code_postal": "15027"
+        },
+        {
+          "nom_ar": "أزفون",
+          "nom_fr": "Azeffoun",
+          "nom_en": "Azeffoun",
+          "code_postal": "15010"
+        }
+      ],
+      "nb_communes": 4
+    },
+    {
+      "nom_ar": "بوغني",
+      "nom_fr": "Boghni",
+      "nom_en": "Boghni",
+      "communes": [
+        {
+          "nom_ar": "أسي يوسف",
+          "nom_fr": "Assi-Youcef",
+          "nom_en": "Assi-Youcef",
+          "code_postal": "15025"
+        },
+        {
+          "nom_ar": "بوغني",
+          "nom_fr": "Boghni",
+          "nom_en": "Boghni",
+          "code_postal": "15003"
+        },
+        {
+          "nom_ar": "بونوح",
+          "nom_fr": "Bounouh",
+          "nom_en": "Bounouh",
+          "code_postal": "15031"
+        },
+        {
+          "nom_ar": "مشطراس",
+          "nom_fr": "Mechtras",
+          "nom_en": "Mechtras",
+          "code_postal": "15041"
+        }
+      ],
+      "nb_communes": 4
+    },
+    {
+      "nom_ar": "ذراع بن خدة",
+      "nom_fr": "Draa Ben Khedda",
+      "nom_en": "Draa Ben Khedda",
+      "communes": [
+        {
+          "nom_ar": "ذراع بن خدة",
+          "nom_fr": "Draa-Ben-Khedda",
+          "nom_en": "Draa-Ben-Khedda",
+          "code_postal": "15004"
+        },
+        {
+          "nom_ar": "سيدي نعمان",
+          "nom_fr": "Sidi Namane",
+          "nom_en": "Sidi Namane",
+          "code_postal": "15042"
+        },
+        {
+          "nom_ar": "تادمايت",
+          "nom_fr": "Tadmait",
+          "nom_en": "Tadmait",
+          "code_postal": "15018"
+        },
+        {
+          "nom_ar": "تيرمتين",
+          "nom_fr": "Tirmitine",
+          "nom_en": "Tirmitine",
+          "code_postal": "15048"
+        }
+      ],
+      "nb_communes": 4
+    },
+    {
+      "nom_ar": "واسيف",
+      "nom_fr": "Ouacif",
+      "nom_en": "Ouacif",
+      "communes": [
+        {
+          "nom_ar": "أيت بومهدي",
+          "nom_fr": "Ait Boumahdi",
+          "nom_en": "Ait Boumahdi",
+          "code_postal": "15084"
+        },
+        {
+          "nom_ar": "أيت تودرت",
+          "nom_fr": "Ait-Toudert",
+          "nom_en": "Ait-Toudert",
+          "code_postal": "15062"
+        },
+        {
+          "nom_ar": "واسيف",
+          "nom_fr": "Ouacif",
+          "nom_en": "Ouacif",
+          "code_postal": "15015"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "مقلع",
+      "nom_fr": "Mekla",
+      "nom_en": "Mekla",
+      "communes": [
+        {
+          "nom_ar": "أيت خليلي",
+          "nom_fr": "Ait Khellili",
+          "nom_en": "Ait Khellili",
+          "code_postal": "15079"
+        },
+        {
+          "nom_ar": "مقــلع",
+          "nom_fr": "Mekla",
+          "nom_en": "Mekla",
+          "code_postal": "15014"
+        },
+        {
+          "nom_ar": "صوامـــع",
+          "nom_fr": "Souama",
+          "nom_en": "Souama",
+          "code_postal": "15043"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "بني يني",
+      "nom_fr": "Benni Yenni",
+      "nom_en": "Benni Yenni",
+      "communes": [
+        {
+          "nom_ar": "بني يني",
+          "nom_fr": "Beni-Yenni",
+          "nom_en": "Beni-Yenni",
+          "code_postal": "15029"
+        },
+        {
+          "nom_ar": "إبودرارن",
+          "nom_fr": "Iboudrarene",
+          "nom_en": "Iboudrarene",
+          "code_postal": "15073"
+        },
+        {
+          "nom_ar": "يطــافن",
+          "nom_fr": "Yatafene",
+          "nom_en": "Yatafene",
+          "code_postal": "15052"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "تيزي وزو",
+      "nom_fr": "Tizi Ouzou",
+      "nom_en": "Tizi Ouzou",
+      "communes": [
+        {
+          "nom_ar": "تيزي وزو",
+          "nom_fr": "Tizi-Ouzou",
+          "nom_en": "Tizi-Ouzou",
+          "code_postal": "15000"
+        }
+      ],
+      "nb_communes": 1
+    },
+    {
+      "nom_ar": "عين الحمام",
+      "nom_fr": "Ain El Hammam",
+      "nom_en": "Ain El Hammam",
+      "communes": [
+        {
+          "nom_ar": "أبي يوسف",
+          "nom_fr": "Abi-Youcef",
+          "nom_en": "Abi-Youcef",
+          "code_postal": null
+        },
+        {
+          "nom_ar": "عين الحمام",
+          "nom_fr": "Ain-El-Hammam",
+          "nom_en": "Ain-El-Hammam",
+          "code_postal": "15002"
+        },
+        {
+          "nom_ar": "أيت يحيى",
+          "nom_fr": "Ait-Yahia",
+          "nom_en": "Ait-Yahia",
+          "code_postal": "15072"
+        },
+        {
+          "nom_ar": "اقبيل",
+          "nom_fr": "Akbil",
+          "nom_en": "Akbil",
+          "code_postal": "15092"
+        }
+      ],
+      "nb_communes": 4
+    },
+    {
+      "nom_ar": "ماكودة",
+      "nom_fr": "Makouda",
+      "nom_en": "Makouda",
+      "communes": [
+        {
+          "nom_ar": "بوجيمة",
+          "nom_fr": "Boudjima",
+          "nom_en": "Boudjima",
+          "code_postal": "15030"
+        },
+        {
+          "nom_ar": "ماكودة",
+          "nom_fr": "Makouda",
+          "nom_en": "Makouda",
+          "code_postal": "15040"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "ذراع الميزان",
+      "nom_fr": "Draa El Mizan",
+      "nom_en": "Draa El Mizan",
+      "communes": [
+        {
+          "nom_ar": "عين الزاوية",
+          "nom_fr": "Ain-Zaouia",
+          "nom_en": "Ain-Zaouia",
+          "code_postal": "15055"
+        },
+        {
+          "nom_ar": "أيت يحي موسى",
+          "nom_fr": "Ait Yahia Moussa",
+          "nom_en": "Ait Yahia Moussa",
+          "code_postal": "15026"
+        },
+        {
+          "nom_ar": "ذراع الميزان",
+          "nom_fr": "Draa-El-Mizan",
+          "nom_en": "Draa-El-Mizan",
+          "code_postal": "15005"
+        },
+        {
+          "nom_ar": "فريقات",
+          "nom_fr": "Frikat",
+          "nom_en": "Frikat",
+          "code_postal": "15067"
+        }
+      ],
+      "nb_communes": 4
+    },
+    {
+      "nom_ar": "تيزي غنيف",
+      "nom_fr": "Tizi-Ghenif",
+      "nom_en": "Tizi-Ghenif",
+      "communes": [
+        {
+          "nom_ar": "مكيرة",
+          "nom_fr": "M'kira",
+          "nom_en": "M'kira",
+          "code_postal": "15046"
+        },
+        {
+          "nom_ar": "تيزي غنيف",
+          "nom_fr": "Tizi-Gheniff",
+          "nom_en": "Tizi-Gheniff",
+          "code_postal": "15020"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "إفرحونان",
+      "nom_fr": "Iferhounene",
+      "nom_en": "Iferhounene",
+      "communes": [
+        {
+          "nom_ar": "إيلـيــلتـن",
+          "nom_fr": "Illilten",
+          "nom_en": "Illilten",
+          "code_postal": "15036"
+        },
+        {
+          "nom_ar": "إمســوحال",
+          "nom_fr": "Imsouhal",
+          "nom_en": "Imsouhal",
+          "code_postal": "15023"
+        },
+        {
+          "nom_ar": "إفــرحــونان",
+          "nom_fr": "Iferhounene",
+          "nom_en": "Iferhounene",
+          "code_postal": "15013"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "عزازقة",
+      "nom_fr": "Azazga",
+      "nom_en": "Azazga",
+      "communes": [
+        {
+          "nom_ar": "عزازقة",
+          "nom_fr": "Azazga",
+          "nom_en": "Azazga",
+          "code_postal": "15001"
+        },
+        {
+          "nom_ar": "فريحة",
+          "nom_fr": "Freha",
+          "nom_en": "Freha",
+          "code_postal": "15012"
+        },
+        {
+          "nom_ar": "إيفيغاء",
+          "nom_fr": "Ifigha",
+          "nom_en": "Ifigha",
+          "code_postal": "15034"
+        },
+        {
+          "nom_ar": "إعــكورن",
+          "nom_fr": "Yakourene",
+          "nom_en": "Yakourene",
+          "code_postal": "15051"
+        },
+        {
+          "nom_ar": "زكري",
+          "nom_fr": "Zekri",
+          "nom_en": "Zekri",
+          "code_postal": "15076"
+        }
+      ],
+      "nb_communes": 5
+    },
+    {
+      "nom_ar": "الأربعاء ناث إيراثن",
+      "nom_fr": "Larbaa Nath Iraten",
+      "nom_en": "Larbaa Nath Iraten",
+      "communes": [
+        {
+          "nom_ar": "أيت عقـواشة",
+          "nom_fr": "Ait Aggouacha",
+          "nom_en": "Ait Aggouacha",
+          "code_postal": "15058"
+        },
+        {
+          "nom_ar": "إيرجـــن",
+          "nom_fr": "Irdjen",
+          "nom_en": "Irdjen",
+          "code_postal": "15038"
+        },
+        {
+          "nom_ar": "الأربعــاء ناث إيراثن",
+          "nom_fr": "Larbaa Nath Irathen",
+          "nom_en": "Larbaa Nath Irathen",
+          "code_postal": "15006"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "تيزي راشد",
+      "nom_fr": "Tizi Rached",
+      "nom_en": "Tizi Rached",
+      "communes": [
+        {
+          "nom_ar": "أيت  أومالو",
+          "nom_fr": "Ait-Oumalou",
+          "nom_en": "Ait-Oumalou",
+          "code_postal": null
+        },
+        {
+          "nom_ar": "تيزي راشد",
+          "nom_fr": "Tizi-Rached",
+          "nom_en": "Tizi-Rached",
+          "code_postal": "15050"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "واقنون",
+      "nom_fr": "Ouaguenoun",
+      "nom_en": "Ouaguenoun",
+      "communes": [
+        {
+          "nom_ar": "أيت عيسى ميمون",
+          "nom_fr": "Ait-Aissa-Mimoun",
+          "nom_en": "Ait-Aissa-Mimoun",
+          "code_postal": "15032"
+        },
+        {
+          "nom_ar": "واقنون",
+          "nom_fr": "Ouaguenoun",
+          "nom_en": "Ouaguenoun",
+          "code_postal": "15045"
+        },
+        {
+          "nom_ar": "تيمـيزار",
+          "nom_fr": "Timizart",
+          "nom_en": "Timizart",
+          "code_postal": "15039"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "معاتقة",
+      "nom_fr": "Maatkas",
+      "nom_en": "Maatkas",
+      "communes": [
+        {
+          "nom_ar": "معـــاتقة",
+          "nom_fr": "Maatkas",
+          "nom_en": "Maatkas",
+          "code_postal": "15017"
+        },
+        {
+          "nom_ar": "سوق الإثنين",
+          "nom_fr": "Souk-El-Tenine",
+          "nom_en": "Souk-El-Tenine",
+          "code_postal": "15123"
+        }
+      ],
+      "nb_communes": 2
+    }
+  ]
+}

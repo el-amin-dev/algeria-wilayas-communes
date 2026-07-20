@@ -1,0 +1,31 @@
+{
+  "wilaya_num": 50,
+  "code": "50",
+  "nom_ar": "برج باجي مختار",
+  "nom_fr": "Bordj Badji Mokhtar",
+  "nom_en": "Bordj Badji Mokhtar",
+  "nb_dairas": 1,
+  "nb_communes": 2,
+  "dairas": [
+    {
+      "nom_ar": "برج باجي مختار",
+      "nom_fr": "Bordj Badji Mokhtar",
+      "nom_en": "Bordj Badji Mokhtar",
+      "communes": [
+        {
+          "nom_ar": "تيمياوين",
+          "nom_fr": "Timiaouine",
+          "nom_en": "Timiaouine",
+          "code_postal": "01042"
+        },
+        {
+          "nom_ar": "برج باجي مختار",
+          "nom_fr": "Bordj Badji Mokhtar",
+          "nom_en": "Bordj Badji Mokhtar",
+          "code_postal": "01010"
+        }
+      ],
+      "nb_communes": 2
+    }
+  ]
+}

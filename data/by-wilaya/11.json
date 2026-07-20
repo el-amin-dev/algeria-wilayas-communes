@@ -1,0 +1,65 @@
+{
+  "wilaya_num": 11,
+  "code": "11",
+  "nom_ar": "تمنراست",
+  "nom_fr": "Tamanrasset",
+  "nom_en": "Tamanrasset",
+  "nb_dairas": 3,
+  "nb_communes": 5,
+  "dairas": [
+    {
+      "nom_ar": "تاظروك",
+      "nom_fr": "Tazrouk",
+      "nom_en": "Tazrouk",
+      "communes": [
+        {
+          "nom_ar": "تاظروك",
+          "nom_fr": "Tazrouk",
+          "nom_en": "Tazrouk",
+          "code_postal": "11010"
+        },
+        {
+          "nom_ar": "أدلس",
+          "nom_fr": "Idles",
+          "nom_en": "Idles",
+          "code_postal": "11013"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "سيلت",
+      "nom_fr": "Silet",
+      "nom_en": "Silet",
+      "communes": [
+        {
+          "nom_ar": "ابلسة",
+          "nom_fr": "Abelsa",
+          "nom_en": "Abelsa",
+          "code_postal": "11007"
+        }
+      ],
+      "nb_communes": 1
+    },
+    {
+      "nom_ar": "تمنراست",
+      "nom_fr": "Tamanrasset",
+      "nom_en": "Tamanrasset",
+      "communes": [
+        {
+          "nom_ar": "تمنراست",
+          "nom_fr": "Tamanrasset",
+          "nom_en": "Tamanrasset",
+          "code_postal": "11000"
+        },
+        {
+          "nom_ar": "عين امقل",
+          "nom_fr": "Ain Amguel",
+          "nom_en": "Ain Amguel",
+          "code_postal": "11003"
+        }
+      ],
+      "nb_communes": 2
+    }
+  ]
+}

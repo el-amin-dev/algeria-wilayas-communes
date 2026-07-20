@@ -1,0 +1,201 @@
+{
+  "wilaya_num": 40,
+  "code": "40",
+  "nom_ar": "خنشلة",
+  "nom_fr": "Khenchela",
+  "nom_en": "Khenchela",
+  "nb_dairas": 8,
+  "nb_communes": 21,
+  "dairas": [
+    {
+      "nom_ar": "ششار",
+      "nom_fr": "Chechar",
+      "nom_en": "Chechar",
+      "communes": [
+        {
+          "nom_ar": "خيران",
+          "nom_fr": "Khirane",
+          "nom_en": "Khirane",
+          "code_postal": "40036"
+        },
+        {
+          "nom_ar": "جلال",
+          "nom_fr": "Djellal",
+          "nom_en": "Djellal",
+          "code_postal": "40015"
+        },
+        {
+          "nom_ar": "الولجة",
+          "nom_fr": "El Oueldja",
+          "nom_en": "El Oueldja",
+          "code_postal": "19046"
+        },
+        {
+          "nom_ar": "ششار",
+          "nom_fr": "Chechar",
+          "nom_en": "Chechar",
+          "code_postal": "40008"
+        }
+      ],
+      "nb_communes": 4
+    },
+    {
+      "nom_ar": "بابار",
+      "nom_fr": "Babar",
+      "nom_en": "Babar",
+      "communes": [
+        {
+          "nom_ar": "بابار",
+          "nom_fr": "Babar",
+          "nom_en": "Babar",
+          "code_postal": "40006"
+        }
+      ],
+      "nb_communes": 1
+    },
+    {
+      "nom_ar": "أولاد رشاش",
+      "nom_fr": "Ouled Rechache",
+      "nom_en": "Ouled Rechache",
+      "communes": [
+        {
+          "nom_ar": "المحمل",
+          "nom_fr": "El Mahmal",
+          "nom_en": "El Mahmal",
+          "code_postal": "40012"
+        },
+        {
+          "nom_ar": "أولاد رشاش",
+          "nom_fr": "Ouled Rechache",
+          "nom_en": "Ouled Rechache",
+          "code_postal": "40013"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "بوحمامة",
+      "nom_fr": "Bouhmama",
+      "nom_en": "Bouhmama",
+      "communes": [
+        {
+          "nom_ar": "يابوس",
+          "nom_fr": "Yabous",
+          "nom_en": "Yabous",
+          "code_postal": "40023"
+        },
+        {
+          "nom_ar": "شلية",
+          "nom_fr": "Chelia",
+          "nom_en": "Chelia",
+          "code_postal": "40030"
+        },
+        {
+          "nom_ar": "بوحمامة",
+          "nom_fr": "Bouhmama",
+          "nom_en": "Bouhmama",
+          "code_postal": "40007"
+        },
+        {
+          "nom_ar": "مصارة",
+          "nom_fr": "M'sara",
+          "nom_en": "M'sara",
+          "code_postal": "40039"
+        }
+      ],
+      "nb_communes": 4
+    },
+    {
+      "nom_ar": "خنشلة",
+      "nom_fr": "Khenchela",
+      "nom_en": "Khenchela",
+      "communes": [
+        {
+          "nom_ar": "خنشلة",
+          "nom_fr": "Khenchela",
+          "nom_en": "Khenchela",
+          "code_postal": "40000"
+        }
+      ],
+      "nb_communes": 1
+    },
+    {
+      "nom_ar": "قايس",
+      "nom_fr": "Kais",
+      "nom_en": "Kais",
+      "communes": [
+        {
+          "nom_ar": "قايس",
+          "nom_fr": "Kais",
+          "nom_en": "Kais",
+          "code_postal": "40001"
+        },
+        {
+          "nom_ar": "الرميلة",
+          "nom_fr": "Remila",
+          "nom_en": "Remila",
+          "code_postal": "40041"
+        },
+        {
+          "nom_ar": "تاوزيانت",
+          "nom_fr": "Taouzianat",
+          "nom_en": "Taouzianat",
+          "code_postal": "40011"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "الحامة",
+      "nom_fr": "El Hamma",
+      "nom_en": "El Hamma",
+      "communes": [
+        {
+          "nom_ar": "بغاي",
+          "nom_fr": "Baghai",
+          "nom_en": "Baghai",
+          "code_postal": "40014"
+        },
+        {
+          "nom_ar": "الحامة",
+          "nom_fr": "El Hamma",
+          "nom_en": "El Hamma",
+          "code_postal": "40031"
+        },
+        {
+          "nom_ar": "انسيغة",
+          "nom_fr": "Ensigha",
+          "nom_en": "Ensigha",
+          "code_postal": "40043"
+        },
+        {
+          "nom_ar": "طامزة",
+          "nom_fr": "Tamza",
+          "nom_en": "Tamza",
+          "code_postal": "40024"
+        }
+      ],
+      "nb_communes": 4
+    },
+    {
+      "nom_ar": "عين الطويلة",
+      "nom_fr": "Ain Touila",
+      "nom_en": "Ain Touila",
+      "communes": [
+        {
+          "nom_ar": "عين الطويلة",
+          "nom_fr": "Ain Touila",
+          "nom_en": "Ain Touila",
+          "code_postal": "40028"
+        },
+        {
+          "nom_ar": "متوسة",
+          "nom_fr": "M'toussa",
+          "nom_en": "M'toussa",
+          "code_postal": "40021"
+        }
+      ],
+      "nb_communes": 2
+    }
+  ]
+}

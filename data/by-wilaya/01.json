@@ -1,0 +1,155 @@
+{
+  "wilaya_num": 1,
+  "code": "01",
+  "nom_ar": "أدرار",
+  "nom_fr": "Adrar",
+  "nom_en": "Adrar",
+  "nb_dairas": 6,
+  "nb_communes": 16,
+  "dairas": [
+    {
+      "nom_ar": "أولف",
+      "nom_fr": "Aoulef",
+      "nom_en": "Aoulef",
+      "communes": [
+        {
+          "nom_ar": "تيمقتن",
+          "nom_fr": "Timekten",
+          "nom_en": "Timekten",
+          "code_postal": "01041"
+        },
+        {
+          "nom_ar": "تيت",
+          "nom_fr": "Tit",
+          "nom_en": "Tit",
+          "code_postal": "01031"
+        },
+        {
+          "nom_ar": "اقبلي",
+          "nom_fr": "Akabli",
+          "nom_en": "Akabli",
+          "code_postal": "01044"
+        },
+        {
+          "nom_ar": "أولف",
+          "nom_fr": "Aoulef",
+          "nom_en": "Aoulef",
+          "code_postal": "01003"
+        }
+      ],
+      "nb_communes": 4
+    },
+    {
+      "nom_ar": "أدرار",
+      "nom_fr": "Adrar",
+      "nom_en": "Adrar",
+      "communes": [
+        {
+          "nom_ar": "بودة",
+          "nom_fr": "Bouda",
+          "nom_en": "Bouda",
+          "code_postal": "01023"
+        },
+        {
+          "nom_ar": "أولاد أحمد تيمي",
+          "nom_fr": "Ouled Ahmed Timmi",
+          "nom_en": "Ouled Ahmed Timmi",
+          "code_postal": "01025"
+        },
+        {
+          "nom_ar": "أدرار",
+          "nom_fr": "Adrar",
+          "nom_en": "Adrar",
+          "code_postal": "01000"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "فنوغيل",
+      "nom_fr": "Fenoughil",
+      "nom_en": "Fenoughil",
+      "communes": [
+        {
+          "nom_ar": "فنوغيل",
+          "nom_fr": "Fenoughil",
+          "nom_en": "Fenoughil",
+          "code_postal": "01008"
+        },
+        {
+          "nom_ar": "تامست",
+          "nom_fr": "Tamest",
+          "nom_en": "Tamest",
+          "code_postal": "01020"
+        },
+        {
+          "nom_ar": "تامنطيط",
+          "nom_fr": "Tamantit",
+          "nom_en": "Tamantit",
+          "code_postal": "01021"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "زاوية كنتة",
+      "nom_fr": "Zaouiat Kounta",
+      "nom_en": "Zaouiat Kounta",
+      "communes": [
+        {
+          "nom_ar": "إن زغمير",
+          "nom_fr": "In Zghmir",
+          "nom_en": "In Zghmir",
+          "code_postal": "01047"
+        },
+        {
+          "nom_ar": "زاوية كنتة",
+          "nom_fr": "Zaouiet Kounta",
+          "nom_en": "Zaouiet Kounta",
+          "code_postal": "01007"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "رقان",
+      "nom_fr": "Reggane",
+      "nom_en": "Reggane",
+      "communes": [
+        {
+          "nom_ar": "رقان",
+          "nom_fr": "Reggane",
+          "nom_en": "Reggane",
+          "code_postal": "01004"
+        },
+        {
+          "nom_ar": "سالي",
+          "nom_fr": "Sali",
+          "nom_en": "Sali",
+          "code_postal": "01009"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "تسابيت",
+      "nom_fr": "Tsabit",
+      "nom_en": "Tsabit",
+      "communes": [
+        {
+          "nom_ar": "السبع",
+          "nom_fr": "Sebaa",
+          "nom_en": "Sebaa",
+          "code_postal": "01022"
+        },
+        {
+          "nom_ar": "تسابيت",
+          "nom_fr": "Tsabit",
+          "nom_en": "Tsabit",
+          "code_postal": "01011"
+        }
+      ],
+      "nb_communes": 2
+    }
+  ]
+}

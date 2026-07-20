@@ -1,0 +1,381 @@
+{
+  "wilaya_num": 26,
+  "code": "26",
+  "nom_ar": "المدية",
+  "nom_fr": "Medea",
+  "nom_en": "Medea",
+  "nb_dairas": 14,
+  "nb_communes": 43,
+  "dairas": [
+    {
+      "nom_ar": "السواقي",
+      "nom_fr": "Souaghi",
+      "nom_en": "Souaghi",
+      "communes": [
+        {
+          "nom_ar": "السواقي",
+          "nom_fr": "Souagui",
+          "nom_en": "Souagui",
+          "code_postal": "26020"
+        },
+        {
+          "nom_ar": "جواب",
+          "nom_fr": "Djouab",
+          "nom_en": "Djouab",
+          "code_postal": "26016"
+        },
+        {
+          "nom_ar": "سيدي زهار",
+          "nom_fr": "Sidi Zahar",
+          "nom_en": "Sidi Zahar",
+          "code_postal": "26072"
+        },
+        {
+          "nom_ar": "سيدي زيان",
+          "nom_fr": "Sidi Ziane",
+          "nom_en": "Sidi Ziane",
+          "code_postal": null
+        }
+      ],
+      "nb_communes": 4
+    },
+    {
+      "nom_ar": "العزيزية",
+      "nom_fr": "El Azizia",
+      "nom_en": "El Azizia",
+      "communes": [
+        {
+          "nom_ar": "العزيزية",
+          "nom_fr": "El Azizia",
+          "nom_en": "El Azizia",
+          "code_postal": "26018"
+        },
+        {
+          "nom_ar": "مغراوة",
+          "nom_fr": "Maghraoua",
+          "nom_en": "Maghraoua",
+          "code_postal": "26063"
+        },
+        {
+          "nom_ar": "ميهوب",
+          "nom_fr": "Mihoub",
+          "nom_en": "Mihoub",
+          "code_postal": "26032"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "عوامري",
+      "nom_fr": "Ouamri",
+      "nom_en": "Ouamri",
+      "communes": [
+        {
+          "nom_ar": "حناشة",
+          "nom_fr": "Hannacha",
+          "nom_en": "Hannacha",
+          "code_postal": "26027"
+        },
+        {
+          "nom_ar": "عوامري",
+          "nom_fr": "Ouamri",
+          "nom_en": "Ouamri",
+          "code_postal": "26034"
+        },
+        {
+          "nom_ar": "وادي حربيل",
+          "nom_fr": "Oued Harbil",
+          "nom_en": "Oued Harbil",
+          "code_postal": "26061"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "بني سليمان",
+      "nom_fr": "Beni Slimane",
+      "nom_en": "Beni Slimane",
+      "communes": [
+        {
+          "nom_ar": "بني سليمان",
+          "nom_fr": "Beni Slimane",
+          "nom_en": "Beni Slimane",
+          "code_postal": "26001"
+        },
+        {
+          "nom_ar": "بوسكن",
+          "nom_fr": "Bouskene",
+          "nom_en": "Bouskene",
+          "code_postal": "26025"
+        },
+        {
+          "nom_ar": "سيدي الربيع",
+          "nom_fr": "Sidi Rabie",
+          "nom_en": "Sidi Rabie",
+          "code_postal": "26070"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "سي المحجوب",
+      "nom_fr": "Si Mahdjoub",
+      "nom_en": "Si Mahdjoub",
+      "communes": [
+        {
+          "nom_ar": "بوعيشون",
+          "nom_fr": "Bouaichoune",
+          "nom_en": "Bouaichoune",
+          "code_postal": "26055"
+        },
+        {
+          "nom_ar": "أولاد بوعشرة",
+          "nom_fr": "Ouled Bouachra",
+          "nom_en": "Ouled Bouachra",
+          "code_postal": "26064"
+        },
+        {
+          "nom_ar": "سي المحجوب",
+          "nom_fr": "Si Mahdjoub",
+          "nom_en": "Si Mahdjoub",
+          "code_postal": "26045"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "البرواقية",
+      "nom_fr": "Berrouaghia",
+      "nom_en": "Berrouaghia",
+      "communes": [
+        {
+          "nom_ar": "البرواقية",
+          "nom_fr": "Berrouaghia",
+          "nom_en": "Berrouaghia",
+          "code_postal": "26002"
+        },
+        {
+          "nom_ar": "أولاد دايد",
+          "nom_fr": "Ouled Deid",
+          "nom_en": "Ouled Deid",
+          "code_postal": "26044"
+        },
+        {
+          "nom_ar": "الربعية",
+          "nom_fr": "Rebaia",
+          "nom_en": "Rebaia",
+          "code_postal": "26039"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "سغوان",
+      "nom_fr": "Seghouane",
+      "nom_en": "Seghouane",
+      "communes": [
+        {
+          "nom_ar": "مجبر",
+          "nom_fr": "Medjebar",
+          "nom_en": "Medjebar",
+          "code_postal": "26033"
+        },
+        {
+          "nom_ar": "ثلاث دوائر",
+          "nom_fr": "Tletat Ed Douair",
+          "nom_en": "Tletat Ed Douair",
+          "code_postal": "26046"
+        },
+        {
+          "nom_ar": "الزبيرية",
+          "nom_fr": "Zoubiria",
+          "nom_en": "Zoubiria",
+          "code_postal": "26021"
+        },
+        {
+          "nom_ar": "سغوان",
+          "nom_fr": "Seghouane",
+          "nom_en": "Seghouane",
+          "code_postal": "26041"
+        }
+      ],
+      "nb_communes": 4
+    },
+    {
+      "nom_ar": "تابلاط",
+      "nom_fr": "Tablat",
+      "nom_en": "Tablat",
+      "communes": [
+        {
+          "nom_ar": "العيساوية",
+          "nom_fr": "Aissaouia",
+          "nom_en": "Aissaouia",
+          "code_postal": "26022"
+        },
+        {
+          "nom_ar": "الحوضان",
+          "nom_fr": "El Haoudane",
+          "nom_en": "El Haoudane",
+          "code_postal": "26058"
+        },
+        {
+          "nom_ar": "مزغنة",
+          "nom_fr": "Mezerana",
+          "nom_en": "Mezerana",
+          "code_postal": null
+        },
+        {
+          "nom_ar": "تابلاط",
+          "nom_fr": "Tablat",
+          "nom_en": "Tablat",
+          "code_postal": "26004"
+        }
+      ],
+      "nb_communes": 4
+    },
+    {
+      "nom_ar": "المدية",
+      "nom_fr": "Medea",
+      "nom_en": "Medea",
+      "communes": [
+        {
+          "nom_ar": "ذراع السمار",
+          "nom_fr": "Draa Esmar",
+          "nom_en": "Draa Esmar",
+          "code_postal": "26017"
+        },
+        {
+          "nom_ar": "المدية",
+          "nom_fr": "Medea",
+          "nom_en": "Medea",
+          "code_postal": "26000"
+        },
+        {
+          "nom_ar": "تمسقيدة",
+          "nom_fr": "Tamesguida",
+          "nom_en": "Tamesguida",
+          "code_postal": "26075"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "وزرة",
+      "nom_fr": "Ouzera",
+      "nom_en": "Ouzera",
+      "communes": [
+        {
+          "nom_ar": "بن شكاو",
+          "nom_fr": "Ben Chicao",
+          "nom_en": "Ben Chicao",
+          "code_postal": "26012"
+        },
+        {
+          "nom_ar": "الحمدانية",
+          "nom_fr": "El Hamdania",
+          "nom_en": "El Hamdania",
+          "code_postal": "26060"
+        },
+        {
+          "nom_ar": "وزرة",
+          "nom_fr": "Ouzera",
+          "nom_en": "Ouzera",
+          "code_postal": "26019"
+        },
+        {
+          "nom_ar": "تيزي مهدي",
+          "nom_fr": "Tizi Mahdi",
+          "nom_en": "Tizi Mahdi",
+          "code_postal": "26076"
+        }
+      ],
+      "nb_communes": 4
+    },
+    {
+      "nom_ar": "العمارية",
+      "nom_fr": "El Omaria",
+      "nom_en": "El Omaria",
+      "communes": [
+        {
+          "nom_ar": "بعطة",
+          "nom_fr": "Baata",
+          "nom_en": "Baata",
+          "code_postal": "26050"
+        },
+        {
+          "nom_ar": "العمارية",
+          "nom_fr": "El Omaria",
+          "nom_en": "El Omaria",
+          "code_postal": "26008"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "أولاد ابراهيم",
+      "nom_fr": "Ouled Brahim",
+      "nom_en": "Ouled Brahim",
+      "communes": [
+        {
+          "nom_ar": "أولاد إبراهيم",
+          "nom_fr": "Ouled Brahim",
+          "nom_en": "Ouled Brahim",
+          "code_postal": "20002"
+        }
+      ],
+      "nb_communes": 1
+    },
+    {
+      "nom_ar": "القلب الكبير",
+      "nom_fr": "Guelb El Kebir",
+      "nom_en": "Guelb El Kebir",
+      "communes": [
+        {
+          "nom_ar": "بئر بن عابد",
+          "nom_fr": "Bir Ben Laabed",
+          "nom_en": "Bir Ben Laabed",
+          "code_postal": "26053"
+        },
+        {
+          "nom_ar": "القلب الكبير",
+          "nom_fr": "El Guelbelkebir",
+          "nom_en": "El Guelbelkebir",
+          "code_postal": "26030"
+        },
+        {
+          "nom_ar": "سدراية",
+          "nom_fr": "Sedraya",
+          "nom_en": "Sedraya",
+          "code_postal": "26068"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "سيدي نعمان",
+      "nom_fr": "Sidi Naamane",
+      "nom_en": "Sidi Naamane",
+      "communes": [
+        {
+          "nom_ar": "بوشراحيل",
+          "nom_fr": "Bouchrahil",
+          "nom_en": "Bouchrahil",
+          "code_postal": "26014"
+        },
+        {
+          "nom_ar": "خمس جوامع",
+          "nom_fr": "Khams Djouamaa",
+          "nom_en": "Khams Djouamaa",
+          "code_postal": "26062"
+        },
+        {
+          "nom_ar": "سيدي نعمان",
+          "nom_fr": "Sidi Naamane",
+          "nom_en": "Sidi Naamane",
+          "code_postal": "26071"
+        }
+      ],
+      "nb_communes": 3
+    }
+  ]
+}

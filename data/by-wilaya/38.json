@@ -1,0 +1,223 @@
+{
+  "wilaya_num": 38,
+  "code": "38",
+  "nom_ar": "تيسمسيلت",
+  "nom_fr": "Tissemsilt",
+  "nom_en": "Tissemsilt",
+  "nb_dairas": 10,
+  "nb_communes": 22,
+  "dairas": [
+    {
+      "nom_ar": "خميستي",
+      "nom_fr": "Khemisti",
+      "nom_en": "Khemisti",
+      "communes": [
+        {
+          "nom_ar": "خميستي",
+          "nom_fr": "Khemisti",
+          "nom_en": "Khemisti",
+          "code_postal": "38016"
+        },
+        {
+          "nom_ar": "العيون",
+          "nom_fr": "Layoune",
+          "nom_en": "Layoune",
+          "code_postal": "38007"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "ثنية الاحد",
+      "nom_fr": "Theniet El Had",
+      "nom_en": "Theniet El Had",
+      "communes": [
+        {
+          "nom_ar": "ثنية الاحد",
+          "nom_fr": "Theniet El Had",
+          "nom_en": "Theniet El Had",
+          "code_postal": "38003"
+        },
+        {
+          "nom_ar": "سيدي بوتوشنت",
+          "nom_fr": "Sidi Boutouchent",
+          "nom_en": "Sidi Boutouchent",
+          "code_postal": "38026"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "تيسمسيلت",
+      "nom_fr": "Tissemsilt",
+      "nom_en": "Tissemsilt",
+      "communes": [
+        {
+          "nom_ar": "أولاد بسام",
+          "nom_fr": "Ouled Bessam",
+          "nom_en": "Ouled Bessam",
+          "code_postal": "38014"
+        },
+        {
+          "nom_ar": "تيسمسيلت",
+          "nom_fr": "Tissemsilt",
+          "nom_en": "Tissemsilt",
+          "code_postal": "38000"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "لرجام",
+      "nom_fr": "Lardjem",
+      "nom_en": "Lardjem",
+      "communes": [
+        {
+          "nom_ar": "سيدي العنتري",
+          "nom_fr": "Sidi Lantri",
+          "nom_en": "Sidi Lantri",
+          "code_postal": "38027"
+        },
+        {
+          "nom_ar": "لرجام",
+          "nom_fr": "Lardjem",
+          "nom_en": "Lardjem",
+          "code_postal": "38002"
+        },
+        {
+          "nom_ar": "الملعب",
+          "nom_fr": "Melaab",
+          "nom_en": "Melaab",
+          "code_postal": "38013"
+        },
+        {
+          "nom_ar": "تملاحت",
+          "nom_fr": "Tamellahet",
+          "nom_en": "Tamellahet",
+          "code_postal": "38029"
+        }
+      ],
+      "nb_communes": 4
+    },
+    {
+      "nom_ar": "برج بونعامة",
+      "nom_fr": "Bordj Bounaama",
+      "nom_en": "Bordj Bounaama",
+      "communes": [
+        {
+          "nom_ar": "بني شعيب",
+          "nom_fr": "Beni Chaib",
+          "nom_en": "Beni Chaib",
+          "code_postal": "38019"
+        },
+        {
+          "nom_ar": "بني لحسن",
+          "nom_fr": "Beni Lahcene",
+          "nom_en": "Beni Lahcene",
+          "code_postal": "38020"
+        },
+        {
+          "nom_ar": "برج بونعامة",
+          "nom_fr": "Bordj Bounaama",
+          "nom_en": "Bordj Bounaama",
+          "code_postal": "38001"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "عماري",
+      "nom_fr": "Ammari",
+      "nom_en": "Ammari",
+      "communes": [
+        {
+          "nom_ar": "سيدي عابد",
+          "nom_fr": "Sidi Abed",
+          "nom_en": "Sidi Abed",
+          "code_postal": "38025"
+        },
+        {
+          "nom_ar": "عماري",
+          "nom_fr": "Ammari",
+          "nom_en": "Ammari",
+          "code_postal": "38012"
+        },
+        {
+          "nom_ar": "المعاصم",
+          "nom_fr": "Maacem",
+          "nom_en": "Maacem",
+          "code_postal": "38023"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "بوعلام",
+      "nom_fr": "Boualem",
+      "nom_en": "Boualem",
+      "communes": [
+        {
+          "nom_ar": "سيدي سليمان",
+          "nom_fr": "Sidi Slimane",
+          "nom_en": "Sidi Slimane",
+          "code_postal": "30030"
+        }
+      ],
+      "nb_communes": 1
+    },
+    {
+      "nom_ar": "الأزهرية",
+      "nom_fr": "Lazharia",
+      "nom_en": "Lazharia",
+      "communes": [
+        {
+          "nom_ar": "بوقائد",
+          "nom_fr": "Boucaid",
+          "nom_en": "Boucaid",
+          "code_postal": "38005"
+        },
+        {
+          "nom_ar": "الأزهرية",
+          "nom_fr": "Lazharia",
+          "nom_en": "Lazharia",
+          "code_postal": "38008"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "الأربعاء",
+      "nom_fr": "Larbaa",
+      "nom_en": "Larbaa",
+      "communes": [
+        {
+          "nom_ar": "الأربعاء",
+          "nom_fr": "Larbaa",
+          "nom_en": "Larbaa",
+          "code_postal": "09002"
+        }
+      ],
+      "nb_communes": 1
+    },
+    {
+      "nom_ar": "برج الأمير عبد القادر",
+      "nom_fr": "Bordj Emir Abdelkader",
+      "nom_en": "Bordj Emir Abdelkader",
+      "communes": [
+        {
+          "nom_ar": "اليوسفية",
+          "nom_fr": "Youssoufia",
+          "nom_en": "Youssoufia",
+          "code_postal": "38031"
+        },
+        {
+          "nom_ar": "برج الأمير عبد القادر",
+          "nom_fr": "Bordj El Emir Abdelkader",
+          "nom_en": "Bordj El Emir Abdelkader",
+          "code_postal": "38041"
+        }
+      ],
+      "nb_communes": 2
+    }
+  ]
+}

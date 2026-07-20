@@ -1,0 +1,291 @@
+{
+  "wilaya_num": 27,
+  "code": "27",
+  "nom_ar": "مستغانم",
+  "nom_fr": "Mostaganem",
+  "nom_en": "Mostaganem",
+  "nb_dairas": 11,
+  "nb_communes": 32,
+  "dairas": [
+    {
+      "nom_ar": "عين نويسي",
+      "nom_fr": "Ain Nouicy",
+      "nom_en": "Ain Nouicy",
+      "communes": [
+        {
+          "nom_ar": "فرناقة",
+          "nom_fr": "Fornaka",
+          "nom_en": "Fornaka",
+          "code_postal": "27014"
+        },
+        {
+          "nom_ar": "الحسيان (بني ياحي",
+          "nom_fr": "Hassiane",
+          "nom_en": "Hassiane",
+          "code_postal": "27033"
+        },
+        {
+          "nom_ar": "عين نويسي",
+          "nom_fr": "Ain-Nouissy",
+          "nom_en": "Ain-Nouissy",
+          "code_postal": "27010"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "عين تادلس",
+      "nom_fr": "Ain Tedeles",
+      "nom_en": "Ain Tedeles",
+      "communes": [
+        {
+          "nom_ar": "وادي الخير",
+          "nom_fr": "Oued El Kheir",
+          "nom_en": "Oued El Kheir",
+          "code_postal": "27020"
+        },
+        {
+          "nom_ar": "عين تادلس",
+          "nom_fr": "Ain-Tedles",
+          "nom_en": "Ain-Tedles",
+          "code_postal": "27001"
+        },
+        {
+          "nom_ar": "سيدي بلعطار",
+          "nom_fr": "Sidi Belaattar",
+          "nom_en": "Sidi Belaattar",
+          "code_postal": "27029"
+        },
+        {
+          "nom_ar": "سور",
+          "nom_fr": "Sour",
+          "nom_en": "Sour",
+          "code_postal": "27022"
+        }
+      ],
+      "nb_communes": 4
+    },
+    {
+      "nom_ar": "حاسي ماماش",
+      "nom_fr": "Hassi Mameche",
+      "nom_en": "Hassi Mameche",
+      "communes": [
+        {
+          "nom_ar": "حاسي ماماش",
+          "nom_fr": "Hassi Mameche",
+          "nom_en": "Hassi Mameche",
+          "code_postal": "27004"
+        },
+        {
+          "nom_ar": "مزغران",
+          "nom_fr": "Mazagran",
+          "nom_en": "Mazagran",
+          "code_postal": "27017"
+        },
+        {
+          "nom_ar": "ستيدية",
+          "nom_fr": "Stidia",
+          "nom_en": "Stidia",
+          "code_postal": "27023"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "خير الدين",
+      "nom_fr": "Kheir Eddine",
+      "nom_en": "Kheir Eddine",
+      "communes": [
+        {
+          "nom_ar": "عين بودينار",
+          "nom_fr": "Ain-Boudinar",
+          "nom_en": "Ain-Boudinar",
+          "code_postal": "27031"
+        },
+        {
+          "nom_ar": "خير الدين",
+          "nom_fr": "Kheir-Eddine",
+          "nom_en": "Kheir-Eddine",
+          "code_postal": "27016"
+        },
+        {
+          "nom_ar": "صيادة",
+          "nom_fr": "Sayada",
+          "nom_en": "Sayada",
+          "code_postal": "27045"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "سيدي علي",
+      "nom_fr": "Sidi Ali",
+      "nom_en": "Sidi Ali",
+      "communes": [
+        {
+          "nom_ar": "سيدي علي",
+          "nom_fr": "Sidi Ali",
+          "nom_en": "Sidi Ali",
+          "code_postal": "27032"
+        },
+        {
+          "nom_ar": "تزقايت",
+          "nom_fr": "Tazgait",
+          "nom_en": "Tazgait",
+          "code_postal": "27047"
+        },
+        {
+          "nom_ar": "أولاد مع الله",
+          "nom_fr": "Ouled-Maalah",
+          "nom_en": "Ouled-Maalah",
+          "code_postal": "27028"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "سيدي لخضر",
+      "nom_fr": "Sidi Lakhdar",
+      "nom_en": "Sidi Lakhdar",
+      "communes": [
+        {
+          "nom_ar": "بن عبد المالك رمضان",
+          "nom_fr": "Benabdelmalek Ramdane",
+          "nom_en": "Benabdelmalek Ramdane",
+          "code_postal": "27008"
+        },
+        {
+          "nom_ar": "حجاج",
+          "nom_fr": "Hadjadj",
+          "nom_en": "Hadjadj",
+          "code_postal": "27015"
+        },
+        {
+          "nom_ar": "سيدي لخضر",
+          "nom_fr": "Sidi-Lakhdar",
+          "nom_en": "Sidi-Lakhdar",
+          "code_postal": "27007"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "مستغانم",
+      "nom_fr": "Mostaganem",
+      "nom_en": "Mostaganem",
+      "communes": [
+        {
+          "nom_ar": "مستغانم",
+          "nom_fr": "Mostaganem",
+          "nom_en": "Mostaganem",
+          "code_postal": "27000"
+        }
+      ],
+      "nb_communes": 1
+    },
+    {
+      "nom_ar": "عشعاشة",
+      "nom_fr": "Achaacha",
+      "nom_en": "Achaacha",
+      "communes": [
+        {
+          "nom_ar": "عشعاشة",
+          "nom_fr": "Achaacha",
+          "nom_en": "Achaacha",
+          "code_postal": "27009"
+        },
+        {
+          "nom_ar": "خضرة",
+          "nom_fr": "Khadra",
+          "nom_en": "Khadra",
+          "code_postal": "27005"
+        },
+        {
+          "nom_ar": "نكمارية",
+          "nom_fr": "Nekmaria",
+          "nom_en": "Nekmaria",
+          "code_postal": "27026"
+        },
+        {
+          "nom_ar": "أولاد بوغالم",
+          "nom_fr": "Ouled Boughalem",
+          "nom_en": "Ouled Boughalem",
+          "code_postal": "27027"
+        }
+      ],
+      "nb_communes": 4
+    },
+    {
+      "nom_ar": "بوقيراط",
+      "nom_fr": "Bouguirat",
+      "nom_en": "Bouguirat",
+      "communes": [
+        {
+          "nom_ar": "بوقيراط",
+          "nom_fr": "Bouguirat",
+          "nom_en": "Bouguirat",
+          "code_postal": "27003"
+        },
+        {
+          "nom_ar": "صفصاف",
+          "nom_fr": "Safsaf",
+          "nom_en": "Safsaf",
+          "code_postal": null
+        },
+        {
+          "nom_ar": "سيرات",
+          "nom_fr": "Sirat",
+          "nom_en": "Sirat",
+          "code_postal": "27021"
+        },
+        {
+          "nom_ar": "السوافلية",
+          "nom_fr": "Souaflia",
+          "nom_en": "Souaflia",
+          "code_postal": "27046"
+        }
+      ],
+      "nb_communes": 4
+    },
+    {
+      "nom_ar": "ماسرة",
+      "nom_fr": "Mesra",
+      "nom_en": "Mesra",
+      "communes": [
+        {
+          "nom_ar": "عين سيدي الشريف",
+          "nom_fr": "Ain-Sidi Cherif",
+          "nom_en": "Ain-Sidi Cherif",
+          "code_postal": "27024"
+        },
+        {
+          "nom_ar": "ماسرة",
+          "nom_fr": "Mesra",
+          "nom_en": "Mesra",
+          "code_postal": "27018"
+        },
+        {
+          "nom_ar": "الطواهرية",
+          "nom_fr": "Touahria",
+          "nom_en": "Touahria",
+          "code_postal": "27013"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "منصورة",
+      "nom_fr": "Mansourah",
+      "nom_en": "Mansourah",
+      "communes": [
+        {
+          "nom_ar": "منصورة",
+          "nom_fr": "Mansourah",
+          "nom_en": "Mansourah",
+          "code_postal": "13062"
+        }
+      ],
+      "nb_communes": 1
+    }
+  ]
+}

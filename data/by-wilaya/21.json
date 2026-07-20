@@ -1,0 +1,351 @@
+{
+  "wilaya_num": 21,
+  "code": "21",
+  "nom_ar": "سكيكدة",
+  "nom_fr": "Skikda",
+  "nom_en": "Skikda",
+  "nb_dairas": 14,
+  "nb_communes": 38,
+  "dairas": [
+    {
+      "nom_ar": "سيدي مزغيش",
+      "nom_fr": "Sidi Mezghiche",
+      "nom_en": "Sidi Mezghiche",
+      "communes": [
+        {
+          "nom_ar": "عين بوزيان",
+          "nom_fr": "Ain Bouziane",
+          "nom_en": "Ain Bouziane",
+          "code_postal": "21031"
+        },
+        {
+          "nom_ar": "بني ولبان",
+          "nom_fr": "Beni Oulbane",
+          "nom_en": "Beni Oulbane",
+          "code_postal": "21011"
+        },
+        {
+          "nom_ar": "سيدي مزغيش",
+          "nom_fr": "Sidi Mezghiche",
+          "nom_en": "Sidi Mezghiche",
+          "code_postal": "21023"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "الحروش",
+      "nom_fr": "El Harrouch",
+      "nom_en": "El Harrouch",
+      "communes": [
+        {
+          "nom_ar": "صالح بو الشعور",
+          "nom_fr": "Salah Bouchaour",
+          "nom_en": "Salah Bouchaour",
+          "code_postal": "21022"
+        },
+        {
+          "nom_ar": "زردازة",
+          "nom_fr": "Zerdezas",
+          "nom_en": "Zerdezas",
+          "code_postal": "21047"
+        },
+        {
+          "nom_ar": "أولاد حبابة",
+          "nom_fr": "Ouled Habbaba",
+          "nom_en": "Ouled Habbaba",
+          "code_postal": "21043"
+        },
+        {
+          "nom_ar": "مجاز الدشيش",
+          "nom_fr": "Emjez Edchich",
+          "nom_en": "Emjez Edchich",
+          "code_postal": "21017"
+        },
+        {
+          "nom_ar": "الحروش",
+          "nom_fr": "El Arrouch",
+          "nom_en": "El Arrouch",
+          "code_postal": "21003"
+        }
+      ],
+      "nb_communes": 5
+    },
+    {
+      "nom_ar": "الحدائق",
+      "nom_fr": "El Hadaiek",
+      "nom_en": "El Hadaiek",
+      "communes": [
+        {
+          "nom_ar": "الحدائق",
+          "nom_fr": "El Hadaiek",
+          "nom_en": "El Hadaiek",
+          "code_postal": "21015"
+        },
+        {
+          "nom_ar": "بوشطاطة",
+          "nom_fr": "Bouchetata",
+          "nom_en": "Bouchetata",
+          "code_postal": "21053"
+        },
+        {
+          "nom_ar": "عين زويت",
+          "nom_fr": "Ain Zouit",
+          "nom_en": "Ain Zouit",
+          "code_postal": "21051"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "رمضان جمال",
+      "nom_fr": "Ramdane Djamel",
+      "nom_en": "Ramdane Djamel",
+      "communes": [
+        {
+          "nom_ar": "بني بشير",
+          "nom_fr": "Beni Bechir",
+          "nom_en": "Beni Bechir",
+          "code_postal": "21033"
+        },
+        {
+          "nom_ar": "رمضان جمال",
+          "nom_fr": "Ramdane Djamel",
+          "nom_en": "Ramdane Djamel",
+          "code_postal": "21004"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "تمالوس",
+      "nom_fr": "Tamalous",
+      "nom_en": "Tamalous",
+      "communes": [
+        {
+          "nom_ar": "بين الويدان",
+          "nom_fr": "Bin El Ouiden",
+          "nom_en": "Bin El Ouiden",
+          "code_postal": "21052"
+        },
+        {
+          "nom_ar": "تمالوس",
+          "nom_fr": "Tamalous",
+          "nom_en": "Tamalous",
+          "code_postal": "21005"
+        },
+        {
+          "nom_ar": "الكركرة",
+          "nom_fr": "Kerkara",
+          "nom_en": "Kerkara",
+          "code_postal": "21019"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "عين قشرة",
+      "nom_fr": "Ain Kechra",
+      "nom_en": "Ain Kechra",
+      "communes": [
+        {
+          "nom_ar": "عين قشرة",
+          "nom_fr": "Ain Kechra",
+          "nom_en": "Ain Kechra",
+          "code_postal": "21007"
+        },
+        {
+          "nom_ar": "الولجة بولبلوط",
+          "nom_fr": "Ouldja Boulbalout",
+          "nom_en": "Ouldja Boulbalout",
+          "code_postal": null
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "أم الطوب",
+      "nom_fr": "Oum Toub",
+      "nom_en": "Oum Toub",
+      "communes": [
+        {
+          "nom_ar": "أم الطوب",
+          "nom_fr": "Oum Toub",
+          "nom_en": "Oum Toub",
+          "code_postal": "21020"
+        }
+      ],
+      "nb_communes": 1
+    },
+    {
+      "nom_ar": "عزابة",
+      "nom_fr": "Azzaba",
+      "nom_en": "Azzaba",
+      "communes": [
+        {
+          "nom_ar": "الغدير",
+          "nom_fr": "El Ghedir",
+          "nom_en": "El Ghedir",
+          "code_postal": "21057"
+        },
+        {
+          "nom_ar": "السبت",
+          "nom_fr": "Es Sebt",
+          "nom_en": "Es Sebt",
+          "code_postal": "21018"
+        },
+        {
+          "nom_ar": "عين شرشار",
+          "nom_fr": "Ain Charchar",
+          "nom_en": "Ain Charchar",
+          "code_postal": "21006"
+        },
+        {
+          "nom_ar": "عزابة",
+          "nom_fr": "Azzaba",
+          "nom_en": "Azzaba",
+          "code_postal": "21001"
+        },
+        {
+          "nom_ar": "جندل سعدي محمد",
+          "nom_fr": "Djendel Saadi Mohamed",
+          "nom_en": "Djendel Saadi Mohamed",
+          "code_postal": "21037"
+        }
+      ],
+      "nb_communes": 5
+    },
+    {
+      "nom_ar": "الزيتونة",
+      "nom_fr": "Zitouna",
+      "nom_en": "Zitouna",
+      "communes": [
+        {
+          "nom_ar": "الزيتونة",
+          "nom_fr": "Zitouna",
+          "nom_en": "Zitouna",
+          "code_postal": "21028"
+        },
+        {
+          "nom_ar": "قنواع",
+          "nom_fr": "Kanoua",
+          "nom_en": "Kanoua",
+          "code_postal": "21062"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "أولاد عطية",
+      "nom_fr": "Ouled Attia",
+      "nom_en": "Ouled Attia",
+      "communes": [
+        {
+          "nom_ar": "أولاد عطية",
+          "nom_fr": "Ouled Attia",
+          "nom_en": "Ouled Attia",
+          "code_postal": "21012"
+        },
+        {
+          "nom_ar": "وادي الزهور",
+          "nom_fr": "Oued Zhour",
+          "nom_en": "Oued Zhour",
+          "code_postal": "21040"
+        },
+        {
+          "nom_ar": "خناق مايو",
+          "nom_fr": "Khenag Maoune",
+          "nom_en": "Khenag Maoune",
+          "code_postal": "21059"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "القل",
+      "nom_fr": "Collo",
+      "nom_en": "Collo",
+      "communes": [
+        {
+          "nom_ar": "القل",
+          "nom_fr": "Collo",
+          "nom_en": "Collo",
+          "code_postal": "21002"
+        },
+        {
+          "nom_ar": "الشرايع",
+          "nom_fr": "Cheraia",
+          "nom_en": "Cheraia",
+          "code_postal": "21030"
+        },
+        {
+          "nom_ar": "بني زيد",
+          "nom_fr": "Beni Zid",
+          "nom_en": "Beni Zid",
+          "code_postal": "21016"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "المرسى",
+      "nom_fr": "El Marsa",
+      "nom_en": "El Marsa",
+      "communes": [
+        {
+          "nom_ar": "المرسى",
+          "nom_fr": "El Marsa",
+          "nom_en": "El Marsa",
+          "code_postal": "02015"
+        }
+      ],
+      "nb_communes": 1
+    },
+    {
+      "nom_ar": "بن عزوز",
+      "nom_fr": "Ben Azzouz",
+      "nom_en": "Ben Azzouz",
+      "communes": [
+        {
+          "nom_ar": "بن عزوز",
+          "nom_fr": "Ben Azzouz",
+          "nom_en": "Ben Azzouz",
+          "code_postal": "21010"
+        },
+        {
+          "nom_ar": "بكوش لخضر",
+          "nom_fr": "Bekkouche Lakhdar",
+          "nom_en": "Bekkouche Lakhdar",
+          "code_postal": "21009"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "سكيكدة",
+      "nom_fr": "Skikda",
+      "nom_en": "Skikda",
+      "communes": [
+        {
+          "nom_ar": "فلفلة",
+          "nom_fr": "Filfila",
+          "nom_en": "Filfila",
+          "code_postal": "21042"
+        },
+        {
+          "nom_ar": "حمادي كرومة",
+          "nom_fr": "Hammadi Krouma",
+          "nom_en": "Hammadi Krouma",
+          "code_postal": "21038"
+        },
+        {
+          "nom_ar": "سكيكدة",
+          "nom_fr": "Skikda",
+          "nom_en": "Skikda",
+          "code_postal": "21000"
+        }
+      ],
+      "nb_communes": 3
+    }
+  ]
+}

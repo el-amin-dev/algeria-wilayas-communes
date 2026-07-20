@@ -1,0 +1,139 @@
+{
+  "wilaya_num": 23,
+  "code": "23",
+  "nom_ar": "عنابة",
+  "nom_fr": "Annaba",
+  "nom_en": "Annaba",
+  "nb_dairas": 7,
+  "nb_communes": 12,
+  "dairas": [
+    {
+      "nom_ar": "عنابة",
+      "nom_fr": "Annaba",
+      "nom_en": "Annaba",
+      "communes": [
+        {
+          "nom_ar": "عنابة",
+          "nom_fr": "Annaba",
+          "nom_en": "Annaba",
+          "code_postal": "23000"
+        },
+        {
+          "nom_ar": "سرايدي",
+          "nom_fr": "Seraidi",
+          "nom_en": "Seraidi",
+          "code_postal": "23015"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "برحال",
+      "nom_fr": "Berrahal",
+      "nom_en": "Berrahal",
+      "communes": [
+        {
+          "nom_ar": "برحال",
+          "nom_fr": "Berrahal",
+          "nom_en": "Berrahal",
+          "code_postal": "23009"
+        },
+        {
+          "nom_ar": "واد العنب",
+          "nom_fr": "Oued El Aneb",
+          "nom_en": "Oued El Aneb",
+          "code_postal": "23021"
+        },
+        {
+          "nom_ar": "التريعات",
+          "nom_fr": "Treat",
+          "nom_en": "Treat",
+          "code_postal": null
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "الحجار",
+      "nom_fr": "El Hadjar",
+      "nom_en": "El Hadjar",
+      "communes": [
+        {
+          "nom_ar": "الحجار",
+          "nom_fr": "El Hadjar",
+          "nom_en": "El Hadjar",
+          "code_postal": "23004"
+        },
+        {
+          "nom_ar": "سيدي عمار",
+          "nom_fr": "Sidi Amar",
+          "nom_en": "Sidi Amar",
+          "code_postal": "23028"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "البوني",
+      "nom_fr": "El Bouni",
+      "nom_en": "El Bouni",
+      "communes": [
+        {
+          "nom_ar": "البوني",
+          "nom_fr": "El Bouni",
+          "nom_en": "El Bouni",
+          "code_postal": "23010"
+        }
+      ],
+      "nb_communes": 1
+    },
+    {
+      "nom_ar": "عين الباردة",
+      "nom_fr": "Ain El Berda",
+      "nom_en": "Ain El Berda",
+      "communes": [
+        {
+          "nom_ar": "عين الباردة",
+          "nom_fr": "Ain El Berda",
+          "nom_en": "Ain El Berda",
+          "code_postal": "23006"
+        },
+        {
+          "nom_ar": "الشرفة",
+          "nom_fr": "Cheurfa",
+          "nom_en": "Cheurfa",
+          "code_postal": "23025"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "العلمة",
+      "nom_fr": "El Eulma",
+      "nom_en": "El Eulma",
+      "communes": [
+        {
+          "nom_ar": "العلمة",
+          "nom_fr": "El Eulma",
+          "nom_en": "El Eulma",
+          "code_postal": "19001"
+        }
+      ],
+      "nb_communes": 1
+    },
+    {
+      "nom_ar": "شطايبي",
+      "nom_fr": "Chetaibi",
+      "nom_en": "Chetaibi",
+      "communes": [
+        {
+          "nom_ar": "شطايبي",
+          "nom_fr": "Chetaibi",
+          "nom_en": "Chetaibi",
+          "code_postal": "23014"
+        }
+      ],
+      "nb_communes": 1
+    }
+  ]
+}

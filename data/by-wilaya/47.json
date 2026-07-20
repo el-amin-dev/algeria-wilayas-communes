@@ -1,0 +1,135 @@
+{
+  "wilaya_num": 47,
+  "code": "47",
+  "nom_ar": "غرداية",
+  "nom_fr": "Ghardaia",
+  "nom_en": "Ghardaia",
+  "nb_dairas": 8,
+  "nb_communes": 10,
+  "dairas": [
+    {
+      "nom_ar": "ضاية بن ضحوة",
+      "nom_fr": "Dhayet Ben Dhahoua",
+      "nom_en": "Dhayet Ben Dhahoua",
+      "communes": [
+        {
+          "nom_ar": "ضاية بن ضحوة",
+          "nom_fr": "Dhayet Bendhahoua",
+          "nom_en": "Dhayet Bendhahoua",
+          "code_postal": "47011"
+        }
+      ],
+      "nb_communes": 1
+    },
+    {
+      "nom_ar": "المنصورة",
+      "nom_fr": "Mansourah",
+      "nom_en": "Mansourah",
+      "communes": [
+        {
+          "nom_ar": "المنصورة",
+          "nom_fr": "Mansoura",
+          "nom_en": "Mansoura",
+          "code_postal": "34008"
+        }
+      ],
+      "nb_communes": 1
+    },
+    {
+      "nom_ar": "بونورة",
+      "nom_fr": "Bounoura",
+      "nom_en": "Bounoura",
+      "communes": [
+        {
+          "nom_ar": "العطف",
+          "nom_fr": "El Atteuf",
+          "nom_en": "El Atteuf",
+          "code_postal": "47012"
+        },
+        {
+          "nom_ar": "بونورة",
+          "nom_fr": "Bounoura",
+          "nom_en": "Bounoura",
+          "code_postal": "47005"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "زلفانة",
+      "nom_fr": "Zelfana",
+      "nom_en": "Zelfana",
+      "communes": [
+        {
+          "nom_ar": "زلفانة",
+          "nom_fr": "Zelfana",
+          "nom_en": "Zelfana",
+          "code_postal": "47007"
+        }
+      ],
+      "nb_communes": 1
+    },
+    {
+      "nom_ar": "القرارة",
+      "nom_fr": "El Guerrara",
+      "nom_en": "El Guerrara",
+      "communes": [
+        {
+          "nom_ar": "القرارة",
+          "nom_fr": "El Guerrara",
+          "nom_en": "El Guerrara",
+          "code_postal": "47004"
+        }
+      ],
+      "nb_communes": 1
+    },
+    {
+      "nom_ar": "متليلي",
+      "nom_fr": "Metlili",
+      "nom_en": "Metlili",
+      "communes": [
+        {
+          "nom_ar": "سبسب",
+          "nom_fr": "Sebseb",
+          "nom_en": "Sebseb",
+          "code_postal": "47025"
+        },
+        {
+          "nom_ar": "متليلي",
+          "nom_fr": "Metlili",
+          "nom_en": "Metlili",
+          "code_postal": "47002"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "بريان",
+      "nom_fr": "Berriane",
+      "nom_en": "Berriane",
+      "communes": [
+        {
+          "nom_ar": "بريان",
+          "nom_fr": "Berriane",
+          "nom_en": "Berriane",
+          "code_postal": "47003"
+        }
+      ],
+      "nb_communes": 1
+    },
+    {
+      "nom_ar": "غرداية",
+      "nom_fr": "Ghardaia",
+      "nom_en": "Ghardaia",
+      "communes": [
+        {
+          "nom_ar": "غرداية",
+          "nom_fr": "Ghardaia",
+          "nom_en": "Ghardaia",
+          "code_postal": "47000"
+        }
+      ],
+      "nb_communes": 1
+    }
+  ]
+}

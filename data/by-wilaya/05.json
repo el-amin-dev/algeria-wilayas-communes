@@ -1,0 +1,473 @@
+{
+  "wilaya_num": 5,
+  "code": "05",
+  "nom_ar": "باتنة",
+  "nom_fr": "Batna",
+  "nom_en": "Batna",
+  "nb_dairas": 18,
+  "nb_communes": 53,
+  "dairas": [
+    {
+      "nom_ar": "عين التوتة",
+      "nom_fr": "Ain Touta",
+      "nom_en": "Ain Touta",
+      "communes": [
+        {
+          "nom_ar": "معافة",
+          "nom_fr": "Maafa",
+          "nom_en": "Maafa",
+          "code_postal": "05123"
+        },
+        {
+          "nom_ar": "عين التوتة",
+          "nom_fr": "Ain Touta",
+          "nom_en": "Ain Touta",
+          "code_postal": "05002"
+        },
+        {
+          "nom_ar": "بني فضالة الحقانية",
+          "nom_fr": "Beni Foudhala El Hakania",
+          "nom_en": "Beni Foudhala El Hakania",
+          "code_postal": "05141"
+        },
+        {
+          "nom_ar": "أولاد عوف",
+          "nom_fr": "Ouled Aouf",
+          "nom_en": "Ouled Aouf",
+          "code_postal": "05122"
+        }
+      ],
+      "nb_communes": 4
+    },
+    {
+      "nom_ar": "رأس العيون",
+      "nom_fr": "Ras El Aioun",
+      "nom_en": "Ras El Aioun",
+      "communes": [
+        {
+          "nom_ar": "القصبات",
+          "nom_fr": "Gosbat",
+          "nom_en": "Gosbat",
+          "code_postal": "05090"
+        },
+        {
+          "nom_ar": "تالخمت",
+          "nom_fr": "Talkhamt",
+          "nom_en": "Talkhamt",
+          "code_postal": null
+        },
+        {
+          "nom_ar": "رأس العيون",
+          "nom_fr": "Ras El Aioun",
+          "nom_en": "Ras El Aioun",
+          "code_postal": "05009"
+        },
+        {
+          "nom_ar": "الرحبات",
+          "nom_fr": "Rahbat",
+          "nom_en": "Rahbat",
+          "code_postal": "05091"
+        },
+        {
+          "nom_ar": "أولاد سلام",
+          "nom_fr": "Ouled Sellem",
+          "nom_en": "Ouled Sellem",
+          "code_postal": "05044"
+        },
+        {
+          "nom_ar": "القيقبة",
+          "nom_fr": "Guigba",
+          "nom_en": "Guigba",
+          "code_postal": "05067"
+        }
+      ],
+      "nb_communes": 6
+    },
+    {
+      "nom_ar": "تيمقاد",
+      "nom_fr": "Timgad",
+      "nom_en": "Timgad",
+      "communes": [
+        {
+          "nom_ar": "تيمقاد",
+          "nom_fr": "Timgad",
+          "nom_en": "Timgad",
+          "code_postal": "05023"
+        },
+        {
+          "nom_ar": "أولاد فاضل",
+          "nom_fr": "Ouled Fadel",
+          "nom_en": "Ouled Fadel",
+          "code_postal": "05063"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "أولاد سي سليمان",
+      "nom_fr": "Ouled Si Slimane",
+      "nom_en": "Ouled Si Slimane",
+      "communes": [
+        {
+          "nom_ar": "تاكسلانت",
+          "nom_fr": "Taxlent",
+          "nom_en": "Taxlent",
+          "code_postal": "05055"
+        },
+        {
+          "nom_ar": "أولاد سي سليمان",
+          "nom_fr": "Ouled Si Slimane",
+          "nom_en": "Ouled Si Slimane",
+          "code_postal": "05066"
+        },
+        {
+          "nom_ar": "لمسان",
+          "nom_fr": "Lemcene",
+          "nom_en": "Lemcene",
+          "code_postal": null
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "ثنية العابد",
+      "nom_fr": "Theniet El Abed",
+      "nom_en": "Theniet El Abed",
+      "communes": [
+        {
+          "nom_ar": "ثنية العابد",
+          "nom_fr": "Teniet El Abed",
+          "nom_en": "Teniet El Abed",
+          "code_postal": "05035"
+        },
+        {
+          "nom_ar": "شير",
+          "nom_fr": "Chir",
+          "nom_en": "Chir",
+          "code_postal": "05038"
+        },
+        {
+          "nom_ar": "وادي الطاقة",
+          "nom_fr": "Oued Taga",
+          "nom_en": "Oued Taga",
+          "code_postal": "05036"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "باتنة",
+      "nom_fr": "Batna",
+      "nom_en": "Batna",
+      "communes": [
+        {
+          "nom_ar": "باتنة",
+          "nom_fr": "Batna",
+          "nom_en": "Batna",
+          "code_postal": "05000"
+        },
+        {
+          "nom_ar": "فسديس",
+          "nom_fr": "Fesdis",
+          "nom_en": "Fesdis",
+          "code_postal": "05077"
+        },
+        {
+          "nom_ar": "وادي الشعبة",
+          "nom_fr": "Oued Chaaba",
+          "nom_en": "Oued Chaaba",
+          "code_postal": "05054"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "مروانة",
+      "nom_fr": "Merouana",
+      "nom_en": "Merouana",
+      "communes": [
+        {
+          "nom_ar": "حيدوسة",
+          "nom_fr": "Hidoussa",
+          "nom_en": "Hidoussa",
+          "code_postal": "05033"
+        },
+        {
+          "nom_ar": "قصر بلزمة",
+          "nom_fr": "Ksar Bellezma",
+          "nom_en": "Ksar Bellezma",
+          "code_postal": "05047"
+        },
+        {
+          "nom_ar": "مروانة",
+          "nom_fr": "Merouana",
+          "nom_en": "Merouana",
+          "code_postal": "05013"
+        },
+        {
+          "nom_ar": "وادي الماء",
+          "nom_fr": "Oued El Ma",
+          "nom_en": "Oued El Ma",
+          "code_postal": "05016"
+        }
+      ],
+      "nb_communes": 4
+    },
+    {
+      "nom_ar": "سريانة",
+      "nom_fr": "Seriana",
+      "nom_en": "Seriana",
+      "communes": [
+        {
+          "nom_ar": "لازرو",
+          "nom_fr": "Lazrou",
+          "nom_en": "Lazrou",
+          "code_postal": "05117"
+        },
+        {
+          "nom_ar": "سريانة",
+          "nom_fr": "Seriana",
+          "nom_en": "Seriana",
+          "code_postal": "05025"
+        },
+        {
+          "nom_ar": "زانة البيضاء",
+          "nom_fr": "Zanet El Beida",
+          "nom_en": "Zanet El Beida",
+          "code_postal": "05071"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "منعة",
+      "nom_fr": "Menaa",
+      "nom_en": "Menaa",
+      "communes": [
+        {
+          "nom_ar": "منعة",
+          "nom_fr": "Menaa",
+          "nom_en": "Menaa",
+          "code_postal": "05012"
+        },
+        {
+          "nom_ar": "تغرغار",
+          "nom_fr": "Tigharghar",
+          "nom_en": "Tigharghar",
+          "code_postal": "05059"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "المعذر",
+      "nom_fr": "El Madher",
+      "nom_en": "El Madher",
+      "communes": [
+        {
+          "nom_ar": "عين ياقوت",
+          "nom_fr": "Ain Yagout",
+          "nom_en": "Ain Yagout",
+          "code_postal": "05031"
+        },
+        {
+          "nom_ar": "بومية",
+          "nom_fr": "Boumia",
+          "nom_en": "Boumia",
+          "code_postal": "05104"
+        },
+        {
+          "nom_ar": "جرمة",
+          "nom_fr": "Djerma",
+          "nom_en": "Djerma",
+          "code_postal": "05105"
+        },
+        {
+          "nom_ar": "المعذر",
+          "nom_fr": "El Madher",
+          "nom_en": "El Madher",
+          "code_postal": "05015"
+        }
+      ],
+      "nb_communes": 4
+    },
+    {
+      "nom_ar": "تازولت",
+      "nom_fr": "Tazoult",
+      "nom_en": "Tazoult",
+      "communes": [
+        {
+          "nom_ar": "عيون العصافير",
+          "nom_fr": "Ouyoun El Assafir",
+          "nom_en": "Ouyoun El Assafir",
+          "code_postal": "05069"
+        },
+        {
+          "nom_ar": "تازولت",
+          "nom_fr": "Tazoult",
+          "nom_en": "Tazoult",
+          "code_postal": "05011"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "نقاوس",
+      "nom_fr": "N'gaous",
+      "nom_en": "N'gaous",
+      "communes": [
+        {
+          "nom_ar": "بومقر",
+          "nom_fr": "Boumagueur",
+          "nom_en": "Boumagueur",
+          "code_postal": "05057"
+        },
+        {
+          "nom_ar": "نقاوس",
+          "nom_fr": "N Gaous",
+          "nom_en": "N Gaous",
+          "code_postal": "05004"
+        },
+        {
+          "nom_ar": "سفيان",
+          "nom_fr": "Sefiane",
+          "nom_en": "Sefiane",
+          "code_postal": "05064"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "أريس",
+      "nom_fr": "Arris",
+      "nom_en": "Arris",
+      "communes": [
+        {
+          "nom_ar": "أريس",
+          "nom_fr": "Arris",
+          "nom_en": "Arris",
+          "code_postal": "05007"
+        },
+        {
+          "nom_ar": "تيغانمين",
+          "nom_fr": "Tighanimine",
+          "nom_en": "Tighanimine",
+          "code_postal": "05060"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "عين جاسر",
+      "nom_fr": "Ain Djasser",
+      "nom_en": "Ain Djasser",
+      "communes": [
+        {
+          "nom_ar": "عين جاسر",
+          "nom_fr": "Ain Djasser",
+          "nom_en": "Ain Djasser",
+          "code_postal": "05032"
+        },
+        {
+          "nom_ar": "الحاسي",
+          "nom_fr": "El Hassi",
+          "nom_en": "El Hassi",
+          "code_postal": "05116"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "إشمول",
+      "nom_fr": "Ichemoul",
+      "nom_en": "Ichemoul",
+      "communes": [
+        {
+          "nom_ar": "فم الطوب",
+          "nom_fr": "Foum Toub",
+          "nom_en": "Foum Toub",
+          "code_postal": "05049"
+        },
+        {
+          "nom_ar": "إشمول",
+          "nom_fr": "Ichemoul",
+          "nom_en": "Ichemoul",
+          "code_postal": "05026"
+        },
+        {
+          "nom_ar": "إينوغيسن",
+          "nom_fr": "Inoughissen",
+          "nom_en": "Inoughissen",
+          "code_postal": "05083"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "بوزينة",
+      "nom_fr": "Bouzina",
+      "nom_en": "Bouzina",
+      "communes": [
+        {
+          "nom_ar": "بوزينة",
+          "nom_fr": "Bouzina",
+          "nom_en": "Bouzina",
+          "code_postal": "05041"
+        },
+        {
+          "nom_ar": "لارباع",
+          "nom_fr": "Larbaa",
+          "nom_en": "Larbaa",
+          "code_postal": "09002"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "الشمرة",
+      "nom_fr": "Chemora",
+      "nom_en": "Chemora",
+      "communes": [
+        {
+          "nom_ar": "بولهيلات",
+          "nom_fr": "Boulhilat",
+          "nom_en": "Boulhilat",
+          "code_postal": "05062"
+        },
+        {
+          "nom_ar": "الشمرة",
+          "nom_fr": "Chemora",
+          "nom_en": "Chemora",
+          "code_postal": "05039"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "تكوت",
+      "nom_fr": "Tkout",
+      "nom_en": "Tkout",
+      "communes": [
+        {
+          "nom_ar": "غسيرة",
+          "nom_fr": "Ghassira",
+          "nom_en": "Ghassira",
+          "code_postal": "05043"
+        },
+        {
+          "nom_ar": "كيمل",
+          "nom_fr": "Kimmel",
+          "nom_en": "Kimmel",
+          "code_postal": "05079"
+        },
+        {
+          "nom_ar": "تكوت",
+          "nom_fr": "T Kout",
+          "nom_en": "T Kout",
+          "code_postal": "05020"
+        }
+      ],
+      "nb_communes": 3
+    }
+  ]
+}

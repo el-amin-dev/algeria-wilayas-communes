@@ -1,0 +1,105 @@
+{
+  "wilaya_num": 52,
+  "code": "52",
+  "nom_ar": "بني عباس",
+  "nom_fr": "Beni Abbes",
+  "nom_en": "Beni Abbes",
+  "nb_dairas": 5,
+  "nb_communes": 9,
+  "dairas": [
+    {
+      "nom_ar": "بني عباس",
+      "nom_fr": "Beni Abbes",
+      "nom_en": "Beni Abbes",
+      "communes": [
+        {
+          "nom_ar": "بني عباس",
+          "nom_fr": "Beni-Abbes",
+          "nom_en": "Beni-Abbes",
+          "code_postal": "08002"
+        },
+        {
+          "nom_ar": "تامترت",
+          "nom_fr": "Tamtert",
+          "nom_en": "Tamtert",
+          "code_postal": "08046"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "إقلي",
+      "nom_fr": "Igli",
+      "nom_en": "Igli",
+      "communes": [
+        {
+          "nom_ar": "إقلي",
+          "nom_fr": "Igli",
+          "nom_en": "Igli",
+          "code_postal": "08021"
+        }
+      ],
+      "nb_communes": 1
+    },
+    {
+      "nom_ar": "الواتة",
+      "nom_fr": "El Ouata",
+      "nom_en": "El Ouata",
+      "communes": [
+        {
+          "nom_ar": "الواتة",
+          "nom_fr": "El Ouata",
+          "nom_en": "El Ouata",
+          "code_postal": "08020"
+        }
+      ],
+      "nb_communes": 1
+    },
+    {
+      "nom_ar": "أولاد خضير",
+      "nom_fr": "Ouled Khodeir",
+      "nom_en": "Ouled Khodeir",
+      "communes": [
+        {
+          "nom_ar": "أولاد خضير",
+          "nom_fr": "Ouled-Khodeir",
+          "nom_en": "Ouled-Khodeir",
+          "code_postal": "08028"
+        },
+        {
+          "nom_ar": "القصابي",
+          "nom_fr": "Ksabi",
+          "nom_en": "Ksabi",
+          "code_postal": "08039"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "كرزاز",
+      "nom_fr": "Kerzaz",
+      "nom_en": "Kerzaz",
+      "communes": [
+        {
+          "nom_ar": "كرزاز",
+          "nom_fr": "Kerzaz",
+          "nom_en": "Kerzaz",
+          "code_postal": "08022"
+        },
+        {
+          "nom_ar": "تيمودي",
+          "nom_fr": "Timoudi",
+          "nom_en": "Timoudi",
+          "code_postal": "08031"
+        },
+        {
+          "nom_ar": "بن يخلف",
+          "nom_fr": "Beni-Ikhlef",
+          "nom_en": "Beni-Ikhlef",
+          "code_postal": "08025"
+        }
+      ],
+      "nb_communes": 3
+    }
+  ]
+}

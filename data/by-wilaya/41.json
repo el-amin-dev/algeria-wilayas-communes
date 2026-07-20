@@ -1,0 +1,247 @@
+{
+  "wilaya_num": 41,
+  "code": "41",
+  "nom_ar": "سوق أهراس",
+  "nom_fr": "Souk Ahras",
+  "nom_en": "Souk Ahras",
+  "nb_dairas": 10,
+  "nb_communes": 26,
+  "dairas": [
+    {
+      "nom_ar": "سوق أهراس",
+      "nom_fr": "Souk Ahras",
+      "nom_en": "Souk Ahras",
+      "communes": [
+        {
+          "nom_ar": "سوق أهراس",
+          "nom_fr": "Souk Ahras",
+          "nom_en": "Souk Ahras",
+          "code_postal": "41000"
+        }
+      ],
+      "nb_communes": 1
+    },
+    {
+      "nom_ar": "سدراتة",
+      "nom_fr": "Sedrata",
+      "nom_en": "Sedrata",
+      "communes": [
+        {
+          "nom_ar": "عين سلطان",
+          "nom_fr": "Ain Soltane",
+          "nom_en": "Ain Soltane",
+          "code_postal": "20029"
+        },
+        {
+          "nom_ar": "سدراتة",
+          "nom_fr": "Sedrata",
+          "nom_en": "Sedrata",
+          "code_postal": "41006"
+        },
+        {
+          "nom_ar": "خميسة",
+          "nom_fr": "Khemissa",
+          "nom_en": "Khemissa",
+          "code_postal": "41031"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "المشروحة",
+      "nom_fr": "Mechroha",
+      "nom_en": "Mechroha",
+      "communes": [
+        {
+          "nom_ar": "الحنانشة",
+          "nom_fr": "Hanencha",
+          "nom_en": "Hanencha",
+          "code_postal": "41016"
+        },
+        {
+          "nom_ar": "المشروحة",
+          "nom_fr": "Machroha",
+          "nom_en": "Machroha",
+          "code_postal": "41010"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "أولاد إدريس",
+      "nom_fr": "Ouled Driss",
+      "nom_en": "Ouled Driss",
+      "communes": [
+        {
+          "nom_ar": "عين الزانة",
+          "nom_fr": "Ain Zana",
+          "nom_en": "Ain Zana",
+          "code_postal": "41027"
+        },
+        {
+          "nom_ar": "أولاد إدريس",
+          "nom_fr": "Ouled Driss",
+          "nom_en": "Ouled Driss",
+          "code_postal": "41005"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "أم العظايم",
+      "nom_fr": "Oum El Adhaim",
+      "nom_en": "Oum El Adhaim",
+      "communes": [
+        {
+          "nom_ar": "ترقالت",
+          "nom_fr": "Terraguelt",
+          "nom_en": "Terraguelt",
+          "code_postal": "41037"
+        },
+        {
+          "nom_ar": "أم العظايم",
+          "nom_fr": "Oum El Adhaim",
+          "nom_en": "Oum El Adhaim",
+          "code_postal": "41019"
+        },
+        {
+          "nom_ar": "وادي الكبريت",
+          "nom_fr": "Oued Kebrit",
+          "nom_en": "Oued Kebrit",
+          "code_postal": "41018"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "مداوروش",
+      "nom_fr": "M'daourouche",
+      "nom_en": "M'daourouche",
+      "communes": [
+        {
+          "nom_ar": "تيفاش",
+          "nom_fr": "Tiffech",
+          "nom_en": "Tiffech",
+          "code_postal": "41038"
+        },
+        {
+          "nom_ar": "الراقوبة",
+          "nom_fr": "Ragouba",
+          "nom_en": "Ragouba",
+          "code_postal": "41033"
+        },
+        {
+          "nom_ar": "مداوروش",
+          "nom_fr": "M'daourouche",
+          "nom_en": "M'daourouche",
+          "code_postal": "41001"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "تاورة",
+      "nom_fr": "Taoura",
+      "nom_en": "Taoura",
+      "communes": [
+        {
+          "nom_ar": "الدريعة",
+          "nom_fr": "Drea",
+          "nom_en": "Drea",
+          "code_postal": "41015"
+        },
+        {
+          "nom_ar": "تاورة",
+          "nom_fr": "Taoura",
+          "nom_en": "Taoura",
+          "code_postal": "41009"
+        },
+        {
+          "nom_ar": "الزعرورية",
+          "nom_fr": "Zaarouria",
+          "nom_en": "Zaarouria",
+          "code_postal": "41025"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "الحدادة",
+      "nom_fr": "Haddada",
+      "nom_en": "Haddada",
+      "communes": [
+        {
+          "nom_ar": "الحدادة",
+          "nom_fr": "Haddada",
+          "nom_en": "Haddada",
+          "code_postal": "41012"
+        },
+        {
+          "nom_ar": "الخضارة",
+          "nom_fr": "Khedara",
+          "nom_en": "Khedara",
+          "code_postal": "41013"
+        },
+        {
+          "nom_ar": "أولاد مومن",
+          "nom_fr": "Ouled Moumen",
+          "nom_en": "Ouled Moumen",
+          "code_postal": "41034"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "المراهنة",
+      "nom_fr": "Merahna",
+      "nom_en": "Merahna",
+      "communes": [
+        {
+          "nom_ar": "المراهنة",
+          "nom_fr": "Merahna",
+          "nom_en": "Merahna",
+          "code_postal": "41004"
+        },
+        {
+          "nom_ar": "ويلان",
+          "nom_fr": "Ouillen",
+          "nom_en": "Ouillen",
+          "code_postal": "41029"
+        },
+        {
+          "nom_ar": "سيدي فرج",
+          "nom_fr": "Sidi Fredj",
+          "nom_en": "Sidi Fredj",
+          "code_postal": null
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "بئر بوحوش",
+      "nom_fr": "Bir Bouhouche",
+      "nom_en": "Bir Bouhouche",
+      "communes": [
+        {
+          "nom_ar": "بئر بوحوش",
+          "nom_fr": "Bir Bouhouche",
+          "nom_en": "Bir Bouhouche",
+          "code_postal": "41011"
+        },
+        {
+          "nom_ar": "سافل الويدان",
+          "nom_fr": "Safel El Ouiden",
+          "nom_en": "Safel El Ouiden",
+          "code_postal": "41035"
+        },
+        {
+          "nom_ar": "الزوابي",
+          "nom_fr": "Zouabi",
+          "nom_en": "Zouabi",
+          "code_postal": "41039"
+        }
+      ],
+      "nb_communes": 3
+    }
+  ]
+}

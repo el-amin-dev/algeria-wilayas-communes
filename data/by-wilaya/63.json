@@ -1,0 +1,83 @@
+{
+  "wilaya_num": 63,
+  "code": "63",
+  "nom_ar": "بريكة",
+  "nom_fr": "Barika",
+  "nom_en": "Barika",
+  "nb_dairas": 3,
+  "nb_communes": 8,
+  "dairas": [
+    {
+      "nom_ar": "سقانة",
+      "nom_fr": "Seggana",
+      "nom_en": "Seggana",
+      "communes": [
+        {
+          "nom_ar": "سقانة",
+          "nom_fr": "Seggana",
+          "nom_en": "Seggana",
+          "code_postal": "05027"
+        },
+        {
+          "nom_ar": "تيلاطو",
+          "nom_fr": "Tilatou",
+          "nom_en": "Tilatou",
+          "code_postal": "05127"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "بريكة",
+      "nom_fr": "Barika",
+      "nom_en": "Barika",
+      "communes": [
+        {
+          "nom_ar": "بريكة",
+          "nom_fr": "Barika",
+          "nom_en": "Barika",
+          "code_postal": "05001"
+        },
+        {
+          "nom_ar": "بيطام",
+          "nom_fr": "Bitam",
+          "nom_en": "Bitam",
+          "code_postal": "05045"
+        },
+        {
+          "nom_ar": "إمدوكل",
+          "nom_fr": "M Doukal",
+          "nom_en": "M Doukal",
+          "code_postal": "05037"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "الجزار",
+      "nom_fr": "Djezzar",
+      "nom_en": "Djezzar",
+      "communes": [
+        {
+          "nom_ar": "عزيل عبد القادر",
+          "nom_fr": "Azil Abedelkader",
+          "nom_en": "Azil Abedelkader",
+          "code_postal": "05087"
+        },
+        {
+          "nom_ar": "الجزار",
+          "nom_fr": "Djezzar",
+          "nom_en": "Djezzar",
+          "code_postal": "05046"
+        },
+        {
+          "nom_ar": "أولاد عمار",
+          "nom_fr": "Ouled Ammar",
+          "nom_en": "Ouled Ammar",
+          "code_postal": "05121"
+        }
+      ],
+      "nb_communes": 3
+    }
+  ]
+}

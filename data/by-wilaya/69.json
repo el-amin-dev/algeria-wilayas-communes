@@ -1,0 +1,75 @@
+{
+  "wilaya_num": 69,
+  "code": "69",
+  "nom_ar": "مسعد",
+  "nom_fr": "Messaad",
+  "nom_en": "Messaad",
+  "nb_dairas": 2,
+  "nb_communes": 8,
+  "dairas": [
+    {
+      "nom_ar": "مسعد",
+      "nom_fr": "Messaad",
+      "nom_en": "Messaad",
+      "communes": [
+        {
+          "nom_ar": "سلمانة",
+          "nom_fr": "Selmana",
+          "nom_en": "Selmana",
+          "code_postal": "17063"
+        },
+        {
+          "nom_ar": "سد الرحال",
+          "nom_fr": "Sed Rahal",
+          "nom_en": "Sed Rahal",
+          "code_postal": "17062"
+        },
+        {
+          "nom_ar": "مسعد",
+          "nom_fr": "Messaad",
+          "nom_en": "Messaad",
+          "code_postal": "17003"
+        },
+        {
+          "nom_ar": "قطارة",
+          "nom_fr": "Guettara",
+          "nom_en": "Guettara",
+          "code_postal": "17055"
+        },
+        {
+          "nom_ar": "دلدول",
+          "nom_fr": "Deldoul",
+          "nom_en": "Deldoul",
+          "code_postal": "17046"
+        }
+      ],
+      "nb_communes": 5
+    },
+    {
+      "nom_ar": "فيض البطمة",
+      "nom_fr": "Faidh El Botma",
+      "nom_en": "Faidh El Botma",
+      "communes": [
+        {
+          "nom_ar": "أم العظام",
+          "nom_fr": "Oum Laadham",
+          "nom_en": "Oum Laadham",
+          "code_postal": "17061"
+        },
+        {
+          "nom_ar": "فيض البطمة",
+          "nom_fr": "Faidh El Botma",
+          "nom_en": "Faidh El Botma",
+          "code_postal": "17021"
+        },
+        {
+          "nom_ar": "عمورة",
+          "nom_fr": "Amourah",
+          "nom_en": "Amourah",
+          "code_postal": "17042"
+        }
+      ],
+      "nb_communes": 3
+    }
+  ]
+}

@@ -1,0 +1,165 @@
+{
+  "wilaya_num": 32,
+  "code": "32",
+  "nom_ar": "البيض",
+  "nom_fr": "El Bayadh",
+  "nom_en": "El Bayadh",
+  "nb_dairas": 8,
+  "nb_communes": 15,
+  "dairas": [
+    {
+      "nom_ar": "الأبيض سيدي الشيخ",
+      "nom_fr": "Labiodh Sidi Cheikh",
+      "nom_en": "Labiodh Sidi Cheikh",
+      "communes": [
+        {
+          "nom_ar": "عين العراك",
+          "nom_fr": "Ain El Orak",
+          "nom_en": "Ain El Orak",
+          "code_postal": "32019"
+        },
+        {
+          "nom_ar": "البنود",
+          "nom_fr": "El Bnoud",
+          "nom_en": "El Bnoud",
+          "code_postal": "32025"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "بريزينة",
+      "nom_fr": "Brezina",
+      "nom_en": "Brezina",
+      "communes": [
+        {
+          "nom_ar": "كراكدة",
+          "nom_fr": "Krakda",
+          "nom_en": "Krakda",
+          "code_postal": "32027"
+        }
+      ],
+      "nb_communes": 1
+    },
+    {
+      "nom_ar": "بوعلام",
+      "nom_fr": "Boualem",
+      "nom_en": "Boualem",
+      "communes": [
+        {
+          "nom_ar": "سيدي سليمان",
+          "nom_fr": "Sidi Slimane",
+          "nom_en": "Sidi Slimane",
+          "code_postal": "30030"
+        },
+        {
+          "nom_ar": "بوعلام",
+          "nom_fr": "Boualem",
+          "nom_en": "Boualem",
+          "code_postal": "32006"
+        },
+        {
+          "nom_ar": "سيدي طيفور",
+          "nom_fr": "Sidi Tiffour",
+          "nom_en": "Sidi Tiffour",
+          "code_postal": "32032"
+        },
+        {
+          "nom_ar": "ستيتن",
+          "nom_fr": "Stitten",
+          "nom_en": "Stitten",
+          "code_postal": "32033"
+        }
+      ],
+      "nb_communes": 4
+    },
+    {
+      "nom_ar": "سيدي عامر",
+      "nom_fr": "Sidi Ameur",
+      "nom_en": "Sidi Ameur",
+      "communes": [
+        {
+          "nom_ar": "سيدي عامر",
+          "nom_fr": "Sidi Ameur",
+          "nom_en": "Sidi Ameur",
+          "code_postal": null
+        }
+      ],
+      "nb_communes": 1
+    },
+    {
+      "nom_ar": "بوقطب",
+      "nom_fr": "Bougtoub",
+      "nom_en": "Bougtoub",
+      "communes": [
+        {
+          "nom_ar": "بوقطب",
+          "nom_fr": "Bougtoub",
+          "nom_en": "Bougtoub",
+          "code_postal": "32001"
+        },
+        {
+          "nom_ar": "الخيثر",
+          "nom_fr": "El Kheiter",
+          "nom_en": "El Kheiter",
+          "code_postal": "32011"
+        },
+        {
+          "nom_ar": "توسمولين",
+          "nom_fr": "Tousmouline",
+          "nom_en": "Tousmouline",
+          "code_postal": "32034"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "البيض",
+      "nom_fr": "El Bayadh",
+      "nom_en": "El Bayadh",
+      "communes": [
+        {
+          "nom_ar": "البيض",
+          "nom_fr": "El Bayadh",
+          "nom_en": "El Bayadh",
+          "code_postal": "32000"
+        }
+      ],
+      "nb_communes": 1
+    },
+    {
+      "nom_ar": "رقاصة",
+      "nom_fr": "Rogassa",
+      "nom_en": "Rogassa",
+      "communes": [
+        {
+          "nom_ar": "رقاصة",
+          "nom_fr": "Rogassa",
+          "nom_en": "Rogassa",
+          "code_postal": "32018"
+        },
+        {
+          "nom_ar": "الكاف الأحمر",
+          "nom_fr": "Kef El Ahmar",
+          "nom_en": "Kef El Ahmar",
+          "code_postal": "32013"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "شلالة",
+      "nom_fr": "Chellala",
+      "nom_en": "Chellala",
+      "communes": [
+        {
+          "nom_ar": "المحرة",
+          "nom_fr": "El Mehara",
+          "nom_en": "El Mehara",
+          "code_postal": "32024"
+        }
+      ],
+      "nb_communes": 1
+    }
+  ]
+}

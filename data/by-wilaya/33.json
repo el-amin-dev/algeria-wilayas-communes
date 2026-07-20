@@ -1,0 +1,51 @@
+{
+  "wilaya_num": 33,
+  "code": "33",
+  "nom_ar": "إليزي",
+  "nom_fr": "Illizi",
+  "nom_en": "Illizi",
+  "nb_dairas": 2,
+  "nb_communes": 4,
+  "dairas": [
+    {
+      "nom_ar": "إن أمناس",
+      "nom_fr": "In Amenas",
+      "nom_en": "In Amenas",
+      "communes": [
+        {
+          "nom_ar": "برج عمر إدريس",
+          "nom_fr": "Bordj Omar Driss",
+          "nom_en": "Bordj Omar Driss",
+          "code_postal": "33003"
+        },
+        {
+          "nom_ar": "دبداب",
+          "nom_fr": "Debdeb",
+          "nom_en": "Debdeb",
+          "code_postal": "33004"
+        },
+        {
+          "nom_ar": "إن أمناس",
+          "nom_fr": "In Amenas",
+          "nom_en": "In Amenas",
+          "code_postal": "33001"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "إيليزي",
+      "nom_fr": "Illizi",
+      "nom_en": "Illizi",
+      "communes": [
+        {
+          "nom_ar": "إيليزي",
+          "nom_fr": "Illizi",
+          "nom_en": "Illizi",
+          "code_postal": "33000"
+        }
+      ],
+      "nb_communes": 1
+    }
+  ]
+}

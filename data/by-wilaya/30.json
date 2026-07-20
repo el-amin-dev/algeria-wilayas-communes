@@ -1,0 +1,107 @@
+{
+  "wilaya_num": 30,
+  "code": "30",
+  "nom_ar": "ورقلة",
+  "nom_fr": "Ouargla",
+  "nom_en": "Ouargla",
+  "nb_dairas": 6,
+  "nb_communes": 8,
+  "dairas": [
+    {
+      "nom_ar": "ورقلة",
+      "nom_fr": "Ouargla",
+      "nom_en": "Ouargla",
+      "communes": [
+        {
+          "nom_ar": "ورقلة",
+          "nom_fr": "Ouargla",
+          "nom_en": "Ouargla",
+          "code_postal": "30000"
+        },
+        {
+          "nom_ar": "الرويسات",
+          "nom_fr": "Rouissat",
+          "nom_en": "Rouissat",
+          "code_postal": "30013"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "حاسي مسعود",
+      "nom_fr": "Hassi Messaoud",
+      "nom_en": "Hassi Messaoud",
+      "communes": [
+        {
+          "nom_ar": "حاسي مسعود",
+          "nom_fr": "Hassi Messaoud",
+          "nom_en": "Hassi Messaoud",
+          "code_postal": "30001"
+        }
+      ],
+      "nb_communes": 1
+    },
+    {
+      "nom_ar": "عين البيضاء",
+      "nom_fr": "Ain Beida",
+      "nom_en": "Ain Beida",
+      "communes": [
+        {
+          "nom_ar": "عين البيضاء",
+          "nom_fr": "Ain Beida",
+          "nom_en": "Ain Beida",
+          "code_postal": "04001"
+        }
+      ],
+      "nb_communes": 1
+    },
+    {
+      "nom_ar": "سيدي خويلد",
+      "nom_fr": "Sidi Khouiled",
+      "nom_en": "Sidi Khouiled",
+      "communes": [
+        {
+          "nom_ar": "حاسي بن عبد الله",
+          "nom_fr": "Hassi Ben Abdellah",
+          "nom_en": "Hassi Ben Abdellah",
+          "code_postal": "30052"
+        },
+        {
+          "nom_ar": "سيدي خويلد",
+          "nom_fr": "Sidi Khouiled",
+          "nom_en": "Sidi Khouiled",
+          "code_postal": "30035"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "البرمة",
+      "nom_fr": "El Borma",
+      "nom_en": "El Borma",
+      "communes": [
+        {
+          "nom_ar": "البرمة",
+          "nom_fr": "El Borma",
+          "nom_en": "El Borma",
+          "code_postal": "30025"
+        }
+      ],
+      "nb_communes": 1
+    },
+    {
+      "nom_ar": "انقوسة",
+      "nom_fr": "N'goussa",
+      "nom_en": "N'goussa",
+      "communes": [
+        {
+          "nom_ar": "انقوسة",
+          "nom_fr": "N'goussa",
+          "nom_en": "N'goussa",
+          "code_postal": "30026"
+        }
+      ],
+      "nb_communes": 1
+    }
+  ]
+}

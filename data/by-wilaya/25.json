@@ -1,0 +1,131 @@
+{
+  "wilaya_num": 25,
+  "code": "25",
+  "nom_ar": "قسنطينة",
+  "nom_fr": "Constantine",
+  "nom_en": "Constantine",
+  "nb_dairas": 6,
+  "nb_communes": 12,
+  "dairas": [
+    {
+      "nom_ar": "حامة بوزيان",
+      "nom_fr": "Hamma Bouziane",
+      "nom_en": "Hamma Bouziane",
+      "communes": [
+        {
+          "nom_ar": "ديدوش مراد",
+          "nom_fr": "Didouche Mourad",
+          "nom_en": "Didouche Mourad",
+          "code_postal": "25024"
+        },
+        {
+          "nom_ar": "حامة بوزيان",
+          "nom_fr": "Hamma Bouziane",
+          "nom_en": "Hamma Bouziane",
+          "code_postal": "25013"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "زيغود يوسف",
+      "nom_fr": "Zighoud Youcef",
+      "nom_en": "Zighoud Youcef",
+      "communes": [
+        {
+          "nom_ar": "بني حميدان",
+          "nom_fr": "Beni Hamidane",
+          "nom_en": "Beni Hamidane",
+          "code_postal": "25035"
+        },
+        {
+          "nom_ar": "زيغود يوسف",
+          "nom_fr": "Zighoud Youcef",
+          "nom_en": "Zighoud Youcef",
+          "code_postal": "25014"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "الخروب",
+      "nom_fr": "El Khroub",
+      "nom_en": "El Khroub",
+      "communes": [
+        {
+          "nom_ar": "عين السمارة",
+          "nom_fr": "Ain Smara",
+          "nom_en": "Ain Smara",
+          "code_postal": "25006"
+        },
+        {
+          "nom_ar": "الخروب",
+          "nom_fr": "El Khroub",
+          "nom_en": "El Khroub",
+          "code_postal": "25005"
+        },
+        {
+          "nom_ar": "أولاد رحمون",
+          "nom_fr": "Ouled Rahmoun",
+          "nom_en": "Ouled Rahmoun",
+          "code_postal": "25028"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "عين عبيد",
+      "nom_fr": "Ain Abid",
+      "nom_en": "Ain Abid",
+      "communes": [
+        {
+          "nom_ar": "عين عبيد",
+          "nom_fr": "Ain Abid",
+          "nom_en": "Ain Abid",
+          "code_postal": "25015"
+        },
+        {
+          "nom_ar": "أبن باديس الهرية",
+          "nom_fr": "Ben Badis",
+          "nom_en": "Ben Badis",
+          "code_postal": "25037"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "ابن زياد",
+      "nom_fr": "Ibn Ziad",
+      "nom_en": "Ibn Ziad",
+      "communes": [
+        {
+          "nom_ar": "ابن زياد",
+          "nom_fr": "Ibn Ziad",
+          "nom_en": "Ibn Ziad",
+          "code_postal": "25027"
+        },
+        {
+          "nom_ar": "بوجريو مسعود",
+          "nom_fr": "Messaoud Boudjeriou",
+          "nom_en": "Messaoud Boudjeriou",
+          "code_postal": "25032"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "قسنطينة",
+      "nom_fr": "Constantine",
+      "nom_en": "Constantine",
+      "communes": [
+        {
+          "nom_ar": "قسنطينة",
+          "nom_fr": "Constantine",
+          "nom_en": "Constantine",
+          "code_postal": "25000"
+        }
+      ],
+      "nb_communes": 1
+    }
+  ]
+}

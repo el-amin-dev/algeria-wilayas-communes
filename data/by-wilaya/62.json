@@ -1,0 +1,65 @@
+{
+  "wilaya_num": 62,
+  "code": "62",
+  "nom_ar": "القنطرة",
+  "nom_fr": "El Kantara",
+  "nom_en": "El Kantara",
+  "nb_dairas": 3,
+  "nb_communes": 5,
+  "dairas": [
+    {
+      "nom_ar": "جمورة",
+      "nom_fr": "Djemorah",
+      "nom_en": "Djemorah",
+      "communes": [
+        {
+          "nom_ar": "جمورة",
+          "nom_fr": "Djemorah",
+          "nom_en": "Djemorah",
+          "code_postal": "07025"
+        },
+        {
+          "nom_ar": "برانيس",
+          "nom_fr": "Branis",
+          "nom_en": "Branis",
+          "code_postal": "07023"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "الوطاية",
+      "nom_fr": "El Outaya",
+      "nom_en": "El Outaya",
+      "communes": [
+        {
+          "nom_ar": "الوطاية",
+          "nom_fr": "El Outaya",
+          "nom_en": "El Outaya",
+          "code_postal": "07030"
+        }
+      ],
+      "nb_communes": 1
+    },
+    {
+      "nom_ar": "القنطرة",
+      "nom_fr": "El Kantara",
+      "nom_en": "El Kantara",
+      "communes": [
+        {
+          "nom_ar": "القنطرة",
+          "nom_fr": "El Kantara",
+          "nom_en": "El Kantara",
+          "code_postal": "07008"
+        },
+        {
+          "nom_ar": "عين زعطوط",
+          "nom_fr": "Ain Zaatout",
+          "nom_en": "Ain Zaatout",
+          "code_postal": "07013"
+        }
+      ],
+      "nb_communes": 2
+    }
+  ]
+}

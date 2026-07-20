@@ -1,0 +1,185 @@
+{
+  "wilaya_num": 66,
+  "code": "66",
+  "nom_ar": "قصر البخاري",
+  "nom_fr": "Ksar El Boukhari",
+  "nom_en": "Ksar El Boukhari",
+  "nb_dairas": 6,
+  "nb_communes": 21,
+  "dairas": [
+    {
+      "nom_ar": "أولاد عنتر",
+      "nom_fr": "Ouled Antar",
+      "nom_en": "Ouled Antar",
+      "communes": [
+        {
+          "nom_ar": "أولاد هلال",
+          "nom_fr": "Ouled Hellal",
+          "nom_en": "Ouled Hellal",
+          "code_postal": "26037"
+        },
+        {
+          "nom_ar": "بوغار",
+          "nom_fr": "Boghar",
+          "nom_en": "Boghar",
+          "code_postal": "26013"
+        },
+        {
+          "nom_ar": "أولاد عنتر",
+          "nom_fr": "Ouled Antar",
+          "nom_en": "Ouled Antar",
+          "code_postal": "26035"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "قصر البخاري",
+      "nom_fr": "Ksar El Boukhari",
+      "nom_en": "Ksar El Boukhari",
+      "communes": [
+        {
+          "nom_ar": "قصر البخاري",
+          "nom_fr": "Ksar El Boukhari",
+          "nom_en": "Ksar El Boukhari",
+          "code_postal": "26003"
+        },
+        {
+          "nom_ar": "مفاتحة",
+          "nom_fr": "M'fatha",
+          "nom_en": "M'fatha",
+          "code_postal": "26049"
+        },
+        {
+          "nom_ar": "السانق",
+          "nom_fr": "Saneg",
+          "nom_en": "Saneg",
+          "code_postal": "26067"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "الشهبونية",
+      "nom_fr": "Chahbounia",
+      "nom_en": "Chahbounia",
+      "communes": [
+        {
+          "nom_ar": "بوعيش",
+          "nom_fr": "Bouaiche",
+          "nom_en": "Bouaiche",
+          "code_postal": null
+        },
+        {
+          "nom_ar": "بوغزول",
+          "nom_fr": "Boughzoul",
+          "nom_en": "Boughzoul",
+          "code_postal": "26023"
+        },
+        {
+          "nom_ar": "الشهبونية",
+          "nom_fr": "Chabounia",
+          "nom_en": "Chabounia",
+          "code_postal": "26026"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "عين بوسيف",
+      "nom_fr": "Ain Boucif",
+      "nom_en": "Ain Boucif",
+      "communes": [
+        {
+          "nom_ar": "عين بوسيف",
+          "nom_fr": "Ain Boucif",
+          "nom_en": "Ain Boucif",
+          "code_postal": "26005"
+        },
+        {
+          "nom_ar": "العوينات",
+          "nom_fr": "El Ouinet",
+          "nom_en": "El Ouinet",
+          "code_postal": "12005"
+        },
+        {
+          "nom_ar": "الكاف الاخضر",
+          "nom_fr": "Kef Lakhdar",
+          "nom_en": "Kef Lakhdar",
+          "code_postal": "26051"
+        },
+        {
+          "nom_ar": "أولاد امعرف",
+          "nom_fr": "Ouled Emaaraf",
+          "nom_en": "Ouled Emaaraf",
+          "code_postal": "26038"
+        },
+        {
+          "nom_ar": "سيدي دامد",
+          "nom_fr": "Sidi Demed",
+          "nom_en": "Sidi Demed",
+          "code_postal": "26069"
+        }
+      ],
+      "nb_communes": 5
+    },
+    {
+      "nom_ar": "شلالة العذاورة",
+      "nom_fr": "Chellalat El Adhaoura",
+      "nom_en": "Chellalat El Adhaoura",
+      "communes": [
+        {
+          "nom_ar": "عين اقصير",
+          "nom_fr": "Ain Ouksir",
+          "nom_en": "Ain Ouksir",
+          "code_postal": "26048"
+        },
+        {
+          "nom_ar": "شلالة العذاورة",
+          "nom_fr": "Chelalet El Adhaoura",
+          "nom_en": "Chelalet El Adhaoura",
+          "code_postal": "26007"
+        },
+        {
+          "nom_ar": "شنيقل",
+          "nom_fr": "Cheniguel",
+          "nom_en": "Cheniguel",
+          "code_postal": "26057"
+        },
+        {
+          "nom_ar": "تفراوت",
+          "nom_fr": "Tafraout",
+          "nom_en": "Tafraout",
+          "code_postal": "26074"
+        }
+      ],
+      "nb_communes": 4
+    },
+    {
+      "nom_ar": "عزيز",
+      "nom_fr": "Aziz",
+      "nom_en": "Aziz",
+      "communes": [
+        {
+          "nom_ar": "عزيز",
+          "nom_fr": "Aziz",
+          "nom_en": "Aziz",
+          "code_postal": "26040"
+        },
+        {
+          "nom_ar": "دراق",
+          "nom_fr": "Derrag",
+          "nom_en": "Derrag",
+          "code_postal": "26015"
+        },
+        {
+          "nom_ar": "أم الجليل",
+          "nom_fr": "Oum El Djellil",
+          "nom_en": "Oum El Djellil",
+          "code_postal": "26042"
+        }
+      ],
+      "nb_communes": 3
+    }
+  ]
+}

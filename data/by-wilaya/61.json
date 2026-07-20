@@ -1,0 +1,51 @@
+{
+  "wilaya_num": 61,
+  "code": "61",
+  "nom_ar": "العريشة",
+  "nom_fr": "El Aricha",
+  "nom_en": "El Aricha",
+  "nb_dairas": 2,
+  "nb_communes": 4,
+  "dairas": [
+    {
+      "nom_ar": "سيدي الجيلالي",
+      "nom_fr": "Sidi Djillali",
+      "nom_en": "Sidi Djillali",
+      "communes": [
+        {
+          "nom_ar": "سيدي الجيلالي",
+          "nom_fr": "Sidi Djillali",
+          "nom_en": "Sidi Djillali",
+          "code_postal": "13043"
+        },
+        {
+          "nom_ar": "البويهي",
+          "nom_fr": "Bouihi",
+          "nom_en": "Bouihi",
+          "code_postal": "13030"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "سبدو",
+      "nom_fr": "Sebdou",
+      "nom_en": "Sebdou",
+      "communes": [
+        {
+          "nom_ar": "القور",
+          "nom_fr": "El Gor",
+          "nom_en": "El Gor",
+          "code_postal": "13034"
+        },
+        {
+          "nom_ar": "العريشة",
+          "nom_fr": "El Aricha",
+          "nom_en": "El Aricha",
+          "code_postal": "13031"
+        }
+      ],
+      "nb_communes": 2
+    }
+  ]
+}

@@ -1,0 +1,443 @@
+{
+  "wilaya_num": 22,
+  "code": "22",
+  "nom_ar": "سيدي بلعباس",
+  "nom_fr": "Sidi Bel Abbes",
+  "nom_en": "Sidi Bel Abbes",
+  "nb_dairas": 15,
+  "nb_communes": 52,
+  "dairas": [
+    {
+      "nom_ar": "سيدي علي بن يوب",
+      "nom_fr": "Sidi Ali Ben Youb",
+      "nom_en": "Sidi Ali Ben Youb",
+      "communes": [
+        {
+          "nom_ar": "سيدي علي بن يوب",
+          "nom_fr": "Sidi Ali Benyoub",
+          "nom_en": "Sidi Ali Benyoub",
+          "code_postal": "22028"
+        },
+        {
+          "nom_ar": "طابية",
+          "nom_fr": "Tabia",
+          "nom_en": "Tabia",
+          "code_postal": "22032"
+        },
+        {
+          "nom_ar": "بوخنفيس",
+          "nom_fr": "Boukhanefis",
+          "nom_en": "Boukhanefis",
+          "code_postal": "22008"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "مولاي سليسن",
+      "nom_fr": "Moulay Slissen",
+      "nom_en": "Moulay Slissen",
+      "communes": [
+        {
+          "nom_ar": "مولاي سليسن",
+          "nom_fr": "Moulay Slissen",
+          "nom_en": "Moulay Slissen",
+          "code_postal": "22026"
+        },
+        {
+          "nom_ar": "الحصيبة",
+          "nom_fr": "El Hacaiba",
+          "nom_en": "El Hacaiba",
+          "code_postal": "22047"
+        },
+        {
+          "nom_ar": "عين تندمين",
+          "nom_fr": "Ain Tindamine",
+          "nom_en": "Ain Tindamine",
+          "code_postal": "22036"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "تنيرة",
+      "nom_fr": "Tenira",
+      "nom_en": "Tenira",
+      "communes": [
+        {
+          "nom_ar": "تنيرة",
+          "nom_fr": "Tenira",
+          "nom_en": "Tenira",
+          "code_postal": "22021"
+        },
+        {
+          "nom_ar": "وادي سفيون",
+          "nom_fr": "Oued Sefioun",
+          "nom_en": "Oued Sefioun",
+          "code_postal": "22055"
+        },
+        {
+          "nom_ar": "حاسي دحو",
+          "nom_fr": "Hassi Dahou",
+          "nom_en": "Hassi Dahou",
+          "code_postal": "22049"
+        },
+        {
+          "nom_ar": "بن عشيبة شلية",
+          "nom_fr": "Benachiba Chelia",
+          "nom_en": "Benachiba Chelia",
+          "code_postal": "22040"
+        }
+      ],
+      "nb_communes": 4
+    },
+    {
+      "nom_ar": "مرين",
+      "nom_fr": "Merine",
+      "nom_en": "Merine",
+      "communes": [
+        {
+          "nom_ar": "وادي تاوريرة",
+          "nom_fr": "Oued Taourira",
+          "nom_en": "Oued Taourira",
+          "code_postal": "22056"
+        },
+        {
+          "nom_ar": "مرين",
+          "nom_fr": "Merine",
+          "nom_en": "Merine",
+          "code_postal": "22012"
+        },
+        {
+          "nom_ar": "تفسور",
+          "nom_fr": "Tefessour",
+          "nom_en": "Tefessour",
+          "code_postal": "22065"
+        },
+        {
+          "nom_ar": "تاودموت",
+          "nom_fr": "Taoudmout",
+          "nom_en": "Taoudmout",
+          "code_postal": "22064"
+        }
+      ],
+      "nb_communes": 4
+    },
+    {
+      "nom_ar": "سيدي لحسن",
+      "nom_fr": "Sidi Lahcene",
+      "nom_en": "Sidi Lahcene",
+      "communes": [
+        {
+          "nom_ar": "سيدي يعقوب",
+          "nom_fr": "Sidi Yacoub",
+          "nom_en": "Sidi Yacoub",
+          "code_postal": "22063"
+        },
+        {
+          "nom_ar": "سيدي لحسن",
+          "nom_fr": "Sidi Lahcene",
+          "nom_en": "Sidi Lahcene",
+          "code_postal": "22020"
+        },
+        {
+          "nom_ar": "سيدي خالد",
+          "nom_fr": "Sidi Khaled",
+          "nom_en": "Sidi Khaled",
+          "code_postal": "07004"
+        },
+        {
+          "nom_ar": "العمارنة",
+          "nom_fr": "Amarnas",
+          "nom_en": "Amarnas",
+          "code_postal": "22074"
+        }
+      ],
+      "nb_communes": 4
+    },
+    {
+      "nom_ar": "عين البرد",
+      "nom_fr": "Ain El Berd",
+      "nom_en": "Ain El Berd",
+      "communes": [
+        {
+          "nom_ar": "سيدي ابراهيم",
+          "nom_fr": "Sidi Brahim",
+          "nom_en": "Sidi Brahim",
+          "code_postal": "22029"
+        },
+        {
+          "nom_ar": "سيدي حمادوش",
+          "nom_fr": "Sidi Hamadouche",
+          "nom_en": "Sidi Hamadouche",
+          "code_postal": "22019"
+        },
+        {
+          "nom_ar": "مكدرة",
+          "nom_fr": "Makedra",
+          "nom_en": "Makedra",
+          "code_postal": "22051"
+        },
+        {
+          "nom_ar": "عين البرد",
+          "nom_fr": "Ain El Berd",
+          "nom_en": "Ain El Berd",
+          "code_postal": "22022"
+        }
+      ],
+      "nb_communes": 4
+    },
+    {
+      "nom_ar": "بن باديس",
+      "nom_fr": "Ben Badis",
+      "nom_en": "Ben Badis",
+      "communes": [
+        {
+          "nom_ar": "حاسي زهانة",
+          "nom_fr": "Hassi Zahana",
+          "nom_en": "Hassi Zahana",
+          "code_postal": "22010"
+        },
+        {
+          "nom_ar": "شيطوان البلايلة",
+          "nom_fr": "Chetouane Belaila",
+          "nom_en": "Chetouane Belaila",
+          "code_postal": "22039"
+        },
+        {
+          "nom_ar": "بن باديس",
+          "nom_fr": "Ben Badis",
+          "nom_en": "Ben Badis",
+          "code_postal": "22004"
+        },
+        {
+          "nom_ar": "بضرابين المقراني",
+          "nom_fr": "Bedrabine El Mokrani",
+          "nom_en": "Bedrabine El Mokrani",
+          "code_postal": "22038"
+        }
+      ],
+      "nb_communes": 4
+    },
+    {
+      "nom_ar": "سفيزف",
+      "nom_fr": "Sfisef",
+      "nom_en": "Sfisef",
+      "communes": [
+        {
+          "nom_ar": "سفيزف",
+          "nom_fr": "Sfisef",
+          "nom_en": "Sfisef",
+          "code_postal": "22001"
+        },
+        {
+          "nom_ar": "مسيد",
+          "nom_fr": "M'cid",
+          "nom_en": "M'cid",
+          "code_postal": "22052"
+        },
+        {
+          "nom_ar": "بوجبهة البرج",
+          "nom_fr": "Boudjebaa El Bordj",
+          "nom_en": "Boudjebaa El Bordj",
+          "code_postal": "22043"
+        },
+        {
+          "nom_ar": "عين أدن",
+          "nom_fr": "Ain- Adden",
+          "nom_en": "Ain- Adden",
+          "code_postal": "22034"
+        }
+      ],
+      "nb_communes": 4
+    },
+    {
+      "nom_ar": "مرحوم",
+      "nom_fr": "Marhoum",
+      "nom_en": "Marhoum",
+      "communes": [
+        {
+          "nom_ar": "سيدي شعيب",
+          "nom_fr": "Sidi Chaib",
+          "nom_en": "Sidi Chaib",
+          "code_postal": "22061"
+        },
+        {
+          "nom_ar": "مرحوم",
+          "nom_fr": "Marhoum",
+          "nom_en": "Marhoum",
+          "code_postal": "22011"
+        },
+        {
+          "nom_ar": "بئر الحمام",
+          "nom_fr": "Bir El Hammam",
+          "nom_en": "Bir El Hammam",
+          "code_postal": "22041"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "راس الماء",
+      "nom_fr": "Ras El Ma",
+      "nom_en": "Ras El Ma",
+      "communes": [
+        {
+          "nom_ar": "رجم دموش",
+          "nom_fr": "Redjem Demouche",
+          "nom_en": "Redjem Demouche",
+          "code_postal": "22058"
+        },
+        {
+          "nom_ar": "راس الماء",
+          "nom_fr": "Ras El Ma",
+          "nom_en": "Ras El Ma",
+          "code_postal": "22069"
+        },
+        {
+          "nom_ar": "وادي السبع",
+          "nom_fr": "Oued Sebaa",
+          "nom_en": "Oued Sebaa",
+          "code_postal": "22054"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "سيدي بلعباس",
+      "nom_fr": "Sidi Bel Abbes",
+      "nom_en": "Sidi Bel Abbes",
+      "communes": [
+        {
+          "nom_ar": "سيدي بلعباس",
+          "nom_fr": "Sidi Bel-Abbes",
+          "nom_en": "Sidi Bel-Abbes",
+          "code_postal": "22000"
+        }
+      ],
+      "nb_communes": 1
+    },
+    {
+      "nom_ar": "تسالة",
+      "nom_fr": "Tessala",
+      "nom_en": "Tessala",
+      "communes": [
+        {
+          "nom_ar": "عين الثريد",
+          "nom_fr": "Ain Thrid",
+          "nom_en": "Ain Thrid",
+          "code_postal": "22037"
+        },
+        {
+          "nom_ar": "السهالة الثورة",
+          "nom_fr": "Sehala Thaoura",
+          "nom_en": "Sehala Thaoura",
+          "code_postal": "22060"
+        },
+        {
+          "nom_ar": "تسالة",
+          "nom_fr": "Tessala",
+          "nom_en": "Tessala",
+          "code_postal": "22033"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "مصطفى بن ابراهيم",
+      "nom_fr": "Mostefa  Ben Brahim",
+      "nom_en": "Mostefa  Ben Brahim",
+      "communes": [
+        {
+          "nom_ar": "بلعربي",
+          "nom_fr": "Belarbi",
+          "nom_en": "Belarbi",
+          "code_postal": "22023"
+        },
+        {
+          "nom_ar": "مصطفى بن ابراهيم",
+          "nom_fr": "Mostefa  Ben Brahim",
+          "nom_en": "Mostefa  Ben Brahim",
+          "code_postal": "22013"
+        },
+        {
+          "nom_ar": "تلموني",
+          "nom_fr": "Tilmouni",
+          "nom_en": "Tilmouni",
+          "code_postal": "22044"
+        },
+        {
+          "nom_ar": "زروالة",
+          "nom_fr": "Zerouala",
+          "nom_en": "Zerouala",
+          "code_postal": "22068"
+        }
+      ],
+      "nb_communes": 4
+    },
+    {
+      "nom_ar": "تلاغ",
+      "nom_fr": "Telagh",
+      "nom_en": "Telagh",
+      "communes": [
+        {
+          "nom_ar": "الضاية",
+          "nom_fr": "Dhaya",
+          "nom_en": "Dhaya",
+          "code_postal": "22009"
+        },
+        {
+          "nom_ar": "مزاورو",
+          "nom_fr": "Mezaourou",
+          "nom_en": "Mezaourou",
+          "code_postal": "22025"
+        },
+        {
+          "nom_ar": "تغاليمت",
+          "nom_fr": "Teghalimet",
+          "nom_en": "Teghalimet",
+          "code_postal": "22066"
+        },
+        {
+          "nom_ar": "تلاغ",
+          "nom_fr": "Telagh",
+          "nom_en": "Telagh",
+          "code_postal": "22007"
+        }
+      ],
+      "nb_communes": 4
+    },
+    {
+      "nom_ar": "سيدي علي بوسيدي",
+      "nom_fr": "Sidi Ali Boussidi",
+      "nom_en": "Sidi Ali Boussidi",
+      "communes": [
+        {
+          "nom_ar": "عين قادة",
+          "nom_fr": "Ain Kada",
+          "nom_en": "Ain Kada",
+          "code_postal": "22035"
+        },
+        {
+          "nom_ar": "لمطار",
+          "nom_fr": "Lamtar",
+          "nom_en": "Lamtar",
+          "code_postal": "22024"
+        },
+        {
+          "nom_ar": "سيدي علي بوسيدي",
+          "nom_fr": "Sidi Ali Boussidi",
+          "nom_en": "Sidi Ali Boussidi",
+          "code_postal": "22014"
+        },
+        {
+          "nom_ar": "سيدي دحو الزاير",
+          "nom_fr": "Sidi Dahou Zairs",
+          "nom_en": "Sidi Dahou Zairs",
+          "code_postal": "22062"
+        }
+      ],
+      "nb_communes": 4
+    }
+  ]
+}

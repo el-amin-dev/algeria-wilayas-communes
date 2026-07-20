@@ -1,0 +1,103 @@
+{
+  "wilaya_num": 68,
+  "code": "68",
+  "nom_ar": "عين وسارة",
+  "nom_fr": "Ain Oussara",
+  "nom_en": "Ain Oussara",
+  "nb_dairas": 4,
+  "nb_communes": 10,
+  "dairas": [
+    {
+      "nom_ar": "حد الصحاري",
+      "nom_fr": "Had Sahary",
+      "nom_en": "Had Sahary",
+      "communes": [
+        {
+          "nom_ar": "حد الصحاري",
+          "nom_fr": "Had Sahary",
+          "nom_en": "Had Sahary",
+          "code_postal": "17022"
+        },
+        {
+          "nom_ar": "بويرة الأحداب",
+          "nom_fr": "Bouira Lahdab",
+          "nom_en": "Bouira Lahdab",
+          "code_postal": "17044"
+        },
+        {
+          "nom_ar": "عين فقه",
+          "nom_fr": "Ain Fekka",
+          "nom_en": "Ain Fekka",
+          "code_postal": "17040"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "سيدي لعجال",
+      "nom_fr": "Sidi Laadjel",
+      "nom_en": "Sidi Laadjel",
+      "communes": [
+        {
+          "nom_ar": "سيدي لعجال",
+          "nom_fr": "Sidi Laadjel",
+          "nom_en": "Sidi Laadjel",
+          "code_postal": "17024"
+        },
+        {
+          "nom_ar": "حاسي فدول",
+          "nom_fr": "Hassi Fedoul",
+          "nom_en": "Hassi Fedoul",
+          "code_postal": "17056"
+        },
+        {
+          "nom_ar": "الخميس",
+          "nom_fr": "El Khemis",
+          "nom_en": "El Khemis",
+          "code_postal": "17051"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "بيرين",
+      "nom_fr": "Birine",
+      "nom_en": "Birine",
+      "communes": [
+        {
+          "nom_ar": "بيرين",
+          "nom_fr": "Birine",
+          "nom_en": "Birine",
+          "code_postal": "17014"
+        },
+        {
+          "nom_ar": "بنهار",
+          "nom_fr": "Benhar",
+          "nom_en": "Benhar",
+          "code_postal": "17043"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "عين وسارة",
+      "nom_fr": "Ain Oussera",
+      "nom_en": "Ain Oussera",
+      "communes": [
+        {
+          "nom_ar": "قرنيني",
+          "nom_fr": "Guernini",
+          "nom_en": "Guernini",
+          "code_postal": "17054"
+        },
+        {
+          "nom_ar": "عين وسارة",
+          "nom_fr": "Ain Oussera",
+          "nom_en": "Ain Oussera",
+          "code_postal": "17001"
+        }
+      ],
+      "nb_communes": 2
+    }
+  ]
+}

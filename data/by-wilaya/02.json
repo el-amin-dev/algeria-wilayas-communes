@@ -1,0 +1,325 @@
+{
+  "wilaya_num": 2,
+  "code": "02",
+  "nom_ar": "الشلف",
+  "nom_fr": "Chlef",
+  "nom_en": "Chlef",
+  "nb_dairas": 13,
+  "nb_communes": 35,
+  "dairas": [
+    {
+      "nom_ar": "أبو الحسن",
+      "nom_fr": "Abou El Hassane",
+      "nom_en": "Abou El Hassane",
+      "communes": [
+        {
+          "nom_ar": "تلعصة",
+          "nom_fr": "Talassa",
+          "nom_en": "Talassa",
+          "code_postal": "02065"
+        },
+        {
+          "nom_ar": "تاجنة",
+          "nom_fr": "Tadjena",
+          "nom_en": "Tadjena",
+          "code_postal": "02043"
+        },
+        {
+          "nom_ar": "أبو الحسن",
+          "nom_fr": "Abou El Hassane",
+          "nom_en": "Abou El Hassane",
+          "code_postal": "02018"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "الزبوجة",
+      "nom_fr": "Zeboudja",
+      "nom_en": "Zeboudja",
+      "communes": [
+        {
+          "nom_ar": "الزبوجة",
+          "nom_fr": "Zeboudja",
+          "nom_en": "Zeboudja",
+          "code_postal": "02014"
+        },
+        {
+          "nom_ar": "بوزغاية",
+          "nom_fr": "Bouzeghaia",
+          "nom_en": "Bouzeghaia",
+          "code_postal": "02019"
+        },
+        {
+          "nom_ar": "بنايرية",
+          "nom_fr": "Benairia",
+          "nom_en": "Benairia",
+          "code_postal": "02039"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "أولاد بن عبد القادر",
+      "nom_fr": "Ouled Ben Abdelkader",
+      "nom_en": "Ouled Ben Abdelkader",
+      "communes": [
+        {
+          "nom_ar": "الحجاج",
+          "nom_fr": "El Hadjadj",
+          "nom_en": "El Hadjadj",
+          "code_postal": "02050"
+        },
+        {
+          "nom_ar": "أولاد بن عبد القادر",
+          "nom_fr": "Ouled Ben Abdelkader",
+          "nom_en": "Ouled Ben Abdelkader",
+          "code_postal": "02037"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "عين مران",
+      "nom_fr": "Ain Merane",
+      "nom_en": "Ain Merane",
+      "communes": [
+        {
+          "nom_ar": "عين مران",
+          "nom_fr": "Ain Merane",
+          "nom_en": "Ain Merane",
+          "code_postal": "02004"
+        },
+        {
+          "nom_ar": "الهرانفة",
+          "nom_fr": "Herenfa",
+          "nom_en": "Herenfa",
+          "code_postal": "02038"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "بني حواء",
+      "nom_fr": "Beni Haoua",
+      "nom_en": "Beni Haoua",
+      "communes": [
+        {
+          "nom_ar": "بريرة",
+          "nom_fr": "Breira",
+          "nom_en": "Breira",
+          "code_postal": "02070"
+        },
+        {
+          "nom_ar": "بني حواء",
+          "nom_fr": "Beni Haoua",
+          "nom_en": "Beni Haoua",
+          "code_postal": "02017"
+        },
+        {
+          "nom_ar": "وادي قوسين",
+          "nom_fr": "Oued Goussine",
+          "nom_en": "Oued Goussine",
+          "code_postal": "02061"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "وادي الفضة",
+      "nom_fr": "Oued Fodda",
+      "nom_en": "Oued Fodda",
+      "communes": [
+        {
+          "nom_ar": "أولاد عباس",
+          "nom_fr": "Ouled Abbes",
+          "nom_en": "Ouled Abbes",
+          "code_postal": "02029"
+        },
+        {
+          "nom_ar": "وادي الفضة",
+          "nom_fr": "Oued Fodda",
+          "nom_en": "Oued Fodda",
+          "code_postal": "02001"
+        },
+        {
+          "nom_ar": "بني راشد",
+          "nom_fr": "Beni Rached",
+          "nom_en": "Beni Rached",
+          "code_postal": "02035"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "المرسى",
+      "nom_fr": "El Marsa",
+      "nom_en": "El Marsa",
+      "communes": [
+        {
+          "nom_ar": "المرسى",
+          "nom_fr": "El Marsa",
+          "nom_en": "El Marsa",
+          "code_postal": "02015"
+        },
+        {
+          "nom_ar": "مصدق",
+          "nom_fr": "Moussadek",
+          "nom_en": "Moussadek",
+          "code_postal": "02060"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "الشلف",
+      "nom_fr": "Chlef",
+      "nom_en": "Chlef",
+      "communes": [
+        {
+          "nom_ar": "الشلف",
+          "nom_fr": "Chlef",
+          "nom_en": "Chlef",
+          "code_postal": "02000"
+        },
+        {
+          "nom_ar": "أم الدروع",
+          "nom_fr": "Oum Drou",
+          "nom_en": "Oum Drou",
+          "code_postal": "02024"
+        },
+        {
+          "nom_ar": "سنجاس",
+          "nom_fr": "Sendjas",
+          "nom_en": "Sendjas",
+          "code_postal": "02025"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "تنس",
+      "nom_fr": "Tenes",
+      "nom_en": "Tenes",
+      "communes": [
+        {
+          "nom_ar": "سيدي عبد الرحمن",
+          "nom_fr": "Sidi Abderrahmane",
+          "nom_en": "Sidi Abderrahmane",
+          "code_postal": "02066"
+        },
+        {
+          "nom_ar": "سيدي عكاشة",
+          "nom_fr": "Sidi Akkacha",
+          "nom_en": "Sidi Akkacha",
+          "code_postal": "02009"
+        },
+        {
+          "nom_ar": "تنس",
+          "nom_fr": "Tenes",
+          "nom_en": "Tenes",
+          "code_postal": "02006"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "الكريمية",
+      "nom_fr": "El Karimia",
+      "nom_en": "El Karimia",
+      "communes": [
+        {
+          "nom_ar": "بني بوعتاب",
+          "nom_fr": "Beni  Bouattab",
+          "nom_en": "Beni  Bouattab",
+          "code_postal": "02071"
+        },
+        {
+          "nom_ar": "الكريمية",
+          "nom_fr": "El Karimia",
+          "nom_en": "El Karimia",
+          "code_postal": "02008"
+        },
+        {
+          "nom_ar": "حرشون",
+          "nom_fr": "Harchoun",
+          "nom_en": "Harchoun",
+          "code_postal": "02031"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "تاوقريت",
+      "nom_fr": "Taougrit",
+      "nom_en": "Taougrit",
+      "communes": [
+        {
+          "nom_ar": "تاوقريت",
+          "nom_fr": "Taougrit",
+          "nom_en": "Taougrit",
+          "code_postal": "02012"
+        },
+        {
+          "nom_ar": "الظهرة",
+          "nom_fr": "Dahra",
+          "nom_en": "Dahra",
+          "code_postal": "02032"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "أولاد فارس",
+      "nom_fr": "Ouled Fares",
+      "nom_en": "Ouled Fares",
+      "communes": [
+        {
+          "nom_ar": "الشطية",
+          "nom_fr": "Chettia",
+          "nom_en": "Chettia",
+          "code_postal": "02007"
+        },
+        {
+          "nom_ar": "أولاد فارس",
+          "nom_fr": "Ouled Fares",
+          "nom_en": "Ouled Fares",
+          "code_postal": "02010"
+        },
+        {
+          "nom_ar": "الأبيض مجاجة",
+          "nom_fr": "Labiod Medjadja",
+          "nom_en": "Labiod Medjadja",
+          "code_postal": "02073"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "بوقادير",
+      "nom_fr": "Boukadir",
+      "nom_en": "Boukadir",
+      "communes": [
+        {
+          "nom_ar": "بوقادير",
+          "nom_fr": "Boukadir",
+          "nom_en": "Boukadir",
+          "code_postal": "02002"
+        },
+        {
+          "nom_ar": "وادي سلي",
+          "nom_fr": "Oued Sly",
+          "nom_en": "Oued Sly",
+          "code_postal": "02011"
+        },
+        {
+          "nom_ar": "الصبحة",
+          "nom_fr": "Sobha",
+          "nom_en": "Sobha",
+          "code_postal": "02030"
+        }
+      ],
+      "nb_communes": 3
+    }
+  ]
+}

@@ -1,0 +1,227 @@
+{
+  "wilaya_num": 28,
+  "code": "28",
+  "nom_ar": "المسيلة",
+  "nom_fr": "M'Sila",
+  "nom_en": "M'Sila",
+  "nb_dairas": 9,
+  "nb_communes": 24,
+  "dairas": [
+    {
+      "nom_ar": "شلال",
+      "nom_fr": "Chellal",
+      "nom_en": "Chellal",
+      "communes": [
+        {
+          "nom_ar": "شلال",
+          "nom_fr": "Chellal",
+          "nom_en": "Chellal",
+          "code_postal": "28014"
+        },
+        {
+          "nom_ar": "أولاد ماضي",
+          "nom_fr": "Ouled Madhi",
+          "nom_en": "Ouled Madhi",
+          "code_postal": "28047"
+        },
+        {
+          "nom_ar": "خطوطي سد الجير",
+          "nom_fr": "Khettouti Sed-El-Jir",
+          "nom_en": "Khettouti Sed-El-Jir",
+          "code_postal": "28056"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "مقرة",
+      "nom_fr": "Magra",
+      "nom_en": "Magra",
+      "communes": [
+        {
+          "nom_ar": "بلعايبة",
+          "nom_fr": "Belaiba",
+          "nom_en": "Belaiba",
+          "code_postal": "28026"
+        },
+        {
+          "nom_ar": "برهوم",
+          "nom_fr": "Berhoum",
+          "nom_en": "Berhoum",
+          "code_postal": "28010"
+        },
+        {
+          "nom_ar": "دهاهنة",
+          "nom_fr": "Dehahna",
+          "nom_en": "Dehahna",
+          "code_postal": "28048"
+        },
+        {
+          "nom_ar": "مقرة",
+          "nom_fr": "Magra",
+          "nom_en": "Magra",
+          "code_postal": "28006"
+        },
+        {
+          "nom_ar": "عين الخضراء",
+          "nom_fr": "Ain Khadra",
+          "nom_en": "Ain Khadra",
+          "code_postal": "28008"
+        }
+      ],
+      "nb_communes": 5
+    },
+    {
+      "nom_ar": "سيدي عيسى",
+      "nom_fr": "Sidi Aissa",
+      "nom_en": "Sidi Aissa",
+      "communes": [
+        {
+          "nom_ar": "بني يلمان",
+          "nom_fr": "Beni Ilmane",
+          "nom_en": "Beni Ilmane",
+          "code_postal": "28027"
+        },
+        {
+          "nom_ar": "بوطي السايح",
+          "nom_fr": "Bouti Sayeh",
+          "nom_en": "Bouti Sayeh",
+          "code_postal": "28042"
+        },
+        {
+          "nom_ar": "سيدي عيسى",
+          "nom_fr": "Sidi Aissa",
+          "nom_en": "Sidi Aissa",
+          "code_postal": "28002"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "عين الحجل",
+      "nom_fr": "Ain El Hadjel",
+      "nom_en": "Ain El Hadjel",
+      "communes": [
+        {
+          "nom_ar": "عين الحجل",
+          "nom_fr": "Ain El Hadjel",
+          "nom_en": "Ain El Hadjel",
+          "code_postal": "28003"
+        }
+      ],
+      "nb_communes": 1
+    },
+    {
+      "nom_ar": "جبل مساعد",
+      "nom_fr": "Djebel Messaad",
+      "nom_en": "Djebel Messaad",
+      "communes": [
+        {
+          "nom_ar": "جبل مساعد",
+          "nom_fr": "Djebel Messaad",
+          "nom_en": "Djebel Messaad",
+          "code_postal": "28024"
+        }
+      ],
+      "nb_communes": 1
+    },
+    {
+      "nom_ar": "المسيلة",
+      "nom_fr": "M'sila",
+      "nom_en": "M'sila",
+      "communes": [
+        {
+          "nom_ar": "المسيلة",
+          "nom_fr": "M'sila",
+          "nom_en": "M'sila",
+          "code_postal": "28000"
+        }
+      ],
+      "nb_communes": 1
+    },
+    {
+      "nom_ar": "حمام الضلعة",
+      "nom_fr": "Hammam Dalaa",
+      "nom_en": "Hammam Dalaa",
+      "communes": [
+        {
+          "nom_ar": "حمام الضلعة",
+          "nom_fr": "Hammam Dalaa",
+          "nom_en": "Hammam Dalaa",
+          "code_postal": "28005"
+        },
+        {
+          "nom_ar": "ونوغة",
+          "nom_fr": "Ouanougha",
+          "nom_en": "Ouanougha",
+          "code_postal": "28017"
+        },
+        {
+          "nom_ar": "أولاد منصور",
+          "nom_fr": "Ouled Mansour",
+          "nom_en": "Ouled Mansour",
+          "code_postal": "28060"
+        },
+        {
+          "nom_ar": "تارمونت",
+          "nom_fr": "Tarmount",
+          "nom_en": "Tarmount",
+          "code_postal": "28038"
+        }
+      ],
+      "nb_communes": 4
+    },
+    {
+      "nom_ar": "أولاد دراج",
+      "nom_fr": "Ouled Derradj",
+      "nom_en": "Ouled Derradj",
+      "communes": [
+        {
+          "nom_ar": "أولاد دراج",
+          "nom_fr": "Ouled Derradj",
+          "nom_en": "Ouled Derradj",
+          "code_postal": "28022"
+        },
+        {
+          "nom_ar": "السوامع",
+          "nom_fr": "Souamaa",
+          "nom_en": "Souamaa",
+          "code_postal": "28064"
+        },
+        {
+          "nom_ar": "أولاد عدي لقبالة",
+          "nom_fr": "Ouled Addi Guebala",
+          "nom_en": "Ouled Addi Guebala",
+          "code_postal": "28021"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "خبانة",
+      "nom_fr": "Khoubana",
+      "nom_en": "Khoubana",
+      "communes": [
+        {
+          "nom_ar": "الحوامد",
+          "nom_fr": "El Houamed",
+          "nom_en": "El Houamed",
+          "code_postal": null
+        },
+        {
+          "nom_ar": "خبانة",
+          "nom_fr": "Khoubana",
+          "nom_en": "Khoubana",
+          "code_postal": "28030"
+        },
+        {
+          "nom_ar": "مسيف",
+          "nom_fr": "M'cif",
+          "nom_en": "M'cif",
+          "code_postal": "28029"
+        }
+      ],
+      "nb_communes": 3
+    }
+  ]
+}

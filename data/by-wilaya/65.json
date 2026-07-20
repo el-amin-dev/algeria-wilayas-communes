@@ -1,0 +1,51 @@
+{
+  "wilaya_num": 65,
+  "code": "65",
+  "nom_ar": "بير العاتر",
+  "nom_fr": "Bir El Ater",
+  "nom_en": "Bir El Ater",
+  "nb_dairas": 2,
+  "nb_communes": 4,
+  "dairas": [
+    {
+      "nom_ar": "نقرين",
+      "nom_fr": "Negrine",
+      "nom_en": "Negrine",
+      "communes": [
+        {
+          "nom_ar": "فركان",
+          "nom_fr": "Ferkane",
+          "nom_en": "Ferkane",
+          "code_postal": "12044"
+        },
+        {
+          "nom_ar": "نقرين",
+          "nom_fr": "Negrine",
+          "nom_en": "Negrine",
+          "code_postal": "12024"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "بئر العاتر",
+      "nom_fr": "Bir El Ater",
+      "nom_en": "Bir El Ater",
+      "communes": [
+        {
+          "nom_ar": "العقلة المالحة",
+          "nom_fr": "El Ogla El Malha",
+          "nom_en": "El Ogla El Malha",
+          "code_postal": "12043"
+        },
+        {
+          "nom_ar": "بئر العاتر",
+          "nom_fr": "Bir-El-Ater",
+          "nom_en": "Bir-El-Ater",
+          "code_postal": "12001"
+        }
+      ],
+      "nb_communes": 2
+    }
+  ]
+}

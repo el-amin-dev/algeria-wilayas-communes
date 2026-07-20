@@ -1,0 +1,79 @@
+{
+  "wilaya_num": 51,
+  "code": "51",
+  "nom_ar": "أولاد جلال",
+  "nom_fr": "Ouled Djellal",
+  "nom_en": "Ouled Djellal",
+  "nb_dairas": 4,
+  "nb_communes": 6,
+  "dairas": [
+    {
+      "nom_ar": "سيدي  خالد",
+      "nom_fr": "Sidi Khaled",
+      "nom_en": "Sidi Khaled",
+      "communes": [
+        {
+          "nom_ar": "رأس الميعاد",
+          "nom_fr": "Ras El Miad",
+          "nom_en": "Ras El Miad",
+          "code_postal": "07062"
+        },
+        {
+          "nom_ar": "بسباس",
+          "nom_fr": "Besbes",
+          "nom_en": "Besbes",
+          "code_postal": "07044"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "سيدي لحسن",
+      "nom_fr": "Sidi Lahcene",
+      "nom_en": "Sidi Lahcene",
+      "communes": [
+        {
+          "nom_ar": "سيدي  خالد",
+          "nom_fr": "Sidi Khaled",
+          "nom_en": "Sidi Khaled",
+          "code_postal": "07004"
+        }
+      ],
+      "nb_communes": 1
+    },
+    {
+      "nom_ar": "أولاد جلال",
+      "nom_fr": "Ouled Djellal",
+      "nom_en": "Ouled Djellal",
+      "communes": [
+        {
+          "nom_ar": "الدوسن",
+          "nom_fr": "Doucen",
+          "nom_en": "Doucen",
+          "code_postal": "07007"
+        },
+        {
+          "nom_ar": "أولاد جلال",
+          "nom_fr": "Ouled Djellal",
+          "nom_en": "Ouled Djellal",
+          "code_postal": "07002"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "القليعة",
+      "nom_fr": "Kolea",
+      "nom_en": "Kolea",
+      "communes": [
+        {
+          "nom_ar": "الشعيبة",
+          "nom_fr": "Chaiba",
+          "nom_en": "Chaiba",
+          "code_postal": "42047"
+        }
+      ],
+      "nb_communes": 1
+    }
+  ]
+}

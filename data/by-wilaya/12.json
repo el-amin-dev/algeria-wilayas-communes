@@ -1,0 +1,235 @@
+{
+  "wilaya_num": 12,
+  "code": "12",
+  "nom_ar": "تبسة",
+  "nom_fr": "Tebessa",
+  "nom_en": "Tebessa",
+  "nb_dairas": 10,
+  "nb_communes": 24,
+  "dairas": [
+    {
+      "nom_ar": "الماء الابيض",
+      "nom_fr": "El Malabiod",
+      "nom_en": "El Malabiod",
+      "communes": [
+        {
+          "nom_ar": "الحويجبات",
+          "nom_fr": "El-Houidjbet",
+          "nom_en": "El-Houidjbet",
+          "code_postal": "12038"
+        },
+        {
+          "nom_ar": "الماء الابيض",
+          "nom_fr": "El Malabiod",
+          "nom_en": "El Malabiod",
+          "code_postal": "12014"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "العوينات",
+      "nom_fr": "El Aouinet",
+      "nom_en": "El Aouinet",
+      "communes": [
+        {
+          "nom_ar": "العوينات",
+          "nom_fr": "El-Aouinet",
+          "nom_en": "El-Aouinet",
+          "code_postal": "12005"
+        },
+        {
+          "nom_ar": "بوخضرة",
+          "nom_fr": "Boukhadra",
+          "nom_en": "Boukhadra",
+          "code_postal": "12012"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "بئر مقدم",
+      "nom_fr": "Bir Mokadem",
+      "nom_en": "Bir Mokadem",
+      "communes": [
+        {
+          "nom_ar": "بئر مقدم",
+          "nom_fr": "Bir Mokkadem",
+          "nom_en": "Bir Mokkadem",
+          "code_postal": "12011"
+        },
+        {
+          "nom_ar": "قريقر",
+          "nom_fr": "Guorriguer",
+          "nom_en": "Guorriguer",
+          "code_postal": "12046"
+        },
+        {
+          "nom_ar": "الحمامات",
+          "nom_fr": "Hammamet",
+          "nom_en": "Hammamet",
+          "code_postal": "12016"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "مرسط",
+      "nom_fr": "Morsott",
+      "nom_en": "Morsott",
+      "communes": [
+        {
+          "nom_ar": "بئر الذهب",
+          "nom_fr": "Bir Dheheb",
+          "nom_en": "Bir Dheheb",
+          "code_postal": "12031"
+        },
+        {
+          "nom_ar": "مرسط",
+          "nom_fr": "Morsott",
+          "nom_en": "Morsott",
+          "code_postal": "12017"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "أم علي",
+      "nom_fr": "Oum Ali",
+      "nom_en": "Oum Ali",
+      "communes": [
+        {
+          "nom_ar": "صفصاف الوسرى",
+          "nom_fr": "Saf Saf El Ouesra",
+          "nom_en": "Saf Saf El Ouesra",
+          "code_postal": "12037"
+        },
+        {
+          "nom_ar": "أم علي",
+          "nom_fr": "Oum Ali",
+          "nom_en": "Oum Ali",
+          "code_postal": "12027"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "الكويف",
+      "nom_fr": "El Kouif",
+      "nom_en": "El Kouif",
+      "communes": [
+        {
+          "nom_ar": "بكارية",
+          "nom_fr": "Bekkaria",
+          "nom_en": "Bekkaria",
+          "code_postal": "12019"
+        },
+        {
+          "nom_ar": "بولحاف الدير",
+          "nom_fr": "Boulhaf Dyr",
+          "nom_en": "Boulhaf Dyr",
+          "code_postal": "12039"
+        },
+        {
+          "nom_ar": "الكويف",
+          "nom_fr": "El Kouif",
+          "nom_en": "El Kouif",
+          "code_postal": "12006"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "الونزة",
+      "nom_fr": "Ouenza",
+      "nom_en": "Ouenza",
+      "communes": [
+        {
+          "nom_ar": "الونزة",
+          "nom_fr": "Ouenza",
+          "nom_en": "Ouenza",
+          "code_postal": "12003"
+        },
+        {
+          "nom_ar": "المريج",
+          "nom_fr": "El Meridj",
+          "nom_en": "El Meridj",
+          "code_postal": "12023"
+        },
+        {
+          "nom_ar": "عين الزرقاء",
+          "nom_fr": "Ain Zerga",
+          "nom_en": "Ain Zerga",
+          "code_postal": "12008"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "العقلة",
+      "nom_fr": "El Ogla",
+      "nom_en": "El Ogla",
+      "communes": [
+        {
+          "nom_ar": "سطح قنطيس",
+          "nom_fr": "Stah Guentis",
+          "nom_en": "Stah Guentis",
+          "code_postal": "12032"
+        },
+        {
+          "nom_ar": "العقلة",
+          "nom_fr": "El Ogla",
+          "nom_en": "El Ogla",
+          "code_postal": "12015"
+        },
+        {
+          "nom_ar": "المزرعة",
+          "nom_fr": "El Mezeraa",
+          "nom_en": "El Mezeraa",
+          "code_postal": "12042"
+        },
+        {
+          "nom_ar": "بجن",
+          "nom_fr": "Bedjene",
+          "nom_en": "Bedjene",
+          "code_postal": "12035"
+        }
+      ],
+      "nb_communes": 4
+    },
+    {
+      "nom_ar": "الشريعة",
+      "nom_fr": "Cheria",
+      "nom_en": "Cheria",
+      "communes": [
+        {
+          "nom_ar": "ثليجان",
+          "nom_fr": "Telidjen",
+          "nom_en": "Telidjen",
+          "code_postal": "12053"
+        },
+        {
+          "nom_ar": "الشريعة",
+          "nom_fr": "Cheria",
+          "nom_en": "Cheria",
+          "code_postal": "12002"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "تبسة",
+      "nom_fr": "Tebessa",
+      "nom_en": "Tebessa",
+      "communes": [
+        {
+          "nom_ar": "تبسة",
+          "nom_fr": "Tebessa",
+          "nom_en": "Tebessa",
+          "code_postal": "12000"
+        }
+      ],
+      "nb_communes": 1
+    }
+  ]
+}

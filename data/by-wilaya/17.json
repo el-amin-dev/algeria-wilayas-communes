@@ -1,0 +1,167 @@
+{
+  "wilaya_num": 17,
+  "code": "17",
+  "nom_ar": "الجلفة",
+  "nom_fr": "Djelfa",
+  "nom_en": "Djelfa",
+  "nb_dairas": 6,
+  "nb_communes": 18,
+  "dairas": [
+    {
+      "nom_ar": "حاسي بحبح",
+      "nom_fr": "Hassi Bahbah",
+      "nom_en": "Hassi Bahbah",
+      "communes": [
+        {
+          "nom_ar": "حاسي العش",
+          "nom_fr": "Hassi El Euch",
+          "nom_en": "Hassi El Euch",
+          "code_postal": "17032"
+        },
+        {
+          "nom_ar": "زعفران",
+          "nom_fr": "Zaafrane",
+          "nom_en": "Zaafrane",
+          "code_postal": "17038"
+        },
+        {
+          "nom_ar": "عين معبد",
+          "nom_fr": "Ain Maabed",
+          "nom_en": "Ain Maabed",
+          "code_postal": "17025"
+        },
+        {
+          "nom_ar": "حاسي بحبح",
+          "nom_fr": "Hassi Bahbah",
+          "nom_en": "Hassi Bahbah",
+          "code_postal": "17002"
+        }
+      ],
+      "nb_communes": 4
+    },
+    {
+      "nom_ar": "عين الإبل",
+      "nom_fr": "Ain El Ibel",
+      "nom_en": "Ain El Ibel",
+      "communes": [
+        {
+          "nom_ar": "عين الإبل",
+          "nom_fr": "Ain El Ibel",
+          "nom_en": "Ain El Ibel",
+          "code_postal": "17011"
+        },
+        {
+          "nom_ar": "تعظميت",
+          "nom_fr": "Taadmit",
+          "nom_en": "Taadmit",
+          "code_postal": "17037"
+        },
+        {
+          "nom_ar": "زكار",
+          "nom_fr": "Zaccar",
+          "nom_en": "Zaccar",
+          "code_postal": "17065"
+        },
+        {
+          "nom_ar": "مجبارة",
+          "nom_fr": "Moudjebara",
+          "nom_en": "Moudjebara",
+          "code_postal": "17058"
+        }
+      ],
+      "nb_communes": 4
+    },
+    {
+      "nom_ar": "الشارف",
+      "nom_fr": "Charef",
+      "nom_en": "Charef",
+      "communes": [
+        {
+          "nom_ar": "القديد",
+          "nom_fr": "El Guedid",
+          "nom_en": "El Guedid",
+          "code_postal": "17019"
+        },
+        {
+          "nom_ar": "الشارف",
+          "nom_fr": "Charef",
+          "nom_en": "Charef",
+          "code_postal": "17015"
+        },
+        {
+          "nom_ar": "بن يعقوب",
+          "nom_fr": "Benyagoub",
+          "nom_en": "Benyagoub",
+          "code_postal": "17026"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "دار الشيوخ",
+      "nom_fr": "Dar Chioukh",
+      "nom_en": "Dar Chioukh",
+      "communes": [
+        {
+          "nom_ar": "سيدي بايزيد",
+          "nom_fr": "Sidi Baizid",
+          "nom_en": "Sidi Baizid",
+          "code_postal": "17052"
+        },
+        {
+          "nom_ar": "مليليحة",
+          "nom_fr": "M'liliha",
+          "nom_en": "M'liliha",
+          "code_postal": "17036"
+        },
+        {
+          "nom_ar": "دار الشيوخ",
+          "nom_fr": "Dar Chioukh",
+          "nom_en": "Dar Chioukh",
+          "code_postal": "17006"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "الادريسية",
+      "nom_fr": "El Idrissia",
+      "nom_en": "El Idrissia",
+      "communes": [
+        {
+          "nom_ar": "دويس",
+          "nom_fr": "Douis",
+          "nom_en": "Douis",
+          "code_postal": "17030"
+        },
+        {
+          "nom_ar": "الادريسية",
+          "nom_fr": "El Idrissia",
+          "nom_en": "El Idrissia",
+          "code_postal": "17020"
+        },
+        {
+          "nom_ar": "عين الشهداء",
+          "nom_fr": "Ain Chouhada",
+          "nom_en": "Ain Chouhada",
+          "code_postal": "17039"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "الجلفة",
+      "nom_fr": "Djelfa",
+      "nom_en": "Djelfa",
+      "communes": [
+        {
+          "nom_ar": "الجلفة",
+          "nom_fr": "Djelfa",
+          "nom_en": "Djelfa",
+          "code_postal": "17000"
+        }
+      ],
+      "nb_communes": 1
+    }
+  ]
+}

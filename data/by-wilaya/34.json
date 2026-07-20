@@ -1,0 +1,303 @@
+{
+  "wilaya_num": 34,
+  "code": "34",
+  "nom_ar": "برج بوعريريج",
+  "nom_fr": "Bordj Bou Arreridj",
+  "nom_en": "Bordj Bou Arreridj",
+  "nb_dairas": 11,
+  "nb_communes": 34,
+  "dairas": [
+    {
+      "nom_ar": "الحمادية",
+      "nom_fr": "El Hamadia",
+      "nom_en": "El Hamadia",
+      "communes": [
+        {
+          "nom_ar": "الحمادية",
+          "nom_fr": "Elhammadia",
+          "nom_en": "Elhammadia",
+          "code_postal": null
+        },
+        {
+          "nom_ar": "العش",
+          "nom_fr": "El Euch",
+          "nom_en": "El Euch",
+          "code_postal": "34029"
+        },
+        {
+          "nom_ar": "القصور",
+          "nom_fr": "Ksour",
+          "nom_en": "Ksour",
+          "code_postal": "34048"
+        },
+        {
+          "nom_ar": "الرابطة",
+          "nom_fr": "Rabta",
+          "nom_en": "Rabta",
+          "code_postal": "34035"
+        }
+      ],
+      "nb_communes": 4
+    },
+    {
+      "nom_ar": "أولاد سيدي ابراهيم",
+      "nom_fr": "Ouled Sidi Brahim",
+      "nom_en": "Ouled Sidi Brahim",
+      "communes": [
+        {
+          "nom_ar": "أولاد سيدي ابراهيم",
+          "nom_fr": "Ouled Sidi-Brahim",
+          "nom_en": "Ouled Sidi-Brahim",
+          "code_postal": "28032"
+        }
+      ],
+      "nb_communes": 1
+    },
+    {
+      "nom_ar": "عين تاغروت",
+      "nom_fr": "Ain Taghrout",
+      "nom_en": "Ain Taghrout",
+      "communes": [
+        {
+          "nom_ar": "عين تاغروت",
+          "nom_fr": "Ain Taghrout",
+          "nom_en": "Ain Taghrout",
+          "code_postal": "34010"
+        },
+        {
+          "nom_ar": "تيكستار",
+          "nom_fr": "Tixter",
+          "nom_en": "Tixter",
+          "code_postal": "34022"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "برج الغدير",
+      "nom_fr": "Bordj Ghedir",
+      "nom_en": "Bordj Ghedir",
+      "communes": [
+        {
+          "nom_ar": "بليمور",
+          "nom_fr": "Belimour",
+          "nom_en": "Belimour",
+          "code_postal": "34025"
+        },
+        {
+          "nom_ar": "العناصر",
+          "nom_fr": "El Annasseur",
+          "nom_en": "El Annasseur",
+          "code_postal": "34030"
+        },
+        {
+          "nom_ar": "غيلاسة",
+          "nom_fr": "Ghailasa",
+          "nom_en": "Ghailasa",
+          "code_postal": "34031"
+        },
+        {
+          "nom_ar": "تقلعيت",
+          "nom_fr": "Taglait",
+          "nom_en": "Taglait",
+          "code_postal": "34059"
+        },
+        {
+          "nom_ar": "برج الغدير",
+          "nom_fr": "Bordj Ghedir",
+          "nom_en": "Bordj Ghedir",
+          "code_postal": "34004"
+        }
+      ],
+      "nb_communes": 5
+    },
+    {
+      "nom_ar": "بئر قاصد علي",
+      "nom_fr": "Bir Kasdali",
+      "nom_en": "Bir Kasdali",
+      "communes": [
+        {
+          "nom_ar": "سيدي أمبارك",
+          "nom_fr": "Sidi-Embarek",
+          "nom_en": "Sidi-Embarek",
+          "code_postal": "34020"
+        },
+        {
+          "nom_ar": "خليل",
+          "nom_fr": "Khelil",
+          "nom_en": "Khelil",
+          "code_postal": "34028"
+        },
+        {
+          "nom_ar": "بئر قاصد علي",
+          "nom_fr": "Bir Kasdali",
+          "nom_en": "Bir Kasdali",
+          "code_postal": "34011"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "جعافرة",
+      "nom_fr": "Djaafra",
+      "nom_en": "Djaafra",
+      "communes": [
+        {
+          "nom_ar": "تفرق",
+          "nom_fr": "Tefreg",
+          "nom_en": "Tefreg",
+          "code_postal": "34061"
+        },
+        {
+          "nom_ar": "الماين",
+          "nom_fr": "El Main",
+          "nom_en": "El Main",
+          "code_postal": "34018"
+        },
+        {
+          "nom_ar": "جعافرة",
+          "nom_fr": "Djaafra",
+          "nom_en": "Djaafra",
+          "code_postal": "34016"
+        },
+        {
+          "nom_ar": "القلة",
+          "nom_fr": "Colla",
+          "nom_en": "Colla",
+          "code_postal": "34015"
+        }
+      ],
+      "nb_communes": 4
+    },
+    {
+      "nom_ar": "مجانة",
+      "nom_fr": "Medjana",
+      "nom_en": "Medjana",
+      "communes": [
+        {
+          "nom_ar": "ثنية النصر",
+          "nom_fr": "Teniet En Nasr",
+          "nom_en": "Teniet En Nasr",
+          "code_postal": "34021"
+        },
+        {
+          "nom_ar": "الياشير",
+          "nom_fr": "El Achir",
+          "nom_en": "El Achir",
+          "code_postal": "34006"
+        },
+        {
+          "nom_ar": "حسناوة",
+          "nom_fr": "Hasnaoua",
+          "nom_en": "Hasnaoua",
+          "code_postal": "34068"
+        },
+        {
+          "nom_ar": "مجانة",
+          "nom_fr": "Medjana",
+          "nom_en": "Medjana",
+          "code_postal": "34009"
+        }
+      ],
+      "nb_communes": 4
+    },
+    {
+      "nom_ar": "المنصورة",
+      "nom_fr": "Mansourah",
+      "nom_en": "Mansourah",
+      "communes": [
+        {
+          "nom_ar": "المهير",
+          "nom_fr": "El M'hir",
+          "nom_en": "El M'hir",
+          "code_postal": "34019"
+        },
+        {
+          "nom_ar": "المنصورة",
+          "nom_fr": "Mansoura",
+          "nom_en": "Mansoura",
+          "code_postal": "34008"
+        },
+        {
+          "nom_ar": "حرازة",
+          "nom_fr": "Haraza",
+          "nom_en": "Haraza",
+          "code_postal": "34047"
+        },
+        {
+          "nom_ar": "بن داود",
+          "nom_fr": "Ben Daoud",
+          "nom_en": "Ben Daoud",
+          "code_postal": "34073"
+        }
+      ],
+      "nb_communes": 4
+    },
+    {
+      "nom_ar": "رأس الوادي",
+      "nom_fr": "Ras El Oued",
+      "nom_en": "Ras El Oued",
+      "communes": [
+        {
+          "nom_ar": "عين تسرة",
+          "nom_fr": "Ain Tesra",
+          "nom_en": "Ain Tesra",
+          "code_postal": "34027"
+        },
+        {
+          "nom_ar": "أولاد أبراهم",
+          "nom_fr": "Ouled Brahem",
+          "nom_en": "Ouled Brahem",
+          "code_postal": "34032"
+        },
+        {
+          "nom_ar": "رأس الوادي",
+          "nom_fr": "Ras El Oued",
+          "nom_en": "Ras El Oued",
+          "code_postal": "34001"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "برج زمورة",
+      "nom_fr": "Bordj Zemmoura",
+      "nom_en": "Bordj Zemmoura",
+      "communes": [
+        {
+          "nom_ar": "برج زمورة",
+          "nom_fr": "Bordj Zemmoura",
+          "nom_en": "Bordj Zemmoura",
+          "code_postal": "34005"
+        },
+        {
+          "nom_ar": "أولاد دحمان",
+          "nom_fr": "Ouled Dahmane",
+          "nom_en": "Ouled Dahmane",
+          "code_postal": "34033"
+        },
+        {
+          "nom_ar": "تسامرت",
+          "nom_fr": "Tassamert",
+          "nom_en": "Tassamert",
+          "code_postal": "34026"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "برج بوعريريج",
+      "nom_fr": "Bordj Bou Arreridj",
+      "nom_en": "Bordj Bou Arreridj",
+      "communes": [
+        {
+          "nom_ar": "برج بوعريرج",
+          "nom_fr": "B. B. Arreridj",
+          "nom_en": "B. B. Arreridj",
+          "code_postal": "34000"
+        }
+      ],
+      "nb_communes": 1
+    }
+  ]
+}

@@ -1,0 +1,283 @@
+{
+  "wilaya_num": 35,
+  "code": "35",
+  "nom_ar": "بومرداس",
+  "nom_fr": "Boumerdes",
+  "nom_en": "Boumerdes",
+  "nb_dairas": 10,
+  "nb_communes": 32,
+  "dairas": [
+    {
+      "nom_ar": "بودواو",
+      "nom_fr": "Boudouaou",
+      "nom_en": "Boudouaou",
+      "communes": [
+        {
+          "nom_ar": "الخروبة",
+          "nom_fr": "El Kharrouba",
+          "nom_en": "El Kharrouba",
+          "code_postal": null
+        },
+        {
+          "nom_ar": "بوزقزة قدارة",
+          "nom_fr": "Bouzegza Keddara",
+          "nom_en": "Bouzegza Keddara",
+          "code_postal": "35038"
+        },
+        {
+          "nom_ar": "أولاد هداج",
+          "nom_fr": "Ouled Hedadj",
+          "nom_en": "Ouled Hedadj",
+          "code_postal": "35052"
+        },
+        {
+          "nom_ar": "بودواو",
+          "nom_fr": "Boudouaou",
+          "nom_en": "Boudouaou",
+          "code_postal": "35003"
+        },
+        {
+          "nom_ar": "بودواو البحري",
+          "nom_fr": "Boudouaou El Bahri",
+          "nom_en": "Boudouaou El Bahri",
+          "code_postal": "35023"
+        }
+      ],
+      "nb_communes": 5
+    },
+    {
+      "nom_ar": "دلس",
+      "nom_fr": "Dellys",
+      "nom_en": "Dellys",
+      "communes": [
+        {
+          "nom_ar": "دلس",
+          "nom_fr": "Dellys",
+          "nom_en": "Dellys",
+          "code_postal": "35004"
+        },
+        {
+          "nom_ar": "بن شود",
+          "nom_fr": "Ben Choud",
+          "nom_en": "Ben Choud",
+          "code_postal": "35033"
+        },
+        {
+          "nom_ar": "أعفير",
+          "nom_fr": "Afir",
+          "nom_en": "Afir",
+          "code_postal": "35022"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "الثنية",
+      "nom_fr": "Thenia",
+      "nom_en": "Thenia",
+      "communes": [
+        {
+          "nom_ar": "الثنية",
+          "nom_fr": "Thenia",
+          "nom_en": "Thenia",
+          "code_postal": "35005"
+        },
+        {
+          "nom_ar": "بني عمران",
+          "nom_fr": "Beni Amrane",
+          "nom_en": "Beni Amrane",
+          "code_postal": "35006"
+        },
+        {
+          "nom_ar": "عمال",
+          "nom_fr": "Ammal",
+          "nom_en": "Ammal",
+          "code_postal": "35031"
+        },
+        {
+          "nom_ar": "سوق الحد",
+          "nom_fr": "Souk El Had",
+          "nom_en": "Souk El Had",
+          "code_postal": null
+        }
+      ],
+      "nb_communes": 4
+    },
+    {
+      "nom_ar": "خميس الخشنة",
+      "nom_fr": "Khemis El Khechna",
+      "nom_en": "Khemis El Khechna",
+      "communes": [
+        {
+          "nom_ar": "خميس الخشنة",
+          "nom_fr": "Khemis El Khechna",
+          "nom_en": "Khemis El Khechna",
+          "code_postal": "35010"
+        },
+        {
+          "nom_ar": "الاربعطاش",
+          "nom_fr": "Larbatache",
+          "nom_en": "Larbatache",
+          "code_postal": "35017"
+        },
+        {
+          "nom_ar": "أولاد موسى",
+          "nom_fr": "Ouled Moussa",
+          "nom_en": "Ouled Moussa",
+          "code_postal": "35011"
+        },
+        {
+          "nom_ar": "حمادي",
+          "nom_fr": "Hammedi",
+          "nom_en": "Hammedi",
+          "code_postal": "35015"
+        }
+      ],
+      "nb_communes": 4
+    },
+    {
+      "nom_ar": "تيمزريت",
+      "nom_fr": "Timezrit",
+      "nom_en": "Timezrit",
+      "communes": [
+        {
+          "nom_ar": "تيمزريت",
+          "nom_fr": "Timezrit",
+          "nom_en": "Timezrit",
+          "code_postal": "06019"
+        }
+      ],
+      "nb_communes": 1
+    },
+    {
+      "nom_ar": "برج منايل",
+      "nom_fr": "Bordj Menaiel",
+      "nom_en": "Bordj Menaiel",
+      "communes": [
+        {
+          "nom_ar": "زموري",
+          "nom_fr": "Zemmouri",
+          "nom_en": "Zemmouri",
+          "code_postal": "35012"
+        },
+        {
+          "nom_ar": "لقاطة",
+          "nom_fr": "Leghata",
+          "nom_en": "Leghata",
+          "code_postal": "35026"
+        },
+        {
+          "nom_ar": "جنات",
+          "nom_fr": "Djinet",
+          "nom_en": "Djinet",
+          "code_postal": "35024"
+        },
+        {
+          "nom_ar": "برج منايل",
+          "nom_fr": "Bordj Menaiel",
+          "nom_en": "Bordj Menaiel",
+          "code_postal": "35001"
+        }
+      ],
+      "nb_communes": 4
+    },
+    {
+      "nom_ar": "يسر",
+      "nom_fr": "Isser",
+      "nom_en": "Isser",
+      "communes": [
+        {
+          "nom_ar": "يسر",
+          "nom_fr": "Isser",
+          "nom_en": "Isser",
+          "code_postal": "35009"
+        },
+        {
+          "nom_ar": "شعبة العامر",
+          "nom_fr": "Chabet El Ameur",
+          "nom_en": "Chabet El Ameur",
+          "code_postal": "35008"
+        },
+        {
+          "nom_ar": "سي مصطفى",
+          "nom_fr": "Si Mustapha",
+          "nom_en": "Si Mustapha",
+          "code_postal": "35028"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "الناصرية",
+      "nom_fr": "Naciria",
+      "nom_en": "Naciria",
+      "communes": [
+        {
+          "nom_ar": "أولاد عيسى",
+          "nom_fr": "Ouled Aissa",
+          "nom_en": "Ouled Aissa",
+          "code_postal": "01051"
+        },
+        {
+          "nom_ar": "الناصرية",
+          "nom_fr": "Naciria",
+          "nom_en": "Naciria",
+          "code_postal": "35018"
+        }
+      ],
+      "nb_communes": 2
+    },
+    {
+      "nom_ar": "بغلية",
+      "nom_fr": "Baghlia",
+      "nom_en": "Baghlia",
+      "communes": [
+        {
+          "nom_ar": "سيدي داود",
+          "nom_fr": "Sidi Daoud",
+          "nom_en": "Sidi Daoud",
+          "code_postal": "35019"
+        },
+        {
+          "nom_ar": "بغلية",
+          "nom_fr": "Baghlia",
+          "nom_en": "Baghlia",
+          "code_postal": "35013"
+        },
+        {
+          "nom_ar": "تاورقة",
+          "nom_fr": "Taourga",
+          "nom_en": "Taourga",
+          "code_postal": "35029"
+        }
+      ],
+      "nb_communes": 3
+    },
+    {
+      "nom_ar": "بومرداس",
+      "nom_fr": "Boumerdes",
+      "nom_en": "Boumerdes",
+      "communes": [
+        {
+          "nom_ar": "تيجلابين",
+          "nom_fr": "Tidjelabine",
+          "nom_en": "Tidjelabine",
+          "code_postal": "35021"
+        },
+        {
+          "nom_ar": "بومرداس",
+          "nom_fr": "Boumerdes",
+          "nom_en": "Boumerdes",
+          "code_postal": "35000"
+        },
+        {
+          "nom_ar": "قورصو",
+          "nom_fr": "Corso",
+          "nom_en": "Corso",
+          "code_postal": "35014"
+        }
+      ],
+      "nb_communes": 3
+    }
+  ]
+}
