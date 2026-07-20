@@ -1,0 +1,57 @@
+name: "Data fix"
+description: "Report a wrong or missing name, postal code, or daïra mapping"
+title: "[fix]: "
+labels: ["data-fix"]
+body:
+  - type: markdown
+    attributes:
+      value: "Thanks for helping fix the data. Please be as specific as you can."
+
+  - type: input
+    id: wilaya
+    attributes:
+      label: Wilaya
+      description: "Number and/or name (e.g. 16 — Alger)"
+      placeholder: "16 — Alger"
+    validations:
+      required: true
+
+  - type: input
+    id: commune
+    attributes:
+      label: Commune (and daïra if relevant)
+      placeholder: "Commune: … / Daïra: …"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: field
+    attributes:
+      label: What's wrong?
+      options:
+        - Postal code (wrong or missing)
+        - Arabic name
+        - French name
+        - English name
+        - Daïra mapping
+        - Wilaya mapping
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: correction
+    attributes:
+      label: Current value → correct value
+      description: "What it says now, and what it should be."
+      placeholder: "Now: null  →  Should be: 16035"
+    validations:
+      required: true
+
+  - type: input
+    id: source
+    attributes:
+      label: Source (optional but appreciated)
+      description: "Link or reference that confirms the correct value."
+    validations:
+      required: false
