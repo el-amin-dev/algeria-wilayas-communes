@@ -2,6 +2,10 @@
 
 Up-to-date administrative divisions of **Algeria** — **69 wilayas**, **591 daïras**, and **1541 communes** — reflecting the **2025/2026 reform (Loi 26-06)**. Every name in **Arabic, French, and English**, with **postal codes** where available.
 
+> 🇫🇷 Découpage administratif de l'Algérie à jour : **69 wilayas**, **591 daïras**, **1541 communes** (réforme 2025/2026, Loi 26-06) — noms en arabe / français / anglais avec **codes postaux**, en JSON.
+>
+> 🇩🇿 التقسيم الإداري للجزائر محدّث: **69 ولاية**، **591 دائرة**، **1541 بلدية** (إصلاح 2025/2026) — الأسماء بالعربية والفرنسية والإنجليزية مع **الرموز البريدية**، بصيغة JSON.
+
 Plain JSON. No framework, no runtime, no lock-in. Use it from **jq, JavaScript/TypeScript, Python, Java**, or anything that reads a file.
 
 [![CI](https://github.com/el-amin-dev/algeria-wilayas-communes/actions/workflows/ci.yml/badge.svg)](https://github.com/el-amin-dev/algeria-wilayas-communes/actions/workflows/ci.yml)
@@ -80,3 +84,7 @@ Released under **[CC0 1.0](LICENSE)** — public domain. Use it in anything, no 
 ---
 
 Maintained by **El Amin** · [el-amin.dev](https://el-amin.dev) · [@el-amin-dev](https://github.com/el-amin-dev)
+
+---
+
+<sub>**Keywords / mots-clés / كلمات مفتاحية** — Algeria wilayas communes daïras dataset · Algeria administrative divisions JSON · Algeria postal codes / ZIP codes · 48 / 58 / 69 wilayas (2019 & 2025 reform) · liste des wilayas et communes d'Algérie · découpage administratif Algérie · code postal Algérie · daira baladiya wilaya dz · قائمة ولايات وبلديات الجزائر · الولايات والدوائر والبلديات · الرمز البريدي الجزائري · التقسيم الإداري الجزائري · 69 ولاية · wilaya dz json · algeria cities npm pip.</sub>
