@@ -145,6 +145,41 @@ export type PostalCode = string & { readonly __brand: "PostalCode" };
 export interface Wilaya extends GeneratedWilaya {
   /** Zero-padded official form, `"01"`..`"69"`. Always `String(code).padStart(2, "0")`. */
   readonly codeText: string;
+
+  /**
+   * The *wilaya mère* this wilaya was created from by Loi 26-06 (2026).
+   *
+   * Present only on the 11 new wilayas, codes `59`..`69`. Three states, and the
+   * difference between the last two is load-bearing:
+   *
+   * - codes `1`..`58` — the key is **absent** (`undefined`). They have no mère.
+   * - codes `59`..`69`, mapping unfilled — the key is **present and `null`**.
+   * - codes `59`..`69`, mapping filled — the key holds the parent code.
+   *
+   * `undefined` means the question does not apply, `null` means the question
+   * applies and we do not yet know the answer.
+   *
+   * `exactOptionalPropertyTypes` is on, so `?: WilayaCode | null` genuinely
+   * distinguishes the two, and this is the **one place in the library where
+   * `null` appears in a return position** other than `Commune.postalCode`.
+   *
+   * The 58 → 69 parent mapping does not exist in the dataset and is not
+   * guessed: `data/raw/reform.json` ships with all 11 values `null` until the
+   * maintainer sources each one from Loi 26-06 / JO n°25. Reading this field is
+   * a **plain field read, not a lookup**, so it never throws while the mapping
+   * is unfilled — it returns `null`, which is honest and self-describing. Only
+   * the *derived* API (`asOf`, `resolveLegacyWilaya`, `resolveCurrentWilaya`)
+   * throws `ReformMappingUnavailableError`.
+   *
+   * @example
+   * ```ts
+   * "parentWilaya" in getWilaya(19)!;  // → false — Setif predates the reform
+   * getWilaya(19)?.parentWilaya;       // → undefined
+   * getWilaya(68)?.parentWilaya;       // → null   — Ain Oussara, not yet sourced
+   * getWilaya(69)?.parentWilaya;       // → null   — Messaad, not yet sourced
+   * ```
+   */
+  readonly parentWilaya?: WilayaCode | null;
 }
 
 /**

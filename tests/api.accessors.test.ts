@@ -55,11 +55,24 @@ const PUBLIC_API = [
   "COMMUNES_MISSING_POSTAL_CODE",
   "DATA_VERSION",
   "LAST_VERIFIED",
+  // The reform surface is exported UNCONDITIONALLY, even though the 58 -> 69
+  // mapping is still a stub and both resolvers throw. A conditionally-present
+  // export would make the emitted .d.ts depend on data state, so tsc, publint and
+  // attw would disagree about the same source tree. See docs/DECISIONS.md ADR-005.
+  "REFORM",
+  "ReformMappingUnavailableError",
   "SOURCE_LAW",
   "assertWilayaCode",
   "byWilaya",
   "findByPostalCode",
+  // `getAll` and `findCommune` are the two v1 names the v2 API never claimed, so
+  // they survive at the root as @deprecated shims. The other five v1 names
+  // (getWilayas / getDairas / getCommunes / byWilaya / findByPostalCode) belong to
+  // v2 here and keep their v2 shapes; the v1 versions live at /legacy, permanently.
+  // See docs/DECISIONS.md ADR-001 and ADR-002.
+  "findCommune",
   "findCommunesByName",
+  "getAll",
   "getCommune",
   "getCommunes",
   "getCommunesOfWilaya",
@@ -70,6 +83,8 @@ const PUBLIC_API = [
   "getWilayas",
   "isPostalCode",
   "isWilayaCode",
+  "resolveCurrentWilaya",
+  "resolveLegacyWilaya",
   "search",
 ];
 

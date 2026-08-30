@@ -9,14 +9,28 @@
  * Never `null`, never a thrown `NotFoundError`, never a `{}` sentinel, never a
  * `{ ok: false }` result object. "Zero matches" is a normal answer to a plural
  * question, and v1 already returned `undefined` from `byWilaya` on a miss, so
- * this is continuity rather than a break. The only throwing export in the whole
- * library is `assertWilayaCode`.
+ * this is continuity rather than a break.
+ *
+ * **`asOf: "58"` is the one narrow exception, and it is a different category.**
+ * Five accessors take an optional trailing {@link AsOfOptions}. `asOf: "69"`
+ * and no options at all are the same code path and return the **identical
+ * object** — `getWilayas() === getWilayas({ asOf: "69" })` — so the default
+ * path is unchanged and unconditionally safe. `asOf: "58"` asks for a view
+ * derived from the 58 → 69 parent mapping, which the dataset does not yet
+ * contain, so it throws `ReformMappingUnavailableError` rather than answering
+ * from an unfilled table. That is not a miss ("you asked a valid question and
+ * the answer is nothing"); it is "the library cannot answer at all", and
+ * encoding it as `undefined` would make it indistinguishable from "no parent".
+ * See `reform.ts` for the full argument, and branch on `REFORM.mappingComplete`
+ * rather than catching. Together with `assertWilayaCode`, that is the entire
+ * set of throwing exports.
  *
  * **No accessor ever returns a defensive copy.** `getCommunes()` copying 1541
  * records per call would turn a 0 µs accessor into a measurable one, and the
  * `readonly` type already expresses the contract.
  */
 
+import { commune58, communes58, dairas58, wilaya58, wilayas58, wantsLegacyView } from "./asof";
 import { COMMUNES } from "./generated/communes";
 import { DAIRAS } from "./generated/dairas";
 import { WILAYAS } from "./generated/wilayas";
@@ -33,6 +47,7 @@ import {
 } from "./indexes";
 import { normalize } from "./normalize";
 
+import type { AsOfOptions } from "./asof";
 import type { WilayaCode } from "./generated/codes";
 import type { Commune, Daira, NameOf, Wilaya, WilayaTree } from "./types";
 
@@ -74,7 +89,16 @@ const NO_COMMUNES: readonly Commune[] = Object.freeze([]);
  * they are built once on first call and memoized; the array is frozen before it
  * is handed out and the same reference is returned to every caller.
  *
- * @returns All 69 wilayas. Frozen, never copied, never empty.
+ * @param opts - Optional. `{ asOf: "58" }` asks for the pre-reform map: **58**
+ *   records, codes `1`..`58` ascending, the 11 new wilayas absent, and each
+ *   mère's `dairaCount` / `communeCount` **recomputed** to include everything
+ *   re-attached from its children. Those two numbers are *derived arithmetic
+ *   over a maintainer-supplied mapping*, not transcribed data. Omitting `opts`
+ *   and passing `{ asOf: "69" }` are the same call and return the same object.
+ * @returns All 69 wilayas — or the 58 pre-reform ones. Frozen, never copied,
+ *   never empty.
+ * @throws {ReformMappingUnavailableError} for `asOf: "58"` only, while
+ *   `REFORM.mappingComplete` is `false`. The default path never throws.
  *
  * @example
  * ```ts
@@ -82,11 +106,18 @@ const NO_COMMUNES: readonly Commune[] = Object.freeze([]);
  * getWilayas()[18]?.name.fr;           // → "Setif"
  * getWilayas()[18]?.codeText;          // → "19"
  * getWilayas().find((w) => w.codeText === "06")?.name.fr; // → "Bejaia"
+ *
+ * getWilayas() === getWilayas({ asOf: "69" });  // → true — no extra allocation
+ *
+ * if (REFORM.mappingComplete) {
+ *   getWilayas({ asOf: "58" }).length; // → 58  (throws today: mapping unfilled)
+ * }
  * ```
  *
  * @since 2.0.0
  */
-export function getWilayas(): readonly Wilaya[] {
+export function getWilayas(opts?: AsOfOptions): readonly Wilaya[] {
+  if (wantsLegacyView(opts)) return wilayas58();
   return wilayaList();
 }
 
@@ -97,18 +128,31 @@ export function getWilayas(): readonly Wilaya[] {
  * record carries its parent as `wilaya: WilayaCode` — join with
  * {@link getWilaya} rather than expecting a denormalized name.
  *
+ * @param opts - Optional. `{ asOf: "58" }` returns the same **591** daïras —
+ *   never merged, never dropped — with the `wilaya` attribution of every daïra
+ *   under `59`..`69` rewritten to its mère. Merging two same-named daïras under
+ *   one mère would assert they are the same daïra, which the dataset does not
+ *   claim; there are 591 daïras over only 545 distinct names. `id` never
+ *   changes across `asOf`.
  * @returns All 591 daïras. Frozen, never copied.
+ * @throws {ReformMappingUnavailableError} for `asOf: "58"` only, while
+ *   `REFORM.mappingComplete` is `false`.
  *
  * @example
  * ```ts
  * getDairas().length;                                    // → 591
  * getDairas().filter((d) => d.wilaya === 19).length;     // → 20   (Setif)
  * getDairas().find((d) => d.id === "19-ain-azel")?.name.fr; // → "Ain Azel"
+ *
+ * if (REFORM.mappingComplete) {
+ *   getDairas({ asOf: "58" }).length;                    // → 591  — still 591
+ * }
  * ```
  *
  * @since 2.0.0
  */
-export function getDairas(): readonly Daira[] {
+export function getDairas(opts?: AsOfOptions): readonly Daira[] {
+  if (wantsLegacyView(opts)) return dairas58();
   return DAIRAS;
 }
 
@@ -118,20 +162,33 @@ export function getDairas(): readonly Daira[] {
  * Returns the frozen generated array directly: zero allocation, zero copy — the
  * accessor that cost 1.10 ms of `JSON.parse` in v1 is now a property read.
  *
+ * @param opts - Optional. `{ asOf: "58" }` returns the same **1541** communes
+ *   in the same order, with the `wilaya` attribution of every commune under
+ *   `59`..`69` rewritten to its mère — so a commune in wilaya 59 Aflou resolves
+ *   to the wilaya a 2026 shipping label must print. `id` and `postalCode` never
+ *   change across `asOf`: a postal code is a postal code, and two id namespaces
+ *   would make every cached key in every consumer's database ambiguous.
  * @returns All 1541 communes. Frozen, never copied. 27 of them have
  *   `postalCode === null`; their ids are listed in
  *   `COMMUNES_MISSING_POSTAL_CODE`.
+ * @throws {ReformMappingUnavailableError} for `asOf: "58"` only, while
+ *   `REFORM.mappingComplete` is `false`.
  *
  * @example
  * ```ts
  * getCommunes().length;                                       // → 1541
  * getCommunes().filter((c) => c.postalCode === null).length;  // → 27
  * getCommunes().find((c) => c.id === "19-ain-azel-ain-lahdjar")?.postalCode; // → "19018"
+ *
+ * if (REFORM.mappingComplete) {
+ *   getCommunes({ asOf: "58" }).length;                       // → 1541
+ * }
  * ```
  *
  * @since 2.0.0
  */
-export function getCommunes(): readonly Commune[] {
+export function getCommunes(opts?: AsOfOptions): readonly Commune[] {
+  if (wantsLegacyView(opts)) return communes58();
   return COMMUNES;
 }
 
@@ -140,9 +197,14 @@ export function getCommunes(): readonly Commune[] {
  *
  * @param code - A wilaya code, `1`..`69`. The **number** `19`, not the padded
  *   string `"19"` — that is `codeText`, and it is the v1 → v2 migration trap.
+ * @param opts - Optional. `{ asOf: "58" }` answers from the pre-reform map, so
+ *   `getWilaya(59, { asOf: "58" })` is `undefined` — wilaya 59 did not exist —
+ *   and a mère comes back with its aggregated counts.
  * @returns The wilaya, or `undefined` if the code is not a real one (reachable
  *   only from untyped JavaScript or a cast — `getWilaya(70)` is a compile
  *   error).
+ * @throws {ReformMappingUnavailableError} for `asOf: "58"` only, while
+ *   `REFORM.mappingComplete` is `false`.
  *
  * @example
  * ```ts
@@ -153,11 +215,15 @@ export function getCommunes(): readonly Commune[] {
  * getWilaya(6)?.codeText;      // → "06"
  * getWilaya(31)?.name.fr;      // → "Oran"
  * getWilaya(16)?.name.en;      // → "Algiers"  — the one exonym in the dataset
+ *
+ * getWilaya(69)?.parentWilaya; // → null       — Messaad; mère not yet sourced
+ * "parentWilaya" in getWilaya(19)!;  // → false — Setif predates the reform
  * ```
  *
  * @since 2.0.0
  */
-export function getWilaya(code: WilayaCode): Wilaya | undefined {
+export function getWilaya(code: WilayaCode, opts?: AsOfOptions): Wilaya | undefined {
+  if (wantsLegacyView(opts)) return wilaya58(code);
   return wilayaIdx().get(code);
 }
 
@@ -194,7 +260,12 @@ export function getDaira(id: string): Daira | undefined {
  * @param id - A commune id, e.g. `"19-ain-azel-ain-lahdjar"` — wilaya code,
  *   daïra slug, commune slug. Library-assigned, not an official government code,
  *   but stable by promise.
+ * @param opts - Optional. `{ asOf: "58" }` returns the same record with its
+ *   `wilaya` attribution rewritten to the pre-reform mère. The `id` is
+ *   identical in both views — ids never move with `asOf`.
  * @returns The commune, or `undefined` if no commune has that id.
+ * @throws {ReformMappingUnavailableError} for `asOf: "58"` only, while
+ *   `REFORM.mappingComplete` is `false`.
  *
  * @example
  * ```ts
@@ -207,7 +278,8 @@ export function getDaira(id: string): Daira | undefined {
  *
  * @since 2.0.0
  */
-export function getCommune(id: string): Commune | undefined {
+export function getCommune(id: string, opts?: AsOfOptions): Commune | undefined {
+  if (wantsLegacyView(opts)) return commune58(id);
   return communeIdx().get(id);
 }
 

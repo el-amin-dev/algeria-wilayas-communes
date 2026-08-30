@@ -18,8 +18,9 @@
  *   1. `vi.resetModules()` first, so the next import evaluates a FRESH graph;
  *   2. `await import(...)` inside the case, never a top-level import, because a
  *      top-level import is hoisted and evaluated before `resetModules` runs;
- *   3. the debug hooks are imported from their own modules — `indexes.ts` and
- *      `search.ts` — never from `index.ts`, which must not re-export them.
+ *   3. the debug hooks are imported from their own modules — `indexes.ts`,
+ *      `search.ts` and `asof.ts` — never from `index.ts`, which must not
+ *      re-export them.
  *
  * The invariant this protects is not academic. A top-level `const idx =
  * build()` anywhere in `src/` makes `"sideEffects": false` a lie, and a
@@ -47,6 +48,29 @@ const INDEX_KEYS = [
   "wilayaList",
 ];
 
+/**
+ * The five lazy `asOf: "58"` structures `asof.ts` reports on.
+ *
+ * Pinned exactly like `INDEX_KEYS`, and for the same reason: a lazy structure
+ * that is not reported can never be caught being built at import time, so a new
+ * `let … | undefined` in `asof.ts` has to come with a line here or this test
+ * goes red.
+ */
+const ASOF_KEYS = ["communeIndex", "communes", "dairas", "wilayaIndex", "wilayas"];
+
+/** The two lazy reform maps, pinned so a new one cannot be added untested. */
+const REFORM_KEYS = ["forward", "reverse"];
+
+/** The five lazy v1 projections, pinned for the same reason. */
+const LEGACY_KEYS = [
+  "algeria",
+  "communesFlat",
+  "dairasFlat",
+  "paddedCodeIndex",
+  "wilayaTrees",
+  "wilayasFlat",
+];
+
 describe("import-time purity", () => {
   it("builds no index when only the entry point is imported", async () => {
     await import("../packages/js/src/index");
@@ -58,6 +82,70 @@ describe("import-time purity", () => {
     expect(Object.keys(state).sort()).toEqual(INDEX_KEYS);
     // Reported as entries so a failure names which index was built.
     expect(Object.entries(state).filter(([, built]) => built)).toEqual([]);
+  });
+
+  it("builds no asOf structure when only the entry point is imported", async () => {
+    // The whole 58-view — 58 recomputed wilaya records, 591 re-attributed
+    // daïras, 1541 re-attributed communes and two Maps over them — is derived
+    // work that only a caller who passes `{ asOf: "58" }` may pay for. A single
+    // eager build here would land the reform layer in the bundle of every
+    // consumer who never heard of Loi 26-06.
+    await import("../packages/js/src/index");
+    const { __asOfState } = await import("../packages/js/src/asof");
+    const state = __asOfState();
+
+    expect(Object.keys(state).sort()).toEqual(ASOF_KEYS);
+    expect(Object.entries(state).filter(([, built]) => built)).toEqual([]);
+  });
+
+  it("builds no reform-derived structure when only the entry point is imported", async () => {
+    // `reform.ts` keeps its own two lazy Maps (current -> legacy, legacy ->
+    // current) behind `__reformState()`, and `legacy/project.ts` keeps its five
+    // v1 projections behind `__legacyState()` — both exported from their own
+    // module and re-exported by nothing, exactly like `__indexState`. So all
+    // four layers are asserted directly here rather than inferred.
+    //
+    // The legacy half matters as much as the reform half: the v1 projections
+    // materialize the denormalized wilaya_*/daira_* columns and roughly DOUBLE
+    // the resident data. A root consumer who never touches the compat shims
+    // must not pay for them.
+    const api = await import("../packages/js/src/index");
+    const { __asOfState } = await import("../packages/js/src/asof");
+    const { __indexState } = await import("../packages/js/src/indexes");
+    const { __reformState } = await import("../packages/js/src/reform");
+    const { __legacyState } = await import("../packages/js/src/legacy/project");
+
+    expect(Object.keys(__reformState()).sort()).toEqual(REFORM_KEYS);
+    expect(Object.keys(__legacyState()).sort()).toEqual(LEGACY_KEYS);
+
+    expect(Object.entries(__asOfState()).filter(([, built]) => built)).toEqual([]);
+    expect(Object.entries(__indexState()).filter(([, built]) => built)).toEqual([]);
+    expect(Object.entries(__reformState()).filter(([, built]) => built)).toEqual([]);
+    expect(Object.entries(__legacyState()).filter(([, built]) => built)).toEqual([]);
+
+    // Reading the law reference and the dates is free — those facts are known
+    // even while the mapping is a stub, so metadata access must build nothing.
+    expect(api.REFORM.law).toBe("Loi 26-06");
+    expect(api.getWilaya(59)?.parentWilaya).toBeNull();
+    expect(Object.entries(__reformState()).filter(([, built]) => built)).toEqual([]);
+
+    // The only route into those two Maps still refuses to run at all.
+    expect(() => api.resolveLegacyWilaya(68)).toThrow(api.ReformMappingUnavailableError);
+    expect(Object.entries(__reformState()).filter(([, built]) => built)).toEqual([]);
+  });
+
+  it("builds no v2 index and no v2 search structure when /legacy is imported", async () => {
+    // The two entry points are disjoint by construction. A v1 consumer who
+    // imports `algeria-wilayas-communes/legacy` gets the four snake_case
+    // projections and nothing else — no normalized wrappers, and above all not
+    // the 2201-key search index, which is v2's largest structure and has no v1
+    // counterpart (`findCommune` is a `nom_fr` substring scan, deliberately).
+    await import("../packages/js/src/legacy/index");
+    const { __indexState } = await import("../packages/js/src/indexes");
+    const { __searchState } = await import("../packages/js/src/search");
+
+    expect(Object.entries(__searchState()).filter(([, built]) => built)).toEqual([]);
+    expect(Object.entries(__indexState()).filter(([, built]) => built)).toEqual([]);
   });
 
   it("builds no search structure when only the entry point is imported", async () => {
@@ -130,6 +218,41 @@ describe("lazy index construction", () => {
     const state = __indexState();
     expect(state["name"]).toBe(true);
     expect(state["postal"]).toBe(false);
+  });
+
+  it("reading REFORM metadata builds nothing at all", async () => {
+    // `REFORM` is 11 small records re-typed from the generated emit, not an
+    // index. Reading the law, the Journal Officiel issue or the three dates has
+    // to stay free: those are the fields a consumer logs on every boot to prove
+    // provenance to a compliance team.
+    const { REFORM } = await import("../packages/js/src/index");
+    expect(REFORM.law).toBe("Loi 26-06");
+    expect(REFORM.newWilayas).toHaveLength(11);
+
+    const { __asOfState } = await import("../packages/js/src/asof");
+    const { __indexState } = await import("../packages/js/src/indexes");
+    expect(Object.entries(__asOfState()).filter(([, built]) => built)).toEqual([]);
+    expect(Object.entries(__indexState()).filter(([, built]) => built)).toEqual([]);
+  });
+
+  it("reading parentWilaya off a wilaya builds no asOf structure", async () => {
+    // `parentWilaya` is attached where the `Wilaya` wrapper is minted, from that
+    // same 11-record constant — a plain field read, not a lookup. So it costs
+    // the wilaya list and the code index it would have cost anyway, and nothing
+    // from the reform layer.
+    const api = await import("../packages/js/src/index");
+    expect(api.getWilaya(68)?.parentWilaya).toBeNull();
+
+    const { __asOfState } = await import("../packages/js/src/asof");
+    const { __indexState } = await import("../packages/js/src/indexes");
+    const state = __indexState();
+
+    expect(Object.entries(__asOfState()).filter(([, built]) => built)).toEqual([]);
+    expect(state["wilayaList"]).toBe(true);
+    expect(state["wilaya"]).toBe(true);
+    expect(state["postal"]).toBe(false);
+    expect(state["commune"]).toBe(false);
+    expect(state["tree"]).toBe(false);
   });
 
   it("isWilayaCode() consults no index at all", async () => {

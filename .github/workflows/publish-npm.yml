@@ -25,6 +25,14 @@ jobs:
         run: |
           rm -rf packages/js/data
           cp -r data packages/js/data
+          # data/raw/ is hand-edited build INPUT, never published output. It is
+          # not part of the frozen 73-file contract and no consumer reads it,
+          # but exports["./data/*"] would still expose it on npm and jsDelivr —
+          # and reform.json's `todo` strings spell out the UNVERIFIED candidate
+          # mere for each of the 11 new wilayas. docs/DECISIONS.md ADR-005
+          # refuses to ship that table; shipping it as prose under the package's
+          # public data subpath is the same table with a disclaimer attached.
+          rm -rf packages/js/data/raw
 
       - name: Sync package version to tag
         run: |

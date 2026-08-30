@@ -45,6 +45,6 @@
     "url": "https://github.com/el-amin-dev/algeria-wilayas-communes/issues"
   },
   "engines": {
-    "node": ">=16"
+    "node": ">=18"
   }
 }

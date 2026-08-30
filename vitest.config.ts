@@ -73,14 +73,22 @@ export default defineConfig({
       // "unreachable" would overstate it. The arms must stay regardless: a
       // comparator handed to Array.prototype.sort has to be a total order.
       //
-      // Current absolutes: statements 456/457, branches 240/242, lines 364/364,
-      // functions 57/57. Because these are percentages they drift as the file
+      // Current absolutes: statements 692/693, branches 330/332, lines 560/560,
+      // functions 101/101. Because these are percentages they drift as the file
       // grows — if a number moves, find out WHY before adjusting it.
+      //
+      // Session 3 (reform + v1 compat) added ~230 statements and the numbers went
+      // UP, to 99.85 / 99.37: the six new modules are fully covered, and the nine
+      // genuinely unreachable defensive arms they introduced carry `v8 ignore`
+      // with a reason each, rather than being paid for out of the threshold.
+      // These numbers RATCHET. Raise them when coverage improves; never lower
+      // them to make a red run go green — a shortfall is a missing test or an
+      // unreachable branch that needs annotating, and both have a real fix.
       thresholds: {
         lines: 100,
         functions: 100,
-        statements: 99.78,
-        branches: 99.17,
+        statements: 99.85,
+        branches: 99.39,
       },
     },
   },

@@ -64,4 +64,40 @@ export default tseslint.config(
       },
     },
   },
+
+  // ---------------------------------------------------------------------------
+  // The library may not import Node builtins. Enforced, not merely documented.
+  //
+  // This is repo invariant #3, and it is the whole reason `generated/*.ts`
+  // exists: v1's `index.js` did `readFileSync` at module scope, which is why it
+  // could not run in a browser bundle, Vite, a Cloudflare Worker, Deno or React
+  // Native AT ALL. Nothing under `packages/js/src/` may reintroduce that.
+  //
+  // Without this rule the invariant had no teeth: a `node:fs` import added to,
+  // say, `legacy/project.ts` would pass typecheck, pass all 975 tests and meet
+  // the coverage thresholds, while silently re-breaking every non-Node target.
+  // The tests cannot catch it — they run in Node, where it works fine.
+  //
+  // Scoped to the library only. `scripts/` and `tests/` run in Node by design
+  // and use `node:fs` freely; `generated/` is already globally ignored.
+  // ---------------------------------------------------------------------------
+  {
+    files: ["packages/js/src/**/*.ts"],
+    rules: {
+      "no-restricted-imports": [
+        "error",
+        {
+          patterns: [
+            {
+              group: ["node:*", "fs", "path", "url", "crypto", "os"],
+              message:
+                "packages/js/src/ must not import Node builtins (repo invariant #3). " +
+                "The library ships to browsers, Workers, Deno and React Native. Data " +
+                "comes from packages/js/src/generated/, emitted by scripts/build-data.ts.",
+            },
+          ],
+        },
+      ],
+    },
+  },
 );

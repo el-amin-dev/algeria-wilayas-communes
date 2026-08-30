@@ -34,6 +34,7 @@ python3 scripts/validate.py
 
 # Schema (needs: pipx install check-jsonschema)
 check-jsonschema --schemafile schema/algeria.schema.json data/algeria.json
+check-jsonschema --schemafile schema/reform.schema.json data/raw/reform.json
 
 # Confirm every JSON file parses
 find data schema -name '*.json' -print0 | xargs -0 -I{} sh -c 'jq empty "{}" && echo "ok: {}"'

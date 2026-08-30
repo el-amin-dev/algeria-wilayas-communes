@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/el-amin-dev/algeria-wilayas-communes/schema/reform.schema.json",
+  "title": "Loi 26-06 reform mapping (58 wilayas mères > 11 new wilayas)",
+  "type": "object",
+  "required": [
+    "law",
+    "journalOfficiel",
+    "publishedOn",
+    "transitionDeadline",
+    "operationalFrom",
+    "previousWilayaCount",
+    "currentWilayaCount",
+    "newWilayas"
+  ],
+  "properties": {
+    "$schema": { "type": "string" },
+    "$comment": { "type": "string" },
+    "law": { "type": "string", "minLength": 1 },
+    "journalOfficiel": { "type": "string", "minLength": 1 },
+    "publishedOn": { "$ref": "#/$defs/date" },
+    "transitionDeadline": { "$ref": "#/$defs/date" },
+    "operationalFrom": { "$ref": "#/$defs/date" },
+    "previousWilayaCount": { "type": "integer", "const": 58 },
+    "currentWilayaCount": { "type": "integer", "const": 69 },
+    "newWilayas": {
+      "type": "array",
+      "minItems": 11,
+      "maxItems": 11,
+      "items": { "$ref": "#/$defs/newWilaya" }
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "date": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+    "newWilaya": {
+      "type": "object",
+      "required": ["code", "nom_fr", "parentCode", "source", "confidence"],
+      "properties": {
+        "code": { "type": "string", "pattern": "^(59|6[0-9])$" },
+        "nom_fr": { "type": "string", "minLength": 1 },
+        "parentCode": { "type": ["string", "null"], "pattern": "^(0[1-9]|[1-4][0-9]|5[0-8])$" },
+        "source": { "type": ["string", "null"], "minLength": 1 },
+        "confidence": { "type": "string", "enum": ["confirmed", "probable", "unverified"] },
+        "todo": { "type": "string", "minLength": 1 }
+      },
+      "additionalProperties": false
+    }
+  }
+}

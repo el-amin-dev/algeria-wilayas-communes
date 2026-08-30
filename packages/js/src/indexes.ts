@@ -46,6 +46,7 @@ import { COMMUNES } from "./generated/communes";
 import { DAIRAS } from "./generated/dairas";
 import { WILAYAS } from "./generated/wilayas";
 import { normalize } from "./normalize";
+import { REFORM } from "./reform";
 
 import type { WilayaCode } from "./generated/codes";
 import type { Commune, Daira, DairaSubtree, Wilaya, WilayaTree } from "./types";
@@ -75,12 +76,27 @@ let wilayaListValue: readonly Wilaya[] | undefined;
 
 /**
  * The 69 public {@link Wilaya} records: the generated shape plus the derived
- * `codeText`.
+ * `codeText` and, on the 11 new wilayas only, `parentWilaya`.
  *
  * `codeText` is derived here rather than shipped, because 69 zero-padded
  * duplicates of a number we already have is 69 strings of dead weight in every
  * bundle. The build asserted that the source's padded string agrees with the
  * number, so `String(code).padStart(2, "0")` is lossless.
+ *
+ * `parentWilaya` is attached here for the same reason — this is the one place a
+ * `Wilaya` wrapper is minted, so it stays as lazy as `codeText` and no other
+ * module has to know how the reform table is shaped. It is written in **two
+ * explicit branches** rather than one spread over a conditional object:
+ * `{ ...w, ...(p !== undefined && { parentWilaya: p }) }` would widen the field
+ * to `WilayaCode | null | undefined` under `exactOptionalPropertyTypes` and
+ * destroy the very absent-vs-`null` distinction the field exists to carry.
+ *
+ * - codes `1`..`58` get **no key at all** — they have no wilaya mère;
+ * - codes `59`..`69` get the key, holding `null` until the maintainer sources
+ *   the mapping from Loi 26-06 / JO n°25.
+ *
+ * Reading `REFORM` here is a plain property read on an 11-record constant, not
+ * a lookup, so it neither throws nor triggers the reform indexes.
  *
  * The array is frozen before publication — `getWilayas()` hands this exact
  * reference to every caller, and a plain-JavaScript consumer must not be able to
@@ -90,9 +106,15 @@ let wilayaListValue: readonly Wilaya[] | undefined;
  */
 export function wilayaList(): readonly Wilaya[] {
   if (wilayaListValue === undefined) {
+    const parents = new Map<WilayaCode, WilayaCode | null>();
+    for (const entry of REFORM.newWilayas) parents.set(entry.code, entry.parentCode);
+
     const out: Wilaya[] = [];
     for (const w of WILAYAS) {
-      out.push({ ...w, codeText: String(w.code).padStart(2, "0") });
+      const codeText = String(w.code).padStart(2, "0");
+      const parent = parents.get(w.code);
+      if (parent === undefined) out.push({ ...w, codeText });
+      else out.push({ ...w, codeText, parentWilaya: parent });
     }
     wilayaListValue = Object.freeze(out);
   }

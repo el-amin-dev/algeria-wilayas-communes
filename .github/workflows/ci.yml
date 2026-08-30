@@ -34,5 +34,8 @@ jobs:
       - name: Validate source against JSON Schema
         run: check-jsonschema --schemafile schema/algeria.schema.json data/algeria.json
 
+      - name: Validate reform stub against JSON Schema
+        run: check-jsonschema --schemafile schema/reform.schema.json data/raw/reform.json
+
       - name: Run integrity checks
         run: python3 scripts/validate.py
