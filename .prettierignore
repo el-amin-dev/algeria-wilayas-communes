@@ -1,0 +1,50 @@
+# `prettier --write .` walks the whole repo. This file is the allow-list in
+# reverse: only files hand-written in this session may be reformatted. Anything
+# pre-existing, generated, or frozen is listed below with the reason.
+
+# --- Tooling output / lockfiles -------------------------------------------
+# Machine-managed. Reformatting a lockfile churns the diff and can break the
+# integrity hashes readers rely on.
+node_modules/
+dist/
+packages/js/dist/
+coverage/
+.turbo/
+pnpm-lock.yaml
+
+# --- Frozen data contract (D1) ---------------------------------------------
+# The 72 JSON files under data/ are gated on byte-identity. Prettier would
+# re-indent the 592 KB algeria.json and every by-wilaya/*.json, which is exactly
+# the diff the byte-identity test exists to catch. The build script owns this
+# directory's formatting, not Prettier.
+data/
+
+# --- Generated source -------------------------------------------------------
+# Emitted by scripts/build-data.ts. Formatting is the emitter's responsibility;
+# a Prettier reflow here would show up in review as what looks like a data
+# change. Fix formatting in the emitter, never in the output.
+packages/js/src/generated/
+
+# --- Not ours ---------------------------------------------------------------
+# Internal planning documents. Reformatting someone else's prose is noise.
+docs/
+
+# --- Pre-existing, must stay byte-identical ---------------------------------
+# Everything below shipped before this session. The acceptance criteria require
+# these files to be unchanged, so Prettier must not touch them. Listed
+# individually rather than by directory glob so that new session-authored files
+# (tests/, scripts/build-data.ts, packages/js/src/index.ts, types.ts) stay
+# formatted.
+README.md
+CONTRIBUTING.md
+RUNBOOK.md
+LICENSE
+
+schema/
+.github/
+packages/python/
+
+packages/js/index.js
+packages/js/index.d.ts
+packages/js/package.json
+packages/js/README.md

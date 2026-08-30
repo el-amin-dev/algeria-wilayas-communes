@@ -1,0 +1,5 @@
+# The 72 files under data/ are a byte-for-byte published contract and the build
+# is gated on `git diff --exit-code data/`. On a checkout with core.autocrlf=true
+# they would arrive as CRLF, `pnpm build:data --check` would report all 72 as out
+# of date, and a build would rewrite every one of them back to LF.
+* text=auto eol=lf

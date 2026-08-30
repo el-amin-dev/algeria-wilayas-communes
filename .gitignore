@@ -30,3 +30,8 @@ target/
 tmp/
 packages/js/data/
 packages/python/src/algeria_wilayas_communes/data/
+
+# Build output
+packages/js/dist/
+coverage/
+.turbo/

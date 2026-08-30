@@ -1,0 +1,13 @@
+packages:
+  - "packages/js"
+
+# esbuild ships a prebuilt native binary and needs its postinstall to run; tsx
+# and vitest are unusable without it. pnpm >= 10 blocks build scripts by default,
+# and since pnpm 11 this allow-list lives here rather than in package.json's
+# "pnpm" field.
+#
+# Do not add pnpm's `allowBuilds:` scaffold here — `pnpm install` writes it as a
+# prompt ("set this to true or false"), it is a string where the schema wants a
+# boolean, and it duplicates this list.
+onlyBuiltDependencies:
+  - esbuild
