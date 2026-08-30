@@ -20,6 +20,9 @@ __pycache__/
 venv/
 build/
 *.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
 
 # Java / Maven
 target/
@@ -29,7 +32,15 @@ target/
 *.log
 tmp/
 packages/js/data/
+# Both forms, deliberately. The trailing-slash rule matches a real directory --
+# which is what publish-pypi.yml's `cp -r` creates -- but NOT the symlink that
+# `make dev` creates, because git does not treat a symlink as a directory. With
+# only the first rule the dev symlink is committable, and committing it quietly
+# defeats everything BUG 2 is about: a fresh checkout would silently work, the
+# self-explaining FileNotFoundError would never fire, and `make dev` would look
+# unnecessary until someone checked out on a platform without symlinks.
 packages/python/src/algeria_wilayas_communes/data/
+packages/python/src/algeria_wilayas_communes/data
 
 # Build output
 packages/js/dist/

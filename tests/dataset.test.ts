@@ -107,7 +107,7 @@ describe("postal codes", () => {
   });
 
   it("agrees with the two metadata counters in data/algeria.json", () => {
-    // `scripts/validate.py` never checks these two — they can drift away from
+    // `shared/validate.py` never checks these two — they can drift away from
     // the records they describe and CI stays green.
     interface AlgeriaCounters {
       codes_postaux_renseignes: number;

@@ -18,21 +18,150 @@ jobs:
         with:
           python-version: "3.12"
 
+      # packages/python/src/algeria_wilayas_communes/data/ is gitignored, so it
+      # does not exist in a fresh checkout. This copy plus the `artifacts` entry
+      # in pyproject.toml are what put the dataset in the wheel; neither works
+      # without the other, so do not "clean up" either one.
       - name: Copy data into package
         run: |
           rm -rf packages/python/src/algeria_wilayas_communes/data
           cp -r data packages/python/src/algeria_wilayas_communes/data
 
+      # data/raw/ is hand-edited build INPUT, not published output.
+      #
+      # publish-npm.yml deletes it outright, because reform.json's `todo`
+      # strings spell out the UNVERIFIED postal-prefix candidate mere for each
+      # of the 11 new wilayas, and docs/DECISIONS.md ADR-005 refuses to ship
+      # that table. Shipping it as prose with a disclaimer attached is the same
+      # table with a disclaimer attached.
+      #
+      # Python cannot simply delete the directory the way npm does: _reform.py
+      # reads reform.json at run time, so REFORM.law, the transition dates and
+      # the 11 new wilaya codes all come from it. Deleting it would leave pip
+      # users with no reform API at all, and would also mean a mapping filled in
+      # from JO n25 never reached them.
+      #
+      # So the file ships SANITIZED instead: every key that carries a guess is
+      # removed, and the facts stay. `$comment` is the maintainer's fill-in
+      # instructions and `todo` is the candidate table itself; neither is read
+      # by any consumer. en-overrides.json is dropped entirely -- the Python
+      # package derives the one English exonym from the data itself and never
+      # opens that file.
+      - name: Strip unverified build input from the packaged data
+        run: |
+          python - <<'PY'
+          import json, pathlib
+
+          root = pathlib.Path("packages/python/src/algeria_wilayas_communes/data/raw")
+          (root / "en-overrides.json").unlink(missing_ok=True)
+
+          path = root / "reform.json"
+          reform = json.loads(path.read_text(encoding="utf-8"))
+          reform.pop("$comment", None)
+          for entry in reform["newWilayas"]:
+              entry.pop("todo", None)
+          path.write_text(json.dumps(reform, ensure_ascii=False, indent=2) + "\n",
+                          encoding="utf-8")
+
+          # Re-read from disk. Checking the in-memory dict we just mutated is a
+          # tautology that reads like a gate and cannot fail.
+          written = json.loads(path.read_text(encoding="utf-8"))
+          leaked = [k for k in written if k == "$comment"] + [
+              f"newWilayas[{i}].todo" for i, e in enumerate(written["newWilayas"]) if "todo" in e
+          ]
+          assert not leaked, f"sanitize failed: {leaked}"
+          assert len(written["newWilayas"]) == 11, "sanitize dropped rows"
+          print(f"sanitized reform.json: {len(written['newWilayas'])} rows, no todo/$comment")
+          PY
+
+      # The tag is the single source of truth for the version. pyproject.toml's
+      # `version` and __init__.py's `__version__` are both patched from it --
+      # patching only the first would ship a wheel whose metadata says 2.0.0
+      # while `algeria_wilayas_communes.__version__` still reports 1.0.0, which
+      # is the kind of mismatch a user hits only when debugging something else.
       - name: Sync version to tag
         run: |
           VERSION="${GITHUB_REF_NAME#v}"
           sed -i "s/^version = \".*\"/version = \"$VERSION\"/" packages/python/pyproject.toml
+          sed -i "s/^__version__ = \".*\"/__version__ = \"$VERSION\"/" \
+            packages/python/src/algeria_wilayas_communes/__init__.py
+          grep -n '^version = ' packages/python/pyproject.toml
+          grep -n '^__version__ = ' packages/python/src/algeria_wilayas_communes/__init__.py
 
       - name: Build
         run: |
-          python -m pip install --upgrade build
+          python -m pip install --upgrade build twine
           python -m build packages/python --outdir dist
 
+      # A tag push publishes immediately and irreversibly: PyPI does not allow
+      # re-uploading a filename, and yanking leaves the release visible forever.
+      # So the checks that prove the artifact is usable run HERE, before the
+      # upload, rather than only on a developer's machine.
+      #
+      # The failure this is really guarding against: `artifacts` in
+      # pyproject.toml is what forces a GITIGNORED directory into the wheel. If
+      # that entry is ever dropped, or the copy step above is "cleaned up", the
+      # build still succeeds and still produces a valid wheel -- one that
+      # contains no data at all and raises FileNotFoundError on the first call.
+      # Nothing catches that until a user pip-installs it.
+      - name: Check the wheel
+        run: |
+          twine check dist/*
+          python - <<'PY'
+          import glob, json, zipfile
+
+          wheel = sorted(glob.glob("dist/*.whl"))[-1]
+          names = zipfile.ZipFile(wheel).namelist()
+
+          data = [n for n in names if "/data/" in n]
+          by_wilaya = [n for n in data if "/data/by-wilaya/" in n and n.endswith(".json")]
+          raw = [n for n in data if "/data/raw/" in n]
+
+          # Everything EXPECTED, not merely nothing unexpected. An assertion of
+          # the form `all(... for n in raw)` is vacuously true on an empty list,
+          # so a wheel that shipped no raw/ at all would have sailed through --
+          # and every pip user calling REFORM or the reform resolvers would get
+          # a FileNotFoundError telling them to run `make dev`, which is
+          # nonsense advice for a pip install.
+          for required in ("algeria.json", "wilayas.json", "dairas.json", "communes.json"):
+              assert any(n.endswith(f"/data/{required}") for n in data), f"{required} missing"
+          assert len(by_wilaya) == 69, f"expected 69 by-wilaya files, found {len(by_wilaya)}"
+          assert len(data) == 74, f"expected 74 data files (73 published + reform.json), got {len(data)}"
+          assert any(n.endswith("py.typed") for n in names), "py.typed missing (PEP 561 marker)"
+
+          # ADR-005: exactly one build-input file may pass, the sanitized reform
+          # table, and it must carry no candidate mere.
+          assert len(raw) == 1 and raw[0].endswith("/data/raw/reform.json"), \
+              f"expected exactly one raw entry (the sanitized reform.json), got {raw}"
+          with zipfile.ZipFile(wheel) as archive:
+              reform = json.loads(archive.read(raw[0]).decode("utf-8"))
+          assert "$comment" not in reform, "unsanitized reform.json: $comment present"
+          assert len(reform["newWilayas"]) == 11, "reform.json lost rows in sanitizing"
+          assert all("todo" not in e for e in reform["newWilayas"]), \
+              "unsanitized reform.json: candidate mere table present"
+
+          tests = [n for n in names if "/tests/" in n or n.startswith("tests/")]
+          assert not tests, f"test files leaked into the wheel: {tests[:5]}"
+
+          print(f"wheel OK: {len(names)} entries, {len(data)} data files, "
+                f"{len(by_wilaya)} by-wilaya, raw={raw}")
+          PY
+
+      # Still an API token, deliberately.
+      #
+      # Trusted Publishing (OIDC) is the better mechanism -- no long-lived
+      # credential to leak or rotate -- and it was tried: 1bca834 landed it and
+      # a4e0fad replaced it with this token ONE COMMIT LATER. That is the
+      # signature of a publish that failed in the field, and the usual cause is
+      # that the pending publisher was never configured on the PyPI side.
+      # Trusted publishing cannot work from the workflow alone: the project
+      # owner has to add a publisher on PyPI naming the owner, the repository,
+      # the workflow filename and the environment, and all of them must match.
+      #
+      # Switching back needs, in this order: configure the PyPI-side publisher,
+      # verify against TestPyPI, then remove PYPI_TOKEN and add
+      # `permissions: { id-token: write }`. Until that is done, a documented
+      # token beats a broken release.
       - name: Publish to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
         with:

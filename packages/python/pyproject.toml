@@ -7,7 +7,13 @@ name = "algeria-wilayas-communes"
 version = "1.0.0"
 description = "Algeria administrative divisions — 69 wilayas, daïras and 1541 communes (2025/2026 reform) with Arabic/French/English names and postal codes."
 readme = "README.md"
-requires-python = ">=3.8"
+# 3.9, not 3.8. importlib.resources.files() — which the loader is built on — was
+# added in 3.9, so on 3.8 the package installs happily and then fails at the
+# first call with `ImportError: cannot import name 'files'`. Declaring support
+# for a runtime the code provably cannot run on is worse than dropping it: pip
+# refuses the install and picks nothing, which is the honest outcome. 3.8 has
+# been end-of-life since October 2024.
+requires-python = ">=3.9"
 license = "CC0-1.0"
 authors = [{ name = "El Amin" }]
 keywords = [
@@ -18,10 +24,27 @@ keywords = [
 classifiers = [
   "Development Status :: 5 - Production/Stable",
   "Intended Audience :: Developers",
+  "License :: CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
   "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
   "Topic :: Scientific/Engineering :: GIS",
   "Typing :: Typed",
 ]
+
+# `dependencies` is deliberately ABSENT, not empty-and-commented: this package
+# has zero runtime dependencies and is meant to keep them. Notably there is no
+# fuzzy-matching library — the bounded Levenshtein in _search.py is hand-rolled
+# so that `pip install algeria-wilayas-communes` pulls in nothing at all.
+
+[project.optional-dependencies]
+# typing_extensions is dev-only and must never become a runtime dependency: it
+# backfills TypeGuard on 3.9, imported under `if TYPE_CHECKING`, which never
+# executes at run time.
+dev = ["pytest>=7", "mypy>=1.8", "ruff>=0.4", "typing_extensions>=4.5"]
 
 [project.urls]
 Homepage = "https://github.com/el-amin-dev/algeria-wilayas-communes"
@@ -35,3 +58,35 @@ packages = ["src/algeria_wilayas_communes"]
 # `artifacts` forces its inclusion in the built wheel (no path remap, no duplicate).
 [tool.hatch.build]
 artifacts = ["src/algeria_wilayas_communes/data/**"]
+
+[tool.pytest.ini_options]
+# --doctest-modules runs every `Example:` in every docstring. The docstrings are
+# the package's documentation — the IDE hover is where a user actually reads
+# them — and an example whose output does not match the shipped data is worse
+# than no example, so they are executed rather than trusted.
+addopts = "-q --doctest-modules"
+testpaths = ["tests", "src"]
+# Any ACCIDENTAL internal use of a v1 shim becomes a test failure. The shim
+# tests opt back in with pytest.warns(DeprecationWarning), which is what they
+# should be asserting anyway.
+filterwarnings = ["error::DeprecationWarning"]
+
+[tool.mypy]
+python_version = "3.9"
+strict = true
+warn_unreachable = true
+files = ["src"]
+
+[tool.ruff]
+target-version = "py39"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "RUF"]
+# RUF001/2/3 flag "ambiguous" Unicode - Arabic letters that resemble Latin ones.
+# This is a multilingual dataset library: those characters ARE the subject
+# matter, and _normalize.py cannot document the alef and ta-marbuta folds
+# without naming them. Suppressed package-wide rather than with a noqa on every
+# line that mentions a letter.
+ignore = ["RUF001", "RUF002", "RUF003"]
+

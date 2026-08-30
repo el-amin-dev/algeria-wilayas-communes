@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/el-amin-dev/algeria-wilayas-communes/schema/reform.schema.json",
+  "$id": "https://github.com/el-amin-dev/algeria-wilayas-communes/shared/schema/reform.schema.json",
   "title": "Loi 26-06 reform mapping (58 wilayas mères > 11 new wilayas)",
   "type": "object",
   "required": [

@@ -30,14 +30,14 @@ done
 
 ```bash
 # Integrity: counts, codes, cross-checks (no dependencies)
-python3 scripts/validate.py
+python3 shared/validate.py
 
 # Schema (needs: pipx install check-jsonschema)
-check-jsonschema --schemafile schema/algeria.schema.json data/algeria.json
-check-jsonschema --schemafile schema/reform.schema.json data/raw/reform.json
+check-jsonschema --schemafile shared/schema/algeria.schema.json data/algeria.json
+check-jsonschema --schemafile shared/schema/reform.schema.json data/raw/reform.json
 
 # Confirm every JSON file parses
-find data schema -name '*.json' -print0 | xargs -0 -I{} sh -c 'jq empty "{}" && echo "ok: {}"'
+find data shared/schema -name '*.json' -print0 | xargs -0 -I{} sh -c 'jq empty "{}" && echo "ok: {}"'
 ```
 
 ## Quick counts
@@ -80,10 +80,39 @@ bash -c '
   jq "{langues, nb_wilayas, wilayas: [.wilayas[] | {wilaya_num, code, nom_ar, nom_fr, nom_en, nb_dairas, nb_communes}]}" data/algeria.json > data/wilayas.json
   # ... (run the four regeneration blocks above) ...
 '
-python3 scripts/validate.py
+python3 shared/validate.py
 ```
 
 > Tip: once you add `scripts/build.sh` (optional), this becomes a single `bash scripts/build.sh`.
+
+## Work on the Python package
+
+```bash
+# REQUIRED FIRST. packages/python/src/algeria_wilayas_communes/data/ is
+# gitignored and only vendored in at publish time, so a fresh checkout imports
+# but cannot read a byte of data. This symlinks the real dataset into place.
+make dev
+
+python3 -m venv .venv && . .venv/bin/activate
+pip install -e "packages/python[dev]"
+
+make check          # pytest + mypy --strict + ruff + ruff format --check
+```
+
+The two packages are one product: same record ids, same search scores, same
+answers. What holds them together is `shared/` — the rules in
+`shared/contract/*.md` and the machine-readable fixtures in
+`shared/fixtures/*.json`, which BOTH test suites read.
+
+```bash
+# Regenerate the fixtures (they are build output, like data/ and generated/)
+pnpm build:data
+pnpm build:data --check     # fails if anything is stale or orphaned
+```
+
+**Never hand-edit `shared/fixtures/`.** Change the implementation, run
+`pnpm build:data`, and review the fixture diff — that diff *is* the change to
+the cross-language contract, which is exactly what wants reviewing.
 
 ## Release a new version
 

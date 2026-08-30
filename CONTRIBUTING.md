@@ -29,7 +29,16 @@ That's enough for someone else to make the fix.
 
 ## Regenerating derived files
 
-After editing `data/algeria.json`, rebuild the flat and per-wilaya files with `jq`:
+After editing `data/algeria.json`, regenerate everything downstream with:
+
+```bash
+pnpm build:data          # write
+pnpm build:data --check  # verify the tree is current, write nothing
+```
+
+That is the gated path: it reproduces all 73 JSON files **byte-identically**, emits the generated TypeScript and the shared fixtures, and runs the integrity assertions. `--check` is what CI enforces, so a change that forgets to regenerate fails there.
+
+The equivalent `jq` filters are kept below for anyone without the Node toolchain — they produce the same bytes, but they do not run the assertions and they do not update `packages/js/src/generated/` or `shared/fixtures/`:
 
 ```bash
 # flat wilayas
@@ -55,13 +64,58 @@ done
 
 ```bash
 # integrity (counts, codes, cross-checks) — no dependencies
-python3 scripts/validate.py
+python3 shared/validate.py
 
 # schema validation (needs: pipx install check-jsonschema)
-check-jsonschema --schemafile schema/algeria.schema.json data/algeria.json
+check-jsonschema --schemafile shared/schema/algeria.schema.json data/algeria.json
 ```
 
 Both must pass. The same checks run automatically in CI on every push and pull request.
+
+## Working on the packages
+
+Two packages ship from this repo — `packages/js` (npm) and `packages/python` (PyPI). They are **one product**: the same record ids, the same search scores, the same answers. What they must agree on is written down once in [`shared/contract/`](shared/contract/) and enforced by generated fixtures in `shared/fixtures/` that **both** test suites run against.
+
+Never hand-edit `shared/fixtures/`. Change the implementation, run `pnpm build:data`, and review the fixture diff — that diff *is* the change to the cross-language contract, which is exactly what should be under review.
+
+### The Python package
+
+**Do this first, before anything else.** The dataset lives at the repo root and is gitignored *inside* the package — it is only vendored in at publish time — so a fresh clone imports fine and then fails on the first call:
+
+```bash
+make dev
+# or, equivalently:
+ln -sfn ../../../../data packages/python/src/algeria_wilayas_communes/data
+```
+
+A symlink rather than a copy, so edits to `data/*.json` are visible immediately and there is no second copy to drift out of sync.
+
+Then set up an environment and install the package with its dev extra:
+
+```bash
+python3 -m venv .venv && . .venv/bin/activate
+pip install -e "packages/python[dev]"
+```
+
+The four gates, all of which CI runs — `make check` runs them in the same order:
+
+```bash
+python -m pytest packages/python -q                       # tests + every docstring example
+python -m mypy packages/python/src                         # strict
+python -m ruff check packages/python
+python -m ruff format --check packages/python
+```
+
+`pytest` runs with `--doctest-modules`, so **every `Example:` in every docstring is executed**. The docstrings are the package's real documentation — an IDE hover is where people actually read them — and an example whose output does not match the shipped data is worse than no example. If you add one, it has to be true.
+
+CI runs the suite on Python **3.9 – 3.13**. 3.9 is the floor because `importlib.resources.files`, which the loader is built on, was added in 3.9. Do not use syntax newer than that; `ruff` is configured with `target-version = "py39"` and will tell you.
+
+Two rules that are gated rather than merely encouraged:
+
+- **Zero runtime dependencies, forever.** Dev extras only. In particular the fuzzy matcher is hand-rolled — no `rapidfuzz`, no `python-Levenshtein`.
+- **Importing the package must read no data file**, and asking only for wilayas must not parse the 592 KB of commune data. Never write `X = build_something()` at module scope.
+
+If you change how names are folded or how ids are minted, you are changing the cross-language contract: update `shared/contract/`, regenerate the fixtures, and make sure the JavaScript side still passes.
 
 ## Data conventions
 

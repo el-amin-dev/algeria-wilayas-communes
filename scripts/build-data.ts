@@ -46,6 +46,7 @@
  * also feeds a second accumulator, `warnings`, which NEVER touches the exit code.
  */
 
+import { createHash } from "node:crypto";
 import { mkdirSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
@@ -72,6 +73,7 @@ const OVERRIDES_REL = "data/raw/en-overrides.json";
 const REFORM_REL = "data/raw/reform.json";
 const BY_WILAYA_DIR_REL = "data/by-wilaya";
 const GENERATED_DIR_REL = "packages/js/src/generated";
+const FIXTURES_DIR_REL = "shared/fixtures";
 
 /**
  * Directories whose entire contents this script owns. `--check` reports any file
@@ -79,7 +81,7 @@ const GENERATED_DIR_REL = "packages/js/src/generated";
  * leave a stale file shipping. `data/` itself is NOT listed: it holds the
  * hand-edited source and data/raw/, neither of which is generated.
  */
-const OUTPUT_DIRS = [BY_WILAYA_DIR_REL, GENERATED_DIR_REL] as const;
+const OUTPUT_DIRS = [BY_WILAYA_DIR_REL, GENERATED_DIR_REL, FIXTURES_DIR_REL] as const;
 
 /** Ground truth for the current dataset. Assertions 1, 3, 4 and 9 pin these. */
 const EXPECTED_WILAYA_COUNT = 69;
@@ -428,7 +430,7 @@ function readOverrides(failures: Failures): ReadonlyMap<string, string> {
  * Phase 2 — assert
  *
  * 19 checks. EVERY failure is accumulated; the caller prints them all, one per
- * line, and exits 1. Nothing stops at the first failure — `scripts/validate.py`
+ * line, and exits 1. Nothing stops at the first failure — `shared/validate.py`
  * reports all violations and this must match that behaviour.
  * =========================================================================== */
 
@@ -588,7 +590,7 @@ function assertIntegrity(source: Algeria, model: Model, failures: Failures): voi
   reportDuplicateKeys(dairaKeys, "A13", "wilaya_num, daira nom_fr", failures);
 
   // --- 14, 15, 16. The metadata counters ------------------------------------
-  // A NEW gate: scripts/validate.py never checked any of these three, so the
+  // A NEW gate: shared/validate.py never checked any of these three, so the
   // two counters could drift away from the records they describe.
   const withPostalCode = model.communes.filter((commune) => commune.postalCode !== null).length;
   const missingPostalCode = model.communes.length - withPostalCode;
@@ -1502,8 +1504,8 @@ function collectSearchEntries(model: Model): SearchEntry[] {
   // built, only two binary searches over this array at run time.
   //
   // The tie-break on `ref` is not cosmetic. `Array.prototype.sort` is only
-  // guaranteed stable within one engine version, and 1344 of these keys are
-  // duplicates (4402 keys, 3058 distinct). Without the tie-break the emitted
+  // guaranteed stable within one engine version, and 1347 of these keys are
+  // duplicates (4402 keys, 3055 distinct). Without the tie-break the emitted
   // bytes could differ between Node versions, which would break the
   // byte-identity discipline every other emitter in this file holds to.
   //
@@ -1621,6 +1623,335 @@ function emitSearchKeys(model: Model): string {
     "];",
     "",
   ].join("\n");
+}
+
+/* =========================================================================== *
+ * Phase 8 — the shared conformance fixtures
+ *
+ * `shared/fixtures/` is the cross-language contract in machine-readable form.
+ * Both test suites read it: tests/shared-fixtures.test.ts on this side, and
+ * packages/python/tests/test_shared_fixtures.py on the other.
+ *
+ * Why it exists: before it, the slug rule lived only in this file, the
+ * normalization rule only in packages/js/src/normalize.ts, and the ground-truth
+ * counts only in a design document. A second implementation in another language
+ * had to be written by hand against prose, and the failure mode is silent — two
+ * normalizers drift, every lookup misses, and no test fails because each suite
+ * only ever checks itself.
+ *
+ * These files are ordinary build outputs: written by `pnpm build:data`,
+ * verified by `--check`, and swept for orphans like every other output. A
+ * behaviour change that is not reflected here fails the build.
+ * =========================================================================== */
+
+/**
+ * Queries the two implementations must answer identically.
+ *
+ * Chosen to exercise every folding rule and every tier rather than to look
+ * thorough: accent folding on a corpus that has no accents (it is the QUERY
+ * that carries them), the tashkeel/tatweel/hamza-carrier folds, the apostrophe
+ * deletion, the 38 duplicated commune names, `limit`, `wilaya` scoping, the
+ * one-entry `en` override table, and all three fuzzy distances.
+ */
+const SEARCH_FIXTURE_CASES: ReadonlyArray<{
+  readonly query: string;
+  readonly options?: Record<string, unknown>;
+}> = [
+  // Latin case + accent folding. The dataset spells wilaya 06 "Bejaia" with no
+  // accents at all, so these prove the QUERY is folded, not the corpus.
+  { query: "bejaia" },
+  { query: "Bejaia" },
+  { query: "BEJAIA" },
+  { query: "bejaïa" },
+  { query: "Béjaïa" },
+  // Arabic: bare, ta-marbuta folded, vocalized, and elongated with a kashida.
+  { query: "بجاية" },
+  { query: "بجايه" },
+  { query: "بَجَايَة" },
+  { query: "بجـاية" },
+  // Apostrophes are deleted, never hyphenated: M'Sila is one word.
+  { query: "msila" },
+  { query: "M'Sila" },
+  { query: "المسيلة" },
+  { query: "sidi mhamed" },
+  // Hamza carrier: the Arabic for Algiers is very commonly typed with a bare ya.
+  { query: "الجزائر الوسطى" },
+  { query: "الجزاير الوسطي" },
+  { query: "tizi ouzou" },
+  { query: "تيزي وزو" },
+  { query: "bordj bou arreridj" },
+  // The canonical example row (ADR-006).
+  { query: "setif" },
+  { query: "سطيف" },
+  { query: "ain lahdjar", options: { kinds: ["commune"] } },
+  { query: "ain azel", options: { wilaya: 19 } },
+  // Duplicated commune names — the reason every result carries its wilaya.
+  { query: "sidi ameur", options: { kinds: ["commune"] } },
+  { query: "souk el had", options: { kinds: ["commune"] } },
+  // Tiers and options.
+  { query: "alg", options: { limit: 5 } },
+  { query: "ain" },
+  { query: "centre", options: { wilaya: 16 } },
+  { query: "algiers", options: { lang: "en" } },
+  { query: "algiers" },
+  // Fuzzy: distance 1 at length 6 and 5, distance 2 at length 7. The last one
+  // is why the maxDistance table jumps to 2 at length 6 rather than 8.
+  { query: "algier", options: { fuzzy: true } },
+  { query: "alget", options: { fuzzy: true } },
+  { query: "algeirs", options: { fuzzy: true } },
+  { query: "algeirs" },
+  // The cheapest possible answer to the most common accidental call.
+  { query: "" },
+  { query: "   " },
+  // The substring tier's script prune classifies on `charCode < 0x80`, i.e. any
+  // non-space ASCII, so the one Arabic key containing an ASCII "(" is reachable
+  // by an ASCII-classified query. A scoped search must still refuse it: the
+  // Python port applied the language filter in the unscoped branch only and
+  // returned that record where JavaScript returns nothing. Three query shapes
+  // in the whole corpus can express this, and none of the cases above did.
+  { query: "(", options: { wilaya: 27 } },
+  { query: "(", options: { wilaya: 27, lang: "fr" } },
+  { query: "(" },
+];
+
+/**
+ * Inputs that pin the slug rule's edges.
+ *
+ * `ids.json` is already the exhaustive proof — all 2132 ids are derived through
+ * `slug()` — so this table exists for the cases that would otherwise only be
+ * observable as a diff in a 2132-line file, and it names what each one tests.
+ */
+const SLUG_FIXTURE_CASES: readonly string[] = [
+  "Sidi M'hamed", // apostrophe deleted, not hyphenated
+  "M'Sila",
+  "Abi-Youcef", // an existing hyphen survives
+  "Alger Centre",
+  "Bordj Bou Arreridj",
+  "Béjaïa", // NFD + combining-mark strip
+  "Aïn Témouchent",
+  "B. B. Arreridj", // full stops are dropped, NOT turned into separators
+  "Z'barbar (El Isseri )", // parentheses dropped; trailing separator trimmed
+  "Ain Azel", // the canonical example (ADR-006)
+  "Ain Lahdjar",
+];
+
+/**
+ * Inputs that pin the normalization rule.
+ *
+ * Every fold class gets a row, in both scripts. The Arabic rows matter most:
+ * the alef and hamza-carrier folds are produced by NFD plus the combining-mark
+ * strip, not by an explicit character map, and an implementation that adds an
+ * explicit alef fold AFTER NFD gets a silent no-op that this table catches.
+ */
+const NORMALIZE_FIXTURE_CASES: readonly string[] = [
+  "Béjaïa",
+  "BEJAIA",
+  "bejaïa",
+  "M'Sila",
+  "Sidi M'hamed",
+  "Abi-Youcef", // hyphen becomes a space here, unlike in slug()
+  "  Tizi-Ouzou  ",
+  "Alger Centre",
+  "Setif",
+  "بجاية", // ta marbuta -> ha
+  "بجايه",
+  "بَجَايَة", // tashkeel stripped
+  "بجـاية", // tatweel stripped
+  "أدرار", // alef with hamza above -> bare alef
+  "إدرار",
+  "آدرار",
+  "ٱدرار", // alef wasla -> bare alef
+  "الجزائر", // hamza on ya carrier -> ya
+  "الجزاير",
+  "الجزائر الوسطى", // alef maqsura -> ya
+  "الجزاير الوسطي",
+  "سطيف",
+  "عين الحجر",
+  "", // empty stays empty
+  "   ", // whitespace-only collapses to empty
+];
+
+function sha256Hex(value: string): string {
+  return createHash("sha256").update(value, "utf8").digest("hex");
+}
+
+/**
+ * The ids fixture — the exhaustive byte-identity pin.
+ *
+ * 591 daira ids + 1541 commune ids, in document order. A port that gets the
+ * slug rule even slightly wrong diverges here, on a named record, rather than
+ * silently producing a database column of ids that will not join.
+ */
+function emitIdsFixture(model: Model): unknown {
+  return {
+    $comment:
+      "GENERATED BY scripts/build-data.ts — DO NOT EDIT. Library-assigned record ids, " +
+      "not official. See shared/contract/ids.md.",
+    dairas: model.dairas.map((daira) => daira.id),
+    communes: model.communes.map((commune) => commune.id),
+  };
+}
+
+function emitSlugFixture(): unknown {
+  return {
+    $comment: "GENERATED BY scripts/build-data.ts — DO NOT EDIT. See shared/contract/slug.md.",
+    cases: SLUG_FIXTURE_CASES.map((input) => ({ input, expected: slug(input) })),
+  };
+}
+
+/**
+ * The normalize fixture: named edge cases, plus a digest of the whole key set.
+ *
+ * The digest is what makes this exhaustive without shipping a second copy of
+ * the 4402 keys that `search-keys.ts` already holds. A mismatch says "your
+ * normalizer disagrees somewhere"; the named cases above are what localize it,
+ * and the cross-language test diffs the actual keys when one is needed.
+ */
+function emitNormalizeFixture(model: Model): unknown {
+  const entries = collectSearchEntries(model);
+  const keys = entries.map((entry) => entry.key);
+  return {
+    $comment: "GENERATED BY scripts/build-data.ts — DO NOT EDIT. See shared/contract/normalize.md.",
+    cases: NORMALIZE_FIXTURE_CASES.map((input) => ({ input, expected: normalize(input) })),
+    keys: {
+      count: keys.length,
+      distinct: new Set(keys).size,
+      // Sorted ascending by (key, ref) at build time. The join is on "\n" so a
+      // reimplementation can reproduce it without guessing a separator.
+      sha256: sha256Hex(keys.join("\n")),
+    },
+    refs: {
+      count: entries.length,
+      sha256: sha256Hex(entries.map((entry) => entry.ref).join(",")),
+    },
+  };
+}
+
+/**
+ * The dataset facts both packages assert, in one place.
+ *
+ * Every number here was measured from `data/`, never assumed, and each is
+ * load-bearing somewhere: 38 shared postal codes is why `findByPostalCode`
+ * returns a list; 1500 distinct commune names against 1541 records is why an
+ * id carries its wilaya prefix; 545 distinct daira names against 591 pairs is
+ * the reform splitting daires across wilayas.
+ */
+function emitGroundTruthFixture(model: Model): unknown {
+  const withPostal = model.communes.filter((commune) => commune.postalCode !== null);
+  const postalCounts = new Map<string, number>();
+  for (const commune of withPostal) {
+    const code = commune.postalCode as string;
+    postalCounts.set(code, (postalCounts.get(code) ?? 0) + 1);
+  }
+  const exonyms = [
+    ...model.wilayas.filter((w) => w.name.en !== w.name.fr).map((w) => w.name.fr),
+    ...model.dairas.filter((d) => d.name.en !== d.name.fr).map((d) => d.name.fr),
+    ...model.communes.filter((c) => c.name.en !== c.name.fr).map((c) => c.name.fr),
+  ];
+  return {
+    $comment:
+      "GENERATED BY scripts/build-data.ts — DO NOT EDIT. Measured from data/, never assumed.",
+    counts: {
+      wilayas: model.wilayas.length,
+      dairas: model.dairas.length,
+      communes: model.communes.length,
+      searchableRecords: model.wilayas.length + model.dairas.length + model.communes.length,
+    },
+    postalCodes: {
+      present: withPostal.length,
+      missing: model.communes.length - withPostal.length,
+      malformed: withPostal.filter((c) => !POSTAL_CODE_PATTERN.test(c.postalCode as string)).length,
+      distinct: postalCounts.size,
+      sharedByMoreThanOneCommune: [...postalCounts.values()].filter((n) => n > 1).length,
+    },
+    nameUniqueness: {
+      // (wilaya, nom_fr) is unique for both levels — that is what makes the
+      // synthesized ids safe.
+      communeWilayaNamePairs: new Set(model.communes.map((c) => `${c.wilaya} ${c.name.fr}`)).size,
+      distinctCommuneNames: new Set(model.communes.map((c) => c.name.fr)).size,
+      dairaWilayaNamePairs: new Set(model.dairas.map((d) => `${d.wilaya} ${d.name.fr}`)).size,
+      distinctDairaNames: new Set(model.dairas.map((d) => d.name.fr)).size,
+    },
+    // Exactly one record in 2201 has an English exonym.
+    exonyms,
+    // The 27 communes published without a postal code. They cannot be filled —
+    // no available source has them — and inventing one would end the package's
+    // credibility permanently.
+    communesMissingPostalCode: model.communes
+      .filter((commune) => commune.postalCode === null)
+      .map((commune) => commune.id),
+    // Duplicated commune names, asserted by name and not merely by count.
+    duplicatedCommuneNameExamples: ["Sidi Ameur", "Souk El Had"].map((name) => ({
+      name,
+      wilayas: model.communes.filter((c) => c.name.fr === name).map((c) => c.wilaya),
+    })),
+    // The frozen dairas.json / communes.json field asymmetry (see DECISIONS.md).
+    flatFileFieldCounts: {
+      daira: 8,
+      commune: 12,
+      dairaHasWilayaAr: false,
+      communeHasWilayaAr: true,
+    },
+  };
+}
+
+function fixtureOutputs(model: Model): Output[] {
+  return [
+    { kind: "json", relPath: `${FIXTURES_DIR_REL}/ids.json`, value: emitIdsFixture(model) },
+    { kind: "json", relPath: `${FIXTURES_DIR_REL}/slug.json`, value: emitSlugFixture() },
+    {
+      kind: "json",
+      relPath: `${FIXTURES_DIR_REL}/normalize.json`,
+      value: emitNormalizeFixture(model),
+    },
+    {
+      kind: "json",
+      relPath: `${FIXTURES_DIR_REL}/ground-truth.json`,
+      value: emitGroundTruthFixture(model),
+    },
+  ];
+}
+
+/**
+ * The search fixture, produced by running the real `search()`.
+ *
+ * Imported dynamically, and only here, for two reasons. `search.ts` reads
+ * `generated/search-keys.ts`, which this script writes — so the import has to
+ * happen after Phase 4, or it would capture the previous build's keys. And
+ * `tests/slug.test.ts` imports `slug` from this module; a static import would
+ * make that test pull in and evaluate the entire search index as a side effect.
+ */
+async function searchFixtureOutput(): Promise<Output> {
+  const { search } = await import("../packages/js/src/search");
+  return {
+    kind: "json",
+    relPath: `${FIXTURES_DIR_REL}/search.json`,
+    value: {
+      $comment:
+        "GENERATED BY scripts/build-data.ts — DO NOT EDIT. Produced by running the real " +
+        "search(). See shared/contract/search.md.",
+      scoring: {
+        exact: 1,
+        prefix: "0.7 + 0.2 * (query.length / key.length)",
+        substring: "0.4 + 0.2 * (query.length / key.length)",
+        fuzzy: "0.35 - 0.05 * (distance - 1)",
+        tieBreak: ["score desc", "kind (wilaya, daira, commune)", "wilaya code asc", "key asc"],
+        maxDistanceByQueryLength: { "<=3": 0, "4-5": 1, ">=6": 2 },
+        defaultLimit: 20,
+      },
+      cases: SEARCH_FIXTURE_CASES.map((testCase) => ({
+        query: testCase.query,
+        options: testCase.options ?? {},
+        results: search(testCase.query, testCase.options as never).map((result) => ({
+          kind: result.kind,
+          id: result.kind === "wilaya" ? result.item.codeText : result.item.id,
+          wilaya: result.wilaya.code,
+          score: result.score,
+          matched: result.matched,
+        })),
+      })),
+    },
+  };
 }
 
 /**
@@ -2185,7 +2516,7 @@ function emitReform(reform: Reform): string {
  * Entry point
  * =========================================================================== */
 
-function main(): void {
+async function main(): Promise<void> {
   const checkOnly = process.argv.slice(2).includes("--check");
   const failures: Failures = [];
   const warnings: Warnings = [];
@@ -2216,14 +2547,29 @@ function main(): void {
   }
 
   // Phases 3 and 6
-  const outputs = [...projectJsonOutputs(source), ...emitTypeScriptOutputs(model, source, reform)];
+  const outputs = [
+    ...projectJsonOutputs(source),
+    ...emitTypeScriptOutputs(model, source, reform),
+    ...fixtureOutputs(model),
+  ];
 
-  // Phase 4
+  // Phase 4, in two passes.
+  //
+  // The search fixture is produced last and on its own because search.ts reads
+  // generated/search-keys.ts: in a write run that file has to be on disk before
+  // the import, or the fixture would record the PREVIOUS build's answers while
+  // every other output moved forward — a drift the fixtures exist to prevent.
+  if (!checkOnly) writeOutputs(outputs);
+
+  const allOutputs = [...outputs, await searchFixtureOutput()];
+
   if (checkOnly) {
-    const differing = checkOutputs(outputs);
+    // One check pass over everything, so findOrphans() sees the full expected
+    // set. Checking in two passes would report the search fixture as an orphan.
+    const differing = checkOutputs(allOutputs);
     if (differing.length > 0) {
       console.error(
-        `build-data --check: ${differing.length} of ${outputs.length} outputs are out of date ` +
+        `build-data --check: ${differing.length} of ${allOutputs.length} outputs are out of date ` +
           `— run \`pnpm build:data\``,
       );
       for (const relPath of differing) console.error(relPath);
@@ -2231,7 +2577,7 @@ function main(): void {
       return;
     }
   } else {
-    writeOutputs(outputs);
+    writeOutputs(allOutputs.slice(outputs.length));
   }
 
   // Warnings first, so the success lines are the last thing on the terminal and
@@ -2270,4 +2616,12 @@ const entryPath = process.argv[1];
 const isEntryPoint =
   entryPath !== undefined && pathToFileURL(resolve(entryPath)).href === import.meta.url;
 
-if (isEntryPoint) main();
+if (isEntryPoint) {
+  // main() is async only because the search fixture needs a dynamic import.
+  // An unhandled rejection would exit 0 on some Node versions, so the failure
+  // path is made explicit rather than left to the default handler.
+  main().catch((error: unknown) => {
+    console.error(error);
+    process.exitCode = 1;
+  });
+}

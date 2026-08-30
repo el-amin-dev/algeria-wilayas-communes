@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/el-amin-dev/algeria-wilayas-communes/schema/algeria.schema.json",
+  "$id": "https://github.com/el-amin-dev/algeria-wilayas-communes/shared/schema/algeria.schema.json",
   "title": "Algeria administrative divisions (wilaya > daira > commune)",
   "type": "object",
   "required": ["pays", "langues", "nb_wilayas", "nb_dairas", "nb_communes", "wilayas"],

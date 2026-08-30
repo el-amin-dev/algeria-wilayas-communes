@@ -25,17 +25,133 @@ jobs:
 
       - name: Check all JSON files are valid
         run: |
-          find data schema -name '*.json' -print0 \
+          find data shared/schema -name '*.json' -print0 \
             | xargs -0 -I{} sh -c 'jq empty "{}" || { echo "Invalid JSON: {}"; exit 1; }'
 
       - name: Install schema validator
         run: pip install check-jsonschema
 
       - name: Validate source against JSON Schema
-        run: check-jsonschema --schemafile schema/algeria.schema.json data/algeria.json
+        run: check-jsonschema --schemafile shared/schema/algeria.schema.json data/algeria.json
 
       - name: Validate reform stub against JSON Schema
-        run: check-jsonschema --schemafile schema/reform.schema.json data/raw/reform.json
+        run: check-jsonschema --schemafile shared/schema/reform.schema.json data/raw/reform.json
 
       - name: Run integrity checks
-        run: python3 scripts/validate.py
+        run: python3 shared/validate.py
+
+  # The Python package had NO CI coverage at all before session 5: it was never
+  # built, imported, tested, type-checked or linted by any workflow, while the
+  # JavaScript side accumulated 1136 tests. The two shipped from the same tag.
+  python:
+    name: Python ${{ matrix.python-version }}
+    runs-on: ubuntu-latest
+
+    strategy:
+      # One version failing must not cancel the others. A 3.9-only break is
+      # exactly the kind this matrix exists to surface, and fail-fast would
+      # hide whether it is version-specific or universal.
+      fail-fast: false
+      matrix:
+        # Must agree with `requires-python = ">=3.9"` in
+        # packages/python/pyproject.toml. Listing a version the floor excludes
+        # would make the install step fail and the job would be testing
+        # nothing; dropping one the floor allows would let it rot untested.
+        python-version: ["3.9", "3.10", "3.11", "3.12", "3.13"]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      # The same step `make dev` runs. Having CI depend on it is deliberate: if
+      # the local-development path breaks, this job goes red before a
+      # contributor hits it as an unexplained FileNotFoundError.
+      - name: Link dataset into the package
+        run: ln -sfn ../../../../data packages/python/src/algeria_wilayas_communes/data
+
+      - name: Install
+        run: python -m pip install -e "packages/python[dev]"
+
+      - name: Test
+        run: python -m pytest packages/python -q
+
+      - name: Type check
+        run: python -m mypy packages/python/src
+
+      - name: Lint
+        run: python -m ruff check packages/python
+
+      - name: Format check
+        run: python -m ruff format --check packages/python
+
+  # The two packages describe one dataset and must agree about it. Locally the
+  # conformance and cross-language tests skip when packages/js/dist is absent,
+  # which means the assertion that actually matters -- that 2132 record ids and
+  # every search result are identical across the two languages -- can silently
+  # never run. This job has both toolchains, so it runs them for real.
+  #
+  # Separate from `python` on purpose: a Python-only failure should not be
+  # buried under a Node build log.
+  cross-language:
+    name: Cross-language conformance
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "pnpm"
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Node dependencies
+        run: pnpm install --frozen-lockfile
+
+      # packages/js/dist is gitignored, so the cross-language test has nothing
+      # to compare against until this runs.
+      - name: Build the JavaScript package
+        run: pnpm build
+
+      - name: Link dataset into the Python package
+        run: ln -sfn ../../../../data packages/python/src/algeria_wilayas_communes/data
+
+      - name: Install the Python package
+        run: python -m pip install -e "packages/python[dev]"
+
+      # The generated fixtures must match what the generator produces, or the
+      # shared contract is describing a build nobody ran.
+      - name: Check the shared fixtures are current
+        run: pnpm build:data --check
+
+      - name: JavaScript conformance
+        run: pnpm vitest run tests/shared-fixtures.test.ts
+
+      # The cross-language tests skip themselves when the JS bundle is absent,
+      # which is right locally and wrong here: this job exists BECAUSE those are
+      # the assertions that must not silently never run. Without this
+      # precondition, a build that stopped emitting index.cjs would turn the
+      # whole job into a green no-op.
+      - name: Assert the JS bundle the diff needs actually exists
+        run: test -f packages/js/dist/index.cjs
+
+      - name: Python conformance and cross-language diff
+        run: |
+          python -m pytest \
+            packages/python/tests/test_shared_fixtures.py \
+            packages/python/tests/test_cross_language.py \
+            -q

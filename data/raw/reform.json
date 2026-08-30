@@ -1,5 +1,5 @@
 {
-  "$schema": "../../schema/reform.schema.json",
+  "$schema": "../../shared/schema/reform.schema.json",
   "$comment": "STUB — parentCode is NOT yet supplied for any entry. Fill each one from the text of Loi 26-06, Journal Officiel n°25 (5 April 2026), set a real `source` citation, and set `confidence` to \"confirmed\". DO NOT guess. DO NOT paste the postal-prefix candidates from the session document — they are unverified heuristics, not a source.",
   "law": "Loi 26-06",
   "journalOfficiel": "JO n°25",

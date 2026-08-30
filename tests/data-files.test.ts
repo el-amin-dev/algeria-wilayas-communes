@@ -4,7 +4,7 @@
  * README. These tests pin its bytes, its key order and its agreement with
  * `data/algeria.json` — the hand-edited source of truth.
  *
- * They also close the biggest hole in `scripts/validate.py`: that script checks
+ * They also close the biggest hole in `shared/validate.py`: that script checks
  * the derived files by COUNT only and **never opens `data/dairas.json` at all**,
  * so that 142,867-byte file could be empty, stale or truncated and CI would stay
  * green. Everything below is a field-by-field cross-check that nothing else in
@@ -177,7 +177,7 @@ describe("data/ file inventory", () => {
 // The property `scripts/build-data.ts` must satisfy. Testing it in-process
 // (~40 ms) beats waiting for a CI `git diff --exit-code data/` (~40 s), and it
 // forces every one of the 72 files to actually be opened and parsed — including
-// `dairas.json`, which `scripts/validate.py` never reads.
+// `dairas.json`, which `shared/validate.py` never reads.
 
 describe("byte-identity round-trip", () => {
   it.each(GENERATED_DATA_FILES)(
@@ -298,7 +298,7 @@ describe("frozen key order", () => {
 });
 
 // ── (c) The field-by-field cross-check nothing performs today ───────────────
-// `scripts/validate.py` checks the derived files by COUNT only. A flat file
+// `shared/validate.py` checks the derived files by COUNT only. A flat file
 // could carry a stale `wilaya_fr` for a renamed wilaya, or be truncated, and
 // nothing would notice. Mismatches are accumulated and reported together so a
 // failure names every offending record rather than only the first.
