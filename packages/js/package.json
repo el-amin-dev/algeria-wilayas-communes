@@ -18,21 +18,105 @@
     "dataset"
   ],
   "type": "module",
-  "main": "index.js",
-  "types": "index.d.ts",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "wilayas": [
+        "./dist/wilayas.d.ts"
+      ],
+      "dairas": [
+        "./dist/dairas.d.ts"
+      ],
+      "communes": [
+        "./dist/communes.d.ts"
+      ],
+      "zod": [
+        "./dist/zod.d.ts"
+      ],
+      "legacy": [
+        "./dist/legacy.d.ts"
+      ]
+    }
+  },
   "exports": {
     ".": {
-      "types": "./index.d.ts",
-      "import": "./index.js"
+      "types": {
+        "import": "./dist/index.d.ts",
+        "require": "./dist/index.d.cts"
+      },
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs",
+      "default": "./dist/index.mjs"
     },
-    "./data/*": "./data/*"
+    "./wilayas": {
+      "types": {
+        "import": "./dist/wilayas.d.ts",
+        "require": "./dist/wilayas.d.cts"
+      },
+      "import": "./dist/wilayas.mjs",
+      "require": "./dist/wilayas.cjs",
+      "default": "./dist/wilayas.mjs"
+    },
+    "./dairas": {
+      "types": {
+        "import": "./dist/dairas.d.ts",
+        "require": "./dist/dairas.d.cts"
+      },
+      "import": "./dist/dairas.mjs",
+      "require": "./dist/dairas.cjs",
+      "default": "./dist/dairas.mjs"
+    },
+    "./communes": {
+      "types": {
+        "import": "./dist/communes.d.ts",
+        "require": "./dist/communes.d.cts"
+      },
+      "import": "./dist/communes.mjs",
+      "require": "./dist/communes.cjs",
+      "default": "./dist/communes.mjs"
+    },
+    "./zod": {
+      "types": {
+        "import": "./dist/zod.d.ts",
+        "require": "./dist/zod.d.cts"
+      },
+      "import": "./dist/zod.mjs",
+      "require": "./dist/zod.cjs",
+      "default": "./dist/zod.mjs"
+    },
+    "./legacy": {
+      "types": {
+        "import": "./dist/legacy.d.ts",
+        "require": "./dist/legacy.d.cts"
+      },
+      "import": "./dist/legacy.mjs",
+      "require": "./dist/legacy.cjs",
+      "default": "./dist/legacy.mjs"
+    },
+    "./data/*": "./data/*",
+    "./package.json": "./package.json"
   },
   "files": [
-    "index.js",
-    "index.d.ts",
-    "data"
+    "dist",
+    "data",
+    "LICENSE"
   ],
   "sideEffects": false,
+  "scripts": {
+    "build": "tsup",
+    "prepack": "tsup",
+    "lint:publish": "publint --strict && attw --pack ."
+  },
+  "peerDependencies": {
+    "zod": "^3.23.0 || ^4.0.0"
+  },
+  "peerDependenciesMeta": {
+    "zod": {
+      "optional": true
+    }
+  },
   "license": "CC0-1.0",
   "author": "El Amin (https://el-amin.dev)",
   "homepage": "https://github.com/el-amin-dev/algeria-wilayas-communes#readme",

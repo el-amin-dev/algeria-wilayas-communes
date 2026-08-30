@@ -15,11 +15,40 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
           node-version: "20"
           registry-url: "https://registry.npmjs.org"
+          cache: "pnpm"
+
+      # Session 4 made packages/js an ESM+CJS build: `exports` now points into
+      # dist/, which is gitignored and does not exist in a fresh checkout.
+      # Without these two steps `npm publish` would ship a tarball whose every
+      # entry point 404s. The package's `prepack` also runs tsup, but prepack
+      # cannot install the toolchain it needs -- that is what this is for.
+      - name: Install
+        run: pnpm install --frozen-lockfile
+
+      - name: Build
+        run: pnpm build
+
+      # A tag push publishes immediately and irreversibly -- npm allows unpublish
+      # only within 72 hours, and never for a version anyone has depended on. So
+      # every gate this repo has runs HERE, before `npm publish`, rather than
+      # only on a developer's machine. ci.yml still has no Node job (session 6
+      # owns that); until it does, this is the only place any of them run
+      # automatically.
+      - name: Gate
+        run: |
+          pnpm typecheck
+          pnpm lint
+          pnpm test
+          pnpm lint:publish
+          pnpm size
 
       - name: Copy data into package
         run: |
@@ -34,14 +63,29 @@ jobs:
           # public data subpath is the same table with a disclaimer attached.
           rm -rf packages/js/data/raw
 
+      # pack:check runs after the data copy, since it asserts the tarball carries
+      # the whole 73-file contract -- which only exists once the copy has run.
+      - name: Check the tarball
+        run: pnpm pack:check
+
       - name: Sync package version to tag
         run: |
           VERSION="${GITHUB_REF_NAME#v}"
           cd packages/js
           npm version "$VERSION" --no-git-tag-version --allow-same-version
 
+      # A prerelease MUST NOT become the default install.
+      #
+      # `npm publish` with no --tag always writes `latest`, so `git tag v2.0.0-rc.1`
+      # would serve the RC to everyone running `npm i algeria-wilayas-communes`
+      # until someone noticed and re-tagged by hand. Semver says a version with a
+      # hyphen is a prerelease; that is the whole test.
       - name: Publish
-        run: npm publish --access public
+        run: |
+          VERSION="${GITHUB_REF_NAME#v}"
+          if [[ "$VERSION" == *-* ]]; then TAG=next; else TAG=latest; fi
+          echo "Publishing $VERSION to dist-tag: $TAG"
+          npm publish --access public --tag "$TAG"
         working-directory: packages/js
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

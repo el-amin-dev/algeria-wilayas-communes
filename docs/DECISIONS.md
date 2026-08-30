@@ -206,6 +206,131 @@ assertions are the only thing standing between rows 2–11 and a guess.
 
 ---
 
+## ADR-008 — Inlined TS literals cost ~4.7× `JSON.parse`; the fix is deferred
+
+**Status:** accepted (v2.0.0) — the measurement is binding, the remedy is not taken yet
+
+Sessions 2, 4 and 6 all assert, in prose, that v2 "kills the 1.10 ms first-call parse" because
+inlined TypeScript constants are evaluated by the JS engine during module evaluation rather than by
+a `JSON.parse`. **Measured, that is backwards.**
+
+Isolated, both payloads pre-read into memory, no disk I/O in the timed region (Node v22.18.0):
+
+| | bytes | cost |
+|---|---|---|
+| `JSON.parse(communes.json)` | 559,881 | ~1.3 ms |
+| evaluating the `COMMUNES` literal | 237,041 | ~6.0 ms |
+
+The JS literal is **less than half the bytes** and still costs **4.5–4.9×** more. V8's JSON parser
+is specialised; object-literal compilation is not.
+
+End to end, from `pnpm bench` on this checkout — cold is import + first call, reported separately
+because v1 and v2 pay it in different places:
+
+| op | v1 import | v1 first | **v1 total** | v2 import | v2 first | **v2 total** |
+|---|---|---|---|---|---|---|
+| `getWilayas()` | 1.92 | 0.12 | **2.04 ms** | 7.54 | 0.11 | **7.65 ms** |
+| `getCommunes()` | 1.89 | 3.49 | **5.38 ms** | 7.43 | 0.04 | **7.48 ms** |
+| `getAll()` | 1.90 | 1.96 | **3.85 ms** | 7.46 | 1.30 | **8.76 ms** |
+| `findByPostalCode()` | 1.92 | 3.65 | **5.57 ms** | 7.68 | 0.38 | **8.05 ms** |
+| `findCommune()` | 1.92 | 3.66 | **5.58 ms** | 7.69 | 1.23 | **8.93 ms** |
+
+**v2's cold path is slower in every row**, and worst where v1 was fastest — `getWilayas()` costs
+3.7× more, because v1 parsed only the 13 kB wilaya file while v2 evaluates the whole 578 kB bundle
+whatever you asked for.
+
+**Decision.** Publish the regression. `benchmarks/run.mjs` reports both halves of the cold cost and
+the honest total; session 6's README table shows this direction, not the spec's. The size budgets in
+`.size-limit.js` are seeded from measurement for the same reason: normalizing the records cut the
+**raw** payload 59 % (559,881 → 229,334 B) but gzip had already collapsed the denormalized
+repetition, so the **compressed** size moved by +1.7 %. The spec's "−41 % on communes" and its
+26 KB floor do not exist.
+
+**What v2 actually won** — all still true, all worth publishing:
+
+- warm `findByPostalCode` **5.92 µs → 0.032 µs (~185×)**, and O(1) instead of O(n), so it stays flat
+  inside a consumer's loop;
+- it runs in a browser, a Worker, Deno and React Native **at all**, which v1 cannot — no exports-map
+  trick fixes `node:fs`, only removing the filesystem read does;
+- the metadata split: a wilaya `<select>` costs **2.36 kB** gzip instead of 96.9 kB.
+
+**The remedy, measured and deliberately not taken in this session.** Emitting
+`export const COMMUNES = JSON.parse('[…]')` is the documented V8 technique that would recover the
+cold path while keeping fs-free portability. It is not free, and both costs are now measured rather
+than estimated:
+
+- **Types.** `JSON.parse` returns `any`, so the `as const` literal types disappear. Viable for
+  `COMMUNES` and `DAIRAS` with an explicit annotation; **not** for `WILAYAS`, on which `WilayaCode`
+  and `NameOf<C>` narrowing depend.
+- **Bytes.** It is *larger*: for `COMMUNES`, 46,896 B gzip today as a minified object literal versus
+  **49,120 B** as a `JSON.parse` string — a 4.7 % increase, ~2.2 kB, traded for the cold win.
+
+A third option is better on both axes and was not in the spec at all: a **tuple encoding** drops the
+repeated keys entirely and measures **41,043 B** gzip, −12.5 % against today *and* a smaller literal
+to evaluate. It costs a hand-written row-to-record mapping and changes what `generated/*.ts` looks
+like.
+
+Deferred because this session's subject is packaging, and any of the three touches
+`scripts/build-data.ts` — the byte-gated emitter behind sessions 2 and 3 — and re-opens every
+integrity assertion and the `--check` output contract. **Whichever is chosen needs its own session
+and its own ADR.** What is not acceptable is repeating the original claim: it is exactly the kind of
+assertion a sceptical reader benchmarks and catches, which the spec itself warns about for the warm
+path.
+
+---
+
+## ADR-009 — Three standalone tier entries; `/lite` is not shipped
+
+**Status:** accepted (v2.0.0)
+
+The metadata split (`/wilayas`, `/dairas`, `/communes`) is the headline of the packaging work: a
+developer rendering a wilaya `<select>` should download 69 records, not 1541 communes. Two decisions
+were forced while implementing it.
+
+**1. The tiers are standalone, not re-exports of `api.ts`.**
+
+Re-exporting looked obvious and is wrong. `api.ts`'s `getWilayas(opts?: AsOfOptions)` calls
+`wantsLegacyView(opts)` from `asof.ts`, which imports `generated/communes`. The reference is
+unconditional in the module graph even though the *call* is conditional, so **no bundler may drop
+it**. Measured: importing `getWilayas` alone from the root is **64.7 kB** gzip; `/wilayas` is
+**2.36 kB**. `.size-limit.js` keeps both rows precisely so that comparison cannot rot.
+
+Proven on bytes rather than inferred from the totals — an esbuild bundle of nothing but
+`import { getWilayas }`:
+
+| bundle | gzip | corpus-only key `"abelsa"` | commune id `19-ain-azel-ain-lahdjar` |
+|---|---|---|---|
+| root, full API | 96.9 kB | present | present |
+| root, `getWilayas` only | 64.8 kB | **shaken out** | **still present** |
+| `/wilayas`, `getWilayas` only | 2.1 kB | absent | absent |
+
+So tree-shaking is working — it removes the 4402-key search corpus and the reform resolvers — and it
+still cannot remove the commune table, because `asof.ts` references it unconditionally. The 30×
+difference between rows two and three is the entire case for the split.
+
+So `src/tiers/{wilayas,dairas,communes}.ts` reimplement their tier over the generated data, behind
+thin entry barrels. `tsup`'s `splitting: false` already gives every entry its own copy of everything,
+so the duplication costs nothing a shared chunk would have saved. **Given up:** each tier omits
+`asOf` (derived over commune re-attribution) and `/communes` omits name search (the normalized
+corpus is 109 kB, larger than the commune records). Both live at the root. `tests/entries.test.ts`
+pins every overlapping function deeply equal to the root's, because two implementations that
+silently diverge is the real cost of this shape.
+
+**2. `/lite` is not shipped.** Seven subpaths, not eight.
+
+The spec describes `/lite` as codes + `fr` names only, dropped from `/communes` by tree-shaking with
+`treeshake: true`. **Rollup cannot do that.** Tree-shaking removes unreachable bindings; it cannot
+remove `ar` and `en` *properties* from a frozen `as const` array of object literals. `/lite` would
+need its own generated data module and a new phase in `scripts/build-data.ts` — the byte-gated
+emitter, with 20 integrity assertions and an 80-output `--check` contract.
+
+The spec itself already asks whether `/lite` earns a permanent place, and this session supplies the
+number that answers it: at **2.36 kB**, `/wilayas` is roughly a fifth of `/lite`'s projected
+12,577 B, and `/lite`'s stated use case is "I only need names for a dropdown". **Removing an export
+before 2.0.0 costs nothing; after, it costs a major.** So it is not shipped, and session 6 owns the
+cut-down pass with the measurement in hand.
+
+
 ## Recorded, deliberately not fixed
 
 - **`DairaFlat` has no `wilaya_ar`** (8 fields) while `CommuneFlat` does (12). Almost certainly an

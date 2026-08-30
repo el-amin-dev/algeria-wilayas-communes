@@ -1,0 +1,5 @@
+{
+  "name": "awc-treeshake-fixture",
+  "private": true,
+  "type": "module"
+}

@@ -81,7 +81,16 @@ const REPO_ROOT = fileURLToPath(new URL("../../", import.meta.url));
 const PACKAGE_DIR = join(REPO_ROOT, "packages", "js");
 const DIST_DIR = join(PACKAGE_DIR, "dist");
 
-/** Session 4 produces `dist/`. Until it does, everything below is skipped. */
+/**
+ * Session 4 produced `dist/`, so the skip below is now a historical artefact
+ * rather than a live deferral.
+ *
+ * It is kept because `pnpm test` on a fresh clone legitimately runs before
+ * `pnpm build` -- but it is no longer *silent*: the final case in this file
+ * fails when `dist/` is absent, so a green run can never again mean "the entire
+ * require() contract was skipped". That is exactly what happened for one whole
+ * session while this was waiting to be unblocked.
+ */
 const HAS_DIST = existsSync(DIST_DIR);
 
 // ── The sandbox ─────────────────────────────────────────────────────────────
@@ -190,4 +199,43 @@ describe.skipIf(!HAS_DIST)("README `## Usage` snippet 2 — `require()` from rea
     );
     expect(runCjs(file)).toBe("true 69 1541 Algiers");
   });
+
+  it("the three new tier subpaths resolve under require() too", () => {
+    // /wilayas, /dairas and /communes all gained a `require` condition in
+    // session 4 and were covered by nothing. A subpath whose ESM half works and
+    // whose CJS half does not is precisely the failure this file exists for.
+    const file = writeCjsFixture(
+      "subpaths.cjs",
+      [
+        'const w = require("algeria-wilayas-communes/wilayas");',
+        'const d = require("algeria-wilayas-communes/dairas");',
+        'const c = require("algeria-wilayas-communes/communes");',
+        "console.log(",
+        "  w.getWilayas().length,",
+        "  d.getDairas().length,",
+        "  c.getCommunes().length,",
+        '  c.findByPostalCode("19018").length,',
+        ");",
+        "",
+      ].join("\n"),
+    );
+    expect(runCjs(file)).toBe("69 591 1541 1");
+  });
+
+  it("the v1 raw-JSON subpath still resolves — it is a published contract", () => {
+    const file = writeCjsFixture(
+      "data-subpath.cjs",
+      [
+        'const w = require("algeria-wilayas-communes/data/wilayas.json");',
+        "console.log(w.wilayas.length);",
+        "",
+      ].join("\n"),
+    );
+    expect(runCjs(file)).toBe("69");
+  });
+});
+
+it("dist/ exists — otherwise every case above silently skipped", () => {
+  // Outside the describe, so it runs unconditionally. See the HAS_DIST comment.
+  expect(HAS_DIST, "packages/js/dist/ is missing — run `pnpm build`").toBe(true);
 });

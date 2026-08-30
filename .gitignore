@@ -35,3 +35,17 @@ packages/python/src/algeria_wilayas_communes/data/
 packages/js/dist/
 coverage/
 .turbo/
+
+# Benchmark & tree-shaking artifacts
+#
+# results.json holds wall-clock timings, so committing it would make every
+# `pnpm bench` run show up as a dirty tree. The durable record of the numbers is
+# docs/DECISIONS.md ADR-008, which is reviewed.
+#
+# The visualizer emits `stats-<entry>.html`, so the patterns are globs. They were
+# `stats.html` / `stats.json` -- filenames vite.config.ts never produces -- and
+# 342 kB of generated HTML got committed past them.
+benchmarks/results.json
+benchmarks/treeshake-fixture/dist/
+benchmarks/treeshake-fixture/stats-*.html
+benchmarks/treeshake-fixture/stats-*.json

@@ -1,8 +1,36 @@
+/**
+ * FROZEN v1 FIXTURE — do not edit, do not lint, do not "modernize".
+ *
+ * This is `packages/js/index.js` as it shipped in v1.0.0 -- unmodified except
+ * for the `DATA_DIR` path, annotated in place below -- taken from
+ * `git show HEAD:packages/js/index.js` at the start of session 4 and kept here
+ * because session 4 deletes the original from the package.
+ *
+ * It is the *only* thing that can produce the honest "before" column in
+ * `benchmarks/results.json`. Reimplementing it, or benchmarking v2 against a
+ * paraphrase of it, would make every comparison in the README unverifiable.
+ *
+ * It reads sibling JSON from `packages/js/data/`, which is gitignored and staged
+ * by `benchmarks/stage-v1-data.mjs`. That is why the fixture lives here and not
+ * next to the data: the path arithmetic below resolves `./data` relative to this
+ * file, so the loader is pointed at the staged directory explicitly instead.
+ */
+
 import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 
-const DATA_DIR = join(dirname(fileURLToPath(import.meta.url)), "data");
+// v1 shipped as `packages/js/index.js`, so `./data` resolved to
+// `packages/js/data`. This fixture sits two directories away; the target is
+// unchanged, only the number of `..` hops. Nothing else in this file is touched.
+const DATA_DIR = join(
+  dirname(fileURLToPath(import.meta.url)),
+  "..",
+  "..",
+  "packages",
+  "js",
+  "data",
+);
 
 const cache = new Map();
 function load(file) {

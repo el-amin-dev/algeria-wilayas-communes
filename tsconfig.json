@@ -4,5 +4,11 @@
     "noEmit": true,
     "types": ["node"]
   },
-  "include": ["packages/js/src/**/*.ts", "scripts/**/*.ts", "tests/**/*.ts", "*.config.ts"]
+  "include": [
+    "packages/js/src/**/*.ts",
+    "scripts/**/*.ts",
+    "tests/**/*.ts",
+    "*.config.ts",
+    "packages/js/*.config.ts"
+  ]
 }

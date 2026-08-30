@@ -44,7 +44,9 @@ schema/
 .github/
 packages/python/
 
-packages/js/index.js
-packages/js/index.d.ts
-packages/js/package.json
 packages/js/README.md
+
+# --- Frozen v1 benchmark fixture ---------------------------------------------
+# v1.0.0 source, unmodified except for the data path. Reformatting it would
+# make the "before" column a paraphrase rather than a measurement.
+benchmarks/v1/
