@@ -1,17 +1,45 @@
-# Changesets — written here, consumed in session 6
+# Changesets
 
-`@changesets/cli` is **not installed**, so `pnpm changeset version` cannot run
-today. The actual release path is the git tag: `.github/workflows/publish-npm.yml`
-runs `npm version "${GITHUB_REF_NAME#v}"` and publishes.
+`@changesets/cli` **is** installed, and this directory is the live source of the
+version bump and the changelog. Session 6 took path 1 of the two the previous
+version of this file offered; path 2 (delete the directory, hand-write
+`CHANGELOG.md`) is not taken. See `docs/DECISIONS.md` ADR-015.
 
-The changeset file in this directory is therefore **source text, not an active
-release mechanism**. It was written in the session that made the changes, while
-the reasoning was still at hand, which is the only time an accurate changelog
-entry gets written. Session 6 owns the decision between two paths:
+## What changesets owns, and what it does not
 
-1. adopt changesets properly — add the CLI, and let it own the version bump; or
-2. drop this directory and fold the prose into `CHANGELOG.md`, keeping the tag
-   as the single source of the version.
+| | Owned by |
+|---|---|
+| the version number in `packages/js/package.json` | `changeset version` |
+| `packages/js/CHANGELOG.md` | `changeset version` |
+| **publishing to npm** | `.github/workflows/publish-npm.yml`, on a `v*` tag |
+| **publishing to PyPI** | `.github/workflows/publish-pypi.yml`, on the same `v*` tag |
+| **the git tag** | a human, by hand |
 
-Until then, do not add a second release model on top of the tag. Two live
-release paths is worse than one inert one.
+`.github/workflows/release.yml` runs `changeset version` and opens a
+"chore: version packages" PR. It has **no `publish:` input**, and that is the
+entire design: `packages/python` is not a pnpm workspace member, so changesets
+cannot see it and could never publish it. If changesets published npm directly,
+PyPI would need a second, divergent release path -- two mechanisms for one
+release, and the same-number-same-data guarantee gone.
+
+## Adding a changeset
+
+```bash
+pnpm changeset          # pick a bump level, write the note
+```
+
+Write it in the session that makes the change, while the reasoning is still at
+hand. That is the only time an accurate changelog entry gets written.
+
+## Releasing
+
+```bash
+# 1. merge the "chore: version packages" PR that release.yml opened
+git switch main && git pull
+
+# 2. tag it. One tag, two registries, one version.
+git tag "v$(node -p "require('./packages/js/package.json').version")"
+git push origin --tags
+```
+
+The tag is what publishes. Nothing else does.

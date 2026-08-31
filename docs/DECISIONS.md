@@ -483,6 +483,165 @@ user on a distro Python. And `slots=True` is a pure optimization with no API eff
 unchanged the moment the floor moves.
 
 
+## ADR-015 — One `v*` tag publishes both registries; changesets versions but never publishes
+
+**Status:** accepted (v2.0.0)
+
+`.github/workflows/publish-npm.yml` and `.github/workflows/publish-pypi.yml` **both** trigger on
+`push.tags: ["v*"]`. Pushing `v2.0.0` publishes `algeria-wilayas-communes@2.0.0` to npm **and**
+`algeria-wilayas-communes==2.0.0` to PyPI, from the same commit, carrying the same `data/`. Versions
+are locked in lockstep by construction, and neither workflow knows the other exists.
+
+**That coupling is load-bearing and invisible in the YAML.** Adopting changesets — a tool whose
+entire job is to compute versions and push tags — is exactly the change that breaks it silently.
+This ADR records the shape chosen so it is not relitigated.
+
+**Decision.** `@changesets/cli` owns the version number in `packages/js/package.json` and
+`packages/js/CHANGELOG.md`, and nothing else. `.github/workflows/release.yml` runs
+`changeset version` on `main` and opens a "chore: version packages" PR. It has **no `publish:`
+input**. A human merges that PR and pushes the tag by hand; the tag is the only thing that publishes.
+
+Three reasons, in the order they bind:
+
+1. **The dataset is the product.** Someone comparing `algeria-wilayas-communes@2.1.0` on npm with
+   `==2.1.0` on PyPI must be able to assume they hold the same 1541 records. A shared version number
+   is the only thing that makes that promise visible from the outside. ADR-010 built the `shared/`
+   tier to make the two implementations agree; this keeps the two *releases* agreeing.
+2. **`packages/python` is not a pnpm workspace member**, so changesets cannot see it and could never
+   publish it. Any design where changesets publishes npm directly needs a second, divergent path for
+   PyPI — two release mechanisms for one release.
+3. **The cost is accepted and named.** A JS-only fix bumps the Python package too and ships a
+   version whose only change is the version. For a dataset library releasing a handful of times a
+   year, that is cheaper than explaining a version skew to a user who found one.
+
+**This is not hypothetical — the skew has already happened.** Checked against the live registries
+while writing this ADR: npm carries `algeria-wilayas-communes@1.0.0` and PyPI carries `1.1.0`. Two
+registries, one name, two different version numbers, and nothing in the repo noticed. A user who
+pinned `1.1.0` in `requirements.txt` and `^1.0.0` in `package.json` believes they hold the same data
+and cannot check. `v2.0.0` re-synchronizes them from one tag, and the header comment now in both
+publish workflows is what stops it drifting again.
+
+**Rejected: separate `js-v*` and `py-v*` tag prefixes**, with changesets publishing npm on merge and
+PyPI triggered separately. It doubles the release ceremony, removes the same-number-same-data
+guarantee, and requires editing the `on.push.tags` filter in **both** publish workflows — the exact
+silent breakage this ADR exists to prevent. Revisit only if the JS and Python APIs genuinely diverge
+in cadence, which after session 5 they do not.
+
+Both publish workflows now carry a header comment naming the shared trigger and pointing here,
+because the next person to edit one of them will not read this file first.
+
+**Not changed:** `publish-pypi.yml` still authenticates with `PYPI_TOKEN` rather than Trusted
+Publishing (ADR-013 has the reasoning and the three-step path back), and neither publish workflow
+gets a `concurrency` block — cancelling a half-finished publish is how one registry ends up with a
+version the other never receives. `ci.yml` does get one.
+
+---
+
+## ADR-016 — The pre-2.0.0 export-surface pass: one addition, three deliberate holds
+
+**Status:** accepted (v2.0.0)
+
+> Every exported symbol must be supported for the life of the major version. Adding an export is
+> cheap today and expensive forever; **removing one is free today and costs a major after 2.0.0.**
+
+The pass was run over the seven published subpaths (`.`, `/wilayas`, `/dairas`, `/communes`, `/zod`,
+`/legacy`, `/data/*`), the 25 runtime exports of the root, its type exports, and the 30 names Python
+exports. For each symbol: *who calls this, and what breaks if it is not there?* Outcome below —
+recorded even where the answer was "keep", because a decision that is not written down gets
+relitigated in six months by someone who does not know it was already made.
+
+**1. `/lite` — already closed, stays closed.** ADR-009 settled it: Rollup cannot drop `ar`/`en`
+*properties* from a frozen `as const` array, so `/lite` would need its own generated data module and
+a new phase in `scripts/build-data.ts`. The measurement that answers the spec's own question is
+`/wilayas` at **2.36 kB** gzip against `/lite`'s projected 12,577 B. Seven subpaths, not eight.
+
+**2. `MatchedLang` is now exported — the one addition.** It appears in the public shape of
+`SearchResult.matched`, so it is **already frozen for the life of the major** whether or not it has
+a name: a consumer can reach it as `SearchResult["matched"]` today, and changing it would break them
+either way. Exporting it therefore adds no liability that the structural position had not already
+committed to; it only removes an inconsistency, since the exactly parallel `SearchKind` — a string
+union in the public `SearchResult.kind` position — *was* exported. This is the whole reason the pass
+happens before the tag: after 2.0.0 the inconsistency would be permanent.
+
+**3. The five count constants stay unexported.** `WILAYA_COUNT`, `DAIRA_COUNT`, `COMMUNE_COUNT`,
+`POSTAL_CODE_COUNT` and `MISSING_POSTAL_CODE_COUNT` exist in `generated/meta.ts` and are not
+re-exported from any entry. They are **merely nice**: every one is a `.length` away
+(`getWilayas().length`), and exporting them creates a second source of truth that can disagree with
+the array it counts. `DATA_VERSION`, `SOURCE_LAW` and `LAST_VERIFIED` stay exported, because those
+are *not* derivable from the data — they are the provenance claim itself. (Python does export the
+counts, from `_constants.py`. The asymmetry is noted rather than fixed: removing them there would be
+a break for a package whose README already documents them, and adding them to JS to match would be
+adding five permanent exports to fix a cosmetic difference.)
+
+**4. `getDaira(id)` keeps its missing `AsOfOptions` — deferred, not overlooked.** `getWilaya`,
+`getCommune`, `getWilayas`, `getDairas` and `getCommunes` all take `opts?: AsOfOptions`;
+`getDaira(id)` does not, so there is no way to ask for a daïra's re-attributed record by id even
+though `getDairas({ asOf: "58" })` rewrites exactly that field. Held for three reasons: the path is
+**unreachable today** — every `asOf: "58"` call throws `ReformMappingUnavailableError` while the
+mapping is unfilled (ADR-005); the fix is not one line but a new lazy `daira58Idx` in `asof.ts`,
+which changes the exact lazy-structure count that `pnpm bench:import` probes; and **adding an
+optional parameter is a minor, not a major**, so unlike an export it loses nothing by waiting. It is
+the one item on this list that is genuinely cheaper later.
+
+**5. `/zod`'s `addressSchema` drag stays documented, not split.** `addressSchema` validates commune
+membership, so it imports the commune tier, so a consumer importing only `postalCodeSchema` still
+downloads the 1541-record table: measured **48.81 kB** against **48.93 kB** for the whole module —
+importing one schema saves 0.12 kB. Splitting it would fix that and add a **permanent public
+subpath**, which is a worse trade than a documented footnote for a module whose realistic consumer
+wants `addressSchema` anyway. `.size-limit.js` keeps the row so the comparison cannot rot.
+
+**Kept without change:** all seven subpaths; the two root v1 shims `getAll` and `findCommune`
+(ADR-002); all eight v1 type names at the root, three of them aliased `V1*` (ADR-001); `/legacy`'s
+default export; and `exports["./data/*"]`, which is byte-identical to v1 and serves consumers who
+never touch npm at all.
+
+## ADR-017 — npm publishes via Trusted Publishing; the token path never worked
+
+**Status:** accepted (v2.0.0) — requires a one-time setup on npmjs.com before the first tag
+
+`publish-npm.yml` no longer carries `NODE_AUTH_TOKEN`. It publishes with npm **Trusted Publishing**
+(OIDC): the runner presents its GitHub identity, npm mints a short-lived credential, and no
+long-lived secret exists to leak, rotate or expire.
+
+**The evidence, because this was diagnosed rather than assumed.** From `gh run list` and
+`gh api .../actions/secrets`, all 2026-07-21 UTC:
+
+| time | event |
+|---|---|
+| 2026-07-20 23:49 | `NPM_TOKEN` created |
+| 00:30 | tag `v1.0.0` → PyPI **published**, npm **failed** with `npm error code EOTP` |
+| **00:59:04** | **npm 1.0.0 published by hand**, with an interactive OTP |
+| 00:59:44 | `NPM_TOKEN` rotated, 40 seconds later |
+| 01:08 | tag `v1.1.0` → PyPI **published (1.1.0)**, npm **failed with EOTP again** |
+
+So the automated npm publish has **never once succeeded**. `1.0.0` on npm exists only because a
+human ran `npm publish` locally. That is the whole mechanism behind the version skew ADR-015
+records: PyPI advanced to 1.1.0 on the same tag that left npm at 1.0.0.
+
+**Why rotating the token did not and could not help.** `EOTP` means npm demanded a one-time
+password, which no unattended runner can supply. It is a property of the token's *type* and the
+account's 2FA policy, not of its age — so a fresh token of the same kind fails identically. Reaching
+for "the token must have expired" is the natural reading and it is wrong; the 90-day clock was never
+the constraint. A third tag with a fourth token would have failed the same way.
+
+**Why not simply a classic Automation token.** Those do bypass 2FA and would work today, but npm is
+actively restricting 2FA-bypass tokens for publishing — the CLI prints the deprecation notice
+unprompted. Choosing the mechanism being phased out, in the session whose subject is longevity,
+would be the wrong trade for the sake of ten minutes.
+
+**Costs, accepted.** Trusted publishing requires npm CLI **≥ 11.5.1**, which no Node release bundles
+yet, so the workflow upgrades npm explicitly and asserts the floor — a clear failure at that step
+beats an EOTP later that names the wrong cause. And it requires a **one-time setup on npmjs.com**
+(package → Settings → Trusted Publisher → GitHub Actions, naming this repository and
+`publish-npm.yml`). Until that exists the publish step fails loudly with an auth error rather than
+publishing something wrong, which is the correct behaviour for an operation npm allows you to undo
+for 72 hours and PyPI never lets you redo at all.
+
+**The PyPI side is unchanged and still uses `PYPI_TOKEN`** (ADR-013), which has worked on both tags.
+Moving it to trusted publishing is the same shape of change and is worth doing — but it needs its
+own TestPyPI dry run first, and doing both in one release would mean neither registry had a proven
+path. One at a time.
+
 ## Recorded, deliberately not fixed
 
 - **`DairaFlat` has no `wilaya_ar`** (8 fields) while `CommuneFlat` does (12). Almost certainly an

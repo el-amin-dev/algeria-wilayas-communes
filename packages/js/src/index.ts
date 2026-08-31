@@ -99,7 +99,7 @@ export type {
   WilayaCode,
   WilayaTree,
 } from "./types";
-export type { SearchKind, SearchOptions, SearchResult } from "./search";
+export type { MatchedLang, SearchKind, SearchOptions, SearchResult } from "./search";
 export type { AsOf, AsOfOptions } from "./asof";
 export type { Reform, ReformConfidence, ReformNewWilaya } from "./reform";
 

@@ -1,8 +1,11 @@
-# Repo-level tasks for the Python package.
+# Repo-level tasks for the Python package, plus the one setup step BOTH packages
+# need.
 #
 # The JavaScript side is driven by pnpm scripts (see package.json); this file
 # exists for the Python package, whose one piece of required local setup has no
-# natural home in package.json.
+# natural home in package.json -- and for `dev`, which now covers both, because
+# packages/js/data/ is gitignored for exactly the same reason and
+# tests/compat/cjs.test.ts needs it to prove the `./data/*` subpath resolves.
 
 # Prefer the repo venv when one exists, so `make check` works straight after
 # `python3 -m venv .venv && pip install -e "packages/python[dev]"` without
@@ -29,9 +32,18 @@ help: ## Show this help
 # is no second copy to drift out of sync with the 73-file published contract.
 # The relative target resolves from
 # packages/python/src/algeria_wilayas_communes/ back to the repo root.
-dev: ## Link the dataset into the Python package for local development
+dev: ## Link the dataset into both packages for local development
 	ln -sfn ../../../../data $(PKG)/src/algeria_wilayas_communes/data
 	@echo "linked data/ -> $(PKG)/src/algeria_wilayas_communes/data"
+	ln -sfn ../../data packages/js/data
+	@echo "linked data/ -> packages/js/data"
+	@echo
+	@echo "NOTE: this is a symlink, which is enough for the test suite but NOT"
+	@echo "      for \`pnpm lint:publish\` or \`pnpm pack:check\` -- \`pnpm pack\` does not"
+	@echo "      follow a symlinked directory, so publint reports"
+	@echo "      'exports[\"./data/*\"] does not match any files'. Those two need a real"
+	@echo "      copy, which CI and publish-npm.yml both make:"
+	@echo "        rm -rf packages/js/data && cp -r data packages/js/data && rm -rf packages/js/data/raw"
 
 test: ## Run the Python test suite
 	$(PYTHON) -m pytest $(PKG) -q

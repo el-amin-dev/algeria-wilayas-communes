@@ -1,0 +1,154 @@
+name: Freshness
+
+# Every competing Algeria dataset died the same way: it was correct when
+# published, went stale, and nobody could tell from the outside because none of
+# them published a verification date. This workflow is the fix, and it is the
+# highest-value automation in the repo.
+#
+# It OPENS AN ISSUE. It never fails a pull request. That is deliberate: a
+# freshness check that blocks a merge is a check the maintainer disables within
+# a month, and then the expiry it was guarding arrives unannounced.
+
+on:
+  schedule:
+    # 06:00 UTC on the 1st of every month.
+    - cron: "0 6 1 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  check:
+    name: LAST_VERIFIED and reform-date checks
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # LAST_VERIFIED does NOT live in data/algeria.json -- that file has no
+      # such key. It is a literal in scripts/build-data.ts, emitted into the
+      # generated constants of both packages. Read it with sed so this job needs
+      # neither Node nor Python nor a dependency install.
+      - name: Read LAST_VERIFIED and check its age
+        id: stale
+        run: |
+          set -euo pipefail
+
+          META=packages/js/src/generated/meta.ts
+          PY=packages/python/src/algeria_wilayas_communes/_constants.py
+
+          LV=$(sed -n 's/^export const LAST_VERIFIED = "\(.*\)";$/\1/p' "$META")
+          [ -n "$LV" ] || { echo "::error::LAST_VERIFIED not found in $META"; exit 1; }
+          case "$LV" in
+            [0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]) ;;
+            *) echo "::error::LAST_VERIFIED is not an ISO date: $LV"; exit 1 ;;
+          esac
+
+          # The two packages are published from one tag and must agree about
+          # when the data was last verified. Drift here means the generator ran
+          # for one language and not the other.
+          LV_PY=$(sed -n 's/^LAST_VERIFIED = "\(.*\)".*$/\1/p' "$PY" | head -1)
+          [ "$LV" = "$LV_PY" ] || {
+            echo "::error::LAST_VERIFIED disagrees across packages: js=$LV python=$LV_PY"
+            exit 1
+          }
+
+          AGE_DAYS=$(( ( $(date -u +%s) - $(date -u -d "$LV" +%s) ) / 86400 ))
+          echo "LAST_VERIFIED=$LV, $AGE_DAYS days old"
+
+          {
+            echo "last_verified=$LV"
+            echo "age_days=$AGE_DAYS"
+          } >> "$GITHUB_OUTPUT"
+
+          # 274 days = 9 months. Long enough not to nag, short enough that the
+          # LAST_VERIFIED badge in both READMEs never lies. The same number is
+          # stated in docs/DATA_POLICY.md so the policy and the automation
+          # cannot drift apart.
+          if [ "$AGE_DAYS" -gt 274 ]; then
+            echo "stale=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      # The dated reminder for the 1 January 2027 cutover.
+      #
+      # This converts a KNOWN expiry event from something a human has to
+      # remember into something that arrives on its own. The 11 new wilayas
+      # (codes 59-69, Loi 26-06, JO n°25) become fully operational on that date.
+      - name: Check the reform cutover window
+        id: reform
+        run: |
+          set -euo pipefail
+          TODAY=$(date -u +%Y-%m-%d)
+
+          # Compared as epoch seconds, not as strings. `[ "$a" \> "$b" ]` is a
+          # portability trap -- the escape means different things in bash and
+          # zsh, and it fails outright in one of them. Integers do not.
+          NOW=$(date -u -d "$TODAY" +%s)
+          FROM=$(date -u -d "2026-12-01" +%s)
+          UNTIL=$(date -u -d "2027-02-01" +%s)
+
+          if [ "$NOW" -ge "$FROM" ] && [ "$NOW" -lt "$UNTIL" ]; then
+            echo "cutover=true" >> "$GITHUB_OUTPUT"
+          fi
+          echo "today=$TODAY" >> "$GITHUB_OUTPUT"
+
+      - name: Open a staleness issue
+        if: steps.stale.outputs.stale == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          LAST_VERIFIED: ${{ steps.stale.outputs.last_verified }}
+          AGE_DAYS: ${{ steps.stale.outputs.age_days }}
+        run: |
+          set -euo pipefail
+          # Do not reopen the same conversation every month.
+          if gh issue list --label freshness --state open --json title \
+               --jq '.[].title' | grep -q "^Data freshness"; then
+            echo "a freshness issue is already open; nothing to do"
+            exit 0
+          fi
+          gh issue create --label freshness \
+            --title "Data freshness: LAST_VERIFIED is ${AGE_DAYS} days old" \
+            --body "$(cat <<EOF
+          \`LAST_VERIFIED\` is **${LAST_VERIFIED}** — ${AGE_DAYS} days ago. The policy window is 274 days (9 months); see [docs/DATA_POLICY.md](../blob/main/docs/DATA_POLICY.md).
+
+          To clear this issue:
+
+          1. Re-verify \`data/algeria.json\` against the ONS *Code Géographique National* and Loi 26-06 (JO n°25).
+          2. Bump \`LAST_VERIFIED\` at the top of \`scripts/build-data.ts\`.
+          3. Run \`pnpm build:data\` — this regenerates the constants in both packages.
+          4. Open a PR. If any record changed, add a changeset (\`pnpm changeset\`) describing what changed.
+
+          Nothing is broken. This is the scheduled check that keeps the LAST_VERIFIED badge honest.
+          EOF
+          )"
+
+      - name: Open the 2027 reform-review issue
+        if: steps.reform.outputs.cutover == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          if gh issue list --label reform --state open --json title \
+               --jq '.[].title' | grep -q "2027 cutover"; then
+            echo "a reform-review issue is already open; nothing to do"
+            exit 0
+          fi
+          gh issue create --label reform \
+            --title "Review the reform docs before the 1 January 2027 cutover" \
+            --body "$(cat <<'EOF'
+          The 11 new wilayas (codes 59–69, Loi 26-06, signed 4 April 2026, published in JO n°25 on 5 April 2026) become **fully operational on 1 January 2027**. Powers transferred progressively until 31 December 2026.
+
+          Review before the date:
+
+          - the `REFORM` metadata and the `asOf` documentation in both packages;
+          - the reform sections of `packages/js/README.md` and `packages/python/README.md`, which currently say "through 2026 both maps are legally real";
+          - `docs/DATA_POLICY.md`, `docs/DATA_PROVENANCE.md` and `llms.txt`.
+
+          **Per `docs/DATA_POLICY.md` this is a DOCUMENTATION change, not a major.** The default `asOf` is already `"69"` and does not change; what changes is that `asOf: "58"` becomes historical rather than "still used for some paperwork".
+
+          If the parent-wilaya mapping has been published in the Journal Officiel by then, filling `data/raw/reform.json` is a separate, citation-gated change (ADR-005, ADR-007) — it is a **minor**, not part of this documentation pass.
+          EOF
+          )"

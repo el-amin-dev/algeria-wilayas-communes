@@ -1,0 +1,63 @@
+name: Release
+
+# Versioning ONLY. This workflow never publishes and never tags.
+#
+# It runs `changeset version` on main and opens a "chore: version packages" PR
+# carrying the bumped package.json and the regenerated CHANGELOG. Merging that
+# PR publishes nothing. A human then pushes the `v*` tag, and THAT fans out to
+# publish-npm.yml and publish-pypi.yml together.
+#
+# There is deliberately no `publish:` input on changesets/action below.
+# packages/python is not a pnpm workspace member, so changesets cannot see it
+# and could never publish it; letting changesets publish npm directly would
+# require a second, divergent path for PyPI and would destroy the guarantee
+# that a version number means the same 1541 records on both registries.
+# See docs/DECISIONS.md ADR-015.
+
+on:
+  push:
+    branches: [main]
+
+concurrency:
+  group: release-${{ github.ref }}
+  # NOT cancel-in-progress. Unlike ci.yml, a half-cancelled version run leaves
+  # the repo in a state where the changeset files are consumed but the PR was
+  # never opened.
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  version:
+    name: Version packages
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          # changesets needs history to work out what has already been released.
+          fetch-depth: 0
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: "pnpm"
+
+      - name: Install
+        run: pnpm install --frozen-lockfile
+
+      - name: Open or update the version PR
+        uses: changesets/action@v1
+        with:
+          version: pnpm version:packages
+          title: "chore: version packages"
+          commit: "chore: version packages"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

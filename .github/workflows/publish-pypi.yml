@@ -1,5 +1,17 @@
 name: Publish PyPI
 
+# NOTE: publish-npm.yml and publish-pypi.yml BOTH trigger on `v*`.
+#
+# One tag push publishes algeria-wilayas-communes to npm AND to PyPI, from the
+# same commit, carrying the same data/. The npm and PyPI versions are locked in
+# lockstep BY CONSTRUCTION, and neither workflow knows the other exists -- the
+# coupling is real, load-bearing, and invisible in the YAML.
+#
+# Changing this trigger in one file without the other publishes mismatched
+# versions to the two registries, which breaks the guarantee that
+# `algeria-wilayas-communes@2.1.0` on npm and `==2.1.0` on PyPI hold the same
+# 1541 records. See docs/DECISIONS.md ADR-015.
+
 on:
   push:
     tags:

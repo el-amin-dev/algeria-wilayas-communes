@@ -8,6 +8,10 @@ Thanks for helping keep this dataset accurate. Fixes to names, postal codes, and
 
 ## Two ways to contribute
 
+Both paths share one requirement: **a data fix without a citable source is not merged.** Not because we doubt you — because at 2201 records nobody can re-derive from memory why a name or a postal code says what it says, and a dataset whose corrections are unsourced stops being worth trusting within a few dozen merges. A source also makes triage cheap: a reviewer confirms the citation instead of re-researching the fix. The issue template [`.github/ISSUE_TEMPLATE/data-fix.yml`](.github/ISSUE_TEMPLATE/data-fix.yml) has a required source field, so a data-fix issue arrives actionable.
+
+A link to the Journal Officiel, an APC or wilaya site, Algérie Poste, or the ONS is ideal. A photograph of a signpost is a start. "I live there" is a reason to look for the document, not a substitute for it.
+
 ### 1. Open an issue (easiest)
 
 If you're not comfortable editing JSON, just [open an issue](../../issues/new/choose) and tell us:
@@ -27,6 +31,12 @@ That's enough for someone else to make the fix.
 5. Run the checks locally (optional but appreciated).
 6. Commit and open the PR.
 
+The whole checklist for a data-fix PR, and it is three lines:
+
+- [ ] Source cited in the PR description
+- [ ] `pnpm build:data` run (or say in the PR that you could not, and a maintainer will)
+- [ ] Gates green
+
 ## Regenerating derived files
 
 After editing `data/algeria.json`, regenerate everything downstream with:
@@ -38,29 +48,11 @@ pnpm build:data --check  # verify the tree is current, write nothing
 
 That is the gated path: it reproduces all 73 JSON files **byte-identically**, emits the generated TypeScript and the shared fixtures, and runs the integrity assertions. `--check` is what CI enforces, so a change that forgets to regenerate fails there.
 
-The equivalent `jq` filters are kept below for anyone without the Node toolchain — they produce the same bytes, but they do not run the assertions and they do not update `packages/js/src/generated/` or `shared/fixtures/`:
-
-```bash
-# flat wilayas
-jq '{langues, nb_wilayas, wilayas: [.wilayas[] | {wilaya_num, code, nom_ar, nom_fr, nom_en, nb_dairas, nb_communes}]}' \
-  data/algeria.json > data/wilayas.json
-
-# flat dairas
-jq '{nb_dairas, dairas: [.wilayas[] as $w | $w.dairas[] | {wilaya_num: $w.wilaya_num, wilaya_code: $w.code, wilaya_fr: $w.nom_fr, wilaya_en: $w.nom_en, nom_ar, nom_fr, nom_en, nb_communes}]}' \
-  data/algeria.json > data/dairas.json
-
-# flat communes
-jq '{nb_communes, communes: [.wilayas[] as $w | $w.dairas[] as $d | $d.communes[] | {wilaya_num: $w.wilaya_num, wilaya_code: $w.code, wilaya_ar: $w.nom_ar, wilaya_fr: $w.nom_fr, wilaya_en: $w.nom_en, daira_ar: $d.nom_ar, daira_fr: $d.nom_fr, daira_en: $d.nom_en, nom_ar, nom_fr, nom_en, code_postal}]}' \
-  data/algeria.json > data/communes.json
-
-# per-wilaya files
-for i in $(seq 1 69); do
-  nn=$(printf "%02d" "$i")
-  jq --argjson n "$i" '.wilayas[] | select(.wilaya_num == $n)' data/algeria.json > "data/by-wilaya/${nn}.json"
-done
-```
+No Node toolchain? Open the PR anyway, editing only `data/algeria.json` — a maintainer runs the build and pushes the regenerated files onto your branch.
 
 ## Running the checks locally
+
+For a data-only change, the first two are enough:
 
 ```bash
 # integrity (counts, codes, cross-checks) — no dependencies
@@ -68,9 +60,19 @@ python3 shared/validate.py
 
 # schema validation (needs: pipx install check-jsonschema)
 check-jsonschema --schemafile shared/schema/algeria.schema.json data/algeria.json
+check-jsonschema --schemafile shared/schema/reform.schema.json data/raw/reform.json
 ```
 
-Both must pass. The same checks run automatically in CI on every push and pull request.
+The two schemas live at `shared/schema/algeria.schema.json` (the source dataset) and `shared/schema/reform.schema.json` (the Loi 26-06 stub in `data/raw/reform.json`).
+
+If you touched either package, run its suite too:
+
+```bash
+pnpm test     # the JavaScript suite — 1141 tests
+make check    # the Python gates: pytest + mypy --strict + ruff + ruff format --check
+```
+
+All of these run automatically in CI on every push and pull request.
 
 ## Working on the packages
 

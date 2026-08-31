@@ -1,5 +1,17 @@
 name: Publish npm
 
+# NOTE: publish-npm.yml and publish-pypi.yml BOTH trigger on `v*`.
+#
+# One tag push publishes algeria-wilayas-communes to npm AND to PyPI, from the
+# same commit, carrying the same data/. The npm and PyPI versions are locked in
+# lockstep BY CONSTRUCTION, and neither workflow knows the other exists -- the
+# coupling is real, load-bearing, and invisible in the YAML.
+#
+# Changing this trigger in one file without the other publishes mismatched
+# versions to the two registries, which breaks the guarantee that
+# `algeria-wilayas-communes@2.1.0` on npm and `==2.1.0` on PyPI hold the same
+# 1541 records. See docs/DECISIONS.md ADR-015.
+
 on:
   push:
     tags:
@@ -11,6 +23,10 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
+      # REQUIRED for `npm publish --provenance`: it lets the runner mint the
+      # OIDC token npm signs the attestation with. Without it the publish fails
+      # with "Provenance generation ... failed", which does not name the cause.
+      id-token: write
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -21,9 +37,24 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: "22"
           registry-url: "https://registry.npmjs.org"
           cache: "pnpm"
+
+      # Trusted publishing needs npm CLI >= 11.5.1, and no Node version ships it
+      # yet -- Node 20 bundles npm 10.x, Node 22 bundles npm 10.x/11.x depending
+      # on the patch. Upgrading explicitly, and asserting the floor, is the
+      # difference between a clear failure here and an EOTP further down that
+      # names the wrong cause.
+      - name: Upgrade npm to a version that can do trusted publishing
+        run: |
+          npm install -g npm@latest
+          NPM_V=$(npm --version)
+          echo "npm $NPM_V"
+          node -e 'const v=process.argv[1].split(".").map(Number);
+                   const ok = v[0]>11 || (v[0]===11 && (v[1]>5 || (v[1]===5 && v[2]>=1)));
+                   if(!ok){console.error(`npm ${process.argv[1]} < 11.5.1 — trusted publishing unavailable`);process.exit(1);}
+                   console.log("npm is new enough for trusted publishing");' "$NPM_V"
 
       # Session 4 made packages/js an ESM+CJS build: `exports` now points into
       # dist/, which is gitignored and does not exist in a fresh checkout.
@@ -74,6 +105,42 @@ jobs:
           cd packages/js
           npm version "$VERSION" --no-git-tag-version --allow-same-version
 
+      # NO NODE_AUTH_TOKEN, deliberately. This publishes via npm TRUSTED
+      # PUBLISHING (OIDC): the runner presents its GitHub identity and npm mints
+      # a short-lived credential, so there is no long-lived secret to leak,
+      # rotate or expire.
+      #
+      # It replaces a token path that NEVER ONCE WORKED. The history, from
+      # `gh run list` and `gh api .../actions/secrets`:
+      #
+      #   2026-07-20 23:49  NPM_TOKEN created
+      #   2026-07-21 00:30  tag v1.0.0 -> PyPI published, npm FAILED (EOTP)
+      #   2026-07-21 00:59  npm 1.0.0 published BY HAND with an interactive OTP
+      #   2026-07-21 00:59  NPM_TOKEN rotated, 40 seconds later
+      #   2026-07-21 01:08  tag v1.1.0 -> PyPI published, npm FAILED (EOTP again)
+      #
+      # `npm error code EOTP` means npm demanded a one-time password, which no
+      # unattended runner can supply. Rotating the token did not help and never
+      # will: EOTP is about the token's TYPE and the account's 2FA policy, not
+      # its age. That is the whole reason npm 1.0.0 and PyPI 1.1.0 drifted apart
+      # (ADR-015), and why re-tagging with a fresh token of the same kind would
+      # simply fail a third time.
+      #
+      # SETUP REQUIRED ON npmjs.com, once: package -> Settings -> Trusted
+      # Publisher -> GitHub Actions, naming this repository and the workflow
+      # file `publish-npm.yml`. Until that exists, this step fails loudly with an
+      # auth error rather than publishing something wrong -- which is the
+      # correct behaviour for an irreversible operation.
+      #
+      # `--provenance` stays explicit. Trusted publishing generates an
+      # attestation anyway, but the flag documents the intent and keeps the step
+      # correct if the auth mechanism is ever changed back. It ties this tarball
+      # to this commit and this workflow run, verifiably by anyone, and npm shows
+      # a "Built and signed on GitHub Actions" badge on the package page. For a
+      # dataset a company is about to encode into an address form, "I can see
+      # which commit produced these bytes" is the difference between adoption and
+      # a security review that never finishes.
+      #
       # A prerelease MUST NOT become the default install.
       #
       # `npm publish` with no --tag always writes `latest`, so `git tag v2.0.0-rc.1`
@@ -85,7 +152,5 @@ jobs:
           VERSION="${GITHUB_REF_NAME#v}"
           if [[ "$VERSION" == *-* ]]; then TAG=next; else TAG=latest; fi
           echo "Publishing $VERSION to dist-tag: $TAG"
-          npm publish --access public --tag "$TAG"
+          npm publish --access public --provenance --tag "$TAG"
         working-directory: packages/js
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

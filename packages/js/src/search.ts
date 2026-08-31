@@ -65,8 +65,19 @@ import type { Commune, Daira, Wilaya } from "./types";
  */
 export type SearchKind = "wilaya" | "daira" | "commune";
 
-/** The language layer a result matched on. `"en"` means the exonym override table. */
-type MatchedLang = "ar" | "fr" | "en";
+/**
+ * The language layer a result matched on. `"en"` means the exonym override table.
+ *
+ * Exported for the same reason {@link SearchKind} is: it appears in the public
+ * shape of {@link SearchResult}, so it is already frozen for the life of the
+ * major whether or not it has a name. Exporting it adds no liability that the
+ * structural position had not already committed to -- it only lets a consumer
+ * write `MatchedLang` instead of `SearchResult["matched"]`. Decided in the
+ * pre-2.0.0 export-surface pass; see docs/DECISIONS.md ADR-016.
+ *
+ * @since 2.0.0
+ */
+export type MatchedLang = "ar" | "fr" | "en";
 
 /**
  * Options for {@link search}. Every field is optional; `search(q)` with no

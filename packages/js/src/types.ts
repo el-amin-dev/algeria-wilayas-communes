@@ -89,10 +89,22 @@ export type { Commune } from "./generated/communes";
  * A five-digit Algerian postal code, e.g. `"19018"`.
  *
  * Deliberately a *branded string*, not the template-literal type
- * `` `${number}${number}${number}${number}${number}` ``. That form is wrong in
- * both directions on this dataset: `${number}` accepts `"1e5"`, `"-1"` and
- * `"1.5"`, while TypeScript rejects a leading zero — so it would refuse every
- * real code in wilaya 05 (Batna), all of which start with `0`.
+ * `` `${number}${number}${number}${number}${number}` ``.
+ *
+ * The reason is not the one you would guess, and an earlier version of this
+ * comment had it backwards. Measured on TypeScript 5.9, that five-segment form
+ * **does** accept `"05000"` and `"19018"` — a leading zero is fine — and it
+ * **does** reject `"1e5"` and `"-1234"`. (`"1e5"`, `"-1"` and `"1.5"` are
+ * accepted by the *single* `` `${number}` `` form, which is a different type.)
+ *
+ * Its actual defect is that it cannot count. `${number}` matches a numeric
+ * string of *any* length, not one digit, so five of them concatenated also
+ * accept `"123456"` — and `"1 234"`, because a space passes inside a segment.
+ * A type that admits a six-character value while looking like it enforces five
+ * is worse than no type: it produces confidence a reader cannot check.
+ *
+ * There is no template-literal type that expresses "exactly five digits", so
+ * the check has to happen at run time — which is what the brand encodes.
  *
  * The brand erases to `string` at run time and is only mintable through
  * {@link isPostalCode}, which does the real `/^\d{5}$/` check. Use it for values

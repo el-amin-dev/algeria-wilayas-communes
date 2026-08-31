@@ -12,6 +12,7 @@ Plain JSON. No framework, no runtime, no lock-in. Use it from **jq, JavaScript/T
 ![Wilayas](https://img.shields.io/badge/wilayas-69-brightgreen)
 ![Communes](https://img.shields.io/badge/communes-1541-brightgreen)
 ![License](https://img.shields.io/badge/license-CC0--1.0-blue)
+![Last verified](https://img.shields.io/badge/verified-2026--07--20-blue)
 
 ---
 
@@ -35,22 +36,47 @@ The nested file `data/algeria.json` is the single source of truth. Everything el
 
 Every record carries `nom_ar`, `nom_fr`, `nom_en`. Since Algerian place names use the Latin alphabet, `nom_en` matches `nom_fr` for almost every entry — the one real exonym is **Algiers** (Alger).
 
+Machine-readable summary of the dataset, the API surface and the reform facts: **[llms.txt](llms.txt)**.
+
 ---
 
 ## Use it
 
-**Packages**
+**Packages** — both are named `algeria-wilayas-communes` and are published together from the same `v*` tag, so a version number means the same data on npm and on PyPI.
+
+**JavaScript / TypeScript**
 
 ```bash
-npm install algeria-wilayas-communes      # JavaScript / TypeScript
-pip install algeria-wilayas-communes      # Python
+npm install algeria-wilayas-communes
+pnpm add algeria-wilayas-communes
+yarn add algeria-wilayas-communes
 ```
 
 ```js
-import { getWilayas, byWilaya } from "algeria-wilayas-communes";
-getWilayas().length;        // 69
-byWilaya(16).nom_en;        // "Algiers"
+import { getWilaya, getCommune, findByPostalCode } from "algeria-wilayas-communes";
+
+getWilaya(19).name.en;                             // "Setif"
+getCommune("19-ain-azel-ain-lahdjar").postalCode;  // "19018"
+findByPostalCode("19018").length;                  // 1
 ```
+
+**Python**
+
+```bash
+pip install algeria-wilayas-communes
+uv add algeria-wilayas-communes
+poetry add algeria-wilayas-communes
+```
+
+```python
+from algeria_wilayas_communes import get_wilaya, get_commune, find_by_postal_code
+
+get_wilaya(19).name.en                              # "Setif"
+get_commune("19-ain-azel-ain-lahdjar").postal_code  # "19018"
+len(find_by_postal_code("19018"))                   # 1
+```
+
+Full API reference: **[npm README](packages/js/README.md)** · **[PyPI README](packages/python/README.md)**.
 
 **Straight from GitHub / CDN** (no install)
 
@@ -74,8 +100,19 @@ Spotted something wrong? Please **[open an issue or PR](../../issues/new/choose)
 
 ## Sources
 
-- ONS *Code Géographique National* — Loi 19-12 (2019, 48→58) and Loi 26-06 (2025/2026, 58→69)
-- Daïra structure and postal codes cross-referenced from open community datasets
+The dataset states its own provenance. `data/algeria.json` carries a `sources` array, verbatim:
+
+```json
+["ONS Code Geographique National / Loi 19-12 (2019) / Loi 26-06 (2026)", "othmanus/algeria-cities"]
+```
+
+- **ONS *Code Géographique National*** — the official wilaya codes and the administrative hierarchy, under **Loi 19-12** (2019, 48→58) and **Loi 26-06** (58→69).
+- **Loi 26-06** was **signed on 4 April 2026** and **published in the *Journal Officiel* n°25 on 5 April 2026**. The two dates are one day apart and are not interchangeable: the law is dated 4 April, the JO issue is dated 5 April.
+- **[`othmanus/algeria-cities`](https://github.com/othmanus/algeria-cities)** — the community dataset the daïra→commune membership and the postal codes were cross-referenced against. Named outright rather than folded into "open community datasets", because a dataset that will not name its inputs cannot be audited.
+
+Both packages **export** their provenance, so it can be logged or asserted on rather than looked up: `DATA_VERSION` (`"2.0.0"`), `SOURCE_LAW` (`"Loi 26-06 du 4 avril 2026, JO n°25"`) and `LAST_VERIFIED` (`"2026-07-20"`) — the date a maintainer last checked the data against the sources above.
+
+Details: **[docs/DATA_PROVENANCE.md](docs/DATA_PROVENANCE.md)** (record-by-record origin) · **[docs/DATA_POLICY.md](docs/DATA_POLICY.md)** (what may and may not be inferred) · **[SUPPORT.md](SUPPORT.md)** (how to report a wrong record) · **[CITATION.cff](CITATION.cff)** (how to cite this dataset).
 
 ## License
 

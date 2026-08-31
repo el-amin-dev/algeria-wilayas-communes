@@ -18,6 +18,15 @@ export default tseslint.config(
       "coverage/**",
       ".turbo/**",
 
+      // Python virtualenvs. `eslint .` walks the whole repo, and a venv is not
+      // empty of JavaScript: installing anything that depends on `docutils`
+      // (twine, readme_renderer, sphinx) drops a bundled `slides.js` into
+      // site-packages, and eslint then reports ~150 browser-global errors in a
+      // vendored file from 2005. The venv is gitignored tooling output, so
+      // nothing in it is ours to lint or fix.
+      ".venv/**",
+      "venv/**",
+
       // Frozen data contract: the 72 JSON files under data/ are byte-identity
       // gated. Nothing may rewrite them, and there is no JS to lint in there.
       "data/**",
@@ -49,7 +58,7 @@ export default tseslint.config(
   js.configs.recommended,
 
   // ---------------------------------------------------------------------------
-  // benchmarks/*.mjs — plain Node scripts, not library code.
+  // benchmarks/*.mjs and scripts/*.mjs — plain Node scripts, not library code.
   //
   // They are hand-written this session and must stay linted, but they run in
   // Node and use `process`, `console` and `URL` freely. `js.configs.recommended`
@@ -62,7 +71,7 @@ export default tseslint.config(
   // `**/*.ts` on purpose.
   // ---------------------------------------------------------------------------
   {
-    files: ["benchmarks/**/*.mjs"],
+    files: ["benchmarks/**/*.mjs", "scripts/**/*.mjs"],
     languageOptions: {
       globals: {
         Buffer: "readonly",

@@ -8,9 +8,13 @@
   "packageManager": "pnpm@11.21.0",
   "scripts": {
     "build:data": "tsx scripts/build-data.ts",
+    "data:diff": "node scripts/data-diff.mjs",
     "build": "pnpm -F algeria-wilayas-communes build",
     "lint:publish": "pnpm -F algeria-wilayas-communes lint:publish",
     "pack:check": "node benchmarks/pack-check.mjs",
+    "changeset": "changeset",
+    "version:packages": "changeset version",
+    "release:tag": "changeset tag",
     "bench": "node benchmarks/run.mjs",
     "bench:import": "node benchmarks/import-time.bench.mjs",
     "size": "size-limit",
@@ -28,6 +32,8 @@
   },
   "devDependencies": {
     "@arethetypeswrong/cli": "^0.18.5",
+    "@changesets/changelog-github": "^1.0.0",
+    "@changesets/cli": "^3.0.1",
     "@eslint/js": "^10.0.1",
     "@size-limit/preset-small-lib": "^13.0.3",
     "@types/node": "^22.18.0",

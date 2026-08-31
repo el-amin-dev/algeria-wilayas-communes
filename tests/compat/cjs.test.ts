@@ -93,6 +93,18 @@ const DIST_DIR = join(PACKAGE_DIR, "dist");
  */
 const HAS_DIST = existsSync(DIST_DIR);
 
+/**
+ * `packages/js/data/` is gitignored: it exists only because publish-npm.yml
+ * copies `data/` in before packing, or because a developer ran `make dev`.
+ *
+ * The raw-JSON subpath case below needs it, and without this it failed with a
+ * bare `MODULE_NOT_FOUND` from a child process — a stack trace that names
+ * `/tmp/awc-cjs-xxxxxx/node_modules/...` and tells you nothing about what is
+ * actually missing or how to fix it. Same failure shape, and same fix, as the
+ * Python loader's self-explaining `FileNotFoundError`.
+ */
+const HAS_PACKAGE_DATA = existsSync(join(PACKAGE_DIR, "data", "wilayas.json"));
+
 // ── The sandbox ─────────────────────────────────────────────────────────────
 
 const sandboxes: string[] = [];
@@ -223,6 +235,13 @@ describe.skipIf(!HAS_DIST)("README `## Usage` snippet 2 — `require()` from rea
   });
 
   it("the v1 raw-JSON subpath still resolves — it is a published contract", () => {
+    expect(
+      HAS_PACKAGE_DATA,
+      'packages/js/data/ is missing, so exports["./data/*"] cannot be checked. ' +
+        "It is gitignored and materialized by `make dev` (or by publish-npm.yml at pack time). " +
+        "Run `make dev`.",
+    ).toBe(true);
+
     const file = writeCjsFixture(
       "data-subpath.cjs",
       [

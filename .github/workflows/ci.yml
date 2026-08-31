@@ -6,6 +6,17 @@ on:
   pull_request:
     branches: [main]
 
+# Pushing three commits to a PR in two minutes currently runs three full
+# matrices to completion; only the last one's result is ever read. Cancelling
+# the superseded runs is free.
+#
+# NEVER copy this into a publish workflow. Cancelling publish-npm.yml halfway
+# through is how a version reaches npm and not PyPI, and the two are supposed to
+# be lockstep at one version.
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   validate:
     name: Validate dataset
@@ -155,3 +166,227 @@ jobs:
             packages/python/tests/test_shared_fixtures.py \
             packages/python/tests/test_cross_language.py \
             -q
+
+  # No CI job has ever typechecked, linted, tested or sized the JavaScript
+  # package -- sessions 1-5 accumulated 1136 tests and eight size budgets that
+  # ran only on the maintainer's machine, or inside publish-npm.yml, which is to
+  # say AFTER an irreversible tag push. This job is the whole point of session 6.
+  node:
+    name: Node ${{ matrix.node }}
+    runs-on: ubuntu-latest
+
+    strategy:
+      # Same reasoning as the python matrix: an 18-only break is exactly what
+      # this matrix exists to surface, and fail-fast would cancel 20 and 22
+      # before they could tell you whether the break is version-specific.
+      fail-fast: false
+      matrix:
+        # 18 is the floor declared by engines.node; 22 is what the maintainer
+        # runs. Dropping 18 would leave the declared floor untested, which is
+        # how packages/python shipped `requires-python = ">=3.8"` while calling
+        # a 3.9+ API (ADR-014).
+        node: [18, 20, 22]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # pnpm/action-setup MUST come before setup-node: `cache: pnpm` makes
+      # setup-node shell out to pnpm to resolve the store path, so the binary
+      # has to exist first. Reversed, this fails with "Unable to locate
+      # executable file: pnpm", which reads like a missing dependency rather
+      # than an ordering bug.
+      #
+      # No `version:` input, deliberately -- action-setup reads
+      # `packageManager` from package.json, so the pin lives in exactly one
+      # place and CI cannot drift from the maintainer's pnpm.
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+          cache: "pnpm"
+
+      # --frozen-lockfile always. A CI run that silently resolves a different
+      # dependency tree than the lockfile is not a check.
+      - name: Install
+        run: pnpm install --frozen-lockfile
+
+      - name: Type check
+        run: pnpm typecheck
+
+      - name: Lint
+        run: pnpm lint
+
+      - name: Format check
+        run: pnpm format:check
+
+      # BUILD BEFORE TESTS -- the ordering is load-bearing, not cosmetic.
+      #
+      # tests/compat/cjs.test.ts skips its whole `require()` suite when
+      # packages/js/dist/ is absent, and then asserts unconditionally that dist/
+      # existed. Run tests first on a fresh checkout and that assertion fails,
+      # reporting a missing build as a test failure. The CJS contract is exactly
+      # the thing that went one whole release untested, so the suite is built to
+      # be loud about being unable to check it.
+      - name: Build
+        run: pnpm build
+
+      # packages/js/data/ is gitignored -- it exists only because
+      # publish-npm.yml copies data/ in before packing. Two things below need
+      # it: tests/compat/cjs.test.ts proves exports["./data/*"] still resolves
+      # (a v1 contract jsDelivr and CDN consumers depend on), and `lint:publish`
+      # runs publint, which packs the package and reports
+      # `pkg.exports["./data/*"] ... does not match any files` when it is absent.
+      #
+      # A COPY, byte-for-byte the same two lines as publish-npm.yml -- NOT the
+      # symlink `make dev` creates locally. `pnpm pack` does not follow a
+      # symlinked directory, so a link satisfies Node's resolver and the test
+      # suite while still producing a tarball with no data in it, and publint
+      # fails on exactly the discrepancy a consumer would hit. Mirroring the
+      # publish workflow here is the point: this job exists to catch a publish
+      # problem before the tag, not after it.
+      - name: Copy data into the package
+        run: |
+          rm -rf packages/js/data
+          cp -r data packages/js/data
+          rm -rf packages/js/data/raw
+
+      - name: Type tests
+        run: pnpm test:types
+
+      - name: Tests with coverage
+        run: pnpm test:coverage
+
+      - name: Publish lint
+        run: pnpm lint:publish
+
+      - name: Size budgets
+        run: pnpm size
+
+      # Sessions 4 and 5 built these two gates and wired them to nothing. They
+      # answer questions no unit test can: does importing `getWilayas` build a
+      # commune index (import-time), and can a bundler actually drop the commune
+      # table from a narrow entry (tree-shaking)?
+      - name: Import-time purity gate
+        run: pnpm bench:import
+
+      - name: Tree-shaking proof
+        run: pnpm treeshake:proof
+
+  # Bun is CI-only: it is not installed on the maintainer's machine, so it must
+  # never appear in a package.json script or a git hook. A script nobody can run
+  # locally is worse than no script.
+  #
+  # Separate from the `node` matrix rather than a fourth leg: Bun needs a
+  # different setup action and runs different commands, and folding it in
+  # produces a job of `if:` conditionals nobody can read.
+  #
+  # It runs against the BUILT dist/, not the source, because the question Bun
+  # answers is "does the published artifact load in a non-Node runtime" -- and
+  # only dist/ can answer that.
+  bun:
+    name: Bun
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: "pnpm"
+
+      - name: Install
+        run: pnpm install --frozen-lockfile
+
+      - name: Build
+        run: pnpm build
+
+      # The canonical example (ADR-006): wilaya 19 Setif, commune
+      # 19-ain-azel-ain-lahdjar, postal code 19018.
+      - name: Import the built ESM entry under Bun
+        run: |
+          bun -e '
+            const m = await import("./packages/js/dist/index.mjs");
+            if (m.getWilayas().length !== 69) throw new Error("wilayas != 69");
+            if (m.getCommunes().length !== 1541) throw new Error("communes != 1541");
+            if (m.findByPostalCode("19018").length === 0) throw new Error("19018 not found");
+            if (m.getCommune("19-ain-azel-ain-lahdjar") === undefined) throw new Error("canonical commune missing");
+            console.log("bun esm ok");
+          '
+
+      - name: Import the built CJS entry under Bun
+        run: |
+          bun -e '
+            const dz = require("./packages/js/dist/index.cjs");
+            if (dz.getWilayas().length !== 69) throw new Error("cjs wilayas != 69");
+            if (dz.getCommunes().length !== 1541) throw new Error("cjs communes != 1541");
+            console.log("bun cjs ok");
+          '
+
+  # data/ is a published contract: jsDelivr serves it, the README's jq examples
+  # read it, and the Python wheel vendors it. `scripts/build-data.ts` is the only
+  # thing allowed to write it, and it must reproduce every byte that is already
+  # committed. `git diff` IS the specification -- there is nothing else to assert.
+  #
+  # Separate from `validate`, which needs Python and no Node. Splitting them
+  # means a generator regression cannot hide under a dataset failure.
+  data:
+    name: Data generator is byte-identical
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: "pnpm"
+
+      - name: Install
+        run: pnpm install --frozen-lockfile
+
+      - name: Rebuild every derived file
+        run: pnpm build:data
+
+      - name: data/ must be unchanged
+        run: |
+          git diff --exit-code data/ || {
+            echo "::error::scripts/build-data.ts no longer reproduces data/ byte-identically"
+            git diff --stat data/
+            exit 1
+          }
+
+      # --check covers the 80 outputs the generator owns, not just data/: the
+      # generated TypeScript under packages/js/src/generated/ and the shared
+      # fixtures both languages read. A tree where data/ matches but the
+      # fixtures do not is a tree where the cross-language contract is
+      # describing a build nobody ran.
+      - name: Every generated output must be current
+        run: pnpm build:data --check
+
+      - name: Nothing else moved either
+        run: |
+          git diff --exit-code || {
+            echo "::error::the build wrote outside data/ -- generated TS or shared fixtures are stale"
+            git diff --stat
+            exit 1
+          }

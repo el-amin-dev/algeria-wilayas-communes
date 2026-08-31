@@ -32,6 +32,15 @@ target/
 *.log
 tmp/
 packages/js/data/
+# Both forms, for the same reason as the two Python lines below: the
+# trailing-slash rule matches a real directory -- which is what
+# publish-npm.yml's `cp -r` creates -- but NOT a symlink, because git does not
+# treat a symlink as a directory. `make dev` creates a symlink here, and with
+# only the first rule it would be committable. Committing it would defeat the
+# whole mechanism: a fresh clone would silently work, and nobody would notice
+# the link was missing until they checked out somewhere symlinks are not
+# honoured and got a text file containing `../../data`.
+packages/js/data
 # Both forms, deliberately. The trailing-slash rule matches a real directory --
 # which is what publish-pypi.yml's `cp -r` creates -- but NOT the symlink that
 # `make dev` creates, because git does not treat a symlink as a directory. With

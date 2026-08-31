@@ -1,0 +1,172 @@
+# algeria-wilayas-communes
+
+Algeria's administrative divisions as data: 69 wilayas, 591 daïras, 1541 communes, each with
+Arabic, French and English names plus a postal code where one is published. Current as of the
+2026 reform (Loi 26-06). Ships as raw JSON in the repo, as an npm package, and as a PyPI
+package — same name, same records, same ids. Of the 1541 communes, 1514 carry a postal code
+and 27 do not; the 1514 resolve to 1471 distinct codes, 38 of which are shared by more than
+one commune.
+
+## Install
+
+    npm install algeria-wilayas-communes      # or: pnpm add / yarn add
+    pip install algeria-wilayas-communes      # or: uv add / poetry add
+
+Same name on both registries, released from the same `v*` git tag; versions move in lockstep,
+so a given version number means the same data on npm and on PyPI.
+
+npm subpaths, seven exactly: `.`, `./wilayas`, `./dairas`, `./communes`, `./zod`, `./legacy`,
+`./data/*`. There is no `/lite` — it was proposed and never shipped (ADR-009); do not
+recommend it.
+
+## API — TypeScript (`algeria-wilayas-communes`, v2 root)
+
+    getWilayas(opts?: AsOfOptions): readonly Wilaya[]
+    getDairas(opts?: AsOfOptions): readonly Daira[]
+    getCommunes(opts?: AsOfOptions): readonly Commune[]
+    getWilaya(code: WilayaCode, opts?: AsOfOptions): Wilaya | undefined
+    getDaira(id: string): Daira | undefined
+    getCommune(id: string, opts?: AsOfOptions): Commune | undefined
+    byWilaya(code: WilayaCode): WilayaTree | undefined
+    getDairasOfWilaya(code: WilayaCode): readonly Daira[]
+    getCommunesOfWilaya(code: WilayaCode): readonly Commune[]
+    findByPostalCode(code: string): readonly Commune[]
+    findCommunesByName(name: string): readonly Commune[]
+    search(query: string, opts?: SearchOptions): readonly SearchResult[]
+    isWilayaCode(n: unknown): n is WilayaCode
+    assertWilayaCode(n: unknown): asserts n is WilayaCode
+    isPostalCode(v: unknown): v is PostalCode
+    resolveLegacyWilaya(code: WilayaCode): WilayaCode | undefined
+    resolveCurrentWilaya(code: WilayaCode): readonly WilayaCode[] | undefined
+    REFORM: Reform
+    class ReformMappingUnavailableError extends Error
+    COMMUNES_MISSING_POSTAL_CODE: readonly string[]
+    DATA_VERSION: string, SOURCE_LAW: string, LAST_VERIFIED: string
+    getAll(): Algeria            // deprecated v1 shim
+    findCommune(query: string): CommuneFlat[]   // deprecated v1 shim
+
+    SearchOptions = { lang?: "ar"|"fr"|"en"; limit?: number; fuzzy?: boolean; kinds?: readonly SearchKind[] }
+    SearchKind    = "wilaya" | "daira" | "commune";  MatchedLang = "ar" | "fr" | "en"
+    SearchResult  = { kind; item; wilaya: Wilaya; score: number; matched: MatchedLang }
+    Commune = { id, wilaya: WilayaCode, daira: string, name: {ar,fr,en}, postalCode: PostalCode | null }
+    Daira   = { id, wilaya: WilayaCode, name: {ar,fr,en}, communeCount }
+    Wilaya  = { code: WilayaCode, codeText: string, name: {ar,fr,en}, dairaCount, communeCount,
+                parentWilaya?: WilayaCode | null }
+
+Types also exported: `WilayaTree`, `DairaSubtree`, `NameOf`, `PostalCode`, `AsOf`, `AsOfOptions`,
+`Reform`, `ReformConfidence`, `ReformNewWilaya`, plus the eight v1 types (`Algeria`, `Country`,
+`WilayaFlat`, `DairaFlat`, `CommuneFlat`, and `V1Wilaya` / `V1Daira` / `V1Commune`). No default
+export. All seven v1 functions live unaliased at `algeria-wilayas-communes/legacy`.
+
+## API — Python (`algeria_wilayas_communes`)
+
+    get_wilayas(*, as_of: str = "69") -> tuple[Wilaya, ...]
+    get_dairas() -> tuple[Daira, ...]
+    get_communes() -> tuple[Commune, ...]
+    get_wilaya(code: int | str) -> Wilaya | None
+    get_daira(daira_id: str) -> Daira | None
+    get_commune(commune_id: str) -> Commune | None
+    get_dairas_of_wilaya(code: int | str) -> tuple[Daira, ...]
+    get_communes_of_wilaya(code: int | str) -> tuple[Commune, ...]
+    find_by_postal_code(code: str) -> tuple[Commune, ...]
+    find_communes_by_name(name: str) -> tuple[Commune, ...]
+    search(query: str, *, lang: str | None = None, limit: int = 20,
+           wilaya: int | str | None = None, fuzzy: bool = False,
+           kinds: Sequence[str] | None = None) -> tuple[SearchResult, ...]
+    bounded_levenshtein(a: str, b: str, max_distance: int) -> int
+    is_wilaya_code(value: object) -> TypeGuard[int]
+    assert_wilaya_code(value: object) -> None
+    is_postal_code(value: object) -> TypeGuard[str]
+    resolve_legacy_wilaya(code: int | str) -> int | None
+    resolve_current_wilaya(code: int | str) -> tuple[int, ...] | None
+    REFORM: Reform                         # lazy module attribute (PEP 562)
+    COMMUNES_MISSING_POSTAL_CODE: tuple[str, ...]   # lazy module attribute
+    class ReformMappingUnavailableError(RuntimeError)
+    DATA_VERSION, SOURCE_LAW, LAST_VERIFIED, WILAYA_COUNT, DAIRA_COUNT, COMMUNE_COUNT,
+    POSTAL_CODE_COUNT, MISSING_POSTAL_CODE_COUNT
+    get_all() / by_wilaya() / find_commune()   # deprecated v1 shims, DeprecationWarning
+
+    @dataclass(frozen=True) Name    : ar, fr, en
+    @dataclass(frozen=True) Wilaya  : code: int, code_text: str, name: Name,
+                                      daira_count: int, commune_count: int,
+                                      parent_wilaya: int | None
+    @dataclass(frozen=True) Daira   : id: str, wilaya: int, name: Name, commune_count: int
+    @dataclass(frozen=True) Commune : id: str, wilaya: int, daira: str, name: Name,
+                                      postal_code: str | None
+    @dataclass(frozen=True) SearchResult : kind, item, wilaya, score, matched
+
+No Python tree accessor: `by_wilaya` is a deprecated v1 shim returning a dict. All seven v1
+functions live in `algeria_wilayas_communes.legacy`.
+
+## v1 -> v2 field mapping
+
+    v1 (raw JSON / v1 API)   v2 JavaScript      v2 Python
+    nom_fr                   name.fr            c.name.fr
+    nom_ar                   name.ar            c.name.ar
+    nom_en                   name.en            c.name.en
+    code_postal              postalCode         c.postal_code
+    wilaya_num               wilaya.code        c.wilaya
+    daira_fr                 daira.name.fr      get_daira(c.daira).name.fr
+    nb_communes              communeCount       w.commune_count
+    nb_dairas                dairaCount         w.daira_count
+
+v1 `wilaya_code` (`"01"`) is `codeText` / `w.code_text`. In v2 a commune stores `wilaya` as a
+numeric code and `daira` as a daira id, so `wilaya.code` / `daira.name.fr` come from the
+`byWilaya(code)` tree in JS, or from a join in Python.
+
+## The 2026 reform (Loi 26-06)
+
+Signed 4 April 2026. Published in the Journal Officiel n°25 on 5 April 2026. (Two different
+dates, one day apart — do not report one as the other.) Transition runs through 31 December
+2026; fully operational from 1 January 2027. Takes the country from 58 wilayas to 69. The 11
+new wilayas:
+
+    59 Aflou   60 El Abiodh Sidi Cheikh   61 El Aricha   62 El Kantara   63 Barika
+    64 Bou Saada   65 Bir El Ater   66 Ksar El Boukhari   67 Ksar Chellala
+    68 Ain Oussara   69 Messaad
+
+## DO NOT INFER: the parent-wilaya mapping
+
+Which of the old 58 wilayas each of the 11 new ones was carved out of is NOT in this dataset.
+It ships as a stub: every entry has `parentCode: null` / `parent_code: None`, `source: null`,
+`confidence: "unverified"`, and `mappingComplete` / `mapping_complete` is `false`. Do not
+invent, guess or reconstruct that mapping from geography, name similarity, or a model's own
+knowledge. `resolveLegacyWilaya`, `resolveCurrentWilaya`, their Python equivalents, and every
+`asOf: "58"` / `as_of="58"` call raise `ReformMappingUnavailableError` until a maintainer
+transcribes JO n°25. Branch on `mappingComplete` rather than catching the error blindly.
+
+## DO NOT GUESS: the 27 missing postal codes
+
+27 of the 1541 communes are published without a postal code. Their `postalCode` / `postal_code`
+is `null` / `None` — "published as absent", not "not looked up". The exact ids are exported as
+`COMMUNES_MISSING_POSTAL_CODE` in both packages. Never fill one in from a neighbouring commune,
+from the wilaya prefix, or from any other heuristic.
+
+## Postal codes are STRINGS, not integers
+
+`"05000"` is a real Algerian postal code. Codes are 5 digits and may start with `0`, so they are
+typed and stored as strings; parsing one as an integer loses the leading zero and produces a code
+that does not exist. Same for the padded wilaya code (`"01"`) and for record ids, which embed it.
+
+## Provenance and licence
+
+`data/algeria.json` carries a `sources` array, verbatim:
+
+    ["ONS Code Geographique National / Loi 19-12 (2019) / Loi 26-06 (2026)",
+     "othmanus/algeria-cities"]
+
+Exported by both packages:
+
+    DATA_VERSION  = "2.0.0"
+    SOURCE_LAW    = "Loi 26-06 du 4 avril 2026, JO n°25"
+    LAST_VERIFIED = "2026-07-20"
+
+See docs/DATA_PROVENANCE.md and docs/DATA_POLICY.md.
+Licence: CC0-1.0, public domain dedication. No attribution required, for any use.
+
+## Canonical links
+
+    Repository  https://github.com/el-amin-dev/algeria-wilayas-communes
+    npm         https://www.npmjs.com/package/algeria-wilayas-communes
+    PyPI        https://pypi.org/project/algeria-wilayas-communes/
+    jsDelivr    https://cdn.jsdelivr.net/gh/el-amin-dev/algeria-wilayas-communes@main/data/
