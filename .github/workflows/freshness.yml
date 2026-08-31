@@ -103,6 +103,17 @@ jobs:
           AGE_DAYS: ${{ steps.stale.outputs.age_days }}
         run: |
           set -euo pipefail
+
+          # The label has to exist before it can be applied. `gh issue list
+          # --label X` returns [] for a label that does not exist WITHOUT
+          # erroring, so the dedupe guard below passes, and then
+          # `gh issue create --label` fails with "'freshness' not found" and
+          # files nothing. The job goes red having done exactly none of its
+          # work -- the silent-staleness failure it exists to prevent.
+          # `--force` makes this idempotent.
+          gh label create freshness --color FBCA04 \
+            --description "The dataset is due for re-verification" --force
+
           # Do not reopen the same conversation every month.
           if gh issue list --label freshness --state open --json title \
                --jq '.[].title' | grep -q "^Data freshness"; then
@@ -131,6 +142,10 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           set -euo pipefail
+
+          gh label create reform --color 5319E7 \
+            --description "The 2026 administrative reform" --force
+
           if gh issue list --label reform --state open --json title \
                --jq '.[].title' | grep -q "2027 cutover"; then
             echo "a reform-review issue is already open; nothing to do"

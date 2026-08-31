@@ -119,10 +119,12 @@ jobs:
       - name: Set up pnpm
         uses: pnpm/action-setup@v4
 
+      # 22, not 20: pnpm 11.21.0 requires Node >= 22.13 and fails in this step
+      # on anything older.
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: "22"
           cache: "pnpm"
 
       - name: Set up Python
@@ -176,16 +178,28 @@ jobs:
     runs-on: ubuntu-latest
 
     strategy:
-      # Same reasoning as the python matrix: an 18-only break is exactly what
-      # this matrix exists to surface, and fail-fast would cancel 20 and 22
-      # before they could tell you whether the break is version-specific.
+      # Same reasoning as the python matrix: a 24-only break is exactly what
+      # this matrix exists to surface, and fail-fast would cancel 22 before it
+      # could tell you whether the break is version-specific or universal.
       fail-fast: false
       matrix:
-        # 18 is the floor declared by engines.node; 22 is what the maintainer
-        # runs. Dropping 18 would leave the declared floor untested, which is
-        # how packages/python shipped `requires-python = ">=3.8"` while calling
-        # a 3.9+ API (ADR-014).
-        node: [18, 20, 22]
+        # These are the versions the DEV TOOLCHAIN runs on, which is not the
+        # same question as the runtime floor we promise consumers. Measured from
+        # the installed manifests:
+        #
+        #   pnpm@11.21.0  >=22.13        (pinned by `packageManager`)
+        #   size-limit@13 ^22.18 || ^24  || >=26
+        #   eslint@10     ^20.19 || ^22.13 || >=24
+        #
+        # So 18 and 20 cannot run this job at all -- Node 18 fails in
+        # `Set up Node` with "This version of pnpm requires at least Node.js
+        # v22.13" before a single gate executes.
+        #
+        # `engines.node` is `">=18"`, and that promise is still tested -- by the
+        # `engines-floor` job below, which imports the BUILT artifact on 18 and
+        # 20 without the toolchain. Testing the floor with a toolchain that
+        # cannot run on it proves nothing and produces a permanently red matrix.
+        node: [22, 24]
 
     steps:
       - name: Checkout
@@ -275,6 +289,98 @@ jobs:
 
       - name: Tree-shaking proof
         run: pnpm treeshake:proof
+
+  # packages/js/package.json promises `engines.node: ">=18"`. Nothing tested
+  # that promise until now, and the `node` job cannot: pnpm 11, eslint 10 and
+  # size-limit 13 all refuse to run on 18 or 20, so a matrix leg there dies in
+  # `Set up Node` without executing a gate.
+  #
+  # The promise is about the PUBLISHED ARTIFACT, not the toolchain -- a consumer
+  # on Node 18 runs `dist/`, never vitest. So this job builds on 22 and then
+  # re-points Node at the floor versions and imports what a consumer would.
+  #
+  # This is the same class of defect as ADR-014, where packages/python declared
+  # `requires-python = ">=3.8"` while its loader called a 3.9+ API and pip
+  # happily installed a package that could not import. A declared floor nothing
+  # exercises is a guess.
+  engines-floor:
+    name: engines.node floor (Node ${{ matrix.node }})
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        # 18 is the declared floor; 20 is the next LTS a consumer plausibly
+        # still runs. If either fails, `engines.node` is lying and must move.
+        node: [18, 20]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+
+      # Build on a version the toolchain supports ...
+      - name: Set up Node 22 to build
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "pnpm"
+
+      - name: Install
+        run: pnpm install --frozen-lockfile
+
+      - name: Build
+        run: pnpm build
+
+      # ... then switch the runtime to the floor. No `cache: pnpm` here: that
+      # makes setup-node shell out to `pnpm store path`, which would fail on
+      # Node 18 for the very reason this job exists. Nothing below runs pnpm.
+      - name: Switch to Node ${{ matrix.node }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+
+      - name: The built ESM entry must import
+        run: |
+          node --version
+          node -e '
+            import("./packages/js/dist/index.mjs").then((m) => {
+              if (m.getWilayas().length !== 69) throw new Error("wilayas != 69");
+              if (m.getCommunes().length !== 1541) throw new Error("communes != 1541");
+              if (m.findByPostalCode("19018").length !== 1) throw new Error("19018 lookup broken");
+              if (m.getCommune("19-ain-azel-ain-lahdjar") === undefined) throw new Error("canonical commune missing");
+              if (m.search("setif")[0].score !== 1) throw new Error("search broken");
+              console.log("esm ok on " + process.version);
+            }).catch((e) => { console.error(e); process.exit(1); });
+          '
+
+      - name: The built CJS entry must require
+        run: |
+          node -e '
+            const dz = require("./packages/js/dist/index.cjs");
+            if (dz.getWilayas().length !== 69) throw new Error("cjs wilayas != 69");
+            if (dz.getCommunes().length !== 1541) throw new Error("cjs communes != 1541");
+            console.log("cjs ok on " + process.version);
+          '
+
+      - name: The narrow subpaths must load too
+        run: |
+          node -e '
+            Promise.all([
+              import("./packages/js/dist/wilayas.mjs"),
+              import("./packages/js/dist/dairas.mjs"),
+              import("./packages/js/dist/communes.mjs"),
+              import("./packages/js/dist/legacy.mjs"),
+            ]).then(([w, d, c, l]) => {
+              if (w.getWilayas().length !== 69) throw new Error("/wilayas broken");
+              if (d.getDairas().length !== 591) throw new Error("/dairas broken");
+              if (c.getCommunes().length !== 1541) throw new Error("/communes broken");
+              if (l.default.getWilayas().length !== 69) throw new Error("/legacy default export broken");
+              console.log("subpaths ok on " + process.version);
+            }).catch((e) => { console.error(e); process.exit(1); });
+          '
 
   # Bun is CI-only: it is not installed on the maintainer's machine, so it must
   # never appear in a package.json script or a git hook. A script nobody can run

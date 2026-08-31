@@ -1,5 +1,9 @@
 cff-version: 1.2.0
-message: "If you use this dataset, please cite it as below."
+message: >-
+  If you use this dataset, please cite it as below, adding the version and
+  release date of the release you actually used. Both are on the GitHub
+  releases page and on npm and PyPI, and both packages export the matching
+  DATA_VERSION constant.
 type: dataset
 title: "Algeria Wilayas, Daïras and Communes"
 abstract: >-
@@ -20,8 +24,24 @@ authors:
 repository-code: "https://github.com/el-amin-dev/algeria-wilayas-communes"
 url: "https://github.com/el-amin-dev/algeria-wilayas-communes"
 license: CC0-1.0
-version: "2.0.0"
-date-released: "2026-07-20"
+# NO `version:` AND NO `date-released:` HERE, DELIBERATELY.
+#
+# Both fields are optional in CFF 1.2.0, and nothing in the release process
+# updates this file: the version bump is owned by Changesets, which writes
+# packages/js/package.json and CHANGELOG.md and never touches CITATION.cff.
+# A hardcoded version therefore goes stale on the very next release and starts
+# publishing a false claim in GitHub's "Cite this repository" panel.
+#
+# `date-released` was worse: it carried "2026-07-20", which is LAST_VERIFIED —
+# the date the DATA was last checked against its sources. That is a different
+# fact from when the software was released, and conflating them stated
+# something untrue. If either field is ever reinstated, it must be reinstated
+# with a mechanism that keeps it current, and `date-released` must be an actual
+# release date. `LAST_VERIFIED` is exported by both packages and documented in
+# docs/DATA_PROVENANCE.md; it does not belong here.
+#
+# A citation with no version is better than one with a wrong version. The
+# `message:` above asks the citer to add the version they used.
 keywords:
   - Algeria
   - wilaya

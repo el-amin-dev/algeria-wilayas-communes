@@ -246,6 +246,13 @@ the honest total; session 6's README table shows this direction, not the spec's.
 repetition, so the **compressed** size moved by +1.7 %. The spec's "−41 % on communes" and its
 26 KB floor do not exist.
 
+> **Re-measured in session 6** (2026-08-31, Node v22.18.0), and the conclusion is unchanged. The
+> figures below are session 4's run and are kept as the record of what this decision was made on;
+> the numbers the READMEs publish come from the later run and differ only by benchmark variance:
+> warm `findByPostalCode` **5.847 µs → 0.031 µs (188.6×)**, root full API **96.92 kB**, and a cold
+> path **1.5–3.3×** slower rather than 1.4–3.7×. If the two ever disagree by more than noise, the
+> READMEs are the ones that must be right, and this ADR is the thing to re-open.
+
 **What v2 actually won** — all still true, all worth publishing:
 
 - warm `findByPostalCode` **5.92 µs → 0.032 µs (~185×)**, and O(1) instead of O(n), so it stays flat

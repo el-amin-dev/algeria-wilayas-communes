@@ -145,6 +145,15 @@ pnpm changeset       # pick the bump, write the note
 
 Commit the generated file in `.changeset/` with the change it describes.
 
+**`CITATION.cff` is not part of this and carries no version.** Changesets writes
+`packages/js/package.json` and `CHANGELOG.md` and nothing else, so a `version:`
+or `date-released:` in `CITATION.cff` would be stale from the next release
+onward and would publish a wrong value in GitHub's "Cite this repository" panel.
+Both fields are optional in CFF 1.2.0 and are deliberately absent; the file's
+`message:` asks the citer to supply the version they used. Do not add either
+field back without a mechanism that keeps it current — and `date-released` is a
+release date, never `LAST_VERIFIED`, which is when the data was last checked.
+
 ### 2. Let the release workflow open the version PR
 
 On every push to `main`, `.github/workflows/release.yml` runs
@@ -222,20 +231,48 @@ gh repo edit el-amin-dev/algeria-wilayas-communes --add-topic algeria,wilayas,co
 
 ## CI
 
-`.github/workflows/ci.yml` runs six jobs on every push and pull request:
+`.github/workflows/ci.yml` runs seven jobs on every push and pull request:
 
 | Job | What it proves |
 |---|---|
 | `validate` | Every JSON file parses (jq sweep), `data/algeria.json` and `data/raw/reform.json` match their JSON Schemas, and `shared/validate.py` passes. |
 | `python` | The Python suite on the 3.9 – 3.13 matrix. 3.9 is the declared floor (ADR-014). |
 | `cross-language` | Both packages answer identically on the `shared/fixtures/` conformance set. |
-| `node` | Node 18 / 20 / 22 matrix: `typecheck`, `lint`, `format:check`, type tests, tests with coverage, `build`, `lint:publish`, `size`, `bench:import`, `treeshake:proof`. |
+| `node` | Node 22 / 24 matrix. The full gate list, **in the order the job runs them**: `typecheck`, `lint`, `format:check`, `build`, copy `data/` into the package, type tests, tests with coverage, `lint:publish`, `size`, `bench:import`, `treeshake:proof`. |
+| `engines-floor` | Node 18 / 20 matrix. Builds on 22, then re-points Node at the floor and imports the **built artifact** — ESM entry, CJS entry, and the narrow subpaths. |
 | `bun` | The built ESM **and** CJS entries import cleanly under Bun. |
 | `data` | `data/` is byte-identical to what the generator produces, plus `pnpm build:data --check`. |
 
+**The `node` step order is load-bearing. Do not "tidy" it.** Two steps come
+before the tests on purpose:
+
+- **`build` first.** `tests/compat/cjs.test.ts` skips its whole `require()`
+  suite when `packages/js/dist/` is absent, and then asserts unconditionally
+  that `dist/` existed. Run the tests on a fresh checkout with no build and that
+  assertion fails, reporting a missing build as a test failure. The CJS contract
+  is the thing that went a whole release untested, so the suite is deliberately
+  loud about being unable to check it.
+- **The `data/` copy second.** `packages/js/data/` is gitignored — it exists only
+  because `publish-npm.yml` copies `data/` in before packing. Two later steps
+  need it: the CJS test proves `exports["./data/*"]` still resolves, and
+  `lint:publish` runs publint, which packs the package and reports
+  `pkg.exports["./data/*"] … does not match any files` when it is missing. It is
+  a **copy**, the same two lines as `publish-npm.yml`, not the symlink `make dev`
+  creates — `pnpm pack` does not follow a symlinked directory, so a link would
+  satisfy the resolver and still produce a tarball with no data in it.
+
+**Why the `node` matrix is 22 / 24 and not 18 / 20 / 22.** Those are the versions
+the **dev toolchain** runs on, which is a different question from the runtime
+floor promised to consumers: pnpm 11.21 (pinned by `packageManager`) needs
+`>=22.13`, and size-limit 13 needs `^22.18 || ^24 || >=26`. A Node 18 leg dies in
+`Set up Node` before a single gate executes. `engines.node` is still `">=18"`,
+and `engines-floor` is what tests that promise — on the artifact a consumer
+actually runs, without the toolchain a consumer never installs.
+
 There is also a monthly `freshness` workflow. It **opens an issue** rather than
 failing a pull request — a dataset going stale is a maintenance prompt, not a
-reason to block someone's fix.
+reason to block someone's fix. It fires when `LAST_VERIFIED` is more than 274
+days (9 months) old.
 
 ```bash
 gh run list --limit 5          # recent CI runs

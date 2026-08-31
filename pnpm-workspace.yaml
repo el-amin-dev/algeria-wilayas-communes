@@ -1,13 +1,32 @@
 packages:
   - "packages/js"
 
-# esbuild ships a prebuilt native binary and needs its postinstall to run; tsx
-# and vitest are unusable without it. pnpm >= 10 blocks build scripts by default,
-# and since pnpm 11 this allow-list lives here rather than in package.json's
-# "pnpm" field.
+# esbuild ships a prebuilt native binary and needs its postinstall to run; tsx,
+# vitest and tsup are unusable without it. pnpm >= 10 blocks dependency build
+# scripts by default, so it has to be approved explicitly.
 #
-# Do not add pnpm's `allowBuilds:` scaffold here — `pnpm install` writes it as a
-# prompt ("set this to true or false"), it is a string where the schema wants a
-# boolean, and it duplicates this list.
+# BOTH keys below are required, and `allowBuilds` is the one that actually
+# decides. Until session 6 only `onlyBuiltDependencies` was here, and a clean
+# `pnpm install --frozen-lockfile` FAILED with
+#
+#     [ERR_PNPM_IGNORED_BUILDS] Ignored build scripts: esbuild@0.27.7, esbuild@0.28.2
+#
+# and exit code 1 — because pnpm 11 writes its own `allowBuilds:` scaffold into
+# this file on a clean install, with the literal placeholder
+# `esbuild: set this to true or false`. That is a STRING where the schema wants
+# a boolean, so esbuild is left unapproved and the install aborts.
+#
+# The previous fix was to delete the scaffold and add a comment saying not to
+# re-add it. That could not work: pnpm re-writes it on the next clean install,
+# and a comment is advice to a human that the tool never reads. Setting the
+# value to a real `true` is what makes the scaffold idempotent — pnpm sees an
+# answered prompt and leaves it alone.
+#
+# It never reproduced locally because a populated node_modules/.modules.yaml
+# records the earlier approval, so the check is skipped. It only appears on a
+# clean checkout — which is to say, only in CI, on the first push.
+allowBuilds:
+  esbuild: true
+
 onlyBuiltDependencies:
   - esbuild

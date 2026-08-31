@@ -67,20 +67,17 @@ jobs:
       - name: Build
         run: pnpm build
 
-      # A tag push publishes immediately and irreversibly -- npm allows unpublish
-      # only within 72 hours, and never for a version anyone has depended on. So
-      # every gate this repo has runs HERE, before `npm publish`, rather than
-      # only on a developer's machine. ci.yml still has no Node job (session 6
-      # owns that); until it does, this is the only place any of them run
-      # automatically.
-      - name: Gate
-        run: |
-          pnpm typecheck
-          pnpm lint
-          pnpm test
-          pnpm lint:publish
-          pnpm size
-
+      # THIS MUST STAY ABOVE `Gate`. packages/js/data/ is gitignored and does
+      # not exist in a fresh checkout, and two of the gated commands need it:
+      # `pnpm test` asserts exports["./data/*"] resolves (tests/compat/cjs.test.ts),
+      # and `pnpm lint:publish` runs publint, which packs the package and fails
+      # with `pkg.exports["./data/*"] ... does not match any files`.
+      #
+      # Ordered the other way, this job dies at `Gate` on every tag -- while
+      # publish-pypi.yml, which has no such dependency, uploads successfully.
+      # That is precisely the lockstep break the header comment above and
+      # ADR-015 exist to prevent, and PyPI never lets a filename be reused, so
+      # the version would be unrecoverable.
       - name: Copy data into package
         run: |
           rm -rf packages/js/data
@@ -93,6 +90,23 @@ jobs:
           # refuses to ship that table; shipping it as prose under the package's
           # public data subpath is the same table with a disclaimer attached.
           rm -rf packages/js/data/raw
+
+      # A tag push publishes immediately and irreversibly -- npm allows unpublish
+      # only within 72 hours, and never for a version anyone has depended on. So
+      # every gate this repo has runs HERE, before `npm publish`, rather than
+      # trusting that it ran earlier.
+      #
+      # ci.yml's `node` job now runs the same set on every push and PR, so this
+      # is deliberate belt-and-braces rather than the only coverage it once was:
+      # a tag can be pushed at a commit CI never saw, and this is the last gate
+      # before an irreversible operation.
+      - name: Gate
+        run: |
+          pnpm typecheck
+          pnpm lint
+          pnpm test
+          pnpm lint:publish
+          pnpm size
 
       # pack:check runs after the data copy, since it asserts the tarball carries
       # the whole 73-file contract -- which only exists once the copy has run.

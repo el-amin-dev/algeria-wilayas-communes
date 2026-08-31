@@ -82,7 +82,7 @@ describe("provenance is quoted, not paraphrased", () => {
 });
 
 describe("the unverified parent-wilaya mapping never leaks", () => {
-  // data/raw/reform.json carries a `todo` string per new wilaya spelling out an
+  // data/raw/reform.json carries a `todo` string per new wilaya naming an
   // UNVERIFIED postal-prefix candidate mère. ADR-005 refuses to ship that table,
   // and publish-npm.yml deletes data/raw/ from the tarball for the same reason.
   //
@@ -90,34 +90,85 @@ describe("the unverified parent-wilaya mapping never leaks", () => {
   // reader cannot tell a heuristic from a citation once it is in a README, and
   // an address encoded against a guessed mère is wrong in production.
   //
-  // What this checks is the LEAK, not the mention. An earlier version of this
-  // test looked for strings like "32 El Bayadh" and failed on the missing-postal-
-  // code table, where "32 El Bayadh" is simply the wilaya a commune belongs to.
-  // A test that fires on correct prose gets the prose changed, which is the test
-  // damaging the docs rather than protecting them.
+  // This checks the LEAK, not the mention. An earlier version searched for
+  // strings like "32 El Bayadh" and failed on the missing-postal-code table,
+  // where that is simply the wilaya a commune belongs to. A test that fires on
+  // correct prose gets the prose rewritten, which is the test damaging the docs.
   const reform = JSON.parse(read("data/raw/reform.json")) as {
-    newWilayas: { code: string; todo?: string }[];
+    newWilayas: { code: string; nom_fr: string; todo?: string }[];
   };
+  const wilayas = JSON.parse(read("data/wilayas.json")) as {
+    wilayas: { wilaya_num: number; nom_fr: string }[];
+  };
+  const nameOf = new Map(wilayas.wilayas.map((w) => [w.wilaya_num, w.nom_fr]));
 
-  for (const doc of PUBLISHED_DOCS) {
+  /**
+   * Every (new wilaya, candidate parent) pair the stub hints at, derived from
+   * the `todo` strings rather than hard-coded — so if a maintainer edits the
+   * stub, this test follows.
+   */
+  const pairs = reform.newWilayas.flatMap((entry) => {
+    const m = entry.todo?.match(/candidate:\s*(\d{2})\s+([^(]+?)\s*\(/i);
+    const parentCode = m?.[1];
+    const parentName = m?.[2]?.trim();
+    if (parentCode === undefined || parentName === undefined) return [];
+    const childName = entry.nom_fr ?? nameOf.get(Number(entry.code)) ?? "";
+    return childName ? [{ childName, parentName, parentCode }] : [];
+  });
+
+  it("the stub is still parseable, so this test is still meaningful", () => {
+    // If this fails, the todo format changed and the checks below silently
+    // stopped covering anything.
+    expect(pairs.length).toBe(11);
+  });
+
+  // Every committed document, not just the four published pages: docs/ is public
+  // on GitHub, and DATA_PROVENANCE.md and DECISIONS.md are the files that
+  // discuss the mapping in the most detail — the likeliest place to slip.
+  const committedDocs = [
+    ...PUBLISHED_DOCS,
+    "docs/DATA_PROVENANCE.md",
+    "docs/DATA_POLICY.md",
+    "docs/DECISIONS.md",
+    "docs/MIGRATION.md",
+    "SUPPORT.md",
+    "CONTRIBUTING.md",
+    "RUNBOOK.md",
+  ];
+
+  for (const doc of committedDocs) {
+    it(`${doc} never pairs a new wilaya with a candidate parent`, () => {
+      const lines = read(doc).split("\n");
+
+      for (const { childName, parentName, parentCode } of pairs) {
+        for (const [i, line] of lines.entries()) {
+          // Co-occurrence ON ONE LINE is the leak shape: a table row
+          // `| 59 Aflou | 03 Laghouat |`, or a sentence saying Aflou was
+          // detached from Laghouat. Either name alone is innocent, which is why
+          // the whole-document check produced false positives.
+          const leaked =
+            line.includes(childName) &&
+            (line.includes(parentName) || new RegExp(`\\b${parentCode}\\b`).test(line));
+          expect(
+            leaked,
+            `${doc}:${i + 1} pairs "${childName}" with candidate parent "${parentCode} ${parentName}":\n  ${line.trim()}`,
+          ).toBe(false);
+        }
+      }
+    });
+
     it(`${doc} carries none of the generator's candidate text`, () => {
       const text = read(doc);
-
-      // The exact strings from the stub, which are the thing that must not ship.
       for (const entry of reform.newWilayas) {
         if (entry.todo) expect(text).not.toContain(entry.todo);
       }
-
-      // And the phrasing any hand-written leak would almost certainly use.
-      expect(text).not.toMatch(/postal-prefix candidate/i);
-      expect(text).not.toMatch(/\bcandidate m[eè]re\b/i);
     });
   }
 
   it("the mapping really is still unfilled, so these docs are current", () => {
-    // If a maintainer fills the mapping, this test fails and every "not yet
-    // sourced" sentence in the docs becomes false and has to be rewritten.
-    // That is the intended behaviour: the docs and the data change together.
+    // If a maintainer fills the mapping, this fails and every "not yet sourced"
+    // sentence in the docs becomes false and has to be rewritten. That is the
+    // intended coupling: the docs and the data change together.
     expect(reform.newWilayas).toHaveLength(11);
     expect(reform.newWilayas.every((w) => w.todo !== undefined)).toBe(true);
   });

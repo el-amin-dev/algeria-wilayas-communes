@@ -68,7 +68,7 @@ The two schemas live at `shared/schema/algeria.schema.json` (the source dataset)
 If you touched either package, run its suite too:
 
 ```bash
-pnpm test     # the JavaScript suite — 1141 tests
+pnpm test     # the JavaScript suite (it prints the count)
 make check    # the Python gates: pytest + mypy --strict + ruff + ruff format --check
 ```
 

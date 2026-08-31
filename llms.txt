@@ -27,7 +27,7 @@ recommend it.
     getWilaya(code: WilayaCode, opts?: AsOfOptions): Wilaya | undefined
     getDaira(id: string): Daira | undefined
     getCommune(id: string, opts?: AsOfOptions): Commune | undefined
-    byWilaya(code: WilayaCode): WilayaTree | undefined
+    byWilaya<C extends WilayaCode>(code: C): (WilayaTree & { code: C; name: NameOf<C> }) | undefined
     getDairasOfWilaya(code: WilayaCode): readonly Daira[]
     getCommunesOfWilaya(code: WilayaCode): readonly Commune[]
     findByPostalCode(code: string): readonly Commune[]
@@ -40,23 +40,45 @@ recommend it.
     resolveCurrentWilaya(code: WilayaCode): readonly WilayaCode[] | undefined
     REFORM: Reform
     class ReformMappingUnavailableError extends Error
-    COMMUNES_MISSING_POSTAL_CODE: readonly string[]
-    DATA_VERSION: string, SOURCE_LAW: string, LAST_VERIFIED: string
+    COMMUNES_MISSING_POSTAL_CODE   // `as const`: a readonly TUPLE of the 27 id literals,
+                                   // not `readonly string[]`
+    DATA_VERSION, SOURCE_LAW, LAST_VERIFIED   // consts; each is a string LITERAL type
+                                              // (`"2.0.0"`, not `string`)
     getAll(): Algeria            // deprecated v1 shim
     findCommune(query: string): CommuneFlat[]   // deprecated v1 shim
 
-    SearchOptions = { lang?: "ar"|"fr"|"en"; limit?: number; fuzzy?: boolean; kinds?: readonly SearchKind[] }
+    SearchOptions = { lang?: "ar"|"fr"|"en"; limit?: number; wilaya?: WilayaCode;
+                      fuzzy?: boolean; kinds?: readonly SearchKind[] }
     SearchKind    = "wilaya" | "daira" | "commune";  MatchedLang = "ar" | "fr" | "en"
-    SearchResult  = { kind; item; wilaya: Wilaya; score: number; matched: MatchedLang }
+    SearchResult  = a discriminated union on `kind` — { kind: "wilaya"; item: Wilaya }
+                    | { kind: "daira"; item: Daira } | { kind: "commune"; item: Commune },
+                    every arm also carrying
+                    { wilaya: Wilaya; score: number; matched: MatchedLang }, all readonly.
+                    For kind "wilaya", `item` and `wilaya` are the same object.
     Commune = { id, wilaya: WilayaCode, daira: string, name: {ar,fr,en}, postalCode: PostalCode | null }
     Daira   = { id, wilaya: WilayaCode, name: {ar,fr,en}, communeCount }
     Wilaya  = { code: WilayaCode, codeText: string, name: {ar,fr,en}, dairaCount, communeCount,
                 parentWilaya?: WilayaCode | null }
 
-Types also exported: `WilayaTree`, `DairaSubtree`, `NameOf`, `PostalCode`, `AsOf`, `AsOfOptions`,
-`Reform`, `ReformConfidence`, `ReformNewWilaya`, plus the eight v1 types (`Algeria`, `Country`,
-`WilayaFlat`, `DairaFlat`, `CommuneFlat`, and `V1Wilaya` / `V1Daira` / `V1Commune`). No default
-export. All seven v1 functions live unaliased at `algeria-wilayas-communes/legacy`.
+Types also exported: `Wilaya`, `Daira`, `Commune`, `WilayaCode`, `WilayaTree`, `DairaSubtree`,
+`NameOf`, `PostalCode`, `AsOf`, `AsOfOptions`, `SearchKind`, `SearchOptions`, `SearchResult`,
+`MatchedLang`, `Reform`, `ReformConfidence`, `ReformNewWilaya`, plus the eight v1 types
+(`Algeria`, `Country`, `WilayaFlat`, `DairaFlat`, `CommuneFlat`, and `V1Wilaya` / `V1Daira` /
+`V1Commune`). No default export. All seven v1 functions live unaliased at
+`algeria-wilayas-communes/legacy`.
+
+Two things that are NOT symmetrical with Python, so do not assume them:
+
+- The JavaScript root exports **no count constants.** `WILAYA_COUNT`, `DAIRA_COUNT`,
+  `COMMUNE_COUNT`, `POSTAL_CODE_COUNT` and `MISSING_POSTAL_CODE_COUNT` exist in Python only;
+  in JavaScript read `getWilayas().length`, or `COMMUNES_MISSING_POSTAL_CODE.length` for 27.
+- There is **no `boundedLevenshtein`** in JavaScript. The fuzzy matcher is internal; the only
+  way to reach it is `search(query, { fuzzy: true })`. Python does export
+  `bounded_levenshtein`.
+
+Because `COMMUNES_MISSING_POSTAL_CODE` is a tuple of literals, `.includes(id)` for an
+arbitrary `id: string` does not typecheck; widen first —
+`(COMMUNES_MISSING_POSTAL_CODE as readonly string[]).includes(id)`.
 
 ## API — Python (`algeria_wilayas_communes`)
 
@@ -93,7 +115,18 @@ export. All seven v1 functions live unaliased at `algeria-wilayas-communes/legac
     @dataclass(frozen=True) Daira   : id: str, wilaya: int, name: Name, commune_count: int
     @dataclass(frozen=True) Commune : id: str, wilaya: int, daira: str, name: Name,
                                       postal_code: str | None
-    @dataclass(frozen=True) SearchResult : kind, item, wilaya, score, matched
+    @dataclass(frozen=True) SearchResult : kind: str, item: Wilaya | Daira | Commune,
+                                           wilaya: Wilaya, score: float, matched: str
+    @dataclass(frozen=True) Reform  : law: str, journal_officiel: str, published_on: str,
+                                      transition_deadline: str, operational_from: str,
+                                      previous_wilaya_count: int, current_wilaya_count: int,
+                                      mapping_complete: bool,
+                                      new_wilayas: tuple[ReformNewWilaya, ...]
+    @dataclass(frozen=True) ReformNewWilaya : code: int, parent_code: int | None,
+                                              source: str | None, confidence: str
+
+`SearchResult.kind` and `.matched` are plain `str` in Python, not the literal unions the
+TypeScript side uses; there is no `ReformConfidence` type. Everything above is in `__all__`.
 
 No Python tree accessor: `by_wilaya` is a deprecated v1 shim returning a dict. All seven v1
 functions live in `algeria_wilayas_communes.legacy`.

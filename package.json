@@ -26,8 +26,8 @@
     "test:coverage": "vitest run --coverage",
     "test:types": "vitest run --typecheck",
     "lint": "eslint .",
-    "format": "prettier --write \"*.{js,ts,json,yaml}\" .prettierrc \"scripts/**/*.ts\" \"tests/**/*.ts\" \"packages/js/src/**/*.ts\" \"packages/js/*.config.ts\" packages/js/tsconfig.json packages/js/package.json \"benchmarks/**/*.mjs\"",
-    "format:check": "prettier --check \"*.{js,ts,json,yaml}\" .prettierrc \"scripts/**/*.ts\" \"tests/**/*.ts\" \"packages/js/src/**/*.ts\" \"packages/js/*.config.ts\" packages/js/tsconfig.json packages/js/package.json \"benchmarks/**/*.mjs\"",
+    "format": "prettier --write \"*.{js,ts,json,yaml}\" .prettierrc \"scripts/**/*.ts\" \"tests/**/*.ts\" \"packages/js/src/**/*.ts\" \"packages/js/*.config.ts\" packages/js/tsconfig.json packages/js/package.json \"benchmarks/**/*.mjs\" \"scripts/**/*.mjs\"",
+    "format:check": "prettier --check \"*.{js,ts,json,yaml}\" .prettierrc \"scripts/**/*.ts\" \"tests/**/*.ts\" \"packages/js/src/**/*.ts\" \"packages/js/*.config.ts\" packages/js/tsconfig.json packages/js/package.json \"benchmarks/**/*.mjs\" \"scripts/**/*.mjs\"",
     "validate:data": "python3 shared/validate.py"
   },
   "devDependencies": {

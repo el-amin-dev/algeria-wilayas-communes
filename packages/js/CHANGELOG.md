@@ -19,14 +19,14 @@
 
   | Subpath                    | Contents                                         | gzip        |
   | -------------------------- | ------------------------------------------------ | ----------- |
-  | `algeria-wilayas-communes` | full API — accessors, search, reform, v1 shims   | 96.9 kB     |
+  | `algeria-wilayas-communes` | full API — accessors, search, reform, v1 shims   | 96.92 kB    |
   | `…/wilayas`                | 69 wilaya records                                | **2.36 kB** |
   | `…/dairas`                 | wilayas + 591 daïras                             | 16.7 kB     |
   | `…/communes`               | wilayas + daïras + 1541 communes + postal lookup | 64.8 kB     |
   | `…/zod`                    | optional Zod schemas                             | 48.9 kB     |
   | `…/legacy`                 | the byte-exact v1 snake_case surface             | 65.0 kB     |
 
-  A wilaya `<select>` costs 2.36 kB instead of 96.9 kB. The narrow entries omit
+  A wilaya `<select>` costs 2.36 kB instead of 96.92 kB. The narrow entries omit
   `asOf` and name search deliberately — both are derived over commune data, which
   is what those entries exist to exclude.
 
@@ -50,9 +50,9 @@
   `engine-strict=true`.
 
   **On performance, honestly:** warm lookups are dramatically faster — postal-code
-  lookup goes from 5.92 µs to 0.032 µs (~185×) and is now O(1) rather than a scan,
+  lookup goes from 5.847 µs to 0.031 µs (~188.6×) and is now O(1) rather than a scan,
   so it stays flat inside a loop. But the **cold path is slower than v1**, by
-  roughly 1.4–3.7× depending on the call: inlining the data as JavaScript removed
+  roughly 1.5–3.3× depending on the call: inlining the data as JavaScript removed
   the `node:fs` dependency that made browser, Worker, Deno and React Native
   support possible at all, and moved the parse cost into module evaluation, where
   it is larger. Measured numbers and the analysis are in `docs/DECISIONS.md`

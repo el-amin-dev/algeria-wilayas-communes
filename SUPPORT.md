@@ -177,13 +177,16 @@ reasoning: ADR-005 and ADR-007, and
 ### Cold-start performance is not a promise, and v2 is slower than v1 there
 
 Measured and published rather than glossed: v2's **cold path is slower than v1** by roughly
-1.4–3.7× depending on the call, because inlining the data as JavaScript (which is what
+1.5–3.3× depending on the call, because inlining the data as JavaScript (which is what
 removed the `node:fs` dependency and made browser, Worker, Deno and React Native support
 possible at all) moved the parse cost into module evaluation, where it is larger. Warm
-lookups are dramatically faster — postal-code lookup went from 5.92 µs to 0.032 µs and is
-O(1) rather than a scan. The numbers, including the ones that contradict the original design
-document, are in ADR-008. If you are latency-sensitive on cold start, import a narrow subpath
-(`/wilayas` is 2.36 kB gzip against the root's 96.9 kB).
+lookups gain far more than the cold path loses — postal-code lookup went from **5.847 µs to
+0.031 µs (188.6x)** and is O(1) rather than a scan. The full v1-versus-v2 tables, cold and
+warm, are published in
+[the package README](packages/js/README.md#v1-versus-v2-honestly); the decision behind them —
+including the measurement that contradicts the original design document — is ADR-008. If you
+are latency-sensitive on cold start, import a narrow subpath (`/wilayas` is 2.36 kB gzip
+against the root's 96.92 kB).
 
 ### `/lite` is not shipped
 
