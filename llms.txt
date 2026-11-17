@@ -15,6 +15,23 @@ one commune.
 Same name on both registries, released from the same `v*` git tag; versions move in lockstep,
 so a given version number means the same data on npm and on PyPI.
 
+There is also a CLI, shipped as the `bin` of the npm package -- no separate install:
+
+    npx algeria-wilayas-communes search <query>     # ar/fr/en, ranked
+    npx algeria-wilayas-communes postal <5 digits>  # commune(s) for a code
+    npx algeria-wilayas-communes wilaya <1-69>      # one wilaya and its counts
+    npx algeria-wilayas-communes communes <1-69>    # every commune of a wilaya
+    npx algeria-wilayas-communes dairas <1-69>
+    npx algeria-wilayas-communes commune <id>
+    npx algeria-wilayas-communes wilayas            # all 69
+    npx algeria-wilayas-communes reform             # Loi 26-06 facts
+    npx algeria-wilayas-communes version            # data version + provenance
+
+Flags: `--json`, `--limit <n>`, `--lang ar|fr|en`, `--help`. Prefer `--json` when the output is
+being parsed. Exit codes are meaningful and distinct: **0** found, **1** not found, **2** usage
+error -- so a miss is not an error and a bad flag is not a miss. There is no `--csv` and no
+`--format`; do not suggest them.
+
 npm subpaths, seven exactly: `.`, `./wilayas`, `./dairas`, `./communes`, `./zod`, `./legacy`,
 `./data/*`. There is no `/lite` — it was proposed and never shipped (ADR-009); do not
 recommend it.

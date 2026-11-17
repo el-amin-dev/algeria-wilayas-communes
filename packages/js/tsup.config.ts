@@ -59,22 +59,49 @@ import { defineConfig } from "tsup";
  * (node16, bundler) and load-bearing only for node10. `publint --strict`
  * accepts it; deleting it turns five attw rows back to 💀.
  */
-export default defineConfig({
-  entry: {
-    index: "src/index.ts",
-    wilayas: "src/wilayas.ts",
-    dairas: "src/dairas.ts",
-    communes: "src/communes.ts",
-    zod: "src/zod.ts",
-    legacy: "src/legacy/index.ts",
+export default defineConfig([
+  {
+    entry: {
+      index: "src/index.ts",
+      wilayas: "src/wilayas.ts",
+      dairas: "src/dairas.ts",
+      communes: "src/communes.ts",
+      zod: "src/zod.ts",
+      legacy: "src/legacy/index.ts",
+    },
+    format: ["esm", "cjs"],
+    dts: true,
+    splitting: false,
+    sourcemap: true,
+    clean: true,
+    treeshake: true,
+    target: "es2020",
+    outExtension: ({ format }) => ({ js: format === "esm" ? ".mjs" : ".cjs" }),
+    external: ["zod"],
   },
-  format: ["esm", "cjs"],
-  dts: true,
-  splitting: false,
-  sourcemap: true,
-  clean: true,
-  treeshake: true,
-  target: "es2020",
-  outExtension: ({ format }) => ({ js: format === "esm" ? ".mjs" : ".cjs" }),
-  external: ["zod"],
-});
+
+  // The CLI, built separately and deliberately unlike the library entries.
+  //
+  // - ESM only. A CLI is executed, never imported, so a second CJS copy of the
+  //   whole dataset would double the installed size to serve nobody.
+  // - `dts: false`. Nothing imports a CLI, so a .d.ts for it is dead weight and
+  //   would show up as another row in `attw` for no reason.
+  // - `clean: false` is REQUIRED. tsup runs these configs in sequence against
+  //   one outDir; a second `clean: true` would delete everything the first
+  //   config just emitted and the package would publish with only a CLI in it.
+  // - The shebang goes in via `banner`, not in the source, because the source is
+  //   type-checked by `tsc -p tsconfig.json` where a leading `#!` is a syntax
+  //   error.
+  {
+    entry: { cli: "src/cli.ts" },
+    format: ["esm"],
+    dts: false,
+    splitting: false,
+    sourcemap: false,
+    clean: false,
+    treeshake: true,
+    target: "es2020",
+    outExtension: () => ({ js: ".mjs" }),
+    banner: { js: "#!/usr/bin/env node" },
+  },
+]);

@@ -85,6 +85,17 @@ Full API reference: **[npm README](packages/js/README.md)** · **[PyPI README](p
 curl -s https://cdn.jsdelivr.net/gh/el-amin-dev/algeria-wilayas-communes@main/data/wilayas.json | jq '.wilayas | length'
 ```
 
+**From the terminal** (no install, no project)
+
+```bash
+npx algeria-wilayas-communes search "سطيف"
+npx algeria-wilayas-communes postal 19018          # → Ain Lahdjar
+npx algeria-wilayas-communes wilaya 19             # → 20 daïras, 60 communes
+npx algeria-wilayas-communes communes 19 --json | jq '.[].name.fr'
+```
+
+Every command takes `--json`, so it pipes into `jq` instead of being screen-scraped. Exit codes are meaningful: **0** found, **1** not found, **2** usage error. `--help` lists everything.
+
 More ready-to-copy commands (lookups by postal code, per-wilaya queries, rebuild, release) live in **[RUNBOOK.md](RUNBOOK.md)**.
 
 ---
