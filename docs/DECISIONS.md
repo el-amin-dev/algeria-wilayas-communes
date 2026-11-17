@@ -649,6 +649,78 @@ Moving it to trusted publishing is the same shape of change and is worth doing �
 own TestPyPI dry run first, and doing both in one release would mean neither registry had a proven
 path. One at a time.
 
+## ADR-018 — The daira layer carries a name-join artifact; the audit ships before the fix
+
+**Status.** Accepted. Detector landed, corrections deferred to a dedicated release.
+
+**Context.** `data/algeria.json` inherited its trilingual names and postal codes from the
+community corpus `othmanus/algeria-cities`, joined on commune name. The ids contract already
+establishes why that is dangerous: 1541 communes carry only 1500 distinct French names, and 591
+(wilaya, daira) pairs carry only 545 distinct daira names (`shared/contract/ids.md`). A
+name-keyed join against data that ambiguous does not fail loudly — it silently drags a
+homonym's wilaya, daira and postal code across together.
+
+`scripts/audit-postal-attribution.mjs` now looks for the two shapes that leaves behind.
+
+**Detector 1 — foreign shared postal codes.** 36 communes in wilayas 01–48 carry a postal code
+that is also held by a same-named commune in a different wilaya, with a prefix that is not their
+own wilaya's. It is restricted to 01–48 on purpose: for wilayas 49–58 (Loi 19-12) and 59–69
+(Loi 26-06) a foreign prefix is *correct*, because a wilaya carved out of an older one inherits
+the parent's postal space and Algérie Poste has not renumbered. 164 rows there look identical to
+the artifact and are not it.
+
+This supersedes part of `docs/DATA_PROVENANCE.md`. That document described all 94
+prefix-divergent rows in wilayas 1–58 as "known to be correct" and used the 6.7% figure to
+justify keeping the prefix cross-check a warning. The 58 rows in wilayas 49–58 do support that.
+The 36 in 01–48 do not: **every one of them** correlates with a shared postal code, and in 33 of
+the 38 shared codes the sharers have identical names. That is not a coincidence, it is a join.
+
+**Detector 2 — invented daira containers.** The expensive half. A daira holding exactly one
+commune, whose name is also a daira of another wilaya where it is larger. 39 candidates. This
+matters more than the postal codes because `commune id = <padded wilaya>-<slug(daira)>-<slug(commune)>`,
+so an invented container mints a **wrong, stable, public id**.
+
+Verified by hand against independent sources, two examples of each outcome:
+
+| record | shipped | sourced | verdict |
+|---|---|---|---|
+| `Aïn El Turck`, Oran | daira `Bouira`, code `10033` | daira `Aïn El Turck`, code `31300` | defect |
+| `El Marsa`, Alger | daira `El Marsa`, code `02015` | daira `Dar El Beïda`, code `16111` | defect |
+| `Hammamet`, Alger | daira `Bir Mokadem`, code `12016` | daira `Chéraga`, code `16060` | defect |
+| `Sidi Abderrahmane`, Tiaret | daira `Tenes`, code `02066` | daira `Aïn Kermes`, code `14028` | defect |
+| `Sebdou`, Tlemcen | daira `Sebdou`, code `13006` | daira `Sebdou`, code `13006` | **correct** |
+
+Oran is the clearest case: officially 9 daïras and 26 communes. We ship 10 daïras — the extra is
+a one-commune `Bouira` — while Oran's real `Aïn El Turck` daïra sits at 3 communes instead of 4,
+missing its own seat. Annaba is the same shape: 7 shipped where 6 is correct, and removing the
+one-commune `El Eulma` yields exactly 6 daïras and 12 communes.
+
+**Why detector 2 reports candidates and not defects.** Three different things produce that shape
+and only one is a bug: a genuine phantom; a **reform split**, which `note_daira` in
+`data/algeria.json` already documents as expected and which is exactly what `Sebdou` turned out
+to be (its namesake in new wilaya 61 is the other half); and a genuine homonym, which is the
+premise of the ids contract. Separating them needs an external source per record. A detector that
+called all 39 defects would be wrong about at least one, and the project's governing rule is that
+we do not guess.
+
+**Decision, and why the fix is not in this change.** Correcting a daira attribution changes a
+commune's id. Ids are a permanent public contract, and v2.0.0 has not shipped, so this is the one
+free window to change them — which argues for fixing it *now*. Against that: 30 of the 36 rows
+are still unsourced, and applying a partial fix would leave the dataset in a state no document
+describes, with some ids corrected and some not. Nulling the 36 codes wholesale was considered and
+rejected: `null` in this dataset means "published as absent" (`docs/DATA_PROVENANCE.md`), and
+these codes are published — just against the wrong commune. Overloading `null` with "we think this
+is misattributed" would break the one guarantee the field has.
+
+So: **the audit ships, the counts stop being advertised as verified, and the correction gets its
+own release** once all 36 are sourced. The postal-prefix cross-check stays a warning, because
+A21 cannot become a build failure until the data it would fail on is fixed.
+
+**Cost, accepted.** v2.0.0 ships with 36 known-misattributed postal codes and up to 39 suspect
+daira containers, now documented rather than implied-correct. That is strictly better than the
+status quo, where the same defects shipped in v1.0.0 undetected and `DATA_PROVENANCE.md` asserted
+they were fine.
+
 ## Recorded, deliberately not fixed
 
 - **`DairaFlat` has no `wilaya_ar`** (8 fields) while `CommuneFlat` does (12). Almost certainly an

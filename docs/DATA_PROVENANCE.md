@@ -292,12 +292,27 @@ non-null `parentCode` must carry a non-empty `source` and a `confidence` other t
 `{ parentCode: <some code>, source: null, confidence: "unverified" }` would build clean and
 ship a guess to every consumer — reproduced before it was fixed.
 
-The postal-prefix cross-check is a **build warning that can never fail the build**. On data
-known to be correct, the prefix disagrees with the commune's own wilaya code for **94 of the
-1408** communes in wilayas 1–58 — **6.7 %**. A rule that wrong cannot be an assertion: the
-first maintainer to enter a correct-but-prefix-divergent value from the *JO* would otherwise
-be told by a red CI run that the *Journal Officiel* is wrong. There is deliberately no flag
-that promotes it to a hard failure.
+The postal-prefix cross-check is a **build warning that can never fail the build**. The prefix
+disagrees with the commune's own wilaya code for **94 of the 1408** communes in wilayas 1–58 —
+**6.7 %**. A rule that wrong cannot be an assertion: the first maintainer to enter a
+correct-but-prefix-divergent value from the *JO* would otherwise be told by a red CI run that the
+*Journal Officiel* is wrong. There is deliberately no flag that promotes it to a hard failure.
+
+> **Correction (ADR-018).** An earlier version of this paragraph described all 94 of those rows
+> as "data known to be correct". That is true of the 58 rows in wilayas 49–58, where a wilaya
+> carved out of an older one inherits its parent's postal space and Algérie Poste has not
+> renumbered. It is **not** true of the other 36, which sit in wilayas 01–48 where no reform
+> explains them. All 36 carry a postal code that is also held by a same-named commune in another
+> wilaya, and 26 of them additionally sit alone in a daïra that is really a daïra of that other
+> wilaya. Four have been checked by hand against independent sources and all four were wrong —
+> `Aïn El Turck` (Oran) ships Bouira's `10033` instead of `31300`, and its daïra is given as
+> `Bouira`. That is a name-collision join artifact inherited from `othmanus/algeria-cities`, not
+> a correct-but-divergent prefix.
+>
+> Run `node scripts/audit-postal-attribution.mjs` for the current list. The affected rows are
+> **not** marked in the data yet and the correction has its own release; until then, treat the
+> postal code and daïra of any row that audit reports as unverified. The remaining 30 are
+> unsourced, which is why nothing has been changed rather than partially changed.
 
 **The unverified postal-prefix candidates that live in the stub's per-row `todo` strings are
 build input only, and are stripped from both published packages.** `publish-npm.yml` deletes

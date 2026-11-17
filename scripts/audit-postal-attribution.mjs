@@ -118,3 +118,88 @@ console.log(`    POSTAL_ONLY   ${postal.length}  — genuine daira, foreign post
 console.log(
   `\n  Excluded by design: rows in wilayas 49-69, where a foreign postal prefix is correct.`,
 );
+
+// ---------------------------------------------------------------------------
+// DETECTOR 2 — suspicious daira containers, independent of the postal code
+//
+// Detector 1 can only see a row whose postal code was ALSO shared, and it has
+// to exclude wilayas 49-69 (where a foreign postal prefix is correct). Both
+// limits hide real damage, because the invented-container problem does not
+// depend on the postal code at all.
+//
+// This detector asks a different question: is this daira a container the join
+// invented? The signature is a daira holding exactly ONE commune whose name is
+// also a daira of some OTHER wilaya, where that other wilaya's daira is bigger
+// -- i.e. the name's real home looks like somewhere else.
+//
+// IMPORTANT: a hit here is a CANDIDATE, not a verdict. Three different things
+// produce this shape and only the first is a defect:
+//
+//   a) a genuine phantom -- the name was dragged in from a homonym,
+//   b) a REFORM SPLIT -- `data/algeria.json`'s own `note_daira` documents that a
+//      daira divided by Loi 26-06 is listed under each wilaya it now touches, so
+//      a one-commune remnant beside a larger namesake is EXPECTED,
+//   c) a genuine homonym -- Algeria really does have repeated place names; that
+//      is the premise of the whole ids contract (see shared/contract/ids.md).
+//
+// Telling (a) from (b) and (c) needs an external source per record. So this
+// prints candidates for a human to verify and never fails anything.
+// ---------------------------------------------------------------------------
+
+const dairaOccurrences = new Map();
+for (const w of source.wilayas) {
+  for (const d of w.dairas) {
+    if (!dairaOccurrences.has(d.nom_fr)) dairaOccurrences.set(d.nom_fr, []);
+    dairaOccurrences.get(d.nom_fr).push({ wilaya: w.wilaya_num, size: d.communes.length });
+  }
+}
+
+const containers = [];
+for (const w of source.wilayas) {
+  for (const d of w.dairas) {
+    if (d.communes.length !== 1) continue;
+    const elsewhere = dairaOccurrences
+      .get(d.nom_fr)
+      .filter((o) => o.wilaya !== w.wilaya_num && o.size > 1);
+    if (elsewhere.length === 0) continue;
+    const c = d.communes[0];
+    containers.push({
+      wilaya: w.wilaya_num,
+      daira: d.nom_fr,
+      commune: c.nom_fr,
+      postalCode: c.code_postal,
+      nameAlsoDairaOf: elsewhere,
+      // A reform wilaya is the one case where this shape is documented-expected.
+      reformWilaya: w.wilaya_num >= 59,
+    });
+  }
+}
+containers.sort((a, b) => a.wilaya - b.wilaya || a.daira.localeCompare(b.daira));
+
+if (process.argv.includes("--json")) {
+  // handled above; kept for symmetry if the flag order changes
+}
+
+console.log(`\n\nSuspicious daira containers — ${containers.length} candidates\n`);
+console.log(
+  `  ${w("w", 3)} ${w("singleton daira", 22)} ${w("its commune", 24)} ${w("code", 6)} name is also a daira of`,
+);
+console.log("  " + "-".repeat(94));
+for (const c of containers) {
+  console.log(
+    `  ${w(c.wilaya, 3)} ${w(c.daira, 22)} ${w(c.commune, 24)} ${w(c.postalCode ?? "null", 6)} ` +
+      c.nameAlsoDairaOf.map((o) => `${o.wilaya}(${o.size})`).join(", "),
+  );
+}
+
+const crossed = containers.filter((c) =>
+  findings.some((f) => f.wilaya === c.wilaya && f.daira === c.daira),
+);
+console.log(
+  `\n  ${crossed.length} of these also carry a foreign shared postal code (detector 1 agrees).`,
+);
+console.log(
+  `  ${containers.length - crossed.length} are visible ONLY here -- mostly wilayas 49-69, which`,
+);
+console.log(`  detector 1 must exclude. Each still needs a source before it is called a defect:`);
+console.log(`  a reform split looks identical (see note_daira in data/algeria.json).`);
