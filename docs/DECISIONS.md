@@ -721,6 +721,48 @@ daira containers, now documented rather than implied-correct. That is strictly b
 status quo, where the same defects shipped in v1.0.0 undetected and `DATA_PROVENANCE.md` asserted
 they were fine.
 
+## ADR-019 — The MCP server is its own package, and is NOT on the `v*` tag
+
+**Status.** Accepted. Package built and tested; release path deliberately left open.
+
+**Context.** An MCP server makes the dataset callable by an assistant instead of recalled by
+one, which matters more here than for most data: a model asked about Algeria's wilayas answers
+**58** with confidence, because that was true from 2019 until April 2026 and is what nearly
+every page on the open web still says.
+
+**Why not a second `bin` on `algeria-wilayas-communes`.** That was the cheaper option and it
+was rejected. The library's **zero runtime dependencies** is a headline property — it is why it
+works unchanged in a browser, a Worker, Deno and Bun, and `packages/python` goes as far as
+hand-rolling a bounded Levenshtein rather than taking a fuzzy-matching dependency. The MCP SDK
+would be that package's first `dependencies` entry, inflicted on every consumer who only wanted
+`getWilaya(19)`. Implementing MCP by hand over stdio to keep the dep count at zero was also
+considered — it is only JSON-RPC 2.0 and a short handshake — and rejected as the wrong place to
+hand-roll: a protocol we do not own, whose spec moves, is exactly what a maintained SDK is for.
+
+**Why it is not wired into `publish-npm.yml` / `publish-pypi.yml`.** Those both fire on `v*` and
+publish npm and PyPI from the same commit, which is what makes "`algeria-wilayas-communes@2.1.0`
+on npm and `==2.1.0` on PyPI hold the same 1541 records" true by construction (ADR-015). A third
+artifact on that tag would either have to share the version — claiming a data version it does
+not contain — or carry its own, which means the tag no longer identifies one version. Neither is
+acceptable for a guarantee whose whole value is that it needs no checking.
+
+So `packages/mcp` is a workspace member (unlike `packages/python`, which cannot be one), it
+builds, lints, typechecks and is tested in CI, and it has **no automated publish**. Adding one
+needs its own decision about tag naming — `mcp-v*` is the obvious shape — and that decision is
+not made here.
+
+**Testing.** `tests/mcp.test.ts` speaks newline-delimited JSON-RPC to the built artifact
+directly rather than using the SDK's client. Using the SDK on both ends would test the SDK
+against itself; framing the requests by hand proves the published server answers what a real
+client sends. What it asserts is the part that rots silently: the six tool **names** (renaming
+one breaks every already-configured assistant and nothing else in the repo would notice), their
+**input schemas**, and the **guard rails in the descriptions** — which are not documentation but
+the only text a model reads before deciding to call, and the single defence against it answering
+from memory. A tidy-up that reworded them would pass every other test here.
+
+**Cost, accepted.** A third package to keep in step, with no release automation, and the MCP
+protocol version pinned by a dependency rather than by us.
+
 ## Recorded, deliberately not fixed
 
 - **`DairaFlat` has no `wilaya_ar`** (8 fields) while `CommuneFlat` does (12). Almost certainly an
