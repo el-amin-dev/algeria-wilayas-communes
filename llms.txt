@@ -42,6 +42,9 @@ recommend it.
     class ReformMappingUnavailableError extends Error
     COMMUNES_MISSING_POSTAL_CODE   // `as const`: a readonly TUPLE of the 27 id literals,
                                    // not `readonly string[]`
+    isCommuneMissingPostalCode(id: string): boolean   // the cast-free membership test
+    WILAYA_COUNT, DAIRA_COUNT, COMMUNE_COUNT, POSTAL_CODE_COUNT,
+    MISSING_POSTAL_CODE_COUNT      // consts; same values as Python
     DATA_VERSION, SOURCE_LAW, LAST_VERIFIED   // consts; each is a string LITERAL type
                                               // (`"2.0.0"`, not `string`)
     getAll(): Algeria            // deprecated v1 shim
@@ -67,18 +70,22 @@ Types also exported: `Wilaya`, `Daira`, `Commune`, `WilayaCode`, `WilayaTree`, `
 `V1Commune`). No default export. All seven v1 functions live unaliased at
 `algeria-wilayas-communes/legacy`.
 
-Two things that are NOT symmetrical with Python, so do not assume them:
+One thing that is NOT symmetrical with Python, so do not assume it:
 
-- The JavaScript root exports **no count constants.** `WILAYA_COUNT`, `DAIRA_COUNT`,
-  `COMMUNE_COUNT`, `POSTAL_CODE_COUNT` and `MISSING_POSTAL_CODE_COUNT` exist in Python only;
-  in JavaScript read `getWilayas().length`, or `COMMUNES_MISSING_POSTAL_CODE.length` for 27.
 - There is **no `boundedLevenshtein`** in JavaScript. The fuzzy matcher is internal; the only
   way to reach it is `search(query, { fuzzy: true })`. Python does export
   `bounded_levenshtein`.
 
-Because `COMMUNES_MISSING_POSTAL_CODE` is a tuple of literals, `.includes(id)` for an
-arbitrary `id: string` does not typecheck; widen first —
-`(COMMUNES_MISSING_POSTAL_CODE as readonly string[]).includes(id)`.
+The five count constants (`WILAYA_COUNT`, `DAIRA_COUNT`, `COMMUNE_COUNT`, `POSTAL_CODE_COUNT`,
+`MISSING_POSTAL_CODE_COUNT`) are now exported from BOTH roots with the same values. They were
+Python-only before v2.0.0.
+
+`COMMUNES_MISSING_POSTAL_CODE` is a tuple of literals, so `.includes(id)` for an arbitrary
+`id: string` does not typecheck. **Use `isCommuneMissingPostalCode(id)`** — it takes a plain
+`string` and needs no cast. Do not recommend the old
+`(COMMUNES_MISSING_POSTAL_CODE as readonly string[]).includes(id)` workaround; the cast now
+lives inside the package. The tuple is still exported for anyone who wants the literal types,
+and `MissingPostalCodeId` names that union.
 
 ## API — Python (`algeria_wilayas_communes`)
 

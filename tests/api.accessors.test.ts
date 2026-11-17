@@ -53,8 +53,15 @@ import type { WilayaCode } from "../packages/js/src/index";
  */
 const PUBLIC_API = [
   "COMMUNES_MISSING_POSTAL_CODE",
+  // The five size constants were generated from the start but only re-exported
+  // on the Python side until now. They are inlined literals, so exporting them
+  // adds no data to any bundle.
+  "COMMUNE_COUNT",
+  "DAIRA_COUNT",
   "DATA_VERSION",
   "LAST_VERIFIED",
+  "MISSING_POSTAL_CODE_COUNT",
+  "POSTAL_CODE_COUNT",
   // The reform surface is exported UNCONDITIONALLY, even though the 58 -> 69
   // mapping is still a stub and both resolvers throw. A conditionally-present
   // export would make the emitted .d.ts depend on data state, so tsc, publint and
@@ -62,6 +69,7 @@ const PUBLIC_API = [
   "REFORM",
   "ReformMappingUnavailableError",
   "SOURCE_LAW",
+  "WILAYA_COUNT",
   "assertWilayaCode",
   "byWilaya",
   "findByPostalCode",
@@ -81,6 +89,7 @@ const PUBLIC_API = [
   "getDairasOfWilaya",
   "getWilaya",
   "getWilayas",
+  "isCommuneMissingPostalCode",
   "isPostalCode",
   "isWilayaCode",
   "resolveCurrentWilaya",
@@ -413,5 +422,69 @@ describe("provenance constants", () => {
     // nothing here.
     expect(typeof LAST_VERIFIED).toBe("string");
     expect(LAST_VERIFIED).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+  });
+});
+
+describe("the size constants", () => {
+  // These are the constants that existed in Python and not in JavaScript until
+  // this release. Asserting them against the data rather than against literals
+  // is the whole point: a hand-written 69 would not notice a reform, and the
+  // next data change has to move both the constant and the records together.
+  it("each constant equals what the dataset actually contains", () => {
+    expect(api.WILAYA_COUNT).toBe(api.getWilayas().length);
+    expect(api.DAIRA_COUNT).toBe(api.getDairas().length);
+    expect(api.COMMUNE_COUNT).toBe(api.getCommunes().length);
+
+    const withCode = api.getCommunes().filter((c) => c.postalCode !== null);
+    expect(api.POSTAL_CODE_COUNT).toBe(withCode.length);
+    expect(api.MISSING_POSTAL_CODE_COUNT).toBe(api.COMMUNE_COUNT - api.POSTAL_CODE_COUNT);
+    expect(api.MISSING_POSTAL_CODE_COUNT).toBe(api.COMMUNES_MISSING_POSTAL_CODE.length);
+  });
+
+  it("matches the counts Python exports, so the two packages cannot drift", () => {
+    // The literals here are duplicated from _constants.py on purpose. The
+    // cross-language fixture proves the records agree; this proves the numbers
+    // a consumer reads without touching a record agree too.
+    expect(api.WILAYA_COUNT).toBe(69);
+    expect(api.DAIRA_COUNT).toBe(591);
+    expect(api.COMMUNE_COUNT).toBe(1541);
+    expect(api.POSTAL_CODE_COUNT).toBe(1514);
+    expect(api.MISSING_POSTAL_CODE_COUNT).toBe(27);
+  });
+});
+
+describe("isCommuneMissingPostalCode", () => {
+  it("is true for every id in the published hole list, and only those", () => {
+    for (const id of api.COMMUNES_MISSING_POSTAL_CODE) {
+      expect(api.isCommuneMissingPostalCode(id)).toBe(true);
+    }
+    const holes = new Set<string>(api.COMMUNES_MISSING_POSTAL_CODE);
+    const withCode = api.getCommunes().filter((c) => !holes.has(c.id));
+    for (const c of withCode) {
+      expect(api.isCommuneMissingPostalCode(c.id)).toBe(false);
+    }
+  });
+
+  it("agrees with the record's own postalCode for all 1541 communes", () => {
+    // The list and the records are generated from one source, so disagreement
+    // here means the generator emitted two different answers to one question.
+    for (const c of api.getCommunes()) {
+      expect(api.isCommuneMissingPostalCode(c.id)).toBe(c.postalCode === null);
+    }
+  });
+
+  it("returns false for an id that does not exist, rather than throwing", () => {
+    // "is this a known hole" is not "is this a valid id" -- getCommune answers
+    // the second question. Nothing in the accessor layer raises.
+    expect(api.isCommuneMissingPostalCode("not-a-commune")).toBe(false);
+    expect(api.isCommuneMissingPostalCode("")).toBe(false);
+  });
+
+  it("needs no cast at the call site, which is the reason it exists", () => {
+    // A plain `string` is accepted. The widening cast llms.txt used to document
+    // now lives inside the package. This is a type-level claim; it passes by
+    // compiling at all under vitest's typecheck mode.
+    const id: string = "19-ain-azel-ain-lahdjar";
+    expect(typeof api.isCommuneMissingPostalCode(id)).toBe("boolean");
   });
 });

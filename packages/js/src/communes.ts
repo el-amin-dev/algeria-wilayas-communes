@@ -31,6 +31,7 @@
  */
 
 export { COMMUNES_MISSING_POSTAL_CODE } from "./generated/communes";
+export { isCommuneMissingPostalCode } from "./postal-holes";
 export { assertWilayaCode, isPostalCode, isWilayaCode } from "./guards";
 export { getDaira, getDairas, getDairasOfWilaya } from "./tiers/dairas";
 export { findByPostalCode, getCommune, getCommunes, getCommunesOfWilaya } from "./tiers/communes";
