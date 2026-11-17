@@ -273,6 +273,15 @@ jobs:
           cp -r data packages/js/data
           rm -rf packages/js/data/raw
 
+      # tests/mcp.test.ts is `describe.skipIf(!HAS_SERVER)` against
+      # packages/mcp/dist/, so without this step the whole MCP suite SKIPS here
+      # and the job still goes green -- the failure mode the file's own
+      # "is built" assertion exists to catch, which cannot fire from inside a
+      # skipped describe. Build it before the tests, same reasoning as the
+      # library build above.
+      - name: Build the MCP server
+        run: pnpm -F algeria-wilayas-communes-mcp build
+
       - name: Type tests
         run: pnpm test:types
 
