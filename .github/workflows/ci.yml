@@ -56,7 +56,16 @@ jobs:
   # JavaScript side accumulated 1136 tests. The two shipped from the same tag.
   python:
     name: Python ${{ matrix.python-version }}
-    runs-on: ubuntu-latest
+    # Per-version runner, defaulting to ubuntu-latest. `ubuntu-latest` moved to
+    # Ubuntu 26.04, whose actions/setup-python manifest no longer carries 3.9 --
+    # the job failed in 11 seconds with "The version '3.9' with architecture
+    # 'x64' was not found for Ubuntu 26.04", before running a single test.
+    #
+    # Dropping 3.9 from the matrix was the tempting fix and it is the wrong one:
+    # `requires-python = ">=3.9"` is a promise on the PyPI page, and an untested
+    # floor is how the >=3.8 claim ADR-014 had to retract survived two releases.
+    # Pin the floor to a runner that still has the interpreter instead.
+    runs-on: ${{ matrix.runner || 'ubuntu-latest' }}
 
     strategy:
       # One version failing must not cancel the others. A 3.9-only break is
@@ -74,6 +83,12 @@ jobs:
         # an untested claim on the PyPI page. 3.14 was added once the suite was
         # confirmed green on it.
         python-version: ["3.9", "3.10", "3.11", "3.12", "3.13", "3.14"]
+        include:
+          # 3.9 is EOL upstream and absent from the 26.04 image. It stays in the
+          # matrix because the floor still claims it; it just needs an older
+          # runner. Remove this entry only together with raising the floor.
+          - python-version: "3.9"
+            runner: ubuntu-24.04
 
     steps:
       - name: Checkout
