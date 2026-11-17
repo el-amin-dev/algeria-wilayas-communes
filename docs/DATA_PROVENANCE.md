@@ -255,6 +255,40 @@ of the 11 rows, disagree on 2, and say nothing at all about the remaining 6**. T
 independent heuristics agreeing a quarter of the time is the strongest possible argument for
 publishing neither. Neither is a source.
 
+> **Research note, 2026-11-18 — candidates checked, deliberately still not written down.**
+>
+> Two secondary web sources were examined. They agree with each other on which wilaya *mère* each
+> of the 11 came from, and that agrees with the postal-prefix candidate already recorded in every
+> row's `todo` string in `data/raw/reform.json` — 11 times out of 11. The pairs are not reproduced
+> here; they live in that file, which is the one place allowed to hold a candidate, and
+> `tests/docs.test.ts` fails this document if a pair appears in it.
+>
+> **The 11/11 is the reason it was not written down, not a reason to write it.**
+> `scripts/build-data.ts` says in its own comment that "a postal-prefix guess agrees with the
+> postal-prefix cross-check by construction", and warning W1 stays silent on precisely this case.
+> The postal-prefix candidate is derived from the same commune records, so it is not a second
+> opinion — it is the same opinion restated. Strip it out and the evidence is two web pages, one of
+> them demonstrably unreliable (below), weighed against a field that `parentWilaya` serves to every
+> consumer without consulting `confidence`, and that misroutes real post when wrong. The bar stays
+> where ADR-005 put it: the text of JO n°25.
+>
+> **A conflict that should make anyone distrust web sources on this reform.** The same two sources
+> disagree with this dataset about **which number each new wilaya carries** — not about parentage.
+> One ordering matches ours, and the news outlet *Algérie Éco* independently publishes ours. The
+> other, from `dzbuild.com` and `ouikayen.com` (both citing décret 26-206), permutes codes 60–69.
+> That permuted ordering is exactly the list of wilayas *mères* sorted by code ascending, which is
+> what one would expect a content farm to generate from a parent table.
+>
+> Our codes are corroborated from inside the dataset and theirs are not. For each new wilaya, the
+> postal codes actually carried by the communes we assign to it match the prefix of the parent in
+> its own `todo` string — so the code, the commune set and the prefix all agree. Under the permuted
+> ordering they would not. That is evidence for the codes we ship, not proof.
+>
+> Both sources also attribute the *numbering* to **décret présidentiel 26-206 (JO n°40, 25 May
+> 2026)** rather than to Loi 26-06 (JO n°25), which is what `SOURCE_LAW` cites. If so, the law
+> created the wilayas and a later decree numbered them, and our provenance string names only the
+> first. Unverified — do not change `SOURCE_LAW` on the strength of two web pages.
+
 So the mapping **ships unfilled**:
 
 - `data/raw/reform.json` carries all 11 rows with `parentCode: null`, `source: null`,
