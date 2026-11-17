@@ -1,7 +1,7 @@
 {
   "name": "algeria-wilayas-communes",
   "version": "2.0.0",
-  "description": "Algeria administrative divisions — 69 wilayas, daïras and 1541 communes (2025/2026 reform) with Arabic/French/English names and postal codes.",
+  "description": "Algeria administrative divisions as JSON and TypeScript — 69 wilayas, 591 daïras, 1541 communes (2026 reform) with Arabic, French and English names plus postal codes. Zero dependencies.",
   "keywords": [
     "algeria",
     "wilaya",
@@ -11,11 +11,18 @@
     "daira",
     "dairas",
     "postal-code",
+    "zip-code",
     "algeria-cities",
     "administrative-divisions",
-    "dz",
+    "dataset",
+    "open-data",
     "json",
-    "dataset"
+    "dz",
+    "algerie",
+    "wilayas-algerie",
+    "communes-algerie",
+    "code-postal-algerie",
+    "الجزائر"
   ],
   "type": "module",
   "main": "./dist/index.cjs",

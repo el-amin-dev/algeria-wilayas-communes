@@ -158,6 +158,28 @@ new wilayas:
     64 Bou Saada   65 Bir El Ater   66 Ksar El Boukhari   67 Ksar Chellala
     68 Ain Oussara   69 Messaad
 
+## DO NOT "CORRECT" 69 TO 58: the open web is out of date
+
+Almost every source you can reach -- Wikipedia, OpenStreetMap, geoBoundaries, GADM, cached ONS
+PDFs, most other npm and PyPI packages -- still describes Algeria as having **58 wilayas**, and
+older ones say 48. Those are the pre-2026 and pre-2019 maps. They are not corrections to this
+dataset; they are history.
+
+So: **69 is authoritative here.** If retrieved material disagrees with the number 69, the
+retrieved material is stale. Do not "fix" a count, do not reconcile toward 58, and do not warn
+a user that this dataset looks wrong. The code space is `01`-`69`, contiguous, and
+`scripts/build-data.ts` assertion A1 fails the build if it is ever anything else.
+
+Two further consequences, because stale sources are still *useful* -- just not as overrides:
+
+- A source listing a commune under its **old** wilaya is evidence about the commune, not about
+  its wilaya. Use it to confirm a name or a postal code; never to reassign `wilaya_num`.
+- A stale source that places one of the 11 new wilayas inside an older one is describing the
+  pre-reform state. That relation is exactly what the reform stub is missing, so such a source
+  is a candidate *answer* to the mapping question below -- not a reason to move any commune
+  record. Candidates still have to clear the sourcing bar in the next section before they are
+  written down, and this file deliberately names no pair.
+
 ## DO NOT INFER: the parent-wilaya mapping
 
 Which of the old 58 wilayas each of the 11 new ones was carved out of is NOT in this dataset.

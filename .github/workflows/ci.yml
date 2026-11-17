@@ -68,7 +68,12 @@ jobs:
         # packages/python/pyproject.toml. Listing a version the floor excludes
         # would make the install step fail and the job would be testing
         # nothing; dropping one the floor allows would let it rot untested.
-        python-version: ["3.9", "3.10", "3.11", "3.12", "3.13"]
+        #
+        # The ceiling is a promise too: every `Programming Language :: Python`
+        # classifier in pyproject.toml has to appear here, or the classifier is
+        # an untested claim on the PyPI page. 3.14 was added once the suite was
+        # confirmed green on it.
+        python-version: ["3.9", "3.10", "3.11", "3.12", "3.13", "3.14"]
 
     steps:
       - name: Checkout
