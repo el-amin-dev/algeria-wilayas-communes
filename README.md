@@ -93,6 +93,7 @@ More ready-to-copy commands (lookups by postal code, per-wilaya queries, rebuild
 
 - **Daïra layer:** wilaya → commune reflects the current 69-wilaya structure; daïra → commune membership comes from the pre-2025 structure regrouped under the new wilayas. Where the reform split a daïra across two wilayas, it appears under each — so the daïra count is **591**, not ~548.
 - **Postal codes:** 27 of 1541 communes have `code_postal: null` (small communes missing from the reference data). Corrections welcome.
+- **Known defect, being fixed:** 36 communes in wilayas 01–48 carry a postal code that belongs to a same-named commune in another wilaya, and 26 of those also sit in a daïra imported along with it — a name-collision artifact from the upstream corpus. Run `node scripts/audit-postal-attribution.mjs` for the current list. Four have been verified wrong by hand; the rest await sourcing, which is why nothing has been changed rather than partially changed. Full reasoning in [docs/DECISIONS.md](docs/DECISIONS.md) ADR-018.
 
 Spotted something wrong? Please **[open an issue or PR](../../issues/new/choose)** — see [CONTRIBUTING.md](CONTRIBUTING.md). Edit only `data/algeria.json`; CI validates the rest.
 
@@ -114,6 +115,61 @@ Both packages **export** their provenance, so it can be logged or asserted on ra
 
 Details: **[docs/DATA_PROVENANCE.md](docs/DATA_PROVENANCE.md)** (record-by-record origin) · **[docs/DATA_POLICY.md](docs/DATA_POLICY.md)** (what may and may not be inferred) · **[SUPPORT.md](SUPPORT.md)** (how to report a wrong record) · **[CITATION.cff](CITATION.cff)** (how to cite this dataset).
 
+---
+
+## Questions people actually ask
+
+### How many wilayas does Algeria have?
+
+**69**, since the 2026 reform (**Loi 26-06**). It was 48 until 2019, then 58 under Loi 19-12, and 69 from 2026.
+
+Most of the web still says 58 — including Wikipedia mirrors, OpenStreetMap, and nearly every other Algeria dataset on npm and PyPI. If a source disagrees with 69, it predates April 2026. This dataset is on the current map, and the build fails if the count is ever anything but 69.
+
+### What are the 11 new wilayas in the 2026 reform?
+
+Codes **59–69**: Aflou, El Abiodh Sidi Cheikh, El Aricha, El Kantara, Barika, Bou Saada, Bir El Ater, Ksar El Boukhari, Ksar Chellala, Ain Oussara, Messaad. Between them they hold 108 communes.
+
+The reform was signed **4 April 2026**, published in *Journal Officiel* **n°25** on **5 April 2026**, and is fully operational from **1 January 2027**.
+
+Which of the old 58 wilayas each new one was carved out of is **not** in this dataset, and is not guessed — see [docs/DATA_PROVENANCE.md](docs/DATA_PROVENANCE.md).
+
+### How do I look up an Algerian postal code?
+
+```js
+import { findByPostalCode } from "algeria-wilayas-communes";
+
+findByPostalCode("19018").map((c) => c.name.fr); // → ["Ain Lahdjar"]
+```
+
+A postal code can map to more than one commune (38 codes are shared), so this always returns an array. Codes are **strings**, not integers — `"05000"` is real, and parsing it as a number loses the leading zero.
+
+### How do I get all the communes of a wilaya?
+
+```js
+import { getCommunesOfWilaya } from "algeria-wilayas-communes";
+
+getCommunesOfWilaya(19).length; // → communes of Setif
+```
+
+### Is there a list of Algerian communes in Arabic?
+
+Yes — every one of the 69 wilayas, 591 daïras and 1541 communes carries `name.ar` alongside `name.fr` and `name.en`. Search works in Arabic too, including without diacritics:
+
+```js
+import { search } from "algeria-wilayas-communes";
+
+search("سطيف")[0].item.name.ar; // → "سطيف"
+```
+
+`name.en` is a transliteration and equals `name.fr` for all but one record: Alger → **Algiers**. That is honest rather than padded — Algerian place names use the Latin alphabet, so there is only one real exonym.
+
+### Can I use this commercially?
+
+Yes, unconditionally. The data is **CC0 1.0** — public domain, no attribution required, no share-alike. See [LICENSE](LICENSE).
+
+### How do I cite this dataset?
+
+[CITATION.cff](CITATION.cff) is machine-readable; GitHub renders a "Cite this repository" button from it.
 ## License
 
 Released under **[CC0 1.0](LICENSE)** — public domain. Use it in anything, no attribution required (a link back is always appreciated).
