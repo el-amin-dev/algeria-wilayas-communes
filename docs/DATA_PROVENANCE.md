@@ -345,7 +345,7 @@ correct-but-prefix-divergent value from the *JO* would otherwise be told by a re
 >
 > Run `node scripts/audit-postal-attribution.mjs` for the current list. The affected rows are
 > **not** marked in the data yet and the correction has its own release; until then, treat the
-> postal code and daïra of any row that audit reports as unverified. The remaining 30 are
+> postal code and daïra of any row that audit reports as unverified. The remaining 32 are
 > unsourced, which is why nothing has been changed rather than partially changed.
 
 **The unverified postal-prefix candidates that live in the stub's per-row `todo` strings are

@@ -16,9 +16,13 @@
   "license": "https://creativecommons.org/publicdomain/zero/1.0/",
   "isAccessibleForFree": true,
   "version": "2.0.0",
-  "datePublished": "2026-07-21",
+  "datePublished": "2026-07-20",
   "dateModified": "2026-07-20",
-  "inLanguage": ["ar", "fr", "en"],
+  "inLanguage": [
+    "ar",
+    "fr",
+    "en"
+  ],
   "keywords": [
     "Algeria",
     "wilaya",
@@ -34,7 +38,10 @@
   "spatialCoverage": {
     "@type": "Place",
     "name": "Algeria",
-    "address": { "@type": "PostalAddress", "addressCountry": "DZ" }
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "DZ"
+    }
   },
   "temporalCoverage": "2026-04-05/..",
   "creator": {
@@ -50,11 +57,31 @@
   ],
   "measurementTechnique": "Compiled from the ONS Code Géographique National and the reform laws; postal codes and trilingual names cross-referenced against a community corpus. Known defects are documented rather than silently corrected — see docs/DATA_PROVENANCE.md and ADR-018.",
   "variableMeasured": [
-    { "@type": "PropertyValue", "name": "wilayas", "value": 69 },
-    { "@type": "PropertyValue", "name": "dairas", "value": 591 },
-    { "@type": "PropertyValue", "name": "communes", "value": 1541 },
-    { "@type": "PropertyValue", "name": "communes with a postal code", "value": 1514 },
-    { "@type": "PropertyValue", "name": "communes without a postal code", "value": 27 }
+    {
+      "@type": "PropertyValue",
+      "name": "wilayas",
+      "value": 69
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "dairas",
+      "value": 591
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "communes",
+      "value": 1541
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "communes with a postal code",
+      "value": 1514
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "communes without a postal code",
+      "value": 27
+    }
   ],
   "distribution": [
     {

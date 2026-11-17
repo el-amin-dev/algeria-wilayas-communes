@@ -23,11 +23,24 @@
     "algerie",
     "الجزائر"
   ],
-  "contributors": [{ "title": "El Amin", "path": "https://el-amin.dev", "roles": ["author"] }],
+  "contributors": [
+    {
+      "title": "El Amin",
+      "path": "https://el-amin.dev",
+      "roles": ["author"]
+    }
+  ],
   "sources": [
-    { "title": "ONS Code Géographique National" },
-    { "title": "Loi 26-06 (2026), Journal Officiel n°25" },
-    { "title": "othmanus/algeria-cities", "path": "https://github.com/othmanus/algeria-cities" }
+    {
+      "title": "ONS Code Géographique National"
+    },
+    {
+      "title": "Loi 26-06 (2026), Journal Officiel n°25"
+    },
+    {
+      "title": "othmanus/algeria-cities",
+      "path": "https://github.com/othmanus/algeria-cities"
+    }
   ],
   "resources": [
     {
@@ -48,17 +61,32 @@
             "type": "string",
             "description": "Zero-padded code, \"01\"-\"69\". A STRING: \"01\" loses its zero as a number."
           },
-          { "name": "nom_ar", "type": "string" },
-          { "name": "nom_fr", "type": "string" },
+          {
+            "name": "nom_ar",
+            "type": "string"
+          },
+          {
+            "name": "nom_fr",
+            "type": "string"
+          },
           {
             "name": "nom_en",
             "type": "string",
             "description": "Transliteration; equals nom_fr except Alger -> Algiers."
           },
-          { "name": "nb_dairas", "type": "integer" },
-          { "name": "nb_communes", "type": "integer" }
+          {
+            "name": "nb_dairas",
+            "type": "integer"
+          },
+          {
+            "name": "nb_communes",
+            "type": "integer"
+          }
         ],
         "primaryKey": ["wilaya_num"]
+      },
+      "dialect": {
+        "property": "wilayas"
       }
     },
     {
@@ -69,16 +97,43 @@
       "description": "591 daïra entries under the `dairas` key. This counts (wilaya, daïra) PAIRS: a daïra the reform split across two wilayas appears under each, so 591 is not the official daïra count. No wilaya_ar field, unlike communes.",
       "schema": {
         "fields": [
-          { "name": "wilaya_num", "type": "integer" },
-          { "name": "wilaya_code", "type": "string" },
-          { "name": "wilaya_fr", "type": "string" },
-          { "name": "wilaya_en", "type": "string" },
-          { "name": "nom_ar", "type": "string" },
-          { "name": "nom_fr", "type": "string" },
-          { "name": "nom_en", "type": "string" },
-          { "name": "nb_communes", "type": "integer" }
+          {
+            "name": "wilaya_num",
+            "type": "integer"
+          },
+          {
+            "name": "wilaya_code",
+            "type": "string"
+          },
+          {
+            "name": "wilaya_fr",
+            "type": "string"
+          },
+          {
+            "name": "wilaya_en",
+            "type": "string"
+          },
+          {
+            "name": "nom_ar",
+            "type": "string"
+          },
+          {
+            "name": "nom_fr",
+            "type": "string"
+          },
+          {
+            "name": "nom_en",
+            "type": "string"
+          },
+          {
+            "name": "nb_communes",
+            "type": "integer"
+          }
         ],
         "primaryKey": ["wilaya_num", "nom_fr"]
+      },
+      "dialect": {
+        "property": "dairas"
       }
     },
     {
@@ -89,25 +144,63 @@
       "description": "1541 communes under the `communes` key, denormalized with wilaya and daïra names.",
       "schema": {
         "fields": [
-          { "name": "wilaya_num", "type": "integer" },
-          { "name": "wilaya_code", "type": "string" },
-          { "name": "wilaya_ar", "type": "string" },
-          { "name": "wilaya_fr", "type": "string" },
-          { "name": "wilaya_en", "type": "string" },
-          { "name": "daira_ar", "type": "string" },
-          { "name": "daira_fr", "type": "string" },
-          { "name": "daira_en", "type": "string" },
-          { "name": "nom_ar", "type": "string" },
-          { "name": "nom_fr", "type": "string" },
-          { "name": "nom_en", "type": "string" },
+          {
+            "name": "wilaya_num",
+            "type": "integer"
+          },
+          {
+            "name": "wilaya_code",
+            "type": "string"
+          },
+          {
+            "name": "wilaya_ar",
+            "type": "string"
+          },
+          {
+            "name": "wilaya_fr",
+            "type": "string"
+          },
+          {
+            "name": "wilaya_en",
+            "type": "string"
+          },
+          {
+            "name": "daira_ar",
+            "type": "string"
+          },
+          {
+            "name": "daira_fr",
+            "type": "string"
+          },
+          {
+            "name": "daira_en",
+            "type": "string"
+          },
+          {
+            "name": "nom_ar",
+            "type": "string"
+          },
+          {
+            "name": "nom_fr",
+            "type": "string"
+          },
+          {
+            "name": "nom_en",
+            "type": "string"
+          },
           {
             "name": "code_postal",
             "type": "string",
             "description": "5-digit code as a STRING; \"05000\" is real and loses its zero as an integer. null for 27 communes, meaning published-as-absent, NOT not-looked-up. 38 codes are shared by more than one commune.",
-            "constraints": { "pattern": "^[0-9]{5}$" }
+            "constraints": {
+              "pattern": "^[0-9]{5}$"
+            }
           }
         ],
         "primaryKey": ["wilaya_num", "daira_fr", "nom_fr"]
+      },
+      "dialect": {
+        "property": "communes"
       }
     }
   ]

@@ -233,6 +233,37 @@ jobs:
       - name: Install
         run: pnpm install --frozen-lockfile
 
+      # BUILD BEFORE EVERYTHING -- the ordering is load-bearing, not cosmetic,
+      # and it is load-bearing for two independent reasons.
+      #
+      # 1. tests/compat/cjs.test.ts skips its whole `require()` suite when
+      #    packages/js/dist/ is absent, and then asserts unconditionally that
+      #    dist/ existed. Run tests first on a fresh checkout and that assertion
+      #    fails, reporting a missing build as a test failure. The CJS contract
+      #    is exactly the thing that went one whole release untested, so the
+      #    suite is built to be loud about being unable to check it.
+      #
+      # 2. TYPE CHECK AND LINT ALSO NEED IT, since packages/mcp joined the root
+      #    tsconfig. packages/mcp/src/index.ts imports `algeria-wilayas-communes`,
+      #    and that workspace link exposes types only through packages/js
+      #    `exports` -> ./dist/index.d.ts. With dist/ absent, `tsc -p
+      #    tsconfig.json --noEmit` reports TS2307 plus three implicit-any
+      #    errors, and `eslint` reports 81 no-unsafe-* errors against the
+      #    resulting `any`. Verified by moving packages/js/dist aside. Nothing
+      #    here has a prepare/postinstall that would build it first, so running
+      #    these two steps before the build fails the entire node matrix on a
+      #    clean checkout -- which is every CI run.
+      - name: Build
+        run: pnpm build
+
+      # tests/mcp.test.ts is `describe.skipIf(!HAS_SERVER)` against
+      # packages/mcp/dist/, so without this the whole MCP suite SKIPS and the
+      # job still goes green -- the failure mode the file's own "is built"
+      # assertion exists to catch, which cannot fire from inside a skipped
+      # describe.
+      - name: Build the MCP server
+        run: pnpm -F algeria-wilayas-communes-mcp build
+
       - name: Type check
         run: pnpm typecheck
 
@@ -241,17 +272,6 @@ jobs:
 
       - name: Format check
         run: pnpm format:check
-
-      # BUILD BEFORE TESTS -- the ordering is load-bearing, not cosmetic.
-      #
-      # tests/compat/cjs.test.ts skips its whole `require()` suite when
-      # packages/js/dist/ is absent, and then asserts unconditionally that dist/
-      # existed. Run tests first on a fresh checkout and that assertion fails,
-      # reporting a missing build as a test failure. The CJS contract is exactly
-      # the thing that went one whole release untested, so the suite is built to
-      # be loud about being unable to check it.
-      - name: Build
-        run: pnpm build
 
       # packages/js/data/ is gitignored -- it exists only because
       # publish-npm.yml copies data/ in before packing. Two things below need
@@ -272,15 +292,6 @@ jobs:
           rm -rf packages/js/data
           cp -r data packages/js/data
           rm -rf packages/js/data/raw
-
-      # tests/mcp.test.ts is `describe.skipIf(!HAS_SERVER)` against
-      # packages/mcp/dist/, so without this step the whole MCP suite SKIPS here
-      # and the job still goes green -- the failure mode the file's own
-      # "is built" assertion exists to catch, which cannot fire from inside a
-      # skipped describe. Build it before the tests, same reasoning as the
-      # library build above.
-      - name: Build the MCP server
-        run: pnpm -F algeria-wilayas-communes-mcp build
 
       - name: Type tests
         run: pnpm test:types

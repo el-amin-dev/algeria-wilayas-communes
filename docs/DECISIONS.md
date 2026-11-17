@@ -666,14 +666,15 @@ homonym's wilaya, daira and postal code across together.
 that is also held by a same-named commune in a different wilaya, with a prefix that is not their
 own wilaya's. It is restricted to 01–48 on purpose: for wilayas 49–58 (Loi 19-12) and 59–69
 (Loi 26-06) a foreign prefix is *correct*, because a wilaya carved out of an older one inherits
-the parent's postal space and Algérie Poste has not renumbered. 164 rows there look identical to
-the artifact and are not it.
+the parent's postal space and Algérie Poste has not renumbered. 164 rows there carry a foreign
+prefix, and 14 of those also share their code, so they would match the full signature and be
+reported as defects.
 
 This supersedes part of `docs/DATA_PROVENANCE.md`. That document described all 94
 prefix-divergent rows in wilayas 1–58 as "known to be correct" and used the 6.7% figure to
 justify keeping the prefix cross-check a warning. The 58 rows in wilayas 49–58 do support that.
-The 36 in 01–48 do not: **every one of them** correlates with a shared postal code, and in 33 of
-the 38 shared codes the sharers have identical names. That is not a coincidence, it is a join.
+The 36 in 01–48 do not: **every one of them** correlates with a shared postal code, and in 30 of
+the 38 shared codes every sharer carries the same name. That is not a coincidence, it is a join.
 
 **Detector 2 — invented daira containers.** The expensive half. A daira holding exactly one
 commune, whose name is also a daira of another wilaya where it is larger. 39 candidates. This
@@ -705,7 +706,7 @@ we do not guess.
 
 **Decision, and why the fix is not in this change.** Correcting a daira attribution changes a
 commune's id. Ids are a permanent public contract, and v2.0.0 has not shipped, so this is the one
-free window to change them — which argues for fixing it *now*. Against that: 30 of the 36 rows
+free window to change them — which argues for fixing it *now*. Against that: 32 of the 36 rows
 are still unsourced, and applying a partial fix would leave the dataset in a state no document
 describes, with some ids corrected and some not. Nulling the 36 codes wholesale was considered and
 rejected: `null` in this dataset means "published as absent" (`docs/DATA_PROVENANCE.md`), and

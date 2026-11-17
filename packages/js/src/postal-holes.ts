@@ -41,8 +41,11 @@ export type MissingPostalCodeId = (typeof COMMUNES_MISSING_POSTAL_CODE)[number];
  *
  * @example
  * ```ts
- * isCommuneMissingPostalCode("01-timimoun-ouled-said"); // → true | false
- * isCommuneMissingPostalCode("not-a-commune");          // → false
+ * // Any id from COMMUNES_MISSING_POSTAL_CODE is true:
+ * isCommuneMissingPostalCode(COMMUNES_MISSING_POSTAL_CODE[0]); // → true
+ * // A commune that has a code, or no such commune at all, is false:
+ * isCommuneMissingPostalCode("19-ain-azel-ain-lahdjar");       // → false
+ * isCommuneMissingPostalCode("not-a-commune");                 // → false
  * ```
  */
 export function isCommuneMissingPostalCode(id: string): boolean {

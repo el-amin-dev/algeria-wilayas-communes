@@ -154,7 +154,20 @@ function wilayaArg(arg: string | undefined): Wilaya {
   return w;
 }
 
-const pad = (s: string, n: number) => s.padEnd(n).slice(0, n);
+/**
+ * Pad to a column width. **Never truncates.**
+ *
+ * It used to end `.slice(0, n)`, which silently cut the 14 commune ids longer
+ * than 38 characters -- and the id is the lookup key for the `commune`
+ * subcommand, so `communes 15` printed `15-larbaa-nath-iraten-larbaa-nath-irat`
+ * and `commune` on that string then exited 1. Column alignment is worth less
+ * than output you can copy back in.
+ */
+const pad = (s: string, n: number) => s.padEnd(n);
+
+/** Widest value in a column, so rows size themselves to the data. */
+const widest = <T>(rows: readonly T[], of: (row: T) => string) =>
+  rows.reduce((max, row) => Math.max(max, of(row).length), 0);
 
 function printCommunes(rows: readonly Commune[], flags: Flags, io: Io): number {
   if (flags.json) {
@@ -165,8 +178,15 @@ function printCommunes(rows: readonly Commune[], flags: Flags, io: Io): number {
     io.out("no match");
     return 1;
   }
+  // Size columns to the rows actually being printed, not to a guessed
+  // constant, so nothing is ever cut.
+  const wId = widest(rows, (c) => c.id);
+  const wFr = widest(rows, (c) => c.name.fr);
+  const wAr = widest(rows, (c) => c.name.ar);
   for (const c of rows) {
-    io.out(`${pad(c.id, 38)} ${pad(c.name.fr, 26)} ${pad(c.name.ar, 22)} ${c.postalCode ?? "—"}`);
+    io.out(
+      `${pad(c.id, wId)}  ${pad(c.name.fr, wFr)}  ${pad(c.name.ar, wAr)}  ${c.postalCode ?? "—"}`,
+    );
   }
   return 0;
 }
@@ -232,6 +252,20 @@ export function run(argv: readonly string[], io: Io): number {
     return cmd === undefined ? 2 : 0;
   }
 
+  // `--limit` and `--lang` only mean anything to `search`. Accepting them
+  // elsewhere and ignoring them is the one case that returns a WRONG ANSWER
+  // instead of an error: `communes 19 --limit 2` printed all 60 rows and exited
+  // 0. This file's contract is that a flag you typed is either honoured or
+  // rejected -- "a typo in a flag is not a miss" cuts both ways.
+  if (cmd !== "search") {
+    for (const [flag, value] of [
+      ["--limit", flags.limit],
+      ["--lang", flags.lang],
+    ] as const) {
+      if (value !== undefined) throw new UsageError(`${flag} only applies to \`search\``);
+    }
+  }
+
   switch (cmd) {
     case "search": {
       if (!arg) throw new UsageError("search needs a query");
@@ -272,9 +306,12 @@ export function run(argv: readonly string[], io: Io): number {
       if (flags.json) {
         io.out(JSON.stringify(rows, null, 2));
       } else {
+        const dw = widest(rows, (d) => d.id);
+        const dwFr = widest(rows, (d) => d.name.fr);
+        const dwAr = widest(rows, (d) => d.name.ar);
         for (const d of rows) {
           io.out(
-            `${pad(d.id, 30)} ${pad(d.name.fr, 24)} ${pad(d.name.ar, 22)} ${String(d.communeCount)}`,
+            `${pad(d.id, dw)}  ${pad(d.name.fr, dwFr)}  ${pad(d.name.ar, dwAr)}  ${String(d.communeCount)}`,
           );
         }
       }

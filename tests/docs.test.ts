@@ -339,3 +339,59 @@ describe("the machine-readable dataset descriptors", () => {
     }
   });
 });
+
+describe("the descriptor and manifest claims found wrong in review", () => {
+  const jsonld = JSON.parse(read("dataset.jsonld")) as {
+    datePublished: string;
+    dateModified: string;
+  };
+  const dp = JSON.parse(read("datapackage.json")) as {
+    resources: { name: string; path: string; dialect?: { property?: string } }[];
+  };
+  const pyproject = read("packages/python/pyproject.toml");
+
+  it("dataset.jsonld is not modified before it was published", () => {
+    // It shipped with datePublished 2026-07-21 and dateModified 2026-07-20,
+    // which schema.org consumers and Google Dataset Search read as inconsistent.
+    expect(jsonld.dateModified >= jsonld.datePublished).toBe(true);
+  });
+
+  it("dataset.jsonld's dateModified is the real verification date", () => {
+    // Tie it to the one date the project actually maintains, so it cannot rot
+    // independently of LAST_VERIFIED.
+    expect(jsonld.dateModified).toBe(LAST_VERIFIED);
+  });
+
+  it("every datapackage resource says where its array lives", () => {
+    // data/*.json are JSON OBJECTS wrapping the rows under a key. Without a
+    // dialect naming that key, a conforming Frictionless reader sees a
+    // non-tabular object and cannot apply the declared fields; the prose note
+    // "Records live under the `wilayas` key" is for humans only.
+    for (const r of dp.resources) {
+      expect(r.dialect?.property, `${r.name} needs dialect.property`).toBeDefined();
+      const doc = JSON.parse(read(r.path)) as Record<string, unknown>;
+      const key = r.dialect?.property ?? "";
+      expect(Array.isArray(doc[key]), `${r.path} should hold an array at "${key}"`).toBe(true);
+    }
+  });
+
+  it("the Python package does not advertise TypeScript", () => {
+    // The description was pasted from the npm manifest, so the PyPI page for a
+    // pure-Python package promised "JSON and TypeScript".
+    const desc = /^description = "(.*)"$/m.exec(pyproject)?.[1] ?? "";
+    expect(desc).not.toMatch(/TypeScript/i);
+    expect(desc.length).toBeGreaterThan(40);
+  });
+
+  it("every repo-relative project_url in pyproject points at a file that exists", () => {
+    // Changelog pointed at packages/python/CHANGELOG.md, which did not exist,
+    // so the PyPI sidebar link 404'd.
+    const urls = [
+      ...pyproject.matchAll(/^\w+ = "https:\/\/github\.com\/[^"]*\/blob\/main\/([^"]+)"$/gm),
+    ];
+    expect(urls.length, "expected at least one blob/main url to check").toBeGreaterThan(0);
+    for (const [, path] of urls) {
+      expect(() => read(path ?? ""), path).not.toThrow();
+    }
+  });
+});

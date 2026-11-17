@@ -43,7 +43,6 @@ import {
   getDairasOfWilaya,
   getWilaya,
   getWilayas,
-  isWilayaCode,
   search,
 } from "algeria-wilayas-communes";
 import { z } from "zod";
@@ -156,8 +155,12 @@ server.registerTool(
     },
   },
   ({ code }) => {
-    if (!isWilayaCode(code)) return notFound(`wilaya code ${String(code)}`);
-    const w = getWilaya(code);
+    // One gate, not three. The input schema already constrains `code` to an
+    // integer in 1-69, so an `isWilayaCode` check plus a re-check of the lookup
+    // result left two branches that could never be taken. cli-core.ts makes the
+    // same point about the same mistake: two gates for one question is how they
+    // get to disagree later.
+    const w = getWilaya(code as Parameters<typeof getWilaya>[0]);
     if (!w) return notFound(`wilaya code ${String(code)}`);
     return reply(
       `Wilaya ${w.codeText} — ${w.name.fr}. ${String(w.dairaCount)} daïras, ${String(w.communeCount)} communes.`,
@@ -230,15 +233,14 @@ server.registerTool(
     },
   },
   ({ code, includeDairas }) => {
-    if (!isWilayaCode(code)) return notFound(`wilaya code ${String(code)}`);
-    const w = getWilaya(code);
+    const w = getWilaya(code as Parameters<typeof getWilaya>[0]);
     if (!w) return notFound(`wilaya code ${String(code)}`);
-    const communes = getCommunesOfWilaya(code);
+    const communes = getCommunesOfWilaya(w.code);
     return reply(
       `${String(communes.length)} commune(s) in wilaya ${w.codeText} ${w.name.fr}, of ${String(COMMUNE_COUNT)} nationally.`,
       {
         wilaya: { code: w.code, name: w.name },
-        ...(includeDairas ? { dairas: getDairasOfWilaya(code) } : {}),
+        ...(includeDairas ? { dairas: getDairasOfWilaya(w.code) } : {}),
         communes,
       },
     );

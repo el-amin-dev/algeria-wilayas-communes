@@ -18,8 +18,9 @@
 // Condition 3 is what keeps this honest. For wilayas 49-58 (Loi 19-12, 2019) and
 // 59-69 (Loi 26-06, 2026) a foreign postal prefix is CORRECT and expected: a new
 // wilaya carved out of an old one inherits the parent's postal space, and Algerie
-// Poste has not renumbered. 164 rows in 49-69 look exactly like the artifact and
-// are not it. Reporting them would bury the real signal.
+// Poste has not renumbered. 164 rows in 49-69 carry a foreign prefix, and 14 of
+// those also share their code -- so 14 would match the full signature below and
+// be reported as defects that are not defects.
 //
 // SEVERITY, and why the daira matters more than the postal code
 //
@@ -91,33 +92,8 @@ for (const c of communes) {
 
 findings.sort((a, b) => a.wilaya - b.wilaya || a.commune.localeCompare(b.commune));
 
-if (process.argv.includes("--json")) {
-  console.log(JSON.stringify({ count: findings.length, findings }, null, 2));
-  process.exit(0);
-}
-
 const phantom = findings.filter((f) => f.severity === "PHANTOM_DAIRA");
-const postal = findings.filter((f) => f.severity === "POSTAL_ONLY");
-
-console.log(`Postal-attribution audit — ${findings.length} rows match the join artifact\n`);
-const w = (s, n) => String(s).padEnd(n).slice(0, n);
-console.log(
-  `  ${w("w", 3)} ${w("commune", 26)} ${w("daira", 22)} ${w("code", 6)} ${w("dsz", 4)} twin`,
-);
-console.log("  " + "-".repeat(78));
-for (const f of findings) {
-  const mark = f.severity === "PHANTOM_DAIRA" ? "!" : " ";
-  console.log(
-    `${mark} ${w(f.wilaya, 3)} ${w(f.commune, 26)} ${w(f.daira, 22)} ${w(f.postalCode, 6)} ${w(f.dairaCommuneCount, 4)} ${f.twinWilayas.join(",")}`,
-  );
-}
-console.log(
-  `\n  ! PHANTOM_DAIRA ${phantom.length}  — wrong postal code AND an invented daira (wrong public id)`,
-);
-console.log(`    POSTAL_ONLY   ${postal.length}  — genuine daira, foreign postal code only`);
-console.log(
-  `\n  Excluded by design: rows in wilayas 49-69, where a foreign postal prefix is correct.`,
-);
+const postalOnly = findings.filter((f) => f.severity === "POSTAL_ONLY");
 
 // ---------------------------------------------------------------------------
 // DETECTOR 2 — suspicious daira containers, independent of the postal code
@@ -138,12 +114,14 @@ console.log(
 //   a) a genuine phantom -- the name was dragged in from a homonym,
 //   b) a REFORM SPLIT -- `data/algeria.json`'s own `note_daira` documents that a
 //      daira divided by Loi 26-06 is listed under each wilaya it now touches, so
-//      a one-commune remnant beside a larger namesake is EXPECTED,
+//      a one-commune remnant beside a larger namesake is EXPECTED. `Sebdou` in
+//      Tlemcen was checked and is exactly this: correct, with its other half in
+//      new wilaya 61.
 //   c) a genuine homonym -- Algeria really does have repeated place names; that
 //      is the premise of the whole ids contract (see shared/contract/ids.md).
 //
 // Telling (a) from (b) and (c) needs an external source per record. So this
-// prints candidates for a human to verify and never fails anything.
+// reports candidates for a human to verify and never fails anything.
 // ---------------------------------------------------------------------------
 
 const dairaOccurrences = new Map();
@@ -171,14 +149,55 @@ for (const w of source.wilayas) {
       nameAlsoDairaOf: elsewhere,
       // A reform wilaya is the one case where this shape is documented-expected.
       reformWilaya: w.wilaya_num >= 59,
+      // Does detector 1 independently flag this same daira?
+      alsoForeignPostalCode: findings.some(
+        (f) => f.wilaya === w.wilaya_num && f.daira === d.nom_fr,
+      ),
     });
   }
 }
 containers.sort((a, b) => a.wilaya - b.wilaya || a.daira.localeCompare(b.daira));
 
+// --- output ----------------------------------------------------------------
+//
+// BOTH detectors are computed above and the format is chosen here, once. An
+// earlier version printed detector 1 and then called process.exit(0) inside the
+// --json branch, before detector 2 had run at all -- so anyone scripting
+// against the documented machine-readable interface silently received half the
+// audit, with nothing to indicate it.
+
 if (process.argv.includes("--json")) {
-  // handled above; kept for symmetry if the flag order changes
+  console.log(
+    JSON.stringify(
+      {
+        foreignPostalCodes: { count: findings.length, findings },
+        suspiciousDairaContainers: { count: containers.length, candidates: containers },
+      },
+      null,
+      2,
+    ),
+  );
+  process.exit(0);
 }
+
+const w = (s, n) => String(s).padEnd(n).slice(0, n);
+
+console.log(`Postal-attribution audit — ${findings.length} rows match the join artifact\n`);
+console.log(
+  `  ${w("w", 3)} ${w("commune", 26)} ${w("daira", 22)} ${w("code", 6)} ${w("dsz", 4)} twin`,
+);
+console.log("  " + "-".repeat(78));
+for (const f of findings) {
+  const mark = f.severity === "PHANTOM_DAIRA" ? "!" : " ";
+  console.log(
+    `${mark} ${w(f.wilaya, 3)} ${w(f.commune, 26)} ${w(f.daira, 22)} ${w(f.postalCode, 6)} ${w(f.dairaCommuneCount, 4)} ${f.twinWilayas.join(",")}`,
+  );
+}
+console.log(
+  `\n  ! PHANTOM_DAIRA ${phantom.length}  — wrong postal code AND an invented daira (wrong public id)`,
+);
+console.log(`    POSTAL_ONLY   ${postalOnly.length}  — genuine daira, foreign postal code only`);
+console.log(`\n  Excluded by design: wilayas 49-69, where a foreign postal prefix is correct.`);
 
 console.log(`\n\nSuspicious daira containers — ${containers.length} candidates\n`);
 console.log(
@@ -192,9 +211,7 @@ for (const c of containers) {
   );
 }
 
-const crossed = containers.filter((c) =>
-  findings.some((f) => f.wilaya === c.wilaya && f.daira === c.daira),
-);
+const crossed = containers.filter((c) => c.alsoForeignPostalCode);
 console.log(
   `\n  ${crossed.length} of these also carry a foreign shared postal code (detector 1 agrees).`,
 );

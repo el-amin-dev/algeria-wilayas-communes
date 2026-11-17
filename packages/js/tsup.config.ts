@@ -73,11 +73,18 @@ export default defineConfig([
     dts: true,
     splitting: false,
     sourcemap: true,
-    clean: true,
     treeshake: true,
     target: "es2020",
     outExtension: ({ format }) => ({ js: format === "esm" ? ".mjs" : ".cjs" }),
     external: ["zod"],
+    // NOT `clean: true`. tsup 8.5 runs an array of configs under `Promise.all`,
+    // not in sequence, so this config's clean (`removeFiles(["**/*"], outDir)`)
+    // races config 2's write of dist/cli.mjs against the same outDir -- and if
+    // the glob resolves last, the published `bin` target is deleted. It did not
+    // reproduce in repeated builds, which is exactly what makes it worth
+    // removing rather than relying on. The `build` script wipes dist/ once,
+    // before tsup starts, which is race-free by construction.
+    clean: false,
   },
 
   // The CLI, built separately and deliberately unlike the library entries.
@@ -86,9 +93,11 @@ export default defineConfig([
   //   whole dataset would double the installed size to serve nobody.
   // - `dts: false`. Nothing imports a CLI, so a .d.ts for it is dead weight and
   //   would show up as another row in `attw` for no reason.
-  // - `clean: false` is REQUIRED. tsup runs these configs in sequence against
-  //   one outDir; a second `clean: true` would delete everything the first
-  //   config just emitted and the package would publish with only a CLI in it.
+  // - `clean: false` on BOTH configs, and the `build` script deletes dist/
+  //   first. An earlier comment here claimed tsup runs these in sequence; it
+  //   does not -- tsup 8.5 runs them under `Promise.all`, so whichever config
+  //   cleans can delete the other's output. Cleaning outside tsup removes the
+  //   race instead of depending on which promise settles first.
   // - The shebang goes in via `banner`, not in the source, because the source is
   //   type-checked by `tsc -p tsconfig.json` where a leading `#!` is a syntax
   //   error.

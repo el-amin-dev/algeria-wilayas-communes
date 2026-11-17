@@ -155,12 +155,15 @@ describe("cli-core: output content", () => {
   });
 
   it("prints an em dash for a commune with no postal code", () => {
-    const hole = JSON.parse(cli("communes", "1", "--json").out) as {
-      id: string;
-      postalCode: string | null;
-    }[];
-    const missing = hole.find((c) => c.postalCode === null);
-    if (missing) expect(cli("commune", missing.id).out).toContain("—");
+    // This asserted NOTHING before: it read wilaya 01, which has no
+    // null-postal commune at all, and then guarded the assertion on
+    // `if (missing)`. It passed by never running. Derive the id from the
+    // published hole list instead, and fail loudly if that list is empty.
+    const id = COMMUNES_MISSING_POSTAL_CODE[0];
+    expect(id, "the hole list must not be empty").toBeDefined();
+    const row = getCommune(id);
+    expect(row?.postalCode, `${id} should have no postal code`).toBeNull();
+    expect(cli("commune", id).out).toContain("—");
   });
 
   it("reports the JO date as publication, never as a signing date", () => {
@@ -247,5 +250,38 @@ describe("cli-core: reformLines covers both mapping states", () => {
       expect(out).toContain("published in the JO 2026-04-05");
       expect(out).not.toContain("signed 2026-04-05");
     }
+  });
+});
+
+describe("cli-core: regressions found in review", () => {
+  it("never truncates a commune id, so output round-trips", () => {
+    // 14 ids are longer than the old 38-char column; the longest is 49. The id
+    // is the lookup key for `commune`, so a cut id broke the obvious two-step
+    // workflow: list, then look one up.
+    const rows = JSON.parse(cli("communes", "15", "--json").out) as { id: string }[];
+    const longest = rows.reduce((a, b) => (a.id.length >= b.id.length ? a : b)).id;
+    expect(longest.length).toBeGreaterThan(38);
+    expect(cli("communes", "15").out).toContain(longest);
+    // And the printed id is accepted back.
+    expect(cli("commune", longest).code).toBe(0);
+  });
+
+  it("rejects --limit and --lang on commands that ignore them", () => {
+    // Previously `communes 19 --limit 2` printed all 60 rows and exited 0 --
+    // a wrong answer rather than an error.
+    for (const argv of [
+      ["communes", "19", "--limit", "2"],
+      ["wilayas", "--limit", "2"],
+      ["dairas", "19", "--lang", "fr"],
+      ["postal", "19018", "--limit", "1"],
+      ["commune", "19-ain-azel-ain-lahdjar", "--lang", "ar"],
+      ["reform", "--limit", "1"],
+      ["version", "--lang", "en"],
+    ]) {
+      expect(cli(...argv).code, argv.join(" ")).toBe(2);
+    }
+    // ...and still honours them where they mean something.
+    expect(cli("search", "ain", "--limit", "2").code).toBe(0);
+    expect(cli("search", "setif", "--lang", "fr").code).toBe(0);
   });
 });

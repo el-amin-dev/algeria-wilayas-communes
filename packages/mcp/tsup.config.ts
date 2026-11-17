@@ -17,7 +17,8 @@ export default defineConfig({
   dts: false,
   splitting: false,
   sourcemap: false,
-  clean: true,
+  // Cleaning happens in the `build` script, not here -- see packages/js/tsup.config.ts.
+  clean: false,
   treeshake: true,
   target: "es2022",
   outExtension: () => ({ js: ".mjs" }),
