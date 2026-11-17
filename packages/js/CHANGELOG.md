@@ -2,6 +2,34 @@
 
 ## 2.0.0
 
+### Minor Changes
+
+- Add a CLI, shipped as the package's `bin` — no separate install.
+
+  ```bash
+  npx algeria-wilayas-communes postal 19018
+  npx algeria-wilayas-communes search "سطيف"
+  npx algeria-wilayas-communes communes 19 --json | jq '.[].name.fr'
+  ```
+
+  Commands: `search`, `postal`, `wilaya`, `communes`, `dairas`, `commune`,
+  `wilayas`, `reform`, `version`. Flags: `--json`, `--limit`, `--lang`, `--help`.
+  Exit codes are distinct and meaningful — **0** found, **1** not found,
+  **2** usage error — so a miss is not an error and a bad flag is not a miss.
+  Zero new dependencies.
+
+- Export the five size constants from the root: `WILAYA_COUNT`, `DAIRA_COUNT`,
+  `COMMUNE_COUNT`, `POSTAL_CODE_COUNT`, `MISSING_POSTAL_CODE_COUNT`. They were
+  generated from the start but only ever re-exported on the Python side, so
+  `llms.txt` had to warn that JavaScript lacked them. They are inlined literals;
+  the root entry grew 60 bytes gzip.
+
+- Add `isCommuneMissingPostalCode(id: string): boolean`, plus the
+  `MissingPostalCodeId` type. `COMMUNES_MISSING_POSTAL_CODE` is a tuple of
+  literals, so `.includes(id)` for an arbitrary string does not typecheck, and
+  the documented answer was to write the widening cast yourself. The cast now
+  lives in the package, where it is tested.
+
 ### Major Changes
 
 - Ship the package as a dual ESM + CJS build with six entry points.

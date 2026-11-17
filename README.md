@@ -36,7 +36,7 @@ The nested file `data/algeria.json` is the single source of truth. Everything el
 
 Every record carries `nom_ar`, `nom_fr`, `nom_en`. Since Algerian place names use the Latin alphabet, `nom_en` matches `nom_fr` for almost every entry — the one real exonym is **Algiers** (Alger).
 
-Machine-readable summary of the dataset, the API surface and the reform facts: **[llms.txt](llms.txt)**.
+Machine-readable summary of the dataset, the API surface and the reform facts: **[llms.txt](llms.txt)**. Standard dataset descriptors for tooling and crawlers: **[datapackage.json](datapackage.json)** (Frictionless Data) · **[dataset.jsonld](dataset.jsonld)** (schema.org/Dataset).
 
 ---
 
