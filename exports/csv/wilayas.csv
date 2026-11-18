@@ -1,0 +1,70 @@
+code,wilaya_num,nom_ar,nom_fr,nom_en,nb_dairas,nb_communes
+01,1,أدرار,Adrar,Adrar,6,16
+02,2,الشلف,Chlef,Chlef,13,35
+03,3,الأغواط,Laghouat,Laghouat,5,12
+04,4,أم البواقي,Oum El Bouaghi,Oum El Bouaghi,12,29
+05,5,باتنة,Batna,Batna,18,53
+06,6,بجاية,Bejaia,Bejaia,19,52
+07,7,بسكرة,Biskra,Biskra,7,22
+08,8,بشار,Bechar,Bechar,7,12
+09,9,البليدة,Blida,Blida,10,25
+10,10,البويرة,Bouira,Bouira,12,45
+11,11,تمنراست,Tamanrasset,Tamanrasset,3,5
+12,12,تبسة,Tebessa,Tebessa,10,24
+13,13,تلمسان,Tlemcen,Tlemcen,19,49
+14,14,تيارت,Tiaret,Tiaret,12,36
+15,15,تيزي وزو,Tizi Ouzou,Tizi Ouzou,21,67
+16,16,الجزائر,Alger,Algiers,13,57
+17,17,الجلفة,Djelfa,Djelfa,6,18
+18,18,جيجل,Jijel,Jijel,11,28
+19,19,سطيف,Setif,Setif,20,60
+20,20,سعيدة,Saida,Saida,6,16
+21,21,سكيكدة,Skikda,Skikda,13,38
+22,22,سيدي بلعباس,Sidi Bel Abbes,Sidi Bel Abbes,15,52
+23,23,عنابة,Annaba,Annaba,6,12
+24,24,قالمة,Guelma,Guelma,10,34
+25,25,قسنطينة,Constantine,Constantine,6,12
+26,26,المدية,Medea,Medea,13,43
+27,27,مستغانم,Mostaganem,Mostaganem,10,32
+28,28,المسيلة,M'Sila,M'Sila,9,24
+29,29,معسكر,Mascara,Mascara,16,47
+30,30,ورقلة,Ouargla,Ouargla,5,8
+31,31,وهران,Oran,Oran,9,26
+32,32,البيض,El Bayadh,El Bayadh,8,15
+33,33,إليزي,Illizi,Illizi,2,4
+34,34,برج بوعريريج,Bordj Bou Arreridj,Bordj Bou Arreridj,10,34
+35,35,بومرداس,Boumerdes,Boumerdes,9,32
+36,36,الطارف,El Tarf,El Tarf,7,24
+37,37,تندوف,Tindouf,Tindouf,1,2
+38,38,تيسمسيلت,Tissemsilt,Tissemsilt,8,22
+39,39,الوادي,El Oued,El Oued,10,22
+40,40,خنشلة,Khenchela,Khenchela,8,21
+41,41,سوق أهراس,Souk Ahras,Souk Ahras,10,26
+42,42,تيبازة,Tipaza,Tipaza,10,28
+43,43,ميلة,Mila,Mila,13,32
+44,44,عين الدفلى,Ain Defla,Ain Defla,14,36
+45,45,النعامة,Naama,Naama,7,12
+46,46,عين تموشنت,Ain Temouchent,Ain Temouchent,8,28
+47,47,غرداية,Ghardaia,Ghardaia,8,10
+48,48,غليزان,Relizane,Relizane,14,38
+49,49,تيميمون,Timimoun,Timimoun,6,10
+50,50,برج باجي مختار,Bordj Badji Mokhtar,Bordj Badji Mokhtar,1,2
+51,51,أولاد جلال,Ouled Djellal,Ouled Djellal,4,6
+52,52,بني عباس,Beni Abbes,Beni Abbes,5,9
+53,53,عين صالح,In Salah,In Salah,2,3
+54,54,عين قزام,In Guezzam,In Guezzam,2,2
+55,55,تقرت,Touggourt,Touggourt,6,13
+56,56,جانت,Djanet,Djanet,1,2
+57,57,المغير,El M'Ghair,El M'Ghair,2,8
+58,58,المنيعة,El Meniaa,El Meniaa,2,3
+59,59,أفلو,Aflou,Aflou,5,12
+60,60,الأبيض سيدي الشيخ,El Abiodh Sidi Cheikh,El Abiodh Sidi Cheikh,5,7
+61,61,العريشة,El Aricha,El Aricha,2,4
+62,62,القنطرة,El Kantara,El Kantara,3,5
+63,63,بريكة,Barika,Barika,3,8
+64,64,بوسعادة,Bou Saada,Bou Saada,11,23
+65,65,بير العاتر,Bir El Ater,Bir El Ater,2,4
+66,66,قصر البخاري,Ksar El Boukhari,Ksar El Boukhari,6,21
+67,67,قصر الشلالة,Ksar Chellala,Ksar Chellala,3,6
+68,68,عين وسارة,Ain Oussara,Ain Oussara,4,10
+69,69,مسعد,Messaad,Messaad,2,8

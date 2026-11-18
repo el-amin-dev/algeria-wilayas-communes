@@ -72,6 +72,23 @@ Measured on CPython 3.9.25, on the maintainer's machine:
 
 Those are one machine's numbers, not a promise. The shape is what matters: the cost is a one-time index build, paid only for the layer you touch.
 
+### `get_wilaya_tree(code)` — the wilaya with its daïras and their communes
+
+```python
+from algeria_wilayas_communes import get_wilaya_tree
+
+tree = get_wilaya_tree(19)
+tree.name.fr  # 'Setif'
+len(tree.dairas)  # 20
+sum(len(d.communes) for d in tree.dairas)  # 60
+tree.dairas[0].communes[0].name.ar  # Arabic name of the first commune
+get_wilaya_tree(99)  # None — misses, never raises
+```
+
+Returns `WilayaTree | None`. This is the counterpart of JavaScript's `byWilaya(code)` and returns the same shape, in the same daïra and commune order.
+
+**Do not reach for `by_wilaya` for this.** In Python `by_wilaya` is a *deprecated v1 shim* that returns a plain `dict` with French keys — while in JavaScript `byWilaya` is the v2 tree accessor. Same name, two different things, which is exactly why `get_wilaya_tree` exists.
+
 ## API
 
 `WilayaLike = Union[int, str]` — a wilaya may be given as `19` or as `"19"`.

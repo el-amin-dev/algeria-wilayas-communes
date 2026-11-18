@@ -90,6 +90,19 @@ console.log(
   `  npm always  ${String(counts.always).padStart(4)}   ${[...ALWAYS_INCLUDED].join(", ")}`,
 );
 
+// exports/csv and exports/sql are deliberately OUTSIDE the npm tarball: they
+// serve jq users, analysts and database seeders over the repo and jsDelivr, and
+// shipping ~460 kB of CSV and SQL to every `npm install` would serve nobody.
+// They live at the repo root, outside packages/js, so `pnpm pack` cannot reach
+// them today -- this asserts it stays that way if anyone moves them.
+const leakedExports = paths.filter((p) => p.startsWith("exports/") || p.includes("/exports/"));
+if (leakedExports.length > 0) {
+  failures.push(
+    `exports/ leaked into the tarball: ${leakedExports.join(", ")}. ` +
+      "The CSV and SQL mirrors are repo/jsDelivr artifacts, not npm payload.",
+  );
+}
+
 if (unexpected.length > 0) {
   failures.push(
     `these are neither dist/ nor data/: ${unexpected.join(", ")}. ` +

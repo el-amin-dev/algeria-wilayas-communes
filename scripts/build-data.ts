@@ -82,7 +82,15 @@ const FIXTURES_DIR_REL = "shared/fixtures";
  * leave a stale file shipping. `data/` itself is NOT listed: it holds the
  * hand-edited source and data/raw/, neither of which is generated.
  */
-const OUTPUT_DIRS = [BY_WILAYA_DIR_REL, GENERATED_DIR_REL, FIXTURES_DIR_REL] as const;
+const CSV_DIR_REL = "exports/csv";
+const SQL_DIR_REL = "exports/sql";
+const OUTPUT_DIRS = [
+  BY_WILAYA_DIR_REL,
+  GENERATED_DIR_REL,
+  FIXTURES_DIR_REL,
+  CSV_DIR_REL,
+  SQL_DIR_REL,
+] as const;
 
 /** Ground truth for the current dataset. Assertions 1, 3, 4 and 9 pin these. */
 const EXPECTED_WILAYA_COUNT = 69;
@@ -963,6 +971,39 @@ function checkSlugNonEmpty(
   failures.push(
     `[A20] ${label}: nom_fr "${nomFr}" slugs to the empty string — the id would be malformed`,
   );
+}
+
+/**
+ * A25 — no name contains a character that CSV has to quote.
+ *
+ * `csvField` quotes correctly when it must, so this is NOT what keeps the CSV
+ * valid. It exists so that the DAY a name with a comma arrives, the build says
+ * so out loud instead of silently emitting a quoted field that every naive
+ * `split(",")` downstream then mis-parses. The exporter stays correct; the
+ * consumers are the ones who break, and they are not in this repo.
+ */
+function assertCsvSafeNames(model: Model, failures: Failures): void {
+  const hostile = /[",\r\n]/;
+  const check = (label: string, name: LocalizedName): void => {
+    // Explicit pairs, not Object.entries: the latter widens the values to `any`
+    // under this repo's eslint config.
+    const fields: readonly (readonly [string, string])[] = [
+      ["ar", name.ar],
+      ["fr", name.fr],
+      ["en", name.en],
+    ];
+    for (const [lang, value] of fields) {
+      if (hostile.test(value)) {
+        failures.push(
+          `[A25] ${label}: nom_${lang} "${value}" contains a character CSV must quote — ` +
+            `the export is still valid, but confirm downstream consumers parse quoted fields`,
+        );
+      }
+    }
+  };
+  for (const w of model.wilayas) check(`wilaya ${String(w.code)}`, w.name);
+  for (const d of model.dairas) check(`daira ${d.id}`, d.name);
+  for (const c of model.communes) check(`commune ${c.id}`, c.name);
 }
 
 function checkSlugFixtures(failures: Failures): void {
@@ -1917,6 +1958,197 @@ function emitGroundTruthFixture(model: Model): unknown {
   };
 }
 
+/* =========================================================================== *
+ * CSV and SQL exports
+ * =========================================================================== */
+
+/**
+ * RFC 4180 field. Quotes only when it has to, so the files stay diffable.
+ *
+ * No name in the dataset currently contains a comma, a quote or a newline --
+ * asserted by A25 -- so in practice nothing is quoted today. The function is
+ * still correct rather than merely adequate, because the day a commune named
+ * `Sidi Bel Abbes, Ouest` arrives is not the day to discover the exporter
+ * corrupts every row after it.
+ */
+function csvField(value: string | null): string {
+  if (value === null) return "";
+  return /[",\r\n]/.test(value) ? `"${value.replace(/"/g, '""')}"` : value;
+}
+
+const csvRow = (cells: readonly (string | null)[]): string => cells.map(csvField).join(",");
+
+/** A SQL string literal. Doubles single quotes; NULL is unquoted. */
+function sqlLiteral(value: string | null): string {
+  return value === null ? "NULL" : `'${value.replace(/'/g, "''")}'`;
+}
+
+const pad2 = (n: number): string => String(n).padStart(2, "0");
+
+/**
+ * `exports/csv/*.csv` and `exports/sql/*.sql`.
+ *
+ * WHY THESE LIVE OUTSIDE `data/`, which is the obvious place for them:
+ * `packages/js/package.json` has `files: ["dist", "data", "LICENSE"]`, so
+ * everything under `data/` ships in the npm tarball. A CSV mirror and a SQL
+ * dump are for people who are NOT installing an npm package -- jq users,
+ * analysts, anyone seeding a database -- and putting them in `data/` would add
+ * a few hundred kB to every `npm install` to serve nobody. `exports/` is
+ * outside the `files` allow-list, so it reaches those users over jsDelivr and
+ * the repo, and never over npm. `benchmarks/pack-check.mjs` asserts their
+ * absence from the tarball so that stays true.
+ *
+ * The SQL schema types every code column as **TEXT**, including
+ * `code_postal`. That is the whole point of shipping a schema rather than
+ * leaving people to infer one: `05000` is a real postal code, and the first
+ * thing a naive `CREATE TABLE` does is make it an INTEGER and turn it into
+ * 5000. Same for the zero-padded wilaya code.
+ */
+function exportOutputs(model: Model): Output[] {
+  const wilayaName = new Map(model.wilayas.map((w) => [w.code, w.name]));
+  const dairaName = new Map(model.dairas.map((d) => [d.id, d.name]));
+
+  const wilayasCsv = [
+    csvRow(["code", "wilaya_num", "nom_ar", "nom_fr", "nom_en", "nb_dairas", "nb_communes"]),
+    ...model.wilayas.map((w) =>
+      csvRow([
+        pad2(w.code),
+        String(w.code),
+        w.name.ar,
+        w.name.fr,
+        w.name.en,
+        String(w.dairaCount),
+        String(w.communeCount),
+      ]),
+    ),
+  ].join("\n");
+
+  const dairasCsv = [
+    csvRow(["daira_id", "code", "wilaya_num", "nom_ar", "nom_fr", "nom_en", "nb_communes"]),
+    ...model.dairas.map((d) =>
+      csvRow([
+        d.id,
+        pad2(d.wilaya),
+        String(d.wilaya),
+        d.name.ar,
+        d.name.fr,
+        d.name.en,
+        String(d.communeCount),
+      ]),
+    ),
+  ].join("\n");
+
+  const communesCsv = [
+    csvRow([
+      "commune_id",
+      "code",
+      "wilaya_num",
+      "wilaya_fr",
+      "daira_id",
+      "daira_fr",
+      "nom_ar",
+      "nom_fr",
+      "nom_en",
+      "code_postal",
+    ]),
+    ...model.communes.map((c) =>
+      csvRow([
+        c.id,
+        pad2(c.wilaya),
+        String(c.wilaya),
+        wilayaName.get(c.wilaya)?.fr ?? "",
+        c.daira,
+        dairaName.get(c.daira)?.fr ?? "",
+        c.name.ar,
+        c.name.fr,
+        c.name.en,
+        c.postalCode,
+      ]),
+    ),
+  ].join("\n");
+
+  const schema = `-- Algeria administrative divisions — schema
+-- GENERATED BY scripts/build-data.ts — DO NOT EDIT
+--
+-- Portable across SQLite, PostgreSQL and MySQL. Every code is TEXT on purpose:
+-- "05000" is a real postal code and "01" a real wilaya code, and both lose
+-- their leading zero the moment a column is typed INTEGER.
+
+CREATE TABLE wilaya (
+  code        TEXT PRIMARY KEY,   -- zero-padded, "01".."69"
+  wilaya_num  INTEGER NOT NULL,   -- the same code as a number, 1..69
+  nom_ar      TEXT NOT NULL,
+  nom_fr      TEXT NOT NULL,
+  nom_en      TEXT NOT NULL,
+  nb_dairas   INTEGER NOT NULL,
+  nb_communes INTEGER NOT NULL
+);
+
+CREATE TABLE daira (
+  daira_id    TEXT PRIMARY KEY,   -- "<code>-<slug(nom_fr)>", library-assigned
+  code        TEXT NOT NULL REFERENCES wilaya(code),
+  nom_ar      TEXT NOT NULL,
+  nom_fr      TEXT NOT NULL,
+  nom_en      TEXT NOT NULL,
+  nb_communes INTEGER NOT NULL
+);
+
+CREATE TABLE commune (
+  commune_id  TEXT PRIMARY KEY,   -- "<daira_id>-<slug(nom_fr)>", library-assigned
+  code        TEXT NOT NULL REFERENCES wilaya(code),
+  daira_id    TEXT NOT NULL REFERENCES daira(daira_id),
+  nom_ar      TEXT NOT NULL,
+  nom_fr      TEXT NOT NULL,
+  nom_en      TEXT NOT NULL,
+  code_postal TEXT                -- NULL for ${String(model.communes.filter((c) => c.postalCode === null).length)} communes; see docs/DATA_PROVENANCE.md
+);
+
+-- A postal code is NOT unique: several communes share one. Index, never UNIQUE.
+CREATE INDEX commune_code_postal_idx ON commune (code_postal);
+CREATE INDEX commune_code_idx        ON commune (code);
+CREATE INDEX daira_code_idx          ON daira (code);
+`;
+
+  const inserts = [
+    "-- Algeria administrative divisions — data",
+    "-- GENERATED BY scripts/build-data.ts — DO NOT EDIT",
+    "-- Run schema.sql first. Wrapped in one transaction.",
+    "",
+    "BEGIN;",
+    "",
+    ...model.wilayas.map(
+      (w) =>
+        `INSERT INTO wilaya VALUES (${sqlLiteral(pad2(w.code))}, ${String(w.code)}, ` +
+        `${sqlLiteral(w.name.ar)}, ${sqlLiteral(w.name.fr)}, ${sqlLiteral(w.name.en)}, ` +
+        `${String(w.dairaCount)}, ${String(w.communeCount)});`,
+    ),
+    "",
+    ...model.dairas.map(
+      (d) =>
+        `INSERT INTO daira VALUES (${sqlLiteral(d.id)}, ${sqlLiteral(pad2(d.wilaya))}, ` +
+        `${sqlLiteral(d.name.ar)}, ${sqlLiteral(d.name.fr)}, ${sqlLiteral(d.name.en)}, ` +
+        `${String(d.communeCount)});`,
+    ),
+    "",
+    ...model.communes.map(
+      (c) =>
+        `INSERT INTO commune VALUES (${sqlLiteral(c.id)}, ${sqlLiteral(pad2(c.wilaya))}, ` +
+        `${sqlLiteral(c.daira)}, ${sqlLiteral(c.name.ar)}, ${sqlLiteral(c.name.fr)}, ` +
+        `${sqlLiteral(c.name.en)}, ${sqlLiteral(c.postalCode)});`,
+    ),
+    "",
+    "COMMIT;",
+  ].join("\n");
+
+  return [
+    { kind: "text", relPath: `${CSV_DIR_REL}/wilayas.csv`, content: `${wilayasCsv}\n` },
+    { kind: "text", relPath: `${CSV_DIR_REL}/dairas.csv`, content: `${dairasCsv}\n` },
+    { kind: "text", relPath: `${CSV_DIR_REL}/communes.csv`, content: `${communesCsv}\n` },
+    { kind: "text", relPath: `${SQL_DIR_REL}/schema.sql`, content: schema },
+    { kind: "text", relPath: `${SQL_DIR_REL}/algeria.sql`, content: `${inserts}\n` },
+  ];
+}
+
 function fixtureOutputs(model: Model): Output[] {
   return [
     { kind: "json", relPath: `${FIXTURES_DIR_REL}/ids.json`, value: emitIdsFixture(model) },
@@ -2682,6 +2914,7 @@ async function main(): Promise<void> {
   // Phase 7 — into the SAME accumulator, so one run reports everything.
   assertReform(source, reform, failures, warnings);
   assertCorrections(source, corrections, failures);
+  assertCsvSafeNames(model, failures);
 
   if (failures.length > 0) {
     for (const failure of failures) console.error(failure);
@@ -2698,6 +2931,7 @@ async function main(): Promise<void> {
     ...projectJsonOutputs(source),
     ...emitTypeScriptOutputs(model, source, reform),
     ...fixtureOutputs(model),
+    ...exportOutputs(model),
   ];
 
   // Phase 4, in two passes.

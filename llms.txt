@@ -32,6 +32,20 @@ being parsed. Exit codes are meaningful and distinct: **0** found, **1** not fou
 error -- so a miss is not an error and a bad flag is not a miss. There is no `--csv` and no
 `--format`; do not suggest them.
 
+Bulk formats, for anyone who is not installing a package — **not** in the npm tarball, served
+from the repo and jsDelivr:
+
+    exports/csv/wilayas.csv    69 rows
+    exports/csv/dairas.csv     566 rows
+    exports/csv/communes.csv   1541 rows
+    exports/sql/schema.sql     CREATE TABLE wilaya / daira / commune
+    exports/sql/algeria.sql    the INSERTs, one transaction; run schema.sql first
+
+The SQL schema types every code column as **TEXT**, including `code_postal`. Do not "improve"
+that to INTEGER: `05000` is a real postal code and `01` a real wilaya code, and both lose their
+leading zero the moment the column is numeric. `code_postal` is nullable and indexed but NOT
+unique — several communes share one code.
+
 npm subpaths, seven exactly: `.`, `./wilayas`, `./dairas`, `./communes`, `./zod`, `./legacy`,
 `./data/*`. There is no `/lite` — it was proposed and never shipped (ADR-009); do not
 recommend it.
@@ -152,8 +166,17 @@ and `MissingPostalCodeId` names that union.
 `SearchResult.kind` and `.matched` are plain `str` in Python, not the literal unions the
 TypeScript side uses; there is no `ReformConfidence` type. Everything above is in `__all__`.
 
-No Python tree accessor: `by_wilaya` is a deprecated v1 shim returning a dict. All seven v1
-functions live in `algeria_wilayas_communes.legacy`.
+**`by_wilaya` in Python is the deprecated v1 shim and returns a dict** — it is NOT the tree
+accessor, unlike `byWilaya` in JavaScript. The v2 tree accessor in Python is
+`get_wilaya_tree(code) -> WilayaTree | None`, which returns the same shape `byWilaya(code)`
+returns in JavaScript (verified field-for-field, same daïra order, same commune order):
+
+    get_wilaya_tree(code: int | str) -> WilayaTree | None
+    @dataclass(frozen=True) WilayaTree    : code, code_text, name, daira_count,
+                                            commune_count, dairas: tuple[DairaSubtree, ...]
+    @dataclass(frozen=True) DairaSubtree  : id, wilaya, name, communes: tuple[Commune, ...]
+
+All seven v1 functions live in `algeria_wilayas_communes.legacy`.
 
 ## v1 -> v2 field mapping
 

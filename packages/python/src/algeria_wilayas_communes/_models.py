@@ -26,7 +26,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
-__all__ = ["Commune", "Daira", "Name", "Wilaya"]
+__all__ = ["Commune", "Daira", "DairaSubtree", "Name", "Wilaya", "WilayaTree"]
 
 # On slots=True, so nobody re-opens it:
 #
@@ -165,3 +165,36 @@ class Commune:
     #: filled - no available source has them - and inventing one would say
     #: something false about a real place.
     postal_code: str | None = None
+
+
+@dataclass(frozen=True)
+class DairaSubtree:
+    """A daïra together with its communes, as returned inside a wilaya tree.
+
+    Separate from :class:`Daira` on purpose. ``Daira`` is a flat record and
+    carries ``commune_count``; this carries the communes themselves. Collapsing
+    the two would mean every flat ``get_dairas()`` call paid to build 566
+    commune tuples nobody asked for.
+    """
+
+    id: str
+    wilaya: int
+    name: Name
+    communes: tuple[Commune, ...]
+
+
+@dataclass(frozen=True)
+class WilayaTree:
+    """A wilaya with its daïras, each carrying its communes.
+
+    The Python counterpart of the JavaScript ``byWilaya(code)`` return value.
+    Field-for-field the same shape, so a cross-language consumer can read one
+    document the same way in both.
+    """
+
+    code: int
+    code_text: str
+    name: Name
+    daira_count: int
+    commune_count: int
+    dairas: tuple[DairaSubtree, ...]

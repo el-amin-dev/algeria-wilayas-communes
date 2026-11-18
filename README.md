@@ -33,8 +33,12 @@ The nested file `data/algeria.json` is the single source of truth. Everything el
 | `data/dairas.json` | Flat list of the **566 daïras** |
 | `data/communes.json` | Flat list of the **1541 communes** (with wilaya + daïra + postal code) |
 | `data/by-wilaya/NN.json` | One file per wilaya (`01.json` … `69.json`) — grab just what you need |
+| `exports/csv/*.csv` | The same records as **CSV** — wilayas, daïras, communes |
+| `exports/sql/*.sql` | **SQL** schema + inserts (SQLite / PostgreSQL / MySQL) |
 
 Every record carries `nom_ar`, `nom_fr`, `nom_en`. Since Algerian place names use the Latin alphabet, `nom_en` matches `nom_fr` for almost every entry — the one real exonym is **Algiers** (Alger).
+
+The CSV and SQL mirrors are deliberately **not** in the npm package — they serve jq users, analysts and anyone seeding a database, over the repo and jsDelivr. The SQL schema types every code column as `TEXT`, because `05000` is a real postal code and loses its leading zero as an integer.
 
 Machine-readable summary of the dataset, the API surface and the reform facts: **[llms.txt](llms.txt)**. Standard dataset descriptors for tooling and crawlers: **[datapackage.json](datapackage.json)** (Frictionless Data) · **[dataset.jsonld](dataset.jsonld)** (schema.org/Dataset).
 
