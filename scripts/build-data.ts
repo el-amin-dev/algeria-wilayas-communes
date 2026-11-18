@@ -1018,7 +1018,7 @@ interface Model {
  *
  * English names are `override ?? nom_fr`. `nom_en` differs from `nom_fr` for
  * exactly ONE record in the whole dataset (wilaya 16, Alger → Algiers), so
- * shipping 2201 duplicate English strings would be ~99.9% wasted payload.
+ * shipping 2195 duplicate English strings would be ~99.9% wasted payload.
  *
  * Carries assertions 5, 17, 18 and 19.
  */
@@ -1464,7 +1464,7 @@ function emitCommunes(model: Model): string {
  *
  * `kind` is the low-order pair of bits and the array index is everything above
  * the language bit, so a reference is one small integer rather than an object:
- * 4402 object literals in the module graph would dominate the generated file
+ * 4390 object literals in the module graph would dominate the generated file
  * and allocate on every module evaluation.
  *
  *   ref = (index << 3) | (kind << 1) | lang
@@ -1497,10 +1497,10 @@ interface SearchEntry {
 /**
  * Builds the sorted key/ref pair list.
  *
- * Two layers only — `fr` and `ar`, 2201 records each, 4402 keys. There is
+ * Two layers only — `fr` and `ar`, 2195 records each, 4390 keys. There is
  * deliberately NO `en` layer: `name.en` differs from `name.fr` for exactly one
  * record in the whole dataset (wilaya 16, `Alger` / `Algiers`), so a third full
- * layer would add 2201 keys — roughly a third of the index's bytes — to serve a
+ * layer would add 2195 keys — roughly a third of the index's bytes — to serve a
  * single record. `lang: "en"` searches the `fr` keys plus `EN_OVERRIDES`
  * instead, which is a real bundle saving and no public-API change.
  */
@@ -1516,14 +1516,14 @@ function collectSearchEntries(model: Model): SearchEntry[] {
   model.dairas.forEach((daira, index) => add(daira.name, index, SEARCH_KIND_DAIRA));
   model.communes.forEach((commune, index) => add(commune.name, index, SEARCH_KIND_COMMUNE));
 
-  // Sorted at BUILD time, which is itself the optimization: a .sort() over 4402
+  // Sorted at BUILD time, which is itself the optimization: a .sort() over 4390
   // strings on the first search would cost more than every query the process
   // will ever run. The sort order IS the prefix index — no trie is shipped or
   // built, only two binary searches over this array at run time.
   //
   // The tie-break on `ref` is not cosmetic. `Array.prototype.sort` is only
   // guaranteed stable within one engine version, and 1347 of these keys are
-  // duplicates (4402 keys, 3055 distinct). Without the tie-break the emitted
+  // duplicates (4390 keys, 3055 distinct). Without the tie-break the emitted
   // bytes could differ between Node versions, which would break the
   // byte-identity discipline every other emitter in this file holds to.
   //
@@ -1604,7 +1604,7 @@ function emitSearchKeys(model: Model): string {
     "/**",
     " * Normalized search keys, sorted ascending by UTF-16 code unit.",
     " *",
-    " * 2201 records x 2 language layers (fr, ar) = 4402 keys. There is no `en`",
+    " * 2195 records x 2 language layers (fr, ar) = 4390 keys. There is no `en`",
     " * layer: `name.en` differs from `name.fr` for exactly one record in the",
     ' * dataset, so `lang: "en"` searches these keys plus `EN_OVERRIDES`.',
     " *",
@@ -1623,7 +1623,7 @@ function emitSearchKeys(model: Model): string {
     " *   kind  bits 1..2 0 = wilaya, 1 = daira, 2 = commune",
     " *   index bits 3..  position in WILAYAS / DAIRAS / COMMUNES",
     " *",
-    " * Packed integers rather than objects: 4402 object literals would dominate",
+    " * Packed integers rather than objects: 4390 object literals would dominate",
     " * this file's bytes and allocate on every module evaluation.",
     " */",
     "export const SEARCH_REFS: readonly number[] = [",
@@ -1735,9 +1735,9 @@ const SEARCH_FIXTURE_CASES: ReadonlyArray<{
 /**
  * Inputs that pin the slug rule's edges.
  *
- * `ids.json` is already the exhaustive proof — all 2132 ids are derived through
+ * `ids.json` is already the exhaustive proof — all 2126 ids are derived through
  * `slug()` — so this table exists for the cases that would otherwise only be
- * observable as a diff in a 2132-line file, and it names what each one tests.
+ * observable as a diff in a 2126-line file, and it names what each one tests.
  */
 const SLUG_FIXTURE_CASES: readonly string[] = [
   "Sidi M'hamed", // apostrophe deleted, not hyphenated
@@ -1821,7 +1821,7 @@ function emitSlugFixture(): unknown {
  * The normalize fixture: named edge cases, plus a digest of the whole key set.
  *
  * The digest is what makes this exhaustive without shipping a second copy of
- * the 4402 keys that `search-keys.ts` already holds. A mismatch says "your
+ * the 4390 keys that `search-keys.ts` already holds. A mismatch says "your
  * normalizer disagrees somewhere"; the named cases above are what localize it,
  * and the cross-language test diffs the actual keys when one is needed.
  */
@@ -1890,7 +1890,7 @@ function emitGroundTruthFixture(model: Model): unknown {
       dairaWilayaNamePairs: new Set(model.dairas.map((d) => `${d.wilaya} ${d.name.fr}`)).size,
       distinctDairaNames: new Set(model.dairas.map((d) => d.name.fr)).size,
     },
-    // Exactly one record in 2201 has an English exonym.
+    // Exactly one record in 2195 has an English exonym.
     exonyms,
     // The 27 communes published without a postal code. They cannot be filled —
     // no available source has them — and inventing one would end the package's

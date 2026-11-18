@@ -1,6 +1,6 @@
 # algeria-wilayas-communes-mcp
 
-An **MCP server** for Algeria's administrative divisions — **69 wilayas**, **591 daïras**, **1541 communes**, each with Arabic, French and English names and a postal code where one is published.
+An **MCP server** for Algeria's administrative divisions — **69 wilayas**, **585 daïras**, **1541 communes**, each with Arabic, French and English names and a postal code where one is published.
 
 It exists for one reason: **ask a model how many wilayas Algeria has and it will usually say 58.** That was true from 2019 until April 2026, and it is still what almost every page on the open web says. Algeria has had **69** since Loi 26-06. A tool call replaces a confident wrong answer with a correct one.
 

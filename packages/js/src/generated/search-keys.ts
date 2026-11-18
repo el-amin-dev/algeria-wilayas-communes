@@ -13,7 +13,7 @@
 /**
  * Normalized search keys, sorted ascending by UTF-16 code unit.
  *
- * 2201 records x 2 language layers (fr, ar) = 4402 keys. There is no `en`
+ * 2195 records x 2 language layers (fr, ar) = 4390 keys. There is no `en`
  * layer: `name.en` differs from `name.fr` for exactly one record in the
  * dataset, so `lang: "en"` searches these keys plus `EN_OVERRIDES`.
  *
@@ -4421,7 +4421,7 @@ export const SEARCH_KEYS: readonly string[] = [
  *   kind  bits 1..2 0 = wilaya, 1 = daira, 2 = commune
  *   index bits 3..  position in WILAYAS / DAIRAS / COMMUNES
  *
- * Packed integers rather than objects: 4402 object literals would dominate
+ * Packed integers rather than objects: 4390 object literals would dominate
  * this file's bytes and allocate on every module evaluation.
  */
 export const SEARCH_REFS: readonly number[] = [

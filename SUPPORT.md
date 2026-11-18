@@ -146,7 +146,7 @@ the dataset has only names.
 
 What is promised: the ids are **deterministic and stable**, and will not change outside a
 major (see [`docs/DATA_POLICY.md` §2](docs/DATA_POLICY.md#2-semver-rules-for-a-data-package)).
-The slug rule and the exhaustive proof of all 2132 ids are in
+The slug rule and the exhaustive proof of all 2126 ids are in
 [`shared/contract/ids.md`](shared/contract/ids.md) and `shared/fixtures/ids.json`.
 
 What is **not** promised: that a synthesized id will remain the dataset's primary key

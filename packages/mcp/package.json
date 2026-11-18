@@ -1,7 +1,7 @@
 {
   "name": "algeria-wilayas-communes-mcp",
   "version": "0.1.0",
-  "description": "MCP server for Algeria's administrative divisions — 69 wilayas, 591 daïras, 1541 communes with Arabic, French and English names and postal codes. Lets an AI assistant look them up instead of recalling them.",
+  "description": "MCP server for Algeria's administrative divisions — 69 wilayas, 585 daïras, 1541 communes with Arabic, French and English names and postal codes. Lets an AI assistant look them up instead of recalling them.",
   "keywords": [
     "mcp",
     "model-context-protocol",

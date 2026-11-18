@@ -1,7 +1,7 @@
 {
   "name": "algeria-wilayas-communes",
   "version": "2.0.0",
-  "description": "Algeria administrative divisions as JSON and TypeScript — 69 wilayas, 591 daïras, 1541 communes (2026 reform) with Arabic, French and English names plus postal codes. Zero dependencies.",
+  "description": "Algeria administrative divisions as JSON and TypeScript — 69 wilayas, 585 daïras, 1541 communes (2026 reform) with Arabic, French and English names plus postal codes. Zero dependencies.",
   "keywords": [
     "algeria",
     "wilaya",
