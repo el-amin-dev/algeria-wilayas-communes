@@ -155,7 +155,7 @@ class Commune:
 
     name: Name
 
-    #: A 5-digit postal code, or ``None`` for the 45 communes published without
+    #: A 5-digit postal code, or ``None`` for the 48 communes published without
     #: one.
     #:
     #: ``None`` rather than an absent attribute, on purpose: ``None`` says

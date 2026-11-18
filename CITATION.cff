@@ -9,11 +9,11 @@ title: "Algeria Wilayas, Daïras and Communes"
 abstract: >-
   A complete, machine-readable dataset of Algeria's administrative divisions
   after the 2026 reform: 69 wilayas, 566 daïras and 1541 communes, with every
-  name in Arabic, French and English, and postal codes for 1496 of the 1541
+  name in Arabic, French and English, and postal codes for 1493 of the 1541
   communes. The hierarchy follows the ONS Code Géographique National, Loi 19-12
   (2019) and Loi 26-06 (2026). It is published as plain JSON, as an npm package
   and as a PyPI package, all built from one hand-edited source file and
-  regenerated reproducibly. Records are never invented or interpolated: the 45
+  regenerated reproducibly. Records are never invented or interpolated: the 48
   communes with no available postal code ship as null and are listed in the
   documentation, and the 58-to-69 parent-wilaya mapping of the 2026 reform is
   not published at all, because it is not present in any source available to

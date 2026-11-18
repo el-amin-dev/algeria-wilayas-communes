@@ -30,7 +30,7 @@
  *
  * Two value-shape decisions that are easy to get wrong and silent when you do:
  *
- * - **The postal index value is an array, always.** 38 of the 1479 distinct
+ * - **The postal index value is an array, always.** 38 of the 1476 distinct
  *   codes are shared by more than one commune, so a `Map<string, Commune>`
  *   would drop records depending on insertion order, with no error anywhere.
  * - **The name index value is an array, always.** 38 commune names are
@@ -154,12 +154,12 @@ let postalIndex: Map<string, readonly Commune[]> | undefined;
 /**
  * Postal code → every commune carrying it.
  *
- * The value is an array **always**. 1496 communes share 1479 distinct codes, so
+ * The value is an array **always**. 1493 communes share 1476 distinct codes, so
  * 17 codes map to more than one commune; a single-valued map would drop the
- * losers silently. The 45 communes with `postalCode === null` are skipped — they
+ * losers silently. The 48 communes with `postalCode === null` are skipped — they
  * are listed by id in `COMMUNES_MISSING_POSTAL_CODE`.
  *
- * @returns The 1479-entry postal index.
+ * @returns The 1476-entry postal index.
  */
 export function postalIdx(): Map<string, readonly Commune[]> {
   if (postalIndex === undefined) {

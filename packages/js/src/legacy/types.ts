@@ -32,7 +32,7 @@
  * A commune inside the nested tree, v1 shape.
  *
  * `code_postal` is `string | null`, never `undefined`: `null` means *published
- * as absent* for the 45 communes with no code, and v1 emitted exactly that.
+ * as absent* for the 48 communes with no code, and v1 emitted exactly that.
  *
  * @example
  * ```ts
@@ -258,7 +258,7 @@ export interface Algeria {
   nb_wilayas: number;
   nb_dairas: number;
   nb_communes: number;
-  /** Communes with a published postal code — 1496. Was `unknown` in v1. */
+  /** Communes with a published postal code — 1493. Was `unknown` in v1. */
   codes_postaux_renseignes: number;
   /** Communes with `code_postal: null` — 27. Was `unknown` in v1. */
   codes_postaux_manquants: number;

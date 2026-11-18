@@ -1,7 +1,7 @@
 /**
- * The membership test for the 45 communes published without a postal code.
+ * The membership test for the 48 communes published without a postal code.
  *
- * `COMMUNES_MISSING_POSTAL_CODE` is a `readonly` TUPLE of 45 id *literals*, not
+ * `COMMUNES_MISSING_POSTAL_CODE` is a `readonly` TUPLE of 48 id *literals*, not
  * a `readonly string[]`. That is deliberate — it lets a consumer write
  * `"19-ain-azel-ain-lahdjar" satisfies MissingPostalCodeId` and get a compile
  * error on a typo — but it has one hostile consequence: `.includes(id)` for an

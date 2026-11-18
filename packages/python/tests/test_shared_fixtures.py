@@ -241,7 +241,7 @@ class TestTheFixturesAreNotEmpty:
     def test_ground_truth_fixture_is_populated(self) -> None:
         truth = load_fixture("ground-truth")
         assert truth["counts"]["communes"] == 1541
-        assert len(truth["communesMissingPostalCode"]) == 45
+        assert len(truth["communesMissingPostalCode"]) == 48
         assert len(truth["exonyms"]) == 1
         assert len(truth["duplicatedCommuneNameExamples"]) == 2
 

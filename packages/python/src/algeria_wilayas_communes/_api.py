@@ -210,7 +210,7 @@ def get_communes_of_wilaya(code: WilayaLike) -> tuple[Commune, ...]:
 def find_by_postal_code(code: str) -> tuple[Commune, ...]:
     """All communes sharing a 5-digit postal code.
 
-    Postal codes are **not unique**: 38 of the 1479 distinct codes in the
+    Postal codes are **not unique**: 38 of the 1476 distinct codes in the
     dataset are shared by more than one commune, so this always returns a tuple.
     Treating it as a single-record lookup silently drops data.
 

@@ -191,7 +191,7 @@
           {
             "name": "code_postal",
             "type": "string",
-            "description": "5-digit code as a STRING; \"05000\" is real and loses its zero as an integer. null for 45 communes, meaning published-as-absent, NOT not-looked-up. 17 codes are shared by more than one commune.",
+            "description": "5-digit code as a STRING; \"05000\" is real and loses its zero as an integer. null for 48 communes, meaning published-as-absent, NOT not-looked-up. 17 codes are shared by more than one commune.",
             "constraints": {
               "pattern": "^[0-9]{5}$"
             }

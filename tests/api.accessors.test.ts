@@ -370,20 +370,20 @@ describe("record shapes, anchored on real records", () => {
 
 // ── Postal-code nulls, through the public API ───────────────────────────────
 
-describe("the 45 communes with no postal code", () => {
-  it("has 45 nulls and 1496 present", () => {
-    expect(getCommunes().filter((c) => c.postalCode === null)).toHaveLength(45);
-    expect(getCommunes().filter((c) => c.postalCode !== null)).toHaveLength(1496);
+describe("the 48 communes with no postal code", () => {
+  it("has 48 nulls and 1493 present", () => {
+    expect(getCommunes().filter((c) => c.postalCode === null)).toHaveLength(48);
+    expect(getCommunes().filter((c) => c.postalCode !== null)).toHaveLength(1493);
   });
 
-  it("re-exports the 45 ids, and they agree with the records in both directions", () => {
-    // The 45 CANNOT be filled — no available source has them. They ship as
+  it("re-exports the 48 ids, and they agree with the records in both directions", () => {
+    // The 48 CANNOT be filled — no available source has them. They ship as
     // `null` behind an exported array rather than being guessed. Never invent a
     // record: one fabricated postal code ends the package's credibility.
-    expect(COMMUNES_MISSING_POSTAL_CODE).toHaveLength(45);
+    expect(COMMUNES_MISSING_POSTAL_CODE).toHaveLength(48);
 
     const listed = new Set<string>(COMMUNES_MISSING_POSTAL_CODE);
-    expect(listed.size).toBe(45);
+    expect(listed.size).toBe(48);
 
     const unlisted = getCommunes()
       .filter((c) => c.postalCode === null && !listed.has(c.id))
@@ -450,8 +450,8 @@ describe("the size constants", () => {
     expect(api.WILAYA_COUNT).toBe(69);
     expect(api.DAIRA_COUNT).toBe(566);
     expect(api.COMMUNE_COUNT).toBe(1541);
-    expect(api.POSTAL_CODE_COUNT).toBe(1496);
-    expect(api.MISSING_POSTAL_CODE_COUNT).toBe(45);
+    expect(api.POSTAL_CODE_COUNT).toBe(1493);
+    expect(api.MISSING_POSTAL_CODE_COUNT).toBe(48);
   });
 });
 

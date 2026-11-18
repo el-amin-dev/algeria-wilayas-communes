@@ -187,8 +187,8 @@ export function byWilaya(num: WilayaNum | WilayaNumString): Wilaya | undefined {
 /**
  * Every commune carrying a given postal code.
  *
- * **Returns an ARRAY, and legitimately returns more than one row.** 1496
- * communes share only 1479 distinct codes, so **17 codes are held by more than
+ * **Returns an ARRAY, and legitimately returns more than one row.** 1493
+ * communes share only 1476 distinct codes, so **17 codes are held by more than
  * one commune**. Anything that "simplifies" this to return a single commune is
  * a break, not a cleanup.
  *
@@ -196,7 +196,7 @@ export function byWilaya(num: WilayaNum | WilayaNumString): Wilaya | undefined {
  * `code_postal` is `null`, because `null === code` is false for every string.
  *
  * ⚠️ The converse is v1's, and is preserved deliberately: `findByPostalCode(null)`
- * returns exactly those 45 communes, because `null === null`. That is a real
+ * returns exactly those 48 communes, because `null === null`. That is a real
  * trap for a JavaScript caller passing a nullable database column straight in —
  * "no postal code" reads as a query and comes back with 27 rows rather than
  * none. It is not fixed here: this function is byte-faithful to v1's

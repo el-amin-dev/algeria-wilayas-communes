@@ -124,8 +124,8 @@ describe("/communes matches the root", () => {
     expect(communesEntry.getCommunesOfWilaya(NOT_A_CODE)).toEqual([]);
   });
 
-  it("exposes the 45 communes with no postal code", () => {
-    expect(communesEntry.COMMUNES_MISSING_POSTAL_CODE).toHaveLength(45);
+  it("exposes the 48 communes with no postal code", () => {
+    expect(communesEntry.COMMUNES_MISSING_POSTAL_CODE).toHaveLength(48);
     expect(communesEntry.COMMUNES_MISSING_POSTAL_CODE).toEqual(root.COMMUNES_MISSING_POSTAL_CODE);
   });
 

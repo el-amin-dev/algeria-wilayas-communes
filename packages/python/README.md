@@ -204,7 +204,7 @@ communes = pd.DataFrame(
     ]
 )
 len(communes)  # 1541
-communes["postal_code"].notna().sum()  # 1496
+communes["postal_code"].notna().sum()  # 1493
 
 per_wilaya = communes.groupby("wilaya").size().rename("communes").reset_index()
 per_wilaya["name_fr"] = per_wilaya["wilaya"].map(lambda n: get_wilaya(n).name.fr)
@@ -276,7 +276,7 @@ class Commune(models.Model):
     daira = models.ForeignKey(Daira, on_delete=models.CASCADE, related_name="communes")
     name_ar = models.CharField(max_length=64)
     name_fr = models.CharField(max_length=64)
-    # 45 of 1541 communes have no published postal code. null=True, never "".
+    # 48 of 1541 communes have no published postal code. null=True, never "".
     postal_code = models.CharField(max_length=5, null=True, blank=True, db_index=True)
 
     class Meta:
@@ -406,7 +406,7 @@ def create_address(address: Address) -> dict:
     if address.postal_code is not None:
         if not is_postal_code(address.postal_code):
             raise HTTPException(422, "Postal code must be exactly 5 ASCII digits.")
-        # 45 communes have no published code, so absence is not a mismatch.
+        # 48 communes have no published code, so absence is not a mismatch.
         if commune.postal_code and address.postal_code != commune.postal_code:
             raise HTTPException(
                 422,
@@ -504,7 +504,7 @@ def submit(request):
             "commune": commune.id,
             "daira": commune.daira,
             "wilaya": commune.wilaya,
-            "postal_code": commune.postal_code,  # may be None for 45 communes
+            "postal_code": commune.postal_code,  # may be None for 48 communes
         }
     )
 
@@ -744,7 +744,7 @@ def test_dataset_is_the_one_we_reviewed():
     assert SOURCE_LAW == "Loi 26-06 du 4 avril 2026, JO n°25"
     assert LAST_VERIFIED == "2026-07-20"
     assert (WILAYA_COUNT, DAIRA_COUNT, COMMUNE_COUNT) == (69, 566, 1541)
-    assert POSTAL_CODE_COUNT == 1496
+    assert POSTAL_CODE_COUNT == 1493
     assert MISSING_POSTAL_CODE_COUNT == len(COMMUNES_MISSING_POSTAL_CODE) == 27
 ```
 
@@ -754,18 +754,18 @@ Three numbers that are routinely confused with one another:
 
 | | |
 |---|---|
-| Communes **carrying** a postal code | **1496** (`POSTAL_CODE_COUNT`) |
+| Communes **carrying** a postal code | **1493** (`POSTAL_CODE_COUNT`) |
 | Communes with **no** postal code | **27** (`MISSING_POSTAL_CODE_COUNT`) |
-| **Distinct** non-null postal codes | **1479** |
+| **Distinct** non-null postal codes | **1476** |
 | Distinct codes **shared** by more than one commune | **38** |
 
-1496 + 30 = 1541 communes. 1479 is a count of *codes*, not of communes — never substitute one for the other. Because 17 codes are shared, `find_by_postal_code` returns a tuple, always.
+1493 + 30 = 1541 communes. 1476 is a count of *codes*, not of communes — never substitute one for the other. Because 17 codes are shared, `find_by_postal_code` returns a tuple, always.
 
-### The 45 communes with no postal code
+### The 48 communes with no postal code
 
 They ship as `postal_code=None` and are listed by id in `COMMUNES_MISSING_POSTAL_CODE`. No available source has them, and they **will never be invented**: one fabricated postal code would end this dataset's credibility permanently. `None` means *published as absent*, not *we did not look*.
 
-27 of the 45 are never published: no source available to this project has them. The other **18 were withdrawn** — they shipped carrying a code that belongs elsewhere (Saïda's `Ain El Hadjar` held Bouira's `10031`; Annaba's `El Eulma` held Sétif's `19001`; Alger's `Hammamet` held Tébessa's `12016`, and its replacement is disputed). Both withdrawals are cited in `data/raw/postal-corrections.json` and the build fails if the ledger and the data disagree. For a consumer the two causes behave identically: the code is absent, and must not be invented.
+27 of the 48 are never published: no source available to this project has them. The other **21 were withdrawn** — they shipped carrying a code that belongs elsewhere (Saïda's `Ain El Hadjar` held Bouira's `10031`; Annaba's `El Eulma` held Sétif's `19001`; Alger's `Hammamet` held Tébessa's `12016`, and its replacement is disputed). Both withdrawals are cited in `data/raw/postal-corrections.json` and the build fails if the ledger and the data disagree. For a consumer the two causes behave identically: the code is absent, and must not be invented.
 
 
 | Wilaya | Commune | Daïra |
@@ -796,6 +796,8 @@ They ship as `postal_code=None` and are listed by id in `COMMUNES_MISSING_POSTAL
 | 29 Mascara | Ain Fares | Ain Fares |
 | 29 Mascara | Mohammadia | Mohammadia |
 | 29 Mascara | Tizi | Tizi |
+| 30 Ouargla | Ain Beida | Sidi Khouiled |
+| 31 Oran | Ain Turk | Ain Turk |
 | 32 El Bayadh | Sidi Ameur | Sidi Ameur |
 | 34 Bordj Bou Arreridj | Elhammadia | El Hamadia |
 | 34 Bordj Bou Arreridj | Ouled Sidi-Brahim | Mansourah |
@@ -807,6 +809,7 @@ They ship as `postal_code=None` and are listed by id in `COMMUNES_MISSING_POSTAL
 | 38 Tissemsilt | Sidi Slimane | Bordj Bounaama |
 | 39 El Oued | El Ogla | Robbah |
 | 41 Souk Ahras | Sidi Fredj | Merahna |
+| 44 Ain Defla | Ain-Soltane | Ain Lechiakh |
 | 46 Ain Temouchent | Chentouf | Hammam Bou Hadjar |
 | 46 Ain Temouchent | Emir Abdelkader | Beni Saf |
 | 47 Ghardaia | Mansoura | Mansourah |
@@ -956,7 +959,7 @@ No scoring, no comparison table against packages whose current releases have not
 | Daïras | 566, as a first-class layer with its own records |
 | Communes | 1541 |
 | Names | Arabic, French and English, non-empty for all 2176 records |
-| Postal codes | 1496 of 1541; the other 27 are `None` and published as a list |
+| Postal codes | 1493 of 1541; the other 27 are `None` and published as a list |
 | Type hints | `py.typed` in the wheel; clean under `mypy --strict` |
 | Runtime dependencies | none |
 | Python | 3.9 – 3.13, tested on all five in CI |

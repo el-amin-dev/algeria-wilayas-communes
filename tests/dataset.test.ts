@@ -56,9 +56,9 @@ describe("counts", () => {
 });
 
 describe("postal codes", () => {
-  it("has 45 missing and 1496 present", () => {
-    expect(COMMUNES.filter((c) => c.postalCode === null)).toHaveLength(45);
-    expect(COMMUNES.filter((c) => c.postalCode !== null)).toHaveLength(1496);
+  it("has 48 missing and 1493 present", () => {
+    expect(COMMUNES.filter((c) => c.postalCode === null)).toHaveLength(48);
+    expect(COMMUNES.filter((c) => c.postalCode !== null)).toHaveLength(1493);
   });
 
   it("has zero malformed codes — every non-null value is exactly five digits", () => {
@@ -68,7 +68,7 @@ describe("postal codes", () => {
     expect(malformed).toEqual([]);
   });
 
-  it("has 1479 distinct codes, so 17 codes are shared by more than one commune", () => {
+  it("has 1476 distinct codes, so 17 codes are shared by more than one commune", () => {
     const distinct = new Set<string>();
     const occurrences = new Map<string, number>();
     for (const c of COMMUNES) {
@@ -76,17 +76,17 @@ describe("postal codes", () => {
       distinct.add(c.postalCode);
       occurrences.set(c.postalCode, (occurrences.get(c.postalCode) ?? 0) + 1);
     }
-    expect(distinct.size).toBe(1479);
+    expect(distinct.size).toBe(1476);
     expect([...occurrences.values()].filter((n) => n > 1)).toHaveLength(17);
   });
 
-  it("lists exactly the 45 communes with no postal code, in both directions", () => {
-    // The 45 CANNOT be filled — no available source has them. They ship as
+  it("lists exactly the 48 communes with no postal code, in both directions", () => {
+    // The 48 CANNOT be filled — no available source has them. They ship as
     // `null` behind an exported array rather than being guessed. Never invent
     // a record: one fabricated postal code ends the package's credibility.
-    expect(COMMUNES_MISSING_POSTAL_CODE).toHaveLength(45);
+    expect(COMMUNES_MISSING_POSTAL_CODE).toHaveLength(48);
     const missing = new Set<string>(COMMUNES_MISSING_POSTAL_CODE);
-    expect(missing.size).toBe(45);
+    expect(missing.size).toBe(48);
 
     // Forward: every null-postal-code commune is listed.
     const unlisted = COMMUNES.filter((c) => c.postalCode === null && !missing.has(c.id)).map(
@@ -116,8 +116,8 @@ describe("postal codes", () => {
     const src = JSON.parse(
       readFileSync(`${REPO_ROOT}data/algeria.json`, "utf8"),
     ) as AlgeriaCounters;
-    expect(src.codes_postaux_renseignes).toBe(1496);
-    expect(src.codes_postaux_manquants).toBe(45);
+    expect(src.codes_postaux_renseignes).toBe(1493);
+    expect(src.codes_postaux_manquants).toBe(48);
     expect(src.codes_postaux_renseignes + src.codes_postaux_manquants).toBe(COMMUNES.length);
   });
 });
@@ -210,8 +210,8 @@ describe("provenance", () => {
     expect(WILAYA_COUNT).toBe(69);
     expect(DAIRA_COUNT).toBe(566);
     expect(COMMUNE_COUNT).toBe(1541);
-    expect(POSTAL_CODE_COUNT).toBe(1496);
-    expect(MISSING_POSTAL_CODE_COUNT).toBe(45);
+    expect(POSTAL_CODE_COUNT).toBe(1493);
+    expect(MISSING_POSTAL_CODE_COUNT).toBe(48);
 
     expect(WILAYA_COUNT).toBe(WILAYAS.length);
     expect(DAIRA_COUNT).toBe(DAIRAS.length);

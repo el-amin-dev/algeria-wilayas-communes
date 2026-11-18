@@ -728,7 +728,7 @@ applied only at build time would leave the packages right and the raw JSON wrong
 reporting the split.
 
 **What changed.** 591 → **566** daïras: 25 invented one-commune containers removed. Communes
-**unchanged at 1541** — nothing deleted, 25 records re-parented. Postal codes 1514 → **1496**.
+**unchanged at 1541** — nothing deleted, 25 records re-parented. Postal codes 1514 → **1493**.
 
 The most telling number: **shared postal codes fell from 38 to 17.** More than half of what this
 dataset documented as "codes shared by several communes" was not a feature of Algerian postal
@@ -747,8 +747,8 @@ Six wilaya daïra counts now match the official figures they previously contradi
 | 48 Relizane | 16 | **13** | 13 |
 
 **`null` now has two causes, and the docs say which.** 27 communes were never published with a
-code; **18 were withdrawn** because they shipped a code belonging to another wilaya's commune.
-Only 8 corrections carry a sourced replacement code; the daira was sourceable far more often
+code; **21 were withdrawn** because they shipped a code belonging to another wilaya's commune.
+Only 5 corrections carry a sourced replacement code; the daira was sourceable far more often
 than the code, because French Wikipedia's "Daïras de la wilaya de X" pages are systematic while
 its commune infoboxes carry postal codes only sometimes.
 
@@ -756,6 +756,29 @@ Withdrawal was chosen over leaving a known-wrong value, and over inventing a pla
 withdrawals are deliberate retreats rather than absences: Alger's `Hammamet`, whose sourced
 `16060` would have created the dataset's only same-wilaya shared code, and Mascara's `Ain Fares`,
 whose source offers `29140` and `29530` and settles neither.
+
+**Independently verified, and it changed the result.** All 26 entries were re-checked by a fan-out
+of independent verifiers, each prompted to REFUTE rather than confirm.
+
+**0 of 26 daïra verdicts were refuted.** The id-affecting half of this work — the half that is
+permanent — is independently corroborated. That is the result worth having.
+
+The postal half did not survive as well, and the failure mode is instructive. This column holds
+**one numbering family**: 1470 of 1493 codes are `NN0xx`, the 23 exceptions being `NN1xx` clusters
+in wilayas 05, 15, 16 and 19. Algeria also uses a 100-increment locality numbering — the family in
+which Bouhadjar is `36300`, while this dataset records it as `36005`. Three codes written here came
+from that other family, and each was the **only** non-`NN0xx` code in its whole wilaya: `31300`
+(Aïn El Turck), `44240` (Aïn Soltane), `30120` (Aïn Beïda). All three are withdrawn.
+
+The same test worked in the other direction, replacing two values that were wrong with two that
+fit: `26036` for Ouled Brahim and `36011` for Aïn Kerma, the latter slotting exactly between this
+dataset's Aïn El Assel `36010` and Asfour `36012`.
+
+The lesson is a sourcing rule, now written into `docs/DATA_PROVENANCE.md`: a candidate code needs
+an external citation **and** agreement with the family its wilaya already uses. "The prefix matches
+the wilaya" is what produced the `36330` error and is not sourcing. Verifiers also proposed codes
+for 13 of the withdrawals, mostly from aggregator lists; those are recorded in the ledger as
+**leads**, not written, because supplying a value requires a citation.
 
 **What is left, and it is a different shape now.** The audit reports **10** rows, down from 36 —
 and **`PHANTOM_DAIRA` is 0**. Every invented container in wilayas 01–48 is gone; all 10 remaining

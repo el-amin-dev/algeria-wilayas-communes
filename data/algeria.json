@@ -15,8 +15,8 @@
   "nb_wilayas": 69,
   "nb_dairas": 566,
   "nb_communes": 1541,
-  "codes_postaux_renseignes": 1496,
-  "codes_postaux_manquants": 45,
+  "codes_postaux_renseignes": 1493,
+  "codes_postaux_manquants": 48,
   "note_daira": "Appartenance daira->commune issue de la structure officielle pre-2025, regroupee sous les 69 nouvelles wilayas. Une daira scindee par la reforme apparait sous chaque wilaya concernee.",
   "sources": [
     "ONS Code Geographique National / Loi 19-12 (2019) / Loi 26-06 (2026)",
@@ -7706,7 +7706,7 @@
               "nom_ar": "أولاد إبراهيم",
               "nom_fr": "Ouled Brahim",
               "nom_en": "Ouled Brahim",
-              "code_postal": "26230"
+              "code_postal": "26036"
             }
           ],
           "nb_communes": 3
@@ -8760,7 +8760,7 @@
               "nom_ar": "عين البيضاء",
               "nom_fr": "Ain Beida",
               "nom_en": "Ain Beida",
-              "code_postal": "30120"
+              "code_postal": null
             }
           ],
           "nb_communes": 3
@@ -8969,7 +8969,7 @@
               "nom_ar": "عين الترك",
               "nom_fr": "Ain Turk",
               "nom_en": "Ain Turk",
-              "code_postal": "31300"
+              "code_postal": null
             }
           ],
           "nb_communes": 4
@@ -9914,7 +9914,7 @@
               "nom_ar": "عين الكرمة",
               "nom_fr": "Ain Kerma",
               "nom_en": "Ain Kerma",
-              "code_postal": "36330"
+              "code_postal": "36011"
             }
           ],
           "nb_communes": 4
@@ -11746,7 +11746,7 @@
               "nom_ar": "عين السلطان",
               "nom_fr": "Ain-Soltane",
               "nom_en": "Ain-Soltane",
-              "code_postal": "44240"
+              "code_postal": null
             }
           ],
           "nb_communes": 3

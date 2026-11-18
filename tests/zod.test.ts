@@ -71,7 +71,7 @@ describe("record schemas round-trip the whole dataset", () => {
     expect(failed).toEqual([]);
     // The .nullable() is load-bearing: without it exactly these 27 fail.
     const nulls = getCommunes().filter((c) => c.postalCode === null);
-    expect(nulls).toHaveLength(45);
+    expect(nulls).toHaveLength(48);
     expect(nulls.every((c) => communeSchema.safeParse(c).success)).toBe(true);
   });
 
@@ -115,7 +115,7 @@ describe("addressSchema", () => {
     expect(r.error?.issues.map((i) => i.path)).toEqual([["postalCode"]]);
   });
 
-  it("does NOT check the postal code for the 45 communes that have none", () => {
+  it("does NOT check the postal code for the 48 communes that have none", () => {
     // Rejecting a user's input because our dataset has a hole would be a bug,
     // not validation. Any 5-digit code is accepted for these.
     const hole = getCommunes().find((c) => c.postalCode === null)!;

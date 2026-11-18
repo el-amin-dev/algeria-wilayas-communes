@@ -68,6 +68,15 @@ for (const c of corrections) {
   if (inTarget) {
     if (inTarget.code_postal === c.postalCodeTo) {
       alreadyDone.push(`${c.wilaya}/${c.commune}`);
+    } else if (inTarget.code_postal === null && c.postalCodeTo !== null) {
+      // A withdrawn code being FILLED once a source was found. The commune is
+      // already in the right daira and the field is absent, so writing a cited
+      // value over an absence is an upgrade, not an overwrite -- the case that
+      // happens every time one of the withdrawals below finally gets sourced.
+      inTarget.code_postal = c.postalCodeTo;
+      applied.push(
+        `${c.wilaya}/${c.commune}: filled withdrawn code -> ${JSON.stringify(c.postalCodeTo)}`,
+      );
     } else if (inTarget.code_postal === c.postalCodeFrom) {
       inTarget.code_postal = c.postalCodeTo;
       applied.push(

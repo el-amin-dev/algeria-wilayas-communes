@@ -62,9 +62,9 @@ let postalIndex: Map<string, readonly Commune[]> | undefined;
 /**
  * Postal code → every commune carrying it.
  *
- * The value is an array **always**. 1496 communes share 1479 distinct codes, so
+ * The value is an array **always**. 1493 communes share 1476 distinct codes, so
  * 17 codes map to more than one commune; a single-valued map would drop the
- * losers silently. The 45 communes with `postalCode === null` are skipped —
+ * losers silently. The 48 communes with `postalCode === null` are skipped —
  * their ids are listed in `COMMUNES_MISSING_POSTAL_CODE`.
  */
 function postalIdx(): Map<string, readonly Commune[]> {
@@ -156,7 +156,7 @@ export function getCommune(id: string): Commune | undefined {
 /**
  * All communes sharing a 5-digit postal code.
  *
- * Postal codes are not unique: 38 of the 1479 distinct codes in the dataset are
+ * Postal codes are not unique: 38 of the 1476 distinct codes in the dataset are
  * shared by more than one commune, so this always returns an array.
  *
  * @param code - A 5-digit postal code, e.g. `"19018"`. A plain `string`, not a

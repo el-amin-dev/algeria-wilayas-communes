@@ -327,7 +327,7 @@ export function byWilaya(code: WilayaCode): WilayaTree | undefined {
 /**
  * All communes sharing a 5-digit postal code.
  *
- * Postal codes are not unique: 38 of the 1479 distinct codes in the dataset are
+ * Postal codes are not unique: 38 of the 1476 distinct codes in the dataset are
  * shared by more than one commune, so this always returns an array.
  *
  * @param code - A 5-digit postal code, e.g. `"19018"`. A plain `string`, not a

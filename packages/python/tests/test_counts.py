@@ -92,7 +92,7 @@ def test_postal_codes_are_not_unique(ground_truth: dict[str, Any]) -> None:
 
 
 def test_missing_postal_codes_are_the_exact_documented_set(ground_truth: dict[str, Any]) -> None:
-    """The 45 communes published without a postal code.
+    """The 48 communes published without a postal code.
 
     Asserted as a set, not a count: a count alone would stay green if one
     commune quietly gained a fabricated code while another lost a real one. No
@@ -101,7 +101,7 @@ def test_missing_postal_codes_are_the_exact_documented_set(ground_truth: dict[st
     """
     expected = tuple(ground_truth["communesMissingPostalCode"])
     assert expected == COMMUNES_MISSING_POSTAL_CODE
-    assert len(COMMUNES_MISSING_POSTAL_CODE) == 45
+    assert len(COMMUNES_MISSING_POSTAL_CODE) == 48
 
     from_records = tuple(c.id for c in get_communes() if c.postal_code is None)
     assert from_records == expected

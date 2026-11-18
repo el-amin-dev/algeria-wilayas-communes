@@ -7,10 +7,10 @@
     "searchableRecords": 2176
   },
   "postalCodes": {
-    "present": 1496,
-    "missing": 45,
+    "present": 1493,
+    "missing": 48,
     "malformed": 0,
-    "distinct": 1479,
+    "distinct": 1476,
     "sharedByMoreThanOneCommune": 17
   },
   "nameUniqueness": {
@@ -49,6 +49,8 @@
     "29-mohammadia-mohammadia",
     "29-ain-fares-ain-fares",
     "29-tizi-tizi",
+    "30-sidi-khouiled-ain-beida",
+    "31-ain-turk-ain-turk",
     "32-sidi-ameur-sidi-ameur",
     "34-el-hamadia-elhammadia",
     "34-mansourah-ouled-sidi-brahim",
@@ -60,6 +62,7 @@
     "38-lazharia-larbaa",
     "39-robbah-el-ogla",
     "41-merahna-sidi-fredj",
+    "44-ain-lechiakh-ain-soltane",
     "46-hammam-bou-hadjar-chentouf",
     "46-beni-saf-emir-abdelkader",
     "47-mansourah-mansoura",

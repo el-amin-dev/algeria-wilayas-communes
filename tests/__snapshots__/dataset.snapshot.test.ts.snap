@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`dataset fingerprint > COMMUNES fingerprint is unchanged 1`] = `"b45ad91aa135605f48ab63585a6a4f5a72534e5c8b65ffdbae7f1b40ae1a5981"`;
+exports[`dataset fingerprint > COMMUNES fingerprint is unchanged 1`] = `"c9da6b936cc55f35ee96c8de15767182e5880f9512ad6aa2c9e68adf83c98704"`;
 
 exports[`dataset fingerprint > DAIRAS fingerprint is unchanged 1`] = `"1305a12a0634228fb328a673b65c72615a60476dd55d752873ef5fa42656f3bd"`;
 
@@ -10,7 +10,7 @@ exports[`dataset summary > dataset summary is unchanged 1`] = `
 {
   "communes": 1541,
   "dairas": 566,
-  "distinctPostalCodes": 1479,
+  "distinctPostalCodes": 1476,
   "missing": [
     "04-souk-naamane-ouled-zouai",
     "05-ouled-si-slimane-lemcene",
@@ -38,6 +38,8 @@ exports[`dataset summary > dataset summary is unchanged 1`] = `
     "29-ain-fares-ain-fares",
     "29-mohammadia-mohammadia",
     "29-tizi-tizi",
+    "30-sidi-khouiled-ain-beida",
+    "31-ain-turk-ain-turk",
     "32-sidi-ameur-sidi-ameur",
     "34-el-hamadia-elhammadia",
     "34-mansourah-ouled-sidi-brahim",
@@ -49,6 +51,7 @@ exports[`dataset summary > dataset summary is unchanged 1`] = `
     "38-lazharia-larbaa",
     "39-robbah-el-ogla",
     "41-merahna-sidi-fredj",
+    "44-ain-lechiakh-ain-soltane",
     "46-beni-saf-emir-abdelkader",
     "46-hammam-bou-hadjar-chentouf",
     "47-mansourah-mansoura",
@@ -58,7 +61,7 @@ exports[`dataset summary > dataset summary is unchanged 1`] = `
     "64-sidi-ameur-sidi-ameur",
     "66-chahbounia-bouaiche",
   ],
-  "missingPostalCode": 45,
+  "missingPostalCode": 48,
   "perWilaya": [
     [
       1,
@@ -339,6 +342,6 @@ exports[`dataset summary > dataset summary is unchanged 1`] = `
   ],
   "sharedPostalCodes": 17,
   "wilayas": 69,
-  "withPostalCode": 1496,
+  "withPostalCode": 1493,
 }
 `;

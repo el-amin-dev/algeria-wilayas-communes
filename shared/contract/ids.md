@@ -64,7 +64,7 @@ commune ids distinct, 0 collisions.
 
 ## Postal codes are not ids
 
-1496 communes have one, 27 have `null`. Of the 1479 distinct codes, **38 are
+1493 communes have one, 27 have `null`. Of the 1476 distinct codes, **38 are
 shared by more than one commune**, so a postal index maps to a **list**. A
 `dict[str, Commune]` would silently drop records depending on insertion order.
 

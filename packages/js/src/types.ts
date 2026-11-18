@@ -68,7 +68,7 @@ export type { Daira } from "./generated/dairas";
  *
  * `id` is library-assigned (`"19-ain-azel-ain-lahdjar"`), not a government
  * identifier. `postalCode` is `PostalCode | null`, never optional: `null` says
- * *published as absent* for the 45 communes with no code, where `undefined`
+ * *published as absent* for the 48 communes with no code, where `undefined`
  * would say *we did not look*.
  *
  * @example

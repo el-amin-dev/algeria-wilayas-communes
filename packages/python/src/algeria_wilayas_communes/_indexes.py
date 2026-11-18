@@ -268,7 +268,7 @@ def postal_index() -> dict[str, tuple[Commune, ...]]:
     """``postal code -> communes``. The value is a tuple, **always**.
 
     This is the single most common place to get the model wrong. There are
-    1479 distinct non-null postal codes across 1496 communes with a code, so
+    1476 distinct non-null postal codes across 1493 communes with a code, so
     **17 codes are shared by more than one commune**. A ``Dict[str, Commune]``
     would silently drop records depending on insertion order.
     """
@@ -333,7 +333,7 @@ def communes_of_wilaya() -> dict[int, tuple[Commune, ...]]:
 
 
 def communes_missing_postal_code() -> tuple[str, ...]:
-    """The ids of the 45 communes published without a postal code.
+    """The ids of the 48 communes published without a postal code.
 
     Derived from the data, never hand-copied: a transcribed list is one more
     thing to drift.

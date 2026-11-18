@@ -30,7 +30,7 @@
  *
  * ── `findByPostalCode` returns an ARRAY, and that is load-bearing ───────────
  *
- * 1496 communes hold only 1479 distinct postal codes — **17 codes are shared**.
+ * 1493 communes hold only 1476 distinct postal codes — **17 codes are shared**.
  * Any "simplification" to a single-commune return value silently drops real
  * data. The shared code below is found programmatically, so the test keeps
  * meaning if the dataset changes and does not encode a lucky constant.
@@ -146,15 +146,15 @@ describe("`findByPostalCode` — an ARRAY, not a single commune", () => {
     for (const c of hits) expect(c.code_postal).toBe(code);
   });
 
-  it("17 codes are shared across the 1496 communes that have one (1479 distinct)", () => {
+  it("17 codes are shared across the 1493 communes that have one (1476 distinct)", () => {
     const counts = new Map<string, number>();
     for (const c of getCommunes()) {
       if (c.code_postal === null) continue;
       counts.set(c.code_postal, (counts.get(c.code_postal) ?? 0) + 1);
     }
     const withCode = [...counts.values()].reduce((a, b) => a + b, 0);
-    expect(withCode).toBe(1496);
-    expect(counts.size).toBe(1479);
+    expect(withCode).toBe(1493);
+    expect(counts.size).toBe(1476);
     expect([...counts.values()].filter((n) => n > 1)).toHaveLength(17);
   });
 
@@ -162,7 +162,7 @@ describe("`findByPostalCode` — an ARRAY, not a single commune", () => {
     // `null === code` is false for every string, so the 30 unpublished rows are
     // unreachable through this function — in v1 and here. A "helpful" coercion
     // (`==`, or treating `""` as a wildcard) would surface them.
-    expect(getCommunes().filter((c) => c.code_postal === null)).toHaveLength(45);
+    expect(getCommunes().filter((c) => c.code_postal === null)).toHaveLength(48);
     for (const probe of ["", "null", "undefined", "0"]) {
       expect(findByPostalCode(probe)).toStrictEqual([]);
     }
@@ -234,7 +234,7 @@ describe("mutability — the legacy surface stays writable", () => {
 // ── The null-argument quirk, pinned ─────────────────────────────────────────
 
 describe("findByPostalCode(null) — a v1 quirk, deliberately preserved", () => {
-  it("returns the 45 null-code communes, because null === null", () => {
+  it("returns the 48 null-code communes, because null === null", () => {
     // NOT a bug being blessed: this is byte-faithful to v1's
     // `getCommunes().filter((c) => c.code_postal === code)`, and someone may
     // already depend on it. It IS a trap — a caller passing a nullable database
@@ -243,7 +243,7 @@ describe("findByPostalCode(null) — a v1 quirk, deliberately preserved", () => 
     // breaking change and belongs in a major with a line in the migration guide.
     const nulls = findByPostalCode(null as never);
 
-    expect(nulls).toHaveLength(45);
+    expect(nulls).toHaveLength(48);
     expect(nulls.every((c) => c.code_postal === null)).toBe(true);
 
     // Every *string* argument, by contrast, matches none of them.

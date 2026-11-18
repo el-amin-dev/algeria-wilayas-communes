@@ -26,7 +26,7 @@ bun  add     algeria-wilayas-communes
 
 ## Thirty seconds
 
-A customer types a postal code. 38 of the 1479 distinct codes are shared by more than one commune, so the answer is an array — treat it as one.
+A customer types a postal code. 38 of the 1476 distinct codes are shared by more than one commune, so the answer is an array — treat it as one.
 
 ```js
 import { findByPostalCode, getWilaya } from "algeria-wilayas-communes/communes";
@@ -125,7 +125,7 @@ Two invariants hold across the whole surface:
 | `resolveLegacyWilaya` | `(code: WilayaCode) => WilayaCode \| undefined` — throws while the mapping is unfilled |
 | `resolveCurrentWilaya` | `(code: WilayaCode) => readonly WilayaCode[] \| undefined` — same |
 | `ReformMappingUnavailableError` | `class extends Error` |
-| `COMMUNES_MISSING_POSTAL_CODE` | `readonly string[]` — the 45 commune ids with no published code |
+| `COMMUNES_MISSING_POSTAL_CODE` | `readonly string[]` — the 48 commune ids with no published code |
 | `DATA_VERSION` / `SOURCE_LAW` / `LAST_VERIFIED` | `string` constants |
 | `getAll` | `() => Algeria` — **deprecated**, v1 shape |
 | `findCommune` | `(query: string) => CommuneFlat[]` — **deprecated**, v1 shape |
@@ -336,7 +336,7 @@ const wrongCode = addressSchema.safeParse({ ...submitted, postalCode: "19007" })
 console.log(wrongCode.error?.issues[0]?.path); // → [ "postalCode" ]
 ```
 
-The 45 communes with no postal code are exempt from the postal-code check: our data gap must not become the user's form error.
+The 48 communes with no postal code are exempt from the postal-code check: our data gap must not become the user's form error.
 
 ### 4. Seeding a database (Drizzle; the same shape works for Prisma)
 
@@ -368,7 +368,7 @@ export const communes = sqliteTable("communes", {
   daira: text("daira").notNull().references(() => dairas.id),
   nameAr: text("name_ar").notNull(),
   nameFr: text("name_fr").notNull(),
-  postalCode: text("postal_code"), // nullable: 45 communes have none
+  postalCode: text("postal_code"), // nullable: 48 communes have none
 });
 
 const sqlite = new Database("algeria.db");
@@ -525,19 +525,19 @@ assert.equal(REFORM.mappingComplete, false); // see "The stub, and its limit" be
 
 Details: [DATA_PROVENANCE.md](../../docs/DATA_PROVENANCE.md) · [DATA_POLICY.md](../../docs/DATA_POLICY.md) · [SUPPORT.md](../../SUPPORT.md)
 
-### The postal-code shape: 1496 / 1479 / 38
+### The postal-code shape: 1493 / 1476 / 38
 
-- **1496** of the 1541 communes carry a postal code; **27** do not.
-- Those 1496 codes are only **1479 distinct** values.
+- **1493** of the 1541 communes carry a postal code; **27** do not.
+- Those 1493 codes are only **1476 distinct** values.
 - **38** codes are used by more than one commune.
 
 Those are three different numbers and conflating them writes a bug. `findByPostalCode` therefore returns `readonly Commune[]`, not `Commune | undefined`: `findByPostalCode("19046")` legitimately returns three communes, in Setif, Khenchela and Relizane. A postal code is not a key; the commune `id` is. Any lookup that assumes one code means one commune is wrong on 17 codes.
 
-### The 45 communes with no postal code
+### The 48 communes with no postal code
 
 No source available to this project publishes them. They ship as `postalCode: null` — `null` means *published as absent*, where `undefined` would mean *we did not look* — and their ids are exported as `COMMUNES_MISSING_POSTAL_CODE`. **A guessed postal code will never be added**, not from a neighbouring commune and not from the wilaya prefix.
 
-27 of the 45 are never published: no source available to this project has them. The other **18 were withdrawn** — they shipped carrying a code that belongs elsewhere (Saïda's `Ain El Hadjar` held Bouira's `10031`; Annaba's `El Eulma` held Sétif's `19001`; Alger's `Hammamet` held Tébessa's `12016`, and its replacement is disputed). Both withdrawals are cited in `data/raw/postal-corrections.json` and the build fails if the ledger and the data disagree. For a consumer the two causes behave identically: the code is absent, and must not be invented.
+27 of the 48 are never published: no source available to this project has them. The other **21 were withdrawn** — they shipped carrying a code that belongs elsewhere (Saïda's `Ain El Hadjar` held Bouira's `10031`; Annaba's `El Eulma` held Sétif's `19001`; Alger's `Hammamet` held Tébessa's `12016`, and its replacement is disputed). Both withdrawals are cited in `data/raw/postal-corrections.json` and the build fails if the ledger and the data disagree. For a consumer the two causes behave identically: the code is absent, and must not be invented.
 
 
 | Wilaya | Commune | Daïra |
@@ -568,6 +568,8 @@ No source available to this project publishes them. They ship as `postalCode: nu
 | 29 Mascara | Ain Fares | Ain Fares |
 | 29 Mascara | Mohammadia | Mohammadia |
 | 29 Mascara | Tizi | Tizi |
+| 30 Ouargla | Ain Beida | Sidi Khouiled |
+| 31 Oran | Ain Turk | Ain Turk |
 | 32 El Bayadh | Sidi Ameur | Sidi Ameur |
 | 34 Bordj Bou Arreridj | Elhammadia | El Hamadia |
 | 34 Bordj Bou Arreridj | Ouled Sidi-Brahim | Mansourah |
@@ -579,6 +581,7 @@ No source available to this project publishes them. They ship as `postalCode: nu
 | 38 Tissemsilt | Sidi Slimane | Bordj Bounaama |
 | 39 El Oued | El Ogla | Robbah |
 | 41 Souk Ahras | Sidi Fredj | Merahna |
+| 44 Ain Defla | Ain-Soltane | Ain Lechiakh |
 | 46 Ain Temouchent | Chentouf | Hammam Bou Hadjar |
 | 46 Ain Temouchent | Emir Abdelkader | Beni Saf |
 | 47 Ghardaia | Mansoura | Mansourah |
@@ -685,7 +688,7 @@ could not be established it reads `—`. Versions are the latest published at th
 
 | package | wilayas | daïras | communes | Arabic names | postal codes | types | runtime deps | browser / edge | provenance published | licence |
 |---|---|---|---|---|---|---|---|---|---|---|
-| **algeria-wilayas-communes** (this) | **69** | 566 † | 1541 | ar + fr + en, all levels | 1496 of 1541, 45 documented `null` | yes | none | yes | yes — three exported constants + `sources` | CC0-1.0 |
+| **algeria-wilayas-communes** (this) | **69** | 566 † | 1541 | ar + fr + en, all levels | 1493 of 1541, 48 documented `null` | yes | none | yes | yes — three exported constants + `sources` | CC0-1.0 |
 | `geoalgeria` 2.0.0 | 69 | 556, `name_fr` only | 1541 | wilayas + communes; none on daïras | 1405 of 1541 | yes | none | no — `index.js` calls `fs.readFileSync` | yes — `dataset-metadata.json`, `dateModified` 2026-08-21 | MIT |
 | `algeria-locations` 1.0.6 | 58 | 548 | 1468 | yes, all levels | 1468 of 1468 | no | none | yes | no | ISC |
 | `algeria-wilayas` 1.0.1 | 58 | 548 | 1541 | yes, all levels | none | yes | none | yes | no | MIT |

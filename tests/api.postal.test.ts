@@ -1,15 +1,15 @@
 /**
- * `findByPostalCode` — the plural lookup, the 17 shared codes and the 45 nulls.
+ * `findByPostalCode` — the plural lookup, the 17 shared codes and the 48 nulls.
  *
  * The single most common way to get this index wrong is to type it
- * `Map<string, Commune>`. 38 of the 1479 distinct codes are carried by more
+ * `Map<string, Commune>`. 38 of the 1476 distinct codes are carried by more
  * than one commune, so a scalar value would silently drop records depending on
  * insertion order — no error, no type failure, just a missing commune for one
  * user in Skikda. Every assertion about the shared codes below exists to make
  * that specific bug impossible to ship.
  *
- * Numbers are measured literals: 1541 communes, 1496 with a code, 27 without,
- * 1479 distinct codes, 38 of them shared, largest bucket 2.
+ * Numbers are measured literals: 1541 communes, 1493 with a code, 27 without,
+ * 1476 distinct codes, 38 of them shared, largest bucket 2.
  */
 
 import { describe, expect, it } from "vitest";
@@ -83,7 +83,7 @@ describe("findByPostalCode — the shared codes", () => {
     expect(saida?.postalCode).toBeNull();
   });
 
-  it("has exactly 17 shared codes across 1479 distinct codes, largest bucket 2", () => {
+  it("has exactly 17 shared codes across 1476 distinct codes, largest bucket 2", () => {
     // Re-derived through the PUBLIC accessor and cross-checked against the
     // public lookup: the census and the index must tell the same story.
     const buckets = new Map<string, number>();
@@ -91,12 +91,12 @@ describe("findByPostalCode — the shared codes", () => {
       if (c.postalCode === null) continue;
       buckets.set(c.postalCode, (buckets.get(c.postalCode) ?? 0) + 1);
     }
-    expect(buckets.size).toBe(1479);
+    expect(buckets.size).toBe(1476);
     expect([...buckets.values()].filter((n) => n > 1)).toHaveLength(17);
     expect(Math.max(...buckets.values())).toBe(2);
   });
 
-  it("returns exactly the census bucket for every one of the 1479 codes", () => {
+  it("returns exactly the census bucket for every one of the 1476 codes", () => {
     // The strongest form of the claim: for each distinct code, the lookup's
     // result set equals the set of communes carrying it. Catches a dropped
     // record, a duplicated record and a cross-wired bucket in one pass.
@@ -154,14 +154,14 @@ describe("findByPostalCode — the miss path", () => {
   });
 
   it("never returns a commune whose postalCode is null", () => {
-    // The 45 nulls must not end up under a "null" or "" key. Sidi Ameur (32 and
+    // The 48 nulls must not end up under a "null" or "" key. Sidi Ameur (32 and
     // 64) and Souk El Had (35 and 48) are among them.
     const nullCodeIds = new Set(
       getCommunes()
         .filter((c) => c.postalCode === null)
         .map((c) => c.id),
     );
-    expect(nullCodeIds.size).toBe(45);
+    expect(nullCodeIds.size).toBe(48);
 
     const leaked: string[] = [];
     for (const probe of ["", "null", "undefined", "00000", "99999"]) {
@@ -174,7 +174,7 @@ describe("findByPostalCode — the miss path", () => {
 });
 
 describe("findByPostalCode — coverage of the whole corpus", () => {
-  it("finds all 1496 communes that have a code, and only those", () => {
+  it("finds all 1493 communes that have a code, and only those", () => {
     let found = 0;
     const unfound: string[] = [];
     for (const c of getCommunes()) {
@@ -183,6 +183,6 @@ describe("findByPostalCode — coverage of the whole corpus", () => {
       else unfound.push(c.id);
     }
     expect(unfound).toEqual([]);
-    expect(found).toBe(1496);
+    expect(found).toBe(1493);
   });
 });

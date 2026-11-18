@@ -26,10 +26,10 @@ export const LAST_VERIFIED = "2026-07-20";
 export const WILAYA_COUNT = 69;
 export const DAIRA_COUNT = 566;
 export const COMMUNE_COUNT = 1541;
-export const POSTAL_CODE_COUNT = 1496;
+export const POSTAL_CODE_COUNT = 1493;
 
 /**
  * Communes with no postal code. They are listed by id in
  * `COMMUNES_MISSING_POSTAL_CODE` and cannot be filled — see communes.ts.
  */
-export const MISSING_POSTAL_CODE_COUNT = 45;
+export const MISSING_POSTAL_CODE_COUNT = 48;

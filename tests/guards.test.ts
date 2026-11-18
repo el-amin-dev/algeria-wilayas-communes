@@ -222,7 +222,7 @@ describe("isPostalCode", () => {
     expect(isPostalCode(19018)).toBe(false);
   });
 
-  it("accepts every one of the 1496 real postal codes in the dataset", () => {
+  it("accepts every one of the 1493 real postal codes in the dataset", () => {
     // Proven independently in tests/dataset.test.ts: zero malformed codes. This
     // asserts the guard agrees with the data it ships next to — a guard that
     // rejects its own dataset is the failure mode the template-literal type had.

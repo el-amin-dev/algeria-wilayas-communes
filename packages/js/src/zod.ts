@@ -284,7 +284,7 @@ export const addressSchema = z
       });
     }
 
-    // The 45 communes with no postal code in the reference data are exempt:
+    // The 48 communes with no postal code in the reference data are exempt:
     // our gap must not become the user's error.
     if (commune.postalCode !== null && commune.postalCode !== value.postalCode) {
       ctx.addIssue({

@@ -121,20 +121,20 @@ commune, a wilaya prefix, or any other inference.
 | Quantity | Value |
 |---|---|
 | Communes | **1541** |
-| Communes with a postal code | **1496** |
+| Communes with a postal code | **1493** |
 | Communes with `code_postal: null` | **27** |
-| Distinct non-null postal codes | **1479** |
+| Distinct non-null postal codes | **1476** |
 | Codes shared by more than one commune | **38** |
 | Malformed codes | **0** |
 
 Two consequences that are structural, not incidental:
 
-- **A postal-code lookup returns a list, never a single record.** 1496 communes carry only
-  1479 distinct codes, so 17 codes are shared. A `Map<string, Commune>` or a
+- **A postal-code lookup returns a list, never a single record.** 1493 communes carry only
+  1476 distinct codes, so 17 codes are shared. A `Map<string, Commune>` or a
   `dict[str, Commune]` would silently drop records depending on insertion order. Both
   packages return a collection. See [`../shared/contract/ids.md`](../shared/contract/ids.md).
 - **A postal code is not an identifier.** It does not identify a commune, it is not unique,
-  and 45 communes do not have one at all. Use the wilaya code plus the record id.
+  and 48 communes do not have one at all. Use the wilaya code plus the record id.
 
 Every code is validated as exactly five ASCII digits at build time. (This is stricter than it
 looks: Python's `\d` and `str.isdigit()` accept Arabic-Indic digits, so `"١٦٠٠٠"` would pass
@@ -142,20 +142,21 @@ a naive check in one language and fail in the other — the validation uses an e
 `[0-9]` class in both. See the language notes in
 [`../shared/contract/README.md`](../shared/contract/README.md).)
 
-### The 45 communes with no postal code
+### The 48 communes with no postal code
 
 These are published as `null`, and none has been guessed. They are exported as a list —
 `COMMUNES_MISSING_POSTAL_CODE` in both packages — and pinned in
 `shared/fixtures/ground-truth.json`, so the count cannot silently drift.
 
-**`null` has two causes, and the distinction matters.** 27 of the 45 are *never published*: no
-source available to this project has a code for them. The other **18 were withdrawn** — they
-shipped holding a code that provably belongs to a same-named commune in a different wilaya, and
-no replacement has been sourced:
+**`null` has two causes, and the distinction matters.** 27 of the 48 are *never published*: no
+source available to this project has a code for them. The other **21 were withdrawn** — they
+shipped holding a code that belongs elsewhere, and no replacement could be sourced to the
+standard below:
 
 | commune | shipped | that code's wilaya |
 |---|---|---|
 | `16-cheraga-hammamet` (Alger) | `12016` | 12 |
+| `31-ain-turk-ain-turk` (Oran) | `10033` | 10 |
 | `23-ain-el-berda-el-eulma` (Annaba) | `19001` | 19 |
 | `20-ain-el-hadjar-ain-el-hadjar` (Saida) | `10031` | 10 |
 | `20-el-hassasna-maamora` (Saida) | `10071` | 10 |
@@ -163,12 +164,14 @@ no replacement has been sourced:
 | `27-mesra-mansourah` (Mostaganem) | `13062` | 13 |
 | `29-ain-fares-ain-fares` (Mascara) | `28023` | 28 |
 | `29-mohammadia-mohammadia` (Mascara) | `16058` | 16 |
+| `30-sidi-khouiled-ain-beida` (Ouargla) | `04001` | 04 |
 | `34-mansourah-ouled-sidi-brahim` (Bordj Bou Arreridj) | `28032` | 28 |
 | `35-isser-timezrit` (Boumerdes) | `06019` | 06 |
 | `36-el-tarf-zitouna` (El Tarf) | `21028` | 21 |
 | `38-lazharia-larbaa` (Tissemsilt) | `09002` | 09 |
 | `38-bordj-bounaama-sidi-slimane` (Tissemsilt) | `30030` | 30 |
 | `39-robbah-el-ogla` (El Oued) | `12015` | 12 |
+| `44-ain-lechiakh-ain-soltane` (Ain Defla) | `20029` | 20 |
 | `46-beni-saf-emir-abdelkader` (Ain Temouchent) | `18010` | 18 |
 | `47-mansourah-mansoura` (Ghardaia) | `34008` | 34 |
 | `48-ammi-moussa-el-hassi` (Relizane) | `05116` | 05 |
@@ -178,10 +181,22 @@ Every withdrawal is recorded in `data/raw/postal-corrections.json` with its cita
 build fails if the ledger and the data disagree (assertions A21–A24). A withdrawal is therefore
 **auditable**: you can see what it used to say, why it stopped saying it, and on whose authority.
 
-Two are withdrawn for a reason other than "no source": Alger's `Hammamet`, whose source gives
-`16060` — a value our data already assigns to `Rais Hamidou`, so writing it would create the only
-postal code shared by two communes of one wilaya — and Mascara's `Ain Fares`, whose source offers
-two candidates (`29140`, `29530`) and settles neither.
+**The sourcing bar, learned the hard way.** This column holds **one numbering family**: 1493
+codes, of which 1470 are `NN0xx`; the 23 exceptions are `NN1xx` clustered in wilayas 05, 15, 16
+and 19. Algeria also uses a second, 100-increment locality numbering — the one where Bouhadjar is
+`36300`, while this dataset records Bouhadjar as `36005`. **A value from the other family is wrong
+as a value in this column even when it is a real postal code somewhere.**
+
+Independent verification caught three codes that had been written from that other family —
+`31300` for Aïn El Turck, `44240` for Aïn Soltane, `30120` for Aïn Beïda — each of which was the
+*only* non-`NN0xx` code in its entire wilaya. All three are withdrawn. The same check settled two
+codes in the other direction: `26036` for Ouled Brahim and `36011` for Aïn Kerma both sit exactly
+where this dataset's own sibling codes predict (`36011` between Aïn El Assel `36010` and Asfour
+`36012`), and both replaced a value that did not.
+
+So a candidate code must now clear two tests, not one: an external citation **and** agreement with
+the family its wilaya already uses. Prefix agreement alone — "it starts with 36, so it is El
+Tarf's" — is what produced the `36330` error, and is not sourcing.
 
 For a consumer the two causes behave identically — `postalCode === null`, do not invent one —
 which is why they share the one exported list rather than splitting the public API.
@@ -428,9 +443,9 @@ library-assigned, not official. What that does and does not promise is set out i
 | Wilayas | 69 | build assertion; `WILAYA_COUNT`; `shared/validate.py` |
 | Daïras | 566 | build assertion; `DAIRA_COUNT` |
 | Communes | 1541 | build assertion; `COMMUNE_COUNT` |
-| Communes with a postal code | 1496 | `POSTAL_CODE_COUNT`; `ground-truth.json` |
+| Communes with a postal code | 1493 | `POSTAL_CODE_COUNT`; `ground-truth.json` |
 | Communes without one | 27 | `MISSING_POSTAL_CODE_COUNT`; `COMMUNES_MISSING_POSTAL_CODE` |
-| Distinct postal codes | 1479 | `ground-truth.json` |
+| Distinct postal codes | 1476 | `ground-truth.json` |
 | Codes shared by >1 commune | 38 | `ground-truth.json` |
 | Malformed postal codes | 0 | build assertion |
 | Synthesized ids | 2107, all unique, none malformed | build assertions; `shared/fixtures/ids.json` |

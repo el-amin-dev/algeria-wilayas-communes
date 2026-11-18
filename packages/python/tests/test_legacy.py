@@ -137,10 +137,10 @@ class TestFindByPostalCode:
         assert legacy.find_by_postal_code("00000") == []
 
     def test_the_none_trap_is_preserved(self) -> None:
-        # A genuine v1 quirk: it compares with == and 45 communes have a null
+        # A genuine v1 quirk: it compares with == and 48 communes have a null
         # code, so passing None returns those 27 instead of nothing. Preserved
         # because it is v1's behaviour, not because it is a good idea.
-        assert len(legacy.find_by_postal_code(None)) == 45
+        assert len(legacy.find_by_postal_code(None)) == 48
 
 
 class TestFindCommuneKeepsV1Behaviour:

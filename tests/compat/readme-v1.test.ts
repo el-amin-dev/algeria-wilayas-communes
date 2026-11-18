@@ -518,10 +518,10 @@ describe("README `## API` — all eight v1 type names resolve", () => {
 // would never notice.
 
 describe("README `## Notes`", () => {
-  it("note 2 — 45 communes have `code_postal: null`", () => {
-    expect(getCommunes().filter((c) => c.code_postal === null)).toHaveLength(45);
+  it("note 2 — 48 communes have `code_postal: null`", () => {
+    expect(getCommunes().filter((c) => c.code_postal === null)).toHaveLength(48);
     // The complement, so a bug that nulled everything cannot pass note 2.
-    expect(getCommunes().filter((c) => c.code_postal !== null)).toHaveLength(1496);
+    expect(getCommunes().filter((c) => c.code_postal !== null)).toHaveLength(1493);
   });
 
   it('note 1 — the ONE exonym: `nom_en !== nom_fr` only for the wilaya "Alger"', () => {

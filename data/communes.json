@@ -11843,7 +11843,7 @@
       "nom_ar": "أولاد إبراهيم",
       "nom_fr": "Ouled Brahim",
       "nom_en": "Ouled Brahim",
-      "code_postal": "26230"
+      "code_postal": "26036"
     },
     {
       "wilaya_num": 26,
@@ -13453,7 +13453,7 @@
       "nom_ar": "عين البيضاء",
       "nom_fr": "Ain Beida",
       "nom_en": "Ain Beida",
-      "code_postal": "30120"
+      "code_postal": null
     },
     {
       "wilaya_num": 30,
@@ -13747,7 +13747,7 @@
       "nom_ar": "عين الترك",
       "nom_fr": "Ain Turk",
       "nom_en": "Ain Turk",
-      "code_postal": "31300"
+      "code_postal": null
     },
     {
       "wilaya_num": 31,
@@ -15189,7 +15189,7 @@
       "nom_ar": "عين الكرمة",
       "nom_fr": "Ain Kerma",
       "nom_en": "Ain Kerma",
-      "code_postal": "36330"
+      "code_postal": "36011"
     },
     {
       "wilaya_num": 36,
@@ -17877,7 +17877,7 @@
       "nom_ar": "عين السلطان",
       "nom_fr": "Ain-Soltane",
       "nom_en": "Ain-Soltane",
-      "code_postal": "44240"
+      "code_postal": null
     },
     {
       "wilaya_num": 44,
