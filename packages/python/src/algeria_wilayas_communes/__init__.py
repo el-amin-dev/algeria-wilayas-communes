@@ -1,4 +1,4 @@
-"""Algeria's administrative divisions: 69 wilayas, 591 daires, 1541 communes.
+"""Algeria's administrative divisions: 69 wilayas, 566 daires, 1541 communes.
 
 Names in Arabic, French and English with postal codes, current as of the
 2025/2026 reform (*Loi 26-06*). Zero runtime dependencies.
@@ -40,6 +40,7 @@ from ._api import (
     get_dairas,
     get_dairas_of_wilaya,
     get_wilaya,
+    get_wilaya_tree,
     get_wilayas,
 )
 from ._compat import by_wilaya, find_commune, get_all
@@ -54,7 +55,7 @@ from ._constants import (
     WILAYA_COUNT,
 )
 from ._guards import assert_wilaya_code, is_postal_code, is_wilaya_code
-from ._models import Commune, Daira, Name, Wilaya
+from ._models import Commune, Daira, DairaSubtree, Name, Wilaya, WilayaTree
 from ._reform import (
     Reform,
     ReformMappingUnavailableError,
@@ -82,12 +83,14 @@ __all__ = [
     "WILAYA_COUNT",
     "Commune",
     "Daira",
+    "DairaSubtree",
     "Name",
     "Reform",
     "ReformMappingUnavailableError",
     "ReformNewWilaya",
     "SearchResult",
     "Wilaya",
+    "WilayaTree",
     "assert_wilaya_code",
     "bounded_levenshtein",
     "by_wilaya",
@@ -102,6 +105,7 @@ __all__ = [
     "get_dairas",
     "get_dairas_of_wilaya",
     "get_wilaya",
+    "get_wilaya_tree",
     "get_wilayas",
     "is_postal_code",
     "is_wilaya_code",

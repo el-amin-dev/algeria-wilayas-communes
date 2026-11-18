@@ -1,0 +1,40 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/el-amin-dev/algeria-wilayas-communes/shared/schema/corrections.schema.json",
+  "title": "Postal and daira correction ledger",
+  "description": "Entries that undo the name-collision join artifact. Applied to data/algeria.json by scripts/build-data.ts and gated by assertions A21-A24.",
+  "type": "object",
+  "required": ["corrections"],
+  "additionalProperties": false,
+  "properties": {
+    "$comment": { "type": "string" },
+    "corrections": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "wilaya",
+          "commune",
+          "dairaFrom",
+          "dairaTo",
+          "postalCodeFrom",
+          "postalCodeTo",
+          "source",
+          "confidence"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "wilaya": { "type": "string", "pattern": "^(0[1-9]|[1-5][0-9]|6[0-9])$" },
+          "commune": { "type": "string", "minLength": 1 },
+          "dairaFrom": { "type": "string", "minLength": 1 },
+          "dairaTo": { "type": "string", "minLength": 1 },
+          "postalCodeFrom": { "type": ["string", "null"], "pattern": "^[0-9]{5}$" },
+          "postalCodeTo": { "type": ["string", "null"], "pattern": "^[0-9]{5}$" },
+          "source": { "type": "string", "minLength": 20 },
+          "confidence": { "type": "string", "enum": ["confirmed", "probable"] },
+          "note": { "type": "string", "minLength": 1 }
+        }
+      }
+    }
+  }
+}

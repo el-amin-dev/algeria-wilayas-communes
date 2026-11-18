@@ -9,6 +9,8 @@
     "scripts/**/*.ts",
     "tests/**/*.ts",
     "*.config.ts",
-    "packages/js/*.config.ts"
+    "packages/js/*.config.ts",
+    "packages/mcp/src/**/*.ts",
+    "packages/mcp/*.config.ts"
   ]
 }

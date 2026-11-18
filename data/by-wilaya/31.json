@@ -4,7 +4,7 @@
   "nom_ar": "وهران",
   "nom_fr": "Oran",
   "nom_en": "Oran",
-  "nb_dairas": 10,
+  "nb_dairas": 9,
   "nb_communes": 26,
   "dairas": [
     {
@@ -132,20 +132,6 @@
       "nb_communes": 3
     },
     {
-      "nom_ar": "البويرة",
-      "nom_fr": "Bouira",
-      "nom_en": "Bouira",
-      "communes": [
-        {
-          "nom_ar": "عين الترك",
-          "nom_fr": "Ain Turk",
-          "nom_en": "Ain Turk",
-          "code_postal": "10033"
-        }
-      ],
-      "nb_communes": 1
-    },
-    {
       "nom_ar": "وهران",
       "nom_fr": "Oran",
       "nom_en": "Oran",
@@ -181,9 +167,15 @@
           "nom_fr": "Bousfer",
           "nom_en": "Bousfer",
           "code_postal": "31025"
+        },
+        {
+          "nom_ar": "عين الترك",
+          "nom_fr": "Ain Turk",
+          "nom_en": "Ain Turk",
+          "code_postal": null
         }
       ],
-      "nb_communes": 3
+      "nb_communes": 4
     },
     {
       "nom_ar": "وادي تليلات",

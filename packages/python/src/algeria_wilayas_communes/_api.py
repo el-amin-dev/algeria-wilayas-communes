@@ -24,7 +24,7 @@ from __future__ import annotations
 from typing import Union
 
 from . import _indexes
-from ._models import Commune, Daira, Wilaya
+from ._models import Commune, Daira, DairaSubtree, Wilaya, WilayaTree
 from ._normalize import normalize
 
 __all__ = [
@@ -37,6 +37,7 @@ __all__ = [
     "get_dairas",
     "get_dairas_of_wilaya",
     "get_wilaya",
+    "get_wilaya_tree",
     "get_wilayas",
 ]
 
@@ -79,14 +80,14 @@ def get_wilayas(*, as_of: str = "69") -> tuple[Wilaya, ...]:
 
 
 def get_dairas() -> tuple[Daira, ...]:
-    """All 591 daires, in document order.
+    """All 566 daires, in document order.
 
-    591 pairs carry only 545 distinct names, because a daira split by the 2026
+    566 pairs carry only 545 distinct names, because a daira split by the 2026
     reform appears under each wilaya it now spans.
 
     Example:
         >>> len(get_dairas())
-        591
+        566
     """
     return _indexes.all_dairas()
 
@@ -210,7 +211,7 @@ def get_communes_of_wilaya(code: WilayaLike) -> tuple[Commune, ...]:
 def find_by_postal_code(code: str) -> tuple[Commune, ...]:
     """All communes sharing a 5-digit postal code.
 
-    Postal codes are **not unique**: 38 of the 1471 distinct codes in the
+    Postal codes are **not unique**: 38 of the 1476 distinct codes in the
     dataset are shared by more than one commune, so this always returns a tuple.
     Treating it as a single-record lookup silently drops data.
 
@@ -261,3 +262,53 @@ def find_communes_by_name(name: str) -> tuple[Commune, ...]:
     if not wanted:
         return ()
     return _indexes.commune_name_index().get(wanted, ())
+
+
+def get_wilaya_tree(code: WilayaLike) -> WilayaTree | None:
+    """One wilaya with its daïras, each carrying its communes.
+
+    The Python counterpart of JavaScript's ``byWilaya(code)``. It exists to
+    close a real trap: until now ``by_wilaya`` in Python was a **deprecated v1
+    shim returning a dict**, while ``byWilaya`` in JavaScript was the **v2 tree
+    accessor**. Same name, same package, two different things -- exactly the
+    kind of asymmetry the cross-language contract exists to prevent, and the
+    one place it had been documented instead of fixed.
+
+    Returns ``None`` for an unknown code; nothing here raises.
+
+    Built on each call rather than cached. The flat indexes underneath are
+    memoised, so the work is re-grouping records that are already projected --
+    and a cache keyed by wilaya would hold a second copy of up to 1541 commune
+    references for a shape most callers ask for once.
+
+    Example:
+        >>> tree = get_wilaya_tree(19)
+        >>> tree.name.fr
+        'Setif'
+        >>> len(tree.dairas) == tree.daira_count
+        True
+        >>> sum(len(d.communes) for d in tree.dairas) == tree.commune_count
+        True
+        >>> get_wilaya_tree(99) is None
+        True
+    """
+    wilaya = get_wilaya(code)
+    if wilaya is None:
+        return None
+    subtrees = tuple(
+        DairaSubtree(
+            id=daira.id,
+            wilaya=daira.wilaya,
+            name=daira.name,
+            communes=tuple(c for c in get_communes_of_wilaya(wilaya.code) if c.daira == daira.id),
+        )
+        for daira in get_dairas_of_wilaya(wilaya.code)
+    )
+    return WilayaTree(
+        code=wilaya.code,
+        code_text=wilaya.code_text,
+        name=wilaya.name,
+        daira_count=wilaya.daira_count,
+        commune_count=wilaya.commune_count,
+        dairas=subtrees,
+    )

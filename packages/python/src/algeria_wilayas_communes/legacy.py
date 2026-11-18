@@ -78,7 +78,7 @@ def get_wilayas() -> list[dict[str, Any]]:
 
 
 def get_dairas() -> list[dict[str, Any]]:
-    """Deprecated. Flat list of the 591 daires, in v1 dict shape.
+    """Deprecated. Flat list of the 566 daires, in v1 dict shape.
 
     Note the frozen quirk: a daira row has **8** fields and carries no
     ``wilaya_ar``, while a commune row has 12 and does. That asymmetry is an
@@ -87,7 +87,7 @@ def get_dairas() -> list[dict[str, Any]]:
 
     Example:
         >>> len(get_dairas())
-        591
+        566
         >>> "wilaya_ar" in get_dairas()[0]
         False
     """
@@ -140,7 +140,7 @@ def by_wilaya(num: Any) -> dict[str, Any] | None:
 def find_by_postal_code(code: Any) -> list[dict[str, Any]]:
     """Deprecated. All communes matching a 5-digit postal code.
 
-    Preserves a genuine v1 trap: because it compares with ``==`` and 27 communes
+    Preserves a genuine v1 trap: because it compares with ``==`` and 48 communes
     have ``code_postal`` of ``None``, ``find_by_postal_code(None)`` returns
     those 27 rather than an empty list. That is v1's behaviour and callers may
     depend on it.
@@ -149,7 +149,7 @@ def find_by_postal_code(code: Any) -> list[dict[str, Any]]:
         >>> find_by_postal_code("19018")[0]["nom_fr"]
         'Ain Lahdjar'
         >>> len(find_by_postal_code(None))
-        27
+        48
         >>> find_by_postal_code("00000")
         []
     """

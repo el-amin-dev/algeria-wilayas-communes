@@ -51,12 +51,45 @@ jobs:
       - name: Run integrity checks
         run: python3 shared/validate.py
 
+      # apply-corrections.mjs uses only node: built-ins, so it needs no install --
+      # but it does need an interpreter, and this job otherwise sets up only
+      # Python and jq. Pinning it beats relying on whatever the runner image
+      # happens to ship, which is how the Python 3.9 job broke when
+      # ubuntu-latest rolled to 26.04.
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      # The correction ledger (data/raw/postal-corrections.json) is a
+      # specification, not documentation: scripts/apply-corrections.mjs writes it
+      # into data/algeria.json and build-data.ts asserts A21-A24 that the two
+      # still agree. Checking the schema here catches a malformed entry before
+      # those assertions have to interpret it, and `--check` catches a ledger
+      # entry that nobody applied.
+      - name: Validate the correction ledger schema
+        run: |
+          check-jsonschema --schemafile shared/schema/corrections.schema.json \
+            data/raw/postal-corrections.json
+
+      - name: Correction ledger is applied to the dataset
+        run: node scripts/apply-corrections.mjs --check
+
   # The Python package had NO CI coverage at all before session 5: it was never
   # built, imported, tested, type-checked or linted by any workflow, while the
   # JavaScript side accumulated 1136 tests. The two shipped from the same tag.
   python:
     name: Python ${{ matrix.python-version }}
-    runs-on: ubuntu-latest
+    # Per-version runner, defaulting to ubuntu-latest. `ubuntu-latest` moved to
+    # Ubuntu 26.04, whose actions/setup-python manifest no longer carries 3.9 --
+    # the job failed in 11 seconds with "The version '3.9' with architecture
+    # 'x64' was not found for Ubuntu 26.04", before running a single test.
+    #
+    # Dropping 3.9 from the matrix was the tempting fix and it is the wrong one:
+    # `requires-python = ">=3.9"` is a promise on the PyPI page, and an untested
+    # floor is how the >=3.8 claim ADR-014 had to retract survived two releases.
+    # Pin the floor to a runner that still has the interpreter instead.
+    runs-on: ${{ matrix.runner || 'ubuntu-latest' }}
 
     strategy:
       # One version failing must not cancel the others. A 3.9-only break is
@@ -68,7 +101,18 @@ jobs:
         # packages/python/pyproject.toml. Listing a version the floor excludes
         # would make the install step fail and the job would be testing
         # nothing; dropping one the floor allows would let it rot untested.
-        python-version: ["3.9", "3.10", "3.11", "3.12", "3.13"]
+        #
+        # The ceiling is a promise too: every `Programming Language :: Python`
+        # classifier in pyproject.toml has to appear here, or the classifier is
+        # an untested claim on the PyPI page. 3.14 was added once the suite was
+        # confirmed green on it.
+        python-version: ["3.9", "3.10", "3.11", "3.12", "3.13", "3.14"]
+        include:
+          # 3.9 is EOL upstream and absent from the 26.04 image. It stays in the
+          # matrix because the floor still claims it; it just needs an older
+          # runner. Remove this entry only together with raising the floor.
+          - python-version: "3.9"
+            runner: ubuntu-24.04
 
     steps:
       - name: Checkout
@@ -102,7 +146,7 @@ jobs:
 
   # The two packages describe one dataset and must agree about it. Locally the
   # conformance and cross-language tests skip when packages/js/dist is absent,
-  # which means the assertion that actually matters -- that 2132 record ids and
+  # which means the assertion that actually matters -- that 2107 record ids and
   # every search result are identical across the two languages -- can silently
   # never run. This job has both toolchains, so it runs them for real.
   #
@@ -228,6 +272,37 @@ jobs:
       - name: Install
         run: pnpm install --frozen-lockfile
 
+      # BUILD BEFORE EVERYTHING -- the ordering is load-bearing, not cosmetic,
+      # and it is load-bearing for two independent reasons.
+      #
+      # 1. tests/compat/cjs.test.ts skips its whole `require()` suite when
+      #    packages/js/dist/ is absent, and then asserts unconditionally that
+      #    dist/ existed. Run tests first on a fresh checkout and that assertion
+      #    fails, reporting a missing build as a test failure. The CJS contract
+      #    is exactly the thing that went one whole release untested, so the
+      #    suite is built to be loud about being unable to check it.
+      #
+      # 2. TYPE CHECK AND LINT ALSO NEED IT, since packages/mcp joined the root
+      #    tsconfig. packages/mcp/src/index.ts imports `algeria-wilayas-communes`,
+      #    and that workspace link exposes types only through packages/js
+      #    `exports` -> ./dist/index.d.ts. With dist/ absent, `tsc -p
+      #    tsconfig.json --noEmit` reports TS2307 plus three implicit-any
+      #    errors, and `eslint` reports 81 no-unsafe-* errors against the
+      #    resulting `any`. Verified by moving packages/js/dist aside. Nothing
+      #    here has a prepare/postinstall that would build it first, so running
+      #    these two steps before the build fails the entire node matrix on a
+      #    clean checkout -- which is every CI run.
+      - name: Build
+        run: pnpm build
+
+      # tests/mcp.test.ts is `describe.skipIf(!HAS_SERVER)` against
+      # packages/mcp/dist/, so without this the whole MCP suite SKIPS and the
+      # job still goes green -- the failure mode the file's own "is built"
+      # assertion exists to catch, which cannot fire from inside a skipped
+      # describe.
+      - name: Build the MCP server
+        run: pnpm -F algeria-wilayas-communes-mcp build
+
       - name: Type check
         run: pnpm typecheck
 
@@ -236,17 +311,6 @@ jobs:
 
       - name: Format check
         run: pnpm format:check
-
-      # BUILD BEFORE TESTS -- the ordering is load-bearing, not cosmetic.
-      #
-      # tests/compat/cjs.test.ts skips its whole `require()` suite when
-      # packages/js/dist/ is absent, and then asserts unconditionally that dist/
-      # existed. Run tests first on a fresh checkout and that assertion fails,
-      # reporting a missing build as a test failure. The CJS contract is exactly
-      # the thing that went one whole release untested, so the suite is built to
-      # be loud about being unable to check it.
-      - name: Build
-        run: pnpm build
 
       # packages/js/data/ is gitignored -- it exists only because
       # publish-npm.yml copies data/ in before packing. Two things below need
@@ -375,7 +439,7 @@ jobs:
               import("./packages/js/dist/legacy.mjs"),
             ]).then(([w, d, c, l]) => {
               if (w.getWilayas().length !== 69) throw new Error("/wilayas broken");
-              if (d.getDairas().length !== 591) throw new Error("/dairas broken");
+              if (d.getDairas().length !== 566) throw new Error("/dairas broken");
               if (c.getCommunes().length !== 1541) throw new Error("/communes broken");
               if (l.default.getWilayas().length !== 69) throw new Error("/legacy default export broken");
               console.log("subpaths ok on " + process.version);

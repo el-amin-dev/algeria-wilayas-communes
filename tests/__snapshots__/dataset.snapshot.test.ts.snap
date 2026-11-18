@@ -1,16 +1,16 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`dataset fingerprint > COMMUNES fingerprint is unchanged 1`] = `"36b5976deec5084a4789af72f280be91424d2058ed42abd45f688933897d980e"`;
+exports[`dataset fingerprint > COMMUNES fingerprint is unchanged 1`] = `"c9da6b936cc55f35ee96c8de15767182e5880f9512ad6aa2c9e68adf83c98704"`;
 
-exports[`dataset fingerprint > DAIRAS fingerprint is unchanged 1`] = `"0e07f4a424975ba73fec89ecaab41bc3d8bbd9d666f8bc2d561baf8309c4fa0f"`;
+exports[`dataset fingerprint > DAIRAS fingerprint is unchanged 1`] = `"1305a12a0634228fb328a673b65c72615a60476dd55d752873ef5fa42656f3bd"`;
 
-exports[`dataset fingerprint > WILAYAS fingerprint is unchanged 1`] = `"208830f242bcd58078baa7b4f0a4d14214a2bafaabf5259cba840284da6a8943"`;
+exports[`dataset fingerprint > WILAYAS fingerprint is unchanged 1`] = `"2727f1ac7bdd0c416ad3a6da8bdb5af871bb23451e42a83d68ac7303075bf9c7"`;
 
 exports[`dataset summary > dataset summary is unchanged 1`] = `
 {
   "communes": 1541,
-  "dairas": 591,
-  "distinctPostalCodes": 1471,
+  "dairas": 566,
+  "distinctPostalCodes": 1476,
   "missing": [
     "04-souk-naamane-ouled-zouai",
     "05-ouled-si-slimane-lemcene",
@@ -19,8 +19,13 @@ exports[`dataset summary > dataset summary is unchanged 1`] = `
     "13-beni-boussaid-beni-boussaid",
     "15-ain-el-hammam-abi-youcef",
     "15-tizi-rached-ait-oumalou",
+    "16-cheraga-hammamet",
     "19-el-eulma-guelta-zerka",
+    "20-ain-el-hadjar-ain-el-hadjar",
+    "20-el-hassasna-maamora",
     "21-ain-kechra-ouldja-boulbalout",
+    "21-ben-azzouz-el-marsa",
+    "23-ain-el-berda-el-eulma",
     "23-berrahal-treat",
     "24-guelaat-bousbaa-beni-mezline",
     "24-hammam-debagh-bou-hamdane",
@@ -28,19 +33,35 @@ exports[`dataset summary > dataset summary is unchanged 1`] = `
     "26-souaghi-sidi-ziane",
     "26-tablat-mezerana",
     "27-bouguirat-safsaf",
+    "27-mesra-mansourah",
     "28-khoubana-el-houamed",
+    "29-ain-fares-ain-fares",
+    "29-mohammadia-mohammadia",
     "29-tizi-tizi",
+    "30-sidi-khouiled-ain-beida",
+    "31-ain-turk-ain-turk",
     "32-sidi-ameur-sidi-ameur",
     "34-el-hamadia-elhammadia",
+    "34-mansourah-ouled-sidi-brahim",
     "35-boudouaou-el-kharrouba",
+    "35-isser-timezrit",
     "35-thenia-souk-el-had",
+    "36-el-tarf-zitouna",
+    "38-bordj-bounaama-sidi-slimane",
+    "38-lazharia-larbaa",
+    "39-robbah-el-ogla",
     "41-merahna-sidi-fredj",
+    "44-ain-lechiakh-ain-soltane",
+    "46-beni-saf-emir-abdelkader",
     "46-hammam-bou-hadjar-chentouf",
+    "47-mansourah-mansoura",
+    "48-ammi-moussa-el-hassi",
+    "48-ammi-moussa-el-ouldja",
     "48-thenia-souk-el-had",
     "64-sidi-ameur-sidi-ameur",
     "66-chahbounia-bouaiche",
   ],
-  "missingPostalCode": 27,
+  "missingPostalCode": 48,
   "perWilaya": [
     [
       1,
@@ -319,8 +340,8 @@ exports[`dataset summary > dataset summary is unchanged 1`] = `
       8,
     ],
   ],
-  "sharedPostalCodes": 38,
+  "sharedPostalCodes": 17,
   "wilayas": 69,
-  "withPostalCode": 1514,
+  "withPostalCode": 1493,
 }
 `;

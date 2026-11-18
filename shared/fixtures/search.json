@@ -708,13 +708,6 @@
           "matched": "fr"
         },
         {
-          "kind": "daira",
-          "id": "30-ain-beida",
-          "wilaya": 30,
-          "score": 0.7666666666666666,
-          "matched": "fr"
-        },
-        {
           "kind": "commune",
           "id": "04-ain-beida-ain-beida",
           "wilaya": 4,
@@ -737,7 +730,7 @@
         },
         {
           "kind": "commune",
-          "id": "30-ain-beida-ain-beida",
+          "id": "30-sidi-khouiled-ain-beida",
           "wilaya": 30,
           "score": 0.7666666666666666,
           "matched": "fr"
@@ -760,6 +753,13 @@
           "kind": "commune",
           "id": "19-ain-arnat-ain-abessa",
           "wilaya": 19,
+          "score": 0.76,
+          "matched": "fr"
+        },
+        {
+          "kind": "commune",
+          "id": "44-hammam-righa-ain-benian",
+          "wilaya": 44,
           "score": 0.76,
           "matched": "fr"
         },

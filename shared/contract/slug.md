@@ -9,7 +9,7 @@ outside `[a-z0-9-]` while a key keeps Arabic.
 
 Reference implementation: `slug()` in `scripts/build-data.ts`.
 Fixtures: [`shared/fixtures/slug.json`](../fixtures/slug.json), plus
-[`ids.json`](../fixtures/ids.json), which is the exhaustive proof — all 2132 ids
+[`ids.json`](../fixtures/ids.json), which is the exhaustive proof — all 2107 ids
 are produced through this function.
 
 ## The steps, in order
@@ -49,7 +49,7 @@ for two real records:
 | `B. B. Arreridj` | `b.-b.-arreridj` | `b-b-arreridj` |
 | `Z'barbar (El Isseri )` | `zbarbar-(el-isseri-)` | `zbarbar-el-isseri` |
 
-Two ids out of 2132. Nothing crashes, no test in either package fails on its own,
+Two ids out of 2107. Nothing crashes, no test in either package fails on its own,
 and a consumer joining the two datasets on `id` gets two silent mismatches. That
 is precisely the failure the fixtures exist to prevent, and both cases are pinned
 in `slug.json` and asserted by name in `tests/shared-fixtures.test.ts`.

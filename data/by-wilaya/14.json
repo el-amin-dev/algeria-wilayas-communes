@@ -4,7 +4,7 @@
   "nom_ar": "تيارت",
   "nom_fr": "Tiaret",
   "nom_en": "Tiaret",
-  "nb_dairas": 13,
+  "nb_dairas": 12,
   "nb_communes": 36,
   "dairas": [
     {
@@ -151,23 +151,15 @@
           "nom_fr": "Medrissa",
           "nom_en": "Medrissa",
           "code_postal": "14013"
-        }
-      ],
-      "nb_communes": 4
-    },
-    {
-      "nom_ar": "تنس",
-      "nom_fr": "Tenes",
-      "nom_en": "Tenes",
-      "communes": [
+        },
         {
           "nom_ar": "سيدي عبد الرحمن",
           "nom_fr": "Sidi Abderrahmane",
           "nom_en": "Sidi Abderrahmane",
-          "code_postal": "02066"
+          "code_postal": "14028"
         }
       ],
-      "nb_communes": 1
+      "nb_communes": 5
     },
     {
       "nom_ar": "رحوية",

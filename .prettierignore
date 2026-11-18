@@ -50,3 +50,9 @@ packages/js/README.md
 # v1.0.0 source, unmodified except for the data path. Reformatting it would
 # make the "before" column a paraphrase rather than a measurement.
 benchmarks/v1/
+
+# --- Generated exports -----------------------------------------------------
+# exports/csv and exports/sql are emitted by scripts/build-data.ts and gated on
+# byte-identity exactly like data/. Prettier has opinions about neither CSV nor
+# SQL, but it would rewrite them if a plugin ever added some.
+exports/

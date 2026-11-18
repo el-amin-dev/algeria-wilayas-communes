@@ -1,0 +1,113 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Algeria administrative divisions — 69 wilayas, 566 daïras, 1541 communes",
+  "alternateName": [
+    "Découpage administratif de l'Algérie",
+    "التقسيم الإداري للجزائر",
+    "algeria-wilayas-communes"
+  ],
+  "description": "Every Algerian administrative division below the national level, current as of the 2026 reform (Loi 26-06, Journal Officiel n°25): 69 wilayas, 566 daïra entries and 1541 communes. Each record carries Arabic, French and English names, and each commune a 5-digit postal code where one is published (1493 of 1541). Published as plain JSON, as an npm package, as a PyPI package, and as an MCP server. Note that most other sources still describe Algeria as having 58 wilayas, which was correct only until April 2026.",
+  "url": "https://github.com/el-amin-dev/algeria-wilayas-communes",
+  "sameAs": [
+    "https://www.npmjs.com/package/algeria-wilayas-communes",
+    "https://pypi.org/project/algeria-wilayas-communes/"
+  ],
+  "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "isAccessibleForFree": true,
+  "version": "2.0.0",
+  "datePublished": "2026-07-20",
+  "dateModified": "2026-07-20",
+  "inLanguage": [
+    "ar",
+    "fr",
+    "en"
+  ],
+  "keywords": [
+    "Algeria",
+    "wilaya",
+    "daira",
+    "commune",
+    "administrative divisions",
+    "postal codes",
+    "open data",
+    "Algérie",
+    "code postal",
+    "الجزائر"
+  ],
+  "spatialCoverage": {
+    "@type": "Place",
+    "name": "Algeria",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "DZ"
+    }
+  },
+  "temporalCoverage": "2026-04-05/..",
+  "creator": {
+    "@type": "Person",
+    "name": "El Amin",
+    "url": "https://el-amin.dev"
+  },
+  "isBasedOn": [
+    "ONS Code Géographique National",
+    "Loi 19-12 (2019)",
+    "Loi 26-06 (2026), Journal Officiel n°25",
+    "https://github.com/othmanus/algeria-cities"
+  ],
+  "measurementTechnique": "Compiled from the ONS Code Géographique National and the reform laws; postal codes and trilingual names cross-referenced against a community corpus. Known defects are documented rather than silently corrected — see docs/DATA_PROVENANCE.md and ADR-018.",
+  "variableMeasured": [
+    {
+      "@type": "PropertyValue",
+      "name": "wilayas",
+      "value": 69
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "dairas",
+      "value": 566
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "communes",
+      "value": 1541
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "communes with a postal code",
+      "value": 1493
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "communes without a postal code",
+      "value": 48
+    }
+  ],
+  "distribution": [
+    {
+      "@type": "DataDownload",
+      "name": "Full nested tree (source of truth)",
+      "encodingFormat": "application/json",
+      "contentUrl": "https://cdn.jsdelivr.net/gh/el-amin-dev/algeria-wilayas-communes@main/data/algeria.json"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "Flat wilayas",
+      "encodingFormat": "application/json",
+      "contentUrl": "https://cdn.jsdelivr.net/gh/el-amin-dev/algeria-wilayas-communes@main/data/wilayas.json"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "Flat daïras",
+      "encodingFormat": "application/json",
+      "contentUrl": "https://cdn.jsdelivr.net/gh/el-amin-dev/algeria-wilayas-communes@main/data/dairas.json"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "Flat communes with postal codes",
+      "encodingFormat": "application/json",
+      "contentUrl": "https://cdn.jsdelivr.net/gh/el-amin-dev/algeria-wilayas-communes@main/data/communes.json"
+    }
+  ],
+  "citation": "https://github.com/el-amin-dev/algeria-wilayas-communes/blob/main/CITATION.cff"
+}

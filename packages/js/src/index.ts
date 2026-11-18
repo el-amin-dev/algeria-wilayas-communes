@@ -75,12 +75,27 @@ export { findCommune, getAll } from "./compat";
 // the boundaries came from and as of when, and a constant they can log or assert
 // on answers that in one line.
 //
-// `COMMUNES_MISSING_POSTAL_CODE` is the honest counterpart: the 27 commune ids
+// `COMMUNES_MISSING_POSTAL_CODE` is the honest counterpart: the 48 commune ids
 // with no published postal code, shipped as a list so a consumer needing
 // complete coverage can see exactly which rows to handle. None of them may ever
 // be filled by guessing from a neighbour or from the wilaya prefix.
 export { COMMUNES_MISSING_POSTAL_CODE } from "./generated/communes";
-export { DATA_VERSION, LAST_VERIFIED, SOURCE_LAW } from "./generated/meta";
+export { isCommuneMissingPostalCode } from "./postal-holes";
+// The five size constants were generated into `generated/meta.ts` from the
+// start but never re-exported here, so they existed in Python and not in
+// JavaScript -- an asymmetry llms.txt had to warn about rather than a real
+// design choice. Exporting them costs nothing (they are inlined literals) and
+// removes the warning.
+export {
+  COMMUNE_COUNT,
+  DAIRA_COUNT,
+  DATA_VERSION,
+  LAST_VERIFIED,
+  MISSING_POSTAL_CODE_COUNT,
+  POSTAL_CODE_COUNT,
+  SOURCE_LAW,
+  WILAYA_COUNT,
+} from "./generated/meta";
 
 // --- Types -----------------------------------------------------------------
 // `DairaSubtree` and `NameOf` are exported because they APPEAR in public
@@ -89,6 +104,7 @@ export { DATA_VERSION, LAST_VERIFIED, SOURCE_LAW } from "./generated/meta";
 // them a consumer cannot write a function typed against what `byWilaya(19).dairas`
 // actually yields. The `Object.keys(api)` surface test cannot catch this, because
 // type-only exports are erased before it runs.
+export type { MissingPostalCodeId } from "./postal-holes";
 export type {
   Commune,
   Daira,

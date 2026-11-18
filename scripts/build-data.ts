@@ -71,6 +71,7 @@ const REPO_ROOT = resolve(SCRIPT_DIR, "..");
 const SOURCE_REL = "data/algeria.json";
 const OVERRIDES_REL = "data/raw/en-overrides.json";
 const REFORM_REL = "data/raw/reform.json";
+const CORRECTIONS_REL = "data/raw/postal-corrections.json";
 const BY_WILAYA_DIR_REL = "data/by-wilaya";
 const GENERATED_DIR_REL = "packages/js/src/generated";
 const FIXTURES_DIR_REL = "shared/fixtures";
@@ -81,11 +82,28 @@ const FIXTURES_DIR_REL = "shared/fixtures";
  * leave a stale file shipping. `data/` itself is NOT listed: it holds the
  * hand-edited source and data/raw/, neither of which is generated.
  */
-const OUTPUT_DIRS = [BY_WILAYA_DIR_REL, GENERATED_DIR_REL, FIXTURES_DIR_REL] as const;
+const CSV_DIR_REL = "exports/csv";
+const SQL_DIR_REL = "exports/sql";
+const OUTPUT_DIRS = [
+  BY_WILAYA_DIR_REL,
+  GENERATED_DIR_REL,
+  FIXTURES_DIR_REL,
+  CSV_DIR_REL,
+  SQL_DIR_REL,
+] as const;
 
 /** Ground truth for the current dataset. Assertions 1, 3, 4 and 9 pin these. */
 const EXPECTED_WILAYA_COUNT = 69;
-const EXPECTED_DAIRA_COUNT = 591;
+// 566, not 591. Twenty-five invented daira containers have been removed by the
+// correction ledger (data/raw/postal-corrections.json, docs/DECISIONS.md
+// ADR-018) -- each held exactly one commune that the upstream name-join had
+// filed under another wilaya's daira. The commune count is UNCHANGED at 1541:
+// nothing was deleted, twenty-five records were re-parented.
+//
+// Lower this only alongside a ledger entry. Every removal is cited, and A21-A24
+// fail the build if the data and the ledger disagree, so this number is not a
+// free parameter -- it is the ledger's arithmetic consequence.
+const EXPECTED_DAIRA_COUNT = 566;
 const EXPECTED_COMMUNE_COUNT = 1541;
 
 /** Provenance, emitted into `meta.ts`. Bumped by hand per data release. */
@@ -177,6 +195,18 @@ interface Algeria {
   readonly codes_postaux_renseignes: number;
   readonly codes_postaux_manquants: number;
   readonly wilayas: readonly Wilaya[];
+}
+
+/** One row of the correction ledger. See readCorrections. */
+interface CorrectionEntry {
+  readonly wilaya: string;
+  readonly commune: string;
+  readonly dairaFrom: string;
+  readonly dairaTo: string;
+  readonly postalCodeFrom: string | null;
+  readonly postalCodeTo: string | null;
+  readonly source: string;
+  readonly confidence: string;
 }
 
 type Failures = string[];
@@ -640,7 +670,7 @@ function reportDuplicateKeys(
 
 /**
  * Assertion 19 — mints one id at a time and fails on a collision, naming BOTH
- * offending records. All 591 daira ids and all 1541 commune ids must be unique.
+ * offending records. All 566 daira ids and all 1541 commune ids must be unique.
  */
 function claimId(
   owners: Map<string, string>,
@@ -943,6 +973,39 @@ function checkSlugNonEmpty(
   );
 }
 
+/**
+ * A25 — no name contains a character that CSV has to quote.
+ *
+ * `csvField` quotes correctly when it must, so this is NOT what keeps the CSV
+ * valid. It exists so that the DAY a name with a comma arrives, the build says
+ * so out loud instead of silently emitting a quoted field that every naive
+ * `split(",")` downstream then mis-parses. The exporter stays correct; the
+ * consumers are the ones who break, and they are not in this repo.
+ */
+function assertCsvSafeNames(model: Model, failures: Failures): void {
+  const hostile = /[",\r\n]/;
+  const check = (label: string, name: LocalizedName): void => {
+    // Explicit pairs, not Object.entries: the latter widens the values to `any`
+    // under this repo's eslint config.
+    const fields: readonly (readonly [string, string])[] = [
+      ["ar", name.ar],
+      ["fr", name.fr],
+      ["en", name.en],
+    ];
+    for (const [lang, value] of fields) {
+      if (hostile.test(value)) {
+        failures.push(
+          `[A25] ${label}: nom_${lang} "${value}" contains a character CSV must quote — ` +
+            `the export is still valid, but confirm downstream consumers parse quoted fields`,
+        );
+      }
+    }
+  };
+  for (const w of model.wilayas) check(`wilaya ${String(w.code)}`, w.name);
+  for (const d of model.dairas) check(`daira ${d.id}`, d.name);
+  for (const c of model.communes) check(`commune ${c.id}`, c.name);
+}
+
 function checkSlugFixtures(failures: Failures): void {
   for (const [input, expected] of SLUG_FIXTURES) {
     const actual = slug(input);
@@ -996,11 +1059,11 @@ interface Model {
  *
  * The wilaya prefix is NOT optional: 38 commune nom_fr values are duplicated
  * across wilayas (`Sidi Ameur` in 32 and 64, `Souk El Had` in 35 and 48), and
- * there are only 545 distinct daira names for 591 daïras.
+ * there are only 545 distinct daira names for 566 daïras.
  *
  * English names are `override ?? nom_fr`. `nom_en` differs from `nom_fr` for
  * exactly ONE record in the whole dataset (wilaya 16, Alger → Algiers), so
- * shipping 2201 duplicate English strings would be ~99.9% wasted payload.
+ * shipping 2176 duplicate English strings would be ~99.9% wasted payload.
  *
  * Carries assertions 5, 17, 18 and 19.
  */
@@ -1357,7 +1420,7 @@ function emitDairas(model: Model): string {
     "// for a daira. Only a wilaya `code` is a real government identifier.",
     "//",
     '// An id is `<wilaya code>-<slug(daira nom_fr)>`, e.g. "16-baraki". The wilaya',
-    "// prefix is not decoration: there are only 545 distinct daira names for 591",
+    "// prefix is not decoration: there are only 545 distinct daira names for 566",
     "// daïras. The ids are stable by promise, and a consumer who puts one in a",
     "// database column needs to know it is ours, not the government's.",
     "",
@@ -1446,7 +1509,7 @@ function emitCommunes(model: Model): string {
  *
  * `kind` is the low-order pair of bits and the array index is everything above
  * the language bit, so a reference is one small integer rather than an object:
- * 4402 object literals in the module graph would dominate the generated file
+ * 4352 object literals in the module graph would dominate the generated file
  * and allocate on every module evaluation.
  *
  *   ref = (index << 3) | (kind << 1) | lang
@@ -1479,10 +1542,10 @@ interface SearchEntry {
 /**
  * Builds the sorted key/ref pair list.
  *
- * Two layers only — `fr` and `ar`, 2201 records each, 4402 keys. There is
+ * Two layers only — `fr` and `ar`, 2176 records each, 4352 keys. There is
  * deliberately NO `en` layer: `name.en` differs from `name.fr` for exactly one
  * record in the whole dataset (wilaya 16, `Alger` / `Algiers`), so a third full
- * layer would add 2201 keys — roughly a third of the index's bytes — to serve a
+ * layer would add 2176 keys — roughly a third of the index's bytes — to serve a
  * single record. `lang: "en"` searches the `fr` keys plus `EN_OVERRIDES`
  * instead, which is a real bundle saving and no public-API change.
  */
@@ -1498,14 +1561,14 @@ function collectSearchEntries(model: Model): SearchEntry[] {
   model.dairas.forEach((daira, index) => add(daira.name, index, SEARCH_KIND_DAIRA));
   model.communes.forEach((commune, index) => add(commune.name, index, SEARCH_KIND_COMMUNE));
 
-  // Sorted at BUILD time, which is itself the optimization: a .sort() over 4402
+  // Sorted at BUILD time, which is itself the optimization: a .sort() over 4352
   // strings on the first search would cost more than every query the process
   // will ever run. The sort order IS the prefix index — no trie is shipped or
   // built, only two binary searches over this array at run time.
   //
   // The tie-break on `ref` is not cosmetic. `Array.prototype.sort` is only
   // guaranteed stable within one engine version, and 1347 of these keys are
-  // duplicates (4402 keys, 3055 distinct). Without the tie-break the emitted
+  // duplicates (4352 keys, 3055 distinct). Without the tie-break the emitted
   // bytes could differ between Node versions, which would break the
   // byte-identity discipline every other emitter in this file holds to.
   //
@@ -1586,7 +1649,7 @@ function emitSearchKeys(model: Model): string {
     "/**",
     " * Normalized search keys, sorted ascending by UTF-16 code unit.",
     " *",
-    " * 2201 records x 2 language layers (fr, ar) = 4402 keys. There is no `en`",
+    " * 2176 records x 2 language layers (fr, ar) = 4352 keys. There is no `en`",
     " * layer: `name.en` differs from `name.fr` for exactly one record in the",
     ' * dataset, so `lang: "en"` searches these keys plus `EN_OVERRIDES`.',
     " *",
@@ -1605,7 +1668,7 @@ function emitSearchKeys(model: Model): string {
     " *   kind  bits 1..2 0 = wilaya, 1 = daira, 2 = commune",
     " *   index bits 3..  position in WILAYAS / DAIRAS / COMMUNES",
     " *",
-    " * Packed integers rather than objects: 4402 object literals would dominate",
+    " * Packed integers rather than objects: 4352 object literals would dominate",
     " * this file's bytes and allocate on every module evaluation.",
     " */",
     "export const SEARCH_REFS: readonly number[] = [",
@@ -1717,9 +1780,9 @@ const SEARCH_FIXTURE_CASES: ReadonlyArray<{
 /**
  * Inputs that pin the slug rule's edges.
  *
- * `ids.json` is already the exhaustive proof — all 2132 ids are derived through
+ * `ids.json` is already the exhaustive proof — all 2107 ids are derived through
  * `slug()` — so this table exists for the cases that would otherwise only be
- * observable as a diff in a 2132-line file, and it names what each one tests.
+ * observable as a diff in a 2107-line file, and it names what each one tests.
  */
 const SLUG_FIXTURE_CASES: readonly string[] = [
   "Sidi M'hamed", // apostrophe deleted, not hyphenated
@@ -1778,7 +1841,7 @@ function sha256Hex(value: string): string {
 /**
  * The ids fixture — the exhaustive byte-identity pin.
  *
- * 591 daira ids + 1541 commune ids, in document order. A port that gets the
+ * 566 daira ids + 1541 commune ids, in document order. A port that gets the
  * slug rule even slightly wrong diverges here, on a named record, rather than
  * silently producing a database column of ids that will not join.
  */
@@ -1803,7 +1866,7 @@ function emitSlugFixture(): unknown {
  * The normalize fixture: named edge cases, plus a digest of the whole key set.
  *
  * The digest is what makes this exhaustive without shipping a second copy of
- * the 4402 keys that `search-keys.ts` already holds. A mismatch says "your
+ * the 4352 keys that `search-keys.ts` already holds. A mismatch says "your
  * normalizer disagrees somewhere"; the named cases above are what localize it,
  * and the cross-language test diffs the actual keys when one is needed.
  */
@@ -1833,7 +1896,7 @@ function emitNormalizeFixture(model: Model): unknown {
  * Every number here was measured from `data/`, never assumed, and each is
  * load-bearing somewhere: 38 shared postal codes is why `findByPostalCode`
  * returns a list; 1500 distinct commune names against 1541 records is why an
- * id carries its wilaya prefix; 545 distinct daira names against 591 pairs is
+ * id carries its wilaya prefix; 545 distinct daira names against 566 pairs is
  * the reform splitting daires across wilayas.
  */
 function emitGroundTruthFixture(model: Model): unknown {
@@ -1872,7 +1935,7 @@ function emitGroundTruthFixture(model: Model): unknown {
       dairaWilayaNamePairs: new Set(model.dairas.map((d) => `${d.wilaya} ${d.name.fr}`)).size,
       distinctDairaNames: new Set(model.dairas.map((d) => d.name.fr)).size,
     },
-    // Exactly one record in 2201 has an English exonym.
+    // Exactly one record in 2176 has an English exonym.
     exonyms,
     // The 27 communes published without a postal code. They cannot be filled —
     // no available source has them — and inventing one would end the package's
@@ -1893,6 +1956,197 @@ function emitGroundTruthFixture(model: Model): unknown {
       communeHasWilayaAr: true,
     },
   };
+}
+
+/* =========================================================================== *
+ * CSV and SQL exports
+ * =========================================================================== */
+
+/**
+ * RFC 4180 field. Quotes only when it has to, so the files stay diffable.
+ *
+ * No name in the dataset currently contains a comma, a quote or a newline --
+ * asserted by A25 -- so in practice nothing is quoted today. The function is
+ * still correct rather than merely adequate, because the day a commune named
+ * `Sidi Bel Abbes, Ouest` arrives is not the day to discover the exporter
+ * corrupts every row after it.
+ */
+function csvField(value: string | null): string {
+  if (value === null) return "";
+  return /[",\r\n]/.test(value) ? `"${value.replace(/"/g, '""')}"` : value;
+}
+
+const csvRow = (cells: readonly (string | null)[]): string => cells.map(csvField).join(",");
+
+/** A SQL string literal. Doubles single quotes; NULL is unquoted. */
+function sqlLiteral(value: string | null): string {
+  return value === null ? "NULL" : `'${value.replace(/'/g, "''")}'`;
+}
+
+const pad2 = (n: number): string => String(n).padStart(2, "0");
+
+/**
+ * `exports/csv/*.csv` and `exports/sql/*.sql`.
+ *
+ * WHY THESE LIVE OUTSIDE `data/`, which is the obvious place for them:
+ * `packages/js/package.json` has `files: ["dist", "data", "LICENSE"]`, so
+ * everything under `data/` ships in the npm tarball. A CSV mirror and a SQL
+ * dump are for people who are NOT installing an npm package -- jq users,
+ * analysts, anyone seeding a database -- and putting them in `data/` would add
+ * a few hundred kB to every `npm install` to serve nobody. `exports/` is
+ * outside the `files` allow-list, so it reaches those users over jsDelivr and
+ * the repo, and never over npm. `benchmarks/pack-check.mjs` asserts their
+ * absence from the tarball so that stays true.
+ *
+ * The SQL schema types every code column as **TEXT**, including
+ * `code_postal`. That is the whole point of shipping a schema rather than
+ * leaving people to infer one: `05000` is a real postal code, and the first
+ * thing a naive `CREATE TABLE` does is make it an INTEGER and turn it into
+ * 5000. Same for the zero-padded wilaya code.
+ */
+function exportOutputs(model: Model): Output[] {
+  const wilayaName = new Map(model.wilayas.map((w) => [w.code, w.name]));
+  const dairaName = new Map(model.dairas.map((d) => [d.id, d.name]));
+
+  const wilayasCsv = [
+    csvRow(["code", "wilaya_num", "nom_ar", "nom_fr", "nom_en", "nb_dairas", "nb_communes"]),
+    ...model.wilayas.map((w) =>
+      csvRow([
+        pad2(w.code),
+        String(w.code),
+        w.name.ar,
+        w.name.fr,
+        w.name.en,
+        String(w.dairaCount),
+        String(w.communeCount),
+      ]),
+    ),
+  ].join("\n");
+
+  const dairasCsv = [
+    csvRow(["daira_id", "code", "wilaya_num", "nom_ar", "nom_fr", "nom_en", "nb_communes"]),
+    ...model.dairas.map((d) =>
+      csvRow([
+        d.id,
+        pad2(d.wilaya),
+        String(d.wilaya),
+        d.name.ar,
+        d.name.fr,
+        d.name.en,
+        String(d.communeCount),
+      ]),
+    ),
+  ].join("\n");
+
+  const communesCsv = [
+    csvRow([
+      "commune_id",
+      "code",
+      "wilaya_num",
+      "wilaya_fr",
+      "daira_id",
+      "daira_fr",
+      "nom_ar",
+      "nom_fr",
+      "nom_en",
+      "code_postal",
+    ]),
+    ...model.communes.map((c) =>
+      csvRow([
+        c.id,
+        pad2(c.wilaya),
+        String(c.wilaya),
+        wilayaName.get(c.wilaya)?.fr ?? "",
+        c.daira,
+        dairaName.get(c.daira)?.fr ?? "",
+        c.name.ar,
+        c.name.fr,
+        c.name.en,
+        c.postalCode,
+      ]),
+    ),
+  ].join("\n");
+
+  const schema = `-- Algeria administrative divisions — schema
+-- GENERATED BY scripts/build-data.ts — DO NOT EDIT
+--
+-- Portable across SQLite, PostgreSQL and MySQL. Every code is TEXT on purpose:
+-- "05000" is a real postal code and "01" a real wilaya code, and both lose
+-- their leading zero the moment a column is typed INTEGER.
+
+CREATE TABLE wilaya (
+  code        TEXT PRIMARY KEY,   -- zero-padded, "01".."69"
+  wilaya_num  INTEGER NOT NULL,   -- the same code as a number, 1..69
+  nom_ar      TEXT NOT NULL,
+  nom_fr      TEXT NOT NULL,
+  nom_en      TEXT NOT NULL,
+  nb_dairas   INTEGER NOT NULL,
+  nb_communes INTEGER NOT NULL
+);
+
+CREATE TABLE daira (
+  daira_id    TEXT PRIMARY KEY,   -- "<code>-<slug(nom_fr)>", library-assigned
+  code        TEXT NOT NULL REFERENCES wilaya(code),
+  nom_ar      TEXT NOT NULL,
+  nom_fr      TEXT NOT NULL,
+  nom_en      TEXT NOT NULL,
+  nb_communes INTEGER NOT NULL
+);
+
+CREATE TABLE commune (
+  commune_id  TEXT PRIMARY KEY,   -- "<daira_id>-<slug(nom_fr)>", library-assigned
+  code        TEXT NOT NULL REFERENCES wilaya(code),
+  daira_id    TEXT NOT NULL REFERENCES daira(daira_id),
+  nom_ar      TEXT NOT NULL,
+  nom_fr      TEXT NOT NULL,
+  nom_en      TEXT NOT NULL,
+  code_postal TEXT                -- NULL for ${String(model.communes.filter((c) => c.postalCode === null).length)} communes; see docs/DATA_PROVENANCE.md
+);
+
+-- A postal code is NOT unique: several communes share one. Index, never UNIQUE.
+CREATE INDEX commune_code_postal_idx ON commune (code_postal);
+CREATE INDEX commune_code_idx        ON commune (code);
+CREATE INDEX daira_code_idx          ON daira (code);
+`;
+
+  const inserts = [
+    "-- Algeria administrative divisions — data",
+    "-- GENERATED BY scripts/build-data.ts — DO NOT EDIT",
+    "-- Run schema.sql first. Wrapped in one transaction.",
+    "",
+    "BEGIN;",
+    "",
+    ...model.wilayas.map(
+      (w) =>
+        `INSERT INTO wilaya VALUES (${sqlLiteral(pad2(w.code))}, ${String(w.code)}, ` +
+        `${sqlLiteral(w.name.ar)}, ${sqlLiteral(w.name.fr)}, ${sqlLiteral(w.name.en)}, ` +
+        `${String(w.dairaCount)}, ${String(w.communeCount)});`,
+    ),
+    "",
+    ...model.dairas.map(
+      (d) =>
+        `INSERT INTO daira VALUES (${sqlLiteral(d.id)}, ${sqlLiteral(pad2(d.wilaya))}, ` +
+        `${sqlLiteral(d.name.ar)}, ${sqlLiteral(d.name.fr)}, ${sqlLiteral(d.name.en)}, ` +
+        `${String(d.communeCount)});`,
+    ),
+    "",
+    ...model.communes.map(
+      (c) =>
+        `INSERT INTO commune VALUES (${sqlLiteral(c.id)}, ${sqlLiteral(pad2(c.wilaya))}, ` +
+        `${sqlLiteral(c.daira)}, ${sqlLiteral(c.name.ar)}, ${sqlLiteral(c.name.fr)}, ` +
+        `${sqlLiteral(c.name.en)}, ${sqlLiteral(c.postalCode)});`,
+    ),
+    "",
+    "COMMIT;",
+  ].join("\n");
+
+  return [
+    { kind: "text", relPath: `${CSV_DIR_REL}/wilayas.csv`, content: `${wilayasCsv}\n` },
+    { kind: "text", relPath: `${CSV_DIR_REL}/dairas.csv`, content: `${dairasCsv}\n` },
+    { kind: "text", relPath: `${CSV_DIR_REL}/communes.csv`, content: `${communesCsv}\n` },
+    { kind: "text", relPath: `${SQL_DIR_REL}/schema.sql`, content: schema },
+    { kind: "text", relPath: `${SQL_DIR_REL}/algeria.sql`, content: `${inserts}\n` },
+  ];
 }
 
 function fixtureOutputs(model: Model): Output[] {
@@ -2139,6 +2393,129 @@ function isParentWilayaCode(code: string): boolean {
 
 function reformFilledCount(reform: Reform): number {
   return reform.newWilayas.filter((entry) => entry.parentCode !== null).length;
+}
+
+/**
+ * `data/raw/postal-corrections.json` — the correction ledger.
+ *
+ * Hand-maintained, never written here. Each entry records one undone instance of
+ * the name-collision join artifact (ADR-018): a commune that was given a
+ * same-named commune's daira and/or postal code from a different wilaya.
+ *
+ * The entries are APPLIED by `scripts/apply-corrections.mjs`, which edits
+ * `data/algeria.json` -- because that file is itself published, and correcting
+ * it only in memory would leave every jq and CDN consumer on the wrong data
+ * while the packages were right. This generator's job is the other half: ASSERT
+ * that the data and the ledger still agree (A21-A24). The ledger is the
+ * specification, the data is the state, and a disagreement fails the build in
+ * either direction -- a hand-edit that reverts a correction, or a ledger entry
+ * nobody applied.
+ */
+function readCorrections(failures: Failures): readonly CorrectionEntry[] {
+  const raw = parseJsonText(readFileSync(join(REPO_ROOT, CORRECTIONS_REL), "utf8"));
+  const where = CORRECTIONS_REL;
+  if (!isRecord(raw)) {
+    failures.push(`[A0] ${where}: root must be a JSON object, got ${describe(raw)}`);
+    return [];
+  }
+  const list = readArray(raw, "corrections", where, failures);
+  return list.map((entry, index) => {
+    const at = `${where} corrections[${index}]`;
+    if (!isRecord(entry)) {
+      failures.push(`[A0] ${at}: must be an object, got ${describe(entry)}`);
+      return {
+        wilaya: "",
+        commune: "",
+        dairaFrom: "",
+        dairaTo: "",
+        postalCodeFrom: null,
+        postalCodeTo: null,
+        source: "",
+        confidence: "",
+      };
+    }
+    return {
+      wilaya: readString(entry, "wilaya", at, failures),
+      commune: readString(entry, "commune", at, failures),
+      dairaFrom: readString(entry, "dairaFrom", at, failures),
+      dairaTo: readString(entry, "dairaTo", at, failures),
+      postalCodeFrom: readNullableString(entry, "postalCodeFrom", at, failures),
+      postalCodeTo: readNullableString(entry, "postalCodeTo", at, failures),
+      source: readString(entry, "source", at, failures),
+      confidence: readString(entry, "confidence", at, failures),
+    };
+  });
+}
+
+/**
+ * A21-A24 — the ledger and the data must agree.
+ *
+ * A21  every entry resolves to exactly one commune, sitting in `dairaTo`
+ * A22  that commune's code_postal is exactly `postalCodeTo`
+ * A23  `dairaFrom` no longer holds it (the move actually happened), and if the
+ *      container was emptied it is gone rather than left behind as an empty daira
+ * A24  every entry carries a citation
+ *
+ * A24 is the one that matters most, and it mirrors the reform table's rule
+ * (shared/contract/reform.md): SUPPLYING a value is the act that requires the
+ * source, not labelling it. A corrected postal code is served to every consumer
+ * with the full authority of the package, and a wrong one misroutes real post.
+ * `postalCodeTo: null` still needs a source, because "this code provably belongs
+ * to another wilaya's commune" is itself a claim.
+ */
+function assertCorrections(
+  source: Algeria,
+  corrections: readonly CorrectionEntry[],
+  failures: Failures,
+): void {
+  for (const c of corrections) {
+    const label = `${CORRECTIONS_REL} ${c.wilaya}/${c.commune}`;
+
+    if (c.source.trim() === "") {
+      failures.push(`[A24] ${label}: a correction must carry a source`);
+    }
+
+    const wilaya = source.wilayas.find((w) => w.code === c.wilaya);
+    if (!wilaya) {
+      failures.push(`[A21] ${label}: no wilaya with code ${c.wilaya}`);
+      continue;
+    }
+
+    const target = wilaya.dairas.find((d) => d.nom_fr === c.dairaTo);
+    if (!target) {
+      failures.push(`[A21] ${label}: target daira "${c.dairaTo}" is not in wilaya ${c.wilaya}`);
+      continue;
+    }
+    const landed = target.communes.filter((x) => x.nom_fr === c.commune);
+    if (landed.length !== 1) {
+      failures.push(
+        `[A21] ${label}: expected exactly 1 "${c.commune}" in daira "${c.dairaTo}", found ${landed.length} — ` +
+          `run \`node scripts/apply-corrections.mjs\``,
+      );
+      continue;
+    }
+    if (landed[0]?.code_postal !== c.postalCodeTo) {
+      failures.push(
+        `[A22] ${label}: code_postal is ${JSON.stringify(landed[0]?.code_postal)}, ` +
+          `ledger says ${JSON.stringify(c.postalCodeTo)}`,
+      );
+    }
+
+    // The move must have actually happened. If dairaFrom still exists it must no
+    // longer hold this commune; an emptied container must have been removed, not
+    // left as a zero-commune daira.
+    const from = wilaya.dairas.find((d) => d.nom_fr === c.dairaFrom);
+    if (from && c.dairaFrom !== c.dairaTo) {
+      if (from.communes.some((x) => x.nom_fr === c.commune)) {
+        failures.push(`[A23] ${label}: still present in daira "${c.dairaFrom}"`);
+      }
+      if (from.communes.length === 0) {
+        failures.push(
+          `[A23] ${label}: daira "${c.dairaFrom}" is empty and should have been removed`,
+        );
+      }
+    }
+  }
 }
 
 /**
@@ -2525,6 +2902,7 @@ async function main(): Promise<void> {
   const source = readSource(failures);
   const overrides = readOverrides(failures);
   const reform = readReform(failures);
+  const corrections = readCorrections(failures);
 
   // Phase 5 — the model has to exist before the gate: assertions 5, 17, 18 and
   // 19 are checks on the ids it mints.
@@ -2535,6 +2913,8 @@ async function main(): Promise<void> {
 
   // Phase 7 — into the SAME accumulator, so one run reports everything.
   assertReform(source, reform, failures, warnings);
+  assertCorrections(source, corrections, failures);
+  assertCsvSafeNames(model, failures);
 
   if (failures.length > 0) {
     for (const failure of failures) console.error(failure);
@@ -2551,6 +2931,7 @@ async function main(): Promise<void> {
     ...projectJsonOutputs(source),
     ...emitTypeScriptOutputs(model, source, reform),
     ...fixtureOutputs(model),
+    ...exportOutputs(model),
   ];
 
   // Phase 4, in two passes.

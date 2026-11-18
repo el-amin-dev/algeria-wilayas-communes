@@ -1,5 +1,12 @@
 packages:
   - "packages/js"
+  # The MCP server. packages/python is deliberately NOT here (ADR-015):
+  # changesets cannot see it, so it could never publish it. packages/mcp has no
+  # such problem -- it is a normal npm package -- but it is also NOT wired into
+  # the `v*` publish workflows, because those publish npm and PyPI in lockstep
+  # from one tag and a third artifact on that tag would break the guarantee that
+  # a version number means the same 1541 records on both registries. See ADR-019.
+  - "packages/mcp"
 
 # esbuild ships a prebuilt native binary and needs its postinstall to run; tsx,
 # vitest and tsup are unusable without it. pnpm >= 10 blocks dependency build

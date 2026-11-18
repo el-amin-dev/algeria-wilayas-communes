@@ -129,7 +129,7 @@
       "nom_ar": "تيارت",
       "nom_fr": "Tiaret",
       "nom_en": "Tiaret",
-      "nb_dairas": 13,
+      "nb_dairas": 12,
       "nb_communes": 36
     },
     {
@@ -147,7 +147,7 @@
       "nom_ar": "الجزائر",
       "nom_fr": "Alger",
       "nom_en": "Algiers",
-      "nb_dairas": 15,
+      "nb_dairas": 13,
       "nb_communes": 57
     },
     {
@@ -183,7 +183,7 @@
       "nom_ar": "سعيدة",
       "nom_fr": "Saida",
       "nom_en": "Saida",
-      "nb_dairas": 8,
+      "nb_dairas": 6,
       "nb_communes": 16
     },
     {
@@ -192,7 +192,7 @@
       "nom_ar": "سكيكدة",
       "nom_fr": "Skikda",
       "nom_en": "Skikda",
-      "nb_dairas": 14,
+      "nb_dairas": 13,
       "nb_communes": 38
     },
     {
@@ -210,7 +210,7 @@
       "nom_ar": "عنابة",
       "nom_fr": "Annaba",
       "nom_en": "Annaba",
-      "nb_dairas": 7,
+      "nb_dairas": 6,
       "nb_communes": 12
     },
     {
@@ -237,7 +237,7 @@
       "nom_ar": "المدية",
       "nom_fr": "Medea",
       "nom_en": "Medea",
-      "nb_dairas": 14,
+      "nb_dairas": 13,
       "nb_communes": 43
     },
     {
@@ -246,7 +246,7 @@
       "nom_ar": "مستغانم",
       "nom_fr": "Mostaganem",
       "nom_en": "Mostaganem",
-      "nb_dairas": 11,
+      "nb_dairas": 10,
       "nb_communes": 32
     },
     {
@@ -264,7 +264,7 @@
       "nom_ar": "معسكر",
       "nom_fr": "Mascara",
       "nom_en": "Mascara",
-      "nb_dairas": 18,
+      "nb_dairas": 16,
       "nb_communes": 47
     },
     {
@@ -273,7 +273,7 @@
       "nom_ar": "ورقلة",
       "nom_fr": "Ouargla",
       "nom_en": "Ouargla",
-      "nb_dairas": 6,
+      "nb_dairas": 5,
       "nb_communes": 8
     },
     {
@@ -282,7 +282,7 @@
       "nom_ar": "وهران",
       "nom_fr": "Oran",
       "nom_en": "Oran",
-      "nb_dairas": 10,
+      "nb_dairas": 9,
       "nb_communes": 26
     },
     {
@@ -309,7 +309,7 @@
       "nom_ar": "برج بوعريريج",
       "nom_fr": "Bordj Bou Arreridj",
       "nom_en": "Bordj Bou Arreridj",
-      "nb_dairas": 11,
+      "nb_dairas": 10,
       "nb_communes": 34
     },
     {
@@ -318,7 +318,7 @@
       "nom_ar": "بومرداس",
       "nom_fr": "Boumerdes",
       "nom_en": "Boumerdes",
-      "nb_dairas": 10,
+      "nb_dairas": 9,
       "nb_communes": 32
     },
     {
@@ -327,7 +327,7 @@
       "nom_ar": "الطارف",
       "nom_fr": "El Tarf",
       "nom_en": "El Tarf",
-      "nb_dairas": 9,
+      "nb_dairas": 7,
       "nb_communes": 24
     },
     {
@@ -345,7 +345,7 @@
       "nom_ar": "تيسمسيلت",
       "nom_fr": "Tissemsilt",
       "nom_en": "Tissemsilt",
-      "nb_dairas": 10,
+      "nb_dairas": 8,
       "nb_communes": 22
     },
     {
@@ -354,7 +354,7 @@
       "nom_ar": "الوادي",
       "nom_fr": "El Oued",
       "nom_en": "El Oued",
-      "nb_dairas": 11,
+      "nb_dairas": 10,
       "nb_communes": 22
     },
     {
@@ -381,7 +381,7 @@
       "nom_ar": "تيبازة",
       "nom_fr": "Tipaza",
       "nom_en": "Tipaza",
-      "nb_dairas": 11,
+      "nb_dairas": 10,
       "nb_communes": 28
     },
     {
@@ -399,7 +399,7 @@
       "nom_ar": "عين الدفلى",
       "nom_fr": "Ain Defla",
       "nom_en": "Ain Defla",
-      "nb_dairas": 15,
+      "nb_dairas": 14,
       "nb_communes": 36
     },
     {
@@ -417,7 +417,7 @@
       "nom_ar": "عين تموشنت",
       "nom_fr": "Ain Temouchent",
       "nom_en": "Ain Temouchent",
-      "nb_dairas": 9,
+      "nb_dairas": 8,
       "nb_communes": 28
     },
     {
@@ -435,7 +435,7 @@
       "nom_ar": "غليزان",
       "nom_fr": "Relizane",
       "nom_en": "Relizane",
-      "nb_dairas": 16,
+      "nb_dairas": 14,
       "nb_communes": 38
     },
     {

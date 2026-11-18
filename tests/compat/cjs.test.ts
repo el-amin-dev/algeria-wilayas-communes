@@ -231,7 +231,7 @@ describe.skipIf(!HAS_DIST)("README `## Usage` snippet 2 — `require()` from rea
         "",
       ].join("\n"),
     );
-    expect(runCjs(file)).toBe("69 591 1541 1");
+    expect(runCjs(file)).toBe("69 566 1541 1");
   });
 
   it("the v1 raw-JSON subpath still resolves — it is a published contract", () => {

@@ -4,7 +4,7 @@
   "nom_ar": "تيبازة",
   "nom_fr": "Tipaza",
   "nom_en": "Tipaza",
-  "nb_dairas": 11,
+  "nb_dairas": 10,
   "nb_communes": 28,
   "dairas": [
     {
@@ -179,23 +179,15 @@
           "nom_fr": "Bou Ismail",
           "nom_en": "Bou Ismail",
           "code_postal": "42004"
-        }
-      ],
-      "nb_communes": 3
-    },
-    {
-      "nom_ar": "خميستي",
-      "nom_fr": "Khemisti",
-      "nom_en": "Khemisti",
-      "communes": [
+        },
         {
           "nom_ar": "خميستي",
           "nom_fr": "Khemisti",
           "nom_en": "Khemisti",
-          "code_postal": "38016"
+          "code_postal": "42016"
         }
       ],
-      "nb_communes": 1
+      "nb_communes": 4
     },
     {
       "nom_ar": "أحمر العين",

@@ -51,7 +51,7 @@ def _result_rows(results: Any) -> list[dict[str, Any]]:
 class TestIdsFixture:
     """``ids.json`` - the exhaustive proof of the slug rule.
 
-    All 2132 synthesized ids, in document order. A port that gets the slug rule
+    All 2107 synthesized ids, in document order. A port that gets the slug rule
     even slightly wrong diverges here on a named record instead of silently
     minting a database column that will not join.
     """
@@ -103,7 +103,7 @@ class TestNormalizeFixture:
         assert failures == []
 
     def test_whole_key_set_matches_by_digest(self) -> None:
-        """All 4402 keys, proven identical without shipping a second copy.
+        """All 4352 keys, proven identical without shipping a second copy.
 
         The digest is over the keys sorted by ``(key, ref)`` and joined on
         ``\\n`` - the same ordering the runtime binary search relies on, so this
@@ -228,20 +228,20 @@ class TestTheFixturesAreNotEmpty:
         assert len(fixture["cases"]) >= 25
         # The digests are what make the fixture exhaustive rather than a sample,
         # so an empty or truncated key set has to fail here too.
-        assert fixture["keys"]["count"] == 4402
+        assert fixture["keys"]["count"] == 4352
         assert fixture["keys"]["distinct"] == 3055
         assert len(fixture["keys"]["sha256"]) == 64
         assert len(fixture["refs"]["sha256"]) == 64
 
     def test_ids_fixture_has_every_id(self) -> None:
         fixture = load_fixture("ids")
-        assert len(fixture["dairas"]) == 591
+        assert len(fixture["dairas"]) == 566
         assert len(fixture["communes"]) == 1541
 
     def test_ground_truth_fixture_is_populated(self) -> None:
         truth = load_fixture("ground-truth")
         assert truth["counts"]["communes"] == 1541
-        assert len(truth["communesMissingPostalCode"]) == 27
+        assert len(truth["communesMissingPostalCode"]) == 48
         assert len(truth["exonyms"]) == 1
         assert len(truth["duplicatedCommuneNameExamples"]) == 2
 

@@ -1,0 +1,291 @@
+{
+  "$comment": "THE CORRECTION LEDGER. Hand-maintained, never written by a generator. Each entry undoes one instance of the name-collision join artifact described in docs/DECISIONS.md ADR-018: a commune that was given a same-named commune's daira and/or postal code from a different wilaya. An entry is APPLIED to data/algeria.json by scripts/build-data.ts, and assertions A21-A24 fail the build if the data and this ledger ever disagree. Supplying a corrected value REQUIRES a source, exactly as it does for the reform table - see shared/contract/reform.md for the reasoning. postalCodeTo:null means WITHDRAWN: the shipped code provably belongs to another wilaya's commune, and no replacement has been sourced yet. That is not the same as the 27 communes that were published without a code at all.",
+  "corrections": [
+    {
+      "wilaya": "14",
+      "commune": "Sidi Abderrahmane",
+      "dairaFrom": "Tenes",
+      "dairaTo": "Ain Kermes",
+      "postalCodeFrom": "02066",
+      "postalCodeTo": "14028",
+      "source": "fr.wikipedia.org/wiki/Sidi_Abderrahmane_(Tiaret) — wilaya Tiaret, daira Ain Kermes, code postal 14028, ONS 1438",
+      "confidence": "probable",
+      "note": "Shipped under Tenes, which is a daira of 02 Chlef, with Chlef's postal code."
+    },
+    {
+      "wilaya": "16",
+      "commune": "El Marsa",
+      "dairaFrom": "El Marsa",
+      "dairaTo": "Dar El Beida",
+      "postalCodeFrom": "02015",
+      "postalCodeTo": "16111",
+      "source": "fr.wikipedia.org/wiki/El_Marsa_(Alger) and Liste des communes de la wilaya d'Alger — daira Dar El Beida, code postal 16111, ONS 1640. Alger officially has 13 dairas; El Marsa is not one of them.",
+      "confidence": "probable",
+      "note": "Self-named phantom daira. Shipped with 02 Chlef's postal code."
+    },
+    {
+      "wilaya": "16",
+      "commune": "Hammamet",
+      "dairaFrom": "Bir Mokadem",
+      "dairaTo": "Cheraga",
+      "postalCodeFrom": "12016",
+      "postalCodeTo": null,
+      "source": "fr.wikipedia.org/wiki/Hammamet_(Alger) and Daïras de la wilaya d'Alger — daira Cheraga, ONS 1624; Alger officially has 13 dairas and Bir Mokadem is a daira of 12 Tebessa. The same infobox gives code postal 16060, which is NOT written: our data already assigns 16060 to 16-bab-el-oued-rais-hamidou, and taking it would create the dataset's only postal code shared by two communes of the SAME wilaya. One of the two is wrong and a single infobox does not settle which, so the code is withdrawn pending a source.",
+      "confidence": "probable",
+      "note": "Daira sourced and corrected; postal code WITHDRAWN rather than replaced. Resolving it means establishing whether 16060 belongs to Hammamet or to Rais Hamidou."
+    },
+    {
+      "wilaya": "31",
+      "commune": "Ain Turk",
+      "dairaFrom": "Bouira",
+      "dairaTo": "Ain Turk",
+      "postalCodeFrom": "10033",
+      "postalCodeTo": null,
+      "source": "fr.wikipedia.org/wiki/Aïn_El_Turk — wilaya Oran, daira Aïn El Turck, code postal 31300, ONS 3109. fr.wikipedia.org/wiki/Wilaya_d'Oran — Oran has 9 dairas and no daira named Bouira; daira Aïn-el-Turk holds Aïn El Turk, Mers el-Kébir, El Ançor, Bousfer. POSTAL CODE WITHDRAWN AS WRONG-FAMILY: 31300 was written from a source that uses Algeria's 100-increment locality numbering. The dataset's postal column holds ONE numbering family: 1468 of its 1494 codes are NN0xx, and the 26 exceptions are NN1xx clustered in wilayas 05, 15, 16 and 19. Algeria also uses a second, 100-increment locality family (Bouhadjar 36300 vs this dataset's 36005). A value from that other family is wrong AS A VALUE IN THIS COLUMN even if it is a real code somewhere. 31300 is the ONLY non-NN0xx code in wilaya 31, which is the tell. The daira above is unaffected and independently confirmed.",
+      "confidence": "probable",
+      "note": "The clearest case: we shipped 10 dairas for Oran, and its real Ain Turk daira was missing its own seat commune. Daira sourced and confirmed. Postal code 31300 WITHDRAWN: wrong numbering family."
+    },
+    {
+      "wilaya": "23",
+      "commune": "El Eulma",
+      "dairaFrom": "El Eulma",
+      "dairaTo": "Ain El Berda",
+      "postalCodeFrom": "19001",
+      "postalCodeTo": null,
+      "source": "fr.wikipedia.org/wiki/Daïras_de_la_wilaya_d'Annaba — Annaba has 6 dairas and 12 communes; daira Aïn Berda holds Aïn Berda, Cheurfa and Eulma. 19001 is 19 Setif's El Eulma.",
+      "confidence": "probable",
+      "note": "Daira sourced, postal code WITHDRAWN: no 23xxx value for this commune has been sourced."
+    },
+    {
+      "wilaya": "20",
+      "commune": "Ain El Hadjar",
+      "dairaFrom": "Ain Bessem",
+      "dairaTo": "Ain El Hadjar",
+      "postalCodeFrom": "10031",
+      "postalCodeTo": null,
+      "source": "fr.wikipedia.org/wiki/Aïn_El_Hadjar_(Saïda) — wilaya Saïda, daira Aïn El Hadjar, ONS 2003. fr.wikipedia.org/wiki/Wilaya_de_Saïda — Saïda has 6 dairas; Ain Bessem is a daira of 10 Bouira.",
+      "confidence": "probable",
+      "note": "Daira sourced, postal code WITHDRAWN: two sources disagree (20100 vs 20001), so neither is written. It shipped holding 10031, byte-identical to Bouira's own Ain El Hadjar."
+    },
+    {
+      "wilaya": "20",
+      "commune": "Maamora",
+      "dairaFrom": "Sour El Ghozlane",
+      "dairaTo": "El Hassasna",
+      "postalCodeFrom": "10071",
+      "postalCodeTo": null,
+      "source": "fr.wikipedia.org/wiki/Maamora_(Saïda) — wilaya Saïda, daira El Hassasna, ONS 2011. fr.wikipedia.org/wiki/Wilaya_de_Saïda — Saïda has 6 dairas; Sour El Ghozlane is a daira of 10 Bouira.",
+      "confidence": "probable",
+      "note": "El Hassasna goes 2 -> 3 communes. Postal code WITHDRAWN: the shipped value belongs to another wilaya's commune and no replacement has been sourced. LEAD (not written): independent verification proposed 20013 for this commune, from aggregator postal lists rather than a primary ONS/Algerie Poste table. It needs a primary source before it may be written -- supplying a value requires a citation."
+    },
+    {
+      "wilaya": "21",
+      "commune": "El Marsa",
+      "dairaFrom": "El Marsa",
+      "dairaTo": "Ben Azzouz",
+      "postalCodeFrom": "02015",
+      "postalCodeTo": null,
+      "source": "fr.wikipedia.org/wiki/El_Marsa_(Skikda) — wilaya Skikda, daira Ben Azzouz, ONS 2138. 02015 is 02 Chlef's El Marsa.",
+      "confidence": "probable",
+      "note": "Self-named phantom container. Ben Azzouz goes 2 -> 3. Postal code WITHDRAWN: the shipped value belongs to another wilaya's commune and no replacement has been sourced. LEAD (not written): independent verification proposed 21058 for this commune, from aggregator postal lists rather than a primary ONS/Algerie Poste table. It needs a primary source before it may be written -- supplying a value requires a citation."
+    },
+    {
+      "wilaya": "26",
+      "commune": "Ouled Brahim",
+      "dairaFrom": "Ouled Brahim",
+      "dairaTo": "El Omaria",
+      "postalCodeFrom": "20002",
+      "postalCodeTo": "26036",
+      "source": "fr.wikipedia.org/wiki/Ouled_Brahim_(Médéa) — wilaya Médéa, daira El Omaria, code postal 26230, ONS 2612. 20002 is 20 Saïda's. 26036 is given by okbob, cp-dz and geoalgeria, and it fits this dataset's own wilaya-26 codes byte-for-byte (El Omaria 26008, Baata 26050, Souagui 26020, Djouab 26016, Sidi Zahar 26072). 26230, from a lone fr.wikipedia infobox, appears nowhere in the Medea postal list and is from the other numbering family.",
+      "confidence": "probable",
+      "note": "Fully sourced: daira AND postal code. El Omaria goes 2 -> 3. Postal code 26036, corroborated externally AND by this dataset's own sibling codes."
+    },
+    {
+      "wilaya": "27",
+      "commune": "Mansourah",
+      "dairaFrom": "Mansourah",
+      "dairaTo": "Mesra",
+      "postalCodeFrom": "13062",
+      "postalCodeTo": null,
+      "source": "fr.wikipedia.org/wiki/Mansourah_(Mostaganem) — wilaya Mostaganem, daira Mesra, ONS 2723. fr.wikipedia.org/wiki/Daïras_de_la_wilaya_de_Mostaganem — 10 dairas, 32 communes; daira Mesra holds Mesra, Aïn Sidi Cherif, Mansourah, Blad Touahria. 13062 is 13 Tlemcen's Mansourah.",
+      "confidence": "probable",
+      "note": "Mesra goes 3 -> 4, matching the source exactly. Postal code WITHDRAWN: the shipped value belongs to another wilaya's commune and no replacement has been sourced. LEAD (not written): independent verification proposed 27036 for this commune, from aggregator postal lists rather than a primary ONS/Algerie Poste table. It needs a primary source before it may be written -- supplying a value requires a citation."
+    },
+    {
+      "wilaya": "29",
+      "commune": "Ain Fares",
+      "dairaFrom": "Ain El Melh",
+      "dairaTo": "Ain Fares",
+      "postalCodeFrom": "28023",
+      "postalCodeTo": null,
+      "source": "fr.wikipedia.org/wiki/Daïras_de_la_wilaya_de_Mascara — Mascara has 16 dairas; daira Aïn Fares holds Aïn Fares and Mamounia. Ain El Melh is a daira of the M'Sila/Bou Saada area. The postal list gives TWO candidates for this commune (29140 and 29530) so neither is written.",
+      "confidence": "probable",
+      "note": "Daira sourced. Postal code WITHDRAWN because the source is ambiguous between 29140 and 29530, not because none exists. LEAD (not written): independent verification proposed 29020 for this commune, from aggregator postal lists rather than a primary ONS/Algerie Poste table. It needs a primary source before it may be written -- supplying a value requires a citation."
+    },
+    {
+      "wilaya": "29",
+      "commune": "Mohammadia",
+      "dairaFrom": "Dar El Beida",
+      "dairaTo": "Mohammadia",
+      "postalCodeFrom": "16058",
+      "postalCodeTo": null,
+      "source": "fr.wikipedia.org/wiki/Daïras_de_la_wilaya_de_Mascara — daira Mohammadia holds Mohammadia, El Ghomri, Ferraguig, Mocta Douz, Sedjerara, Sidi Abdelmoumen. Dar El Beida is a daira of 16 Alger, and 16058 is Alger's.",
+      "confidence": "probable",
+      "note": "Mohammadia goes 5 -> 6, matching the source. Postal code WITHDRAWN: the shipped value belongs to another wilaya's commune and no replacement has been sourced. LEAD (not written): independent verification proposed 29002 for this commune, from aggregator postal lists rather than a primary ONS/Algerie Poste table. It needs a primary source before it may be written -- supplying a value requires a citation."
+    },
+    {
+      "wilaya": "30",
+      "commune": "Ain Beida",
+      "dairaFrom": "Ain Beida",
+      "dairaTo": "Sidi Khouiled",
+      "postalCodeFrom": "04001",
+      "postalCodeTo": null,
+      "source": "fr.wikipedia.org/wiki/Daïras_de_la_wilaya_d'Ouargla — Ouargla has 5 dairas and 8 communes; daira Sidi Khouiled holds Aïn Beida, Hassi Ben Abdellah and Sidi Khouiled. Aïn Beïda is NOT a daira. POSTAL CODE WITHDRAWN AS WRONG-FAMILY: 30120 was written from a source that uses Algeria's 100-increment locality numbering. The dataset's postal column holds ONE numbering family: 1468 of its 1494 codes are NN0xx, and the 26 exceptions are NN1xx clustered in wilayas 05, 15, 16 and 19. Algeria also uses a second, 100-increment locality family (Bouhadjar 36300 vs this dataset's 36005). A value from that other family is wrong AS A VALUE IN THIS COLUMN even if it is a real code somewhere. 30120 is the ONLY non-NN0xx code in wilaya 30, which is the tell. The daira above is unaffected and independently confirmed.",
+      "confidence": "probable",
+      "note": "Fully sourced. Sidi Khouiled goes 2 -> 3, matching the source. Daira sourced and confirmed. Postal code 30120 WITHDRAWN: wrong numbering family."
+    },
+    {
+      "wilaya": "34",
+      "commune": "Ouled Sidi-Brahim",
+      "dairaFrom": "Ouled Sidi Brahim",
+      "dairaTo": "Mansourah",
+      "postalCodeFrom": "28032",
+      "postalCodeTo": null,
+      "source": "fr.wikipedia.org/wiki/Daïras_de_la_wilaya_de_Bordj_Bou_Arreridj — 10 dairas; daira Mansoura holds Ben Daoud, El M'hir, Haraza, Mansoura, Ouled Sidi Brahim. 28032 belongs to the M'Sila/Bou Saada area.",
+      "confidence": "probable",
+      "note": "Mansourah goes 4 -> 5, matching the source. Postal code WITHDRAWN: the shipped value belongs to another wilaya's commune and no replacement has been sourced. LEAD (not written): independent verification proposed 34052 for this commune, from aggregator postal lists rather than a primary ONS/Algerie Poste table. It needs a primary source before it may be written -- supplying a value requires a citation."
+    },
+    {
+      "wilaya": "35",
+      "commune": "Timezrit",
+      "dairaFrom": "Timezrit",
+      "dairaTo": "Isser",
+      "postalCodeFrom": "06019",
+      "postalCodeTo": null,
+      "source": "fr.wikipedia.org/wiki/Timezrit_(Boumerdès) — wilaya Boumerdès, daira Isser, ONS 3518. 06019 is 06 Bejaia's Timezrit.",
+      "confidence": "probable",
+      "note": "Self-named phantom container. Isser goes 3 -> 4. Postal code WITHDRAWN: the shipped value belongs to another wilaya's commune and no replacement has been sourced. LEAD (not written): independent verification proposed 35027 for this commune, from aggregator postal lists rather than a primary ONS/Algerie Poste table. It needs a primary source before it may be written -- supplying a value requires a citation."
+    },
+    {
+      "wilaya": "36",
+      "commune": "Ain Kerma",
+      "dairaFrom": "Boutlelis",
+      "dairaTo": "Bouhadjar",
+      "postalCodeFrom": "31059",
+      "postalCodeTo": "36011",
+      "source": "fr.wikipedia.org/wiki/Daïras_de_la_wilaya_d'El_Tarf — El Tarf has 7 dairas; daira Bouhadjar holds Bouhadjar, Aïn Kerma, Oued Zitoun, Hammam Beni Salah. There is no daira Boutlelis in El Tarf (it is a daira of 31 Oran). 36011 is given by the commune's own fr.wikipedia infobox plus abbassa, okbob and geoalgeria, and it slots exactly between this dataset's Ain El Assel 36010 and Asfour 36012. 36330 was mine and was wrong: it belongs to the 100-increment family in which Bouhadjar is 36300, while this dataset records Bouhadjar as 36005.",
+      "confidence": "probable",
+      "note": "Fully sourced. Bouhadjar goes 3 -> 4, matching the source. Postal code 36011, corroborated externally AND by this dataset's own sibling codes."
+    },
+    {
+      "wilaya": "36",
+      "commune": "Zitouna",
+      "dairaFrom": "Zitouna",
+      "dairaTo": "El Tarf",
+      "postalCodeFrom": "21028",
+      "postalCodeTo": null,
+      "source": "fr.wikipedia.org/wiki/Daïras_de_la_wilaya_d'El_Tarf — daira El Tarf holds El Tarf, Aïn El Assel, Bougous, Zitouna. 21028 is 21 Skikda's Zitouna.",
+      "confidence": "probable",
+      "note": "Self-named phantom container. El Tarf goes 3 -> 4, matching the source. Postal code WITHDRAWN: the shipped value belongs to another wilaya's commune and no replacement has been sourced. LEAD (not written): independent verification proposed 36023 for this commune, from aggregator postal lists rather than a primary ONS/Algerie Poste table. It needs a primary source before it may be written -- supplying a value requires a citation."
+    },
+    {
+      "wilaya": "38",
+      "commune": "Larbaa",
+      "dairaFrom": "Larbaa",
+      "dairaTo": "Lazharia",
+      "postalCodeFrom": "09002",
+      "postalCodeTo": null,
+      "source": "fr.wikipedia.org/wiki/Daïras_de_la_wilaya_de_Tissemsilt — Tissemsilt has 8 dairas; daira Lazharia holds Lazharia, Boucaid, Larbaâ. No daira is named Larbaa or Boualem. 09002 is 09 Blida's.",
+      "confidence": "probable",
+      "note": "Lazharia goes 2 -> 3, matching the source. Postal code WITHDRAWN: the shipped value belongs to another wilaya's commune and no replacement has been sourced. LEAD (not written): independent verification proposed 38022 for this commune, from aggregator postal lists rather than a primary ONS/Algerie Poste table. It needs a primary source before it may be written -- supplying a value requires a citation."
+    },
+    {
+      "wilaya": "38",
+      "commune": "Sidi Slimane",
+      "dairaFrom": "Boualem",
+      "dairaTo": "Bordj Bounaama",
+      "postalCodeFrom": "30030",
+      "postalCodeTo": null,
+      "source": "fr.wikipedia.org/wiki/Daïras_de_la_wilaya_de_Tissemsilt — daira Bordj Bou Naama holds Bordj Bou Naama, Beni Chaib, Beni Lahcene, Sidi Slimane. Boualem is a daira of 32 El Bayadh.",
+      "confidence": "probable",
+      "note": "Bordj Bounaama goes 3 -> 4, matching the source. Postal code WITHDRAWN: the shipped value belongs to another wilaya's commune and no replacement has been sourced. LEAD (not written): independent verification proposed 38028 for this commune, from aggregator postal lists rather than a primary ONS/Algerie Poste table. It needs a primary source before it may be written -- supplying a value requires a citation."
+    },
+    {
+      "wilaya": "39",
+      "commune": "El Ogla",
+      "dairaFrom": "El Ogla",
+      "dairaTo": "Robbah",
+      "postalCodeFrom": "12015",
+      "postalCodeTo": null,
+      "source": "fr.wikipedia.org/wiki/Daïras_de_la_wilaya_d'El_Oued — El Oued has 10 dairas; daira Robbah holds Nakhla, Robbah, El Ogla. El Ogla is not a daira. 12015 is 12 Tebessa's El Ogla.",
+      "confidence": "probable",
+      "note": "Self-named phantom container. Robbah goes 2 -> 3, matching the source. Postal code WITHDRAWN: the shipped value belongs to another wilaya's commune and no replacement has been sourced. LEAD (not written): independent verification proposed 39048 for this commune, from aggregator postal lists rather than a primary ONS/Algerie Poste table. It needs a primary source before it may be written -- supplying a value requires a citation."
+    },
+    {
+      "wilaya": "42",
+      "commune": "Khemisti",
+      "dairaFrom": "Khemisti",
+      "dairaTo": "Bou Ismail",
+      "postalCodeFrom": "38016",
+      "postalCodeTo": "42016",
+      "source": "fr.wikipedia.org/wiki/Khemisti_(Tipaza) — wilaya Tipaza, daira Bou Ismaïl, code postal 42016, ONS 4206. fr.wikipedia.org/wiki/Daïras_de_la_wilaya_de_Tipaza — 10 dairas; daira Bou Ismail holds Bou Ismail, Ain Tagourait, Bou Haroun, Khemisti. 38016 is 38 Tissemsilt's Khemisti.",
+      "confidence": "probable",
+      "note": "Fully sourced: daira AND postal code. Bou Ismail goes 3 -> 4, matching the source. The same page gives 42033 for Khemisti Port, a sub-locality, not the commune."
+    },
+    {
+      "wilaya": "44",
+      "commune": "Ain-Soltane",
+      "dairaFrom": "Ouled Brahim",
+      "dairaTo": "Ain Lechiakh",
+      "postalCodeFrom": "20029",
+      "postalCodeTo": null,
+      "source": "fr.wikipedia.org/wiki/Daïras_de_la_wilaya_d'Aïn_Defla — Aïn Defla has 14 dairas; daira Aïn Lechiekh holds Aïn Lechiekh, Aïn Soltane, Oued Djemaa. No daira is named Ouled Brahim (that is 20 Saïda's). 20029 is Saïda's. POSTAL CODE WITHDRAWN AS WRONG-FAMILY: 44240 was written from a source that uses Algeria's 100-increment locality numbering. The dataset's postal column holds ONE numbering family: 1468 of its 1494 codes are NN0xx, and the 26 exceptions are NN1xx clustered in wilayas 05, 15, 16 and 19. Algeria also uses a second, 100-increment locality family (Bouhadjar 36300 vs this dataset's 36005). A value from that other family is wrong AS A VALUE IN THIS COLUMN even if it is a real code somewhere. 44240 is the ONLY non-NN0xx code in wilaya 44, which is the tell. The daira above is unaffected and independently confirmed.",
+      "confidence": "probable",
+      "note": "Fully sourced: daira AND postal code. Ain Lechiakh goes 2 -> 3, matching the source. Daira sourced and confirmed. Postal code 44240 WITHDRAWN: wrong numbering family."
+    },
+    {
+      "wilaya": "46",
+      "commune": "Emir Abdelkader",
+      "dairaFrom": "Taher",
+      "dairaTo": "Beni Saf",
+      "postalCodeFrom": "18010",
+      "postalCodeTo": null,
+      "source": "fr.wikipedia.org/wiki/Daïras_de_la_wilaya_d'Aïn_Témouchent — 8 dairas and 28 communes; El Emir Abdelkader is in daira Beni Saf (3 communes). There is no daira Taher in Aïn Témouchent (it is a daira of 18 Jijel), and 18010 is Jijel's.",
+      "confidence": "probable",
+      "note": "Beni Saf goes 2 -> 3, matching the source. Postal code WITHDRAWN: the shipped value belongs to another wilaya's commune and no replacement has been sourced."
+    },
+    {
+      "wilaya": "47",
+      "commune": "Mansoura",
+      "dairaFrom": "Mansourah",
+      "dairaTo": "Mansourah",
+      "postalCodeFrom": "34008",
+      "postalCodeTo": null,
+      "source": "fr.wikipedia.org/wiki/Daïras_de_la_wilaya_de_Ghardaïa — Ghardaïa has 8 dairas and one of them IS Mansoura, holding the commune Mansoura. Our spelling `Mansourah` is a transliteration variant, not a phantom. Only the postal code is foreign: 34008 belongs to 34 Bordj Bou Arreridj's Mansourah.",
+      "confidence": "probable",
+      "note": "POSTAL-ONLY correction: the daira is genuine and unchanged. This row was classified PHANTOM_DAIRA by the audit only because the name also exists in wilayas 13 and 34 with more communes -- a false positive for that classifier. Postal code WITHDRAWN: the shipped value belongs to another wilaya's commune and no replacement has been sourced."
+    },
+    {
+      "wilaya": "48",
+      "commune": "El Hassi",
+      "dairaFrom": "Ain Djasser",
+      "dairaTo": "Ammi Moussa",
+      "postalCodeFrom": "05116",
+      "postalCodeTo": null,
+      "source": "fr.wikipedia.org/wiki/Daïras_de_la_wilaya_de_Relizane — Relizane has 13 dairas; El Hassi is in daira Ammi Moussa (4 communes). No daira is named Ain Djasser, Bir El Arch or Thenia in Relizane. 05116 is 05 Batna's.",
+      "confidence": "probable",
+      "note": "Ammi Moussa goes 2 -> 3. Postal code WITHDRAWN: the shipped value belongs to another wilaya's commune and no replacement has been sourced. LEAD (not written): independent verification proposed 48046 for this commune, from aggregator postal lists rather than a primary ONS/Algerie Poste table. It needs a primary source before it may be written -- supplying a value requires a citation."
+    },
+    {
+      "wilaya": "48",
+      "commune": "El Ouldja",
+      "dairaFrom": "Bir El Arch",
+      "dairaTo": "Ammi Moussa",
+      "postalCodeFrom": "19046",
+      "postalCodeTo": null,
+      "source": "fr.wikipedia.org/wiki/Daïras_de_la_wilaya_de_Relizane — El Ouldja is also in daira Ammi Moussa, which the source gives as 4 communes: Ouled Aiche, Ammi Moussa, El Hassi, El Ouldja. Bir El Arch is a daira of 19 Setif, and 19046 is Setif's.",
+      "confidence": "probable",
+      "note": "Ammi Moussa reaches exactly the sourced 4. Postal code WITHDRAWN: the shipped value belongs to another wilaya's commune and no replacement has been sourced. LEAD (not written): independent verification proposed 48048 for this commune, from aggregator postal lists rather than a primary ONS/Algerie Poste table. It needs a primary source before it may be written -- supplying a value requires a citation."
+    }
+  ]
+}

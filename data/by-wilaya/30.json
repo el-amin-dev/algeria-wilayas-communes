@@ -4,7 +4,7 @@
   "nom_ar": "ورقلة",
   "nom_fr": "Ouargla",
   "nom_en": "Ouargla",
-  "nb_dairas": 6,
+  "nb_dairas": 5,
   "nb_communes": 8,
   "dairas": [
     {
@@ -42,20 +42,6 @@
       "nb_communes": 1
     },
     {
-      "nom_ar": "عين البيضاء",
-      "nom_fr": "Ain Beida",
-      "nom_en": "Ain Beida",
-      "communes": [
-        {
-          "nom_ar": "عين البيضاء",
-          "nom_fr": "Ain Beida",
-          "nom_en": "Ain Beida",
-          "code_postal": "04001"
-        }
-      ],
-      "nb_communes": 1
-    },
-    {
       "nom_ar": "سيدي خويلد",
       "nom_fr": "Sidi Khouiled",
       "nom_en": "Sidi Khouiled",
@@ -71,9 +57,15 @@
           "nom_fr": "Sidi Khouiled",
           "nom_en": "Sidi Khouiled",
           "code_postal": "30035"
+        },
+        {
+          "nom_ar": "عين البيضاء",
+          "nom_fr": "Ain Beida",
+          "nom_en": "Ain Beida",
+          "code_postal": null
         }
       ],
-      "nb_communes": 2
+      "nb_communes": 3
     },
     {
       "nom_ar": "البرمة",

@@ -115,17 +115,17 @@ export function getWilayas(): WilayaFlat[] {
 }
 
 /**
- * The flat array of the 591 daïras, each carrying its wilaya.
+ * The flat array of the 566 daïras, each carrying its wilaya.
  *
  * Eight fields per row: there is **no `wilaya_ar`**, unlike the commune rows.
  * That asymmetry is a faithfully reproduced quirk of the published data, not a
  * bug in this layer — see `./types.ts` and `./project.ts`.
  *
- * @returns 591 {@link DairaFlat} rows in document order. Same reference every call.
+ * @returns 566 {@link DairaFlat} rows in document order. Same reference every call.
  *
  * @example
  * ```ts
- * getDairas().length;                                    // → 591
+ * getDairas().length;                                    // → 566
  * getDairas().filter((d) => d.wilaya_num === 19).length; // → 20   (Setif)
  * ```
  */
@@ -187,8 +187,8 @@ export function byWilaya(num: WilayaNum | WilayaNumString): Wilaya | undefined {
 /**
  * Every commune carrying a given postal code.
  *
- * **Returns an ARRAY, and legitimately returns more than one row.** 1514
- * communes share only 1471 distinct codes, so **38 codes are held by more than
+ * **Returns an ARRAY, and legitimately returns more than one row.** 1493
+ * communes share only 1476 distinct codes, so **17 codes are held by more than
  * one commune**. Anything that "simplifies" this to return a single commune is
  * a break, not a cleanup.
  *
@@ -196,7 +196,7 @@ export function byWilaya(num: WilayaNum | WilayaNumString): Wilaya | undefined {
  * `code_postal` is `null`, because `null === code` is false for every string.
  *
  * ⚠️ The converse is v1's, and is preserved deliberately: `findByPostalCode(null)`
- * returns exactly those 27 communes, because `null === null`. That is a real
+ * returns exactly those 48 communes, because `null === null`. That is a real
  * trap for a JavaScript caller passing a nullable database column straight in —
  * "no postal code" reads as a query and comes back with 27 rows rather than
  * none. It is not fixed here: this function is byte-faithful to v1's

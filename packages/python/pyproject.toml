@@ -5,7 +5,7 @@ build-backend = "hatchling.build"
 [project]
 name = "algeria-wilayas-communes"
 version = "1.0.0"
-description = "Algeria administrative divisions — 69 wilayas, daïras and 1541 communes (2025/2026 reform) with Arabic/French/English names and postal codes."
+description = "Algeria administrative divisions for Python — 69 wilayas, 566 daïras, 1541 communes (2026 reform) with Arabic, French and English names plus postal codes. Frozen dataclasses, fully typed, zero dependencies."
 readme = "README.md"
 # 3.9, not 3.8. importlib.resources.files() — which the loader is built on — was
 # added in 3.9, so on 3.8 the package installs happily and then fails at the
@@ -17,21 +17,48 @@ requires-python = ">=3.9"
 license = "CC0-1.0"
 authors = [{ name = "El Amin" }]
 keywords = [
-  "algeria", "wilaya", "wilayas", "commune", "communes",
-  "daira", "dairas", "postal-code", "algeria-cities",
-  "administrative-divisions", "dz", "dataset",
+    "algeria",
+    "wilaya",
+    "wilayas",
+    "commune",
+    "communes",
+    "daira",
+    "dairas",
+    "postal-code",
+    "zip-code",
+    "algeria-cities",
+    "administrative-divisions",
+    "dataset",
+    "open-data",
+    "dz",
+    "algerie",
+    "wilayas-algerie",
+    "communes-algerie",
+    "code-postal-algerie",
+    "الجزائر",
 ]
 classifiers = [
   "Development Status :: 5 - Production/Stable",
   "Intended Audience :: Developers",
+  "Intended Audience :: Science/Research",
   "License :: CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+  "Operating System :: OS Independent",
   "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
   "Programming Language :: Python :: 3.9",
   "Programming Language :: Python :: 3.10",
   "Programming Language :: Python :: 3.11",
   "Programming Language :: Python :: 3.12",
   "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
+  # The dataset is trilingual; these three are how someone browsing PyPI by
+  # language finds it at all.
+  "Natural Language :: Arabic",
+  "Natural Language :: English",
+  "Natural Language :: French",
+  "Topic :: Database",
   "Topic :: Scientific/Engineering :: GIS",
+  "Topic :: Software Development :: Localization",
   "Typing :: Typed",
 ]
 
@@ -50,6 +77,9 @@ dev = ["pytest>=7", "mypy>=1.8", "ruff>=0.4", "typing_extensions>=4.5"]
 Homepage = "https://github.com/el-amin-dev/algeria-wilayas-communes"
 Repository = "https://github.com/el-amin-dev/algeria-wilayas-communes"
 Issues = "https://github.com/el-amin-dev/algeria-wilayas-communes/issues"
+Documentation = "https://github.com/el-amin-dev/algeria-wilayas-communes/blob/main/packages/python/README.md"
+Changelog = "https://github.com/el-amin-dev/algeria-wilayas-communes/blob/main/packages/python/CHANGELOG.md"
+Provenance = "https://github.com/el-amin-dev/algeria-wilayas-communes/blob/main/docs/DATA_PROVENANCE.md"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/algeria_wilayas_communes"]

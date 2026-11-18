@@ -26,7 +26,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
-__all__ = ["Commune", "Daira", "Name", "Wilaya"]
+__all__ = ["Commune", "Daira", "DairaSubtree", "Name", "Wilaya", "WilayaTree"]
 
 # On slots=True, so nobody re-opens it:
 #
@@ -35,7 +35,7 @@ __all__ = ["Commune", "Daira", "Name", "Wilaya"]
 #   dataclasses in Python 3.10 and this package supports 3.9.
 #
 #   The memory it costs to go without is BOUNDED: the model projects
-#   69 + 591 + 1541 = 2201 records, not millions, so a __dict__ per instance is
+#   69 + 566 + 1541 = 2176 records, not millions, so a __dict__ per instance is
 #   a few hundred KB - noise next to the parsed JSON already resident. The
 #   install-base cost of dropping 3.9 is NOT bounded; it is every user on a
 #   distro Python (Debian 11, RHEL 9, a long tail of Docker images).
@@ -48,7 +48,7 @@ __all__ = ["Commune", "Daira", "Name", "Wilaya"]
 class Name:
     """A place name in the three languages the dataset carries.
 
-    ``en`` equals ``fr`` for all but one record in 2201: wilaya 16, ``Alger`` /
+    ``en`` equals ``fr`` for all but one record in 2176: wilaya 16, ``Alger`` /
     ``Algiers``. That is not an oversight - Algerian place names are generally
     not exonymized in English.
 
@@ -107,7 +107,7 @@ class Daira:
     """A daira - the level between a wilaya and its communes.
 
     A daira split by the 2026 reform appears under more than one wilaya, which
-    is why there are 591 (wilaya, daira) pairs for only 545 distinct names.
+    is why there are 566 (wilaya, daira) pairs for only 545 distinct names.
 
     Example:
         >>> from algeria_wilayas_communes import get_daira
@@ -155,7 +155,7 @@ class Commune:
 
     name: Name
 
-    #: A 5-digit postal code, or ``None`` for the 27 communes published without
+    #: A 5-digit postal code, or ``None`` for the 48 communes published without
     #: one.
     #:
     #: ``None`` rather than an absent attribute, on purpose: ``None`` says
@@ -165,3 +165,36 @@ class Commune:
     #: filled - no available source has them - and inventing one would say
     #: something false about a real place.
     postal_code: str | None = None
+
+
+@dataclass(frozen=True)
+class DairaSubtree:
+    """A daïra together with its communes, as returned inside a wilaya tree.
+
+    Separate from :class:`Daira` on purpose. ``Daira`` is a flat record and
+    carries ``commune_count``; this carries the communes themselves. Collapsing
+    the two would mean every flat ``get_dairas()`` call paid to build 566
+    commune tuples nobody asked for.
+    """
+
+    id: str
+    wilaya: int
+    name: Name
+    communes: tuple[Commune, ...]
+
+
+@dataclass(frozen=True)
+class WilayaTree:
+    """A wilaya with its daïras, each carrying its communes.
+
+    The Python counterpart of the JavaScript ``byWilaya(code)`` return value.
+    Field-for-field the same shape, so a cross-language consumer can read one
+    document the same way in both.
+    """
+
+    code: int
+    code_text: str
+    name: Name
+    daira_count: int
+    commune_count: int
+    dairas: tuple[DairaSubtree, ...]

@@ -128,24 +128,24 @@ export function getWilayas(opts?: AsOfOptions): readonly Wilaya[] {
  * record carries its parent as `wilaya: WilayaCode` — join with
  * {@link getWilaya} rather than expecting a denormalized name.
  *
- * @param opts - Optional. `{ asOf: "58" }` returns the same **591** daïras —
+ * @param opts - Optional. `{ asOf: "58" }` returns the same **566** daïras —
  *   never merged, never dropped — with the `wilaya` attribution of every daïra
  *   under `59`..`69` rewritten to its mère. Merging two same-named daïras under
  *   one mère would assert they are the same daïra, which the dataset does not
- *   claim; there are 591 daïras over only 545 distinct names. `id` never
+ *   claim; there are 566 daïras over only 545 distinct names. `id` never
  *   changes across `asOf`.
- * @returns All 591 daïras. Frozen, never copied.
+ * @returns All 566 daïras. Frozen, never copied.
  * @throws {ReformMappingUnavailableError} for `asOf: "58"` only, while
  *   `REFORM.mappingComplete` is `false`.
  *
  * @example
  * ```ts
- * getDairas().length;                                    // → 591
+ * getDairas().length;                                    // → 566
  * getDairas().filter((d) => d.wilaya === 19).length;     // → 20   (Setif)
  * getDairas().find((d) => d.id === "19-ain-azel")?.name.fr; // → "Ain Azel"
  *
  * if (REFORM.mappingComplete) {
- *   getDairas({ asOf: "58" }).length;                    // → 591  — still 591
+ *   getDairas({ asOf: "58" }).length;                    // → 566  — still 566
  * }
  * ```
  *
@@ -231,7 +231,7 @@ export function getWilaya(code: WilayaCode, opts?: AsOfOptions): Wilaya | undefi
  * One daïra by its library-assigned id.
  *
  * The id **is** the composite `(wilaya, slug)` key — there are only 545 distinct
- * daïra names for 591 daïras, so the wilaya prefix is part of the identity, not
+ * daïra names for 566 daïras, so the wilaya prefix is part of the identity, not
  * decoration. It is passed as one string because that is how it is stored and
  * how it arrives back from a database column; there is no key to assemble at the
  * call site.
@@ -272,7 +272,7 @@ export function getDaira(id: string): Daira | undefined {
  * getCommune("19-ain-azel-ain-lahdjar")?.name.fr;     // → "Ain Lahdjar"
  * getCommune("19-ain-azel-ain-lahdjar")?.postalCode;  // → "19018"
  * getCommune("19-ain-azel-ain-lahdjar")?.daira;       // → "19-ain-azel"
- * getCommune("32-sidi-ameur-sidi-ameur")?.postalCode; // → null (one of the 27)
+ * getCommune("32-sidi-ameur-sidi-ameur")?.postalCode; // → null (one of the 30)
  * getCommune("nope");                                 // → undefined
  * ```
  *
@@ -327,7 +327,7 @@ export function byWilaya(code: WilayaCode): WilayaTree | undefined {
 /**
  * All communes sharing a 5-digit postal code.
  *
- * Postal codes are not unique: 38 of the 1471 distinct codes in the dataset are
+ * Postal codes are not unique: 38 of the 1476 distinct codes in the dataset are
  * shared by more than one commune, so this always returns an array.
  *
  * @param code - A 5-digit postal code, e.g. `"19018"`. A plain `string`, not a
@@ -342,7 +342,7 @@ export function byWilaya(code: WilayaCode): WilayaTree | undefined {
  * // → ["Ain Lahdjar"]                 — 19018 belongs to exactly one commune
  *
  * findByPostalCode("10031").map((c) => c.wilaya);
- * // → [10, 20]                        — one of the 38 shared codes: `Ain El Hadjar`
+ * // → [10, 20]                        — one of the 17 shared codes: `Ain El Hadjar`
  * //                                      exists in both Bouira and Saida
  *
  * findByPostalCode("00000");     // → []  — well-formed, matches nothing
@@ -421,7 +421,7 @@ export function getCommunesOfWilaya(code: WilayaCode): readonly Commune[] {
  *
  * @param code - A wilaya code, `1`..`69`.
  * @returns The wilaya's daïras, or an empty array. Never `undefined`. The union
- *   over all 69 codes is exactly 591 daïras.
+ *   over all 69 codes is exactly 566 daïras.
  *
  * @example
  * ```ts

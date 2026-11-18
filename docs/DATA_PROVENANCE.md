@@ -1,6 +1,6 @@
 # Data provenance
 
-Where the 69 wilayas, 591 daïras and 1541 communes came from, what has been verified and
+Where the 69 wilayas, 566 daïras and 1541 communes came from, what has been verified and
 when, and — stated openly rather than hidden — exactly what is missing.
 
 Companion documents: [`DATA_POLICY.md`](DATA_POLICY.md) (versioning),
@@ -121,20 +121,20 @@ commune, a wilaya prefix, or any other inference.
 | Quantity | Value |
 |---|---|
 | Communes | **1541** |
-| Communes with a postal code | **1514** |
+| Communes with a postal code | **1493** |
 | Communes with `code_postal: null` | **27** |
-| Distinct non-null postal codes | **1471** |
+| Distinct non-null postal codes | **1476** |
 | Codes shared by more than one commune | **38** |
 | Malformed codes | **0** |
 
 Two consequences that are structural, not incidental:
 
-- **A postal-code lookup returns a list, never a single record.** 1514 communes carry only
-  1471 distinct codes, so 38 codes are shared. A `Map<string, Commune>` or a
+- **A postal-code lookup returns a list, never a single record.** 1493 communes carry only
+  1476 distinct codes, so 17 codes are shared. A `Map<string, Commune>` or a
   `dict[str, Commune]` would silently drop records depending on insertion order. Both
   packages return a collection. See [`../shared/contract/ids.md`](../shared/contract/ids.md).
 - **A postal code is not an identifier.** It does not identify a commune, it is not unique,
-  and 27 communes do not have one at all. Use the wilaya code plus the record id.
+  and 48 communes do not have one at all. Use the wilaya code plus the record id.
 
 Every code is validated as exactly five ASCII digits at build time. (This is stricter than it
 looks: Python's `\d` and `str.isdigit()` accept Arabic-Indic digits, so `"١٦٠٠٠"` would pass
@@ -142,11 +142,64 @@ a naive check in one language and fail in the other — the validation uses an e
 `[0-9]` class in both. See the language notes in
 [`../shared/contract/README.md`](../shared/contract/README.md).)
 
-### The 27 communes with no postal code
+### The 48 communes with no postal code
 
-These are published as `null`. **No source available to this project has them**, and none has
-been guessed. They are exported as a list — `COMMUNES_MISSING_POSTAL_CODE` in both packages —
-and pinned in `shared/fixtures/ground-truth.json`, so the count cannot silently drift.
+These are published as `null`, and none has been guessed. They are exported as a list —
+`COMMUNES_MISSING_POSTAL_CODE` in both packages — and pinned in
+`shared/fixtures/ground-truth.json`, so the count cannot silently drift.
+
+**`null` has two causes, and the distinction matters.** 27 of the 48 are *never published*: no
+source available to this project has a code for them. The other **21 were withdrawn** — they
+shipped holding a code that belongs elsewhere, and no replacement could be sourced to the
+standard below:
+
+| commune | shipped | that code's wilaya |
+|---|---|---|
+| `16-cheraga-hammamet` (Alger) | `12016` | 12 |
+| `31-ain-turk-ain-turk` (Oran) | `10033` | 10 |
+| `23-ain-el-berda-el-eulma` (Annaba) | `19001` | 19 |
+| `20-ain-el-hadjar-ain-el-hadjar` (Saida) | `10031` | 10 |
+| `20-el-hassasna-maamora` (Saida) | `10071` | 10 |
+| `21-ben-azzouz-el-marsa` (Skikda) | `02015` | 02 |
+| `27-mesra-mansourah` (Mostaganem) | `13062` | 13 |
+| `29-ain-fares-ain-fares` (Mascara) | `28023` | 28 |
+| `29-mohammadia-mohammadia` (Mascara) | `16058` | 16 |
+| `30-sidi-khouiled-ain-beida` (Ouargla) | `04001` | 04 |
+| `34-mansourah-ouled-sidi-brahim` (Bordj Bou Arreridj) | `28032` | 28 |
+| `35-isser-timezrit` (Boumerdes) | `06019` | 06 |
+| `36-el-tarf-zitouna` (El Tarf) | `21028` | 21 |
+| `38-lazharia-larbaa` (Tissemsilt) | `09002` | 09 |
+| `38-bordj-bounaama-sidi-slimane` (Tissemsilt) | `30030` | 30 |
+| `39-robbah-el-ogla` (El Oued) | `12015` | 12 |
+| `44-ain-lechiakh-ain-soltane` (Ain Defla) | `20029` | 20 |
+| `46-beni-saf-emir-abdelkader` (Ain Temouchent) | `18010` | 18 |
+| `47-mansourah-mansoura` (Ghardaia) | `34008` | 34 |
+| `48-ammi-moussa-el-hassi` (Relizane) | `05116` | 05 |
+| `48-ammi-moussa-el-ouldja` (Relizane) | `19046` | 19 |
+
+Every withdrawal is recorded in `data/raw/postal-corrections.json` with its citation, and the
+build fails if the ledger and the data disagree (assertions A21–A24). A withdrawal is therefore
+**auditable**: you can see what it used to say, why it stopped saying it, and on whose authority.
+
+**The sourcing bar, learned the hard way.** This column holds **one numbering family**: 1493
+codes, of which 1470 are `NN0xx`; the 23 exceptions are `NN1xx` clustered in wilayas 05, 15, 16
+and 19. Algeria also uses a second, 100-increment locality numbering — the one where Bouhadjar is
+`36300`, while this dataset records Bouhadjar as `36005`. **A value from the other family is wrong
+as a value in this column even when it is a real postal code somewhere.**
+
+Independent verification caught three codes that had been written from that other family —
+`31300` for Aïn El Turck, `44240` for Aïn Soltane, `30120` for Aïn Beïda — each of which was the
+*only* non-`NN0xx` code in its entire wilaya. All three are withdrawn. The same check settled two
+codes in the other direction: `26036` for Ouled Brahim and `36011` for Aïn Kerma both sit exactly
+where this dataset's own sibling codes predict (`36011` between Aïn El Assel `36010` and Asfour
+`36012`), and both replaced a value that did not.
+
+So a candidate code must now clear two tests, not one: an external citation **and** agreement with
+the family its wilaya already uses. Prefix agreement alone — "it starts with 36, so it is El
+Tarf's" — is what produced the `36330` error, and is not sourcing.
+
+For a consumer the two causes behave identically — `postalCode === null`, do not invent one —
+which is why they share the one exported list rather than splitting the public API.
 
 If you have an official source for any row below, please open a
 [data fix](../.github/ISSUE_TEMPLATE/data-fix.yml) with the citation. Filling one is a
@@ -234,7 +287,7 @@ The dataset's own note on how the hierarchy was reassembled around them, quoted 
 > 69 nouvelles wilayas. Une daira scindee par la reforme apparait sous chaque wilaya
 > concernee."*
 
-That is why a daïra name can legitimately appear under more than one wilaya: 591
+That is why a daïra name can legitimately appear under more than one wilaya: 566
 (wilaya, daïra) pairs carry only 545 distinct names, because the reform split some daïras
 across new wilaya boundaries. `El Marsa` appears under 2, 16 and 21; `Ain Bessem` under 10 and
 20.
@@ -254,6 +307,40 @@ of the new wilayas still carry their old prefixes) and shared daïra names **cor
 of the 11 rows, disagree on 2, and say nothing at all about the remaining 6**. Two
 independent heuristics agreeing a quarter of the time is the strongest possible argument for
 publishing neither. Neither is a source.
+
+> **Research note, 2026-11-18 — candidates checked, deliberately still not written down.**
+>
+> Two secondary web sources were examined. They agree with each other on which wilaya *mère* each
+> of the 11 came from, and that agrees with the postal-prefix candidate already recorded in every
+> row's `todo` string in `data/raw/reform.json` — 11 times out of 11. The pairs are not reproduced
+> here; they live in that file, which is the one place allowed to hold a candidate, and
+> `tests/docs.test.ts` fails this document if a pair appears in it.
+>
+> **The 11/11 is the reason it was not written down, not a reason to write it.**
+> `scripts/build-data.ts` says in its own comment that "a postal-prefix guess agrees with the
+> postal-prefix cross-check by construction", and warning W1 stays silent on precisely this case.
+> The postal-prefix candidate is derived from the same commune records, so it is not a second
+> opinion — it is the same opinion restated. Strip it out and the evidence is two web pages, one of
+> them demonstrably unreliable (below), weighed against a field that `parentWilaya` serves to every
+> consumer without consulting `confidence`, and that misroutes real post when wrong. The bar stays
+> where ADR-005 put it: the text of JO n°25.
+>
+> **A conflict that should make anyone distrust web sources on this reform.** The same two sources
+> disagree with this dataset about **which number each new wilaya carries** — not about parentage.
+> One ordering matches ours, and the news outlet *Algérie Éco* independently publishes ours. The
+> other, from `dzbuild.com` and `ouikayen.com` (both citing décret 26-206), permutes codes 60–69.
+> That permuted ordering is exactly the list of wilayas *mères* sorted by code ascending, which is
+> what one would expect a content farm to generate from a parent table.
+>
+> Our codes are corroborated from inside the dataset and theirs are not. For each new wilaya, the
+> postal codes actually carried by the communes we assign to it match the prefix of the parent in
+> its own `todo` string — so the code, the commune set and the prefix all agree. Under the permuted
+> ordering they would not. That is evidence for the codes we ship, not proof.
+>
+> Both sources also attribute the *numbering* to **décret présidentiel 26-206 (JO n°40, 25 May
+> 2026)** rather than to Loi 26-06 (JO n°25), which is what `SOURCE_LAW` cites. If so, the law
+> created the wilayas and a later decree numbered them, and our provenance string names only the
+> first. Unverified — do not change `SOURCE_LAW` on the strength of two web pages.
 
 So the mapping **ships unfilled**:
 
@@ -292,12 +379,29 @@ non-null `parentCode` must carry a non-empty `source` and a `confidence` other t
 `{ parentCode: <some code>, source: null, confidence: "unverified" }` would build clean and
 ship a guess to every consumer — reproduced before it was fixed.
 
-The postal-prefix cross-check is a **build warning that can never fail the build**. On data
-known to be correct, the prefix disagrees with the commune's own wilaya code for **94 of the
-1408** communes in wilayas 1–58 — **6.7 %**. A rule that wrong cannot be an assertion: the
-first maintainer to enter a correct-but-prefix-divergent value from the *JO* would otherwise
-be told by a red CI run that the *Journal Officiel* is wrong. There is deliberately no flag
-that promotes it to a hard failure.
+The postal-prefix cross-check is a **build warning that can never fail the build**. The prefix
+disagrees with the commune's own wilaya code for **94 of the 1408** communes in wilayas 1–58 —
+**6.7 %**. A rule that wrong cannot be an assertion: the first maintainer to enter a
+correct-but-prefix-divergent value from the *JO* would otherwise be told by a red CI run that the
+*Journal Officiel* is wrong. There is deliberately no flag that promotes it to a hard failure.
+
+> **Correction (ADR-018).** An earlier version of this paragraph described all 94 of those rows
+> as "data known to be correct". That is true of the 58 rows in wilayas 49–58, where a wilaya
+> carved out of an older one inherits its parent's postal space and Algérie Poste has not
+> renumbered. It was **not** true of the other 36, in wilayas 01–48 where no reform explains
+> them: every one carried a postal code also held by a same-named commune in another wilaya, and
+> 26 additionally sat alone in a daïra belonging to that other wilaya. That is a name-collision
+> join artifact inherited from `othmanus/algeria-cities`, not a correct-but-divergent prefix.
+>
+> **Six are now corrected**, each cited in `data/raw/postal-corrections.json` and enforced by
+> assertions A21–A24 — including the two that gave this defect its clearest shape: `Aïn El Turck`
+> (Oran) shipped Bouira's `10033` under a daïra `Bouira` that Oran does not have, and Saïda's
+> `Ain El Hadjar` shipped Bouira's `10031` under Bouira's daïra `Ain Bessem`, byte-identical to
+> Bouira's own same-named commune.
+>
+> Run `node scripts/audit-postal-attribution.mjs` for the current list: **30** rows remain, plus
+> 33 container candidates. Those are unsourced, so they are reported rather than changed — treat
+> the postal code and daïra of any row the audit reports as unverified.
 
 **The unverified postal-prefix candidates that live in the stub's per-row `todo` strings are
 build input only, and are stripped from both published packages.** `publish-npm.yml` deletes
@@ -310,7 +414,7 @@ directory). A disclaimer attached to a guess is still a guess once it is inside 
 ## 5. Names, and what has *not* been normalized
 
 - Every wilaya, daïra and commune carries `nom_ar`, `nom_fr` and `nom_en`.
-- **`nom_en` equals `nom_fr` for all but one record in 2201.** Algerian place names are
+- **`nom_en` equals `nom_fr` for all but one record in 2176.** Algerian place names are
   written in the Latin alphabet in French, and genuine English exonyms are almost
   non-existent. The one is **Algiers** (wilaya 16, `nom_fr` `Alger`). No other English name
   has been invented to make the field look useful.
@@ -337,14 +441,14 @@ library-assigned, not official. What that does and does not promise is set out i
 | Claim | Value | Pinned by |
 |---|---|---|
 | Wilayas | 69 | build assertion; `WILAYA_COUNT`; `shared/validate.py` |
-| Daïras | 591 | build assertion; `DAIRA_COUNT` |
+| Daïras | 566 | build assertion; `DAIRA_COUNT` |
 | Communes | 1541 | build assertion; `COMMUNE_COUNT` |
-| Communes with a postal code | 1514 | `POSTAL_CODE_COUNT`; `ground-truth.json` |
+| Communes with a postal code | 1493 | `POSTAL_CODE_COUNT`; `ground-truth.json` |
 | Communes without one | 27 | `MISSING_POSTAL_CODE_COUNT`; `COMMUNES_MISSING_POSTAL_CODE` |
-| Distinct postal codes | 1471 | `ground-truth.json` |
+| Distinct postal codes | 1476 | `ground-truth.json` |
 | Codes shared by >1 commune | 38 | `ground-truth.json` |
 | Malformed postal codes | 0 | build assertion |
-| Synthesized ids | 2132, all unique, none malformed | build assertions; `shared/fixtures/ids.json` |
+| Synthesized ids | 2107, all unique, none malformed | build assertions; `shared/fixtures/ids.json` |
 | Reform `parentCode` values supplied | **0 of 11** | `REFORM.mappingComplete === false` |
 | Data edition | `DATA_VERSION` `"2.0.0"` | `meta.ts`, `_constants.py` |
 | Source law | `"Loi 26-06 du 4 avril 2026, JO n°25"` | `SOURCE_LAW` |

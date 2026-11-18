@@ -35,11 +35,11 @@ SOURCE_LAW = "Loi 26-06 du 4 avril 2026, JO n°25"
 LAST_VERIFIED = "2026-07-20"
 
 WILAYA_COUNT = 69
-DAIRA_COUNT = 591
+DAIRA_COUNT = 566
 COMMUNE_COUNT = 1541
-POSTAL_CODE_COUNT = 1514
+POSTAL_CODE_COUNT = 1493
 
 #: Communes published with no postal code. They are listed by id in
 #: ``COMMUNES_MISSING_POSTAL_CODE`` and cannot be filled - no available source
 #: has them.
-MISSING_POSTAL_CODE_COUNT = 27
+MISSING_POSTAL_CODE_COUNT = 48

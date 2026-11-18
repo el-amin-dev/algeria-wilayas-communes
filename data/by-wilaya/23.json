@@ -4,7 +4,7 @@
   "nom_ar": "عنابة",
   "nom_fr": "Annaba",
   "nom_en": "Annaba",
-  "nb_dairas": 7,
+  "nb_dairas": 6,
   "nb_communes": 12,
   "dairas": [
     {
@@ -103,23 +103,15 @@
           "nom_fr": "Cheurfa",
           "nom_en": "Cheurfa",
           "code_postal": "23025"
-        }
-      ],
-      "nb_communes": 2
-    },
-    {
-      "nom_ar": "العلمة",
-      "nom_fr": "El Eulma",
-      "nom_en": "El Eulma",
-      "communes": [
+        },
         {
           "nom_ar": "العلمة",
           "nom_fr": "El Eulma",
           "nom_en": "El Eulma",
-          "code_postal": "19001"
+          "code_postal": null
         }
       ],
-      "nb_communes": 1
+      "nb_communes": 3
     },
     {
       "nom_ar": "شطايبي",

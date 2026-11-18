@@ -36,15 +36,15 @@ const EXPECTED_WILAYA_CODES: number[] = Array.from({ length: 69 }, (_, i) => i +
 // ─────────────────────────────────────────────────────────────────────────────
 
 describe("counts", () => {
-  it("has 69 wilayas, 591 daïras and 1541 communes", () => {
+  it("has 69 wilayas, 566 daïras and 1541 communes", () => {
     expect(WILAYAS).toHaveLength(69);
-    expect(DAIRAS).toHaveLength(591);
+    expect(DAIRAS).toHaveLength(566);
     expect(COMMUNES).toHaveLength(1541);
   });
 
   it("sums the denormalized counters back to the record counts", () => {
     expect(WILAYAS.reduce((n, w) => n + w.communeCount, 0)).toBe(1541);
-    expect(WILAYAS.reduce((n, w) => n + w.dairaCount, 0)).toBe(591);
+    expect(WILAYAS.reduce((n, w) => n + w.dairaCount, 0)).toBe(566);
     expect(DAIRAS.reduce((n, d) => n + d.communeCount, 0)).toBe(1541);
   });
 
@@ -56,9 +56,9 @@ describe("counts", () => {
 });
 
 describe("postal codes", () => {
-  it("has 27 missing and 1514 present", () => {
-    expect(COMMUNES.filter((c) => c.postalCode === null)).toHaveLength(27);
-    expect(COMMUNES.filter((c) => c.postalCode !== null)).toHaveLength(1514);
+  it("has 48 missing and 1493 present", () => {
+    expect(COMMUNES.filter((c) => c.postalCode === null)).toHaveLength(48);
+    expect(COMMUNES.filter((c) => c.postalCode !== null)).toHaveLength(1493);
   });
 
   it("has zero malformed codes — every non-null value is exactly five digits", () => {
@@ -68,7 +68,7 @@ describe("postal codes", () => {
     expect(malformed).toEqual([]);
   });
 
-  it("has 1471 distinct codes, so 38 codes are shared by more than one commune", () => {
+  it("has 1476 distinct codes, so 17 codes are shared by more than one commune", () => {
     const distinct = new Set<string>();
     const occurrences = new Map<string, number>();
     for (const c of COMMUNES) {
@@ -76,17 +76,17 @@ describe("postal codes", () => {
       distinct.add(c.postalCode);
       occurrences.set(c.postalCode, (occurrences.get(c.postalCode) ?? 0) + 1);
     }
-    expect(distinct.size).toBe(1471);
-    expect([...occurrences.values()].filter((n) => n > 1)).toHaveLength(38);
+    expect(distinct.size).toBe(1476);
+    expect([...occurrences.values()].filter((n) => n > 1)).toHaveLength(17);
   });
 
-  it("lists exactly the 27 communes with no postal code, in both directions", () => {
-    // The 27 CANNOT be filled — no available source has them. They ship as
+  it("lists exactly the 48 communes with no postal code, in both directions", () => {
+    // The 48 CANNOT be filled — no available source has them. They ship as
     // `null` behind an exported array rather than being guessed. Never invent
     // a record: one fabricated postal code ends the package's credibility.
-    expect(COMMUNES_MISSING_POSTAL_CODE).toHaveLength(27);
+    expect(COMMUNES_MISSING_POSTAL_CODE).toHaveLength(48);
     const missing = new Set<string>(COMMUNES_MISSING_POSTAL_CODE);
-    expect(missing.size).toBe(27);
+    expect(missing.size).toBe(48);
 
     // Forward: every null-postal-code commune is listed.
     const unlisted = COMMUNES.filter((c) => c.postalCode === null && !missing.has(c.id)).map(
@@ -116,21 +116,21 @@ describe("postal codes", () => {
     const src = JSON.parse(
       readFileSync(`${REPO_ROOT}data/algeria.json`, "utf8"),
     ) as AlgeriaCounters;
-    expect(src.codes_postaux_renseignes).toBe(1514);
-    expect(src.codes_postaux_manquants).toBe(27);
+    expect(src.codes_postaux_renseignes).toBe(1493);
+    expect(src.codes_postaux_manquants).toBe(48);
     expect(src.codes_postaux_renseignes + src.codes_postaux_manquants).toBe(COMMUNES.length);
   });
 });
 
 describe("uniqueness", () => {
-  it("mints 591 unique daira ids and 1541 unique commune ids", () => {
-    expect(new Set<string>(DAIRAS.map((d) => d.id)).size).toBe(591);
+  it("mints 566 unique daira ids and 1541 unique commune ids", () => {
+    expect(new Set<string>(DAIRAS.map((d) => d.id)).size).toBe(566);
     expect(new Set<string>(COMMUNES.map((c) => c.id)).size).toBe(1541);
   });
 
   it("has unique (wilaya, name) composite keys — this is what makes the ids safe", () => {
     expect(new Set<string>(COMMUNES.map((c) => `${c.wilaya}|${c.name.fr}`)).size).toBe(1541);
-    expect(new Set<string>(DAIRAS.map((d) => `${d.wilaya}|${d.name.fr}`)).size).toBe(591);
+    expect(new Set<string>(DAIRAS.map((d) => `${d.wilaya}|${d.name.fr}`)).size).toBe(566);
   });
 
   it("does NOT have unique bare names — 38 commune names repeat across wilayas", () => {
@@ -139,10 +139,13 @@ describe("uniqueness", () => {
     // it. It is not redundant.
     const occurrences = new Map<string, number>();
     for (const c of COMMUNES) occurrences.set(c.name.fr, (occurrences.get(c.name.fr) ?? 0) + 1);
+    // 38 here is a count of repeated NAMES and is unrelated to the 17 shared
+    // postal codes. It did not move with the ADR-018 corrections, because those
+    // re-parented six communes and deleted none.
     expect([...occurrences.values()].filter((n) => n > 1)).toHaveLength(38);
   });
 
-  it("has 545 distinct daira names for 591 daïras", () => {
+  it("has 545 distinct daira names for 566 daïras", () => {
     expect(new Set<string>(DAIRAS.map((d) => d.name.fr)).size).toBe(545);
   });
 
@@ -205,10 +208,10 @@ describe("provenance", () => {
 
   it("exports the five count constants, and they agree with the arrays", () => {
     expect(WILAYA_COUNT).toBe(69);
-    expect(DAIRA_COUNT).toBe(591);
+    expect(DAIRA_COUNT).toBe(566);
     expect(COMMUNE_COUNT).toBe(1541);
-    expect(POSTAL_CODE_COUNT).toBe(1514);
-    expect(MISSING_POSTAL_CODE_COUNT).toBe(27);
+    expect(POSTAL_CODE_COUNT).toBe(1493);
+    expect(MISSING_POSTAL_CODE_COUNT).toBe(48);
 
     expect(WILAYA_COUNT).toBe(WILAYAS.length);
     expect(DAIRA_COUNT).toBe(DAIRAS.length);

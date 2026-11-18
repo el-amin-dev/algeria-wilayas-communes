@@ -77,7 +77,7 @@ class TestV1Shapes:
 
     def test_counts(self) -> None:
         assert len(legacy.get_wilayas()) == 69
-        assert len(legacy.get_dairas()) == 591
+        assert len(legacy.get_dairas()) == 566
         assert len(legacy.get_communes()) == 1541
 
     def test_rows_are_plain_dicts(self) -> None:
@@ -137,10 +137,10 @@ class TestFindByPostalCode:
         assert legacy.find_by_postal_code("00000") == []
 
     def test_the_none_trap_is_preserved(self) -> None:
-        # A genuine v1 quirk: it compares with == and 27 communes have a null
+        # A genuine v1 quirk: it compares with == and 48 communes have a null
         # code, so passing None returns those 27 instead of nothing. Preserved
         # because it is v1's behaviour, not because it is a good idea.
-        assert len(legacy.find_by_postal_code(None)) == 27
+        assert len(legacy.find_by_postal_code(None)) == 48
 
 
 class TestFindCommuneKeepsV1Behaviour:

@@ -136,7 +136,7 @@ class TestOptions:
         assert len(search("ain")) == 20
 
     def test_wilaya_scoping_restricts_every_result(self) -> None:
-        # The cheapest big win: the candidate set drops from 2201 records to the
+        # The cheapest big win: the candidate set drops from 2176 records to the
         # few dozen in one wilaya before a single key comparison runs.
         assert all(r.wilaya.code == 19 for r in search("ain azel", wilaya=19))
 
@@ -150,7 +150,7 @@ class TestOptions:
 
     def test_lang_en_finds_the_one_exonym(self) -> None:
         # `Algiers` lives in a one-entry override table rather than a third full
-        # key layer, because it is the only record in 2201 where en != fr.
+        # key layer, because it is the only record in 2176 where en != fr.
         results = search("algiers", lang="en")
         assert results[0].wilaya.code == 16
         assert results[0].matched == "en"

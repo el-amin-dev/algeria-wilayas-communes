@@ -4,7 +4,7 @@
   "nom_ar": "الطارف",
   "nom_fr": "El Tarf",
   "nom_en": "El Tarf",
-  "nb_dairas": 9,
+  "nb_dairas": 7,
   "nb_communes": 24,
   "dairas": [
     {
@@ -29,23 +29,15 @@
           "nom_fr": "El Tarf",
           "nom_en": "El Tarf",
           "code_postal": "36000"
-        }
-      ],
-      "nb_communes": 3
-    },
-    {
-      "nom_ar": "الزيتونة",
-      "nom_fr": "Zitouna",
-      "nom_en": "Zitouna",
-      "communes": [
+        },
         {
           "nom_ar": "الزيتونة",
           "nom_fr": "Zitouna",
           "nom_en": "Zitouna",
-          "code_postal": "21028"
+          "code_postal": null
         }
       ],
-      "nb_communes": 1
+      "nb_communes": 4
     },
     {
       "nom_ar": "البسباس",
@@ -74,20 +66,6 @@
       "nb_communes": 3
     },
     {
-      "nom_ar": "بوتليليس",
-      "nom_fr": "Boutlelis",
-      "nom_en": "Boutlelis",
-      "communes": [
-        {
-          "nom_ar": "عين الكرمة",
-          "nom_fr": "Ain Kerma",
-          "nom_en": "Ain Kerma",
-          "code_postal": "31059"
-        }
-      ],
-      "nb_communes": 1
-    },
-    {
       "nom_ar": "بوحجار",
       "nom_fr": "Bouhadjar",
       "nom_en": "Bouhadjar",
@@ -109,9 +87,15 @@
           "nom_fr": "Oued Zitoun",
           "nom_en": "Oued Zitoun",
           "code_postal": "36044"
+        },
+        {
+          "nom_ar": "عين الكرمة",
+          "nom_fr": "Ain Kerma",
+          "nom_en": "Ain Kerma",
+          "code_postal": "36011"
         }
       ],
-      "nb_communes": 3
+      "nb_communes": 4
     },
     {
       "nom_ar": "بن مهيدي",

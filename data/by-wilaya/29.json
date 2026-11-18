@@ -4,7 +4,7 @@
   "nom_ar": "معسكر",
   "nom_fr": "Mascara",
   "nom_en": "Mascara",
-  "nb_dairas": 18,
+  "nb_dairas": 16,
   "nb_communes": 47,
   "dairas": [
     {
@@ -67,23 +67,15 @@
           "nom_fr": "El Ghomri",
           "nom_en": "El Ghomri",
           "code_postal": "29023"
-        }
-      ],
-      "nb_communes": 5
-    },
-    {
-      "nom_ar": "الدار البيضاء",
-      "nom_fr": "Dar El Beida",
-      "nom_en": "Dar El Beida",
-      "communes": [
+        },
         {
           "nom_ar": "المحمدية",
           "nom_fr": "Mohammadia",
           "nom_en": "Mohammadia",
-          "code_postal": "16058"
+          "code_postal": null
         }
       ],
-      "nb_communes": 1
+      "nb_communes": 6
     },
     {
       "nom_ar": "تيغنيف",
@@ -193,9 +185,15 @@
           "nom_fr": "El Mamounia",
           "nom_en": "El Mamounia",
           "code_postal": "29056"
+        },
+        {
+          "nom_ar": "عين فارس",
+          "nom_fr": "Ain Fares",
+          "nom_en": "Ain Fares",
+          "code_postal": null
         }
       ],
-      "nb_communes": 1
+      "nb_communes": 2
     },
     {
       "nom_ar": "بوحنيفية",
@@ -222,20 +220,6 @@
         }
       ],
       "nb_communes": 3
-    },
-    {
-      "nom_ar": "عين الملح",
-      "nom_fr": "Ain El Melh",
-      "nom_en": "Ain El Melh",
-      "communes": [
-        {
-          "nom_ar": "عين فارس",
-          "nom_fr": "Ain Fares",
-          "nom_en": "Ain Fares",
-          "code_postal": "28023"
-        }
-      ],
-      "nb_communes": 1
     },
     {
       "nom_ar": "عوف",

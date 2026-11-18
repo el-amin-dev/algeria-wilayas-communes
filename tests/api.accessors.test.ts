@@ -53,8 +53,15 @@ import type { WilayaCode } from "../packages/js/src/index";
  */
 const PUBLIC_API = [
   "COMMUNES_MISSING_POSTAL_CODE",
+  // The five size constants were generated from the start but only re-exported
+  // on the Python side until now. They are inlined literals, so exporting them
+  // adds no data to any bundle.
+  "COMMUNE_COUNT",
+  "DAIRA_COUNT",
   "DATA_VERSION",
   "LAST_VERIFIED",
+  "MISSING_POSTAL_CODE_COUNT",
+  "POSTAL_CODE_COUNT",
   // The reform surface is exported UNCONDITIONALLY, even though the 58 -> 69
   // mapping is still a stub and both resolvers throw. A conditionally-present
   // export would make the emitted .d.ts depend on data state, so tsc, publint and
@@ -62,6 +69,7 @@ const PUBLIC_API = [
   "REFORM",
   "ReformMappingUnavailableError",
   "SOURCE_LAW",
+  "WILAYA_COUNT",
   "assertWilayaCode",
   "byWilaya",
   "findByPostalCode",
@@ -81,6 +89,7 @@ const PUBLIC_API = [
   "getDairasOfWilaya",
   "getWilaya",
   "getWilayas",
+  "isCommuneMissingPostalCode",
   "isPostalCode",
   "isWilayaCode",
   "resolveCurrentWilaya",
@@ -117,9 +126,9 @@ describe("the exported API surface", () => {
 // ── Counts, through the public accessors ────────────────────────────────────
 
 describe("bulk accessors", () => {
-  it("returns 69 wilayas, 591 daïras and 1541 communes", () => {
+  it("returns 69 wilayas, 566 daïras and 1541 communes", () => {
     expect(getWilayas()).toHaveLength(69);
-    expect(getDairas()).toHaveLength(591);
+    expect(getDairas()).toHaveLength(566);
     expect(getCommunes()).toHaveLength(1541);
   });
 
@@ -140,7 +149,7 @@ describe("bulk accessors", () => {
 
   it("sums the denormalized counters back to the record counts", () => {
     expect(getWilayas().reduce((n, w) => n + w.communeCount, 0)).toBe(1541);
-    expect(getWilayas().reduce((n, w) => n + w.dairaCount, 0)).toBe(591);
+    expect(getWilayas().reduce((n, w) => n + w.dairaCount, 0)).toBe(566);
     expect(getDairas().reduce((n, d) => n + d.communeCount, 0)).toBe(1541);
   });
 });
@@ -212,7 +221,9 @@ describe("plural lookups return frozen arrays, not live index buckets", () => {
     ];
     for (const attempt of attempts) expect(attempt).toThrow(TypeError);
 
-    expect(findByPostalCode("10031")).toHaveLength(2);
+    // 10031 is Bouira's. Saida's same-named commune used to carry it too; that
+    // was the join artifact and its code is now withdrawn (ADR-018).
+    expect(findByPostalCode("10031")).toHaveLength(1);
     expect(findCommunesByName("Sidi Ameur")).toHaveLength(2);
     expect(getCommunesOfWilaya(19)).toHaveLength(60);
     expect(getDairasOfWilaya(19)).toHaveLength(20);
@@ -287,7 +298,7 @@ describe("record shapes, anchored on real records", () => {
     const setif = getWilayas().find((w) => w.code === 19);
     expect(setif?.name.fr).toBe("Setif");
     expect(setif?.name.ar).toBe("سطيف");
-    // `en` equals `fr` here, as it does for 2200 of the 2201 records.
+    // `en` equals `fr` here, as it does for 2200 of the 2176 records.
     expect(setif?.name.en).toBe("Setif");
     expect(setif?.dairaCount).toBe(20);
     expect(setif?.communeCount).toBe(60);
@@ -296,7 +307,7 @@ describe("record shapes, anchored on real records", () => {
   it("references the parent wilaya by NUMBER on a daira and a commune", () => {
     // Not by object. `d.wilaya` is `19`, not `{ code: 19, ... }` — the generated
     // shape is kept verbatim through the accessor layer, so a consumer joins on
-    // the code rather than paying for a denormalized back-reference on 2132
+    // the code rather than paying for a denormalized back-reference on 2107
     // records.
     const daira = getDairas().find((d) => d.id === "19-ain-azel");
     expect(daira?.wilaya).toBe(19);
@@ -359,20 +370,20 @@ describe("record shapes, anchored on real records", () => {
 
 // ── Postal-code nulls, through the public API ───────────────────────────────
 
-describe("the 27 communes with no postal code", () => {
-  it("has 27 nulls and 1514 present", () => {
-    expect(getCommunes().filter((c) => c.postalCode === null)).toHaveLength(27);
-    expect(getCommunes().filter((c) => c.postalCode !== null)).toHaveLength(1514);
+describe("the 48 communes with no postal code", () => {
+  it("has 48 nulls and 1493 present", () => {
+    expect(getCommunes().filter((c) => c.postalCode === null)).toHaveLength(48);
+    expect(getCommunes().filter((c) => c.postalCode !== null)).toHaveLength(1493);
   });
 
-  it("re-exports the 27 ids, and they agree with the records in both directions", () => {
-    // The 27 CANNOT be filled — no available source has them. They ship as
+  it("re-exports the 48 ids, and they agree with the records in both directions", () => {
+    // The 48 CANNOT be filled — no available source has them. They ship as
     // `null` behind an exported array rather than being guessed. Never invent a
     // record: one fabricated postal code ends the package's credibility.
-    expect(COMMUNES_MISSING_POSTAL_CODE).toHaveLength(27);
+    expect(COMMUNES_MISSING_POSTAL_CODE).toHaveLength(48);
 
     const listed = new Set<string>(COMMUNES_MISSING_POSTAL_CODE);
-    expect(listed.size).toBe(27);
+    expect(listed.size).toBe(48);
 
     const unlisted = getCommunes()
       .filter((c) => c.postalCode === null && !listed.has(c.id))
@@ -413,5 +424,69 @@ describe("provenance constants", () => {
     // nothing here.
     expect(typeof LAST_VERIFIED).toBe("string");
     expect(LAST_VERIFIED).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+  });
+});
+
+describe("the size constants", () => {
+  // These are the constants that existed in Python and not in JavaScript until
+  // this release. Asserting them against the data rather than against literals
+  // is the whole point: a hand-written 69 would not notice a reform, and the
+  // next data change has to move both the constant and the records together.
+  it("each constant equals what the dataset actually contains", () => {
+    expect(api.WILAYA_COUNT).toBe(api.getWilayas().length);
+    expect(api.DAIRA_COUNT).toBe(api.getDairas().length);
+    expect(api.COMMUNE_COUNT).toBe(api.getCommunes().length);
+
+    const withCode = api.getCommunes().filter((c) => c.postalCode !== null);
+    expect(api.POSTAL_CODE_COUNT).toBe(withCode.length);
+    expect(api.MISSING_POSTAL_CODE_COUNT).toBe(api.COMMUNE_COUNT - api.POSTAL_CODE_COUNT);
+    expect(api.MISSING_POSTAL_CODE_COUNT).toBe(api.COMMUNES_MISSING_POSTAL_CODE.length);
+  });
+
+  it("matches the counts Python exports, so the two packages cannot drift", () => {
+    // The literals here are duplicated from _constants.py on purpose. The
+    // cross-language fixture proves the records agree; this proves the numbers
+    // a consumer reads without touching a record agree too.
+    expect(api.WILAYA_COUNT).toBe(69);
+    expect(api.DAIRA_COUNT).toBe(566);
+    expect(api.COMMUNE_COUNT).toBe(1541);
+    expect(api.POSTAL_CODE_COUNT).toBe(1493);
+    expect(api.MISSING_POSTAL_CODE_COUNT).toBe(48);
+  });
+});
+
+describe("isCommuneMissingPostalCode", () => {
+  it("is true for every id in the published hole list, and only those", () => {
+    for (const id of api.COMMUNES_MISSING_POSTAL_CODE) {
+      expect(api.isCommuneMissingPostalCode(id)).toBe(true);
+    }
+    const holes = new Set<string>(api.COMMUNES_MISSING_POSTAL_CODE);
+    const withCode = api.getCommunes().filter((c) => !holes.has(c.id));
+    for (const c of withCode) {
+      expect(api.isCommuneMissingPostalCode(c.id)).toBe(false);
+    }
+  });
+
+  it("agrees with the record's own postalCode for all 1541 communes", () => {
+    // The list and the records are generated from one source, so disagreement
+    // here means the generator emitted two different answers to one question.
+    for (const c of api.getCommunes()) {
+      expect(api.isCommuneMissingPostalCode(c.id)).toBe(c.postalCode === null);
+    }
+  });
+
+  it("returns false for an id that does not exist, rather than throwing", () => {
+    // "is this a known hole" is not "is this a valid id" -- getCommune answers
+    // the second question. Nothing in the accessor layer raises.
+    expect(api.isCommuneMissingPostalCode("not-a-commune")).toBe(false);
+    expect(api.isCommuneMissingPostalCode("")).toBe(false);
+  });
+
+  it("needs no cast at the call site, which is the reason it exists", () => {
+    // A plain `string` is accepted. The widening cast llms.txt used to document
+    // now lives inside the package. This is a type-level claim; it passes by
+    // compiling at all under vitest's typecheck mode.
+    const id: string = "19-ain-azel-ain-lahdjar";
+    expect(typeof api.isCommuneMissingPostalCode(id)).toBe("boolean");
   });
 });

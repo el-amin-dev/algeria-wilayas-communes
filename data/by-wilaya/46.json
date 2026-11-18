@@ -4,7 +4,7 @@
   "nom_ar": "عين تموشنت",
   "nom_fr": "Ain Temouchent",
   "nom_en": "Ain Temouchent",
-  "nb_dairas": 9,
+  "nb_dairas": 8,
   "nb_communes": 28,
   "dairas": [
     {
@@ -189,23 +189,15 @@
           "nom_fr": "Sidi Safi",
           "nom_en": "Sidi Safi",
           "code_postal": "46025"
-        }
-      ],
-      "nb_communes": 2
-    },
-    {
-      "nom_ar": "الطاهير",
-      "nom_fr": "Taher",
-      "nom_en": "Taher",
-      "communes": [
+        },
         {
           "nom_ar": "الأمير عبد القادر",
           "nom_fr": "Emir Abdelkader",
           "nom_en": "Emir Abdelkader",
-          "code_postal": "18010"
+          "code_postal": null
         }
       ],
-      "nb_communes": 1
+      "nb_communes": 3
     },
     {
       "nom_ar": "ولهاصة الغرابة",

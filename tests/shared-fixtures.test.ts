@@ -41,11 +41,11 @@ describe("shared/fixtures/ids.json", () => {
   });
 
   // The counts are stated separately from the deep-equal above so a size change
-  // reports as "591 vs 590" rather than as a diff of 591 strings.
-  it("is the 2132 synthesized ids, all unique", () => {
-    expect(ids.dairas).toHaveLength(591);
+  // reports as "566 vs 590" rather than as a diff of 566 strings.
+  it("is the 2107 synthesized ids, all unique", () => {
+    expect(ids.dairas).toHaveLength(566);
     expect(ids.communes).toHaveLength(1541);
-    expect(new Set(ids.dairas).size).toBe(591);
+    expect(new Set(ids.dairas).size).toBe(566);
     expect(new Set(ids.communes).size).toBe(1541);
   });
 });
@@ -84,7 +84,7 @@ describe("shared/fixtures/normalize.json", () => {
   });
 
   it("agrees with the shipped key index on count and distinctness", () => {
-    expect(norm.keys.count).toBe(4402);
+    expect(norm.keys.count).toBe(4352);
     expect(norm.keys.distinct).toBe(3055);
     expect(norm.refs.count).toBe(norm.keys.count);
   });
@@ -158,7 +158,7 @@ describe("shared/fixtures/ground-truth.json", () => {
     );
   });
 
-  it("records the one exonym in 2201 records", () => {
+  it("records the one exonym in 2176 records", () => {
     expect(truth.exonyms).toEqual(["Alger"]);
   });
 
@@ -187,7 +187,7 @@ describe("the fixtures are not empty", () => {
     expect(fixture<{ cases: unknown[] }>("normalize").cases.length).toBeGreaterThanOrEqual(25);
     expect(fixture<{ cases: unknown[] }>("search").cases.length).toBeGreaterThanOrEqual(30);
     const ids = fixture<{ dairas: string[]; communes: string[] }>("ids");
-    expect(ids.dairas).toHaveLength(591);
+    expect(ids.dairas).toHaveLength(566);
     expect(ids.communes).toHaveLength(1541);
   });
 
@@ -195,7 +195,7 @@ describe("the fixtures are not empty", () => {
     const norm = fixture<{ keys: { count: number; distinct: number; sha256: string } }>(
       "normalize",
     );
-    expect(norm.keys.count).toBe(4402);
+    expect(norm.keys.count).toBe(4352);
     expect(norm.keys.distinct).toBe(3055);
     expect(norm.keys.sha256).toHaveLength(64);
   });

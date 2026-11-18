@@ -9,6 +9,8 @@
   "scripts": {
     "build:data": "tsx scripts/build-data.ts",
     "data:diff": "node scripts/data-diff.mjs",
+    "corrections": "node scripts/apply-corrections.mjs",
+    "corrections:check": "node scripts/apply-corrections.mjs --check",
     "build": "pnpm -F algeria-wilayas-communes build",
     "lint:publish": "pnpm -F algeria-wilayas-communes lint:publish",
     "pack:check": "node benchmarks/pack-check.mjs",
@@ -26,8 +28,8 @@
     "test:coverage": "vitest run --coverage",
     "test:types": "vitest run --typecheck",
     "lint": "eslint .",
-    "format": "prettier --write \"*.{js,ts,json,yaml}\" .prettierrc \"scripts/**/*.ts\" \"tests/**/*.ts\" \"packages/js/src/**/*.ts\" \"packages/js/*.config.ts\" packages/js/tsconfig.json packages/js/package.json \"benchmarks/**/*.mjs\" \"scripts/**/*.mjs\"",
-    "format:check": "prettier --check \"*.{js,ts,json,yaml}\" .prettierrc \"scripts/**/*.ts\" \"tests/**/*.ts\" \"packages/js/src/**/*.ts\" \"packages/js/*.config.ts\" packages/js/tsconfig.json packages/js/package.json \"benchmarks/**/*.mjs\" \"scripts/**/*.mjs\"",
+    "format": "prettier --write \"*.{js,ts,json,yaml}\" .prettierrc \"scripts/**/*.ts\" \"tests/**/*.ts\" \"packages/js/src/**/*.ts\" \"packages/js/*.config.ts\" packages/js/tsconfig.json packages/js/package.json \"packages/mcp/src/**/*.ts\" \"packages/mcp/*.config.ts\" packages/mcp/package.json \"benchmarks/**/*.mjs\" \"scripts/**/*.mjs\"",
+    "format:check": "prettier --check \"*.{js,ts,json,yaml}\" .prettierrc \"scripts/**/*.ts\" \"tests/**/*.ts\" \"packages/js/src/**/*.ts\" \"packages/js/*.config.ts\" packages/js/tsconfig.json packages/js/package.json \"packages/mcp/src/**/*.ts\" \"packages/mcp/*.config.ts\" packages/mcp/package.json \"benchmarks/**/*.mjs\" \"scripts/**/*.mjs\"",
     "validate:data": "python3 shared/validate.py"
   },
   "devDependencies": {

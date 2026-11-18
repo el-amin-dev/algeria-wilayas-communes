@@ -99,7 +99,7 @@ def is_postal_code(value: object) -> TypeGuard[str]:
     """True if ``value`` is a well-formed 5-digit postal code.
 
     Well-formed, not *present in the dataset*: this is a shape check at the
-    boundary. Every one of the 1514 non-null codes in the data matches, and
+    boundary. Every one of the 1493 non-null codes in the data matches, and
     there are zero malformed values.
 
     Never trims. A code with surrounding whitespace is not a code.

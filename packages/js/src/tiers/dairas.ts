@@ -1,5 +1,5 @@
 /**
- * The **daïra tier** — the 591 daïras, and nothing that reaches a commune.
+ * The **daïra tier** — the 566 daïras, and nothing that reaches a commune.
  * `src/dairas.ts` is the published entry over this file and `./wilayas.ts`.
  *
  * Deliberately independent of the wilaya tier: a daïra carries its parent as
@@ -45,7 +45,7 @@ let dairaIndex: Map<string, Daira> | undefined;
  * Daïra id (`"19-ain-azel"`) → daïra.
  *
  * The id already *is* the composite `(wilaya, slug)` key — there are only 545
- * distinct daïra names for 591 daïras, which is precisely why the wilaya prefix
+ * distinct daïra names for 566 daïras, which is precisely why the wilaya prefix
  * is baked into the id rather than left to the caller to assemble.
  */
 function dairaIdx(): Map<string, Daira> {
@@ -87,13 +87,13 @@ function dairasOfWilayaIdx(): Map<WilayaCode, readonly Daira[]> {
  * record carries its parent as `wilaya: WilayaCode` — join with `getWilaya`
  * rather than expecting a denormalized name.
  *
- * @returns All 591 daïras. Frozen, never copied.
+ * @returns All 566 daïras. Frozen, never copied.
  *
  * @example
  * ```ts
  * import { getDairas } from "algeria-wilayas-communes/dairas";
  *
- * getDairas().length;                                       // → 591
+ * getDairas().length;                                       // → 566
  * getDairas().filter((d) => d.wilaya === 19).length;        // → 20   (Setif)
  * getDairas().find((d) => d.id === "19-ain-azel")?.name.fr; // → "Ain Azel"
  * ```
@@ -132,7 +132,7 @@ export function getDaira(id: string): Daira | undefined {
  *
  * @param code - A wilaya code, `1`..`69`.
  * @returns The wilaya's daïras, or an empty array. Never `undefined`. The union
- *   over all 69 codes is exactly 591 daïras.
+ *   over all 69 codes is exactly 566 daïras.
  *
  * @example
  * ```ts

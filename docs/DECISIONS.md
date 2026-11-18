@@ -170,7 +170,7 @@ A reader learns the shape once. Mixed examples make every module look like a dif
 
 Four exceptions stay, because in each the specific value *is* the fact being shown: the frozen v1
 README examples (`16`, `"16000"`, `"adrar"`), which are pinned as tests; `16` → `Algiers`, the only
-record in 2201 where `nom_en !== nom_fr`; `6` → `codeText` `"06"`, which is why `codeText` exists;
+record in 2176 where `nom_en !== nom_fr`; `6` → `codeText` `"06"`, which is why `codeText` exists;
 and the reform API, where `parentWilaya` only exists on codes 59–69 and `68`/`69` under `17` Djelfa
 is the one candidate row showing a single mère splitting into two — the reason
 `resolveCurrentWilaya` returns an array.
@@ -311,7 +311,7 @@ Proven on bytes rather than inferred from the totals — an esbuild bundle of no
 | root, `getWilayas` only | 64.8 kB | **shaken out** | **still present** |
 | `/wilayas`, `getWilayas` only | 2.1 kB | absent | absent |
 
-So tree-shaking is working — it removes the 4402-key search corpus and the reform resolvers — and it
+So tree-shaking is working — it removes the 4352-key search corpus and the reform resolvers — and it
 still cannot remove the commune table, because `asof.ts` references it unconditionally. The 30×
 difference between rows two and three is the entire case for the split.
 
@@ -362,7 +362,7 @@ Implemented from that description, two real records come out wrong:
 | `B. B. Arreridj` | `b.-b.-arreridj` | `b-b-arreridj` |
 | `Z'barbar (El Isseri )` | `zbarbar-(el-isseri-)` | `zbarbar-el-isseri` |
 
-Two ids in 2132. Nothing crashes, no test fails on its own, and a consumer joining the npm and PyPI
+Two ids in 2107. Nothing crashes, no test fails on its own, and a consumer joining the npm and PyPI
 datasets on `id` gets two silent mismatches.
 
 **Decision.** `shared/` is a first-class tier, in three layers:
@@ -375,8 +375,8 @@ datasets on `id` gets two silent mismatches.
 
 The fixtures are ordinary build outputs — written by `pnpm build:data`, verified by `--check`, swept
 for orphans — so a behaviour change that is not reflected in them fails the build. `ids.json` is the
-exhaustive slug proof (all 2132). `normalize.json` carries named edge cases plus a SHA-256 of the
-sorted key set, so a port can prove all 4402 keys match without shipping a second copy of them.
+exhaustive slug proof (all 2107). `normalize.json` carries named edge cases plus a SHA-256 of the
+sorted key set, so a port can prove all 4352 keys match without shipping a second copy of them.
 `search.json` records full ordered results with scores for 35 queries.
 
 `schema/` and `scripts/validate.py` moved into the tier as well, since both were already
@@ -384,7 +384,7 @@ language-neutral. `validate.py` moved **byte-identically**, so the standing inva
 deliberately independent second opinion in another language survives untouched.
 
 **It paid for itself immediately.** The Python port was written against the fixtures and matched on
-the first run: 2132 ids, 4402 keys by digest, and all 35 search cases including scores and ordering.
+the first run: 2107 ids, 4352 keys by digest, and all 35 search cases including scores and ordering.
 
 **Given up:** `build-data.ts` now owns files outside `packages/js`, and its `main()` had to become
 async — the search fixture is produced by running the real `search()`, which reads the generated
@@ -484,7 +484,7 @@ Python 3.8 reached end of life in October 2024.
 
 **`slots=True` was considered and rejected**, so nobody re-opens it. It is the shape the record
 model wants, but it landed in `dataclasses` in 3.10. The memory it costs to go without is
-**bounded** — 2201 records, so a `__dict__` per instance is a few hundred KB, noise beside the
+**bounded** — 2176 records, so a `__dict__` per instance is a few hundred KB, noise beside the
 parsed JSON already resident. The install-base cost of dropping 3.9 is *not* bounded: it is every
 user on a distro Python. And `slots=True` is a pure optimization with no API effect, so it drops in
 unchanged the moment the floor moves.
@@ -648,6 +648,260 @@ for 72 hours and PyPI never lets you redo at all.
 Moving it to trusted publishing is the same shape of change and is worth doing — but it needs its
 own TestPyPI dry run first, and doing both in one release would mean neither registry had a proven
 path. One at a time.
+
+## ADR-018 — The daira layer carries a name-join artifact; the audit ships before the fix
+
+**Status.** Accepted. Detector landed, corrections deferred to a dedicated release.
+
+**Context.** `data/algeria.json` inherited its trilingual names and postal codes from the
+community corpus `othmanus/algeria-cities`, joined on commune name. The ids contract already
+establishes why that is dangerous: 1541 communes carry only 1500 distinct French names, and 566
+(wilaya, daira) pairs carry only 545 distinct daira names (`shared/contract/ids.md`). A
+name-keyed join against data that ambiguous does not fail loudly — it silently drags a
+homonym's wilaya, daira and postal code across together.
+
+`scripts/audit-postal-attribution.mjs` now looks for the two shapes that leaves behind.
+
+**Detector 1 — foreign shared postal codes.** 36 communes in wilayas 01–48 carry a postal code
+that is also held by a same-named commune in a different wilaya, with a prefix that is not their
+own wilaya's. It is restricted to 01–48 on purpose: for wilayas 49–58 (Loi 19-12) and 59–69
+(Loi 26-06) a foreign prefix is *correct*, because a wilaya carved out of an older one inherits
+the parent's postal space and Algérie Poste has not renumbered. 164 rows there carry a foreign
+prefix, and 14 of those also share their code, so they would match the full signature and be
+reported as defects.
+
+This supersedes part of `docs/DATA_PROVENANCE.md`. That document described all 94
+prefix-divergent rows in wilayas 1–58 as "known to be correct" and used the 6.7% figure to
+justify keeping the prefix cross-check a warning. The 58 rows in wilayas 49–58 do support that.
+The 36 in 01–48 do not: **every one of them** correlates with a shared postal code, and in 30 of
+the 17 shared codes every sharer carries the same name. That is not a coincidence, it is a join.
+
+**Detector 2 — invented daira containers.** The expensive half. A daira holding exactly one
+commune, whose name is also a daira of another wilaya where it is larger. 39 candidates. This
+matters more than the postal codes because `commune id = <padded wilaya>-<slug(daira)>-<slug(commune)>`,
+so an invented container mints a **wrong, stable, public id**.
+
+Verified by hand against independent sources, two examples of each outcome:
+
+| record | shipped | sourced | verdict |
+|---|---|---|---|
+| `Aïn El Turck`, Oran | daira `Bouira`, code `10033` | daira `Aïn El Turck`, code `31300` | defect |
+| `El Marsa`, Alger | daira `El Marsa`, code `02015` | daira `Dar El Beïda`, code `16111` | defect |
+| `Hammamet`, Alger | daira `Bir Mokadem`, code `12016` | daira `Chéraga`, code `16060` | defect |
+| `Sidi Abderrahmane`, Tiaret | daira `Tenes`, code `02066` | daira `Aïn Kermes`, code `14028` | defect |
+| `Sebdou`, Tlemcen | daira `Sebdou`, code `13006` | daira `Sebdou`, code `13006` | **correct** |
+
+Oran is the clearest case: officially 9 daïras and 26 communes. We ship 10 daïras — the extra is
+a one-commune `Bouira` — while Oran's real `Aïn El Turck` daïra sits at 3 communes instead of 4,
+missing its own seat. Annaba is the same shape: 7 shipped where 6 is correct, and removing the
+one-commune `El Eulma` yields exactly 6 daïras and 12 communes.
+
+**Why detector 2 reports candidates and not defects.** Three different things produce that shape
+and only one is a bug: a genuine phantom; a **reform split**, which `note_daira` in
+`data/algeria.json` already documents as expected and which is exactly what `Sebdou` turned out
+to be (its namesake in new wilaya 61 is the other half); and a genuine homonym, which is the
+premise of the ids contract. Separating them needs an external source per record. A detector that
+called all 39 defects would be wrong about at least one, and the project's governing rule is that
+we do not guess.
+
+**Decision: a correction LEDGER, not dozens of hand-edits.**
+
+**26 of the 36 rows are now sourced and corrected.** The mechanism matters more than the
+count:
+
+- `data/raw/postal-corrections.json` holds one entry per correction, each carrying `dairaFrom`
+  → `dairaTo`, `postalCodeFrom` → `postalCodeTo`, a **citation**, and a confidence. It is
+  hand-maintained and never written by a generator, like `en-overrides.json` and `reform.json`.
+- `scripts/apply-corrections.mjs` applies it to `data/algeria.json`, re-parenting the commune,
+  deleting a container the move empties, and recomputing every denormalized counter. Idempotent,
+  with a `--check` mode, and it also supports a **postal-only** correction where the daira is
+  genuine (Ghardaïa's `Mansoura` is that case — officially spelled `Mansoura`, so our `Mansourah`
+  is a transliteration variant and not a phantom at all).
+- `scripts/build-data.ts` asserts **A21–A24**: each entry resolves to exactly one commune, in
+  `dairaTo`, with `postalCodeTo`; `dairaFrom` no longer holds it and was not left empty; and
+  every entry carries a source. The ledger is the specification, the data is the state, and the
+  build fails in **either** direction. All four were verified by tampering.
+
+**Why the correction goes into `data/algeria.json` rather than staying an in-memory overlay.**
+That file is itself published — jq users and CDN consumers read it off jsDelivr. An overlay
+applied only at build time would leave the packages right and the raw JSON wrong, with nothing
+reporting the split.
+
+**What changed.** 591 → **566** daïras: 25 invented one-commune containers removed. Communes
+**unchanged at 1541** — nothing deleted, 25 records re-parented. Postal codes 1514 → **1493**.
+
+The most telling number: **shared postal codes fell from 38 to 17.** More than half of what this
+dataset documented as "codes shared by several communes" was not a feature of Algerian postal
+geography at all — it was the join artifact. And **zero** codes are now shared by two communes of
+the same wilaya.
+
+Six wilaya daïra counts now match the official figures they previously contradicted:
+
+| wilaya | shipped | now | official |
+|---|---|---|---|
+| 16 Alger | 15 | **13** | 13 |
+| 31 Oran | 10 | **9** | 9 |
+| 23 Annaba | 7 | **6** | 6 |
+| 36 El Tarf | 9 | **7** | 7 |
+| 38 Tissemsilt | 10 | **8** | 8 |
+| 48 Relizane | 16 | **13** | 13 |
+
+**`null` now has two causes, and the docs say which.** 27 communes were never published with a
+code; **21 were withdrawn** because they shipped a code belonging to another wilaya's commune.
+Only 5 corrections carry a sourced replacement code; the daira was sourceable far more often
+than the code, because French Wikipedia's "Daïras de la wilaya de X" pages are systematic while
+its commune infoboxes carry postal codes only sometimes.
+
+Withdrawal was chosen over leaving a known-wrong value, and over inventing a plausible one. Two
+withdrawals are deliberate retreats rather than absences: Alger's `Hammamet`, whose sourced
+`16060` would have created the dataset's only same-wilaya shared code, and Mascara's `Ain Fares`,
+whose source offers `29140` and `29530` and settles neither.
+
+**Independently verified, and it changed the result.** All 26 entries were re-checked by a fan-out
+of independent verifiers, each prompted to REFUTE rather than confirm.
+
+**0 of 26 daïra verdicts were refuted.** The id-affecting half of this work — the half that is
+permanent — is independently corroborated. That is the result worth having.
+
+The postal half did not survive as well, and the failure mode is instructive. This column holds
+**one numbering family**: 1470 of 1493 codes are `NN0xx`, the 23 exceptions being `NN1xx` clusters
+in wilayas 05, 15, 16 and 19. Algeria also uses a 100-increment locality numbering — the family in
+which Bouhadjar is `36300`, while this dataset records it as `36005`. Three codes written here came
+from that other family, and each was the **only** non-`NN0xx` code in its whole wilaya: `31300`
+(Aïn El Turck), `44240` (Aïn Soltane), `30120` (Aïn Beïda). All three are withdrawn.
+
+The same test worked in the other direction, replacing two values that were wrong with two that
+fit: `26036` for Ouled Brahim and `36011` for Aïn Kerma, the latter slotting exactly between this
+dataset's Aïn El Assel `36010` and Asfour `36012`.
+
+The lesson is a sourcing rule, now written into `docs/DATA_PROVENANCE.md`: a candidate code needs
+an external citation **and** agreement with the family its wilaya already uses. "The prefix matches
+the wilaya" is what produced the `36330` error and is not sourcing. Verifiers also proposed codes
+for 13 of the withdrawals, mostly from aggregator lists; those are recorded in the ledger as
+**leads**, not written, because supplying a value requires a citation.
+
+**What is left, and it is a different shape now.** The audit reports **10** rows, down from 36 —
+and **`PHANTOM_DAIRA` is 0**. Every invented container in wilayas 01–48 is gone; all 10 remaining
+rows are `POSTAL_ONLY`, meaning the daïra is genuine and only the postal code came from a
+homonym. That matters because `POSTAL_ONLY` rows do **not** affect ids: fixing them later is a
+field correction, not a breaking change, so they no longer have to be done before v2.0.0.
+
+Detector 2 still reports **15** container candidates, down from 39. Most sit in wilayas 49–69,
+which detector 1 must exclude, and each still needs a source before it is called a defect — a
+documented reform split looks identical, as `Sebdou` demonstrated. One known case is
+`Souk El Had` in Relizane, inside a container named `Thenia` that Relizane does not officially
+have; its real daïra is not yet sourced, so it is left alone.
+
+A21 cannot be promoted to a hard failure on the artifact signature until the remaining 10 are
+resolved.
+
+## ADR-019 — The MCP server is its own package, and is NOT on the `v*` tag
+
+**Status.** Accepted. Package built and tested; release path deliberately left open.
+
+**Context.** An MCP server makes the dataset callable by an assistant instead of recalled by
+one, which matters more here than for most data: a model asked about Algeria's wilayas answers
+**58** with confidence, because that was true from 2019 until April 2026 and is what nearly
+every page on the open web still says.
+
+**Why not a second `bin` on `algeria-wilayas-communes`.** That was the cheaper option and it
+was rejected. The library's **zero runtime dependencies** is a headline property — it is why it
+works unchanged in a browser, a Worker, Deno and Bun, and `packages/python` goes as far as
+hand-rolling a bounded Levenshtein rather than taking a fuzzy-matching dependency. The MCP SDK
+would be that package's first `dependencies` entry, inflicted on every consumer who only wanted
+`getWilaya(19)`. Implementing MCP by hand over stdio to keep the dep count at zero was also
+considered — it is only JSON-RPC 2.0 and a short handshake — and rejected as the wrong place to
+hand-roll: a protocol we do not own, whose spec moves, is exactly what a maintained SDK is for.
+
+**Why it is not wired into `publish-npm.yml` / `publish-pypi.yml`.** Those both fire on `v*` and
+publish npm and PyPI from the same commit, which is what makes "`algeria-wilayas-communes@2.1.0`
+on npm and `==2.1.0` on PyPI hold the same 1541 records" true by construction (ADR-015). A third
+artifact on that tag would either have to share the version — claiming a data version it does
+not contain — or carry its own, which means the tag no longer identifies one version. Neither is
+acceptable for a guarantee whose whole value is that it needs no checking.
+
+So `packages/mcp` is a workspace member (unlike `packages/python`, which cannot be one), it
+builds, lints, typechecks and is tested in CI, and it has **no automated publish**. Adding one
+needs its own decision about tag naming — `mcp-v*` is the obvious shape — and that decision is
+not made here.
+
+**Testing.** `tests/mcp.test.ts` speaks newline-delimited JSON-RPC to the built artifact
+directly rather than using the SDK's client. Using the SDK on both ends would test the SDK
+against itself; framing the requests by hand proves the published server answers what a real
+client sends. What it asserts is the part that rots silently: the six tool **names** (renaming
+one breaks every already-configured assistant and nothing else in the repo would notice), their
+**input schemas**, and the **guard rails in the descriptions** — which are not documentation but
+the only text a model reads before deciding to call, and the single defence against it answering
+from memory. A tidy-up that reworded them would pass every other test here.
+
+**Cost, accepted.** A third package to keep in step, with no release automation, and the MCP
+protocol version pinned by a dependency rather than by us.
+
+## ADR-020 — Geospatial data is not shipped, and the blocker is the reform mapping
+
+**Status.** Accepted. Measured, not assumed. Re-run `scripts/geo-feasibility.py` before
+re-opening it.
+
+**Context.** Coordinates and GeoJSON are the largest single gap against the competing packages.
+`geoalgeria` ships them; this package does not. It was attempted.
+
+**What is actually available.** geoBoundaries is the only open source of Algerian commune
+boundaries with a usable licence: 1540 ADM3 polygons, OSM-derived, **CC BY-SA 2.0**. Two facts
+about it decide everything that follows.
+
+First, **ADM3 carries no wilaya attribute** — the properties are `shapeName`, `shapeISO` (empty),
+`shapeID`, `shapeGroup`, `shapeType`. So a join has to go through the commune *name*, which is the
+exact failure mode ADR-018 is about. Measured: 1134 of 1541 communes would match 1:1 by name, and
+**97 are ambiguous** — and they are the same names that were already corrupted once (`El Marsa`
+×3, `Larbaa` ×3, `Timezrit` ×2, `El Hassi` ×2, `Sidi Abderrahmane` ×2). A 74% join that silently
+misplaces those is worse than no geometry, because a wrong polygon draws a commune in the wrong
+part of the country and looks authoritative doing it.
+
+Second, **ADM1 is the pre-2019 48-wilaya map.** Not 58, and certainly not 69.
+
+**What was tried, and it works better than expected.** Assign every ADM3 polygon to a wilaya by
+point-in-polygon against ADM1, then match on `(wilaya, name)` instead of name alone. That
+**removes ambiguity entirely: 97 → 0.** Every one of the 1509 named polygons gets a unique
+`(wilaya, name)` key, because an Algerian place name repeats *across* wilayas but never *within*
+one — the same property the ids contract is built on (`shared/contract/ids.md`).
+
+So the technique is sound. The coverage is not:
+
+| band | matched | unmatched |
+|---|---|---|
+| wilayas 01–48 | 1025 / 1375 (**74.5%**) | 350 |
+| wilayas 49–69 | 0 / 166 (**0.0%**) | 166 |
+
+**The 0% is the decisive number, and it is structural.** ADM1 predates both reforms, so a commune
+now in wilaya 49–69 lands inside its **parent** wilaya — and which parent that is, is precisely the
+58→69 mapping this project refuses to guess (ADR-005). Geospatial coverage for the eleven new
+wilayas is therefore **blocked on the same unsourced mapping**, not on effort. That connection was
+not obvious before measuring it, and it is the reason this is not a quick win.
+
+The remaining 350 in band 01–48 are transliteration differences between OSM and this dataset
+(`Aïn` vs `Ain`, hyphenation, `El`/`Al`). Closing them means fuzzy matching, which is how the
+original artifact got in.
+
+**Decision.** Ship no geometry yet. Specifically rejected: a name-only join (misplaces 97 records),
+and a 66.5% spatially-matched set shipped as-is (leaves the eleven newest wilayas — the package's
+headline differentiator — with no geometry at all, which is the worst possible place to have a
+hole).
+
+**When it becomes worth doing**, the shape is already known:
+- Source the reform parent mapping (ADR-005). That unlocks the 49–69 band and is the gating item.
+- Use spatial-then-name matching, never name alone. Record a per-record `confidence` and commit
+  the match report. Unmatched stays `null`.
+- Dissolve commune polygons by **our** `wilaya_num` to derive wilaya boundaries. Never take
+  upstream ADM1 wilaya shapes: they are 48 units, so this dissolve is the only route to a
+  69-wilaya boundary set, and that set would not exist anywhere else.
+- **Licence isolation is mandatory, not tidiness.** CC BY-SA 2.0 is share-alike. It cannot sit in
+  this repo's CC0 data or in the npm package. It needs its own package and its own `LICENSE`, and
+  centroids derived from those polygons inherit the same obligation — so the plan's original idea
+  of putting centroids in the main CC0 package does not survive contact with the licence.
+
+**Cost, accepted.** The package stays names-and-postal-codes while competitors ship maps. In
+exchange it does not ship 97 knowingly-misplaced polygons three days after fixing 26
+knowingly-misattributed postal codes.
 
 ## Recorded, deliberately not fixed
 

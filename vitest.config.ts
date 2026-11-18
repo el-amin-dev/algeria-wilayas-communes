@@ -42,6 +42,17 @@ export default defineConfig({
         // it.
         "packages/js/src/generated/**",
         "**/*.d.ts",
+        // The CLI's executable shim, and ONLY the shim. It binds `run` to
+        // `process.exitCode` and `console`, which cannot run in-process without
+        // mutating the test runner's own exit code. It is deliberately 4
+        // statements long so this exclusion hides almost nothing: the logic
+        // lives in cli-core.ts, which is covered in-process, and the shipped
+        // binary is covered again as a subprocess in tests/cli.test.ts.
+        //
+        // This is the only exclusion here that is NOT "generated data". Adding
+        // another one to make a number go green would be the wrong move: lower
+        // the threshold instead and say so, or write the test.
+        "packages/js/src/cli.ts",
       ],
       // HONESTY NOTE, until session 2: after the exclusions above, `include`
       // currently matches only index.ts (`export {}`) and types.ts (types
@@ -73,8 +84,8 @@ export default defineConfig({
       // "unreachable" would overstate it. The arms must stay regardless: a
       // comparator handed to Array.prototype.sort has to be a total order.
       //
-      // Current absolutes: statements 692/693, branches 330/332, lines 560/560,
-      // functions 101/101. Because these are percentages they drift as the file
+      // Current absolutes: statements 917/918, branches 465/467, lines 756/756,
+      // functions 131/131. Because these are percentages they drift as the file
       // grows — if a number moves, find out WHY before adjusting it.
       //
       // Session 3 (reform + v1 compat) added ~230 statements and the numbers went
@@ -84,11 +95,26 @@ export default defineConfig({
       // These numbers RATCHET. Raise them when coverage improves; never lower
       // them to make a red run go green — a shortfall is a missing test or an
       // unreachable branch that needs annotating, and both have a real fix.
+      //
+      // The CLI session took branches from 99.46 to 99.57 and so RAISED the
+      // threshold, which is the rule working in the intended direction. Two
+      // things made that possible rather than paying for the CLI out of the
+      // budget:
+      //
+      //   - `src/cli.ts`, the four-statement executable shim, is the one
+      //     non-generated entry in `exclude` above; its logic lives in
+      //     `cli-core.ts`, which is covered in-process, and the built binary is
+      //     covered again as a subprocess in tests/cli.test.ts.
+      //   - `reformLines` was extracted as a pure function taking a reform
+      //     object. Inline in the command, its `mappingComplete` branch was
+      //     unreachable in one direction forever, because the mapping is
+      //     unsourced; as a parameter, both arms are ordinary and tested. That
+      //     is the "write the test" fix this comment demands, not an ignore.
       thresholds: {
         lines: 100,
         functions: 100,
-        statements: 99.87,
-        branches: 99.46,
+        statements: 99.89,
+        branches: 99.57,
       },
     },
   },

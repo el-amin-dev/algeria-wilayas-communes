@@ -1,0 +1,1542 @@
+commune_id,code,wilaya_num,wilaya_fr,daira_id,daira_fr,nom_ar,nom_fr,nom_en,code_postal
+01-aoulef-timekten,01,1,Adrar,01-aoulef,Aoulef,تيمقتن,Timekten,Timekten,01041
+01-aoulef-tit,01,1,Adrar,01-aoulef,Aoulef,تيت,Tit,Tit,01031
+01-aoulef-akabli,01,1,Adrar,01-aoulef,Aoulef,اقبلي,Akabli,Akabli,01044
+01-aoulef-aoulef,01,1,Adrar,01-aoulef,Aoulef,أولف,Aoulef,Aoulef,01003
+01-adrar-bouda,01,1,Adrar,01-adrar,Adrar,بودة,Bouda,Bouda,01023
+01-adrar-ouled-ahmed-timmi,01,1,Adrar,01-adrar,Adrar,أولاد أحمد تيمي,Ouled Ahmed Timmi,Ouled Ahmed Timmi,01025
+01-adrar-adrar,01,1,Adrar,01-adrar,Adrar,أدرار,Adrar,Adrar,01000
+01-fenoughil-fenoughil,01,1,Adrar,01-fenoughil,Fenoughil,فنوغيل,Fenoughil,Fenoughil,01008
+01-fenoughil-tamest,01,1,Adrar,01-fenoughil,Fenoughil,تامست,Tamest,Tamest,01020
+01-fenoughil-tamantit,01,1,Adrar,01-fenoughil,Fenoughil,تامنطيط,Tamantit,Tamantit,01021
+01-zaouiat-kounta-in-zghmir,01,1,Adrar,01-zaouiat-kounta,Zaouiat Kounta,إن زغمير,In Zghmir,In Zghmir,01047
+01-zaouiat-kounta-zaouiet-kounta,01,1,Adrar,01-zaouiat-kounta,Zaouiat Kounta,زاوية كنتة,Zaouiet Kounta,Zaouiet Kounta,01007
+01-reggane-reggane,01,1,Adrar,01-reggane,Reggane,رقان,Reggane,Reggane,01004
+01-reggane-sali,01,1,Adrar,01-reggane,Reggane,سالي,Sali,Sali,01009
+01-tsabit-sebaa,01,1,Adrar,01-tsabit,Tsabit,السبع,Sebaa,Sebaa,01022
+01-tsabit-tsabit,01,1,Adrar,01-tsabit,Tsabit,تسابيت,Tsabit,Tsabit,01011
+02-abou-el-hassane-talassa,02,2,Chlef,02-abou-el-hassane,Abou El Hassane,تلعصة,Talassa,Talassa,02065
+02-abou-el-hassane-tadjena,02,2,Chlef,02-abou-el-hassane,Abou El Hassane,تاجنة,Tadjena,Tadjena,02043
+02-abou-el-hassane-abou-el-hassane,02,2,Chlef,02-abou-el-hassane,Abou El Hassane,أبو الحسن,Abou El Hassane,Abou El Hassane,02018
+02-zeboudja-zeboudja,02,2,Chlef,02-zeboudja,Zeboudja,الزبوجة,Zeboudja,Zeboudja,02014
+02-zeboudja-bouzeghaia,02,2,Chlef,02-zeboudja,Zeboudja,بوزغاية,Bouzeghaia,Bouzeghaia,02019
+02-zeboudja-benairia,02,2,Chlef,02-zeboudja,Zeboudja,بنايرية,Benairia,Benairia,02039
+02-ouled-ben-abdelkader-el-hadjadj,02,2,Chlef,02-ouled-ben-abdelkader,Ouled Ben Abdelkader,الحجاج,El Hadjadj,El Hadjadj,02050
+02-ouled-ben-abdelkader-ouled-ben-abdelkader,02,2,Chlef,02-ouled-ben-abdelkader,Ouled Ben Abdelkader,أولاد بن عبد القادر,Ouled Ben Abdelkader,Ouled Ben Abdelkader,02037
+02-ain-merane-ain-merane,02,2,Chlef,02-ain-merane,Ain Merane,عين مران,Ain Merane,Ain Merane,02004
+02-ain-merane-herenfa,02,2,Chlef,02-ain-merane,Ain Merane,الهرانفة,Herenfa,Herenfa,02038
+02-beni-haoua-breira,02,2,Chlef,02-beni-haoua,Beni Haoua,بريرة,Breira,Breira,02070
+02-beni-haoua-beni-haoua,02,2,Chlef,02-beni-haoua,Beni Haoua,بني حواء,Beni Haoua,Beni Haoua,02017
+02-beni-haoua-oued-goussine,02,2,Chlef,02-beni-haoua,Beni Haoua,وادي قوسين,Oued Goussine,Oued Goussine,02061
+02-oued-fodda-ouled-abbes,02,2,Chlef,02-oued-fodda,Oued Fodda,أولاد عباس,Ouled Abbes,Ouled Abbes,02029
+02-oued-fodda-oued-fodda,02,2,Chlef,02-oued-fodda,Oued Fodda,وادي الفضة,Oued Fodda,Oued Fodda,02001
+02-oued-fodda-beni-rached,02,2,Chlef,02-oued-fodda,Oued Fodda,بني راشد,Beni Rached,Beni Rached,02035
+02-el-marsa-el-marsa,02,2,Chlef,02-el-marsa,El Marsa,المرسى,El Marsa,El Marsa,02015
+02-el-marsa-moussadek,02,2,Chlef,02-el-marsa,El Marsa,مصدق,Moussadek,Moussadek,02060
+02-chlef-chlef,02,2,Chlef,02-chlef,Chlef,الشلف,Chlef,Chlef,02000
+02-chlef-oum-drou,02,2,Chlef,02-chlef,Chlef,أم الدروع,Oum Drou,Oum Drou,02024
+02-chlef-sendjas,02,2,Chlef,02-chlef,Chlef,سنجاس,Sendjas,Sendjas,02025
+02-tenes-sidi-abderrahmane,02,2,Chlef,02-tenes,Tenes,سيدي عبد الرحمن,Sidi Abderrahmane,Sidi Abderrahmane,02066
+02-tenes-sidi-akkacha,02,2,Chlef,02-tenes,Tenes,سيدي عكاشة,Sidi Akkacha,Sidi Akkacha,02009
+02-tenes-tenes,02,2,Chlef,02-tenes,Tenes,تنس,Tenes,Tenes,02006
+02-el-karimia-beni-bouattab,02,2,Chlef,02-el-karimia,El Karimia,بني بوعتاب,Beni  Bouattab,Beni  Bouattab,02071
+02-el-karimia-el-karimia,02,2,Chlef,02-el-karimia,El Karimia,الكريمية,El Karimia,El Karimia,02008
+02-el-karimia-harchoun,02,2,Chlef,02-el-karimia,El Karimia,حرشون,Harchoun,Harchoun,02031
+02-taougrit-taougrit,02,2,Chlef,02-taougrit,Taougrit,تاوقريت,Taougrit,Taougrit,02012
+02-taougrit-dahra,02,2,Chlef,02-taougrit,Taougrit,الظهرة,Dahra,Dahra,02032
+02-ouled-fares-chettia,02,2,Chlef,02-ouled-fares,Ouled Fares,الشطية,Chettia,Chettia,02007
+02-ouled-fares-ouled-fares,02,2,Chlef,02-ouled-fares,Ouled Fares,أولاد فارس,Ouled Fares,Ouled Fares,02010
+02-ouled-fares-labiod-medjadja,02,2,Chlef,02-ouled-fares,Ouled Fares,الأبيض مجاجة,Labiod Medjadja,Labiod Medjadja,02073
+02-boukadir-boukadir,02,2,Chlef,02-boukadir,Boukadir,بوقادير,Boukadir,Boukadir,02002
+02-boukadir-oued-sly,02,2,Chlef,02-boukadir,Boukadir,وادي سلي,Oued Sly,Oued Sly,02011
+02-boukadir-sobha,02,2,Chlef,02-boukadir,Boukadir,الصبحة,Sobha,Sobha,02030
+03-ain-madhi-tadjemout,03,3,Laghouat,03-ain-madhi,Ain Madhi,تاجموت,Tadjemout,Tadjemout,03007
+03-ain-madhi-tadjrouna,03,3,Laghouat,03-ain-madhi,Ain Madhi,تاجرونة,Tadjrouna,Tadjrouna,03011
+03-ain-madhi-ain-madhi,03,3,Laghouat,03-ain-madhi,Ain Madhi,عين ماضي,Ain Madhi,Ain Madhi,03012
+03-ain-madhi-el-haouaita,03,3,Laghouat,03-ain-madhi,Ain Madhi,الحويطة,El Haouaita,El Haouaita,03040
+03-ain-madhi-kheneg,03,3,Laghouat,03-ain-madhi,Ain Madhi,الخنق,Kheneg,Kheneg,03010
+03-laghouat-laghouat,03,3,Laghouat,03-laghouat,Laghouat,الأغواط,Laghouat,Laghouat,03000
+03-ksar-el-hirane-ksar-el-hirane,03,3,Laghouat,03-ksar-el-hirane,Ksar El Hirane,قصر الحيران,Ksar El Hirane,Ksar El Hirane,03003
+03-ksar-el-hirane-benacer-benchohra,03,3,Laghouat,03-ksar-el-hirane,Ksar El Hirane,بن ناصر بن شهرة,Benacer Benchohra,Benacer Benchohra,03033
+03-sidi-makhlouf-el-assafia,03,3,Laghouat,03-sidi-makhlouf,Sidi Makhlouf,العسافية,El Assafia,El Assafia,03014
+03-sidi-makhlouf-sidi-makhlouf,03,3,Laghouat,03-sidi-makhlouf,Sidi Makhlouf,سيدي مخلوف,Sidi Makhlouf,Sidi Makhlouf,03019
+03-hassi-rmel-hassi-delaa,03,3,Laghouat,03-hassi-rmel,Hassi R'mel,حاسي الدلاعة,Hassi Delaa,Hassi Delaa,03022
+03-hassi-rmel-hassi-rmel,03,3,Laghouat,03-hassi-rmel,Hassi R'mel,حاسي الرمل,Hassi R'mel,Hassi R'mel,03004
+04-fkirina-fkirina,04,4,Oum El Bouaghi,04-fkirina,F'kirina,فكيرينة,Fkirina,Fkirina,04013
+04-fkirina-oued-nini,04,4,Oum El Bouaghi,04-fkirina,F'kirina,وادي نيني,Oued Nini,Oued Nini,04047
+04-ain-fekroun-el-fedjoudj-boughrara-sa,04,4,Oum El Bouaghi,04-ain-fekroun,Ain Fekroun,الفجوج بوغرارة سعودي,El Fedjoudj Boughrara Sa,El Fedjoudj Boughrara Sa,04042
+04-ain-fekroun-ain-fekroun,04,4,Oum El Bouaghi,04-ain-fekroun,Ain Fekroun,عين فكرون,Ain Fekroun,Ain Fekroun,04005
+04-meskiana-rahia,04,4,Oum El Bouaghi,04-meskiana,Meskiana,الرحية,Rahia,Rahia,04045
+04-meskiana-meskiana,04,4,Oum El Bouaghi,04-meskiana,Meskiana,مسكيانة,Meskiana,Meskiana,04004
+04-meskiana-el-belala,04,4,Oum El Bouaghi,04-meskiana,Meskiana,البلالة,El Belala,El Belala,04044
+04-meskiana-behir-chergui,04,4,Oum El Bouaghi,04-meskiana,Meskiana,بحير الشرقي,Behir Chergui,Behir Chergui,04026
+04-ksar-sbahi-ksar-sbahi,04,4,Oum El Bouaghi,04-ksar-sbahi,Ksar Sbahi,قصر الصباحي,Ksar Sbahi,Ksar Sbahi,04018
+04-souk-naamane-souk-naamane,04,4,Oum El Bouaghi,04-souk-naamane,Souk Naamane,سوق نعمان,Souk Naamane,Souk Naamane,04010
+04-souk-naamane-ouled-zouai,04,4,Oum El Bouaghi,04-souk-naamane,Souk Naamane,أولاد زواي,Ouled Zouai,Ouled Zouai,
+04-souk-naamane-bir-chouhada,04,4,Oum El Bouaghi,04-souk-naamane,Souk Naamane,بئر الشهداء,Bir Chouhada,Bir Chouhada,04021
+04-oum-el-bouaghi-oum-el-bouaghi,04,4,Oum El Bouaghi,04-oum-el-bouaghi,Oum El Bouaghi,أم البواقي,Oum El Bouaghi,Oum El Bouaghi,04000
+04-oum-el-bouaghi-ain-zitoun,04,4,Oum El Bouaghi,04-oum-el-bouaghi,Oum El Bouaghi,عين الزيتون,Ain Zitoun,Ain Zitoun,04023
+04-ain-babouche-ain-babouche,04,4,Oum El Bouaghi,04-ain-babouche,Ain Babouche,عين ببوش,Ain Babouche,Ain Babouche,04020
+04-ain-babouche-ain-diss,04,4,Oum El Bouaghi,04-ain-babouche,Ain Babouche,عين الديس,Ain Diss,Ain Diss,04025
+04-ain-beida-ain-beida,04,4,Oum El Bouaghi,04-ain-beida,Ain Beida,عين البيضاء,Ain Beida,Ain Beida,04001
+04-ain-beida-berriche,04,4,Oum El Bouaghi,04-ain-beida,Ain Beida,بريش,Berriche,Berriche,04022
+04-ain-beida-zorg,04,4,Oum El Bouaghi,04-ain-beida,Ain Beida,الزرق,Zorg,Zorg,04024
+04-ain-mlila-ain-mlila,04,4,Oum El Bouaghi,04-ain-mlila,Ain M'lila,عين مليلة,Ain M'lila,Ain M'lila,04002
+04-ain-mlila-ouled-gacem,04,4,Oum El Bouaghi,04-ain-mlila,Ain M'lila,أولاد قاسم,Ouled Gacem,Ouled Gacem,04041
+04-ain-mlila-ouled-hamla,04,4,Oum El Bouaghi,04-ain-mlila,Ain M'lila,أولاد حملة,Ouled Hamla,Ouled Hamla,04019
+04-sigus-el-amiria,04,4,Oum El Bouaghi,04-sigus,Sigus,العامرية,El Amiria,El Amiria,04038
+04-sigus-sigus,04,4,Oum El Bouaghi,04-sigus,Sigus,سيقوس,Sigus,Sigus,04011
+04-dhalaa-dhalaa,04,4,Oum El Bouaghi,04-dhalaa,Dhalaa,الضلعة,Dhalaa,Dhalaa,04008
+04-dhalaa-el-djazia,04,4,Oum El Bouaghi,04-dhalaa,Dhalaa,الجازية,El Djazia,El Djazia,04040
+04-ain-kercha-ain-kercha,04,4,Oum El Bouaghi,04-ain-kercha,Ain Kercha,عين كرشة,Ain Kercha,Ain Kercha,04006
+04-ain-kercha-el-harmilia,04,4,Oum El Bouaghi,04-ain-kercha,Ain Kercha,الحرملية,El Harmilia,El Harmilia,04032
+04-ain-kercha-hanchir-toumghani,04,4,Oum El Bouaghi,04-ain-kercha,Ain Kercha,هنشير تومغني,Hanchir Toumghani,Hanchir Toumghani,04012
+05-ain-touta-maafa,05,5,Batna,05-ain-touta,Ain Touta,معافة,Maafa,Maafa,05123
+05-ain-touta-ain-touta,05,5,Batna,05-ain-touta,Ain Touta,عين التوتة,Ain Touta,Ain Touta,05002
+05-ain-touta-beni-foudhala-el-hakania,05,5,Batna,05-ain-touta,Ain Touta,بني فضالة الحقانية,Beni Foudhala El Hakania,Beni Foudhala El Hakania,05141
+05-ain-touta-ouled-aouf,05,5,Batna,05-ain-touta,Ain Touta,أولاد عوف,Ouled Aouf,Ouled Aouf,05122
+05-ras-el-aioun-gosbat,05,5,Batna,05-ras-el-aioun,Ras El Aioun,القصبات,Gosbat,Gosbat,05090
+05-ras-el-aioun-talkhamt,05,5,Batna,05-ras-el-aioun,Ras El Aioun,تالخمت,Talkhamt,Talkhamt,
+05-ras-el-aioun-ras-el-aioun,05,5,Batna,05-ras-el-aioun,Ras El Aioun,رأس العيون,Ras El Aioun,Ras El Aioun,05009
+05-ras-el-aioun-rahbat,05,5,Batna,05-ras-el-aioun,Ras El Aioun,الرحبات,Rahbat,Rahbat,05091
+05-ras-el-aioun-ouled-sellem,05,5,Batna,05-ras-el-aioun,Ras El Aioun,أولاد سلام,Ouled Sellem,Ouled Sellem,05044
+05-ras-el-aioun-guigba,05,5,Batna,05-ras-el-aioun,Ras El Aioun,القيقبة,Guigba,Guigba,05067
+05-timgad-timgad,05,5,Batna,05-timgad,Timgad,تيمقاد,Timgad,Timgad,05023
+05-timgad-ouled-fadel,05,5,Batna,05-timgad,Timgad,أولاد فاضل,Ouled Fadel,Ouled Fadel,05063
+05-ouled-si-slimane-taxlent,05,5,Batna,05-ouled-si-slimane,Ouled Si Slimane,تاكسلانت,Taxlent,Taxlent,05055
+05-ouled-si-slimane-ouled-si-slimane,05,5,Batna,05-ouled-si-slimane,Ouled Si Slimane,أولاد سي سليمان,Ouled Si Slimane,Ouled Si Slimane,05066
+05-ouled-si-slimane-lemcene,05,5,Batna,05-ouled-si-slimane,Ouled Si Slimane,لمسان,Lemcene,Lemcene,
+05-theniet-el-abed-teniet-el-abed,05,5,Batna,05-theniet-el-abed,Theniet El Abed,ثنية العابد,Teniet El Abed,Teniet El Abed,05035
+05-theniet-el-abed-chir,05,5,Batna,05-theniet-el-abed,Theniet El Abed,شير,Chir,Chir,05038
+05-theniet-el-abed-oued-taga,05,5,Batna,05-theniet-el-abed,Theniet El Abed,وادي الطاقة,Oued Taga,Oued Taga,05036
+05-batna-batna,05,5,Batna,05-batna,Batna,باتنة,Batna,Batna,05000
+05-batna-fesdis,05,5,Batna,05-batna,Batna,فسديس,Fesdis,Fesdis,05077
+05-batna-oued-chaaba,05,5,Batna,05-batna,Batna,وادي الشعبة,Oued Chaaba,Oued Chaaba,05054
+05-merouana-hidoussa,05,5,Batna,05-merouana,Merouana,حيدوسة,Hidoussa,Hidoussa,05033
+05-merouana-ksar-bellezma,05,5,Batna,05-merouana,Merouana,قصر بلزمة,Ksar Bellezma,Ksar Bellezma,05047
+05-merouana-merouana,05,5,Batna,05-merouana,Merouana,مروانة,Merouana,Merouana,05013
+05-merouana-oued-el-ma,05,5,Batna,05-merouana,Merouana,وادي الماء,Oued El Ma,Oued El Ma,05016
+05-seriana-lazrou,05,5,Batna,05-seriana,Seriana,لازرو,Lazrou,Lazrou,05117
+05-seriana-seriana,05,5,Batna,05-seriana,Seriana,سريانة,Seriana,Seriana,05025
+05-seriana-zanet-el-beida,05,5,Batna,05-seriana,Seriana,زانة البيضاء,Zanet El Beida,Zanet El Beida,05071
+05-menaa-menaa,05,5,Batna,05-menaa,Menaa,منعة,Menaa,Menaa,05012
+05-menaa-tigharghar,05,5,Batna,05-menaa,Menaa,تغرغار,Tigharghar,Tigharghar,05059
+05-el-madher-ain-yagout,05,5,Batna,05-el-madher,El Madher,عين ياقوت,Ain Yagout,Ain Yagout,05031
+05-el-madher-boumia,05,5,Batna,05-el-madher,El Madher,بومية,Boumia,Boumia,05104
+05-el-madher-djerma,05,5,Batna,05-el-madher,El Madher,جرمة,Djerma,Djerma,05105
+05-el-madher-el-madher,05,5,Batna,05-el-madher,El Madher,المعذر,El Madher,El Madher,05015
+05-tazoult-ouyoun-el-assafir,05,5,Batna,05-tazoult,Tazoult,عيون العصافير,Ouyoun El Assafir,Ouyoun El Assafir,05069
+05-tazoult-tazoult,05,5,Batna,05-tazoult,Tazoult,تازولت,Tazoult,Tazoult,05011
+05-ngaous-boumagueur,05,5,Batna,05-ngaous,N'gaous,بومقر,Boumagueur,Boumagueur,05057
+05-ngaous-n-gaous,05,5,Batna,05-ngaous,N'gaous,نقاوس,N Gaous,N Gaous,05004
+05-ngaous-sefiane,05,5,Batna,05-ngaous,N'gaous,سفيان,Sefiane,Sefiane,05064
+05-arris-arris,05,5,Batna,05-arris,Arris,أريس,Arris,Arris,05007
+05-arris-tighanimine,05,5,Batna,05-arris,Arris,تيغانمين,Tighanimine,Tighanimine,05060
+05-ain-djasser-ain-djasser,05,5,Batna,05-ain-djasser,Ain Djasser,عين جاسر,Ain Djasser,Ain Djasser,05032
+05-ain-djasser-el-hassi,05,5,Batna,05-ain-djasser,Ain Djasser,الحاسي,El Hassi,El Hassi,05116
+05-ichemoul-foum-toub,05,5,Batna,05-ichemoul,Ichemoul,فم الطوب,Foum Toub,Foum Toub,05049
+05-ichemoul-ichemoul,05,5,Batna,05-ichemoul,Ichemoul,إشمول,Ichemoul,Ichemoul,05026
+05-ichemoul-inoughissen,05,5,Batna,05-ichemoul,Ichemoul,إينوغيسن,Inoughissen,Inoughissen,05083
+05-bouzina-bouzina,05,5,Batna,05-bouzina,Bouzina,بوزينة,Bouzina,Bouzina,05041
+05-bouzina-larbaa,05,5,Batna,05-bouzina,Bouzina,لارباع,Larbaa,Larbaa,09002
+05-chemora-boulhilat,05,5,Batna,05-chemora,Chemora,بولهيلات,Boulhilat,Boulhilat,05062
+05-chemora-chemora,05,5,Batna,05-chemora,Chemora,الشمرة,Chemora,Chemora,05039
+05-tkout-ghassira,05,5,Batna,05-tkout,Tkout,غسيرة,Ghassira,Ghassira,05043
+05-tkout-kimmel,05,5,Batna,05-tkout,Tkout,كيمل,Kimmel,Kimmel,05079
+05-tkout-t-kout,05,5,Batna,05-tkout,Tkout,تكوت,T Kout,T Kout,05020
+06-sidi-aich-sidi-ayad,06,6,Bejaia,06-sidi-aich,Sidi Aich,سيدي عياد,Sidi Ayad,Sidi Ayad,06085
+06-sidi-aich-leflaye,06,6,Bejaia,06-sidi-aich,Sidi Aich,الفلاي,Leflaye,Leflaye,06043
+06-sidi-aich-sidi-aich,06,6,Bejaia,06-sidi-aich,Sidi Aich,سيدي عيش,Sidi-Aich,Sidi-Aich,06005
+06-sidi-aich-tifra,06,6,Bejaia,06-sidi-aich,Sidi Aich,تيفرة,Tifra,Tifra,06028
+06-sidi-aich-tinebdar,06,6,Bejaia,06-sidi-aich,Sidi Aich,تينبدار,Tinebdar,Tinebdar,06037
+06-barbacha-barbacha,06,6,Bejaia,06-barbacha,Barbacha,برباشة,Barbacha,Barbacha,06009
+06-barbacha-kendira,06,6,Bejaia,06-barbacha,Barbacha,كنديرة,Kendira,Kendira,06032
+06-el-kseur-el-kseur,06,6,Bejaia,06-el-kseur,El Kseur,القصر,El Kseur,El Kseur,06003
+06-el-kseur-fenaia-il-maten,06,6,Bejaia,06-el-kseur,El Kseur,فناية الماثن,Fenaia Il Maten,Fenaia Il Maten,06041
+06-el-kseur-toudja,06,6,Bejaia,06-el-kseur,El Kseur,توجة,Toudja,Toudja,06030
+06-kherrata-dra-el-caid,06,6,Bejaia,06-kherrata,Kherrata,ذراع القايد,Dra El Caid,Dra El Caid,06070
+06-kherrata-kherrata,06,6,Bejaia,06-kherrata,Kherrata,خراطة,Kherrata,Kherrata,06004
+06-bejaia-bejaia,06,6,Bejaia,06-bejaia,Bejaia,بجاية,Bejaia,Bejaia,06000
+06-bejaia-oued-ghir,06,6,Bejaia,06-bejaia,Bejaia,وادي غير,Oued Ghir,Oued Ghir,06017
+06-beni-maouche-benimaouche,06,6,Bejaia,06-beni-maouche,Beni Maouche,بني معوش,Benimaouche,Benimaouche,06024
+06-amizour-beni-djellil,06,6,Bejaia,06-amizour,Amizour,بني جليل,Beni Djellil,Beni Djellil,06067
+06-amizour-feraoun,06,6,Bejaia,06-amizour,Amizour,فرعون,Feraoun,Feraoun,06033
+06-amizour-smaoun,06,6,Bejaia,06-amizour,Amizour,سمعون,Smaoun,Smaoun,06020
+06-amizour-amizour,06,6,Bejaia,06-amizour,Amizour,أميزور,Amizour,Amizour,06008
+06-timezrit-timezrit,06,6,Bejaia,06-timezrit,Timezrit,تيمزريت,Timezrit,Timezrit,06019
+06-souk-el-tenine-melbou,06,6,Bejaia,06-souk-el-tenine,Souk El Tenine,مالبو,Melbou,Melbou,06076
+06-souk-el-tenine-souk-el-tenine,06,6,Bejaia,06-souk-el-tenine,Souk El Tenine,سوق لإثنين,Souk El Tenine,Souk El Tenine,06012
+06-souk-el-tenine-tamridjet,06,6,Bejaia,06-souk-el-tenine,Souk El Tenine,تامريجت,Tamridjet,Tamridjet,06077
+06-tichy-boukhelifa,06,6,Bejaia,06-tichy,Tichy,بوخليفة,Boukhelifa,Boukhelifa,06059
+06-tichy-tala-hamza,06,6,Bejaia,06-tichy,Tichy,تالة حمزة,Tala Hamza,Tala Hamza,06066
+06-tichy-tichy,06,6,Bejaia,06-tichy,Tichy,تيشي,Tichy,Tichy,06023
+06-ighil-ali-ait-rzine,06,6,Bejaia,06-ighil-ali,Ighil Ali,أيت رزين,Ait R'zine,Ait R'zine,06013
+06-ighil-ali-ighil-ali,06,6,Bejaia,06-ighil-ali,Ighil Ali,إغيل علي,Ighil-Ali,Ighil-Ali,06014
+06-darguina-ait-smail,06,6,Bejaia,06-darguina,Darguina,أيت إسماعيل,Ait-Smail,Ait-Smail,06044
+06-darguina-darguina,06,6,Bejaia,06-darguina,Darguina,درقينة,Darguina,Darguina,06016
+06-darguina-taskriout,06,6,Bejaia,06-darguina,Darguina,تاسكريوت,Taskriout,Taskriout,06015
+06-aokas-aokas,06,6,Bejaia,06-aokas,Aokas,أوقاس,Aokas,Aokas,06007
+06-aokas-tizi-nberber,06,6,Bejaia,06-aokas,Aokas,تيزي نبربر,Tizi-N'berber,Tizi-N'berber,06058
+06-adekar-adekar,06,6,Bejaia,06-adekar,Adekar,أدكار,Adekar,Adekar,06021
+06-adekar-beni-ksila,06,6,Bejaia,06-adekar,Adekar,بني كسيلة,Beni K'sila,Beni K'sila,06027
+06-adekar-taourit-ighil,06,6,Bejaia,06-adekar,Adekar,تاوريرت إغيل,Taourit Ighil,Taourit Ighil,06035
+06-akbou-akbou,06,6,Bejaia,06-akbou,Akbou,أقبو,Akbou,Akbou,06001
+06-akbou-chellata,06,6,Bejaia,06-akbou,Akbou,شلاطة,Chellata,Chellata,06052
+06-akbou-ighram,06,6,Bejaia,06-akbou,Akbou,اغرم,Ighram,Ighram,06048
+06-akbou-tamokra,06,6,Bejaia,06-akbou,Akbou,تامقرة,Tamokra,Tamokra,06053
+06-seddouk-amalou,06,6,Bejaia,06-seddouk,Seddouk,أمالو,Amalou,Amalou,06034
+06-seddouk-bouhamza,06,6,Bejaia,06-seddouk,Seddouk,بوحمزة,Bouhamza,Bouhamza,06031
+06-seddouk-mcisna,06,6,Bejaia,06-seddouk,Seddouk,مسيسنة,M'cisna,M'cisna,06038
+06-seddouk-seddouk,06,6,Bejaia,06-seddouk,Seddouk,صدوق,Seddouk,Seddouk,06011
+06-tazmalt-beni-mallikeche,06,6,Bejaia,06-tazmalt,Tazmalt,بني مليكش,Beni-Mallikeche,Beni-Mallikeche,06039
+06-tazmalt-boudjellil,06,6,Bejaia,06-tazmalt,Tazmalt,بو جليل,Boudjellil,Boudjellil,06018
+06-tazmalt-tazmalt,06,6,Bejaia,06-tazmalt,Tazmalt,تازمالت,Tazmalt,Tazmalt,06006
+06-chemini-akfadou,06,6,Bejaia,06-chemini,Chemini,أكفادو,Akfadou,Akfadou,06025
+06-chemini-chemini,06,6,Bejaia,06-chemini,Chemini,شميني,Chemini,Chemini,06022
+06-chemini-souk-oufella,06,6,Bejaia,06-chemini,Chemini,سوق اوفلا,Souk Oufella,Souk Oufella,06036
+06-chemini-tibane,06,6,Bejaia,06-chemini,Chemini,طيبان,Tibane,Tibane,06087
+06-ifri-ouzellaguene-ouzellaguen,06,6,Bejaia,06-ifri-ouzellaguene,Ifri Ouzellaguene,أوزلاقن,Ouzellaguen,Ouzellaguen,06010
+07-zeribet-el-oued-el-feidh,07,7,Biskra,07-zeribet-el-oued,Zeribet El Oued,الفيض,El Feidh,El Feidh,07026
+07-zeribet-el-oued-khenguet-sidi-nadji,07,7,Biskra,07-zeribet-el-oued,Zeribet El Oued,خنقة سيدي ناجي,Khenguet Sidi Nadji,Khenguet Sidi Nadji,07032
+07-zeribet-el-oued-zeribet-el-oued,07,7,Biskra,07-zeribet-el-oued,Zeribet El Oued,زريبة الوادي,Zeribet El Oued,Zeribet El Oued,07012
+07-zeribet-el-oued-meziraa,07,7,Biskra,07-zeribet-el-oued,Zeribet El Oued,المزيرعة,Meziraa,Meziraa,07043
+07-tolga-lichana,07,7,Biskra,07-tolga,Tolga,ليشانة,Lichana,Lichana,07009
+07-tolga-bouchakroun,07,7,Biskra,07-tolga,Tolga,بوشقرون,Bouchakroun,Bouchakroun,07022
+07-tolga-bordj-ben-azzouz,07,7,Biskra,07-tolga,Tolga,برج بن عزوز,Bordj Ben Azzouz,Bordj Ben Azzouz,07021
+07-tolga-tolga,07,7,Biskra,07-tolga,Tolga,طولقة,Tolga,Tolga,07003
+07-ourlal-mekhadma,07,7,Biskra,07-ourlal,Ourlal,مخادمة,Mekhadma,Mekhadma,07034
+07-ourlal-mlili,07,7,Biskra,07-ourlal,Ourlal,مليلي,M'lili,M'lili,07068
+07-ourlal-ourlal,07,7,Biskra,07-ourlal,Ourlal,أورلال,Ourlal,Ourlal,07011
+07-ourlal-oumache,07,7,Biskra,07-ourlal,Ourlal,أوماش,Oumache,Oumache,07035
+07-ourlal-lioua,07,7,Biskra,07-ourlal,Ourlal,ليوة,Lioua,Lioua,07033
+07-biskra-biskra,07,7,Biskra,07-biskra,Biskra,بسكرة,Biskra,Biskra,07000
+07-biskra-el-hadjab,07,7,Biskra,07-biskra,Biskra,الحاجب,El Hadjab,El Hadjab,07037
+07-foughala-foughala,07,7,Biskra,07-foughala,Foughala,فوغالة,Foughala,Foughala,07031
+07-foughala-el-ghrous,07,7,Biskra,07-foughala,Foughala,الغروس,El Ghrous,El Ghrous,07027
+07-sidi-okba-ain-naga,07,7,Biskra,07-sidi-okba,Sidi Okba,عين الناقة,Ain Naga,Ain Naga,07039
+07-sidi-okba-chetma,07,7,Biskra,07-sidi-okba,Sidi Okba,شتمة,Chetma,Chetma,07024
+07-sidi-okba-el-haouch,07,7,Biskra,07-sidi-okba,Sidi Okba,الحوش,El Haouch,El Haouch,07028
+07-sidi-okba-sidi-okba,07,7,Biskra,07-sidi-okba,Sidi Okba,سيدي عقبة,Sidi Okba,Sidi Okba,07005
+07-mechouneche-mchouneche,07,7,Biskra,07-mechouneche,Mechouneche,مشونش,M'chouneche,M'chouneche,07010
+08-bechar-bechar,08,8,Bechar,08-bechar,Bechar,بشار,Bechar,Bechar,08000
+08-lahmar-boukais,08,8,Bechar,08-lahmar,Lahmar,بوكايس,Boukais,Boukais,08034
+08-lahmar-lahmar,08,8,Bechar,08-lahmar,Lahmar,لحمر,Lahmar,Lahmar,08026
+08-lahmar-mogheul,08,8,Bechar,08-lahmar,Lahmar,موغل,Mogheul,Mogheul,08042
+08-kenadsa-meridja,08,8,Bechar,08-kenadsa,Kenadsa,المريجة,Meridja,Meridja,08041
+08-kenadsa-kenadsa,08,8,Bechar,08-kenadsa,Kenadsa,القنادسة,Kenadsa,Kenadsa,08011
+08-taghit-taghit,08,8,Bechar,08-taghit,Taghit,تاغيت,Taghit,Taghit,08030
+08-abadla-abadla,08,8,Bechar,08-abadla,Abadla,العبادلة,Abadla,Abadla,08003
+08-abadla-erg-ferradj,08,8,Bechar,08-abadla,Abadla,عرق فراج,Erg-Ferradj,Erg-Ferradj,08023
+08-abadla-machraa-houari-boumediene,08,8,Bechar,08-abadla,Abadla,مشرع هواري بومدين,Machraa-Houari-Boumediene,Machraa-Houari-Boumediene,08027
+08-beni-ounif-beni-ounif,08,8,Bechar,08-beni-ounif,Beni Ounif,بني ونيف,Beni-Ounif,Beni-Ounif,08010
+08-tabelbala-tabelbala,08,8,Bechar,08-tabelbala,Tabelbala,تبلبالة,Tabelbala,Tabelbala,08029
+09-ouled-yaich-beni-mered,09,9,Blida,09-ouled-yaich,Ouled Yaich,بني مراد,Beni Mered,Beni Mered,09003
+09-ouled-yaich-ouled-yaich,09,9,Blida,09-ouled-yaich,Ouled Yaich,أولاد يعيش,Ouled Yaich,Ouled Yaich,09015
+09-ouled-yaich-chrea,09,9,Blida,09-ouled-yaich,Ouled Yaich,الشريعة,Chrea,Chrea,09027
+09-bougara-ouled-slama,09,9,Blida,09-bougara,Bougara,اولاد سلامة,Ouled Slama,Ouled Slama,09033
+09-bougara-hammam-elouane,09,9,Blida,09-bougara,Bougara,حمام ملوان,Hammam Elouane,Hammam Elouane,09030
+09-bougara-bougara,09,9,Blida,09-bougara,Bougara,بوقرة,Bougara,Bougara,09008
+09-mouzaia-mouzaia,09,9,Blida,09-mouzaia,Mouzaia,موزاية,Mouzaia,Mouzaia,09013
+09-mouzaia-chiffa,09,9,Blida,09-mouzaia,Mouzaia,الشفة,Chiffa,Chiffa,09010
+09-mouzaia-ain-romana,09,9,Blida,09-mouzaia,Mouzaia,عين الرمانة,Ain Romana,Ain Romana,09023
+09-larbaa-souhane,09,9,Blida,09-larbaa,Larbaa,صوحان,Souhane,Souhane,09034
+09-larbaa-larbaa,09,9,Blida,09-larbaa,Larbaa,الأربعاء,Larbaa,Larbaa,09002
+09-boufarik-soumaa,09,9,Blida,09-boufarik,Boufarik,الصومعة,Soumaa,Soumaa,09022
+09-boufarik-guerrouaou,09,9,Blida,09-boufarik,Boufarik,قرواو,Guerrouaou,Guerrouaou,09029
+09-boufarik-boufarik,09,9,Blida,09-boufarik,Boufarik,بوفاريك,Boufarik,Boufarik,09001
+09-meftah-meftah,09,9,Blida,09-meftah,Meftah,مفتاح,Meftah,Meftah,09012
+09-meftah-djebabra,09,9,Blida,09-meftah,Meftah,جبابرة,Djebabra,Djebabra,09028
+09-el-affroun-oued-djer,09,9,Blida,09-el-affroun,El Affroun,وادي جر,Oued  Djer,Oued  Djer,09032
+09-el-affroun-el-affroun,09,9,Blida,09-el-affroun,El Affroun,العفرون,El-Affroun,El-Affroun,09011
+09-oued-el-alleug-oued-el-alleug,09,9,Blida,09-oued-el-alleug,Oued El Alleug,وادي العلايق,Oued El Alleug,Oued El Alleug,09014
+09-oued-el-alleug-benkhelil,09,9,Blida,09-oued-el-alleug,Oued El Alleug,بن خليل,Benkhelil,Benkhelil,09025
+09-oued-el-alleug-beni-tamou,09,9,Blida,09-oued-el-alleug,Oued El Alleug,بني تامو,Beni-Tamou,Beni-Tamou,09024
+09-bouinan-chebli,09,9,Blida,09-bouinan,Bouinan,الشبلي,Chebli,Chebli,09009
+09-bouinan-bouinan,09,9,Blida,09-bouinan,Bouinan,بوعينان,Bouinan,Bouinan,09020
+09-blida-bouarfa,09,9,Blida,09-blida,Blida,بوعرفة,Bouarfa,Bouarfa,09019
+09-blida-blida,09,9,Blida,09-blida,Blida,البليدة,Blida,Blida,09000
+10-ain-bessem-ain-laloui,10,10,Bouira,10-ain-bessem,Ain Bessem,عين العلوي,Ain Laloui,Ain Laloui,10032
+10-ain-bessem-ain-el-hadjar,10,10,Bouira,10-ain-bessem,Ain Bessem,عين الحجر,Ain El Hadjar,Ain El Hadjar,10031
+10-ain-bessem-ain-bessem,10,10,Bouira,10-ain-bessem,Ain Bessem,عين بسام,Ain-Bessem,Ain-Bessem,10005
+10-bordj-okhriss-hadjera-zerga,10,10,Bouira,10-bordj-okhriss,Bordj Okhriss,الحجرة الزرقاء,Hadjera Zerga,Hadjera Zerga,10065
+10-bordj-okhriss-mezdour,10,10,Bouira,10-bordj-okhriss,Bordj Okhriss,مزدور,Mezdour,Mezdour,10040
+10-bordj-okhriss-taguedite,10,10,Bouira,10-bordj-okhriss,Bordj Okhriss,تاقديت,Taguedite,Taguedite,10045
+10-bordj-okhriss-bordj-okhriss,10,10,Bouira,10-bordj-okhriss,Bordj Okhriss,برج أوخريص,Bordj Okhriss,Bordj Okhriss,10014
+10-sour-el-ghozlane-ridane,10,10,Bouira,10-sour-el-ghozlane,Sour El Ghozlane,ريدان,Ridane,Ridane,10083
+10-sour-el-ghozlane-maamora,10,10,Bouira,10-sour-el-ghozlane,Sour El Ghozlane,المعمورة,Maamora,Maamora,10071
+10-sour-el-ghozlane-el-hakimia,10,10,Bouira,10-sour-el-ghozlane,Sour El Ghozlane,الحاكمية,El-Hakimia,El-Hakimia,10058
+10-sour-el-ghozlane-dirah,10,10,Bouira,10-sour-el-ghozlane,Sour El Ghozlane,ديرة,Dirah,Dirah,10020
+10-sour-el-ghozlane-dechmia,10,10,Bouira,10-sour-el-ghozlane,Sour El Ghozlane,الدشمية,Dechmia,Dechmia,10057
+10-sour-el-ghozlane-sour-el-ghozlane,10,10,Bouira,10-sour-el-ghozlane,Sour El Ghozlane,سور الغزلان,Sour El Ghozlane,Sour El Ghozlane,10004
+10-bechloul-ahl-el-ksar,10,10,Bouira,10-bechloul,Bechloul,أهل القصر,Ahl El Ksar,Ahl El Ksar,10008
+10-bechloul-bechloul,10,10,Bouira,10-bechloul,Bechloul,بشلول,Bechloul,Bechloul,10012
+10-bechloul-el-adjiba,10,10,Bouira,10-bechloul,Bechloul,العجيبة,El Adjiba,El Adjiba,10021
+10-bechloul-el-asnam,10,10,Bouira,10-bechloul,Bechloul,الأسنام,El Asnam,El Asnam,10022
+10-bechloul-ouled-rached,10,10,Bouira,10-bechloul,Bechloul,أولاد راشد,Ouled Rached,Ouled Rached,
+10-mchedallah-ath-mansour,10,10,Bouira,10-mchedallah,M'chedallah,آث  منصور,Ath Mansour,Ath Mansour,10011
+10-mchedallah-saharidj,10,10,Bouira,10-mchedallah,M'chedallah,سحاريج,Saharidj,Saharidj,10043
+10-mchedallah-m-chedallah,10,10,Bouira,10-mchedallah,M'chedallah,أمشدالة,M Chedallah,M Chedallah,10003
+10-mchedallah-hanif,10,10,Bouira,10-mchedallah,M'chedallah,حنيف,Hanif,Hanif,10030
+10-mchedallah-chorfa,10,10,Bouira,10-mchedallah,M'chedallah,شرفة,Chorfa,Chorfa,10019
+10-mchedallah-aghbalou,10,10,Bouira,10-mchedallah,M'chedallah,أغبالو,Aghbalou,Aghbalou,10007
+10-bir-ghbalou-raouraoua,10,10,Bouira,10-bir-ghbalou,Bir Ghbalou,روراوة,Raouraoua,Raouraoua,10042
+10-bir-ghbalou-el-khabouzia,10,10,Bouira,10-bir-ghbalou,Bir Ghbalou,الخبوزية,El Khabouzia,El Khabouzia,10038
+10-bir-ghbalou-bir-ghbalou,10,10,Bouira,10-bir-ghbalou,Bir Ghbalou,بئر غبالو,Bir Ghbalou,Bir Ghbalou,10013
+10-bouira-bouira,10,10,Bouira,10-bouira,Bouira,البويرة,Bouira,Bouira,10000
+10-bouira-ain-turk,10,10,Bouira,10-bouira,Bouira,عين الترك,Ain Turk,Ain Turk,10033
+10-bouira-ait-laaziz,10,10,Bouira,10-bouira,Bouira,أيت لعزيز,Ait Laaziz,Ait Laaziz,10034
+10-souk-el-khemis-el-mokrani,10,10,Bouira,10-souk-el-khemis,Souk El Khemis,المقراني,El-Mokrani,El-Mokrani,10060
+10-souk-el-khemis-souk-el-khemis,10,10,Bouira,10-souk-el-khemis,Souk El Khemis,سوق الخميس,Souk El Khemis,Souk El Khemis,10044
+10-kadiria-aomar,10,10,Bouira,10-kadiria,Kadiria,أعمر,Aomar,Aomar,10010
+10-kadiria-djebahia,10,10,Bouira,10-kadiria,Kadiria,جباحية,Djebahia,Djebahia,10036
+10-kadiria-kadiria,10,10,Bouira,10-kadiria,Kadiria,قادرية,Kadiria,Kadiria,10006
+10-el-hachimia-el-hachimia,10,10,Bouira,10-el-hachimia,El Hachimia,الهاشمية,El Hachimia,El Hachimia,10023
+10-el-hachimia-oued-el-berdi,10,10,Bouira,10-el-hachimia,El Hachimia,وادي البردي,Oued El Berdi,Oued El Berdi,10075
+10-haizer-haizer,10,10,Bouira,10-haizer,Haizer,حيزر,Haizer,Haizer,10024
+10-haizer-taghzout,10,10,Bouira,10-haizer,Haizer,تاغزوت,Taghzout,Taghzout,10055
+10-lakhdaria-bouderbala,10,10,Bouira,10-lakhdaria,Lakhdaria,بودربالة,Bouderbala,Bouderbala,10016
+10-lakhdaria-boukram,10,10,Bouira,10-lakhdaria,Lakhdaria,بوكرم,Boukram,Boukram,10054
+10-lakhdaria-guerrouma,10,10,Bouira,10-lakhdaria,Lakhdaria,قرومة,Guerrouma,Guerrouma,10037
+10-lakhdaria-lakhdaria,10,10,Bouira,10-lakhdaria,Lakhdaria,الأخضرية,Lakhdaria,Lakhdaria,10002
+10-lakhdaria-maala,10,10,Bouira,10-lakhdaria,Lakhdaria,معلة,Maala,Maala,10039
+10-lakhdaria-zbarbar-el-isseri,10,10,Bouira,10-lakhdaria,Lakhdaria,زبربر,Z'barbar (El Isseri ),Z'barbar (El Isseri ),10047
+11-tazrouk-tazrouk,11,11,Tamanrasset,11-tazrouk,Tazrouk,تاظروك,Tazrouk,Tazrouk,11010
+11-tazrouk-idles,11,11,Tamanrasset,11-tazrouk,Tazrouk,أدلس,Idles,Idles,11013
+11-silet-abelsa,11,11,Tamanrasset,11-silet,Silet,ابلسة,Abelsa,Abelsa,11007
+11-tamanrasset-tamanrasset,11,11,Tamanrasset,11-tamanrasset,Tamanrasset,تمنراست,Tamanrasset,Tamanrasset,11000
+11-tamanrasset-ain-amguel,11,11,Tamanrasset,11-tamanrasset,Tamanrasset,عين امقل,Ain Amguel,Ain Amguel,11003
+12-el-malabiod-el-houidjbet,12,12,Tebessa,12-el-malabiod,El Malabiod,الحويجبات,El-Houidjbet,El-Houidjbet,12038
+12-el-malabiod-el-malabiod,12,12,Tebessa,12-el-malabiod,El Malabiod,الماء الابيض,El Malabiod,El Malabiod,12014
+12-el-aouinet-el-aouinet,12,12,Tebessa,12-el-aouinet,El Aouinet,العوينات,El-Aouinet,El-Aouinet,12005
+12-el-aouinet-boukhadra,12,12,Tebessa,12-el-aouinet,El Aouinet,بوخضرة,Boukhadra,Boukhadra,12012
+12-bir-mokadem-bir-mokkadem,12,12,Tebessa,12-bir-mokadem,Bir Mokadem,بئر مقدم,Bir Mokkadem,Bir Mokkadem,12011
+12-bir-mokadem-guorriguer,12,12,Tebessa,12-bir-mokadem,Bir Mokadem,قريقر,Guorriguer,Guorriguer,12046
+12-bir-mokadem-hammamet,12,12,Tebessa,12-bir-mokadem,Bir Mokadem,الحمامات,Hammamet,Hammamet,12016
+12-morsott-bir-dheheb,12,12,Tebessa,12-morsott,Morsott,بئر الذهب,Bir Dheheb,Bir Dheheb,12031
+12-morsott-morsott,12,12,Tebessa,12-morsott,Morsott,مرسط,Morsott,Morsott,12017
+12-oum-ali-saf-saf-el-ouesra,12,12,Tebessa,12-oum-ali,Oum Ali,صفصاف الوسرى,Saf Saf El Ouesra,Saf Saf El Ouesra,12037
+12-oum-ali-oum-ali,12,12,Tebessa,12-oum-ali,Oum Ali,أم علي,Oum Ali,Oum Ali,12027
+12-el-kouif-bekkaria,12,12,Tebessa,12-el-kouif,El Kouif,بكارية,Bekkaria,Bekkaria,12019
+12-el-kouif-boulhaf-dyr,12,12,Tebessa,12-el-kouif,El Kouif,بولحاف الدير,Boulhaf Dyr,Boulhaf Dyr,12039
+12-el-kouif-el-kouif,12,12,Tebessa,12-el-kouif,El Kouif,الكويف,El Kouif,El Kouif,12006
+12-ouenza-ouenza,12,12,Tebessa,12-ouenza,Ouenza,الونزة,Ouenza,Ouenza,12003
+12-ouenza-el-meridj,12,12,Tebessa,12-ouenza,Ouenza,المريج,El Meridj,El Meridj,12023
+12-ouenza-ain-zerga,12,12,Tebessa,12-ouenza,Ouenza,عين الزرقاء,Ain Zerga,Ain Zerga,12008
+12-el-ogla-stah-guentis,12,12,Tebessa,12-el-ogla,El Ogla,سطح قنطيس,Stah Guentis,Stah Guentis,12032
+12-el-ogla-el-ogla,12,12,Tebessa,12-el-ogla,El Ogla,العقلة,El Ogla,El Ogla,12015
+12-el-ogla-el-mezeraa,12,12,Tebessa,12-el-ogla,El Ogla,المزرعة,El Mezeraa,El Mezeraa,12042
+12-el-ogla-bedjene,12,12,Tebessa,12-el-ogla,El Ogla,بجن,Bedjene,Bedjene,12035
+12-cheria-telidjen,12,12,Tebessa,12-cheria,Cheria,ثليجان,Telidjen,Telidjen,12053
+12-cheria-cheria,12,12,Tebessa,12-cheria,Cheria,الشريعة,Cheria,Cheria,12002
+12-tebessa-tebessa,12,12,Tebessa,12-tebessa,Tebessa,تبسة,Tebessa,Tebessa,12000
+13-bab-el-assa-bab-el-assa,13,13,Tlemcen,13-bab-el-assa,Bab El Assa,باب العسة,Bab El Assa,Bab El Assa,13014
+13-bab-el-assa-souk-tleta,13,13,Tlemcen,13-bab-el-assa,Bab El Assa,سوق الثلاثاء,Souk Tleta,Souk Tleta,13078
+13-bab-el-assa-souani,13,13,Tlemcen,13-bab-el-assa,Bab El Assa,السواني,Souani,Souani,13046
+13-mansourah-terny-beni-hediel,13,13,Tlemcen,13-mansourah,Mansourah,تيرني بني هديل,Terny Beni Hediel,Terny Beni Hediel,13079
+13-mansourah-mansourah,13,13,Tlemcen,13-mansourah,Mansourah,منصورة,Mansourah,Mansourah,13062
+13-mansourah-beni-mester,13,13,Tlemcen,13-mansourah,Mansourah,بني مستر,Beni Mester,Beni Mester,13038
+13-mansourah-ain-ghoraba,13,13,Tlemcen,13-mansourah,Mansourah,عين غرابة,Ain Ghoraba,Ain Ghoraba,13023
+13-chetouane-chetouane,13,13,Tlemcen,13-chetouane,Chetouane,شتوان,Chetouane,Chetouane,13048
+13-chetouane-amieur,13,13,Tlemcen,13-chetouane,Chetouane,عمير,Amieur,Amieur,13058
+13-chetouane-ain-fezza,13,13,Tlemcen,13-chetouane,Chetouane,عين فزة,Ain Fezza,Ain Fezza,13022
+13-honnaine-honnaine,13,13,Tlemcen,13-honnaine,Honnaine,هنين,Honnaine,Honnaine,13015
+13-honnaine-beni-khellad,13,13,Tlemcen,13-honnaine,Honnaine,بني خلاد,Beni Khellad,Beni Khellad,13074
+13-nedroma-nedroma,13,13,Tlemcen,13-nedroma,Nedroma,ندرومة,Nedroma,Nedroma,13004
+13-nedroma-djebala,13,13,Tlemcen,13-nedroma,Nedroma,جبالة,Djebala,Djebala,13029
+13-marsa-ben-mehdi-msirda-fouaga,13,13,Tlemcen,13-marsa-ben-mehdi,Marsa Ben Mehdi,مسيردة الفواقة,M'sirda Fouaga,M'sirda Fouaga,13024
+13-marsa-ben-mehdi-marsa-ben-mhidi,13,13,Tlemcen,13-marsa-ben-mehdi,Marsa Ben Mehdi,مرسى بن مهيدي,Marsa Ben M'hidi,Marsa Ben M'hidi,13017
+13-beni-boussaid-sidi-medjahed,13,13,Tlemcen,13-beni-boussaid,Beni Boussaid,سيدي مجاهد,Sidi Medjahed,Sidi Medjahed,13044
+13-beni-boussaid-beni-boussaid,13,13,Tlemcen,13-beni-boussaid,Beni Boussaid,بني بوسعيد,Beni Boussaid,Beni Boussaid,
+13-sebdou-sebdou,13,13,Tlemcen,13-sebdou,Sebdou,سبدو,Sebdou,Sebdou,13006
+13-sabra-bouhlou,13,13,Tlemcen,13-sabra,Sabra,بوحلو,Bouhlou,Bouhlou,13026
+13-sabra-sabra,13,13,Tlemcen,13-sabra,Sabra,صبرة,Sabra,Sabra,13011
+13-maghnia-maghnia,13,13,Tlemcen,13-maghnia,Maghnia,مغنية,Maghnia,Maghnia,13001
+13-maghnia-hammam-boughrara,13,13,Tlemcen,13-maghnia,Maghnia,حمام بوغرارة,Hammam Boughrara,Hammam Boughrara,13036
+13-hennaya-zenata,13,13,Tlemcen,13-hennaya,Hennaya,زناتة,Zenata,Zenata,13051
+13-hennaya-ouled-riyah,13,13,Tlemcen,13-hennaya,Hennaya,أولاد رياح,Ouled Riyah,Ouled Riyah,13070
+13-hennaya-hennaya,13,13,Tlemcen,13-hennaya,Hennaya,الحناية,Hennaya,Hennaya,13009
+13-bensekrane-sidi-abdelli,13,13,Tlemcen,13-bensekrane,Bensekrane,سيدي العبدلي,Sidi Abdelli,Sidi Abdelli,13019
+13-bensekrane-bensekrane,13,13,Tlemcen,13-bensekrane,Bensekrane,بن سكران,Bensekrane,Bensekrane,13008
+13-fellaoucene-fellaoucene,13,13,Tlemcen,13-fellaoucene,Fellaoucene,فلاوسن,Fellaoucene,Fellaoucene,13035
+13-fellaoucene-ain-kebira,13,13,Tlemcen,13-fellaoucene,Fellaoucene,عين الكبيرة,Ain Kebira,Ain Kebira,13049
+13-fellaoucene-ain-fetah,13,13,Tlemcen,13-fellaoucene,Fellaoucene,عين فتاح,Ain Fetah,Ain Fetah,13028
+13-tlemcen-tlemcen,13,13,Tlemcen,13-tlemcen,Tlemcen,تلمسان,Tlemcen,Tlemcen,13000
+13-ain-tellout-ain-nehala,13,13,Tlemcen,13-ain-tellout,Ain Tellout,عين النحالة,Ain Nehala,Ain Nehala,13054
+13-ain-tellout-ain-tellout,13,13,Tlemcen,13-ain-tellout,Ain Tellout,عين تالوت,Ain Tellout,Ain Tellout,13012
+13-remchi-ain-youcef,13,13,Tlemcen,13-remchi,Remchi,عين يوسف,Ain Youcef,Ain Youcef,13013
+13-remchi-beni-ouarsous,13,13,Tlemcen,13-remchi,Remchi,بني وارسوس,Beni Ouarsous,Beni Ouarsous,13025
+13-remchi-el-fehoul,13,13,Tlemcen,13-remchi,Remchi,الفحول,El Fehoul,El Fehoul,13033
+13-remchi-remchi,13,13,Tlemcen,13-remchi,Remchi,الرمشي,Remchi,Remchi,13005
+13-remchi-sebbaa-chioukh,13,13,Tlemcen,13-remchi,Remchi,سبعة شيوخ,Sebbaa Chioukh,Sebbaa Chioukh,13042
+13-ghazaouet-dar-yaghmoracen,13,13,Tlemcen,13-ghazaouet,Ghazaouet,دار يغمراسن,Dar Yaghmoracen,Dar Yaghmoracen,13032
+13-ghazaouet-ghazaouet,13,13,Tlemcen,13-ghazaouet,Ghazaouet,الغزوات,Ghazaouet,Ghazaouet,13002
+13-ghazaouet-souahlia,13,13,Tlemcen,13-ghazaouet,Ghazaouet,السواحلية,Souahlia,Souahlia,13020
+13-ghazaouet-tianet,13,13,Tlemcen,13-ghazaouet,Ghazaouet,تيانت,Tianet,Tianet,13047
+13-ouled-mimoun-beni-smiel,13,13,Tlemcen,13-ouled-mimoun,Ouled Mimoun,بني صميل,Beni Smiel,Beni Smiel,13083
+13-ouled-mimoun-oued-lakhdar,13,13,Tlemcen,13-ouled-mimoun,Ouled Mimoun,وادي الخضر,Oued Lakhdar,Oued Lakhdar,13068
+13-ouled-mimoun-ouled-mimoun,13,13,Tlemcen,13-ouled-mimoun,Ouled Mimoun,أولاد ميمون,Ouled Mimoun,Ouled Mimoun,13010
+13-beni-snous-beni-bahdel,13,13,Tlemcen,13-beni-snous,Beni Snous,بني بهدل,Beni Bahdel,Beni Bahdel,13060
+13-beni-snous-beni-snous,13,13,Tlemcen,13-beni-snous,Beni Snous,بني سنوس,Beni Snous,Beni Snous,13037
+13-beni-snous-azail,13,13,Tlemcen,13-beni-snous,Beni Snous,العزايل,Azail,Azail,13080
+14-mahdia-mahdia,14,14,Tiaret,14-mahdia,Mahdia,مهدية,Mahdia,Mahdia,14004
+14-mahdia-ain-dzarit,14,14,Tiaret,14-mahdia,Mahdia,عين دزاريت,Ain Dzarit,Ain Dzarit,14017
+14-mahdia-sebaine,14,14,Tiaret,14-mahdia,Mahdia,السبعين,Sebaine,Sebaine,14030
+14-mahdia-nadorah,14,14,Tiaret,14-mahdia,Mahdia,الناظورة,Nadorah,Nadorah,14058
+14-sougueur-faidja,14,14,Tiaret,14-sougueur,Sougueur,الفايجة,Faidja,Faidja,14049
+14-sougueur-si-abdelghani,14,14,Tiaret,14-sougueur,Sougueur,سي عبد الغني,Si Abdelghani,Si Abdelghani,14027
+14-sougueur-sougueur,14,14,Tiaret,14-sougueur,Sougueur,السوقر,Sougueur,Sougueur,14003
+14-sougueur-tousnina,14,14,Tiaret,14-sougueur,Sougueur,توسنينة,Tousnina,Tousnina,14037
+14-meghila-meghila,14,14,Tiaret,14-meghila,Meghila,مغيلة,Meghila,Meghila,14024
+14-meghila-sebt,14,14,Tiaret,14-meghila,Meghila,السبت,Sebt,Sebt,21018
+14-meghila-sidi-hosni,14,14,Tiaret,14-meghila,Meghila,سيدي حسني,Sidi Hosni,Sidi Hosni,14029
+14-frenda-ain-el-hadid,14,14,Tiaret,14-frenda,Frenda,عين الحديد,Ain El Hadid,Ain El Hadid,14008
+14-frenda-frenda,14,14,Tiaret,14-frenda,Frenda,فرندة,Frenda,Frenda,14001
+14-frenda-takhemaret,14,14,Tiaret,14-frenda,Frenda,تخمرت,Takhemaret,Takhemaret,14015
+14-ain-kermes-ain-kermes,14,14,Tiaret,14-ain-kermes,Ain Kermes,عين كرمس,Ain Kermes,Ain Kermes,14009
+14-ain-kermes-djebilet-rosfa,14,14,Tiaret,14-ain-kermes,Ain Kermes,جبيلات الرصفاء,Djebilet Rosfa,Djebilet Rosfa,14061
+14-ain-kermes-madna,14,14,Tiaret,14-ain-kermes,Ain Kermes,مادنة,Madna,Madna,14055
+14-ain-kermes-medrissa,14,14,Tiaret,14-ain-kermes,Ain Kermes,مدريسة,Medrissa,Medrissa,14013
+14-ain-kermes-sidi-abderrahmane,14,14,Tiaret,14-ain-kermes,Ain Kermes,سيدي عبد الرحمن,Sidi Abderrahmane,Sidi Abderrahmane,14028
+14-rahouia-guertoufa,14,14,Tiaret,14-rahouia,Rahouia,قرطوفة,Guertoufa,Guertoufa,14019
+14-rahouia-rahouia,14,14,Tiaret,14-rahouia,Rahouia,الرحوية,Rahouia,Rahouia,14005
+14-oued-lili-oued-lilli,14,14,Tiaret,14-oued-lili,Oued Lili,وادي ليلي,Oued Lilli,Oued Lilli,14014
+14-oued-lili-sidi-ali-mellal,14,14,Tiaret,14-oued-lili,Oued Lili,سيدي علي ملال,Sidi Ali Mellal,Sidi Ali Mellal,14064
+14-oued-lili-tidda,14,14,Tiaret,14-oued-lili,Oued Lili,تيدة,Tidda,Tidda,14071
+14-mechraa-sfa-djillali-ben-amar,14,14,Tiaret,14-mechraa-sfa,Mechraa Sfa,جيلالي بن عمار,Djillali Ben Amar,Djillali Ben Amar,14016
+14-mechraa-sfa-mechraa-safa,14,14,Tiaret,14-mechraa-sfa,Mechraa Sfa,مشرع الصفا,Mechraa Safa,Mechraa Safa,14012
+14-mechraa-sfa-tagdempt,14,14,Tiaret,14-mechraa-sfa,Mechraa Sfa,تاقدمت,Tagdempt,Tagdempt,14068
+14-tiaret-tiaret,14,14,Tiaret,14-tiaret,Tiaret,تيارت,Tiaret,Tiaret,14000
+14-medroussa-medroussa,14,14,Tiaret,14-medroussa,Medroussa,مدروسة,Medroussa,Medroussa,14023
+14-medroussa-mellakou,14,14,Tiaret,14-medroussa,Medroussa,ملاكو,Mellakou,Mellakou,14025
+14-medroussa-sidi-bakhti,14,14,Tiaret,14-medroussa,Medroussa,سيدي بختي,Sidi Bakhti,Sidi Bakhti,14065
+14-ain-deheb-ain-deheb,14,14,Tiaret,14-ain-deheb,Ain Deheb,عين الذهب,Ain Deheb,Ain Deheb,14007
+14-ain-deheb-chehaima,14,14,Tiaret,14-ain-deheb,Ain Deheb,شحيمة,Chehaima,Chehaima,14046
+14-ain-deheb-naima,14,14,Tiaret,14-ain-deheb,Ain Deheb,النعيمة,Naima,Naima,14060
+14-dahmouni-ain-bouchekif,14,14,Tiaret,14-dahmouni,Dahmouni,عين بوشقيف,Ain Bouchekif,Ain Bouchekif,14040
+14-dahmouni-dahmouni,14,14,Tiaret,14-dahmouni,Dahmouni,دحموني,Dahmouni,Dahmouni,14010
+15-tigzirt-mizrana,15,15,Tizi Ouzou,15-tigzirt,Tigzirt,ميزرانـــة,Mizrana,Mizrana,15061
+15-tigzirt-iflissen,15,15,Tizi Ouzou,15-tigzirt,Tigzirt,إفليـــسن,Iflissen,Iflissen,15068
+15-tigzirt-tigzirt,15,15,Tizi Ouzou,15-tigzirt,Tigzirt,تيقـزيرت,Tigzirt,Tigzirt,15019
+15-bouzeguene-idjeur,15,15,Tizi Ouzou,15-bouzeguene,Bouzeguene,إيجــار,Idjeur,Idjeur,15035
+15-bouzeguene-beni-zikki,15,15,Tizi Ouzou,15-bouzeguene,Bouzeguene,بني زيكــي,Beni-Zikki,Beni-Zikki,15118
+15-bouzeguene-illoula-oumalou,15,15,Tizi Ouzou,15-bouzeguene,Bouzeguene,إيلولة أومـــالو,Illoula Oumalou,Illoula Oumalou,15037
+15-bouzeguene-bouzeguene,15,15,Tizi Ouzou,15-bouzeguene,Bouzeguene,بوزقــن,Bouzeguene,Bouzeguene,15009
+15-beni-douala-beni-douala,15,15,Tizi Ouzou,15-beni-douala,Beni Douala,بني دوالة,Beni-Douala,Beni-Douala,15011
+15-beni-douala-beni-aissi,15,15,Tizi Ouzou,15-beni-douala,Beni Douala,بني عيسي,Beni-Aissi,Beni-Aissi,15069
+15-beni-douala-ait-mahmoud,15,15,Tizi Ouzou,15-beni-douala,Beni Douala,أيت محمود,Ait-Mahmoud,Ait-Mahmoud,15044
+15-beni-douala-beni-zmenzer,15,15,Tizi Ouzou,15-beni-douala,Beni Douala,بنــــي زمنزار,Beni Zmenzer,Beni Zmenzer,15028
+15-ouadhias-agouni-gueghrane,15,15,Tizi Ouzou,15-ouadhias,Ouadhias,أقني قغران,Agouni-Gueghrane,Agouni-Gueghrane,15022
+15-ouadhias-ait-bouaddou,15,15,Tizi Ouzou,15-ouadhias,Ouadhias,أيت بــوادو,Ait Bouaddou,Ait Bouaddou,15024
+15-ouadhias-ouadhias,15,15,Tizi Ouzou,15-ouadhias,Ouadhias,واضية,Ouadhias,Ouadhias,15016
+15-ouadhias-tizi-ntleta,15,15,Tizi Ouzou,15-ouadhias,Ouadhias,تيزي نثلاثة,Tizi N'tleta,Tizi N'tleta,15049
+15-azeffoun-aghribs,15,15,Tizi Ouzou,15-azeffoun,Azeffoun,أغريب,Aghribs,Aghribs,15021
+15-azeffoun-ait-chafaa,15,15,Tizi Ouzou,15-azeffoun,Azeffoun,أيت شافع,Ait-Chafaa,Ait-Chafaa,15059
+15-azeffoun-akerrou,15,15,Tizi Ouzou,15-azeffoun,Azeffoun,أقرو,Akerrou,Akerrou,15027
+15-azeffoun-azeffoun,15,15,Tizi Ouzou,15-azeffoun,Azeffoun,أزفون,Azeffoun,Azeffoun,15010
+15-boghni-assi-youcef,15,15,Tizi Ouzou,15-boghni,Boghni,أسي يوسف,Assi-Youcef,Assi-Youcef,15025
+15-boghni-boghni,15,15,Tizi Ouzou,15-boghni,Boghni,بوغني,Boghni,Boghni,15003
+15-boghni-bounouh,15,15,Tizi Ouzou,15-boghni,Boghni,بونوح,Bounouh,Bounouh,15031
+15-boghni-mechtras,15,15,Tizi Ouzou,15-boghni,Boghni,مشطراس,Mechtras,Mechtras,15041
+15-draa-ben-khedda-draa-ben-khedda,15,15,Tizi Ouzou,15-draa-ben-khedda,Draa Ben Khedda,ذراع بن خدة,Draa-Ben-Khedda,Draa-Ben-Khedda,15004
+15-draa-ben-khedda-sidi-namane,15,15,Tizi Ouzou,15-draa-ben-khedda,Draa Ben Khedda,سيدي نعمان,Sidi Namane,Sidi Namane,15042
+15-draa-ben-khedda-tadmait,15,15,Tizi Ouzou,15-draa-ben-khedda,Draa Ben Khedda,تادمايت,Tadmait,Tadmait,15018
+15-draa-ben-khedda-tirmitine,15,15,Tizi Ouzou,15-draa-ben-khedda,Draa Ben Khedda,تيرمتين,Tirmitine,Tirmitine,15048
+15-ouacif-ait-boumahdi,15,15,Tizi Ouzou,15-ouacif,Ouacif,أيت بومهدي,Ait Boumahdi,Ait Boumahdi,15084
+15-ouacif-ait-toudert,15,15,Tizi Ouzou,15-ouacif,Ouacif,أيت تودرت,Ait-Toudert,Ait-Toudert,15062
+15-ouacif-ouacif,15,15,Tizi Ouzou,15-ouacif,Ouacif,واسيف,Ouacif,Ouacif,15015
+15-mekla-ait-khellili,15,15,Tizi Ouzou,15-mekla,Mekla,أيت خليلي,Ait Khellili,Ait Khellili,15079
+15-mekla-mekla,15,15,Tizi Ouzou,15-mekla,Mekla,مقــلع,Mekla,Mekla,15014
+15-mekla-souama,15,15,Tizi Ouzou,15-mekla,Mekla,صوامـــع,Souama,Souama,15043
+15-benni-yenni-beni-yenni,15,15,Tizi Ouzou,15-benni-yenni,Benni Yenni,بني يني,Beni-Yenni,Beni-Yenni,15029
+15-benni-yenni-iboudrarene,15,15,Tizi Ouzou,15-benni-yenni,Benni Yenni,إبودرارن,Iboudrarene,Iboudrarene,15073
+15-benni-yenni-yatafene,15,15,Tizi Ouzou,15-benni-yenni,Benni Yenni,يطــافن,Yatafene,Yatafene,15052
+15-tizi-ouzou-tizi-ouzou,15,15,Tizi Ouzou,15-tizi-ouzou,Tizi Ouzou,تيزي وزو,Tizi-Ouzou,Tizi-Ouzou,15000
+15-ain-el-hammam-abi-youcef,15,15,Tizi Ouzou,15-ain-el-hammam,Ain El Hammam,أبي يوسف,Abi-Youcef,Abi-Youcef,
+15-ain-el-hammam-ain-el-hammam,15,15,Tizi Ouzou,15-ain-el-hammam,Ain El Hammam,عين الحمام,Ain-El-Hammam,Ain-El-Hammam,15002
+15-ain-el-hammam-ait-yahia,15,15,Tizi Ouzou,15-ain-el-hammam,Ain El Hammam,أيت يحيى,Ait-Yahia,Ait-Yahia,15072
+15-ain-el-hammam-akbil,15,15,Tizi Ouzou,15-ain-el-hammam,Ain El Hammam,اقبيل,Akbil,Akbil,15092
+15-makouda-boudjima,15,15,Tizi Ouzou,15-makouda,Makouda,بوجيمة,Boudjima,Boudjima,15030
+15-makouda-makouda,15,15,Tizi Ouzou,15-makouda,Makouda,ماكودة,Makouda,Makouda,15040
+15-draa-el-mizan-ain-zaouia,15,15,Tizi Ouzou,15-draa-el-mizan,Draa El Mizan,عين الزاوية,Ain-Zaouia,Ain-Zaouia,15055
+15-draa-el-mizan-ait-yahia-moussa,15,15,Tizi Ouzou,15-draa-el-mizan,Draa El Mizan,أيت يحي موسى,Ait Yahia Moussa,Ait Yahia Moussa,15026
+15-draa-el-mizan-draa-el-mizan,15,15,Tizi Ouzou,15-draa-el-mizan,Draa El Mizan,ذراع الميزان,Draa-El-Mizan,Draa-El-Mizan,15005
+15-draa-el-mizan-frikat,15,15,Tizi Ouzou,15-draa-el-mizan,Draa El Mizan,فريقات,Frikat,Frikat,15067
+15-tizi-ghenif-mkira,15,15,Tizi Ouzou,15-tizi-ghenif,Tizi-Ghenif,مكيرة,M'kira,M'kira,15046
+15-tizi-ghenif-tizi-gheniff,15,15,Tizi Ouzou,15-tizi-ghenif,Tizi-Ghenif,تيزي غنيف,Tizi-Gheniff,Tizi-Gheniff,15020
+15-iferhounene-illilten,15,15,Tizi Ouzou,15-iferhounene,Iferhounene,إيلـيــلتـن,Illilten,Illilten,15036
+15-iferhounene-imsouhal,15,15,Tizi Ouzou,15-iferhounene,Iferhounene,إمســوحال,Imsouhal,Imsouhal,15023
+15-iferhounene-iferhounene,15,15,Tizi Ouzou,15-iferhounene,Iferhounene,إفــرحــونان,Iferhounene,Iferhounene,15013
+15-azazga-azazga,15,15,Tizi Ouzou,15-azazga,Azazga,عزازقة,Azazga,Azazga,15001
+15-azazga-freha,15,15,Tizi Ouzou,15-azazga,Azazga,فريحة,Freha,Freha,15012
+15-azazga-ifigha,15,15,Tizi Ouzou,15-azazga,Azazga,إيفيغاء,Ifigha,Ifigha,15034
+15-azazga-yakourene,15,15,Tizi Ouzou,15-azazga,Azazga,إعــكورن,Yakourene,Yakourene,15051
+15-azazga-zekri,15,15,Tizi Ouzou,15-azazga,Azazga,زكري,Zekri,Zekri,15076
+15-larbaa-nath-iraten-ait-aggouacha,15,15,Tizi Ouzou,15-larbaa-nath-iraten,Larbaa Nath Iraten,أيت عقـواشة,Ait Aggouacha,Ait Aggouacha,15058
+15-larbaa-nath-iraten-irdjen,15,15,Tizi Ouzou,15-larbaa-nath-iraten,Larbaa Nath Iraten,إيرجـــن,Irdjen,Irdjen,15038
+15-larbaa-nath-iraten-larbaa-nath-irathen,15,15,Tizi Ouzou,15-larbaa-nath-iraten,Larbaa Nath Iraten,الأربعــاء ناث إيراثن,Larbaa Nath Irathen,Larbaa Nath Irathen,15006
+15-tizi-rached-ait-oumalou,15,15,Tizi Ouzou,15-tizi-rached,Tizi Rached,أيت  أومالو,Ait-Oumalou,Ait-Oumalou,
+15-tizi-rached-tizi-rached,15,15,Tizi Ouzou,15-tizi-rached,Tizi Rached,تيزي راشد,Tizi-Rached,Tizi-Rached,15050
+15-ouaguenoun-ait-aissa-mimoun,15,15,Tizi Ouzou,15-ouaguenoun,Ouaguenoun,أيت عيسى ميمون,Ait-Aissa-Mimoun,Ait-Aissa-Mimoun,15032
+15-ouaguenoun-ouaguenoun,15,15,Tizi Ouzou,15-ouaguenoun,Ouaguenoun,واقنون,Ouaguenoun,Ouaguenoun,15045
+15-ouaguenoun-timizart,15,15,Tizi Ouzou,15-ouaguenoun,Ouaguenoun,تيمـيزار,Timizart,Timizart,15039
+15-maatkas-maatkas,15,15,Tizi Ouzou,15-maatkas,Maatkas,معـــاتقة,Maatkas,Maatkas,15017
+15-maatkas-souk-el-tenine,15,15,Tizi Ouzou,15-maatkas,Maatkas,سوق الإثنين,Souk-El-Tenine,Souk-El-Tenine,15123
+16-hussein-dey-hussein-dey,16,16,Alger,16-hussein-dey,Hussein Dey,حسين داي,Hussein Dey,Hussein Dey,16005
+16-hussein-dey-kouba,16,16,Alger,16-hussein-dey,Hussein Dey,القبة,Kouba,Kouba,16006
+16-hussein-dey-mohamed-belouzdad,16,16,Alger,16-hussein-dey,Hussein Dey,محمد بلوزداد,Mohamed Belouzdad,Mohamed Belouzdad,16151
+16-hussein-dey-el-magharia,16,16,Alger,16-hussein-dey,Hussein Dey,المغارية,El Magharia,El Magharia,16053
+16-baraki-les-eucalyptus,16,16,Alger,16-baraki,Baraki,الكاليتوس,Les Eucalyptus,Les Eucalyptus,16057
+16-baraki-sidi-moussa,16,16,Alger,16-baraki,Baraki,سيدي موسى,Sidi Moussa,Sidi Moussa,16189
+16-baraki-baraki,16,16,Alger,16-baraki,Baraki,براقي,Baraki,Baraki,16027
+16-dar-el-beida-ain-taya,16,16,Alger,16-dar-el-beida,Dar El Beida,عين طاية,Ain Taya,Ain Taya,16019
+16-dar-el-beida-bab-ezzouar,16,16,Alger,16-dar-el-beida,Dar El Beida,باب الزوار,Bab Ezzouar,Bab Ezzouar,16024
+16-dar-el-beida-bordj-el-kiffan,16,16,Alger,16-dar-el-beida,Dar El Beida,برج الكيفان,Bordj El Kiffan,Bordj El Kiffan,16031
+16-dar-el-beida-dar-el-beida,16,16,Alger,16-dar-el-beida,Dar El Beida,الدار البيضاء,Dar El Beida,Dar El Beida,16033
+16-dar-el-beida-mohammadia,16,16,Alger,16-dar-el-beida,Dar El Beida,المحمدية,Mohammadia,Mohammadia,16058
+16-dar-el-beida-bordj-el-bahri,16,16,Alger,16-dar-el-beida,Dar El Beida,برج البحري,Bordj El Bahri,Bordj El Bahri,16046
+16-dar-el-beida-el-marsa,16,16,Alger,16-dar-el-beida,Dar El Beida,المرسى,El Marsa,El Marsa,16111
+16-birtouta-bir-touta,16,16,Alger,16-birtouta,Birtouta,بئر توتة,Bir Touta,Bir Touta,16045
+16-birtouta-ouled-chebel,16,16,Alger,16-birtouta,Birtouta,اولاد شبل,Ouled Chebel,Ouled Chebel,16118
+16-birtouta-tessala-el-merdja,16,16,Alger,16-birtouta,Birtouta,تسالة المرجة,Tessala El Merdja,Tessala El Merdja,16099
+16-rouiba-herraoua,16,16,Alger,16-rouiba,Rouiba,هراوة,Herraoua,Herraoua,16116
+16-rouiba-reghaia,16,16,Alger,16-rouiba,Rouiba,رغاية,Reghaia,Reghaia,16036
+16-rouiba-rouiba,16,16,Alger,16-rouiba,Rouiba,الرويبة,Rouiba,Rouiba,16017
+16-zeralda-maalma,16,16,Alger,16-zeralda,Zeralda,المعالمة,Maalma,Maalma,16093
+16-zeralda-rahmania,16,16,Alger,16-zeralda,Zeralda,الرحمانية,Rahmania,Rahmania,16121
+16-zeralda-souidania,16,16,Alger,16-zeralda,Zeralda,سويدانية,Souidania,Souidania,16097
+16-zeralda-staoueli,16,16,Alger,16-zeralda,Zeralda,سطاوالي,Staoueli,Staoueli,16062
+16-zeralda-zeralda,16,16,Alger,16-zeralda,Zeralda,زرالدة,Zeralda,Zeralda,16063
+16-draria-baba-hassen,16,16,Alger,16-draria,Draria,بابا حسن,Baba Hassen,Baba Hassen,16081
+16-draria-douira,16,16,Alger,16-draria,Draria,الدويرة,Douira,Douira,16049
+16-draria-draria,16,16,Alger,16-draria,Draria,الدرارية,Draria,Draria,16050
+16-draria-el-achour,16,16,Alger,16-draria,Draria,العاشور,El Achour,El Achour,16104
+16-draria-khraissia,16,16,Alger,16-draria,Draria,الخرايسية,Khraissia,Khraissia,16091
+16-cheraga-ain-benian,16,16,Alger,16-cheraga,Cheraga,عين بنيان,Ain Benian,Ain Benian,16018
+16-cheraga-cheraga,16,16,Alger,16-cheraga,Cheraga,الشراقة,Cheraga,Cheraga,16014
+16-cheraga-dely-ibrahim,16,16,Alger,16-cheraga,Cheraga,دالي ابراهيم,Dely Ibrahim,Dely Ibrahim,16047
+16-cheraga-ouled-fayet,16,16,Alger,16-cheraga,Cheraga,اولاد فايت,Ouled Fayet,Ouled Fayet,16094
+16-cheraga-hammamet,16,16,Alger,16-cheraga,Cheraga,الحمامات,Hammamet,Hammamet,
+16-sidi-mhamed-alger-centre,16,16,Alger,16-sidi-mhamed,Sidi M'hamed,الجزائر الوسطى,Alger Centre,Alger Centre,16000
+16-sidi-mhamed-el-madania,16,16,Alger,16-sidi-mhamed,Sidi M'hamed,المدنية,El Madania,El Madania,16015
+16-sidi-mhamed-el-mouradia,16,16,Alger,16-sidi-mhamed,Sidi M'hamed,المرادية,El Mouradia,El Mouradia,16035
+16-sidi-mhamed-sidi-mhamed,16,16,Alger,16-sidi-mhamed,Sidi M'hamed,سيدي امحمد,Sidi M'hamed,Sidi M'hamed,16002
+16-bir-mourad-rais-sehaoula,16,16,Alger,16-bir-mourad-rais,Bir Mourad Rais,السحاولة,Sehaoula,Sehaoula,16095
+16-bir-mourad-rais-bir-mourad-rais,16,16,Alger,16-bir-mourad-rais,Bir Mourad Rais,بئر مراد رايس,Bir Mourad Rais,Bir Mourad Rais,16013
+16-bir-mourad-rais-birkhadem,16,16,Alger,16-bir-mourad-rais,Bir Mourad Rais,بئر خادم,Birkhadem,Birkhadem,16029
+16-bir-mourad-rais-djasr-kasentina,16,16,Alger,16-bir-mourad-rais,Bir Mourad Rais,جسر قسنطينة,Djasr Kasentina,Djasr Kasentina,16048
+16-bir-mourad-rais-hydra,16,16,Alger,16-bir-mourad-rais,Bir Mourad Rais,حيدرة,Hydra,Hydra,16016
+16-bab-el-oued-bologhine-ibnou-ziri,16,16,Alger,16-bab-el-oued,Bab El Oued,بولوغين بن زيري,Bologhine Ibnou Ziri,Bologhine Ibnou Ziri,16030
+16-bab-el-oued-casbah,16,16,Alger,16-bab-el-oued,Bab El Oued,القصبة,Casbah,Casbah,16001
+16-bab-el-oued-oued-koriche,16,16,Alger,16-bab-el-oued,Bab El Oued,وادي قريش,Oued Koriche,Oued Koriche,16182
+16-bab-el-oued-rais-hamidou,16,16,Alger,16-bab-el-oued,Bab El Oued,الرايس حميدو,Rais Hamidou,Rais Hamidou,16060
+16-bab-el-oued-bab-el-oued,16,16,Alger,16-bab-el-oued,Bab El Oued,باب الوادي,Bab El Oued,Bab El Oued,16008
+16-bouzareah-ben-aknoun,16,16,Alger,16-bouzareah,Bouzareah,ابن عكنون,Ben Aknoun,Ben Aknoun,16028
+16-bouzareah-beni-messous,16,16,Alger,16-bouzareah,Bouzareah,بني مسوس,Beni Messous,Beni Messous,16044
+16-bouzareah-bouzareah,16,16,Alger,16-bouzareah,Bouzareah,بوزريعة,Bouzareah,Bouzareah,16032
+16-bouzareah-el-biar,16,16,Alger,16-bouzareah,Bouzareah,الابيار,El Biar,El Biar,16003
+16-el-harrach-bachedjerah,16,16,Alger,16-el-harrach,El Harrach,باش جراح,Bachedjerah,Bachedjerah,16026
+16-el-harrach-bourouba,16,16,Alger,16-el-harrach,El Harrach,بوروبة,Bourouba,Bourouba,16054
+16-el-harrach-el-harrach,16,16,Alger,16-el-harrach,El Harrach,الحراش,El Harrach,El Harrach,16004
+16-el-harrach-oued-smar,16,16,Alger,16-el-harrach,El Harrach,وادي السمار,Oued Smar,Oued Smar,16059
+17-hassi-bahbah-hassi-el-euch,17,17,Djelfa,17-hassi-bahbah,Hassi Bahbah,حاسي العش,Hassi El Euch,Hassi El Euch,17032
+17-hassi-bahbah-zaafrane,17,17,Djelfa,17-hassi-bahbah,Hassi Bahbah,زعفران,Zaafrane,Zaafrane,17038
+17-hassi-bahbah-ain-maabed,17,17,Djelfa,17-hassi-bahbah,Hassi Bahbah,عين معبد,Ain Maabed,Ain Maabed,17025
+17-hassi-bahbah-hassi-bahbah,17,17,Djelfa,17-hassi-bahbah,Hassi Bahbah,حاسي بحبح,Hassi Bahbah,Hassi Bahbah,17002
+17-ain-el-ibel-ain-el-ibel,17,17,Djelfa,17-ain-el-ibel,Ain El Ibel,عين الإبل,Ain El Ibel,Ain El Ibel,17011
+17-ain-el-ibel-taadmit,17,17,Djelfa,17-ain-el-ibel,Ain El Ibel,تعظميت,Taadmit,Taadmit,17037
+17-ain-el-ibel-zaccar,17,17,Djelfa,17-ain-el-ibel,Ain El Ibel,زكار,Zaccar,Zaccar,17065
+17-ain-el-ibel-moudjebara,17,17,Djelfa,17-ain-el-ibel,Ain El Ibel,مجبارة,Moudjebara,Moudjebara,17058
+17-charef-el-guedid,17,17,Djelfa,17-charef,Charef,القديد,El Guedid,El Guedid,17019
+17-charef-charef,17,17,Djelfa,17-charef,Charef,الشارف,Charef,Charef,17015
+17-charef-benyagoub,17,17,Djelfa,17-charef,Charef,بن يعقوب,Benyagoub,Benyagoub,17026
+17-dar-chioukh-sidi-baizid,17,17,Djelfa,17-dar-chioukh,Dar Chioukh,سيدي بايزيد,Sidi Baizid,Sidi Baizid,17052
+17-dar-chioukh-mliliha,17,17,Djelfa,17-dar-chioukh,Dar Chioukh,مليليحة,M'liliha,M'liliha,17036
+17-dar-chioukh-dar-chioukh,17,17,Djelfa,17-dar-chioukh,Dar Chioukh,دار الشيوخ,Dar Chioukh,Dar Chioukh,17006
+17-el-idrissia-douis,17,17,Djelfa,17-el-idrissia,El Idrissia,دويس,Douis,Douis,17030
+17-el-idrissia-el-idrissia,17,17,Djelfa,17-el-idrissia,El Idrissia,الادريسية,El Idrissia,El Idrissia,17020
+17-el-idrissia-ain-chouhada,17,17,Djelfa,17-el-idrissia,El Idrissia,عين الشهداء,Ain Chouhada,Ain Chouhada,17039
+17-djelfa-djelfa,17,17,Djelfa,17-djelfa,Djelfa,الجلفة,Djelfa,Djelfa,17000
+18-jijel-jijel,18,18,Jijel,18-jijel,Jijel,جيجل,Jijel,Jijel,18000
+18-el-aouana-el-aouana,18,18,Jijel,18-el-aouana,El Aouana,العوانة,El Aouana,El Aouana,18005
+18-el-aouana-selma-benziada,18,18,Jijel,18-el-aouana,El Aouana,سلمى بن زيادة,Selma Benziada,Selma Benziada,18049
+18-ziamah-mansouriah-erraguene-souissi,18,18,Jijel,18-ziamah-mansouriah,Ziamah Mansouriah,أراقن سويسي,Erraguene Souissi,Erraguene Souissi,18032
+18-ziamah-mansouriah-ziama-mansouriah,18,18,Jijel,18-ziamah-mansouriah,Ziamah Mansouriah,زيامة منصورية,Ziama Mansouriah,Ziama Mansouriah,18007
+18-taher-boussif-ouled-askeur,18,18,Jijel,18-taher,Taher,بوسيف أولاد عسكر,Boussif Ouled Askeur,Boussif Ouled Askeur,18036
+18-taher-chahna,18,18,Jijel,18-taher,Taher,الشحنة,Chahna,Chahna,18027
+18-taher-emir-abdelkader,18,18,Jijel,18-taher,Taher,الامير عبد القادر,Emir Abdelkader,Emir Abdelkader,18010
+18-taher-oudjana,18,18,Jijel,18-taher,Taher,وجانة,Oudjana,Oudjana,18047
+18-taher-taher,18,18,Jijel,18-taher,Taher,الطاهير,Taher,Taher,18002
+18-chekfa-chekfa,18,18,Jijel,18-chekfa,Chekfa,الشقفة,Chekfa,Chekfa,18003
+18-chekfa-el-kennar-nouchfi,18,18,Jijel,18-chekfa,Chekfa,القنار نشفي,El Kennar Nouchfi,El Kennar Nouchfi,18030
+18-chekfa-sidi-abdelaziz,18,18,Jijel,18-chekfa,Chekfa,سيدي عبد العزيز,Sidi Abdelaziz,Sidi Abdelaziz,18017
+18-chekfa-bordj-thar,18,18,Jijel,18-chekfa,Chekfa,برج الطهر,Bordj T'har,Bordj T'har,18041
+18-el-milia-el-milia,18,18,Jijel,18-el-milia,El Milia,الميلية,El Milia,El Milia,18001
+18-el-milia-ouled-yahia-khadrouch,18,18,Jijel,18-el-milia,El Milia,أولاد يحيى خدروش,Ouled Yahia Khadrouch,Ouled Yahia Khadrouch,18021
+18-sidi-marouf-ouled-rabah,18,18,Jijel,18-sidi-marouf,Sidi Marouf,أولاد رابح,Ouled Rabah,Ouled Rabah,18046
+18-sidi-marouf-sidi-marouf,18,18,Jijel,18-sidi-marouf,Sidi Marouf,سيدي معروف,Sidi Marouf,Sidi Marouf,18018
+18-settara-ghebala,18,18,Jijel,18-settara,Settara,غبالة,Ghebala,Ghebala,18026
+18-settara-settara,18,18,Jijel,18-settara,Settara,السطارة,Settara,Settara,18016
+18-el-ancer-bouraoui-belhadef,18,18,Jijel,18-el-ancer,El Ancer,بوراوي بلهادف,Bouraoui Belhadef,Bouraoui Belhadef,18023
+18-el-ancer-el-ancer,18,18,Jijel,18-el-ancer,El Ancer,العنصر,El Ancer,El Ancer,18004
+18-el-ancer-khiri-oued-adjoul,18,18,Jijel,18-el-ancer,El Ancer,خيري واد عجول,Khiri Oued Adjoul,Khiri Oued Adjoul,18024
+18-el-ancer-djemaa-beni-habibi,18,18,Jijel,18-el-ancer,El Ancer,الجمعة بني حبيبي,Djemaa Beni Habibi,Djemaa Beni Habibi,18029
+18-djimla-djimla,18,18,Jijel,18-djimla,Djimla,جيملة,Djimla,Djimla,18031
+18-djimla-boudria-beniyadjis,18,18,Jijel,18-djimla,Djimla,بودريعة بني  ياجيس,Boudria Beniyadjis,Boudria Beniyadjis,18025
+18-texenna-kaous,18,18,Jijel,18-texenna,Texenna,قاوس,Kaous,Kaous,18015
+18-texenna-texenna,18,18,Jijel,18-texenna,Texenna,تاكسنة,Texenna,Texenna,18006
+19-salah-bey-rosfa,19,19,Setif,19-salah-bey,Salah Bey,الرصفة,Rosfa,Rosfa,19060
+19-salah-bey-boutaleb,19,19,Setif,19-salah-bey,Salah Bey,بوطالب,Boutaleb,Boutaleb,19089
+19-salah-bey-hamma,19,19,Setif,19-salah-bey,Salah Bey,الحامة,Hamma,Hamma,19015
+19-salah-bey-ouled-tebben,19,19,Setif,19-salah-bey,Salah Bey,أولاد تبان,Ouled Tebben,Ouled Tebben,19030
+19-salah-bey-salah-bey,19,19,Setif,19-salah-bey,Salah Bey,صالح باي,Salah Bey,Salah Bey,19013
+19-amoucha-oued-el-bared,19,19,Setif,19-amoucha,Amoucha,واد البارد,Oued El Bared,Oued El Bared,19115
+19-amoucha-tizi-nbechar,19,19,Setif,19-amoucha,Amoucha,تيزي نبشار,Tizi N'bechar,Tizi N'bechar,19068
+19-amoucha-amoucha,19,19,Setif,19-amoucha,Amoucha,عموشة,Amoucha,Amoucha,19009
+19-ain-arnat-mezloug,19,19,Setif,19-ain-arnat,Ain Arnat,مزلوق,Mezloug,Mezloug,19056
+19-ain-arnat-el-ouricia,19,19,Setif,19-ain-arnat,Ain Arnat,أوريسيا,El Ouricia,El Ouricia,19047
+19-ain-arnat-ain-abessa,19,19,Setif,19-ain-arnat,Ain Arnat,عين عباسة,Ain Abessa,Ain Abessa,19016
+19-ain-arnat-ain-arnat,19,19,Setif,19-ain-arnat,Ain Arnat,عين أرنات,Ain Arnat,Ain Arnat,19017
+19-ain-oulmene-guellal,19,19,Setif,19-ain-oulmene,Ain Oulmene,قلال,Guellal,Guellal,19050
+19-ain-oulmene-kasr-el-abtal,19,19,Setif,19-ain-oulmene,Ain Oulmene,قصر الابطال,Kasr El Abtal,Kasr El Abtal,19054
+19-ain-oulmene-ouled-si-ahmed,19,19,Setif,19-ain-oulmene,Ain Oulmene,أولاد سي أحمد,Ouled Si Ahmed,Ouled Si Ahmed,19121
+19-ain-oulmene-ain-oulmene,19,19,Setif,19-ain-oulmene,Ain Oulmene,عين ولمان,Ain Oulmene,Ain Oulmene,19002
+19-bouandas-ait-naoual-mezada,19,19,Setif,19-bouandas,Bouandas,أيت نوال مزادة,Ait Naoual Mezada,Ait Naoual Mezada,19076
+19-bouandas-ait-tizi,19,19,Setif,19-bouandas,Bouandas,ايت تيزي,Ait-Tizi,Ait-Tizi,19077
+19-bouandas-bouandas,19,19,Setif,19-bouandas,Bouandas,بوعنداس,Bouandas,Bouandas,19012
+19-bouandas-bousselam,19,19,Setif,19-bouandas,Bouandas,بوسلام,Bousselam,Bousselam,19052
+19-hammam-sokhna-hamam-soukhna,19,19,Setif,19-hammam-sokhna,Hammam Sokhna,حمام السخنة,Hamam Soukhna,Hamam Soukhna,19059
+19-hammam-sokhna-taya,19,19,Setif,19-hammam-sokhna,Hammam Sokhna,الطاية,Taya,Taya,19067
+19-hammam-sokhna-tella,19,19,Setif,19-hammam-sokhna,Hammam Sokhna,التلة,Tella,Tella,19087
+19-ain-azel-ain-azel,19,19,Setif,19-ain-azel,Ain Azel,عين أزال,Ain Azel,Ain Azel,19007
+19-ain-azel-ain-lahdjar,19,19,Setif,19-ain-azel,Ain Azel,عين الحجر,Ain Lahdjar,Ain Lahdjar,19018
+19-ain-azel-beidha-bordj,19,19,Setif,19-ain-azel,Ain Azel,بيضاء برج,Beidha Bordj,Beidha Bordj,19021
+19-ain-azel-bir-haddada,19,19,Setif,19-ain-azel,Ain Azel,بئر حدادة,Bir Haddada,Bir Haddada,19039
+19-guenzet-guenzet,19,19,Setif,19-guenzet,Guenzet,قنزات,Guenzet,Guenzet,19026
+19-guenzet-harbil,19,19,Setif,19-guenzet,Guenzet,حربيل,Harbil,Harbil,19032
+19-bougaa-ain-roua,19,19,Setif,19-bougaa,Bougaa,عين الروى,Ain-Roua,Ain-Roua,19019
+19-bougaa-beni-oussine,19,19,Setif,19-bougaa,Bougaa,بني وسين,Beni Oussine,Beni Oussine,19037
+19-bougaa-bougaa,19,19,Setif,19-bougaa,Bougaa,بوقاعة,Bougaa,Bougaa,19003
+19-hammam-guergour-draa-kebila,19,19,Setif,19-hammam-guergour,Hammam Guergour,ذراع قبيلة,Draa-Kebila,Draa-Kebila,19029
+19-hammam-guergour-hammam-guergour,19,19,Setif,19-hammam-guergour,Hammam Guergour,حمام قرقور,Hammam Guergour,Hammam Guergour,19051
+19-setif-setif,19,19,Setif,19-setif,Setif,سطيف,Setif,Setif,19000
+19-ain-el-kebira-ain-el-kebira,19,19,Setif,19-ain-el-kebira,Ain El Kebira,عين الكبيرة,Ain El Kebira,Ain El Kebira,19008
+19-ain-el-kebira-dehamcha,19,19,Setif,19-ain-el-kebira,Ain El Kebira,الدهامشة,Dehamcha,Dehamcha,19041
+19-ain-el-kebira-ouled-addouane,19,19,Setif,19-ain-el-kebira,Ain El Kebira,أولاد عدوان,Ouled Addouane,Ouled Addouane,19053
+19-beni-aziz-ain-sebt,19,19,Setif,19-beni-aziz,Beni Aziz,عين السبت,Ain-Sebt,Ain-Sebt,19033
+19-beni-aziz-beni-aziz,19,19,Setif,19-beni-aziz,Beni Aziz,بني عزيز,Beni-Aziz,Beni-Aziz,19010
+19-beni-aziz-maaouia,19,19,Setif,19-beni-aziz,Beni Aziz,معاوية,Maaouia,Maaouia,19055
+19-bir-el-arch-bellaa,19,19,Setif,19-bir-el-arch,Bir El Arch,بلاعة,Bellaa,Bellaa,19022
+19-bir-el-arch-bir-el-arch,19,19,Setif,19-bir-el-arch,Bir El Arch,بئر العرش,Bir-El-Arch,Bir-El-Arch,19024
+19-bir-el-arch-el-ouldja,19,19,Setif,19-bir-el-arch,Bir El Arch,الولجة,El-Ouldja,El-Ouldja,19046
+19-bir-el-arch-tachouda,19,19,Setif,19-bir-el-arch,Bir El Arch,تاشودة,Tachouda,Tachouda,19125
+19-maoklane-tala-ifacene,19,19,Setif,19-maoklane,Maoklane,تالة إيفاسن,Tala-Ifacene,Tala-Ifacene,19069
+19-maoklane-maouaklane,19,19,Setif,19-maoklane,Maoklane,ماوكلان,Maouaklane,Maouaklane,19028
+19-babor-serdj-el-ghoul,19,19,Setif,19-babor,Babor,سرج الغول,Serdj-El-Ghoul,Serdj-El-Ghoul,19086
+19-babor-babor,19,19,Setif,19-babor,Babor,بابور,Babor,Babor,19020
+19-guidjel-guidjel,19,19,Setif,19-guidjel,Guidjel,قجال,Guidjel,Guidjel,19027
+19-guidjel-ouled-sabor,19,19,Setif,19-guidjel,Guidjel,أولاد صابر,Ouled Sabor,Ouled Sabor,19120
+19-el-eulma-bazer-sakra,19,19,Setif,19-el-eulma,El Eulma,بازر سكرة,Bazer-Sakra,Bazer-Sakra,19036
+19-el-eulma-el-eulma,19,19,Setif,19-el-eulma,El Eulma,العلمة,El Eulma,El Eulma,19001
+19-el-eulma-guelta-zerka,19,19,Setif,19-el-eulma,El Eulma,قلتة زرقاء,Guelta Zerka,Guelta Zerka,
+19-djemila-beni-fouda,19,19,Setif,19-djemila,Djemila,بني فودة,Beni Fouda,Beni Fouda,19023
+19-djemila-djemila,19,19,Setif,19-djemila,Djemila,جميلة,Djemila,Djemila,19025
+19-beni-ourtilane-ain-legradj,19,19,Setif,19-beni-ourtilane,Beni Ourtilane,عين لقراج,Ain-Legradj,Ain-Legradj,19035
+19-beni-ourtilane-beni-chebana,19,19,Setif,19-beni-ourtilane,Beni Ourtilane,بني شبانة,Beni Chebana,Beni Chebana,19031
+19-beni-ourtilane-beni-ourtilane,19,19,Setif,19-beni-ourtilane,Beni Ourtilane,بني ورتيلان,Beni Ourtilane,Beni Ourtilane,19011
+19-beni-ourtilane-beni-mouhli,19,19,Setif,19-beni-ourtilane,Beni Ourtilane,بني موحلي,Beni-Mouhli,Beni-Mouhli,19038
+20-saida-saida,20,20,Saida,20-saida,Saida,سعيدة,Saida,Saida,20000
+20-ouled-brahim-tircine,20,20,Saida,20-ouled-brahim,Ouled Brahim,تيرسين,Tircine,Tircine,20035
+20-ouled-brahim-ouled-brahim,20,20,Saida,20-ouled-brahim,Ouled Brahim,أولاد إبراهيم,Ouled Brahim,Ouled Brahim,20002
+20-ouled-brahim-ain-soltane,20,20,Saida,20-ouled-brahim,Ouled Brahim,عين السلطان,Ain Soltane,Ain Soltane,20029
+20-el-hassasna-el-hassasna,20,20,Saida,20-el-hassasna,El Hassasna,الحساسنة,El Hassasna,El Hassasna,20003
+20-el-hassasna-ain-sekhouna,20,20,Saida,20-el-hassasna,El Hassasna,عين السخونة,Ain Sekhouna,Ain Sekhouna,20009
+20-el-hassasna-maamora,20,20,Saida,20-el-hassasna,El Hassasna,المعمورة,Maamora,Maamora,
+20-sidi-boubekeur-sidi-boubekeur,20,20,Saida,20-sidi-boubekeur,Sidi Boubekeur,سيدي بوبكر,Sidi Boubekeur,Sidi Boubekeur,20007
+20-sidi-boubekeur-ouled-khaled,20,20,Saida,20-sidi-boubekeur,Sidi Boubekeur,أولاد خالد,Ouled Khaled,Ouled Khaled,20004
+20-sidi-boubekeur-hounet,20,20,Saida,20-sidi-boubekeur,Sidi Boubekeur,هونت,Hounet,Hounet,20025
+20-sidi-boubekeur-sidi-amar,20,20,Saida,20-sidi-boubekeur,Sidi Boubekeur,سيدي عمر,Sidi Amar,Sidi Amar,20019
+20-youb-youb,20,20,Saida,20-youb,Youb,يوب,Youb,Youb,20008
+20-youb-doui-thabet,20,20,Saida,20-youb,Youb,دوي ثابت,Doui Thabet,Doui Thabet,20023
+20-ain-el-hadjar-sidi-ahmed,20,20,Saida,20-ain-el-hadjar,Ain El Hadjar,سيدي احمد,Sidi Ahmed,Sidi Ahmed,20012
+20-ain-el-hadjar-moulay-larbi,20,20,Saida,20-ain-el-hadjar,Ain El Hadjar,مولاي العربي,Moulay Larbi,Moulay Larbi,20014
+20-ain-el-hadjar-ain-el-hadjar,20,20,Saida,20-ain-el-hadjar,Ain El Hadjar,عين الحجر,Ain El Hadjar,Ain El Hadjar,
+21-sidi-mezghiche-ain-bouziane,21,21,Skikda,21-sidi-mezghiche,Sidi Mezghiche,عين بوزيان,Ain Bouziane,Ain Bouziane,21031
+21-sidi-mezghiche-beni-oulbane,21,21,Skikda,21-sidi-mezghiche,Sidi Mezghiche,بني ولبان,Beni Oulbane,Beni Oulbane,21011
+21-sidi-mezghiche-sidi-mezghiche,21,21,Skikda,21-sidi-mezghiche,Sidi Mezghiche,سيدي مزغيش,Sidi Mezghiche,Sidi Mezghiche,21023
+21-el-harrouch-salah-bouchaour,21,21,Skikda,21-el-harrouch,El Harrouch,صالح بو الشعور,Salah Bouchaour,Salah Bouchaour,21022
+21-el-harrouch-zerdezas,21,21,Skikda,21-el-harrouch,El Harrouch,زردازة,Zerdezas,Zerdezas,21047
+21-el-harrouch-ouled-habbaba,21,21,Skikda,21-el-harrouch,El Harrouch,أولاد حبابة,Ouled Habbaba,Ouled Habbaba,21043
+21-el-harrouch-emjez-edchich,21,21,Skikda,21-el-harrouch,El Harrouch,مجاز الدشيش,Emjez Edchich,Emjez Edchich,21017
+21-el-harrouch-el-arrouch,21,21,Skikda,21-el-harrouch,El Harrouch,الحروش,El Arrouch,El Arrouch,21003
+21-el-hadaiek-el-hadaiek,21,21,Skikda,21-el-hadaiek,El Hadaiek,الحدائق,El Hadaiek,El Hadaiek,21015
+21-el-hadaiek-bouchetata,21,21,Skikda,21-el-hadaiek,El Hadaiek,بوشطاطة,Bouchetata,Bouchetata,21053
+21-el-hadaiek-ain-zouit,21,21,Skikda,21-el-hadaiek,El Hadaiek,عين زويت,Ain Zouit,Ain Zouit,21051
+21-ramdane-djamel-beni-bechir,21,21,Skikda,21-ramdane-djamel,Ramdane Djamel,بني بشير,Beni Bechir,Beni Bechir,21033
+21-ramdane-djamel-ramdane-djamel,21,21,Skikda,21-ramdane-djamel,Ramdane Djamel,رمضان جمال,Ramdane Djamel,Ramdane Djamel,21004
+21-tamalous-bin-el-ouiden,21,21,Skikda,21-tamalous,Tamalous,بين الويدان,Bin El Ouiden,Bin El Ouiden,21052
+21-tamalous-tamalous,21,21,Skikda,21-tamalous,Tamalous,تمالوس,Tamalous,Tamalous,21005
+21-tamalous-kerkara,21,21,Skikda,21-tamalous,Tamalous,الكركرة,Kerkara,Kerkara,21019
+21-ain-kechra-ain-kechra,21,21,Skikda,21-ain-kechra,Ain Kechra,عين قشرة,Ain Kechra,Ain Kechra,21007
+21-ain-kechra-ouldja-boulbalout,21,21,Skikda,21-ain-kechra,Ain Kechra,الولجة بولبلوط,Ouldja Boulbalout,Ouldja Boulbalout,
+21-oum-toub-oum-toub,21,21,Skikda,21-oum-toub,Oum Toub,أم الطوب,Oum Toub,Oum Toub,21020
+21-azzaba-el-ghedir,21,21,Skikda,21-azzaba,Azzaba,الغدير,El Ghedir,El Ghedir,21057
+21-azzaba-es-sebt,21,21,Skikda,21-azzaba,Azzaba,السبت,Es Sebt,Es Sebt,21018
+21-azzaba-ain-charchar,21,21,Skikda,21-azzaba,Azzaba,عين شرشار,Ain Charchar,Ain Charchar,21006
+21-azzaba-azzaba,21,21,Skikda,21-azzaba,Azzaba,عزابة,Azzaba,Azzaba,21001
+21-azzaba-djendel-saadi-mohamed,21,21,Skikda,21-azzaba,Azzaba,جندل سعدي محمد,Djendel Saadi Mohamed,Djendel Saadi Mohamed,21037
+21-zitouna-zitouna,21,21,Skikda,21-zitouna,Zitouna,الزيتونة,Zitouna,Zitouna,21028
+21-zitouna-kanoua,21,21,Skikda,21-zitouna,Zitouna,قنواع,Kanoua,Kanoua,21062
+21-ouled-attia-ouled-attia,21,21,Skikda,21-ouled-attia,Ouled Attia,أولاد عطية,Ouled Attia,Ouled Attia,21012
+21-ouled-attia-oued-zhour,21,21,Skikda,21-ouled-attia,Ouled Attia,وادي الزهور,Oued Zhour,Oued Zhour,21040
+21-ouled-attia-khenag-maoune,21,21,Skikda,21-ouled-attia,Ouled Attia,خناق مايو,Khenag Maoune,Khenag Maoune,21059
+21-collo-collo,21,21,Skikda,21-collo,Collo,القل,Collo,Collo,21002
+21-collo-cheraia,21,21,Skikda,21-collo,Collo,الشرايع,Cheraia,Cheraia,21030
+21-collo-beni-zid,21,21,Skikda,21-collo,Collo,بني زيد,Beni Zid,Beni Zid,21016
+21-ben-azzouz-ben-azzouz,21,21,Skikda,21-ben-azzouz,Ben Azzouz,بن عزوز,Ben Azzouz,Ben Azzouz,21010
+21-ben-azzouz-bekkouche-lakhdar,21,21,Skikda,21-ben-azzouz,Ben Azzouz,بكوش لخضر,Bekkouche Lakhdar,Bekkouche Lakhdar,21009
+21-ben-azzouz-el-marsa,21,21,Skikda,21-ben-azzouz,Ben Azzouz,المرسى,El Marsa,El Marsa,
+21-skikda-filfila,21,21,Skikda,21-skikda,Skikda,فلفلة,Filfila,Filfila,21042
+21-skikda-hammadi-krouma,21,21,Skikda,21-skikda,Skikda,حمادي كرومة,Hammadi Krouma,Hammadi Krouma,21038
+21-skikda-skikda,21,21,Skikda,21-skikda,Skikda,سكيكدة,Skikda,Skikda,21000
+22-sidi-ali-ben-youb-sidi-ali-benyoub,22,22,Sidi Bel Abbes,22-sidi-ali-ben-youb,Sidi Ali Ben Youb,سيدي علي بن يوب,Sidi Ali Benyoub,Sidi Ali Benyoub,22028
+22-sidi-ali-ben-youb-tabia,22,22,Sidi Bel Abbes,22-sidi-ali-ben-youb,Sidi Ali Ben Youb,طابية,Tabia,Tabia,22032
+22-sidi-ali-ben-youb-boukhanefis,22,22,Sidi Bel Abbes,22-sidi-ali-ben-youb,Sidi Ali Ben Youb,بوخنفيس,Boukhanefis,Boukhanefis,22008
+22-moulay-slissen-moulay-slissen,22,22,Sidi Bel Abbes,22-moulay-slissen,Moulay Slissen,مولاي سليسن,Moulay Slissen,Moulay Slissen,22026
+22-moulay-slissen-el-hacaiba,22,22,Sidi Bel Abbes,22-moulay-slissen,Moulay Slissen,الحصيبة,El Hacaiba,El Hacaiba,22047
+22-moulay-slissen-ain-tindamine,22,22,Sidi Bel Abbes,22-moulay-slissen,Moulay Slissen,عين تندمين,Ain Tindamine,Ain Tindamine,22036
+22-tenira-tenira,22,22,Sidi Bel Abbes,22-tenira,Tenira,تنيرة,Tenira,Tenira,22021
+22-tenira-oued-sefioun,22,22,Sidi Bel Abbes,22-tenira,Tenira,وادي سفيون,Oued Sefioun,Oued Sefioun,22055
+22-tenira-hassi-dahou,22,22,Sidi Bel Abbes,22-tenira,Tenira,حاسي دحو,Hassi Dahou,Hassi Dahou,22049
+22-tenira-benachiba-chelia,22,22,Sidi Bel Abbes,22-tenira,Tenira,بن عشيبة شلية,Benachiba Chelia,Benachiba Chelia,22040
+22-merine-oued-taourira,22,22,Sidi Bel Abbes,22-merine,Merine,وادي تاوريرة,Oued Taourira,Oued Taourira,22056
+22-merine-merine,22,22,Sidi Bel Abbes,22-merine,Merine,مرين,Merine,Merine,22012
+22-merine-tefessour,22,22,Sidi Bel Abbes,22-merine,Merine,تفسور,Tefessour,Tefessour,22065
+22-merine-taoudmout,22,22,Sidi Bel Abbes,22-merine,Merine,تاودموت,Taoudmout,Taoudmout,22064
+22-sidi-lahcene-sidi-yacoub,22,22,Sidi Bel Abbes,22-sidi-lahcene,Sidi Lahcene,سيدي يعقوب,Sidi Yacoub,Sidi Yacoub,22063
+22-sidi-lahcene-sidi-lahcene,22,22,Sidi Bel Abbes,22-sidi-lahcene,Sidi Lahcene,سيدي لحسن,Sidi Lahcene,Sidi Lahcene,22020
+22-sidi-lahcene-sidi-khaled,22,22,Sidi Bel Abbes,22-sidi-lahcene,Sidi Lahcene,سيدي خالد,Sidi Khaled,Sidi Khaled,07004
+22-sidi-lahcene-amarnas,22,22,Sidi Bel Abbes,22-sidi-lahcene,Sidi Lahcene,العمارنة,Amarnas,Amarnas,22074
+22-ain-el-berd-sidi-brahim,22,22,Sidi Bel Abbes,22-ain-el-berd,Ain El Berd,سيدي ابراهيم,Sidi Brahim,Sidi Brahim,22029
+22-ain-el-berd-sidi-hamadouche,22,22,Sidi Bel Abbes,22-ain-el-berd,Ain El Berd,سيدي حمادوش,Sidi Hamadouche,Sidi Hamadouche,22019
+22-ain-el-berd-makedra,22,22,Sidi Bel Abbes,22-ain-el-berd,Ain El Berd,مكدرة,Makedra,Makedra,22051
+22-ain-el-berd-ain-el-berd,22,22,Sidi Bel Abbes,22-ain-el-berd,Ain El Berd,عين البرد,Ain El Berd,Ain El Berd,22022
+22-ben-badis-hassi-zahana,22,22,Sidi Bel Abbes,22-ben-badis,Ben Badis,حاسي زهانة,Hassi Zahana,Hassi Zahana,22010
+22-ben-badis-chetouane-belaila,22,22,Sidi Bel Abbes,22-ben-badis,Ben Badis,شيطوان البلايلة,Chetouane Belaila,Chetouane Belaila,22039
+22-ben-badis-ben-badis,22,22,Sidi Bel Abbes,22-ben-badis,Ben Badis,بن باديس,Ben Badis,Ben Badis,22004
+22-ben-badis-bedrabine-el-mokrani,22,22,Sidi Bel Abbes,22-ben-badis,Ben Badis,بضرابين المقراني,Bedrabine El Mokrani,Bedrabine El Mokrani,22038
+22-sfisef-sfisef,22,22,Sidi Bel Abbes,22-sfisef,Sfisef,سفيزف,Sfisef,Sfisef,22001
+22-sfisef-mcid,22,22,Sidi Bel Abbes,22-sfisef,Sfisef,مسيد,M'cid,M'cid,22052
+22-sfisef-boudjebaa-el-bordj,22,22,Sidi Bel Abbes,22-sfisef,Sfisef,بوجبهة البرج,Boudjebaa El Bordj,Boudjebaa El Bordj,22043
+22-sfisef-ain-adden,22,22,Sidi Bel Abbes,22-sfisef,Sfisef,عين أدن,Ain- Adden,Ain- Adden,22034
+22-marhoum-sidi-chaib,22,22,Sidi Bel Abbes,22-marhoum,Marhoum,سيدي شعيب,Sidi Chaib,Sidi Chaib,22061
+22-marhoum-marhoum,22,22,Sidi Bel Abbes,22-marhoum,Marhoum,مرحوم,Marhoum,Marhoum,22011
+22-marhoum-bir-el-hammam,22,22,Sidi Bel Abbes,22-marhoum,Marhoum,بئر الحمام,Bir El Hammam,Bir El Hammam,22041
+22-ras-el-ma-redjem-demouche,22,22,Sidi Bel Abbes,22-ras-el-ma,Ras El Ma,رجم دموش,Redjem Demouche,Redjem Demouche,22058
+22-ras-el-ma-ras-el-ma,22,22,Sidi Bel Abbes,22-ras-el-ma,Ras El Ma,راس الماء,Ras El Ma,Ras El Ma,22069
+22-ras-el-ma-oued-sebaa,22,22,Sidi Bel Abbes,22-ras-el-ma,Ras El Ma,وادي السبع,Oued Sebaa,Oued Sebaa,22054
+22-sidi-bel-abbes-sidi-bel-abbes,22,22,Sidi Bel Abbes,22-sidi-bel-abbes,Sidi Bel Abbes,سيدي بلعباس,Sidi Bel-Abbes,Sidi Bel-Abbes,22000
+22-tessala-ain-thrid,22,22,Sidi Bel Abbes,22-tessala,Tessala,عين الثريد,Ain Thrid,Ain Thrid,22037
+22-tessala-sehala-thaoura,22,22,Sidi Bel Abbes,22-tessala,Tessala,السهالة الثورة,Sehala Thaoura,Sehala Thaoura,22060
+22-tessala-tessala,22,22,Sidi Bel Abbes,22-tessala,Tessala,تسالة,Tessala,Tessala,22033
+22-mostefa-ben-brahim-belarbi,22,22,Sidi Bel Abbes,22-mostefa-ben-brahim,Mostefa  Ben Brahim,بلعربي,Belarbi,Belarbi,22023
+22-mostefa-ben-brahim-mostefa-ben-brahim,22,22,Sidi Bel Abbes,22-mostefa-ben-brahim,Mostefa  Ben Brahim,مصطفى بن ابراهيم,Mostefa  Ben Brahim,Mostefa  Ben Brahim,22013
+22-mostefa-ben-brahim-tilmouni,22,22,Sidi Bel Abbes,22-mostefa-ben-brahim,Mostefa  Ben Brahim,تلموني,Tilmouni,Tilmouni,22044
+22-mostefa-ben-brahim-zerouala,22,22,Sidi Bel Abbes,22-mostefa-ben-brahim,Mostefa  Ben Brahim,زروالة,Zerouala,Zerouala,22068
+22-telagh-dhaya,22,22,Sidi Bel Abbes,22-telagh,Telagh,الضاية,Dhaya,Dhaya,22009
+22-telagh-mezaourou,22,22,Sidi Bel Abbes,22-telagh,Telagh,مزاورو,Mezaourou,Mezaourou,22025
+22-telagh-teghalimet,22,22,Sidi Bel Abbes,22-telagh,Telagh,تغاليمت,Teghalimet,Teghalimet,22066
+22-telagh-telagh,22,22,Sidi Bel Abbes,22-telagh,Telagh,تلاغ,Telagh,Telagh,22007
+22-sidi-ali-boussidi-ain-kada,22,22,Sidi Bel Abbes,22-sidi-ali-boussidi,Sidi Ali Boussidi,عين قادة,Ain Kada,Ain Kada,22035
+22-sidi-ali-boussidi-lamtar,22,22,Sidi Bel Abbes,22-sidi-ali-boussidi,Sidi Ali Boussidi,لمطار,Lamtar,Lamtar,22024
+22-sidi-ali-boussidi-sidi-ali-boussidi,22,22,Sidi Bel Abbes,22-sidi-ali-boussidi,Sidi Ali Boussidi,سيدي علي بوسيدي,Sidi Ali Boussidi,Sidi Ali Boussidi,22014
+22-sidi-ali-boussidi-sidi-dahou-zairs,22,22,Sidi Bel Abbes,22-sidi-ali-boussidi,Sidi Ali Boussidi,سيدي دحو الزاير,Sidi Dahou Zairs,Sidi Dahou Zairs,22062
+23-annaba-annaba,23,23,Annaba,23-annaba,Annaba,عنابة,Annaba,Annaba,23000
+23-annaba-seraidi,23,23,Annaba,23-annaba,Annaba,سرايدي,Seraidi,Seraidi,23015
+23-berrahal-berrahal,23,23,Annaba,23-berrahal,Berrahal,برحال,Berrahal,Berrahal,23009
+23-berrahal-oued-el-aneb,23,23,Annaba,23-berrahal,Berrahal,واد العنب,Oued El Aneb,Oued El Aneb,23021
+23-berrahal-treat,23,23,Annaba,23-berrahal,Berrahal,التريعات,Treat,Treat,
+23-el-hadjar-el-hadjar,23,23,Annaba,23-el-hadjar,El Hadjar,الحجار,El Hadjar,El Hadjar,23004
+23-el-hadjar-sidi-amar,23,23,Annaba,23-el-hadjar,El Hadjar,سيدي عمار,Sidi Amar,Sidi Amar,23028
+23-el-bouni-el-bouni,23,23,Annaba,23-el-bouni,El Bouni,البوني,El Bouni,El Bouni,23010
+23-ain-el-berda-ain-el-berda,23,23,Annaba,23-ain-el-berda,Ain El Berda,عين الباردة,Ain El Berda,Ain El Berda,23006
+23-ain-el-berda-cheurfa,23,23,Annaba,23-ain-el-berda,Ain El Berda,الشرفة,Cheurfa,Cheurfa,23025
+23-ain-el-berda-el-eulma,23,23,Annaba,23-ain-el-berda,Ain El Berda,العلمة,El Eulma,El Eulma,
+23-chetaibi-chetaibi,23,23,Annaba,23-chetaibi,Chetaibi,شطايبي,Chetaibi,Chetaibi,23014
+24-guelaat-bousbaa-nechmaya,24,24,Guelma,24-guelaat-bousbaa,Guelaat Bousbaa,نشماية,Nechmaya,Nechmaya,24027
+24-guelaat-bousbaa-boumahra-ahmed,24,24,Guelma,24-guelaat-bousbaa,Guelaat Bousbaa,بومهرة أحمد,Boumahra Ahmed,Boumahra Ahmed,24005
+24-guelaat-bousbaa-djeballah-khemissi,24,24,Guelma,24-guelaat-bousbaa,Guelaat Bousbaa,جبالة الخميسي,Djeballah Khemissi,Djeballah Khemissi,24039
+24-guelaat-bousbaa-belkheir,24,24,Guelma,24-guelaat-bousbaa,Guelaat Bousbaa,بلخير,Belkheir,Belkheir,24015
+24-guelaat-bousbaa-beni-mezline,24,24,Guelma,24-guelaat-bousbaa,Guelaat Bousbaa,بني مزلين,Beni Mezline,Beni Mezline,
+24-guelaat-bousbaa-guelaat-bou-sbaa,24,24,Guelma,24-guelaat-bousbaa,Guelaat Bousbaa,قلعة بوصبع,Guelaat Bou Sbaa,Guelaat Bou Sbaa,24020
+24-hammam-debagh-bou-hamdane,24,24,Guelma,24-hammam-debagh,Hammam Debagh,بوحمدان,Bou Hamdane,Bou Hamdane,
+24-hammam-debagh-hammam-debagh,24,24,Guelma,24-hammam-debagh,Hammam Debagh,حمام دباغ,Hammam Debagh,Hammam Debagh,24007
+24-hammam-debagh-roknia,24,24,Guelma,24-hammam-debagh,Hammam Debagh,الركنية,Roknia,Roknia,24028
+24-hammam-nbails-dahouara,24,24,Guelma,24-hammam-nbails,Hammam N'bails,الدهوارة,Dahouara,Dahouara,24031
+24-hammam-nbails-hammam-nbail,24,24,Guelma,24-hammam-nbails,Hammam N'bails,حمام النبايل,Hammam N'bail,Hammam N'bail,24024
+24-hammam-nbails-oued-cheham,24,24,Guelma,24-hammam-nbails,Hammam N'bails,وادي الشحم,Oued Cheham,Oued Cheham,24009
+24-guelma-guelma,24,24,Guelma,24-guelma,Guelma,قالمة,Guelma,Guelma,24000
+24-guelma-bendjarah,24,24,Guelma,24-guelma,Guelma,بن جراح,Bendjarah,Bendjarah,24034
+24-bouchegouf-ain-ben-beida,24,24,Guelma,24-bouchegouf,Bouchegouf,عين بن بيضاء,Ain Ben Beida,Ain Ben Beida,24011
+24-bouchegouf-bouchegouf,24,24,Guelma,24-bouchegouf,Bouchegouf,بوشقوف,Bouchegouf,Bouchegouf,24002
+24-bouchegouf-medjez-sfa,24,24,Guelma,24-bouchegouf,Bouchegouf,مجاز الصفاء,Medjez Sfa,Medjez Sfa,24026
+24-bouchegouf-oued-ferragha,24,24,Guelma,24-bouchegouf,Bouchegouf,وادي فراغة,Oued Ferragha,Oued Ferragha,24038
+24-heliopolis-bouati-mahmoud,24,24,Guelma,24-heliopolis,Heliopolis,بوعاتي محمود,Bouati Mahmoud,Bouati Mahmoud,24018
+24-heliopolis-el-fedjoudj,24,24,Guelma,24-heliopolis,Heliopolis,الفجوج,El Fedjoudj,El Fedjoudj,24019
+24-heliopolis-heliopolis,24,24,Guelma,24-heliopolis,Heliopolis,هيليوبوليس,Heliopolis,Heliopolis,24008
+24-ain-hessainia-medjez-amar,24,24,Guelma,24-ain-hessainia,Ain Hessainia,مجاز عمار,Medjez Amar,Medjez Amar,24043
+24-ain-hessainia-houari-boumedienne,24,24,Guelma,24-ain-hessainia,Ain Hessainia,هواري بومدين,Houari Boumedienne,Houari Boumedienne,24025
+24-ain-hessainia-ras-el-agba,24,24,Guelma,24-ain-hessainia,Ain Hessainia,رأس العقبة,Ras El Agba,Ras El Agba,24049
+24-ain-hessainia-sellaoua-announa,24,24,Guelma,24-ain-hessainia,Ain Hessainia,سلاوة عنونة,Sellaoua Announa,Sellaoua Announa,24029
+24-oued-zenati-bordj-sabath,24,24,Guelma,24-oued-zenati,Oued Zenati,برج صباط,Bordj Sabath,Bordj Sabath,24017
+24-oued-zenati-oued-zenati,24,24,Guelma,24-oued-zenati,Oued Zenati,وادي الزناتي,Oued Zenati,Oued Zenati,24001
+24-oued-zenati-ain-regada,24,24,Guelma,24-oued-zenati,Oued Zenati,عين رقادة,Ain Regada,Ain Regada,24014
+24-ain-makhlouf-ain-larbi,24,24,Guelma,24-ain-makhlouf,Ain Makhlouf,عين العربي,Ain Larbi,Ain Larbi,24012
+24-ain-makhlouf-ain-makhlouf,24,24,Guelma,24-ain-makhlouf,Ain Makhlouf,عين مخلوف,Ain Makhlouf,Ain Makhlouf,24013
+24-ain-makhlouf-tamlouka,24,24,Guelma,24-ain-makhlouf,Ain Makhlouf,تاملوكة,Tamlouka,Tamlouka,24010
+24-khezaras-ain-sandel,24,24,Guelma,24-khezaras,Khezaras,عين صندل,Ain Sandel,Ain Sandel,24032
+24-khezaras-bou-hachana,24,24,Guelma,24-khezaras,Khezaras,بوحشانة,Bou Hachana,Bou Hachana,24037
+24-khezaras-khezaras,24,24,Guelma,24-khezaras,Khezaras,لخزارة,Khezaras,Khezaras,
+25-hamma-bouziane-didouche-mourad,25,25,Constantine,25-hamma-bouziane,Hamma Bouziane,ديدوش مراد,Didouche Mourad,Didouche Mourad,25024
+25-hamma-bouziane-hamma-bouziane,25,25,Constantine,25-hamma-bouziane,Hamma Bouziane,حامة بوزيان,Hamma Bouziane,Hamma Bouziane,25013
+25-zighoud-youcef-beni-hamidane,25,25,Constantine,25-zighoud-youcef,Zighoud Youcef,بني حميدان,Beni Hamidane,Beni Hamidane,25035
+25-zighoud-youcef-zighoud-youcef,25,25,Constantine,25-zighoud-youcef,Zighoud Youcef,زيغود يوسف,Zighoud Youcef,Zighoud Youcef,25014
+25-el-khroub-ain-smara,25,25,Constantine,25-el-khroub,El Khroub,عين السمارة,Ain Smara,Ain Smara,25006
+25-el-khroub-el-khroub,25,25,Constantine,25-el-khroub,El Khroub,الخروب,El Khroub,El Khroub,25005
+25-el-khroub-ouled-rahmoun,25,25,Constantine,25-el-khroub,El Khroub,أولاد رحمون,Ouled Rahmoun,Ouled Rahmoun,25028
+25-ain-abid-ain-abid,25,25,Constantine,25-ain-abid,Ain Abid,عين عبيد,Ain Abid,Ain Abid,25015
+25-ain-abid-ben-badis,25,25,Constantine,25-ain-abid,Ain Abid,أبن باديس الهرية,Ben Badis,Ben Badis,25037
+25-ibn-ziad-ibn-ziad,25,25,Constantine,25-ibn-ziad,Ibn Ziad,ابن زياد,Ibn Ziad,Ibn Ziad,25027
+25-ibn-ziad-messaoud-boudjeriou,25,25,Constantine,25-ibn-ziad,Ibn Ziad,بوجريو مسعود,Messaoud Boudjeriou,Messaoud Boudjeriou,25032
+25-constantine-constantine,25,25,Constantine,25-constantine,Constantine,قسنطينة,Constantine,Constantine,25000
+26-souaghi-souagui,26,26,Medea,26-souaghi,Souaghi,السواقي,Souagui,Souagui,26020
+26-souaghi-djouab,26,26,Medea,26-souaghi,Souaghi,جواب,Djouab,Djouab,26016
+26-souaghi-sidi-zahar,26,26,Medea,26-souaghi,Souaghi,سيدي زهار,Sidi Zahar,Sidi Zahar,26072
+26-souaghi-sidi-ziane,26,26,Medea,26-souaghi,Souaghi,سيدي زيان,Sidi Ziane,Sidi Ziane,
+26-el-azizia-el-azizia,26,26,Medea,26-el-azizia,El Azizia,العزيزية,El Azizia,El Azizia,26018
+26-el-azizia-maghraoua,26,26,Medea,26-el-azizia,El Azizia,مغراوة,Maghraoua,Maghraoua,26063
+26-el-azizia-mihoub,26,26,Medea,26-el-azizia,El Azizia,ميهوب,Mihoub,Mihoub,26032
+26-ouamri-hannacha,26,26,Medea,26-ouamri,Ouamri,حناشة,Hannacha,Hannacha,26027
+26-ouamri-ouamri,26,26,Medea,26-ouamri,Ouamri,عوامري,Ouamri,Ouamri,26034
+26-ouamri-oued-harbil,26,26,Medea,26-ouamri,Ouamri,وادي حربيل,Oued Harbil,Oued Harbil,26061
+26-beni-slimane-beni-slimane,26,26,Medea,26-beni-slimane,Beni Slimane,بني سليمان,Beni Slimane,Beni Slimane,26001
+26-beni-slimane-bouskene,26,26,Medea,26-beni-slimane,Beni Slimane,بوسكن,Bouskene,Bouskene,26025
+26-beni-slimane-sidi-rabie,26,26,Medea,26-beni-slimane,Beni Slimane,سيدي الربيع,Sidi Rabie,Sidi Rabie,26070
+26-si-mahdjoub-bouaichoune,26,26,Medea,26-si-mahdjoub,Si Mahdjoub,بوعيشون,Bouaichoune,Bouaichoune,26055
+26-si-mahdjoub-ouled-bouachra,26,26,Medea,26-si-mahdjoub,Si Mahdjoub,أولاد بوعشرة,Ouled Bouachra,Ouled Bouachra,26064
+26-si-mahdjoub-si-mahdjoub,26,26,Medea,26-si-mahdjoub,Si Mahdjoub,سي المحجوب,Si Mahdjoub,Si Mahdjoub,26045
+26-berrouaghia-berrouaghia,26,26,Medea,26-berrouaghia,Berrouaghia,البرواقية,Berrouaghia,Berrouaghia,26002
+26-berrouaghia-ouled-deid,26,26,Medea,26-berrouaghia,Berrouaghia,أولاد دايد,Ouled Deid,Ouled Deid,26044
+26-berrouaghia-rebaia,26,26,Medea,26-berrouaghia,Berrouaghia,الربعية,Rebaia,Rebaia,26039
+26-seghouane-medjebar,26,26,Medea,26-seghouane,Seghouane,مجبر,Medjebar,Medjebar,26033
+26-seghouane-tletat-ed-douair,26,26,Medea,26-seghouane,Seghouane,ثلاث دوائر,Tletat Ed Douair,Tletat Ed Douair,26046
+26-seghouane-zoubiria,26,26,Medea,26-seghouane,Seghouane,الزبيرية,Zoubiria,Zoubiria,26021
+26-seghouane-seghouane,26,26,Medea,26-seghouane,Seghouane,سغوان,Seghouane,Seghouane,26041
+26-tablat-aissaouia,26,26,Medea,26-tablat,Tablat,العيساوية,Aissaouia,Aissaouia,26022
+26-tablat-el-haoudane,26,26,Medea,26-tablat,Tablat,الحوضان,El Haoudane,El Haoudane,26058
+26-tablat-mezerana,26,26,Medea,26-tablat,Tablat,مزغنة,Mezerana,Mezerana,
+26-tablat-tablat,26,26,Medea,26-tablat,Tablat,تابلاط,Tablat,Tablat,26004
+26-medea-draa-esmar,26,26,Medea,26-medea,Medea,ذراع السمار,Draa Esmar,Draa Esmar,26017
+26-medea-medea,26,26,Medea,26-medea,Medea,المدية,Medea,Medea,26000
+26-medea-tamesguida,26,26,Medea,26-medea,Medea,تمسقيدة,Tamesguida,Tamesguida,26075
+26-ouzera-ben-chicao,26,26,Medea,26-ouzera,Ouzera,بن شكاو,Ben Chicao,Ben Chicao,26012
+26-ouzera-el-hamdania,26,26,Medea,26-ouzera,Ouzera,الحمدانية,El Hamdania,El Hamdania,26060
+26-ouzera-ouzera,26,26,Medea,26-ouzera,Ouzera,وزرة,Ouzera,Ouzera,26019
+26-ouzera-tizi-mahdi,26,26,Medea,26-ouzera,Ouzera,تيزي مهدي,Tizi Mahdi,Tizi Mahdi,26076
+26-el-omaria-baata,26,26,Medea,26-el-omaria,El Omaria,بعطة,Baata,Baata,26050
+26-el-omaria-el-omaria,26,26,Medea,26-el-omaria,El Omaria,العمارية,El Omaria,El Omaria,26008
+26-el-omaria-ouled-brahim,26,26,Medea,26-el-omaria,El Omaria,أولاد إبراهيم,Ouled Brahim,Ouled Brahim,26036
+26-guelb-el-kebir-bir-ben-laabed,26,26,Medea,26-guelb-el-kebir,Guelb El Kebir,بئر بن عابد,Bir Ben Laabed,Bir Ben Laabed,26053
+26-guelb-el-kebir-el-guelbelkebir,26,26,Medea,26-guelb-el-kebir,Guelb El Kebir,القلب الكبير,El Guelbelkebir,El Guelbelkebir,26030
+26-guelb-el-kebir-sedraya,26,26,Medea,26-guelb-el-kebir,Guelb El Kebir,سدراية,Sedraya,Sedraya,26068
+26-sidi-naamane-bouchrahil,26,26,Medea,26-sidi-naamane,Sidi Naamane,بوشراحيل,Bouchrahil,Bouchrahil,26014
+26-sidi-naamane-khams-djouamaa,26,26,Medea,26-sidi-naamane,Sidi Naamane,خمس جوامع,Khams Djouamaa,Khams Djouamaa,26062
+26-sidi-naamane-sidi-naamane,26,26,Medea,26-sidi-naamane,Sidi Naamane,سيدي نعمان,Sidi Naamane,Sidi Naamane,26071
+27-ain-nouicy-fornaka,27,27,Mostaganem,27-ain-nouicy,Ain Nouicy,فرناقة,Fornaka,Fornaka,27014
+27-ain-nouicy-hassiane,27,27,Mostaganem,27-ain-nouicy,Ain Nouicy,الحسيان (بني ياحي,Hassiane,Hassiane,27033
+27-ain-nouicy-ain-nouissy,27,27,Mostaganem,27-ain-nouicy,Ain Nouicy,عين نويسي,Ain-Nouissy,Ain-Nouissy,27010
+27-ain-tedeles-oued-el-kheir,27,27,Mostaganem,27-ain-tedeles,Ain Tedeles,وادي الخير,Oued El Kheir,Oued El Kheir,27020
+27-ain-tedeles-ain-tedles,27,27,Mostaganem,27-ain-tedeles,Ain Tedeles,عين تادلس,Ain-Tedles,Ain-Tedles,27001
+27-ain-tedeles-sidi-belaattar,27,27,Mostaganem,27-ain-tedeles,Ain Tedeles,سيدي بلعطار,Sidi Belaattar,Sidi Belaattar,27029
+27-ain-tedeles-sour,27,27,Mostaganem,27-ain-tedeles,Ain Tedeles,سور,Sour,Sour,27022
+27-hassi-mameche-hassi-mameche,27,27,Mostaganem,27-hassi-mameche,Hassi Mameche,حاسي ماماش,Hassi Mameche,Hassi Mameche,27004
+27-hassi-mameche-mazagran,27,27,Mostaganem,27-hassi-mameche,Hassi Mameche,مزغران,Mazagran,Mazagran,27017
+27-hassi-mameche-stidia,27,27,Mostaganem,27-hassi-mameche,Hassi Mameche,ستيدية,Stidia,Stidia,27023
+27-kheir-eddine-ain-boudinar,27,27,Mostaganem,27-kheir-eddine,Kheir Eddine,عين بودينار,Ain-Boudinar,Ain-Boudinar,27031
+27-kheir-eddine-kheir-eddine,27,27,Mostaganem,27-kheir-eddine,Kheir Eddine,خير الدين,Kheir-Eddine,Kheir-Eddine,27016
+27-kheir-eddine-sayada,27,27,Mostaganem,27-kheir-eddine,Kheir Eddine,صيادة,Sayada,Sayada,27045
+27-sidi-ali-sidi-ali,27,27,Mostaganem,27-sidi-ali,Sidi Ali,سيدي علي,Sidi Ali,Sidi Ali,27032
+27-sidi-ali-tazgait,27,27,Mostaganem,27-sidi-ali,Sidi Ali,تزقايت,Tazgait,Tazgait,27047
+27-sidi-ali-ouled-maalah,27,27,Mostaganem,27-sidi-ali,Sidi Ali,أولاد مع الله,Ouled-Maalah,Ouled-Maalah,27028
+27-sidi-lakhdar-benabdelmalek-ramdane,27,27,Mostaganem,27-sidi-lakhdar,Sidi Lakhdar,بن عبد المالك رمضان,Benabdelmalek Ramdane,Benabdelmalek Ramdane,27008
+27-sidi-lakhdar-hadjadj,27,27,Mostaganem,27-sidi-lakhdar,Sidi Lakhdar,حجاج,Hadjadj,Hadjadj,27015
+27-sidi-lakhdar-sidi-lakhdar,27,27,Mostaganem,27-sidi-lakhdar,Sidi Lakhdar,سيدي لخضر,Sidi-Lakhdar,Sidi-Lakhdar,27007
+27-mostaganem-mostaganem,27,27,Mostaganem,27-mostaganem,Mostaganem,مستغانم,Mostaganem,Mostaganem,27000
+27-achaacha-achaacha,27,27,Mostaganem,27-achaacha,Achaacha,عشعاشة,Achaacha,Achaacha,27009
+27-achaacha-khadra,27,27,Mostaganem,27-achaacha,Achaacha,خضرة,Khadra,Khadra,27005
+27-achaacha-nekmaria,27,27,Mostaganem,27-achaacha,Achaacha,نكمارية,Nekmaria,Nekmaria,27026
+27-achaacha-ouled-boughalem,27,27,Mostaganem,27-achaacha,Achaacha,أولاد بوغالم,Ouled Boughalem,Ouled Boughalem,27027
+27-bouguirat-bouguirat,27,27,Mostaganem,27-bouguirat,Bouguirat,بوقيراط,Bouguirat,Bouguirat,27003
+27-bouguirat-safsaf,27,27,Mostaganem,27-bouguirat,Bouguirat,صفصاف,Safsaf,Safsaf,
+27-bouguirat-sirat,27,27,Mostaganem,27-bouguirat,Bouguirat,سيرات,Sirat,Sirat,27021
+27-bouguirat-souaflia,27,27,Mostaganem,27-bouguirat,Bouguirat,السوافلية,Souaflia,Souaflia,27046
+27-mesra-ain-sidi-cherif,27,27,Mostaganem,27-mesra,Mesra,عين سيدي الشريف,Ain-Sidi Cherif,Ain-Sidi Cherif,27024
+27-mesra-mesra,27,27,Mostaganem,27-mesra,Mesra,ماسرة,Mesra,Mesra,27018
+27-mesra-touahria,27,27,Mostaganem,27-mesra,Mesra,الطواهرية,Touahria,Touahria,27013
+27-mesra-mansourah,27,27,Mostaganem,27-mesra,Mesra,منصورة,Mansourah,Mansourah,
+28-chellal-chellal,28,28,M'Sila,28-chellal,Chellal,شلال,Chellal,Chellal,28014
+28-chellal-ouled-madhi,28,28,M'Sila,28-chellal,Chellal,أولاد ماضي,Ouled Madhi,Ouled Madhi,28047
+28-chellal-khettouti-sed-el-jir,28,28,M'Sila,28-chellal,Chellal,خطوطي سد الجير,Khettouti Sed-El-Jir,Khettouti Sed-El-Jir,28056
+28-magra-belaiba,28,28,M'Sila,28-magra,Magra,بلعايبة,Belaiba,Belaiba,28026
+28-magra-berhoum,28,28,M'Sila,28-magra,Magra,برهوم,Berhoum,Berhoum,28010
+28-magra-dehahna,28,28,M'Sila,28-magra,Magra,دهاهنة,Dehahna,Dehahna,28048
+28-magra-magra,28,28,M'Sila,28-magra,Magra,مقرة,Magra,Magra,28006
+28-magra-ain-khadra,28,28,M'Sila,28-magra,Magra,عين الخضراء,Ain Khadra,Ain Khadra,28008
+28-sidi-aissa-beni-ilmane,28,28,M'Sila,28-sidi-aissa,Sidi Aissa,بني يلمان,Beni Ilmane,Beni Ilmane,28027
+28-sidi-aissa-bouti-sayeh,28,28,M'Sila,28-sidi-aissa,Sidi Aissa,بوطي السايح,Bouti Sayeh,Bouti Sayeh,28042
+28-sidi-aissa-sidi-aissa,28,28,M'Sila,28-sidi-aissa,Sidi Aissa,سيدي عيسى,Sidi Aissa,Sidi Aissa,28002
+28-ain-el-hadjel-ain-el-hadjel,28,28,M'Sila,28-ain-el-hadjel,Ain El Hadjel,عين الحجل,Ain El Hadjel,Ain El Hadjel,28003
+28-djebel-messaad-djebel-messaad,28,28,M'Sila,28-djebel-messaad,Djebel Messaad,جبل مساعد,Djebel Messaad,Djebel Messaad,28024
+28-msila-msila,28,28,M'Sila,28-msila,M'sila,المسيلة,M'sila,M'sila,28000
+28-hammam-dalaa-hammam-dalaa,28,28,M'Sila,28-hammam-dalaa,Hammam Dalaa,حمام الضلعة,Hammam Dalaa,Hammam Dalaa,28005
+28-hammam-dalaa-ouanougha,28,28,M'Sila,28-hammam-dalaa,Hammam Dalaa,ونوغة,Ouanougha,Ouanougha,28017
+28-hammam-dalaa-ouled-mansour,28,28,M'Sila,28-hammam-dalaa,Hammam Dalaa,أولاد منصور,Ouled Mansour,Ouled Mansour,28060
+28-hammam-dalaa-tarmount,28,28,M'Sila,28-hammam-dalaa,Hammam Dalaa,تارمونت,Tarmount,Tarmount,28038
+28-ouled-derradj-ouled-derradj,28,28,M'Sila,28-ouled-derradj,Ouled Derradj,أولاد دراج,Ouled Derradj,Ouled Derradj,28022
+28-ouled-derradj-souamaa,28,28,M'Sila,28-ouled-derradj,Ouled Derradj,السوامع,Souamaa,Souamaa,28064
+28-ouled-derradj-ouled-addi-guebala,28,28,M'Sila,28-ouled-derradj,Ouled Derradj,أولاد عدي لقبالة,Ouled Addi Guebala,Ouled Addi Guebala,28021
+28-khoubana-el-houamed,28,28,M'Sila,28-khoubana,Khoubana,الحوامد,El Houamed,El Houamed,
+28-khoubana-khoubana,28,28,M'Sila,28-khoubana,Khoubana,خبانة,Khoubana,Khoubana,28030
+28-khoubana-mcif,28,28,M'Sila,28-khoubana,Khoubana,مسيف,M'cif,M'cif,28029
+29-oued-el-abtal-oued-el-abtal,29,29,Mascara,29-oued-el-abtal,Oued El Abtal,وادي الأبطال,Oued El Abtal,Oued El Abtal,29016
+29-oued-el-abtal-sidi-abdeldjebar,29,29,Mascara,29-oued-el-abtal,Oued El Abtal,سيدي عبد الجبار,Sidi Abdeldjebar,Sidi Abdeldjebar,29065
+29-oued-el-abtal-ain-ferah,29,29,Mascara,29-oued-el-abtal,Oued El Abtal,عين فراح,Ain Ferah,Ain Ferah,29032
+29-mohammadia-sidi-abdelmoumene,29,29,Mascara,29-mohammadia,Mohammadia,سيدي عبد المومن,Sidi Abdelmoumene,Sidi Abdelmoumene,29054
+29-mohammadia-sedjerara,29,29,Mascara,29-mohammadia,Mohammadia,سجرارة,Sedjerara,Sedjerara,29062
+29-mohammadia-mocta-douz,29,29,Mascara,29-mohammadia,Mohammadia,مقطع الدوز,Mocta-Douz,Mocta-Douz,29027
+29-mohammadia-ferraguig,29,29,Mascara,29-mohammadia,Mohammadia,فراقيق,Ferraguig,Ferraguig,29046
+29-mohammadia-el-ghomri,29,29,Mascara,29-mohammadia,Mohammadia,الغمري,El Ghomri,El Ghomri,29023
+29-mohammadia-mohammadia,29,29,Mascara,29-mohammadia,Mohammadia,المحمدية,Mohammadia,Mohammadia,
+29-tighennif-tighennif,29,29,Mascara,29-tighennif,Tighennif,تيغنيف,Tighennif,Tighennif,29004
+29-tighennif-sidi-kada,29,29,Mascara,29-tighennif,Tighennif,سيدي قادة,Sidi Kada,Sidi Kada,29030
+29-tighennif-sehailia,29,29,Mascara,29-tighennif,Tighennif,السهايلية,Sehailia,Sehailia,29063
+29-zahana-zahana,29,29,Mascara,29-zahana,Zahana,زهانة,Zahana,Zahana,29019
+29-zahana-el-gaada,29,29,Mascara,29-zahana,Zahana,القعدة,El Gaada,El Gaada,29041
+29-oggaz-ras-el-ain-amirouche,29,29,Mascara,29-oggaz,Oggaz,رأس عين عميروش,Ras El Ain Amirouche,Ras El Ain Amirouche,29060
+29-oggaz-oggaz,29,29,Mascara,29-oggaz,Oggaz,عقاز,Oggaz,Oggaz,29029
+29-oggaz-alaimia,29,29,Mascara,29-oggaz,Oggaz,العلايمية,Alaimia,Alaimia,29036
+29-sig-sig,29,29,Mascara,29-sig,Sig,سيق,Sig,Sig,29001
+29-sig-chorfa,29,29,Mascara,29-sig,Sig,الشرفاء,Chorfa,Chorfa,29039
+29-sig-bou-henni,29,29,Mascara,29-sig,Sig,بوهني,Bou Henni,Bou Henni,29022
+29-ain-fares-el-mamounia,29,29,Mascara,29-ain-fares,Ain Fares,المأمونية,El Mamounia,El Mamounia,29056
+29-ain-fares-ain-fares,29,29,Mascara,29-ain-fares,Ain Fares,عين فارس,Ain Fares,Ain Fares,
+29-bouhanifia-el-gueitena,29,29,Mascara,29-bouhanifia,Bouhanifia,القطنة,El Gueitena,El Gueitena,29042
+29-bouhanifia-bouhanifia,29,29,Mascara,29-bouhanifia,Bouhanifia,بوحنيفية,Bouhanifia,Bouhanifia,29005
+29-bouhanifia-hacine,29,29,Mascara,29-bouhanifia,Bouhanifia,حسين,Hacine,Hacine,29014
+29-aouf-gharrous,29,29,Mascara,29-aouf,Aouf,غروس,Gharrous,Gharrous,29047
+29-aouf-benian,29,29,Mascara,29-aouf,Aouf,بنيان,Benian,Benian,29038
+29-aouf-aouf,29,29,Mascara,29-aouf,Aouf,عوف,Aouf,Aouf,29021
+29-oued-taria-guerdjoum,29,29,Mascara,29-oued-taria,Oued Taria,قرجوم,Guerdjoum,Guerdjoum,29050
+29-oued-taria-oued-taria,29,29,Mascara,29-oued-taria,Oued Taria,وادي التاغية,Oued Taria,Oued Taria,29017
+29-ain-fekan-ain-frass,29,29,Mascara,29-ain-fekan,Ain Fekan,عين أفرص,Ain Frass,Ain Frass,29034
+29-ain-fekan-ain-fekan,29,29,Mascara,29-ain-fekan,Ain Fekan,عين فكان,Ain Fekan,Ain Fekan,29011
+29-el-bordj-khalouia,29,29,Mascara,29-el-bordj,El Bordj,خلوية,Khalouia,Khalouia,29025
+29-el-bordj-el-menaouer,29,29,Mascara,29-el-bordj,El Bordj,المنور,El Menaouer,El Menaouer,29044
+29-el-bordj-el-bordj,29,29,Mascara,29-el-bordj,El Bordj,البرج,El Bordj,El Bordj,29012
+29-ghriss-sidi-boussaid,29,29,Mascara,29-ghriss,Ghriss,سيدي بوسعيد,Sidi Boussaid,Sidi Boussaid,29069
+29-ghriss-matemore,29,29,Mascara,29-ghriss,Ghriss,المطمور,Matemore,Matemore,29026
+29-ghriss-makhda,29,29,Mascara,29-ghriss,Ghriss,ماقضة,Makhda,Makhda,29055
+29-ghriss-ghriss,29,29,Mascara,29-ghriss,Ghriss,غريس,Ghriss,Ghriss,29006
+29-ghriss-maoussa,29,29,Mascara,29-ghriss,Ghriss,ماوسة,Maoussa,Maoussa,29015
+29-mascara-mascara,29,29,Mascara,29-mascara,Mascara,معسكر,Mascara,Mascara,29000
+29-tizi-el-keurt,29,29,Mascara,29-tizi,Tizi,القرط,El Keurt,El Keurt,29043
+29-tizi-froha,29,29,Mascara,29-tizi,Tizi,فروحة,Froha,Froha,29024
+29-tizi-tizi,29,29,Mascara,29-tizi,Tizi,تيزي,Tizi,Tizi,
+29-hachem-el-hachem,29,29,Mascara,29-hachem,Hachem,الحشم,El Hachem,El Hachem,29013
+29-hachem-nesmot,29,29,Mascara,29-hachem,Hachem,نسمط,Nesmot,Nesmot,29058
+29-hachem-zelamta,29,29,Mascara,29-hachem,Hachem,زلامطة,Zelamta,Zelamta,29057
+30-ouargla-ouargla,30,30,Ouargla,30-ouargla,Ouargla,ورقلة,Ouargla,Ouargla,30000
+30-ouargla-rouissat,30,30,Ouargla,30-ouargla,Ouargla,الرويسات,Rouissat,Rouissat,30013
+30-hassi-messaoud-hassi-messaoud,30,30,Ouargla,30-hassi-messaoud,Hassi Messaoud,حاسي مسعود,Hassi Messaoud,Hassi Messaoud,30001
+30-sidi-khouiled-hassi-ben-abdellah,30,30,Ouargla,30-sidi-khouiled,Sidi Khouiled,حاسي بن عبد الله,Hassi Ben Abdellah,Hassi Ben Abdellah,30052
+30-sidi-khouiled-sidi-khouiled,30,30,Ouargla,30-sidi-khouiled,Sidi Khouiled,سيدي خويلد,Sidi Khouiled,Sidi Khouiled,30035
+30-sidi-khouiled-ain-beida,30,30,Ouargla,30-sidi-khouiled,Sidi Khouiled,عين البيضاء,Ain Beida,Ain Beida,
+30-el-borma-el-borma,30,30,Ouargla,30-el-borma,El Borma,البرمة,El Borma,El Borma,30025
+30-ngoussa-ngoussa,30,30,Ouargla,30-ngoussa,N'goussa,انقوسة,N'goussa,N'goussa,30026
+31-es-senia-sidi-chami,31,31,Oran,31-es-senia,Es Senia,سيدي الشحمي,Sidi Chami,Sidi Chami,31038
+31-es-senia-el-kerma,31,31,Oran,31-es-senia,Es Senia,الكرمة,El Kerma,El Kerma,31026
+31-es-senia-es-senia,31,31,Oran,31-es-senia,Es Senia,السانية,Es Senia,Es Senia,31005
+31-gdyel-hassi-mefsoukh,31,31,Oran,31-gdyel,Gdyel,حاسي مفسوخ,Hassi Mefsoukh,Hassi Mefsoukh,31046
+31-gdyel-gdyel,31,31,Oran,31-gdyel,Gdyel,قديل,Gdyel,Gdyel,31017
+31-gdyel-ben-freha,31,31,Oran,31-gdyel,Gdyel,بن فريحة,Ben Freha,Ben Freha,31027
+31-bir-el-djir-bir-el-djir,31,31,Oran,31-bir-el-djir,Bir El Djir,بئر الجير,Bir El Djir,Bir El Djir,31001
+31-bir-el-djir-hassi-ben-okba,31,31,Oran,31-bir-el-djir,Bir El Djir,حاسي بن عقبة,Hassi Ben Okba,Hassi Ben Okba,31049
+31-bir-el-djir-hassi-bounif,31,31,Oran,31-bir-el-djir,Bir El Djir,حاسي بونيف,Hassi Bounif,Hassi Bounif,31028
+31-arzew-arzew,31,31,Oran,31-arzew,Arzew,أرزيو,Arzew,Arzew,31004
+31-arzew-sidi-ben-yebka,31,31,Oran,31-arzew,Arzew,سيدي بن يبقى,Sidi Ben Yebka,Sidi Ben Yebka,31058
+31-bethioua-ain-biya,31,31,Oran,31-bethioua,Bethioua,عين البية,Ain Biya,Ain Biya,31040
+31-bethioua-bethioua,31,31,Oran,31-bethioua,Bethioua,بطيوة,Bethioua,Bethioua,31015
+31-bethioua-marsat-el-hadjadj,31,31,Oran,31-bethioua,Bethioua,مرسى الحجاج,Marsat El Hadjadj,Marsat El Hadjadj,31030
+31-oran-oran,31,31,Oran,31-oran,Oran,وهران,Oran,Oran,31000
+31-ain-turk-el-ancor,31,31,Oran,31-ain-turk,Ain Turk,العنصر,El Ancor,El Ancor,31043
+31-ain-turk-mers-el-kebir,31,31,Oran,31-ain-turk,Ain Turk,المرسى الكبير,Mers El Kebir,Mers El Kebir,31019
+31-ain-turk-bousfer,31,31,Oran,31-ain-turk,Ain Turk,بوسفر,Bousfer,Bousfer,31025
+31-ain-turk-ain-turk,31,31,Oran,31-ain-turk,Ain Turk,عين الترك,Ain Turk,Ain Turk,
+31-oued-tlelat-boufatis,31,31,Oran,31-oued-tlelat,Oued Tlelat,بوفاتيس,Boufatis,Boufatis,31024
+31-oued-tlelat-el-braya,31,31,Oran,31-oued-tlelat,Oued Tlelat,البراية,El Braya,El Braya,31070
+31-oued-tlelat-oued-tlelat,31,31,Oran,31-oued-tlelat,Oued Tlelat,وادي تليلات,Oued Tlelat,Oued Tlelat,31037
+31-oued-tlelat-tafraoui,31,31,Oran,31-oued-tlelat,Oued Tlelat,طفراوي,Tafraoui,Tafraoui,31077
+31-boutlelis-ain-kerma,31,31,Oran,31-boutlelis,Boutlelis,عين الكرمة,Ain Kerma,Ain Kerma,31059
+31-boutlelis-boutlelis,31,31,Oran,31-boutlelis,Boutlelis,بوتليليس,Boutlelis,Boutlelis,31016
+31-boutlelis-messerghin,31,31,Oran,31-boutlelis,Boutlelis,مسرغين,Messerghin,Messerghin,31031
+32-labiodh-sidi-cheikh-ain-el-orak,32,32,El Bayadh,32-labiodh-sidi-cheikh,Labiodh Sidi Cheikh,عين العراك,Ain El Orak,Ain El Orak,32019
+32-labiodh-sidi-cheikh-el-bnoud,32,32,El Bayadh,32-labiodh-sidi-cheikh,Labiodh Sidi Cheikh,البنود,El Bnoud,El Bnoud,32025
+32-brezina-krakda,32,32,El Bayadh,32-brezina,Brezina,كراكدة,Krakda,Krakda,32027
+32-boualem-sidi-slimane,32,32,El Bayadh,32-boualem,Boualem,سيدي سليمان,Sidi Slimane,Sidi Slimane,30030
+32-boualem-boualem,32,32,El Bayadh,32-boualem,Boualem,بوعلام,Boualem,Boualem,32006
+32-boualem-sidi-tiffour,32,32,El Bayadh,32-boualem,Boualem,سيدي طيفور,Sidi Tiffour,Sidi Tiffour,32032
+32-boualem-stitten,32,32,El Bayadh,32-boualem,Boualem,ستيتن,Stitten,Stitten,32033
+32-sidi-ameur-sidi-ameur,32,32,El Bayadh,32-sidi-ameur,Sidi Ameur,سيدي عامر,Sidi Ameur,Sidi Ameur,
+32-bougtoub-bougtoub,32,32,El Bayadh,32-bougtoub,Bougtoub,بوقطب,Bougtoub,Bougtoub,32001
+32-bougtoub-el-kheiter,32,32,El Bayadh,32-bougtoub,Bougtoub,الخيثر,El Kheiter,El Kheiter,32011
+32-bougtoub-tousmouline,32,32,El Bayadh,32-bougtoub,Bougtoub,توسمولين,Tousmouline,Tousmouline,32034
+32-el-bayadh-el-bayadh,32,32,El Bayadh,32-el-bayadh,El Bayadh,البيض,El Bayadh,El Bayadh,32000
+32-rogassa-rogassa,32,32,El Bayadh,32-rogassa,Rogassa,رقاصة,Rogassa,Rogassa,32018
+32-rogassa-kef-el-ahmar,32,32,El Bayadh,32-rogassa,Rogassa,الكاف الأحمر,Kef El Ahmar,Kef El Ahmar,32013
+32-chellala-el-mehara,32,32,El Bayadh,32-chellala,Chellala,المحرة,El Mehara,El Mehara,32024
+33-in-amenas-bordj-omar-driss,33,33,Illizi,33-in-amenas,In Amenas,برج عمر إدريس,Bordj Omar Driss,Bordj Omar Driss,33003
+33-in-amenas-debdeb,33,33,Illizi,33-in-amenas,In Amenas,دبداب,Debdeb,Debdeb,33004
+33-in-amenas-in-amenas,33,33,Illizi,33-in-amenas,In Amenas,إن أمناس,In Amenas,In Amenas,33001
+33-illizi-illizi,33,33,Illizi,33-illizi,Illizi,إيليزي,Illizi,Illizi,33000
+34-el-hamadia-elhammadia,34,34,Bordj Bou Arreridj,34-el-hamadia,El Hamadia,الحمادية,Elhammadia,Elhammadia,
+34-el-hamadia-el-euch,34,34,Bordj Bou Arreridj,34-el-hamadia,El Hamadia,العش,El Euch,El Euch,34029
+34-el-hamadia-ksour,34,34,Bordj Bou Arreridj,34-el-hamadia,El Hamadia,القصور,Ksour,Ksour,34048
+34-el-hamadia-rabta,34,34,Bordj Bou Arreridj,34-el-hamadia,El Hamadia,الرابطة,Rabta,Rabta,34035
+34-ain-taghrout-ain-taghrout,34,34,Bordj Bou Arreridj,34-ain-taghrout,Ain Taghrout,عين تاغروت,Ain Taghrout,Ain Taghrout,34010
+34-ain-taghrout-tixter,34,34,Bordj Bou Arreridj,34-ain-taghrout,Ain Taghrout,تيكستار,Tixter,Tixter,34022
+34-bordj-ghedir-belimour,34,34,Bordj Bou Arreridj,34-bordj-ghedir,Bordj Ghedir,بليمور,Belimour,Belimour,34025
+34-bordj-ghedir-el-annasseur,34,34,Bordj Bou Arreridj,34-bordj-ghedir,Bordj Ghedir,العناصر,El Annasseur,El Annasseur,34030
+34-bordj-ghedir-ghailasa,34,34,Bordj Bou Arreridj,34-bordj-ghedir,Bordj Ghedir,غيلاسة,Ghailasa,Ghailasa,34031
+34-bordj-ghedir-taglait,34,34,Bordj Bou Arreridj,34-bordj-ghedir,Bordj Ghedir,تقلعيت,Taglait,Taglait,34059
+34-bordj-ghedir-bordj-ghedir,34,34,Bordj Bou Arreridj,34-bordj-ghedir,Bordj Ghedir,برج الغدير,Bordj Ghedir,Bordj Ghedir,34004
+34-bir-kasdali-sidi-embarek,34,34,Bordj Bou Arreridj,34-bir-kasdali,Bir Kasdali,سيدي أمبارك,Sidi-Embarek,Sidi-Embarek,34020
+34-bir-kasdali-khelil,34,34,Bordj Bou Arreridj,34-bir-kasdali,Bir Kasdali,خليل,Khelil,Khelil,34028
+34-bir-kasdali-bir-kasdali,34,34,Bordj Bou Arreridj,34-bir-kasdali,Bir Kasdali,بئر قاصد علي,Bir Kasdali,Bir Kasdali,34011
+34-djaafra-tefreg,34,34,Bordj Bou Arreridj,34-djaafra,Djaafra,تفرق,Tefreg,Tefreg,34061
+34-djaafra-el-main,34,34,Bordj Bou Arreridj,34-djaafra,Djaafra,الماين,El Main,El Main,34018
+34-djaafra-djaafra,34,34,Bordj Bou Arreridj,34-djaafra,Djaafra,جعافرة,Djaafra,Djaafra,34016
+34-djaafra-colla,34,34,Bordj Bou Arreridj,34-djaafra,Djaafra,القلة,Colla,Colla,34015
+34-medjana-teniet-en-nasr,34,34,Bordj Bou Arreridj,34-medjana,Medjana,ثنية النصر,Teniet En Nasr,Teniet En Nasr,34021
+34-medjana-el-achir,34,34,Bordj Bou Arreridj,34-medjana,Medjana,الياشير,El Achir,El Achir,34006
+34-medjana-hasnaoua,34,34,Bordj Bou Arreridj,34-medjana,Medjana,حسناوة,Hasnaoua,Hasnaoua,34068
+34-medjana-medjana,34,34,Bordj Bou Arreridj,34-medjana,Medjana,مجانة,Medjana,Medjana,34009
+34-mansourah-el-mhir,34,34,Bordj Bou Arreridj,34-mansourah,Mansourah,المهير,El M'hir,El M'hir,34019
+34-mansourah-mansoura,34,34,Bordj Bou Arreridj,34-mansourah,Mansourah,المنصورة,Mansoura,Mansoura,34008
+34-mansourah-haraza,34,34,Bordj Bou Arreridj,34-mansourah,Mansourah,حرازة,Haraza,Haraza,34047
+34-mansourah-ben-daoud,34,34,Bordj Bou Arreridj,34-mansourah,Mansourah,بن داود,Ben Daoud,Ben Daoud,34073
+34-mansourah-ouled-sidi-brahim,34,34,Bordj Bou Arreridj,34-mansourah,Mansourah,أولاد سيدي ابراهيم,Ouled Sidi-Brahim,Ouled Sidi-Brahim,
+34-ras-el-oued-ain-tesra,34,34,Bordj Bou Arreridj,34-ras-el-oued,Ras El Oued,عين تسرة,Ain Tesra,Ain Tesra,34027
+34-ras-el-oued-ouled-brahem,34,34,Bordj Bou Arreridj,34-ras-el-oued,Ras El Oued,أولاد أبراهم,Ouled Brahem,Ouled Brahem,34032
+34-ras-el-oued-ras-el-oued,34,34,Bordj Bou Arreridj,34-ras-el-oued,Ras El Oued,رأس الوادي,Ras El Oued,Ras El Oued,34001
+34-bordj-zemmoura-bordj-zemmoura,34,34,Bordj Bou Arreridj,34-bordj-zemmoura,Bordj Zemmoura,برج زمورة,Bordj Zemmoura,Bordj Zemmoura,34005
+34-bordj-zemmoura-ouled-dahmane,34,34,Bordj Bou Arreridj,34-bordj-zemmoura,Bordj Zemmoura,أولاد دحمان,Ouled Dahmane,Ouled Dahmane,34033
+34-bordj-zemmoura-tassamert,34,34,Bordj Bou Arreridj,34-bordj-zemmoura,Bordj Zemmoura,تسامرت,Tassamert,Tassamert,34026
+34-bordj-bou-arreridj-b-b-arreridj,34,34,Bordj Bou Arreridj,34-bordj-bou-arreridj,Bordj Bou Arreridj,برج بوعريرج,B. B. Arreridj,B. B. Arreridj,34000
+35-boudouaou-el-kharrouba,35,35,Boumerdes,35-boudouaou,Boudouaou,الخروبة,El Kharrouba,El Kharrouba,
+35-boudouaou-bouzegza-keddara,35,35,Boumerdes,35-boudouaou,Boudouaou,بوزقزة قدارة,Bouzegza Keddara,Bouzegza Keddara,35038
+35-boudouaou-ouled-hedadj,35,35,Boumerdes,35-boudouaou,Boudouaou,أولاد هداج,Ouled Hedadj,Ouled Hedadj,35052
+35-boudouaou-boudouaou,35,35,Boumerdes,35-boudouaou,Boudouaou,بودواو,Boudouaou,Boudouaou,35003
+35-boudouaou-boudouaou-el-bahri,35,35,Boumerdes,35-boudouaou,Boudouaou,بودواو البحري,Boudouaou El Bahri,Boudouaou El Bahri,35023
+35-dellys-dellys,35,35,Boumerdes,35-dellys,Dellys,دلس,Dellys,Dellys,35004
+35-dellys-ben-choud,35,35,Boumerdes,35-dellys,Dellys,بن شود,Ben Choud,Ben Choud,35033
+35-dellys-afir,35,35,Boumerdes,35-dellys,Dellys,أعفير,Afir,Afir,35022
+35-thenia-thenia,35,35,Boumerdes,35-thenia,Thenia,الثنية,Thenia,Thenia,35005
+35-thenia-beni-amrane,35,35,Boumerdes,35-thenia,Thenia,بني عمران,Beni Amrane,Beni Amrane,35006
+35-thenia-ammal,35,35,Boumerdes,35-thenia,Thenia,عمال,Ammal,Ammal,35031
+35-thenia-souk-el-had,35,35,Boumerdes,35-thenia,Thenia,سوق الحد,Souk El Had,Souk El Had,
+35-khemis-el-khechna-khemis-el-khechna,35,35,Boumerdes,35-khemis-el-khechna,Khemis El Khechna,خميس الخشنة,Khemis El Khechna,Khemis El Khechna,35010
+35-khemis-el-khechna-larbatache,35,35,Boumerdes,35-khemis-el-khechna,Khemis El Khechna,الاربعطاش,Larbatache,Larbatache,35017
+35-khemis-el-khechna-ouled-moussa,35,35,Boumerdes,35-khemis-el-khechna,Khemis El Khechna,أولاد موسى,Ouled Moussa,Ouled Moussa,35011
+35-khemis-el-khechna-hammedi,35,35,Boumerdes,35-khemis-el-khechna,Khemis El Khechna,حمادي,Hammedi,Hammedi,35015
+35-bordj-menaiel-zemmouri,35,35,Boumerdes,35-bordj-menaiel,Bordj Menaiel,زموري,Zemmouri,Zemmouri,35012
+35-bordj-menaiel-leghata,35,35,Boumerdes,35-bordj-menaiel,Bordj Menaiel,لقاطة,Leghata,Leghata,35026
+35-bordj-menaiel-djinet,35,35,Boumerdes,35-bordj-menaiel,Bordj Menaiel,جنات,Djinet,Djinet,35024
+35-bordj-menaiel-bordj-menaiel,35,35,Boumerdes,35-bordj-menaiel,Bordj Menaiel,برج منايل,Bordj Menaiel,Bordj Menaiel,35001
+35-isser-isser,35,35,Boumerdes,35-isser,Isser,يسر,Isser,Isser,35009
+35-isser-chabet-el-ameur,35,35,Boumerdes,35-isser,Isser,شعبة العامر,Chabet El Ameur,Chabet El Ameur,35008
+35-isser-si-mustapha,35,35,Boumerdes,35-isser,Isser,سي مصطفى,Si Mustapha,Si Mustapha,35028
+35-isser-timezrit,35,35,Boumerdes,35-isser,Isser,تيمزريت,Timezrit,Timezrit,
+35-naciria-ouled-aissa,35,35,Boumerdes,35-naciria,Naciria,أولاد عيسى,Ouled Aissa,Ouled Aissa,01051
+35-naciria-naciria,35,35,Boumerdes,35-naciria,Naciria,الناصرية,Naciria,Naciria,35018
+35-baghlia-sidi-daoud,35,35,Boumerdes,35-baghlia,Baghlia,سيدي داود,Sidi Daoud,Sidi Daoud,35019
+35-baghlia-baghlia,35,35,Boumerdes,35-baghlia,Baghlia,بغلية,Baghlia,Baghlia,35013
+35-baghlia-taourga,35,35,Boumerdes,35-baghlia,Baghlia,تاورقة,Taourga,Taourga,35029
+35-boumerdes-tidjelabine,35,35,Boumerdes,35-boumerdes,Boumerdes,تيجلابين,Tidjelabine,Tidjelabine,35021
+35-boumerdes-boumerdes,35,35,Boumerdes,35-boumerdes,Boumerdes,بومرداس,Boumerdes,Boumerdes,35000
+35-boumerdes-corso,35,35,Boumerdes,35-boumerdes,Boumerdes,قورصو,Corso,Corso,35014
+36-el-tarf-ain-el-assel,36,36,El Tarf,36-el-tarf,El Tarf,عين العسل,Ain El Assel,Ain El Assel,36010
+36-el-tarf-bougous,36,36,El Tarf,36-el-tarf,El Tarf,بوقوس,Bougous,Bougous,36029
+36-el-tarf-el-tarf,36,36,El Tarf,36-el-tarf,El Tarf,الطارف,El Tarf,El Tarf,36000
+36-el-tarf-zitouna,36,36,El Tarf,36-el-tarf,El Tarf,الزيتونة,Zitouna,Zitouna,
+36-besbes-besbes,36,36,El Tarf,36-besbes,Besbes,البسباس,Besbes,Besbes,36017
+36-besbes-zerizer,36,36,El Tarf,36-besbes,Besbes,زريزر,Zerizer,Zerizer,36015
+36-besbes-asfour,36,36,El Tarf,36-besbes,Besbes,عصفور,Asfour,Asfour,36012
+36-bouhadjar-bouhadjar,36,36,El Tarf,36-bouhadjar,Bouhadjar,بوحجار,Bouhadjar,Bouhadjar,36005
+36-bouhadjar-hammam-beni-salah,36,36,El Tarf,36-bouhadjar,Bouhadjar,حمام بني صالح,Hammam Beni Salah,Hammam Beni Salah,36036
+36-bouhadjar-oued-zitoun,36,36,El Tarf,36-bouhadjar,Bouhadjar,وادي الزيتون,Oued Zitoun,Oued Zitoun,36044
+36-bouhadjar-ain-kerma,36,36,El Tarf,36-bouhadjar,Bouhadjar,عين الكرمة,Ain Kerma,Ain Kerma,36011
+36-ben-mhidi-ben-m-hidi,36,36,El Tarf,36-ben-mhidi,Ben M'hidi,بن مهيدي,Ben M Hidi,Ben M Hidi,36003
+36-ben-mhidi-berrihane,36,36,El Tarf,36-ben-mhidi,Ben M'hidi,بريحان,Berrihane,Berrihane,36027
+36-ben-mhidi-echatt,36,36,El Tarf,36-ben-mhidi,Ben M'hidi,الشط,Echatt,Echatt,36025
+36-drean-chebaita-mokhtar,36,36,El Tarf,36-drean,Drean,شبيطة مختار,Chebaita Mokhtar,Chebaita Mokhtar,36013
+36-drean-chihani,36,36,El Tarf,36-drean,Drean,شحاني,Chihani,Chihani,36014
+36-drean-drean,36,36,El Tarf,36-drean,Drean,الذرعـان,Drean,Drean,36001
+36-el-kala-el-aioun,36,36,El Tarf,36-el-kala,El Kala,العيون,El Aioun,El Aioun,36018
+36-el-kala-el-kala,36,36,El Tarf,36-el-kala,El Kala,القالة,El Kala,El Kala,36002
+36-el-kala-souarekh,36,36,El Tarf,36-el-kala,El Kala,السوارخ,Souarekh,Souarekh,36020
+36-el-kala-raml-souk,36,36,El Tarf,36-el-kala,El Kala,رمل السوق,Raml Souk,Raml Souk,36021
+36-bouteldja-bouteldja,36,36,El Tarf,36-bouteldja,Bouteldja,بوثلجة,Bouteldja,Bouteldja,36006
+36-bouteldja-chefia,36,36,El Tarf,36-bouteldja,Bouteldja,الشافية,Chefia,Chefia,36032
+36-bouteldja-lac-des-oiseaux,36,36,El Tarf,36-bouteldja,Bouteldja,بحيرة الطيور,Lac Des Oiseaux,Lac Des Oiseaux,36019
+37-tindouf-tindouf,37,37,Tindouf,37-tindouf,Tindouf,تندوف,Tindouf,Tindouf,37000
+37-tindouf-oum-el-assel,37,37,Tindouf,37-tindouf,Tindouf,أم العسل,Oum El Assel,Oum El Assel,37003
+38-khemisti-khemisti,38,38,Tissemsilt,38-khemisti,Khemisti,خميستي,Khemisti,Khemisti,38016
+38-khemisti-layoune,38,38,Tissemsilt,38-khemisti,Khemisti,العيون,Layoune,Layoune,38007
+38-theniet-el-had-theniet-el-had,38,38,Tissemsilt,38-theniet-el-had,Theniet El Had,ثنية الاحد,Theniet El Had,Theniet El Had,38003
+38-theniet-el-had-sidi-boutouchent,38,38,Tissemsilt,38-theniet-el-had,Theniet El Had,سيدي بوتوشنت,Sidi Boutouchent,Sidi Boutouchent,38026
+38-tissemsilt-ouled-bessam,38,38,Tissemsilt,38-tissemsilt,Tissemsilt,أولاد بسام,Ouled Bessam,Ouled Bessam,38014
+38-tissemsilt-tissemsilt,38,38,Tissemsilt,38-tissemsilt,Tissemsilt,تيسمسيلت,Tissemsilt,Tissemsilt,38000
+38-lardjem-sidi-lantri,38,38,Tissemsilt,38-lardjem,Lardjem,سيدي العنتري,Sidi Lantri,Sidi Lantri,38027
+38-lardjem-lardjem,38,38,Tissemsilt,38-lardjem,Lardjem,لرجام,Lardjem,Lardjem,38002
+38-lardjem-melaab,38,38,Tissemsilt,38-lardjem,Lardjem,الملعب,Melaab,Melaab,38013
+38-lardjem-tamellahet,38,38,Tissemsilt,38-lardjem,Lardjem,تملاحت,Tamellahet,Tamellahet,38029
+38-bordj-bounaama-beni-chaib,38,38,Tissemsilt,38-bordj-bounaama,Bordj Bounaama,بني شعيب,Beni Chaib,Beni Chaib,38019
+38-bordj-bounaama-beni-lahcene,38,38,Tissemsilt,38-bordj-bounaama,Bordj Bounaama,بني لحسن,Beni Lahcene,Beni Lahcene,38020
+38-bordj-bounaama-bordj-bounaama,38,38,Tissemsilt,38-bordj-bounaama,Bordj Bounaama,برج بونعامة,Bordj Bounaama,Bordj Bounaama,38001
+38-bordj-bounaama-sidi-slimane,38,38,Tissemsilt,38-bordj-bounaama,Bordj Bounaama,سيدي سليمان,Sidi Slimane,Sidi Slimane,
+38-ammari-sidi-abed,38,38,Tissemsilt,38-ammari,Ammari,سيدي عابد,Sidi Abed,Sidi Abed,38025
+38-ammari-ammari,38,38,Tissemsilt,38-ammari,Ammari,عماري,Ammari,Ammari,38012
+38-ammari-maacem,38,38,Tissemsilt,38-ammari,Ammari,المعاصم,Maacem,Maacem,38023
+38-lazharia-boucaid,38,38,Tissemsilt,38-lazharia,Lazharia,بوقائد,Boucaid,Boucaid,38005
+38-lazharia-lazharia,38,38,Tissemsilt,38-lazharia,Lazharia,الأزهرية,Lazharia,Lazharia,38008
+38-lazharia-larbaa,38,38,Tissemsilt,38-lazharia,Lazharia,الأربعاء,Larbaa,Larbaa,
+38-bordj-emir-abdelkader-youssoufia,38,38,Tissemsilt,38-bordj-emir-abdelkader,Bordj Emir Abdelkader,اليوسفية,Youssoufia,Youssoufia,38031
+38-bordj-emir-abdelkader-bordj-el-emir-abdelkader,38,38,Tissemsilt,38-bordj-emir-abdelkader,Bordj Emir Abdelkader,برج الأمير عبد القادر,Bordj El Emir Abdelkader,Bordj El Emir Abdelkader,38041
+39-taleb-larbi-douar-el-maa,39,39,El Oued,39-taleb-larbi,Taleb Larbi,دوار الماء,Douar El Maa,Douar El Maa,39024
+39-taleb-larbi-ben-guecha,39,39,El Oued,39-taleb-larbi,Taleb Larbi,بن  قشة,Ben Guecha,Ben Guecha,39048
+39-taleb-larbi-taleb-larbi,39,39,El Oued,39-taleb-larbi,Taleb Larbi,الطالب العربي,Taleb Larbi,Taleb Larbi,39019
+39-magrane-magrane,39,39,El Oued,39-magrane,Magrane,المقرن,Magrane,Magrane,39015
+39-magrane-sidi-aoun,39,39,El Oued,39-magrane,Magrane,سيدي عون,Sidi Aoun,Sidi Aoun,39037
+39-mih-ouensa-mih-ouansa,39,39,El Oued,39-mih-ouensa,Mih Ouensa,اميه وانسة,Mih Ouansa,Mih Ouansa,39030
+39-mih-ouensa-oued-el-alenda,39,39,El Oued,39-mih-ouensa,Mih Ouensa,وادي العلندة,Oued El Alenda,Oued El Alenda,39033
+39-el-oued-kouinine,39,39,El Oued,39-el-oued,El Oued,كوينين,Kouinine,Kouinine,39014
+39-el-oued-el-oued,39,39,El Oued,39-el-oued,El Oued,الوادي,El-Oued,El-Oued,39000
+39-bayadha-bayadha,39,39,El Oued,39-bayadha,Bayadha,البياضة,Bayadha,Bayadha,39007
+39-robbah-nakhla,39,39,El Oued,39-robbah,Robbah,النخلة,Nakhla,Nakhla,39031
+39-robbah-robbah,39,39,El Oued,39-robbah,Robbah,الرباح,Robbah,Robbah,39017
+39-robbah-el-ogla,39,39,El Oued,39-robbah,Robbah,العقلة,El Ogla,El Ogla,
+39-guemar-guemar,39,39,El Oued,39-guemar,Guemar,قمار,Guemar,Guemar,39002
+39-guemar-ourmes,39,39,El Oued,39-guemar,Guemar,ورماس,Ourmes,Ourmes,39035
+39-guemar-taghzout,39,39,El Oued,39-guemar,Guemar,تغزوت,Taghzout,Taghzout,39083
+39-reguiba-hamraia,39,39,El Oued,39-reguiba,Reguiba,الحمراية,Hamraia,Hamraia,39061
+39-reguiba-reguiba,39,39,El Oued,39-reguiba,Reguiba,الرقيبة,Reguiba,Reguiba,39016
+39-debila-debila,39,39,El Oued,39-debila,Debila,الدبيلة,Debila,Debila,39003
+39-debila-hassani-abdelkrim,39,39,El Oued,39-debila,Debila,حساني عبد الكريم,Hassani Abdelkrim,Hassani Abdelkrim,39020
+39-hassi-khalifa-hassi-khalifa,39,39,El Oued,39-hassi-khalifa,Hassi Khalifa,حاسي خليفة,Hassi Khalifa,Hassi Khalifa,39013
+39-hassi-khalifa-trifaoui,39,39,El Oued,39-hassi-khalifa,Hassi Khalifa,الطريفاوي,Trifaoui,Trifaoui,39044
+40-chechar-khirane,40,40,Khenchela,40-chechar,Chechar,خيران,Khirane,Khirane,40036
+40-chechar-djellal,40,40,Khenchela,40-chechar,Chechar,جلال,Djellal,Djellal,40015
+40-chechar-el-oueldja,40,40,Khenchela,40-chechar,Chechar,الولجة,El Oueldja,El Oueldja,19046
+40-chechar-chechar,40,40,Khenchela,40-chechar,Chechar,ششار,Chechar,Chechar,40008
+40-babar-babar,40,40,Khenchela,40-babar,Babar,بابار,Babar,Babar,40006
+40-ouled-rechache-el-mahmal,40,40,Khenchela,40-ouled-rechache,Ouled Rechache,المحمل,El Mahmal,El Mahmal,40012
+40-ouled-rechache-ouled-rechache,40,40,Khenchela,40-ouled-rechache,Ouled Rechache,أولاد رشاش,Ouled Rechache,Ouled Rechache,40013
+40-bouhmama-yabous,40,40,Khenchela,40-bouhmama,Bouhmama,يابوس,Yabous,Yabous,40023
+40-bouhmama-chelia,40,40,Khenchela,40-bouhmama,Bouhmama,شلية,Chelia,Chelia,40030
+40-bouhmama-bouhmama,40,40,Khenchela,40-bouhmama,Bouhmama,بوحمامة,Bouhmama,Bouhmama,40007
+40-bouhmama-msara,40,40,Khenchela,40-bouhmama,Bouhmama,مصارة,M'sara,M'sara,40039
+40-khenchela-khenchela,40,40,Khenchela,40-khenchela,Khenchela,خنشلة,Khenchela,Khenchela,40000
+40-kais-kais,40,40,Khenchela,40-kais,Kais,قايس,Kais,Kais,40001
+40-kais-remila,40,40,Khenchela,40-kais,Kais,الرميلة,Remila,Remila,40041
+40-kais-taouzianat,40,40,Khenchela,40-kais,Kais,تاوزيانت,Taouzianat,Taouzianat,40011
+40-el-hamma-baghai,40,40,Khenchela,40-el-hamma,El Hamma,بغاي,Baghai,Baghai,40014
+40-el-hamma-el-hamma,40,40,Khenchela,40-el-hamma,El Hamma,الحامة,El Hamma,El Hamma,40031
+40-el-hamma-ensigha,40,40,Khenchela,40-el-hamma,El Hamma,انسيغة,Ensigha,Ensigha,40043
+40-el-hamma-tamza,40,40,Khenchela,40-el-hamma,El Hamma,طامزة,Tamza,Tamza,40024
+40-ain-touila-ain-touila,40,40,Khenchela,40-ain-touila,Ain Touila,عين الطويلة,Ain Touila,Ain Touila,40028
+40-ain-touila-mtoussa,40,40,Khenchela,40-ain-touila,Ain Touila,متوسة,M'toussa,M'toussa,40021
+41-souk-ahras-souk-ahras,41,41,Souk Ahras,41-souk-ahras,Souk Ahras,سوق أهراس,Souk Ahras,Souk Ahras,41000
+41-sedrata-ain-soltane,41,41,Souk Ahras,41-sedrata,Sedrata,عين سلطان,Ain Soltane,Ain Soltane,20029
+41-sedrata-sedrata,41,41,Souk Ahras,41-sedrata,Sedrata,سدراتة,Sedrata,Sedrata,41006
+41-sedrata-khemissa,41,41,Souk Ahras,41-sedrata,Sedrata,خميسة,Khemissa,Khemissa,41031
+41-mechroha-hanencha,41,41,Souk Ahras,41-mechroha,Mechroha,الحنانشة,Hanencha,Hanencha,41016
+41-mechroha-machroha,41,41,Souk Ahras,41-mechroha,Mechroha,المشروحة,Machroha,Machroha,41010
+41-ouled-driss-ain-zana,41,41,Souk Ahras,41-ouled-driss,Ouled Driss,عين الزانة,Ain Zana,Ain Zana,41027
+41-ouled-driss-ouled-driss,41,41,Souk Ahras,41-ouled-driss,Ouled Driss,أولاد إدريس,Ouled Driss,Ouled Driss,41005
+41-oum-el-adhaim-terraguelt,41,41,Souk Ahras,41-oum-el-adhaim,Oum El Adhaim,ترقالت,Terraguelt,Terraguelt,41037
+41-oum-el-adhaim-oum-el-adhaim,41,41,Souk Ahras,41-oum-el-adhaim,Oum El Adhaim,أم العظايم,Oum El Adhaim,Oum El Adhaim,41019
+41-oum-el-adhaim-oued-kebrit,41,41,Souk Ahras,41-oum-el-adhaim,Oum El Adhaim,وادي الكبريت,Oued Kebrit,Oued Kebrit,41018
+41-mdaourouche-tiffech,41,41,Souk Ahras,41-mdaourouche,M'daourouche,تيفاش,Tiffech,Tiffech,41038
+41-mdaourouche-ragouba,41,41,Souk Ahras,41-mdaourouche,M'daourouche,الراقوبة,Ragouba,Ragouba,41033
+41-mdaourouche-mdaourouche,41,41,Souk Ahras,41-mdaourouche,M'daourouche,مداوروش,M'daourouche,M'daourouche,41001
+41-taoura-drea,41,41,Souk Ahras,41-taoura,Taoura,الدريعة,Drea,Drea,41015
+41-taoura-taoura,41,41,Souk Ahras,41-taoura,Taoura,تاورة,Taoura,Taoura,41009
+41-taoura-zaarouria,41,41,Souk Ahras,41-taoura,Taoura,الزعرورية,Zaarouria,Zaarouria,41025
+41-haddada-haddada,41,41,Souk Ahras,41-haddada,Haddada,الحدادة,Haddada,Haddada,41012
+41-haddada-khedara,41,41,Souk Ahras,41-haddada,Haddada,الخضارة,Khedara,Khedara,41013
+41-haddada-ouled-moumen,41,41,Souk Ahras,41-haddada,Haddada,أولاد مومن,Ouled Moumen,Ouled Moumen,41034
+41-merahna-merahna,41,41,Souk Ahras,41-merahna,Merahna,المراهنة,Merahna,Merahna,41004
+41-merahna-ouillen,41,41,Souk Ahras,41-merahna,Merahna,ويلان,Ouillen,Ouillen,41029
+41-merahna-sidi-fredj,41,41,Souk Ahras,41-merahna,Merahna,سيدي فرج,Sidi Fredj,Sidi Fredj,
+41-bir-bouhouche-bir-bouhouche,41,41,Souk Ahras,41-bir-bouhouche,Bir Bouhouche,بئر بوحوش,Bir Bouhouche,Bir Bouhouche,41011
+41-bir-bouhouche-safel-el-ouiden,41,41,Souk Ahras,41-bir-bouhouche,Bir Bouhouche,سافل الويدان,Safel El Ouiden,Safel El Ouiden,41035
+41-bir-bouhouche-zouabi,41,41,Souk Ahras,41-bir-bouhouche,Bir Bouhouche,الزوابي,Zouabi,Zouabi,41039
+42-hadjout-hadjout,42,42,Tipaza,42-hadjout,Hadjout,حجوط,Hadjout,Hadjout,42001
+42-hadjout-merad,42,42,Tipaza,42-hadjout,Hadjout,مراد,Merad,Merad,42019
+42-sidi-amar-menaceur,42,42,Tipaza,42-sidi-amar,Sidi Amar,مناصر,Menaceur,Menaceur,42018
+42-sidi-amar-nador,42,42,Tipaza,42-sidi-amar,Sidi Amar,الناظور,Nador,Nador,42039
+42-sidi-amar-sidi-amar,42,42,Tipaza,42-sidi-amar,Sidi Amar,سيدي عامر,Sidi-Amar,Sidi-Amar,20019
+42-gouraya-aghbal,42,42,Tipaza,42-gouraya,Gouraya,أغبال,Aghbal,Aghbal,42035
+42-gouraya-gouraya,42,42,Tipaza,42-gouraya,Gouraya,قوراية,Gouraya,Gouraya,42007
+42-gouraya-messelmoun,42,42,Tipaza,42-gouraya,Gouraya,مسلمون,Messelmoun,Messelmoun,42036
+42-cherchell-cherchell,42,42,Tipaza,42-cherchell,Cherchell,شرشال,Cherchell,Cherchell,42002
+42-cherchell-hadjret-ennous,42,42,Tipaza,42-cherchell,Cherchell,حجرة النص,Hadjret Ennous,Hadjret Ennous,42029
+42-cherchell-sidi-ghiles,42,42,Tipaza,42-cherchell,Cherchell,سيدي غيلاس,Sidi Ghiles,Sidi Ghiles,42021
+42-cherchell-sidi-semiane,42,42,Tipaza,42-cherchell,Cherchell,سيدي سميان,Sidi Semiane,Sidi Semiane,42041
+42-damous-damous,42,42,Tipaza,42-damous,Damous,الداموس,Damous,Damous,42014
+42-damous-larhat,42,42,Tipaza,42-damous,Damous,الأرهاط,Larhat,Larhat,42017
+42-damous-beni-mileuk,42,42,Tipaza,42-damous,Damous,بني ميلك,Beni Mileuk,Beni Mileuk,42024
+42-fouka-fouka,42,42,Tipaza,42-fouka,Fouka,فوكة,Fouka,Fouka,42006
+42-fouka-douaouda,42,42,Tipaza,42-fouka,Fouka,دواودة,Douaouda,Douaouda,42015
+42-bou-ismail-ain-tagourait,42,42,Tipaza,42-bou-ismail,Bou Ismail,عين تاقورايت,Ain Tagourait,Ain Tagourait,42023
+42-bou-ismail-bou-haroun,42,42,Tipaza,42-bou-ismail,Bou Ismail,بوهارون,Bou Haroun,Bou Haroun,42009
+42-bou-ismail-bou-ismail,42,42,Tipaza,42-bou-ismail,Bou Ismail,بواسماعيل,Bou Ismail,Bou Ismail,42004
+42-bou-ismail-khemisti,42,42,Tipaza,42-bou-ismail,Bou Ismail,خميستي,Khemisti,Khemisti,42016
+42-ahmar-el-ain-ahmer-el-ain,42,42,Tipaza,42-ahmar-el-ain,Ahmar El Ain,أحمر العين,Ahmer El Ain,Ahmer El Ain,42005
+42-ahmar-el-ain-bourkika,42,42,Tipaza,42-ahmar-el-ain,Ahmar El Ain,بورقيقة,Bourkika,Bourkika,42011
+42-ahmar-el-ain-sidi-rached,42,42,Tipaza,42-ahmar-el-ain,Ahmar El Ain,سيدي راشد,Sidi Rached,Sidi Rached,42040
+42-kolea-attatba,42,42,Tipaza,42-kolea,Kolea,الحطاطبة,Attatba,Attatba,42008
+42-kolea-chaiba,42,42,Tipaza,42-kolea,Kolea,الشعيبة,Chaiba,Chaiba,42047
+42-kolea-kolea,42,42,Tipaza,42-kolea,Kolea,القليعة,Kolea,Kolea,42003
+42-tipaza-tipaza,42,42,Tipaza,42-tipaza,Tipaza,تيبازة,Tipaza,Tipaza,42000
+43-teleghma-el-mechira,43,43,Mila,43-teleghma,Teleghma,مشيرة,El Mechira,El Mechira,43026
+43-teleghma-teleghma,43,43,Mila,43-teleghma,Teleghma,التلاغمة,Teleghma,Teleghma,43008
+43-teleghma-oued-seguen,43,43,Mila,43-teleghma,Teleghma,وادي سقان,Oued Seguen,Oued Seguen,43031
+43-ain-beida-harriche-el-ayadi-barbes,43,43,Mila,43-ain-beida-harriche,Ain Beida Harriche,العياضي برباس,El Ayadi Barbes,El Ayadi Barbes,43050
+43-ain-beida-harriche-ain-beida-harriche,43,43,Mila,43-ain-beida-harriche,Ain Beida Harriche, عين البيضاء أحريش,Ain Beida Harriche,Ain Beida Harriche,43014
+43-terrai-bainen-tassala-lematai,43,43,Mila,43-terrai-bainen,Terrai Bainen,تسالة لمطاعي,Tassala Lematai,Tassala Lematai,43034
+43-terrai-bainen-terrai-bainen,43,43,Mila,43-terrai-bainen,Terrai Bainen,ترعي باينان,Terrai Bainen,Terrai Bainen,43018
+43-terrai-bainen-amira-arres,43,43,Mila,43-terrai-bainen,Terrai Bainen,اعميرة اراس,Amira Arres,Amira Arres,43017
+43-tassadane-haddada-tassadane-haddada,43,43,Mila,43-tassadane-haddada,Tassadane Haddada,تسدان حدادة,Tassadane Haddada,Tassadane Haddada,43033
+43-tassadane-haddada-minar-zarza,43,43,Mila,43-tassadane-haddada,Tassadane Haddada,مينار زارزة,Minar Zarza,Minar Zarza,43036
+43-sidi-merouane-sidi-merouane,43,43,Mila,43-sidi-merouane,Sidi Merouane,سيدي مروان,Sidi Merouane,Sidi Merouane,43010
+43-sidi-merouane-chigara,43,43,Mila,43-sidi-merouane,Sidi Merouane,الشيقارة,Chigara,Chigara,43025
+43-grarem-gouga-hamala,43,43,Mila,43-grarem-gouga,Grarem Gouga,حمالة,Hamala,Hamala,43052
+43-grarem-gouga-grarem-gouga,43,43,Mila,43-grarem-gouga,Grarem Gouga,القرارم قوقة,Grarem Gouga,Grarem Gouga,43004
+43-rouached-tiberguent,43,43,Mila,43-rouached,Rouached,تيبرقنت,Tiberguent,Tiberguent,43035
+43-rouached-rouached,43,43,Mila,43-rouached,Rouached,الرواشد,Rouached,Rouached,43009
+43-bouhatem-derrahi-bousselah,43,43,Mila,43-bouhatem,Bouhatem,دراحي بوصلاح,Derrahi Bousselah,Derrahi Bousselah,43046
+43-bouhatem-bouhatem,43,43,Mila,43-bouhatem,Bouhatem,بوحاتم,Bouhatem,Bouhatem,43022
+43-oued-endja-zeghaia,43,43,Mila,43-oued-endja,Oued Endja,زغاية,Zeghaia,Zeghaia,43012
+43-oued-endja-oued-endja,43,43,Mila,43-oued-endja,Oued Endja,وادي النجاء,Oued Endja,Oued Endja,43006
+43-oued-endja-ahmed-rachedi,43,43,Mila,43-oued-endja,Oued Endja,أحمد راشدي,Ahmed Rachedi,Ahmed Rachedi,43013
+43-tadjenanet-tadjenanet,43,43,Mila,43-tadjenanet,Tadjenanet,تاجنانت,Tadjenanet,Tadjenanet,43007
+43-tadjenanet-ouled-khalouf,43,43,Mila,43-tadjenanet,Tadjenanet,أولاد اخلوف,Ouled Khalouf,Ouled Khalouf,43032
+43-tadjenanet-benyahia-abderrahmane,43,43,Mila,43-tadjenanet,Tadjenanet,بن يحي عبد الرحمن,Benyahia Abderrahmane,Benyahia Abderrahmane,43020
+43-chelghoum-laid-ain-mellouk,43,43,Mila,43-chelghoum-laid,Chelghoum Laid,عين الملوك,Ain Mellouk,Ain Mellouk,43015
+43-chelghoum-laid-oued-athmenia,43,43,Mila,43-chelghoum-laid,Chelghoum Laid,وادي العثمانية,Oued Athmenia,Oued Athmenia,43005
+43-chelghoum-laid-chelghoum-laid,43,43,Mila,43-chelghoum-laid,Chelghoum Laid,شلغوم العيد,Chelghoum Laid,Chelghoum Laid,43001
+43-mila-ain-tine,43,43,Mila,43-mila,Mila,عين التين,Ain Tine,Ain Tine,43016
+43-mila-sidi-khelifa,43,43,Mila,43-mila,Mila,سيدي خليفة,Sidi Khelifa,Sidi Khelifa,43058
+43-mila-mila,43,43,Mila,43-mila,Mila,ميلة,Mila,Mila,43000
+43-ferdjioua-yahia-beniguecha,43,43,Mila,43-ferdjioua,Ferdjioua,يحي بني قشة,Yahia Beniguecha,Yahia Beniguecha,43071
+43-ferdjioua-ferdjioua,43,43,Mila,43-ferdjioua,Ferdjioua,فرجيوة,Ferdjioua,Ferdjioua,43002
+44-khemis-khemis-miliana,44,44,Ain Defla,44-khemis,Khemis,خميس مليانة,Khemis-Miliana,Khemis-Miliana,44001
+44-khemis-sidi-lakhdar,44,44,Ain Defla,44-khemis,Khemis,سيدي الأخضر,Sidi-Lakhdar,Sidi-Lakhdar,27007
+44-hammam-righa-ain-benian,44,44,Ain Defla,44-hammam-righa,Hammam Righa,عين البنيان,Ain-Benian,Ain-Benian,44035
+44-hammam-righa-ain-torki,44,44,Ain Defla,44-hammam-righa,Hammam Righa,عين التركي,Ain-Torki,Ain-Torki,44020
+44-hammam-righa-hammam-righa,44,44,Ain Defla,44-hammam-righa,Hammam Righa,حمام ريغة,Hammam-Righa,Hammam-Righa,44023
+44-djelida-bourached,44,44,Ain Defla,44-djelida,Djelida,بوراشد,Bourached,Bourached,44044
+44-djelida-djelida,44,44,Ain Defla,44-djelida,Djelida,جليدة,Djelida,Djelida,44009
+44-djelida-djemaa-ouled-cheikh,44,44,Ain Defla,44-djelida,Djelida,جمعة أولاد الشيخ,Djemaa Ouled Cheikh,Djemaa Ouled Cheikh,44047
+44-boumedfaa-hoceinia,44,44,Ain Defla,44-boumedfaa,Boumedfaa,الحسينية,Hoceinia,Hoceinia,44048
+44-boumedfaa-boumedfaa,44,44,Ain Defla,44-boumedfaa,Boumedfaa,بومدفع,Boumedfaa,Boumedfaa,44004
+44-el-amra-arib,44,44,Ain Defla,44-el-amra,El Amra,عريب,Arib,Arib,44008
+44-el-amra-el-amra,44,44,Ain Defla,44-el-amra,El Amra,العامرة,El-Amra,El-Amra,44010
+44-el-amra-mekhatria,44,44,Ain Defla,44-el-amra,El Amra,المخاطرية,Mekhatria,Mekhatria,44050
+44-el-attaf-el-attaf,44,44,Ain Defla,44-el-attaf,El Attaf,العطاف,El-Attaf,El-Attaf,44002
+44-el-attaf-tiberkanine,44,44,Ain Defla,44-el-attaf,El Attaf,تبركانين,Tiberkanine,Tiberkanine,44030
+44-el-abadia-ain-bouyahia,44,44,Ain Defla,44-el-abadia,El Abadia,عين بويحيى,Ain-Bouyahia,Ain-Bouyahia,44032
+44-el-abadia-el-abadia,44,44,Ain Defla,44-el-abadia,El Abadia,العبادية,El-Abadia,El-Abadia,44006
+44-el-abadia-tacheta-zegagha,44,44,Ain Defla,44-el-abadia,El Abadia,تاشتة زقاغة,Tacheta Zegagha,Tacheta Zegagha,44028
+44-djendel-birbouche,44,44,Ain Defla,44-djendel,Djendel,بربوش,Birbouche,Birbouche,44042
+44-djendel-djendel,44,44,Ain Defla,44-djendel,Djendel,جندل,Djendel,Djendel,44005
+44-djendel-oued-chorfa,44,44,Ain Defla,44-djendel,Djendel,وادي الشرفاء,Oued Chorfa,Oued Chorfa,44024
+44-miliana-ben-allal,44,44,Ain Defla,44-miliana,Miliana,بن علال,Ben Allal,Ben Allal,44040
+44-miliana-miliana,44,44,Ain Defla,44-miliana,Miliana,مليانة,Miliana,Miliana,44003
+44-ain-lechiakh-ain-lechiakh,44,44,Ain Defla,44-ain-lechiakh,Ain Lechiakh,عين الاشياخ,Ain-Lechiakh,Ain-Lechiakh,44018
+44-ain-lechiakh-oued-djemaa,44,44,Ain Defla,44-ain-lechiakh,Ain Lechiakh,واد الجمعة,Oued Djemaa,Oued Djemaa,44049
+44-ain-lechiakh-ain-soltane,44,44,Ain Defla,44-ain-lechiakh,Ain Lechiakh,عين السلطان,Ain-Soltane,Ain-Soltane,
+44-rouina-el-maine,44,44,Ain Defla,44-rouina,Rouina,الماين,El-Maine,El-Maine,44051
+44-rouina-rouina,44,44,Ain Defla,44-rouina,Rouina,الروينة,Rouina,Rouina,44017
+44-rouina-zeddine,44,44,Ain Defla,44-rouina,Rouina,زدين,Zeddine,Zeddine,44031
+44-bordj-el-emir-khaled-bir-ould-khelifa,44,44,Ain Defla,44-bordj-el-emir-khaled,Bordj El Emir Khaled,بئر ولد خليفة,Bir-Ould-Khelifa,Bir-Ould-Khelifa,44043
+44-bordj-el-emir-khaled-bordj-emir-khaled,44,44,Ain Defla,44-bordj-el-emir-khaled,Bordj El Emir Khaled,برج الأمير خالد,Bordj-Emir-Khaled,Bordj-Emir-Khaled,44021
+44-bordj-el-emir-khaled-tarik-ibn-ziad,44,44,Ain Defla,44-bordj-el-emir-khaled,Bordj El Emir Khaled,طارق بن زياد,Tarik-Ibn-Ziad,Tarik-Ibn-Ziad,44029
+44-bathia-bathia,44,44,Ain Defla,44-bathia,Bathia,بطحية,Bathia,Bathia,44041
+44-bathia-belaas,44,44,Ain Defla,44-bathia,Bathia,بلعاص,Belaas,Belaas,44038
+44-bathia-hassania,44,44,Ain Defla,44-bathia,Bathia,الحسانية,Hassania,Hassania,44022
+44-ain-defla-ain-defla,44,44,Ain Defla,44-ain-defla,Ain Defla,عين الدفلى,Ain-Defla,Ain-Defla,44000
+45-ain-sefra-tiout,45,45,Naama,45-ain-sefra,Ain Sefra,تيوت,Tiout,Tiout,45030
+45-ain-sefra-ain-sefra,45,45,Naama,45-ain-sefra,Ain Sefra,عين الصفراء,Ain Sefra,Ain Sefra,45001
+45-moghrar-moghrar,45,45,Naama,45-moghrar,Moghrar,مغرار,Moghrar,Moghrar,45014
+45-moghrar-djenienne-bourezg,45,45,Naama,45-moghrar,Moghrar,جنين بورزق,Djenienne Bourezg,Djenienne Bourezg,45013
+45-asla-asla,45,45,Naama,45-asla,Asla,عسلة,Asla,Asla,45012
+45-mekmen-ben-amar-kasdir,45,45,Naama,45-mekmen-ben-amar,Mekmen Ben Amar,القصدير,Kasdir,Kasdir,45024
+45-mekmen-ben-amar-makmen-ben-amar,45,45,Naama,45-mekmen-ben-amar,Mekmen Ben Amar,مكمن بن عمار,Makmen Ben Amar,Makmen Ben Amar,45005
+45-mecheria-mecheria,45,45,Naama,45-mecheria,Mecheria,المشرية,Mecheria,Mecheria,45002
+45-mecheria-el-biodh,45,45,Naama,45-mecheria,Mecheria,البيوض,El Biodh,El Biodh,45004
+45-mecheria-ain-ben-khelil,45,45,Naama,45-mecheria,Mecheria,عين بن خليل,Ain Ben Khelil,Ain Ben Khelil,45008
+45-naama-naama,45,45,Naama,45-naama,Naama,النعامة,Naama,Naama,45000
+45-sfissifa-sfissifa,45,45,Naama,45-sfissifa,Sfissifa,سفيسيفة,Sfissifa,Sfissifa,45021
+46-ain-larbaa-sidi-boumediene,46,46,Ain Temouchent,46-ain-larbaa,Ain Larbaa,سيدي بومدين,Sidi Boumediene,Sidi Boumediene,46051
+46-ain-larbaa-tamzoura,46,46,Ain Temouchent,46-ain-larbaa,Ain Larbaa,تامزورة,Tamzoura,Tamzoura,46026
+46-ain-larbaa-oued-sebbah,46,46,Ain Temouchent,46-ain-larbaa,Ain Larbaa,وادي الصباح,Oued Sebbah,Oued Sebbah,46023
+46-ain-larbaa-ain-el-arbaa,46,46,Ain Temouchent,46-ain-larbaa,Ain Larbaa,عين الأربعاء,Ain El Arbaa,Ain El Arbaa,46009
+46-el-maleh-chaabat-el-ham,46,46,Ain Temouchent,46-el-maleh,El Maleh,شعبة اللحم,Chaabat El Ham,Chaabat El Ham,46011
+46-el-maleh-el-maleh,46,46,Ain Temouchent,46-el-maleh,El Maleh,المالح,El Maleh,El Maleh,46067
+46-el-maleh-ouled-kihal,46,46,Ain Temouchent,46-el-maleh,El Maleh,أولاد الكيحل,Ouled Kihal,Ouled Kihal,46038
+46-el-maleh-terga,46,46,Ain Temouchent,46-el-maleh,El Maleh,تارقة,Terga,Terga,46015
+46-hammam-bou-hadjar-chentouf,46,46,Ain Temouchent,46-hammam-bou-hadjar,Hammam Bou Hadjar,شنتوف,Chentouf,Chentouf,
+46-hammam-bou-hadjar-hassasna,46,46,Ain Temouchent,46-hammam-bou-hadjar,Hammam Bou Hadjar,الحساسنة,Hassasna,Hassasna,20003
+46-hammam-bou-hadjar-oued-berkeche,46,46,Ain Temouchent,46-hammam-bou-hadjar,Hammam Bou Hadjar,وادي برقش,Oued Berkeche,Oued Berkeche,46022
+46-hammam-bou-hadjar-hammam-bou-hadjar,46,46,Ain Temouchent,46-hammam-bou-hadjar,Hammam Bou Hadjar,حمام بوحجر,Hammam Bou Hadjar,Hammam Bou Hadjar,46005
+46-el-amria-el-amria,46,46,Ain Temouchent,46-el-amria,El Amria,العامرية,El Amria,El Amria,46006
+46-el-amria-hassi-el-ghella,46,46,Ain Temouchent,46-el-amria,El Amria,حاسي الغلة,Hassi El Ghella,Hassi El Ghella,46012
+46-el-amria-ouled-boudjemaa,46,46,Ain Temouchent,46-el-amria,El Amria,أولاد بوجمعة,Ouled Boudjemaa,Ouled Boudjemaa,46043
+46-el-amria-el-messaid,46,46,Ain Temouchent,46-el-amria,El Amria,المساعيد,El Messaid,El Messaid,46035
+46-el-amria-bouzedjar,46,46,Ain Temouchent,46-el-amria,El Amria,بوزجار,Bouzedjar,Bouzedjar,46033
+46-ain-kihel-aghlal,46,46,Ain Temouchent,46-ain-kihel,Ain Kihel,أغلال,Aghlal,Aghlal,46016
+46-ain-kihel-ain-kihal,46,46,Ain Temouchent,46-ain-kihel,Ain Kihel,عين الكيحل,Ain Kihal,Ain Kihal,46008
+46-ain-kihel-ain-tolba,46,46,Ain Temouchent,46-ain-kihel,Ain Kihel,عين الطلبة,Ain Tolba,Ain Tolba,46010
+46-ain-kihel-aoubellil,46,46,Ain Temouchent,46-ain-kihel,Ain Kihel,عقب الليل,Aoubellil,Aoubellil,46017
+46-beni-saf-beni-saf,46,46,Ain Temouchent,46-beni-saf,Beni Saf,بني صاف,Beni Saf,Beni Saf,46001
+46-beni-saf-sidi-safi,46,46,Ain Temouchent,46-beni-saf,Beni Saf,سيدي صافي,Sidi Safi,Sidi Safi,46025
+46-beni-saf-emir-abdelkader,46,46,Ain Temouchent,46-beni-saf,Beni Saf,الأمير عبد القادر,Emir Abdelkader,Emir Abdelkader,
+46-oulhassa-gheraba-oulhaca-el-gheraba,46,46,Ain Temouchent,46-oulhassa-gheraba,Oulhassa Gheraba,ولهاصة الغرابة,Oulhaca El Gheraba,Oulhaca El Gheraba,46053
+46-oulhassa-gheraba-sidi-ouriache,46,46,Ain Temouchent,46-oulhassa-gheraba,Oulhassa Gheraba,سيدي ورياش,Sidi Ouriache,Sidi Ouriache,46024
+46-ain-temouchent-sidi-ben-adda,46,46,Ain Temouchent,46-ain-temouchent,Ain Temouchent,سيدي بن عدة,Sidi Ben Adda,Sidi Ben Adda,46013
+46-ain-temouchent-ain-temouchent,46,46,Ain Temouchent,46-ain-temouchent,Ain Temouchent,عين تموشنت,Ain Temouchent,Ain Temouchent,46000
+47-dhayet-ben-dhahoua-dhayet-bendhahoua,47,47,Ghardaia,47-dhayet-ben-dhahoua,Dhayet Ben Dhahoua,ضاية بن ضحوة,Dhayet Bendhahoua,Dhayet Bendhahoua,47011
+47-mansourah-mansoura,47,47,Ghardaia,47-mansourah,Mansourah,المنصورة,Mansoura,Mansoura,
+47-bounoura-el-atteuf,47,47,Ghardaia,47-bounoura,Bounoura,العطف,El Atteuf,El Atteuf,47012
+47-bounoura-bounoura,47,47,Ghardaia,47-bounoura,Bounoura,بونورة,Bounoura,Bounoura,47005
+47-zelfana-zelfana,47,47,Ghardaia,47-zelfana,Zelfana,زلفانة,Zelfana,Zelfana,47007
+47-el-guerrara-el-guerrara,47,47,Ghardaia,47-el-guerrara,El Guerrara,القرارة,El Guerrara,El Guerrara,47004
+47-metlili-sebseb,47,47,Ghardaia,47-metlili,Metlili,سبسب,Sebseb,Sebseb,47025
+47-metlili-metlili,47,47,Ghardaia,47-metlili,Metlili,متليلي,Metlili,Metlili,47002
+47-berriane-berriane,47,47,Ghardaia,47-berriane,Berriane,بريان,Berriane,Berriane,47003
+47-ghardaia-ghardaia,47,47,Ghardaia,47-ghardaia,Ghardaia,غرداية,Ghardaia,Ghardaia,47000
+48-mazouna-el-guettar,48,48,Relizane,48-mazouna,Mazouna,القطار,El-Guettar,El-Guettar,48016
+48-mazouna-mazouna,48,48,Relizane,48-mazouna,Mazouna,مازونة,Mazouna,Mazouna,48002
+48-ammi-moussa-ouled-aiche,48,48,Relizane,48-ammi-moussa,Ammi Moussa,أولاد يعيش,Ouled Aiche,Ouled Aiche,48019
+48-ammi-moussa-ammi-moussa,48,48,Relizane,48-ammi-moussa,Ammi Moussa,عمي موسى,Ammi Moussa,Ammi Moussa,48004
+48-ammi-moussa-el-hassi,48,48,Relizane,48-ammi-moussa,Ammi Moussa,الحاسي,El Hassi,El Hassi,
+48-ammi-moussa-el-ouldja,48,48,Relizane,48-ammi-moussa,Ammi Moussa,الولجة,El Ouldja,El Ouldja,
+48-zemmoura-beni-dergoun,48,48,Relizane,48-zemmoura,Zemmoura,بني درقن,Beni Dergoun,Beni Dergoun,48039
+48-zemmoura-dar-ben-abdelah,48,48,Relizane,48-zemmoura,Zemmoura,دار بن عبد الله,Dar Ben Abdelah,Dar Ben Abdelah,48044
+48-zemmoura-zemmoura,48,48,Relizane,48-zemmoura,Zemmoura,زمورة,Zemmoura,Zemmoura,48008
+48-djidiouia-djidiouia,48,48,Relizane,48-djidiouia,Djidiouia,جديوية,Djidiouia,Djidiouia,48005
+48-djidiouia-hamri,48,48,Relizane,48-djidiouia,Djidiouia,حمري,Hamri,Hamri,48051
+48-djidiouia-ouled-sidi-mihoub,48,48,Relizane,48-djidiouia,Djidiouia,أولاد سيدي الميهوب,Ouled Sidi Mihoub,Ouled Sidi Mihoub,48061
+48-el-matmar-belaassel-bouzagza,48,48,Relizane,48-el-matmar,El Matmar,بلعسل بوزقزة,Belaassel Bouzagza,Belaassel Bouzagza,48036
+48-el-matmar-el-matmar,48,48,Relizane,48-el-matmar,El Matmar,المطمر,El-Matmar,El-Matmar,48009
+48-el-matmar-sidi-khettab,48,48,Relizane,48-el-matmar,El Matmar,سيدي  خطاب,Sidi Khettab,Sidi Khettab,48029
+48-el-matmar-sidi-mhamed-benaouda,48,48,Relizane,48-el-matmar,El Matmar,سيدي امحمد بن عودة,Sidi M'hamed Benaouda,Sidi M'hamed Benaouda,48030
+48-ain-tarek-ain-tarek,48,48,Relizane,48-ain-tarek,Ain Tarek,عين طارق,Ain-Tarek,Ain-Tarek,48015
+48-ain-tarek-had-echkalla,48,48,Relizane,48-ain-tarek,Ain Tarek,حد الشكالة,Had Echkalla,Had Echkalla,48050
+48-yellel-ain-rahma,48,48,Relizane,48-yellel,Yellel,عين الرحمة,Ain Rahma,Ain Rahma,48033
+48-yellel-kalaa,48,48,Relizane,48-yellel,Yellel,القلعة,Kalaa,Kalaa,48018
+48-yellel-sidi-saada,48,48,Relizane,48-yellel,Yellel,سيدي سعادة,Sidi Saada,Sidi Saada,48067
+48-yellel-yellel,48,48,Relizane,48-yellel,Yellel,يلل,Yellel,Yellel,48006
+48-thenia-souk-el-had,48,48,Relizane,48-thenia,Thenia,سوق الحد,Souk El Had,Souk El Had,
+48-mendes-mendes,48,48,Relizane,48-mendes,Mendes,منداس,Mendes,Mendes,48012
+48-mendes-oued-essalem,48,48,Relizane,48-mendes,Mendes,وادي السلام,Oued Essalem,Oued Essalem,48022
+48-mendes-sidi-lazreg,48,48,Relizane,48-mendes,Mendes,سيدي لزرق,Sidi Lazreg,Sidi Lazreg,48065
+48-oued-rhiou-ouarizane,48,48,Relizane,48-oued-rhiou,Oued Rhiou,واريزان,Ouarizane,Ouarizane,48013
+48-oued-rhiou-merdja-sidi-abed,48,48,Relizane,48-oued-rhiou,Oued Rhiou,مرجة سيدي عابد,Merdja Sidi Abed,Merdja Sidi Abed,48056
+48-oued-rhiou-oued-rhiou,48,48,Relizane,48-oued-rhiou,Oued Rhiou,وادي رهيو,Oued-Rhiou,Oued-Rhiou,48001
+48-oued-rhiou-lahlef,48,48,Relizane,48-oued-rhiou,Oued Rhiou,لحلاف,Lahlef,Lahlef,48020
+48-relizane-bendaoud,48,48,Relizane,48-relizane,Relizane,بن داود,Bendaoud,Bendaoud,48053
+48-relizane-relizane,48,48,Relizane,48-relizane,Relizane,غليزان,Relizane,Relizane,48000
+48-sidi-mhamed-ben-ali-sidi-mhamed-benali,48,48,Relizane,48-sidi-mhamed-ben-ali,Sidi M'hamed Ben Ali,سيدي أمحمد بن علي,Sidi M'hamed Benali,Sidi M'hamed Benali,48003
+48-sidi-mhamed-ben-ali-mediouna,48,48,Relizane,48-sidi-mhamed-ben-ali,Sidi M'hamed Ben Ali,مديونة,Mediouna,Mediouna,48011
+48-sidi-mhamed-ben-ali-beni-zentis,48,48,Relizane,48-sidi-mhamed-ben-ali,Sidi M'hamed Ben Ali,بني زنطيس,Beni Zentis,Beni Zentis,48041
+48-el-hmadna-oued-el-djemaa,48,48,Relizane,48-el-hmadna,El H'madna,وادي الجمعة,Oued El Djemaa,Oued El Djemaa,48021
+48-el-hmadna-el-hmadna,48,48,Relizane,48-el-hmadna,El H'madna,الحمادنة,El H'madna,El H'madna,48017
+48-ramka-ramka,48,48,Relizane,48-ramka,Ramka,الرمكة,Ramka,Ramka,48024
+49-tinerkouk-tinerkouk,49,49,Timimoun,49-tinerkouk,Tinerkouk,تنركوك,Tinerkouk,Tinerkouk,01013
+49-tinerkouk-ksar-kaddour,49,49,Timimoun,49-tinerkouk,Tinerkouk,قصر قدور,Ksar Kaddour,Ksar Kaddour,01035
+49-timimoun-timimoun,49,49,Timimoun,49-timimoun,Timimoun,تيميمون,Timimoun,Timimoun,01001
+49-timimoun-ouled-said,49,49,Timimoun,49-timimoun,Timimoun,أولاد السعيد,Ouled Said,Ouled Said,01039
+49-aougrout-metarfa,49,49,Timimoun,49-aougrout,Aougrout,المطارفة,Metarfa,Metarfa,01033
+49-aougrout-aougrout,49,49,Timimoun,49-aougrout,Aougrout,أوقروت,Aougrout,Aougrout,01012
+49-charouine-talmine,49,49,Timimoun,49-charouine,Charouine,طالمين,Talmine,Talmine,01034
+49-charouine-charouine,49,49,Timimoun,49-charouine,Charouine,شروين,Charouine,Charouine,01014
+49-naciria-ouled-aissa,49,49,Timimoun,49-naciria,Naciria,أولاد عيسى,Ouled Aissa,Ouled Aissa,01051
+49-messaad-deldoul,49,49,Timimoun,49-messaad,Messaad,دلدول,Deldoul,Deldoul,17046
+50-bordj-badji-mokhtar-timiaouine,50,50,Bordj Badji Mokhtar,50-bordj-badji-mokhtar,Bordj Badji Mokhtar,تيمياوين,Timiaouine,Timiaouine,01042
+50-bordj-badji-mokhtar-bordj-badji-mokhtar,50,50,Bordj Badji Mokhtar,50-bordj-badji-mokhtar,Bordj Badji Mokhtar,برج باجي مختار,Bordj Badji Mokhtar,Bordj Badji Mokhtar,01010
+51-sidi-khaled-ras-el-miad,51,51,Ouled Djellal,51-sidi-khaled,Sidi Khaled,رأس الميعاد,Ras El Miad,Ras El Miad,07062
+51-sidi-khaled-besbes,51,51,Ouled Djellal,51-sidi-khaled,Sidi Khaled,بسباس,Besbes,Besbes,07044
+51-sidi-lahcene-sidi-khaled,51,51,Ouled Djellal,51-sidi-lahcene,Sidi Lahcene,سيدي  خالد,Sidi Khaled,Sidi Khaled,07004
+51-ouled-djellal-doucen,51,51,Ouled Djellal,51-ouled-djellal,Ouled Djellal,الدوسن,Doucen,Doucen,07007
+51-ouled-djellal-ouled-djellal,51,51,Ouled Djellal,51-ouled-djellal,Ouled Djellal,أولاد جلال,Ouled Djellal,Ouled Djellal,07002
+51-kolea-chaiba,51,51,Ouled Djellal,51-kolea,Kolea,الشعيبة,Chaiba,Chaiba,42047
+52-beni-abbes-beni-abbes,52,52,Beni Abbes,52-beni-abbes,Beni Abbes,بني عباس,Beni-Abbes,Beni-Abbes,08002
+52-beni-abbes-tamtert,52,52,Beni Abbes,52-beni-abbes,Beni Abbes,تامترت,Tamtert,Tamtert,08046
+52-igli-igli,52,52,Beni Abbes,52-igli,Igli,إقلي,Igli,Igli,08021
+52-el-ouata-el-ouata,52,52,Beni Abbes,52-el-ouata,El Ouata,الواتة,El Ouata,El Ouata,08020
+52-ouled-khodeir-ouled-khodeir,52,52,Beni Abbes,52-ouled-khodeir,Ouled Khodeir,أولاد خضير,Ouled-Khodeir,Ouled-Khodeir,08028
+52-ouled-khodeir-ksabi,52,52,Beni Abbes,52-ouled-khodeir,Ouled Khodeir,القصابي,Ksabi,Ksabi,08039
+52-kerzaz-kerzaz,52,52,Beni Abbes,52-kerzaz,Kerzaz,كرزاز,Kerzaz,Kerzaz,08022
+52-kerzaz-timoudi,52,52,Beni Abbes,52-kerzaz,Kerzaz,تيمودي,Timoudi,Timoudi,08031
+52-kerzaz-beni-ikhlef,52,52,Beni Abbes,52-kerzaz,Kerzaz,بن يخلف,Beni-Ikhlef,Beni-Ikhlef,08025
+53-in-ghar-inghar,53,53,In Salah,53-in-ghar,In Ghar,إينغر,Inghar,Inghar,11004
+53-in-salah-ain-salah,53,53,In Salah,53-in-salah,In Salah,عين صالح,Ain Salah,Ain Salah,11001
+53-in-salah-foggaret-ezzoua,53,53,In Salah,53-in-salah,In Salah,فقارة الزوى,Foggaret Ezzoua,Foggaret Ezzoua,11016
+54-tin-zouatine-tin-zouatine,54,54,In Guezzam,54-tin-zouatine,Tin Zouatine,تين زواتين,Tin Zouatine,Tin Zouatine,11011
+54-in-guezzam-ain-guezzam,54,54,In Guezzam,54-in-guezzam,In Guezzam,عين قزام,Ain Guezzam,Ain Guezzam,11005
+55-temacine-temacine,55,55,Touggourt,55-temacine,Temacine,تماسين,Temacine,Temacine,30003
+55-temacine-blidet-amor,55,55,Touggourt,55-temacine,Temacine,بلدة اعمر,Blidet Amor,Blidet Amor,30005
+55-boualem-sidi-slimane,55,55,Touggourt,55-boualem,Boualem,سيدي سليمان,Sidi Slimane,Sidi Slimane,30030
+55-megarine-megarine,55,55,Touggourt,55-megarine,Megarine,المقارين,Megarine,Megarine,30009
+55-touggourt-nezla,55,55,Touggourt,55-touggourt,Touggourt,النزلة,Nezla,Nezla,30004
+55-touggourt-tebesbest,55,55,Touggourt,55-touggourt,Touggourt,تبسبست,Tebesbest,Tebesbest,30058
+55-touggourt-touggourt,55,55,Touggourt,55-touggourt,Touggourt,تقرت,Touggourt,Touggourt,30002
+55-touggourt-zaouia-el-abidia,55,55,Touggourt,55-touggourt,Touggourt,الزاوية العابدية,Zaouia El Abidia,Zaouia El Abidia,30018
+55-taibet-taibet,55,55,Touggourt,55-taibet,Taibet,الطيبات,Taibet,Taibet,30015
+55-taibet-benaceur,55,55,Touggourt,55-taibet,Taibet,بن ناصر,Benaceur,Benaceur,30020
+55-taibet-mnaguer,55,55,Touggourt,55-taibet,Taibet,المنقر,M'naguer,M'naguer,30029
+55-el-hadjira-el-alia,55,55,Touggourt,55-el-hadjira,El-Hadjira,العالية,El Alia,El Alia,30023
+55-el-hadjira-el-hadjira,55,55,Touggourt,55-el-hadjira,El-Hadjira,الحجيرة,El-Hadjira,El-Hadjira,30006
+56-djanet-djanet,56,56,Djanet,56-djanet,Djanet,جانت,Djanet,Djanet,33002
+56-djanet-bordj-el-haouass,56,56,Djanet,56-djanet,Djanet,برج الحواس,Bordj El Haouass,Bordj El Haouass,33008
+57-el-meghaier-oum-touyour,57,57,El M'Ghair,57-el-meghaier,El Meghaier,أم الطيور,Oum Touyour,Oum Touyour,39034
+57-el-meghaier-el-mghaier,57,57,El M'Ghair,57-el-meghaier,El Meghaier,المغير,El-M'ghaier,El-M'ghaier,39005
+57-el-meghaier-still,57,57,El M'Ghair,57-el-meghaier,El Meghaier,سطيل,Still,Still,39039
+57-el-meghaier-sidi-khelil,57,57,El M'Ghair,57-el-meghaier,El Meghaier,سيدي خليل,Sidi Khelil,Sidi Khelil,39038
+57-djamaa-sidi-amrane,57,57,El M'Ghair,57-djamaa,Djamaa,سيدي عمران,Sidi Amrane,Sidi Amrane,39021
+57-djamaa-mrara,57,57,El M'Ghair,57-djamaa,Djamaa,المرارة,M'rara,M'rara,39067
+57-djamaa-djamaa,57,57,El M'Ghair,57-djamaa,Djamaa,جامعة,Djamaa,Djamaa,39004
+57-djamaa-tenedla,57,57,El M'Ghair,57-djamaa,Djamaa,تندلة,Tenedla,Tenedla,39042
+58-el-menia-el-meniaa,58,58,El Meniaa,58-el-menia,El Menia,المنيعة,El Meniaa,El Meniaa,47001
+58-el-menia-hassi-gara,58,58,El Meniaa,58-el-menia,El Menia,حاسي القارة,Hassi Gara,Hassi Gara,47006
+58-mansourah-hassi-fehal,58,58,El Meniaa,58-mansourah,Mansourah,حاسي الفحل,Hassi Fehal,Hassi Fehal,47021
+59-gueltat-sidi-saad-el-beidha,59,59,Aflou,59-gueltat-sidi-saad,Gueltat Sidi Saad,البيضاء,El Beidha,El Beidha,03013
+59-gueltat-sidi-saad-gueltat-sidi-saad,59,59,Aflou,59-gueltat-sidi-saad,Gueltat Sidi Saad,قلتة سيدي سعد,Gueltat Sidi Saad,Gueltat Sidi Saad,03025
+59-gueltat-sidi-saad-ain-sidi-ali,59,59,Aflou,59-gueltat-sidi-saad,Gueltat Sidi Saad,عين سيدي علي,Ain Sidi Ali,Ain Sidi Ali,03028
+59-brida-brida,59,59,Aflou,59-brida,Brida,بريدة,Brida,Brida,03005
+59-brida-hadj-mechri,59,59,Aflou,59-brida,Brida,الحاج مشري,Hadj Mechri,Hadj Mechri,03038
+59-brida-taouiala,59,59,Aflou,59-brida,Brida,تاويالة,Taouiala,Taouiala,03026
+59-el-ghicha-el-ghicha,59,59,Aflou,59-el-ghicha,El Ghicha,الغيشة,El Ghicha,El Ghicha,03023
+59-aflou-sebgag,59,59,Aflou,59-aflou,Aflou,سبقاق,Sebgag,Sebgag,03034
+59-aflou-sidi-bouzid,59,59,Aflou,59-aflou,Aflou,سيدي بوزيد,Sidi Bouzid,Sidi Bouzid,03024
+59-aflou-aflou,59,59,Aflou,59-aflou,Aflou,أفلو,Aflou,Aflou,03001
+59-oued-morra-oued-morra,59,59,Aflou,59-oued-morra,Oued Morra,وادي مرة,Oued Morra,Oued Morra,03027
+59-oued-morra-oued-mzi,59,59,Aflou,59-oued-morra,Oued Morra,وادي مزي,Oued M'zi,Oued M'zi,03041
+60-brezina-brezina,60,60,El Abiodh Sidi Cheikh,60-brezina,Brezina,بريزينة,Brezina,Brezina,32002
+60-brezina-ghassoul,60,60,El Abiodh Sidi Cheikh,60-brezina,Brezina,الغاسول,Ghassoul,Ghassoul,32017
+60-labiodh-sidi-cheikh-labiodh-sidi-cheikh,60,60,El Abiodh Sidi Cheikh,60-labiodh-sidi-cheikh,Labiodh Sidi Cheikh,الأبيض سيدي الشيخ,Labiodh Sidi Cheikh,Labiodh Sidi Cheikh,32003
+60-labiodh-sidi-cheikh-arbaouat,60,60,El Abiodh Sidi Cheikh,60-labiodh-sidi-cheikh,Labiodh Sidi Cheikh,اربوات,Arbaouat,Arbaouat,32005
+60-boussemghoun-boussemghoun,60,60,El Abiodh Sidi Cheikh,60-boussemghoun,Boussemghoun,بوسمغون,Boussemghoun,Boussemghoun,32014
+60-rogassa-cheguig,60,60,El Abiodh Sidi Cheikh,60-rogassa,Rogassa,الشقيق,Cheguig,Cheguig,32022
+60-chellala-chellala,60,60,El Abiodh Sidi Cheikh,60-chellala,Chellala,شلالة,Chellala,Chellala,32015
+61-sidi-djillali-sidi-djillali,61,61,El Aricha,61-sidi-djillali,Sidi Djillali,سيدي الجيلالي,Sidi Djillali,Sidi Djillali,13043
+61-sidi-djillali-bouihi,61,61,El Aricha,61-sidi-djillali,Sidi Djillali,البويهي,Bouihi,Bouihi,13030
+61-sebdou-el-gor,61,61,El Aricha,61-sebdou,Sebdou,القور,El Gor,El Gor,13034
+61-sebdou-el-aricha,61,61,El Aricha,61-sebdou,Sebdou,العريشة,El Aricha,El Aricha,13031
+62-djemorah-djemorah,62,62,El Kantara,62-djemorah,Djemorah,جمورة,Djemorah,Djemorah,07025
+62-djemorah-branis,62,62,El Kantara,62-djemorah,Djemorah,برانيس,Branis,Branis,07023
+62-el-outaya-el-outaya,62,62,El Kantara,62-el-outaya,El Outaya,الوطاية,El Outaya,El Outaya,07030
+62-el-kantara-el-kantara,62,62,El Kantara,62-el-kantara,El Kantara,القنطرة,El Kantara,El Kantara,07008
+62-el-kantara-ain-zaatout,62,62,El Kantara,62-el-kantara,El Kantara,عين زعطوط,Ain Zaatout,Ain Zaatout,07013
+63-seggana-seggana,63,63,Barika,63-seggana,Seggana,سقانة,Seggana,Seggana,05027
+63-seggana-tilatou,63,63,Barika,63-seggana,Seggana,تيلاطو,Tilatou,Tilatou,05127
+63-barika-barika,63,63,Barika,63-barika,Barika,بريكة,Barika,Barika,05001
+63-barika-bitam,63,63,Barika,63-barika,Barika,بيطام,Bitam,Bitam,05045
+63-barika-m-doukal,63,63,Barika,63-barika,Barika,إمدوكل,M Doukal,M Doukal,05037
+63-djezzar-azil-abedelkader,63,63,Barika,63-djezzar,Djezzar,عزيل عبد القادر,Azil Abedelkader,Azil Abedelkader,05087
+63-djezzar-djezzar,63,63,Barika,63-djezzar,Djezzar,الجزار,Djezzar,Djezzar,05046
+63-djezzar-ouled-ammar,63,63,Barika,63-djezzar,Djezzar,أولاد عمار,Ouled Ammar,Ouled Ammar,05121
+64-ain-el-hadjel-sidi-hadjeres,64,64,Bou Saada,64-ain-el-hadjel,Ain El Hadjel,سيدي هجرس,Sidi Hadjeres,Sidi Hadjeres,28036
+64-bousaada-bou-saada,64,64,Bou Saada,64-bousaada,Bousaada,بوسعادة,Bou Saada,Bou Saada,28001
+64-bousaada-el-hamel,64,64,Bou Saada,64-bousaada,Bousaada,الهامل,El Hamel,El Hamel,28015
+64-bousaada-oulteme,64,64,Bou Saada,64-bousaada,Bousaada,ولتام,Oulteme,Oulteme,28054
+64-ouled-sidi-brahim-benzouh,64,64,Bou Saada,64-ouled-sidi-brahim,Ouled Sidi Brahim,بن زوه,Benzouh,Benzouh,28028
+64-ouled-sidi-brahim-ouled-sidi-brahim,64,64,Bou Saada,64-ouled-sidi-brahim,Ouled Sidi Brahim,أولاد سيدي ابراهيم,Ouled Sidi Brahim,Ouled Sidi Brahim,28032
+64-sidi-ameur-sidi-ameur,64,64,Bou Saada,64-sidi-ameur,Sidi Ameur,سيدي عامر,Sidi Ameur,Sidi Ameur,
+64-sidi-ameur-tamsa,64,64,Bou Saada,64-sidi-ameur,Sidi Ameur,تامسة,Tamsa,Tamsa,28065
+64-ben-srour-ben-srour,64,64,Bou Saada,64-ben-srour,Ben Srour,بن سرور,Ben Srour,Ben Srour,28009
+64-ben-srour-mohamed-boudiaf,64,64,Bou Saada,64-ben-srour,Ben Srour,محمد بوضياف,Mohamed Boudiaf,Mohamed Boudiaf,28033
+64-ben-srour-ouled-slimane,64,64,Bou Saada,64-ben-srour,Ben Srour,أولاد سليمان,Ouled Slimane,Ouled Slimane,28031
+64-ben-srour-zarzour,64,64,Bou Saada,64-ben-srour,Ben Srour,زرزور,Zarzour,Zarzour,28067
+64-ain-el-melh-ain-el-melh,64,64,Bou Saada,64-ain-el-melh,Ain El Melh,عين الملح,Ain El Melh,Ain El Melh,28004
+64-ain-el-melh-ain-fares,64,64,Bou Saada,64-ain-el-melh,Ain El Melh,عين فارس,Ain Fares,Ain Fares,28023
+64-ain-el-melh-ain-rich,64,64,Bou Saada,64-ain-el-melh,Ain El Melh,عين الريش,Ain Rich,Ain Rich,28025
+64-ain-el-melh-bir-foda,64,64,Bou Saada,64-ain-el-melh,Ain El Melh,بئر فضة,Bir Foda,Bir Foda,28043
+64-sidi-mhamed-sidi-mhamed,64,64,Bou Saada,64-sidi-mhamed,Sidi M'hamed,سيدي امحمد,Sidi M'hamed,Sidi M'hamed,16002
+64-medjedel-medjedel,64,64,Bou Saada,64-medjedel,Medjedel,امجدل,Medjedel,Medjedel,28016
+64-medjedel-menaa,64,64,Bou Saada,64-medjedel,Medjedel,مناعة,Menaa,Menaa,05012
+64-djebel-messaad-slim,64,64,Bou Saada,64-djebel-messaad,Djebel Messaad,سليم,Slim,Slim,28037
+64-ouled-derradj-maadid,64,64,Bou Saada,64-ouled-derradj,Ouled Derradj,المعاضيد,Maadid,Maadid,28011
+64-ouled-derradj-mtarfa,64,64,Bou Saada,64-ouled-derradj,Ouled Derradj,المطارفة,M'tarfa,M'tarfa,01033
+64-chellal-maarif,64,64,Bou Saada,64-chellal,Chellal,معاريف,Maarif,Maarif,28041
+65-negrine-ferkane,65,65,Bir El Ater,65-negrine,Negrine,فركان,Ferkane,Ferkane,12044
+65-negrine-negrine,65,65,Bir El Ater,65-negrine,Negrine,نقرين,Negrine,Negrine,12024
+65-bir-el-ater-el-ogla-el-malha,65,65,Bir El Ater,65-bir-el-ater,Bir El Ater,العقلة المالحة,El Ogla El Malha,El Ogla El Malha,12043
+65-bir-el-ater-bir-el-ater,65,65,Bir El Ater,65-bir-el-ater,Bir El Ater,بئر العاتر,Bir-El-Ater,Bir-El-Ater,12001
+66-ouled-antar-ouled-hellal,66,66,Ksar El Boukhari,66-ouled-antar,Ouled Antar,أولاد هلال,Ouled Hellal,Ouled Hellal,26037
+66-ouled-antar-boghar,66,66,Ksar El Boukhari,66-ouled-antar,Ouled Antar,بوغار,Boghar,Boghar,26013
+66-ouled-antar-ouled-antar,66,66,Ksar El Boukhari,66-ouled-antar,Ouled Antar,أولاد عنتر,Ouled Antar,Ouled Antar,26035
+66-ksar-el-boukhari-ksar-el-boukhari,66,66,Ksar El Boukhari,66-ksar-el-boukhari,Ksar El Boukhari,قصر البخاري,Ksar El Boukhari,Ksar El Boukhari,26003
+66-ksar-el-boukhari-mfatha,66,66,Ksar El Boukhari,66-ksar-el-boukhari,Ksar El Boukhari,مفاتحة,M'fatha,M'fatha,26049
+66-ksar-el-boukhari-saneg,66,66,Ksar El Boukhari,66-ksar-el-boukhari,Ksar El Boukhari,السانق,Saneg,Saneg,26067
+66-chahbounia-bouaiche,66,66,Ksar El Boukhari,66-chahbounia,Chahbounia,بوعيش,Bouaiche,Bouaiche,
+66-chahbounia-boughzoul,66,66,Ksar El Boukhari,66-chahbounia,Chahbounia,بوغزول,Boughzoul,Boughzoul,26023
+66-chahbounia-chabounia,66,66,Ksar El Boukhari,66-chahbounia,Chahbounia,الشهبونية,Chabounia,Chabounia,26026
+66-ain-boucif-ain-boucif,66,66,Ksar El Boukhari,66-ain-boucif,Ain Boucif,عين بوسيف,Ain Boucif,Ain Boucif,26005
+66-ain-boucif-el-ouinet,66,66,Ksar El Boukhari,66-ain-boucif,Ain Boucif,العوينات,El Ouinet,El Ouinet,12005
+66-ain-boucif-kef-lakhdar,66,66,Ksar El Boukhari,66-ain-boucif,Ain Boucif,الكاف الاخضر,Kef Lakhdar,Kef Lakhdar,26051
+66-ain-boucif-ouled-emaaraf,66,66,Ksar El Boukhari,66-ain-boucif,Ain Boucif,أولاد امعرف,Ouled Emaaraf,Ouled Emaaraf,26038
+66-ain-boucif-sidi-demed,66,66,Ksar El Boukhari,66-ain-boucif,Ain Boucif,سيدي دامد,Sidi Demed,Sidi Demed,26069
+66-chellalat-el-adhaoura-ain-ouksir,66,66,Ksar El Boukhari,66-chellalat-el-adhaoura,Chellalat El Adhaoura,عين اقصير,Ain Ouksir,Ain Ouksir,26048
+66-chellalat-el-adhaoura-chelalet-el-adhaoura,66,66,Ksar El Boukhari,66-chellalat-el-adhaoura,Chellalat El Adhaoura,شلالة العذاورة,Chelalet El Adhaoura,Chelalet El Adhaoura,26007
+66-chellalat-el-adhaoura-cheniguel,66,66,Ksar El Boukhari,66-chellalat-el-adhaoura,Chellalat El Adhaoura,شنيقل,Cheniguel,Cheniguel,26057
+66-chellalat-el-adhaoura-tafraout,66,66,Ksar El Boukhari,66-chellalat-el-adhaoura,Chellalat El Adhaoura,تفراوت,Tafraout,Tafraout,26074
+66-aziz-aziz,66,66,Ksar El Boukhari,66-aziz,Aziz,عزيز,Aziz,Aziz,26040
+66-aziz-derrag,66,66,Ksar El Boukhari,66-aziz,Aziz,دراق,Derrag,Derrag,26015
+66-aziz-oum-el-djellil,66,66,Ksar El Boukhari,66-aziz,Aziz,أم الجليل,Oum El Djellil,Oum El Djellil,26042
+67-ksar-chellala-ksar-chellala,67,67,Ksar Chellala,67-ksar-chellala,Ksar Chellala,قصر الشلالة,Ksar Chellala,Ksar Chellala,14002
+67-ksar-chellala-serghine,67,67,Ksar Chellala,67-ksar-chellala,Ksar Chellala,سرغين,Serghine,Serghine,14051
+67-ksar-chellala-zmalet-el-emir-abdelkade,67,67,Ksar Chellala,67-ksar-chellala,Ksar Chellala,زمالة  الأمير عبد القادر,Zmalet El Emir Abdelkade,Zmalet El Emir Abdelkade,14038
+67-bougara-bougara,67,67,Ksar Chellala,67-bougara,Bougara,بوقرة,Bougara,Bougara,09008
+67-hamadia-hamadia,67,67,Ksar Chellala,67-hamadia,Hamadia,حمادية,Hamadia,Hamadia,14020
+67-hamadia-rechaiga,67,67,Ksar Chellala,67-hamadia,Hamadia,الرشايقة,Rechaiga,Rechaiga,14026
+68-had-sahary-had-sahary,68,68,Ain Oussara,68-had-sahary,Had Sahary,حد الصحاري,Had Sahary,Had Sahary,17022
+68-had-sahary-bouira-lahdab,68,68,Ain Oussara,68-had-sahary,Had Sahary,بويرة الأحداب,Bouira Lahdab,Bouira Lahdab,17044
+68-had-sahary-ain-fekka,68,68,Ain Oussara,68-had-sahary,Had Sahary,عين فقه,Ain Fekka,Ain Fekka,17040
+68-sidi-laadjel-sidi-laadjel,68,68,Ain Oussara,68-sidi-laadjel,Sidi Laadjel,سيدي لعجال,Sidi Laadjel,Sidi Laadjel,17024
+68-sidi-laadjel-hassi-fedoul,68,68,Ain Oussara,68-sidi-laadjel,Sidi Laadjel,حاسي فدول,Hassi Fedoul,Hassi Fedoul,17056
+68-sidi-laadjel-el-khemis,68,68,Ain Oussara,68-sidi-laadjel,Sidi Laadjel,الخميس,El Khemis,El Khemis,17051
+68-birine-birine,68,68,Ain Oussara,68-birine,Birine,بيرين,Birine,Birine,17014
+68-birine-benhar,68,68,Ain Oussara,68-birine,Birine,بنهار,Benhar,Benhar,17043
+68-ain-oussera-guernini,68,68,Ain Oussara,68-ain-oussera,Ain Oussera,قرنيني,Guernini,Guernini,17054
+68-ain-oussera-ain-oussera,68,68,Ain Oussara,68-ain-oussera,Ain Oussera,عين وسارة,Ain Oussera,Ain Oussera,17001
+69-messaad-selmana,69,69,Messaad,69-messaad,Messaad,سلمانة,Selmana,Selmana,17063
+69-messaad-sed-rahal,69,69,Messaad,69-messaad,Messaad,سد الرحال,Sed Rahal,Sed Rahal,17062
+69-messaad-messaad,69,69,Messaad,69-messaad,Messaad,مسعد,Messaad,Messaad,17003
+69-messaad-guettara,69,69,Messaad,69-messaad,Messaad,قطارة,Guettara,Guettara,17055
+69-messaad-deldoul,69,69,Messaad,69-messaad,Messaad,دلدول,Deldoul,Deldoul,17046
+69-faidh-el-botma-oum-laadham,69,69,Messaad,69-faidh-el-botma,Faidh El Botma,أم العظام,Oum Laadham,Oum Laadham,17061
+69-faidh-el-botma-faidh-el-botma,69,69,Messaad,69-faidh-el-botma,Faidh El Botma,فيض البطمة,Faidh El Botma,Faidh El Botma,17021
+69-faidh-el-botma-amourah,69,69,Messaad,69-faidh-el-botma,Faidh El Botma,عمورة,Amourah,Amourah,17042

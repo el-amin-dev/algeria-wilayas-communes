@@ -116,10 +116,10 @@ class SearchResult:
 def _build_index() -> tuple[list[str], list[int], dict[str, list[int]], list[tuple[str, int]]]:
     """Normalize the corpus once. Never called at import time.
 
-    2201 records x 2 language layers (fr + ar) = **4402 keys**. There is
+    2176 records x 2 language layers (fr + ar) = **4352 keys**. There is
     deliberately no third `en` layer: ``name.en`` differs from ``name.fr`` for
     exactly one record in the whole dataset (wilaya 16, Alger / Algiers), so a
-    full layer would add 2201 keys to serve one record. ``lang="en"`` searches
+    full layer would add 2176 keys to serve one record. ``lang="en"`` searches
     the ``fr`` keys plus a one-entry override table instead.
     """
     global _keys, _refs, _exact, _en_overrides
@@ -136,7 +136,7 @@ def _build_index() -> tuple[list[str], list[int], dict[str, list[int]], list[tup
                 pairs.append((normalize(record.name.ar), base | _LANG_AR))
                 # The `en` layer is a 1-entry override table rather than a third
                 # full layer: name.en differs from name.fr for exactly one record
-                # in 2201 (wilaya 16, Alger / Algiers).
+                # in 2176 (wilaya 16, Alger / Algiers).
                 if record.name.en != record.name.fr:
                     overrides.append((normalize(record.name.en), base | _LANG_FR))
 
@@ -146,7 +146,7 @@ def _build_index() -> tuple[list[str], list[int], dict[str, list[int]], list[tup
 
         # Sorted once. The sort order IS the prefix index - no trie is built,
         # and prefix lookup is a binary search over this list. The tie-break on
-        # ref is not cosmetic: 1347 of the 4402 keys are duplicates, and without
+        # ref is not cosmetic: 1347 of the 4352 keys are duplicates, and without
         # it the order (and therefore which rows survive `limit`) could differ
         # between runtimes.
         pairs.sort()
@@ -190,7 +190,7 @@ def _pairs_by_lang() -> dict[int, list[tuple[str, int]]]:
     """Language -> its ``(key, ref)`` pairs, in key order.
 
     Purely a shape for the substring tier to iterate cheaply. That tier is the
-    only one that can touch every key, so at 4402 entries the difference between
+    only one that can touch every key, so at 4352 entries the difference between
     indexing two parallel lists per iteration and walking one list of pairs is
     the difference between beating v1 and losing to it. Splitting by language at
     build time also removes a per-key branch, and halves the walk for the common
@@ -209,7 +209,7 @@ def _pairs_by_lang() -> dict[int, list[tuple[str, int]]]:
 def _positions_by_wilaya() -> dict[int, list[int]]:
     """Wilaya code -> ascending key positions belonging to it.
 
-    This is the cheapest big win in the API: it takes the corpus from 2201
+    This is the cheapest big win in the API: it takes the corpus from 2176
     records down to typically 10-60 before a single key comparison runs.
     """
     global _wilaya_positions
@@ -430,7 +430,7 @@ def _tier_substring(ctx: _Context, lang_bit: int) -> None:
     candidates = (
         _positions_by_wilaya().get(ctx.wilaya, []) if ctx.wilaya is not None else range(len(keys))
     )
-    # This is the only tier that can touch all 4402 keys, so it is the one place
+    # This is the only tier that can touch all 4352 keys, so it is the one place
     # where Python's per-call overhead actually shows up. Two consequences for
     # how the loop is written, neither of which changes the result set:
     #
@@ -439,7 +439,7 @@ def _tier_substring(ctx: _Context, lang_bit: int) -> None:
     #     function call. Both predicates are pure, so the order is free to
     #     choose - and choosing wrongly costs ~9x on a short query.
     #   * the locals below are hoisted out of the loop. Attribute lookups on
-    #     ctx are not free at 4402 iterations.
+    #     ctx are not free at 4352 iterations.
     query = ctx.query
     out = ctx.out
     limit = ctx.limit
@@ -451,7 +451,7 @@ def _tier_substring(ctx: _Context, lang_bit: int) -> None:
     walk: Iterable[tuple[str, int]]
     if ctx.wilaya is None:
         pairs = _pairs_by_lang()
-        # chain, not `+`: concatenating would allocate a fresh 4402-element list
+        # chain, not `+`: concatenating would allocate a fresh 4352-element list
         # on every query for a branch that only a script-less query can reach.
         walk = chain(pairs[_LANG_FR], pairs[_LANG_AR]) if lang_bit == _LANG_ANY else pairs[lang_bit]
     else:
@@ -602,7 +602,7 @@ def search(
         limit: At most this many results, default 20. It **stops the scan**
             rather than slicing at the end.
         wilaya: Scope to one wilaya, ``19`` or ``"19"``. The single
-            highest-leverage option here: it cuts the candidate set from 2201
+            highest-leverage option here: it cuts the candidate set from 2176
             records to typically 10-60 before any key comparison runs.
         fuzzy: Enable the typo-tolerant tier. Off by default, and it only runs
             when the first three tiers came up short, so enabling it costs

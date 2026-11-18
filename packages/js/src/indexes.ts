@@ -30,7 +30,7 @@
  *
  * Two value-shape decisions that are easy to get wrong and silent when you do:
  *
- * - **The postal index value is an array, always.** 38 of the 1471 distinct
+ * - **The postal index value is an array, always.** 38 of the 1476 distinct
  *   codes are shared by more than one commune, so a `Map<string, Commune>`
  *   would drop records depending on insertion order, with no error anywhere.
  * - **The name index value is an array, always.** 38 commune names are
@@ -154,12 +154,12 @@ let postalIndex: Map<string, readonly Commune[]> | undefined;
 /**
  * Postal code → every commune carrying it.
  *
- * The value is an array **always**. 1514 communes share 1471 distinct codes, so
- * 38 codes map to more than one commune; a single-valued map would drop the
- * losers silently. The 27 communes with `postalCode === null` are skipped — they
+ * The value is an array **always**. 1493 communes share 1476 distinct codes, so
+ * 17 codes map to more than one commune; a single-valued map would drop the
+ * losers silently. The 48 communes with `postalCode === null` are skipped — they
  * are listed by id in `COMMUNES_MISSING_POSTAL_CODE`.
  *
- * @returns The 1471-entry postal index.
+ * @returns The 1476-entry postal index.
  */
 export function postalIdx(): Map<string, readonly Commune[]> {
   if (postalIndex === undefined) {
@@ -217,10 +217,10 @@ let dairaIndex: Map<string, Daira> | undefined;
  * Daïra id (`"19-ain-azel"`) → daïra.
  *
  * The id already *is* the composite `(wilaya, slug)` key — there are only 545
- * distinct daïra names for 591 daïras, which is precisely why the wilaya prefix
+ * distinct daïra names for 566 daïras, which is precisely why the wilaya prefix
  * is baked into the id rather than left to the caller to assemble.
  *
- * @returns The 591-entry daïra index.
+ * @returns The 566-entry daïra index.
  */
 export function dairaIdx(): Map<string, Daira> {
   if (dairaIndex === undefined) {
@@ -331,7 +331,7 @@ let dairasOfWilayaIndex: Map<WilayaCode, readonly Daira[]> | undefined;
 /**
  * `WilayaCode` → every daïra of that wilaya, in dataset order.
  *
- * @returns The 69-entry grouping; the union over all codes is 591 daïras.
+ * @returns The 69-entry grouping; the union over all codes is 566 daïras.
  */
 export function dairasOfWilayaIdx(): Map<WilayaCode, readonly Daira[]> {
   if (dairasOfWilayaIndex === undefined) {
@@ -379,7 +379,7 @@ let treeCache: Map<WilayaCode, WilayaTree> | undefined;
  *
  * Deliberately not a single 69-wilaya tree built in one pass: `byWilaya(19)` is
  * a request for Setif, and materializing the other 68 subtrees to answer it
- * would allocate 591 daïra wrappers and 1541 commune references nobody asked
+ * would allocate 566 daïra wrappers and 1541 commune references nobody asked
  * for. The cache is keyed per wilaya, so the second call for the same code is a
  * `Map` hit.
  *

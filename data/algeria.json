@@ -13,10 +13,10 @@
   "reforme": "69 wilayas (Loi 26-06, 2025/2026)",
   "hierarchie": "pays > wilaya > daira > commune",
   "nb_wilayas": 69,
-  "nb_dairas": 591,
+  "nb_dairas": 566,
   "nb_communes": 1541,
-  "codes_postaux_renseignes": 1514,
-  "codes_postaux_manquants": 27,
+  "codes_postaux_renseignes": 1493,
+  "codes_postaux_manquants": 48,
   "note_daira": "Appartenance daira->commune issue de la structure officielle pre-2025, regroupee sous les 69 nouvelles wilayas. Une daira scindee par la reforme apparait sous chaque wilaya concernee.",
   "sources": [
     "ONS Code Geographique National / Loi 19-12 (2019) / Loi 26-06 (2026)",
@@ -3574,7 +3574,7 @@
       "nom_ar": "تيارت",
       "nom_fr": "Tiaret",
       "nom_en": "Tiaret",
-      "nb_dairas": 13,
+      "nb_dairas": 12,
       "nb_communes": 36,
       "dairas": [
         {
@@ -3721,23 +3721,15 @@
               "nom_fr": "Medrissa",
               "nom_en": "Medrissa",
               "code_postal": "14013"
-            }
-          ],
-          "nb_communes": 4
-        },
-        {
-          "nom_ar": "تنس",
-          "nom_fr": "Tenes",
-          "nom_en": "Tenes",
-          "communes": [
+            },
             {
               "nom_ar": "سيدي عبد الرحمن",
               "nom_fr": "Sidi Abderrahmane",
               "nom_en": "Sidi Abderrahmane",
-              "code_postal": "02066"
+              "code_postal": "14028"
             }
           ],
-          "nb_communes": 1
+          "nb_communes": 5
         },
         {
           "nom_ar": "رحوية",
@@ -4486,7 +4478,7 @@
       "nom_ar": "الجزائر",
       "nom_fr": "Alger",
       "nom_en": "Algiers",
-      "nb_dairas": 15,
+      "nb_dairas": 13,
       "nb_communes": 57,
       "dairas": [
         {
@@ -4587,23 +4579,15 @@
               "nom_fr": "Bordj El Bahri",
               "nom_en": "Bordj El Bahri",
               "code_postal": "16046"
-            }
-          ],
-          "nb_communes": 6
-        },
-        {
-          "nom_ar": "المرسى",
-          "nom_fr": "El Marsa",
-          "nom_en": "El Marsa",
-          "communes": [
+            },
             {
               "nom_ar": "المرسى",
               "nom_fr": "El Marsa",
               "nom_en": "El Marsa",
-              "code_postal": "02015"
+              "code_postal": "16111"
             }
           ],
-          "nb_communes": 1
+          "nb_communes": 7
         },
         {
           "nom_ar": "بئر توتة",
@@ -4761,23 +4745,15 @@
               "nom_fr": "Ouled Fayet",
               "nom_en": "Ouled Fayet",
               "code_postal": "16094"
-            }
-          ],
-          "nb_communes": 4
-        },
-        {
-          "nom_ar": "بئر مقدم",
-          "nom_fr": "Bir Mokadem",
-          "nom_en": "Bir Mokadem",
-          "communes": [
+            },
             {
               "nom_ar": "الحمامات",
               "nom_fr": "Hammamet",
               "nom_en": "Hammamet",
-              "code_postal": "12016"
+              "code_postal": null
             }
           ],
-          "nb_communes": 1
+          "nb_communes": 5
         },
         {
           "nom_ar": "سيدي امحمد",
@@ -5924,7 +5900,7 @@
       "nom_ar": "سعيدة",
       "nom_fr": "Saida",
       "nom_en": "Saida",
-      "nb_dairas": 8,
+      "nb_dairas": 6,
       "nb_communes": 16,
       "dairas": [
         {
@@ -5968,20 +5944,6 @@
           "nb_communes": 3
         },
         {
-          "nom_ar": "سور الغزلان",
-          "nom_fr": "Sour El Ghozlane",
-          "nom_en": "Sour El Ghozlane",
-          "communes": [
-            {
-              "nom_ar": "المعمورة",
-              "nom_fr": "Maamora",
-              "nom_en": "Maamora",
-              "code_postal": "10071"
-            }
-          ],
-          "nb_communes": 1
-        },
-        {
           "nom_ar": "الحساسنة",
           "nom_fr": "El Hassasna",
           "nom_en": "El Hassasna",
@@ -5997,9 +5959,15 @@
               "nom_fr": "Ain Sekhouna",
               "nom_en": "Ain Sekhouna",
               "code_postal": "20009"
+            },
+            {
+              "nom_ar": "المعمورة",
+              "nom_fr": "Maamora",
+              "nom_en": "Maamora",
+              "code_postal": null
             }
           ],
-          "nb_communes": 2
+          "nb_communes": 3
         },
         {
           "nom_ar": "سيدي بوبكر",
@@ -6069,23 +6037,15 @@
               "nom_fr": "Moulay Larbi",
               "nom_en": "Moulay Larbi",
               "code_postal": "20014"
-            }
-          ],
-          "nb_communes": 2
-        },
-        {
-          "nom_ar": "عين بسام",
-          "nom_fr": "Ain Bessem",
-          "nom_en": "Ain Bessem",
-          "communes": [
+            },
             {
               "nom_ar": "عين الحجر",
               "nom_fr": "Ain El Hadjar",
               "nom_en": "Ain El Hadjar",
-              "code_postal": "10031"
+              "code_postal": null
             }
           ],
-          "nb_communes": 1
+          "nb_communes": 3
         }
       ]
     },
@@ -6095,7 +6055,7 @@
       "nom_ar": "سكيكدة",
       "nom_fr": "Skikda",
       "nom_en": "Skikda",
-      "nb_dairas": 14,
+      "nb_dairas": 13,
       "nb_communes": 38,
       "dairas": [
         {
@@ -6379,20 +6339,6 @@
           "nb_communes": 3
         },
         {
-          "nom_ar": "المرسى",
-          "nom_fr": "El Marsa",
-          "nom_en": "El Marsa",
-          "communes": [
-            {
-              "nom_ar": "المرسى",
-              "nom_fr": "El Marsa",
-              "nom_en": "El Marsa",
-              "code_postal": "02015"
-            }
-          ],
-          "nb_communes": 1
-        },
-        {
           "nom_ar": "بن عزوز",
           "nom_fr": "Ben Azzouz",
           "nom_en": "Ben Azzouz",
@@ -6408,9 +6354,15 @@
               "nom_fr": "Bekkouche Lakhdar",
               "nom_en": "Bekkouche Lakhdar",
               "code_postal": "21009"
+            },
+            {
+              "nom_ar": "المرسى",
+              "nom_fr": "El Marsa",
+              "nom_en": "El Marsa",
+              "code_postal": null
             }
           ],
-          "nb_communes": 2
+          "nb_communes": 3
         },
         {
           "nom_ar": "سكيكدة",
@@ -6889,7 +6841,7 @@
       "nom_ar": "عنابة",
       "nom_fr": "Annaba",
       "nom_en": "Annaba",
-      "nb_dairas": 7,
+      "nb_dairas": 6,
       "nb_communes": 12,
       "dairas": [
         {
@@ -6988,23 +6940,15 @@
               "nom_fr": "Cheurfa",
               "nom_en": "Cheurfa",
               "code_postal": "23025"
-            }
-          ],
-          "nb_communes": 2
-        },
-        {
-          "nom_ar": "العلمة",
-          "nom_fr": "El Eulma",
-          "nom_en": "El Eulma",
-          "communes": [
+            },
             {
               "nom_ar": "العلمة",
               "nom_fr": "El Eulma",
               "nom_en": "El Eulma",
-              "code_postal": "19001"
+              "code_postal": null
             }
           ],
-          "nb_communes": 1
+          "nb_communes": 3
         },
         {
           "nom_ar": "شطايبي",
@@ -7454,7 +7398,7 @@
       "nom_ar": "المدية",
       "nom_fr": "Medea",
       "nom_en": "Medea",
-      "nb_dairas": 14,
+      "nb_dairas": 13,
       "nb_communes": 43,
       "dairas": [
         {
@@ -7757,23 +7701,15 @@
               "nom_fr": "El Omaria",
               "nom_en": "El Omaria",
               "code_postal": "26008"
-            }
-          ],
-          "nb_communes": 2
-        },
-        {
-          "nom_ar": "أولاد ابراهيم",
-          "nom_fr": "Ouled Brahim",
-          "nom_en": "Ouled Brahim",
-          "communes": [
+            },
             {
               "nom_ar": "أولاد إبراهيم",
               "nom_fr": "Ouled Brahim",
               "nom_en": "Ouled Brahim",
-              "code_postal": "20002"
+              "code_postal": "26036"
             }
           ],
-          "nb_communes": 1
+          "nb_communes": 3
         },
         {
           "nom_ar": "القلب الكبير",
@@ -7835,7 +7771,7 @@
       "nom_ar": "مستغانم",
       "nom_fr": "Mostaganem",
       "nom_en": "Mostaganem",
-      "nb_dairas": 11,
+      "nb_dairas": 10,
       "nb_communes": 32,
       "dairas": [
         {
@@ -8100,23 +8036,15 @@
               "nom_fr": "Touahria",
               "nom_en": "Touahria",
               "code_postal": "27013"
-            }
-          ],
-          "nb_communes": 3
-        },
-        {
-          "nom_ar": "منصورة",
-          "nom_fr": "Mansourah",
-          "nom_en": "Mansourah",
-          "communes": [
+            },
             {
               "nom_ar": "منصورة",
               "nom_fr": "Mansourah",
               "nom_en": "Mansourah",
-              "code_postal": "13062"
+              "code_postal": null
             }
           ],
-          "nb_communes": 1
+          "nb_communes": 4
         }
       ]
     },
@@ -8353,7 +8281,7 @@
       "nom_ar": "معسكر",
       "nom_fr": "Mascara",
       "nom_en": "Mascara",
-      "nb_dairas": 18,
+      "nb_dairas": 16,
       "nb_communes": 47,
       "dairas": [
         {
@@ -8416,23 +8344,15 @@
               "nom_fr": "El Ghomri",
               "nom_en": "El Ghomri",
               "code_postal": "29023"
-            }
-          ],
-          "nb_communes": 5
-        },
-        {
-          "nom_ar": "الدار البيضاء",
-          "nom_fr": "Dar El Beida",
-          "nom_en": "Dar El Beida",
-          "communes": [
+            },
             {
               "nom_ar": "المحمدية",
               "nom_fr": "Mohammadia",
               "nom_en": "Mohammadia",
-              "code_postal": "16058"
+              "code_postal": null
             }
           ],
-          "nb_communes": 1
+          "nb_communes": 6
         },
         {
           "nom_ar": "تيغنيف",
@@ -8542,9 +8462,15 @@
               "nom_fr": "El Mamounia",
               "nom_en": "El Mamounia",
               "code_postal": "29056"
+            },
+            {
+              "nom_ar": "عين فارس",
+              "nom_fr": "Ain Fares",
+              "nom_en": "Ain Fares",
+              "code_postal": null
             }
           ],
-          "nb_communes": 1
+          "nb_communes": 2
         },
         {
           "nom_ar": "بوحنيفية",
@@ -8571,20 +8497,6 @@
             }
           ],
           "nb_communes": 3
-        },
-        {
-          "nom_ar": "عين الملح",
-          "nom_fr": "Ain El Melh",
-          "nom_en": "Ain El Melh",
-          "communes": [
-            {
-              "nom_ar": "عين فارس",
-              "nom_fr": "Ain Fares",
-              "nom_en": "Ain Fares",
-              "code_postal": "28023"
-            }
-          ],
-          "nb_communes": 1
         },
         {
           "nom_ar": "عوف",
@@ -8790,7 +8702,7 @@
       "nom_ar": "ورقلة",
       "nom_fr": "Ouargla",
       "nom_en": "Ouargla",
-      "nb_dairas": 6,
+      "nb_dairas": 5,
       "nb_communes": 8,
       "dairas": [
         {
@@ -8828,20 +8740,6 @@
           "nb_communes": 1
         },
         {
-          "nom_ar": "عين البيضاء",
-          "nom_fr": "Ain Beida",
-          "nom_en": "Ain Beida",
-          "communes": [
-            {
-              "nom_ar": "عين البيضاء",
-              "nom_fr": "Ain Beida",
-              "nom_en": "Ain Beida",
-              "code_postal": "04001"
-            }
-          ],
-          "nb_communes": 1
-        },
-        {
           "nom_ar": "سيدي خويلد",
           "nom_fr": "Sidi Khouiled",
           "nom_en": "Sidi Khouiled",
@@ -8857,9 +8755,15 @@
               "nom_fr": "Sidi Khouiled",
               "nom_en": "Sidi Khouiled",
               "code_postal": "30035"
+            },
+            {
+              "nom_ar": "عين البيضاء",
+              "nom_fr": "Ain Beida",
+              "nom_en": "Ain Beida",
+              "code_postal": null
             }
           ],
-          "nb_communes": 2
+          "nb_communes": 3
         },
         {
           "nom_ar": "البرمة",
@@ -8897,7 +8801,7 @@
       "nom_ar": "وهران",
       "nom_fr": "Oran",
       "nom_en": "Oran",
-      "nb_dairas": 10,
+      "nb_dairas": 9,
       "nb_communes": 26,
       "dairas": [
         {
@@ -9025,20 +8929,6 @@
           "nb_communes": 3
         },
         {
-          "nom_ar": "البويرة",
-          "nom_fr": "Bouira",
-          "nom_en": "Bouira",
-          "communes": [
-            {
-              "nom_ar": "عين الترك",
-              "nom_fr": "Ain Turk",
-              "nom_en": "Ain Turk",
-              "code_postal": "10033"
-            }
-          ],
-          "nb_communes": 1
-        },
-        {
           "nom_ar": "وهران",
           "nom_fr": "Oran",
           "nom_en": "Oran",
@@ -9074,9 +8964,15 @@
               "nom_fr": "Bousfer",
               "nom_en": "Bousfer",
               "code_postal": "31025"
+            },
+            {
+              "nom_ar": "عين الترك",
+              "nom_fr": "Ain Turk",
+              "nom_en": "Ain Turk",
+              "code_postal": null
             }
           ],
-          "nb_communes": 3
+          "nb_communes": 4
         },
         {
           "nom_ar": "وادي تليلات",
@@ -9360,7 +9256,7 @@
       "nom_ar": "برج بوعريريج",
       "nom_fr": "Bordj Bou Arreridj",
       "nom_en": "Bordj Bou Arreridj",
-      "nb_dairas": 11,
+      "nb_dairas": 10,
       "nb_communes": 34,
       "dairas": [
         {
@@ -9394,20 +9290,6 @@
             }
           ],
           "nb_communes": 4
-        },
-        {
-          "nom_ar": "أولاد سيدي ابراهيم",
-          "nom_fr": "Ouled Sidi Brahim",
-          "nom_en": "Ouled Sidi Brahim",
-          "communes": [
-            {
-              "nom_ar": "أولاد سيدي ابراهيم",
-              "nom_fr": "Ouled Sidi-Brahim",
-              "nom_en": "Ouled Sidi-Brahim",
-              "code_postal": "28032"
-            }
-          ],
-          "nb_communes": 1
         },
         {
           "nom_ar": "عين تاغروت",
@@ -9585,9 +9467,15 @@
               "nom_fr": "Ben Daoud",
               "nom_en": "Ben Daoud",
               "code_postal": "34073"
+            },
+            {
+              "nom_ar": "أولاد سيدي ابراهيم",
+              "nom_fr": "Ouled Sidi-Brahim",
+              "nom_en": "Ouled Sidi-Brahim",
+              "code_postal": null
             }
           ],
-          "nb_communes": 4
+          "nb_communes": 5
         },
         {
           "nom_ar": "رأس الوادي",
@@ -9663,7 +9551,7 @@
       "nom_ar": "بومرداس",
       "nom_fr": "Boumerdes",
       "nom_en": "Boumerdes",
-      "nb_dairas": 10,
+      "nb_dairas": 9,
       "nb_communes": 32,
       "dairas": [
         {
@@ -9795,20 +9683,6 @@
           "nb_communes": 4
         },
         {
-          "nom_ar": "تيمزريت",
-          "nom_fr": "Timezrit",
-          "nom_en": "Timezrit",
-          "communes": [
-            {
-              "nom_ar": "تيمزريت",
-              "nom_fr": "Timezrit",
-              "nom_en": "Timezrit",
-              "code_postal": "06019"
-            }
-          ],
-          "nb_communes": 1
-        },
-        {
           "nom_ar": "برج منايل",
           "nom_fr": "Bordj Menaiel",
           "nom_en": "Bordj Menaiel",
@@ -9862,9 +9736,15 @@
               "nom_fr": "Si Mustapha",
               "nom_en": "Si Mustapha",
               "code_postal": "35028"
+            },
+            {
+              "nom_ar": "تيمزريت",
+              "nom_fr": "Timezrit",
+              "nom_en": "Timezrit",
+              "code_postal": null
             }
           ],
-          "nb_communes": 3
+          "nb_communes": 4
         },
         {
           "nom_ar": "الناصرية",
@@ -9946,7 +9826,7 @@
       "nom_ar": "الطارف",
       "nom_fr": "El Tarf",
       "nom_en": "El Tarf",
-      "nb_dairas": 9,
+      "nb_dairas": 7,
       "nb_communes": 24,
       "dairas": [
         {
@@ -9971,23 +9851,15 @@
               "nom_fr": "El Tarf",
               "nom_en": "El Tarf",
               "code_postal": "36000"
-            }
-          ],
-          "nb_communes": 3
-        },
-        {
-          "nom_ar": "الزيتونة",
-          "nom_fr": "Zitouna",
-          "nom_en": "Zitouna",
-          "communes": [
+            },
             {
               "nom_ar": "الزيتونة",
               "nom_fr": "Zitouna",
               "nom_en": "Zitouna",
-              "code_postal": "21028"
+              "code_postal": null
             }
           ],
-          "nb_communes": 1
+          "nb_communes": 4
         },
         {
           "nom_ar": "البسباس",
@@ -10016,20 +9888,6 @@
           "nb_communes": 3
         },
         {
-          "nom_ar": "بوتليليس",
-          "nom_fr": "Boutlelis",
-          "nom_en": "Boutlelis",
-          "communes": [
-            {
-              "nom_ar": "عين الكرمة",
-              "nom_fr": "Ain Kerma",
-              "nom_en": "Ain Kerma",
-              "code_postal": "31059"
-            }
-          ],
-          "nb_communes": 1
-        },
-        {
           "nom_ar": "بوحجار",
           "nom_fr": "Bouhadjar",
           "nom_en": "Bouhadjar",
@@ -10051,9 +9909,15 @@
               "nom_fr": "Oued Zitoun",
               "nom_en": "Oued Zitoun",
               "code_postal": "36044"
+            },
+            {
+              "nom_ar": "عين الكرمة",
+              "nom_fr": "Ain Kerma",
+              "nom_en": "Ain Kerma",
+              "code_postal": "36011"
             }
           ],
-          "nb_communes": 3
+          "nb_communes": 4
         },
         {
           "nom_ar": "بن مهيدي",
@@ -10204,7 +10068,7 @@
       "nom_ar": "تيسمسيلت",
       "nom_fr": "Tissemsilt",
       "nom_en": "Tissemsilt",
-      "nb_dairas": 10,
+      "nb_dairas": 8,
       "nb_communes": 22,
       "dairas": [
         {
@@ -10321,9 +10185,15 @@
               "nom_fr": "Bordj Bounaama",
               "nom_en": "Bordj Bounaama",
               "code_postal": "38001"
+            },
+            {
+              "nom_ar": "سيدي سليمان",
+              "nom_fr": "Sidi Slimane",
+              "nom_en": "Sidi Slimane",
+              "code_postal": null
             }
           ],
-          "nb_communes": 3
+          "nb_communes": 4
         },
         {
           "nom_ar": "عماري",
@@ -10352,20 +10222,6 @@
           "nb_communes": 3
         },
         {
-          "nom_ar": "بوعلام",
-          "nom_fr": "Boualem",
-          "nom_en": "Boualem",
-          "communes": [
-            {
-              "nom_ar": "سيدي سليمان",
-              "nom_fr": "Sidi Slimane",
-              "nom_en": "Sidi Slimane",
-              "code_postal": "30030"
-            }
-          ],
-          "nb_communes": 1
-        },
-        {
           "nom_ar": "الأزهرية",
           "nom_fr": "Lazharia",
           "nom_en": "Lazharia",
@@ -10381,23 +10237,15 @@
               "nom_fr": "Lazharia",
               "nom_en": "Lazharia",
               "code_postal": "38008"
-            }
-          ],
-          "nb_communes": 2
-        },
-        {
-          "nom_ar": "الأربعاء",
-          "nom_fr": "Larbaa",
-          "nom_en": "Larbaa",
-          "communes": [
+            },
             {
               "nom_ar": "الأربعاء",
               "nom_fr": "Larbaa",
               "nom_en": "Larbaa",
-              "code_postal": "09002"
+              "code_postal": null
             }
           ],
-          "nb_communes": 1
+          "nb_communes": 3
         },
         {
           "nom_ar": "برج الأمير عبد القادر",
@@ -10427,7 +10275,7 @@
       "nom_ar": "الوادي",
       "nom_fr": "El Oued",
       "nom_en": "El Oued",
-      "nb_dairas": 11,
+      "nb_dairas": 10,
       "nb_communes": 22,
       "dairas": [
         {
@@ -10455,20 +10303,6 @@
             }
           ],
           "nb_communes": 3
-        },
-        {
-          "nom_ar": "العقلة",
-          "nom_fr": "El Ogla",
-          "nom_en": "El Ogla",
-          "communes": [
-            {
-              "nom_ar": "العقلة",
-              "nom_fr": "El Ogla",
-              "nom_en": "El Ogla",
-              "code_postal": "12015"
-            }
-          ],
-          "nb_communes": 1
         },
         {
           "nom_ar": "المقرن",
@@ -10560,9 +10394,15 @@
               "nom_fr": "Robbah",
               "nom_en": "Robbah",
               "code_postal": "39017"
+            },
+            {
+              "nom_ar": "العقلة",
+              "nom_fr": "El Ogla",
+              "nom_en": "El Ogla",
+              "code_postal": null
             }
           ],
-          "nb_communes": 2
+          "nb_communes": 3
         },
         {
           "nom_ar": "قمار",
@@ -11106,7 +10946,7 @@
       "nom_ar": "تيبازة",
       "nom_fr": "Tipaza",
       "nom_en": "Tipaza",
-      "nb_dairas": 11,
+      "nb_dairas": 10,
       "nb_communes": 28,
       "dairas": [
         {
@@ -11281,23 +11121,15 @@
               "nom_fr": "Bou Ismail",
               "nom_en": "Bou Ismail",
               "code_postal": "42004"
-            }
-          ],
-          "nb_communes": 3
-        },
-        {
-          "nom_ar": "خميستي",
-          "nom_fr": "Khemisti",
-          "nom_en": "Khemisti",
-          "communes": [
+            },
             {
               "nom_ar": "خميستي",
               "nom_fr": "Khemisti",
               "nom_en": "Khemisti",
-              "code_postal": "38016"
+              "code_postal": "42016"
             }
           ],
-          "nb_communes": 1
+          "nb_communes": 4
         },
         {
           "nom_ar": "أحمر العين",
@@ -11680,7 +11512,7 @@
       "nom_ar": "عين الدفلى",
       "nom_fr": "Ain Defla",
       "nom_en": "Ain Defla",
-      "nb_dairas": 15,
+      "nb_dairas": 14,
       "nb_communes": 36,
       "dairas": [
         {
@@ -11909,23 +11741,15 @@
               "nom_fr": "Oued Djemaa",
               "nom_en": "Oued Djemaa",
               "code_postal": "44049"
-            }
-          ],
-          "nb_communes": 2
-        },
-        {
-          "nom_ar": "أولاد ابراهيم",
-          "nom_fr": "Ouled Brahim",
-          "nom_en": "Ouled Brahim",
-          "communes": [
+            },
             {
               "nom_ar": "عين السلطان",
               "nom_fr": "Ain-Soltane",
               "nom_en": "Ain-Soltane",
-              "code_postal": "20029"
+              "code_postal": null
             }
           ],
-          "nb_communes": 1
+          "nb_communes": 3
         },
         {
           "nom_ar": "الروينة",
@@ -12166,7 +11990,7 @@
       "nom_ar": "عين تموشنت",
       "nom_fr": "Ain Temouchent",
       "nom_en": "Ain Temouchent",
-      "nb_dairas": 9,
+      "nb_dairas": 8,
       "nb_communes": 28,
       "dairas": [
         {
@@ -12351,23 +12175,15 @@
               "nom_fr": "Sidi Safi",
               "nom_en": "Sidi Safi",
               "code_postal": "46025"
-            }
-          ],
-          "nb_communes": 2
-        },
-        {
-          "nom_ar": "الطاهير",
-          "nom_fr": "Taher",
-          "nom_en": "Taher",
-          "communes": [
+            },
             {
               "nom_ar": "الأمير عبد القادر",
               "nom_fr": "Emir Abdelkader",
               "nom_en": "Emir Abdelkader",
-              "code_postal": "18010"
+              "code_postal": null
             }
           ],
-          "nb_communes": 1
+          "nb_communes": 3
         },
         {
           "nom_ar": "ولهاصة الغرابة",
@@ -12443,7 +12259,7 @@
               "nom_ar": "المنصورة",
               "nom_fr": "Mansoura",
               "nom_en": "Mansoura",
-              "code_postal": "34008"
+              "code_postal": null
             }
           ],
           "nb_communes": 1
@@ -12552,7 +12368,7 @@
       "nom_ar": "غليزان",
       "nom_fr": "Relizane",
       "nom_en": "Relizane",
-      "nb_dairas": 16,
+      "nb_dairas": 14,
       "nb_communes": 38,
       "dairas": [
         {
@@ -12591,9 +12407,21 @@
               "nom_fr": "Ammi Moussa",
               "nom_en": "Ammi Moussa",
               "code_postal": "48004"
+            },
+            {
+              "nom_ar": "الحاسي",
+              "nom_fr": "El Hassi",
+              "nom_en": "El Hassi",
+              "code_postal": null
+            },
+            {
+              "nom_ar": "الولجة",
+              "nom_fr": "El Ouldja",
+              "nom_en": "El Ouldja",
+              "code_postal": null
             }
           ],
-          "nb_communes": 2
+          "nb_communes": 4
         },
         {
           "nom_ar": "زمورة",
@@ -12698,20 +12526,6 @@
             }
           ],
           "nb_communes": 2
-        },
-        {
-          "nom_ar": "بئر العرش",
-          "nom_fr": "Bir El Arch",
-          "nom_en": "Bir El Arch",
-          "communes": [
-            {
-              "nom_ar": "الولجة",
-              "nom_fr": "El Ouldja",
-              "nom_en": "El Ouldja",
-              "code_postal": "19046"
-            }
-          ],
-          "nb_communes": 1
         },
         {
           "nom_ar": "يلل",
@@ -12836,20 +12650,6 @@
             }
           ],
           "nb_communes": 2
-        },
-        {
-          "nom_ar": "عين جاسر",
-          "nom_fr": "Ain Djasser",
-          "nom_en": "Ain Djasser",
-          "communes": [
-            {
-              "nom_ar": "الحاسي",
-              "nom_fr": "El Hassi",
-              "nom_en": "El Hassi",
-              "code_postal": "05116"
-            }
-          ],
-          "nb_communes": 1
         },
         {
           "nom_ar": "سيدي أمحمد بن علي",

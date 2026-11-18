@@ -35,7 +35,7 @@ describe("findCommunesByName — the duplicated names", () => {
       "32-sidi-ameur-sidi-ameur",
       "64-sidi-ameur-sidi-ameur",
     ]);
-    // Both of them are also among the 27 communes with no postal code, so this
+    // Both of them are also among the 48 communes with no postal code, so this
     // pair cannot be disambiguated by postal code either.
     expect(hits.map((c) => c.postalCode)).toEqual([null, null]);
   });
@@ -76,6 +76,8 @@ describe("findCommunesByName — the duplicated names", () => {
     const dupKeys = [...byKey.entries()].filter(([, n]) => n > 1);
     expect(dupKeys).toHaveLength(42);
     expect(dupKeys.reduce((n, [, count]) => n + count, 0)).toBe(89);
+    // 1494 distinct normalized NAME keys. Unrelated to any postal-code count --
+    // a bulk count sweep has mistaken it for one before.
     expect(byKey.size).toBe(1494);
   });
 

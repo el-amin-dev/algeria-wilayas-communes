@@ -4,7 +4,7 @@
   "nom_ar": "تيسمسيلت",
   "nom_fr": "Tissemsilt",
   "nom_en": "Tissemsilt",
-  "nb_dairas": 10,
+  "nb_dairas": 8,
   "nb_communes": 22,
   "dairas": [
     {
@@ -121,9 +121,15 @@
           "nom_fr": "Bordj Bounaama",
           "nom_en": "Bordj Bounaama",
           "code_postal": "38001"
+        },
+        {
+          "nom_ar": "سيدي سليمان",
+          "nom_fr": "Sidi Slimane",
+          "nom_en": "Sidi Slimane",
+          "code_postal": null
         }
       ],
-      "nb_communes": 3
+      "nb_communes": 4
     },
     {
       "nom_ar": "عماري",
@@ -152,20 +158,6 @@
       "nb_communes": 3
     },
     {
-      "nom_ar": "بوعلام",
-      "nom_fr": "Boualem",
-      "nom_en": "Boualem",
-      "communes": [
-        {
-          "nom_ar": "سيدي سليمان",
-          "nom_fr": "Sidi Slimane",
-          "nom_en": "Sidi Slimane",
-          "code_postal": "30030"
-        }
-      ],
-      "nb_communes": 1
-    },
-    {
       "nom_ar": "الأزهرية",
       "nom_fr": "Lazharia",
       "nom_en": "Lazharia",
@@ -181,23 +173,15 @@
           "nom_fr": "Lazharia",
           "nom_en": "Lazharia",
           "code_postal": "38008"
-        }
-      ],
-      "nb_communes": 2
-    },
-    {
-      "nom_ar": "الأربعاء",
-      "nom_fr": "Larbaa",
-      "nom_en": "Larbaa",
-      "communes": [
+        },
         {
           "nom_ar": "الأربعاء",
           "nom_fr": "Larbaa",
           "nom_en": "Larbaa",
-          "code_postal": "09002"
+          "code_postal": null
         }
       ],
-      "nb_communes": 1
+      "nb_communes": 3
     },
     {
       "nom_ar": "برج الأمير عبد القادر",

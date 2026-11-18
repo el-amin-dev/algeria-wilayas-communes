@@ -4,7 +4,7 @@
   "nom_ar": "مستغانم",
   "nom_fr": "Mostaganem",
   "nom_en": "Mostaganem",
-  "nb_dairas": 11,
+  "nb_dairas": 10,
   "nb_communes": 32,
   "dairas": [
     {
@@ -269,23 +269,15 @@
           "nom_fr": "Touahria",
           "nom_en": "Touahria",
           "code_postal": "27013"
-        }
-      ],
-      "nb_communes": 3
-    },
-    {
-      "nom_ar": "منصورة",
-      "nom_fr": "Mansourah",
-      "nom_en": "Mansourah",
-      "communes": [
+        },
         {
           "nom_ar": "منصورة",
           "nom_fr": "Mansourah",
           "nom_en": "Mansourah",
-          "code_postal": "13062"
+          "code_postal": null
         }
       ],
-      "nb_communes": 1
+      "nb_communes": 4
     }
   ]
 }

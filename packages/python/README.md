@@ -1,6 +1,6 @@
 # algeria-wilayas-communes
 
-Algeria's administrative divisions as a zero-dependency Python package — **69 wilayas**, **591 daïras**, **1541 communes** with **Arabic / French / English** names and **postal codes**.
+Algeria's administrative divisions as a zero-dependency Python package — **69 wilayas**, **566 daïras**, **1541 communes** with **Arabic / French / English** names and **postal codes**.
 
 [![PyPI](https://img.shields.io/pypi/v/algeria-wilayas-communes)](https://pypi.org/project/algeria-wilayas-communes/)
 ![Python](https://img.shields.io/badge/python-3.9--3.13-blue)
@@ -30,7 +30,7 @@ Requires **Python 3.9+**. Nothing else — there are no runtime dependencies to 
 
 ## Thirty seconds
 
-A user types a postal code into your checkout form. Resolve it, and handle the fact that **38 postal codes are shared by more than one commune**, so the answer is a tuple:
+A user types a postal code into your checkout form. Resolve it, and handle the fact that **17 postal codes are shared by more than one commune**, so the answer is a tuple:
 
 ```python
 from algeria_wilayas_communes import find_by_postal_code, get_wilaya
@@ -71,6 +71,23 @@ Measured on CPython 3.9.25, on the maintainer's machine:
 | resident memory: + search keys | 1.53 MB |
 
 Those are one machine's numbers, not a promise. The shape is what matters: the cost is a one-time index build, paid only for the layer you touch.
+
+### `get_wilaya_tree(code)` — the wilaya with its daïras and their communes
+
+```python
+from algeria_wilayas_communes import get_wilaya_tree
+
+tree = get_wilaya_tree(19)
+tree.name.fr  # 'Setif'
+len(tree.dairas)  # 20
+sum(len(d.communes) for d in tree.dairas)  # 60
+tree.dairas[0].communes[0].name.ar  # Arabic name of the first commune
+get_wilaya_tree(99)  # None — misses, never raises
+```
+
+Returns `WilayaTree | None`. This is the counterpart of JavaScript's `byWilaya(code)` and returns the same shape, in the same daïra and commune order.
+
+**Do not reach for `by_wilaya` for this.** In Python `by_wilaya` is a *deprecated v1 shim* that returns a plain `dict` with French keys — while in JavaScript `byWilaya` is the v2 tree accessor. Same name, two different things, which is exactly why `get_wilaya_tree` exists.
 
 ## API
 
@@ -165,7 +182,7 @@ Measured against v1's `find_commune` on CPython 3.9.25:
 | `"ain"` | 40 µs | 117 µs |
 | `"a"` | 36 µs | 340 µs |
 
-**`search("bej")` is slower than v1**, and that row is here on purpose. v2 scans 4402 keys across 2201 records in two scripts, then ranks, dedupes and resolves parents; v1 scanned 1541 French names with `in`. On a three-letter query that reaches the substring tier and matches little, v1's smaller job wins. On anything that matches broadly, v2 wins by 3–9x. Pick the trade knowingly.
+**`search("bej")` is slower than v1**, and that row is here on purpose. v2 scans 4352 keys across 2176 records in two scripts, then ranks, dedupes and resolves parents; v1 scanned 1541 French names with `in`. On a three-letter query that reaches the substring tier and matches little, v1's smaller job wins. On anything that matches broadly, v2 wins by 3–9x. Pick the trade knowingly.
 
 ### Guards
 
@@ -204,7 +221,7 @@ communes = pd.DataFrame(
     ]
 )
 len(communes)  # 1541
-communes["postal_code"].notna().sum()  # 1514
+communes["postal_code"].notna().sum()  # 1493
 
 per_wilaya = communes.groupby("wilaya").size().rename("communes").reset_index()
 per_wilaya["name_fr"] = per_wilaya["wilaya"].map(lambda n: get_wilaya(n).name.fr)
@@ -276,7 +293,7 @@ class Commune(models.Model):
     daira = models.ForeignKey(Daira, on_delete=models.CASCADE, related_name="communes")
     name_ar = models.CharField(max_length=64)
     name_fr = models.CharField(max_length=64)
-    # 27 of 1541 communes have no published postal code. null=True, never "".
+    # 48 of 1541 communes have no published postal code. null=True, never "".
     postal_code = models.CharField(max_length=5, null=True, blank=True, db_index=True)
 
     class Meta:
@@ -299,7 +316,7 @@ from geo.models import Commune, Daira, Wilaya
 
 
 class Command(BaseCommand):
-    help = "Seed 69 wilayas, 591 daïras and 1541 communes."
+    help = "Seed 69 wilayas, 566 daïras and 1541 communes."
 
     @transaction.atomic
     def handle(self, *args, **options):
@@ -353,7 +370,7 @@ class Command(BaseCommand):
 
 ```console
 $ ./manage.py seed_geo
-data 2.0.0: 69 wilayas, 591 daïras, 1541 communes
+data 2.0.0: 69 wilayas, 566 daïras, 1541 communes
 ```
 
 `update_conflicts=True` needs **Django 4.1+** and makes the command idempotent: run it again after a data release and it upserts instead of failing on the primary key. Because `c.wilaya` and `c.daira` are already the parent ids, `wilaya_id=` / `daira_id=` assign the foreign keys with no extra query.
@@ -406,7 +423,7 @@ def create_address(address: Address) -> dict:
     if address.postal_code is not None:
         if not is_postal_code(address.postal_code):
             raise HTTPException(422, "Postal code must be exactly 5 ASCII digits.")
-        # 27 communes have no published code, so absence is not a mismatch.
+        # 48 communes have no published code, so absence is not a mismatch.
         if commune.postal_code and address.postal_code != commune.postal_code:
             raise HTTPException(
                 422,
@@ -504,7 +521,7 @@ def submit(request):
             "commune": commune.id,
             "daira": commune.daira,
             "wilaya": commune.wilaya,
-            "postal_code": commune.postal_code,  # may be None for 27 communes
+            "postal_code": commune.postal_code,  # may be None for 48 communes
         }
     )
 
@@ -743,8 +760,8 @@ def test_dataset_is_the_one_we_reviewed():
     assert DATA_VERSION == "2.0.0"
     assert SOURCE_LAW == "Loi 26-06 du 4 avril 2026, JO n°25"
     assert LAST_VERIFIED == "2026-07-20"
-    assert (WILAYA_COUNT, DAIRA_COUNT, COMMUNE_COUNT) == (69, 591, 1541)
-    assert POSTAL_CODE_COUNT == 1514
+    assert (WILAYA_COUNT, DAIRA_COUNT, COMMUNE_COUNT) == (69, 566, 1541)
+    assert POSTAL_CODE_COUNT == 1493
     assert MISSING_POSTAL_CODE_COUNT == len(COMMUNES_MISSING_POSTAL_CODE) == 27
 ```
 
@@ -754,46 +771,70 @@ Three numbers that are routinely confused with one another:
 
 | | |
 |---|---|
-| Communes **carrying** a postal code | **1514** (`POSTAL_CODE_COUNT`) |
+| Communes **carrying** a postal code | **1493** (`POSTAL_CODE_COUNT`) |
 | Communes with **no** postal code | **27** (`MISSING_POSTAL_CODE_COUNT`) |
-| **Distinct** non-null postal codes | **1471** |
+| **Distinct** non-null postal codes | **1476** |
 | Distinct codes **shared** by more than one commune | **38** |
 
-1514 + 27 = 1541 communes. 1471 is a count of *codes*, not of communes — never substitute one for the other. Because 38 codes are shared, `find_by_postal_code` returns a tuple, always.
+1493 + 30 = 1541 communes. 1476 is a count of *codes*, not of communes — never substitute one for the other. Because 17 codes are shared, `find_by_postal_code` returns a tuple, always.
 
-### The 27 communes with no postal code
+### The 48 communes with no postal code
 
 They ship as `postal_code=None` and are listed by id in `COMMUNES_MISSING_POSTAL_CODE`. No available source has them, and they **will never be invented**: one fabricated postal code would end this dataset's credibility permanently. `None` means *published as absent*, not *we did not look*.
 
+27 of the 48 are never published: no source available to this project has them. The other **21 were withdrawn** — they shipped carrying a code that belongs elsewhere (Saïda's `Ain El Hadjar` held Bouira's `10031`; Annaba's `El Eulma` held Sétif's `19001`; Alger's `Hammamet` held Tébessa's `12016`, and its replacement is disputed). Both withdrawals are cited in `data/raw/postal-corrections.json` and the build fails if the ledger and the data disagree. For a consumer the two causes behave identically: the code is absent, and must not be invented.
+
+
 | Wilaya | Commune | Daïra |
 |---|---|---|
-| 4 | Ouled Zouai | Souk Naamane |
-| 5 | Talkhamt | Ras El Aioun |
-| 5 | Lemcene | Ouled Si Slimane |
-| 10 | Ouled Rached | Bechloul |
-| 13 | Beni Boussaid | Beni Boussaid |
-| 15 | Abi-Youcef | Ain El Hammam |
-| 15 | Ait-Oumalou | Tizi Rached |
-| 19 | Guelta Zerka | El Eulma |
-| 21 | Ouldja Boulbalout | Ain Kechra |
-| 23 | Treat | Berrahal |
-| 24 | Beni Mezline | Guelaat Bousbaa |
-| 24 | Bou Hamdane | Hammam Debagh |
-| 24 | Khezaras | Khezaras |
-| 26 | Sidi Ziane | Souaghi |
-| 26 | Mezerana | Tablat |
-| 27 | Safsaf | Bouguirat |
-| 28 | El Houamed | Khoubana |
-| 29 | Tizi | Tizi |
-| 32 | Sidi Ameur | Sidi Ameur |
-| 34 | Elhammadia | El Hamadia |
-| 35 | El Kharrouba | Boudouaou |
-| 35 | Souk El Had | Thenia |
-| 41 | Sidi Fredj | Merahna |
-| 46 | Chentouf | Hammam Bou Hadjar |
-| 48 | Souk El Had | Thenia |
-| 64 | Sidi Ameur | Sidi Ameur |
-| 66 | Bouaiche | Chahbounia |
+| 04 Oum El Bouaghi | Ouled Zouai | Souk Naamane |
+| 05 Batna | Lemcene | Ouled Si Slimane |
+| 05 Batna | Talkhamt | Ras El Aioun |
+| 10 Bouira | Ouled Rached | Bechloul |
+| 13 Tlemcen | Beni Boussaid | Beni Boussaid |
+| 15 Tizi Ouzou | Abi-Youcef | Ain El Hammam |
+| 15 Tizi Ouzou | Ait-Oumalou | Tizi Rached |
+| 16 Alger | Hammamet | Cheraga |
+| 19 Setif | Guelta Zerka | El Eulma |
+| 20 Saida | Ain El Hadjar | Ain El Hadjar |
+| 20 Saida | Maamora | El Hassasna |
+| 21 Skikda | El Marsa | Ben Azzouz |
+| 21 Skikda | Ouldja Boulbalout | Ain Kechra |
+| 23 Annaba | El Eulma | Ain El Berda |
+| 23 Annaba | Treat | Berrahal |
+| 24 Guelma | Beni Mezline | Guelaat Bousbaa |
+| 24 Guelma | Bou Hamdane | Hammam Debagh |
+| 24 Guelma | Khezaras | Khezaras |
+| 26 Medea | Mezerana | Tablat |
+| 26 Medea | Sidi Ziane | Souaghi |
+| 27 Mostaganem | Mansourah | Mesra |
+| 27 Mostaganem | Safsaf | Bouguirat |
+| 28 M'Sila | El Houamed | Khoubana |
+| 29 Mascara | Ain Fares | Ain Fares |
+| 29 Mascara | Mohammadia | Mohammadia |
+| 29 Mascara | Tizi | Tizi |
+| 30 Ouargla | Ain Beida | Sidi Khouiled |
+| 31 Oran | Ain Turk | Ain Turk |
+| 32 El Bayadh | Sidi Ameur | Sidi Ameur |
+| 34 Bordj Bou Arreridj | Elhammadia | El Hamadia |
+| 34 Bordj Bou Arreridj | Ouled Sidi-Brahim | Mansourah |
+| 35 Boumerdes | El Kharrouba | Boudouaou |
+| 35 Boumerdes | Souk El Had | Thenia |
+| 35 Boumerdes | Timezrit | Isser |
+| 36 El Tarf | Zitouna | El Tarf |
+| 38 Tissemsilt | Larbaa | Lazharia |
+| 38 Tissemsilt | Sidi Slimane | Bordj Bounaama |
+| 39 El Oued | El Ogla | Robbah |
+| 41 Souk Ahras | Sidi Fredj | Merahna |
+| 44 Ain Defla | Ain-Soltane | Ain Lechiakh |
+| 46 Ain Temouchent | Chentouf | Hammam Bou Hadjar |
+| 46 Ain Temouchent | Emir Abdelkader | Beni Saf |
+| 47 Ghardaia | Mansoura | Mansourah |
+| 48 Relizane | El Hassi | Ammi Moussa |
+| 48 Relizane | El Ouldja | Ammi Moussa |
+| 48 Relizane | Souk El Had | Thenia |
+| 64 Bou Saada | Sidi Ameur | Sidi Ameur |
+| 66 Ksar El Boukhari | Bouaiche | Chahbounia |
 
 ### The 2026 reform
 
@@ -932,10 +973,10 @@ No scoring, no comparison table against packages whose current releases have not
 | | |
 |---|---|
 | Wilayas | 69 — the post-*Loi 26-06* map |
-| Daïras | 591, as a first-class layer with its own records |
+| Daïras | 566, as a first-class layer with its own records |
 | Communes | 1541 |
-| Names | Arabic, French and English, non-empty for all 2201 records |
-| Postal codes | 1514 of 1541; the other 27 are `None` and published as a list |
+| Names | Arabic, French and English, non-empty for all 2176 records |
+| Postal codes | 1493 of 1541; the other 27 are `None` and published as a list |
 | Type hints | `py.typed` in the wheel; clean under `mypy --strict` |
 | Runtime dependencies | none |
 | Python | 3.9 – 3.13, tested on all five in CI |
@@ -950,7 +991,7 @@ Most Algeria datasets fail the first row. Many stop at the wilaya level, which m
 
 The [npm package of the same name](https://www.npmjs.com/package/algeria-wilayas-communes) ships the **same data under the same name**, published from the **same `v*` git tag** — so a version number means the same 1541 records on both registries.
 
-They are not merely similar: they return the same record ids, the same search scores and the same answers, enforced by shared conformance fixtures that both test suites run against, plus a test that diffs all 2132 ids across the two implementations. The rules both sides implement are written down once, in [`shared/contract/`](../../shared/contract/). Pick whichever language you are already in.
+They are not merely similar: they return the same record ids, the same search scores and the same answers, enforced by shared conformance fixtures that both test suites run against, plus a test that diffs all 2107 ids across the two implementations. The rules both sides implement are written down once, in [`shared/contract/`](../../shared/contract/). Pick whichever language you are already in.
 
 ## Source and issues
 

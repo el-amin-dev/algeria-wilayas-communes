@@ -1,0 +1,48 @@
+{
+  "name": "algeria-wilayas-communes-mcp",
+  "version": "0.1.0",
+  "description": "MCP server for Algeria's administrative divisions — 69 wilayas, 566 daïras, 1541 communes with Arabic, French and English names and postal codes. Lets an AI assistant look them up instead of recalling them.",
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "mcp-server",
+    "algeria",
+    "wilaya",
+    "wilayas",
+    "commune",
+    "communes",
+    "daira",
+    "postal-code",
+    "algerie",
+    "الجزائر"
+  ],
+  "license": "CC0-1.0",
+  "author": "El Amin (https://el-amin.dev)",
+  "homepage": "https://github.com/el-amin-dev/algeria-wilayas-communes/tree/main/packages/mcp#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/el-amin-dev/algeria-wilayas-communes.git",
+    "directory": "packages/mcp"
+  },
+  "bugs": "https://github.com/el-amin-dev/algeria-wilayas-communes/issues",
+  "type": "module",
+  "bin": {
+    "algeria-wilayas-communes-mcp": "./dist/index.mjs"
+  },
+  "files": [
+    "dist",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "node -e \"require('node:fs').rmSync('dist',{recursive:true,force:true})\" && tsup",
+    "prepack": "node -e \"require('node:fs').rmSync('dist',{recursive:true,force:true})\" && tsup"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.2",
+    "algeria-wilayas-communes": "workspace:^",
+    "zod": "^4.5.4"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

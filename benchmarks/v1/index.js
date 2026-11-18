@@ -50,7 +50,7 @@ export function getWilayas() {
   return load("wilayas.json").wilayas;
 }
 
-/** Flat array of the 591 daïras (each with its wilaya). */
+/** Flat array of the 566 daïras (each with its wilaya). */
 export function getDairas() {
   return load("dairas.json").dairas;
 }

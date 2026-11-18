@@ -1,5 +1,5 @@
 {
-  "nb_dairas": 591,
+  "nb_dairas": 566,
   "dairas": [
     {
       "wilaya_num": 1,
@@ -1459,17 +1459,7 @@
       "nom_ar": "عين كرمس",
       "nom_fr": "Ain Kermes",
       "nom_en": "Ain Kermes",
-      "nb_communes": 4
-    },
-    {
-      "wilaya_num": 14,
-      "wilaya_code": "14",
-      "wilaya_fr": "Tiaret",
-      "wilaya_en": "Tiaret",
-      "nom_ar": "تنس",
-      "nom_fr": "Tenes",
-      "nom_en": "Tenes",
-      "nb_communes": 1
+      "nb_communes": 5
     },
     {
       "wilaya_num": 14,
@@ -1779,17 +1769,7 @@
       "nom_ar": "الدار البيضاء",
       "nom_fr": "Dar El Beida",
       "nom_en": "Dar El Beida",
-      "nb_communes": 6
-    },
-    {
-      "wilaya_num": 16,
-      "wilaya_code": "16",
-      "wilaya_fr": "Alger",
-      "wilaya_en": "Algiers",
-      "nom_ar": "المرسى",
-      "nom_fr": "El Marsa",
-      "nom_en": "El Marsa",
-      "nb_communes": 1
+      "nb_communes": 7
     },
     {
       "wilaya_num": 16,
@@ -1839,17 +1819,7 @@
       "nom_ar": "الشراقة",
       "nom_fr": "Cheraga",
       "nom_en": "Cheraga",
-      "nb_communes": 4
-    },
-    {
-      "wilaya_num": 16,
-      "wilaya_code": "16",
-      "wilaya_fr": "Alger",
-      "wilaya_en": "Algiers",
-      "nom_ar": "بئر مقدم",
-      "nom_fr": "Bir Mokadem",
-      "nom_en": "Bir Mokadem",
-      "nb_communes": 1
+      "nb_communes": 5
     },
     {
       "wilaya_num": 16,
@@ -2296,20 +2266,10 @@
       "wilaya_code": "20",
       "wilaya_fr": "Saida",
       "wilaya_en": "Saida",
-      "nom_ar": "سور الغزلان",
-      "nom_fr": "Sour El Ghozlane",
-      "nom_en": "Sour El Ghozlane",
-      "nb_communes": 1
-    },
-    {
-      "wilaya_num": 20,
-      "wilaya_code": "20",
-      "wilaya_fr": "Saida",
-      "wilaya_en": "Saida",
       "nom_ar": "الحساسنة",
       "nom_fr": "El Hassasna",
       "nom_en": "El Hassasna",
-      "nb_communes": 2
+      "nb_communes": 3
     },
     {
       "wilaya_num": 20,
@@ -2339,17 +2299,7 @@
       "nom_ar": "عين الحجر",
       "nom_fr": "Ain El Hadjar",
       "nom_en": "Ain El Hadjar",
-      "nb_communes": 2
-    },
-    {
-      "wilaya_num": 20,
-      "wilaya_code": "20",
-      "wilaya_fr": "Saida",
-      "wilaya_en": "Saida",
-      "nom_ar": "عين بسام",
-      "nom_fr": "Ain Bessem",
-      "nom_en": "Ain Bessem",
-      "nb_communes": 1
+      "nb_communes": 3
     },
     {
       "wilaya_num": 21,
@@ -2466,20 +2416,10 @@
       "wilaya_code": "21",
       "wilaya_fr": "Skikda",
       "wilaya_en": "Skikda",
-      "nom_ar": "المرسى",
-      "nom_fr": "El Marsa",
-      "nom_en": "El Marsa",
-      "nb_communes": 1
-    },
-    {
-      "wilaya_num": 21,
-      "wilaya_code": "21",
-      "wilaya_fr": "Skikda",
-      "wilaya_en": "Skikda",
       "nom_ar": "بن عزوز",
       "nom_fr": "Ben Azzouz",
       "nom_en": "Ben Azzouz",
-      "nb_communes": 2
+      "nb_communes": 3
     },
     {
       "wilaya_num": 21,
@@ -2689,17 +2629,7 @@
       "nom_ar": "عين الباردة",
       "nom_fr": "Ain El Berda",
       "nom_en": "Ain El Berda",
-      "nb_communes": 2
-    },
-    {
-      "wilaya_num": 23,
-      "wilaya_code": "23",
-      "wilaya_fr": "Annaba",
-      "wilaya_en": "Annaba",
-      "nom_ar": "العلمة",
-      "nom_fr": "El Eulma",
-      "nom_en": "El Eulma",
-      "nb_communes": 1
+      "nb_communes": 3
     },
     {
       "wilaya_num": 23,
@@ -2979,17 +2909,7 @@
       "nom_ar": "العمارية",
       "nom_fr": "El Omaria",
       "nom_en": "El Omaria",
-      "nb_communes": 2
-    },
-    {
-      "wilaya_num": 26,
-      "wilaya_code": "26",
-      "wilaya_fr": "Medea",
-      "wilaya_en": "Medea",
-      "nom_ar": "أولاد ابراهيم",
-      "nom_fr": "Ouled Brahim",
-      "nom_en": "Ouled Brahim",
-      "nb_communes": 1
+      "nb_communes": 3
     },
     {
       "wilaya_num": 26,
@@ -3109,17 +3029,7 @@
       "nom_ar": "ماسرة",
       "nom_fr": "Mesra",
       "nom_en": "Mesra",
-      "nb_communes": 3
-    },
-    {
-      "wilaya_num": 27,
-      "wilaya_code": "27",
-      "wilaya_fr": "Mostaganem",
-      "wilaya_en": "Mostaganem",
-      "nom_ar": "منصورة",
-      "nom_fr": "Mansourah",
-      "nom_en": "Mansourah",
-      "nb_communes": 1
+      "nb_communes": 4
     },
     {
       "wilaya_num": 28,
@@ -3229,17 +3139,7 @@
       "nom_ar": "المحمدية",
       "nom_fr": "Mohammadia",
       "nom_en": "Mohammadia",
-      "nb_communes": 5
-    },
-    {
-      "wilaya_num": 29,
-      "wilaya_code": "29",
-      "wilaya_fr": "Mascara",
-      "wilaya_en": "Mascara",
-      "nom_ar": "الدار البيضاء",
-      "nom_fr": "Dar El Beida",
-      "nom_en": "Dar El Beida",
-      "nb_communes": 1
+      "nb_communes": 6
     },
     {
       "wilaya_num": 29,
@@ -3289,7 +3189,7 @@
       "nom_ar": "عين فارس",
       "nom_fr": "Ain Fares",
       "nom_en": "Ain Fares",
-      "nb_communes": 1
+      "nb_communes": 2
     },
     {
       "wilaya_num": 29,
@@ -3300,16 +3200,6 @@
       "nom_fr": "Bouhanifia",
       "nom_en": "Bouhanifia",
       "nb_communes": 3
-    },
-    {
-      "wilaya_num": 29,
-      "wilaya_code": "29",
-      "wilaya_fr": "Mascara",
-      "wilaya_en": "Mascara",
-      "nom_ar": "عين الملح",
-      "nom_fr": "Ain El Melh",
-      "nom_en": "Ain El Melh",
-      "nb_communes": 1
     },
     {
       "wilaya_num": 29,
@@ -3416,20 +3306,10 @@
       "wilaya_code": "30",
       "wilaya_fr": "Ouargla",
       "wilaya_en": "Ouargla",
-      "nom_ar": "عين البيضاء",
-      "nom_fr": "Ain Beida",
-      "nom_en": "Ain Beida",
-      "nb_communes": 1
-    },
-    {
-      "wilaya_num": 30,
-      "wilaya_code": "30",
-      "wilaya_fr": "Ouargla",
-      "wilaya_en": "Ouargla",
       "nom_ar": "سيدي خويلد",
       "nom_fr": "Sidi Khouiled",
       "nom_en": "Sidi Khouiled",
-      "nb_communes": 2
+      "nb_communes": 3
     },
     {
       "wilaya_num": 30,
@@ -3506,16 +3386,6 @@
       "wilaya_code": "31",
       "wilaya_fr": "Oran",
       "wilaya_en": "Oran",
-      "nom_ar": "البويرة",
-      "nom_fr": "Bouira",
-      "nom_en": "Bouira",
-      "nb_communes": 1
-    },
-    {
-      "wilaya_num": 31,
-      "wilaya_code": "31",
-      "wilaya_fr": "Oran",
-      "wilaya_en": "Oran",
       "nom_ar": "وهران",
       "nom_fr": "Oran",
       "nom_en": "Oran",
@@ -3529,7 +3399,7 @@
       "nom_ar": "عين الترك",
       "nom_fr": "Ain Turk",
       "nom_en": "Ain Turk",
-      "nb_communes": 3
+      "nb_communes": 4
     },
     {
       "wilaya_num": 31,
@@ -3666,16 +3536,6 @@
       "wilaya_code": "34",
       "wilaya_fr": "Bordj Bou Arreridj",
       "wilaya_en": "Bordj Bou Arreridj",
-      "nom_ar": "أولاد سيدي ابراهيم",
-      "nom_fr": "Ouled Sidi Brahim",
-      "nom_en": "Ouled Sidi Brahim",
-      "nb_communes": 1
-    },
-    {
-      "wilaya_num": 34,
-      "wilaya_code": "34",
-      "wilaya_fr": "Bordj Bou Arreridj",
-      "wilaya_en": "Bordj Bou Arreridj",
       "nom_ar": "عين تاغروت",
       "nom_fr": "Ain Taghrout",
       "nom_en": "Ain Taghrout",
@@ -3729,7 +3589,7 @@
       "nom_ar": "المنصورة",
       "nom_fr": "Mansourah",
       "nom_en": "Mansourah",
-      "nb_communes": 4
+      "nb_communes": 5
     },
     {
       "wilaya_num": 34,
@@ -3806,16 +3666,6 @@
       "wilaya_code": "35",
       "wilaya_fr": "Boumerdes",
       "wilaya_en": "Boumerdes",
-      "nom_ar": "تيمزريت",
-      "nom_fr": "Timezrit",
-      "nom_en": "Timezrit",
-      "nb_communes": 1
-    },
-    {
-      "wilaya_num": 35,
-      "wilaya_code": "35",
-      "wilaya_fr": "Boumerdes",
-      "wilaya_en": "Boumerdes",
       "nom_ar": "برج منايل",
       "nom_fr": "Bordj Menaiel",
       "nom_en": "Bordj Menaiel",
@@ -3829,7 +3679,7 @@
       "nom_ar": "يسر",
       "nom_fr": "Isser",
       "nom_en": "Isser",
-      "nb_communes": 3
+      "nb_communes": 4
     },
     {
       "wilaya_num": 35,
@@ -3869,17 +3719,7 @@
       "nom_ar": "الطارف",
       "nom_fr": "El Tarf",
       "nom_en": "El Tarf",
-      "nb_communes": 3
-    },
-    {
-      "wilaya_num": 36,
-      "wilaya_code": "36",
-      "wilaya_fr": "El Tarf",
-      "wilaya_en": "El Tarf",
-      "nom_ar": "الزيتونة",
-      "nom_fr": "Zitouna",
-      "nom_en": "Zitouna",
-      "nb_communes": 1
+      "nb_communes": 4
     },
     {
       "wilaya_num": 36,
@@ -3896,20 +3736,10 @@
       "wilaya_code": "36",
       "wilaya_fr": "El Tarf",
       "wilaya_en": "El Tarf",
-      "nom_ar": "بوتليليس",
-      "nom_fr": "Boutlelis",
-      "nom_en": "Boutlelis",
-      "nb_communes": 1
-    },
-    {
-      "wilaya_num": 36,
-      "wilaya_code": "36",
-      "wilaya_fr": "El Tarf",
-      "wilaya_en": "El Tarf",
       "nom_ar": "بوحجار",
       "nom_fr": "Bouhadjar",
       "nom_en": "Bouhadjar",
-      "nb_communes": 3
+      "nb_communes": 4
     },
     {
       "wilaya_num": 36,
@@ -4009,7 +3839,7 @@
       "nom_ar": "برج بونعامة",
       "nom_fr": "Bordj Bounaama",
       "nom_en": "Bordj Bounaama",
-      "nb_communes": 3
+      "nb_communes": 4
     },
     {
       "wilaya_num": 38,
@@ -4026,30 +3856,10 @@
       "wilaya_code": "38",
       "wilaya_fr": "Tissemsilt",
       "wilaya_en": "Tissemsilt",
-      "nom_ar": "بوعلام",
-      "nom_fr": "Boualem",
-      "nom_en": "Boualem",
-      "nb_communes": 1
-    },
-    {
-      "wilaya_num": 38,
-      "wilaya_code": "38",
-      "wilaya_fr": "Tissemsilt",
-      "wilaya_en": "Tissemsilt",
       "nom_ar": "الأزهرية",
       "nom_fr": "Lazharia",
       "nom_en": "Lazharia",
-      "nb_communes": 2
-    },
-    {
-      "wilaya_num": 38,
-      "wilaya_code": "38",
-      "wilaya_fr": "Tissemsilt",
-      "wilaya_en": "Tissemsilt",
-      "nom_ar": "الأربعاء",
-      "nom_fr": "Larbaa",
-      "nom_en": "Larbaa",
-      "nb_communes": 1
+      "nb_communes": 3
     },
     {
       "wilaya_num": 38,
@@ -4070,16 +3880,6 @@
       "nom_fr": "Taleb Larbi",
       "nom_en": "Taleb Larbi",
       "nb_communes": 3
-    },
-    {
-      "wilaya_num": 39,
-      "wilaya_code": "39",
-      "wilaya_fr": "El Oued",
-      "wilaya_en": "El Oued",
-      "nom_ar": "العقلة",
-      "nom_fr": "El Ogla",
-      "nom_en": "El Ogla",
-      "nb_communes": 1
     },
     {
       "wilaya_num": 39,
@@ -4129,7 +3929,7 @@
       "nom_ar": "الرباح",
       "nom_fr": "Robbah",
       "nom_en": "Robbah",
-      "nb_communes": 2
+      "nb_communes": 3
     },
     {
       "wilaya_num": 39,
@@ -4419,17 +4219,7 @@
       "nom_ar": "بواسماعيل",
       "nom_fr": "Bou Ismail",
       "nom_en": "Bou Ismail",
-      "nb_communes": 3
-    },
-    {
-      "wilaya_num": 42,
-      "wilaya_code": "42",
-      "wilaya_fr": "Tipaza",
-      "wilaya_en": "Tipaza",
-      "nom_ar": "خميستي",
-      "nom_fr": "Khemisti",
-      "nom_en": "Khemisti",
-      "nb_communes": 1
+      "nb_communes": 4
     },
     {
       "wilaya_num": 42,
@@ -4689,17 +4479,7 @@
       "nom_ar": "عين الاشياخ",
       "nom_fr": "Ain Lechiakh",
       "nom_en": "Ain Lechiakh",
-      "nb_communes": 2
-    },
-    {
-      "wilaya_num": 44,
-      "wilaya_code": "44",
-      "wilaya_fr": "Ain Defla",
-      "wilaya_en": "Ain Defla",
-      "nom_ar": "أولاد ابراهيم",
-      "nom_fr": "Ouled Brahim",
-      "nom_en": "Ouled Brahim",
-      "nb_communes": 1
+      "nb_communes": 3
     },
     {
       "wilaya_num": 44,
@@ -4869,17 +4649,7 @@
       "nom_ar": "بني صاف",
       "nom_fr": "Beni Saf",
       "nom_en": "Beni Saf",
-      "nb_communes": 2
-    },
-    {
-      "wilaya_num": 46,
-      "wilaya_code": "46",
-      "wilaya_fr": "Ain Temouchent",
-      "wilaya_en": "Ain Temouchent",
-      "nom_ar": "الطاهير",
-      "nom_fr": "Taher",
-      "nom_en": "Taher",
-      "nb_communes": 1
+      "nb_communes": 3
     },
     {
       "wilaya_num": 46,
@@ -4999,7 +4769,7 @@
       "nom_ar": "عمي موسى",
       "nom_fr": "Ammi Moussa",
       "nom_en": "Ammi Moussa",
-      "nb_communes": 2
+      "nb_communes": 4
     },
     {
       "wilaya_num": 48,
@@ -5040,16 +4810,6 @@
       "nom_fr": "Ain Tarek",
       "nom_en": "Ain Tarek",
       "nb_communes": 2
-    },
-    {
-      "wilaya_num": 48,
-      "wilaya_code": "48",
-      "wilaya_fr": "Relizane",
-      "wilaya_en": "Relizane",
-      "nom_ar": "بئر العرش",
-      "nom_fr": "Bir El Arch",
-      "nom_en": "Bir El Arch",
-      "nb_communes": 1
     },
     {
       "wilaya_num": 48,
@@ -5100,16 +4860,6 @@
       "nom_fr": "Relizane",
       "nom_en": "Relizane",
       "nb_communes": 2
-    },
-    {
-      "wilaya_num": 48,
-      "wilaya_code": "48",
-      "wilaya_fr": "Relizane",
-      "wilaya_en": "Relizane",
-      "nom_ar": "عين جاسر",
-      "nom_fr": "Ain Djasser",
-      "nom_en": "Ain Djasser",
-      "nb_communes": 1
     },
     {
       "wilaya_num": 48,
