@@ -837,6 +837,72 @@ from memory. A tidy-up that reworded them would pass every other test here.
 **Cost, accepted.** A third package to keep in step, with no release automation, and the MCP
 protocol version pinned by a dependency rather than by us.
 
+## ADR-020 — Geospatial data is not shipped, and the blocker is the reform mapping
+
+**Status.** Accepted. Measured, not assumed. Re-run `scripts/geo-feasibility.py` before
+re-opening it.
+
+**Context.** Coordinates and GeoJSON are the largest single gap against the competing packages.
+`geoalgeria` ships them; this package does not. It was attempted.
+
+**What is actually available.** geoBoundaries is the only open source of Algerian commune
+boundaries with a usable licence: 1540 ADM3 polygons, OSM-derived, **CC BY-SA 2.0**. Two facts
+about it decide everything that follows.
+
+First, **ADM3 carries no wilaya attribute** — the properties are `shapeName`, `shapeISO` (empty),
+`shapeID`, `shapeGroup`, `shapeType`. So a join has to go through the commune *name*, which is the
+exact failure mode ADR-018 is about. Measured: 1134 of 1541 communes would match 1:1 by name, and
+**97 are ambiguous** — and they are the same names that were already corrupted once (`El Marsa`
+×3, `Larbaa` ×3, `Timezrit` ×2, `El Hassi` ×2, `Sidi Abderrahmane` ×2). A 74% join that silently
+misplaces those is worse than no geometry, because a wrong polygon draws a commune in the wrong
+part of the country and looks authoritative doing it.
+
+Second, **ADM1 is the pre-2019 48-wilaya map.** Not 58, and certainly not 69.
+
+**What was tried, and it works better than expected.** Assign every ADM3 polygon to a wilaya by
+point-in-polygon against ADM1, then match on `(wilaya, name)` instead of name alone. That
+**removes ambiguity entirely: 97 → 0.** Every one of the 1509 named polygons gets a unique
+`(wilaya, name)` key, because an Algerian place name repeats *across* wilayas but never *within*
+one — the same property the ids contract is built on (`shared/contract/ids.md`).
+
+So the technique is sound. The coverage is not:
+
+| band | matched | unmatched |
+|---|---|---|
+| wilayas 01–48 | 1025 / 1375 (**74.5%**) | 350 |
+| wilayas 49–69 | 0 / 166 (**0.0%**) | 166 |
+
+**The 0% is the decisive number, and it is structural.** ADM1 predates both reforms, so a commune
+now in wilaya 49–69 lands inside its **parent** wilaya — and which parent that is, is precisely the
+58→69 mapping this project refuses to guess (ADR-005). Geospatial coverage for the eleven new
+wilayas is therefore **blocked on the same unsourced mapping**, not on effort. That connection was
+not obvious before measuring it, and it is the reason this is not a quick win.
+
+The remaining 350 in band 01–48 are transliteration differences between OSM and this dataset
+(`Aïn` vs `Ain`, hyphenation, `El`/`Al`). Closing them means fuzzy matching, which is how the
+original artifact got in.
+
+**Decision.** Ship no geometry yet. Specifically rejected: a name-only join (misplaces 97 records),
+and a 66.5% spatially-matched set shipped as-is (leaves the eleven newest wilayas — the package's
+headline differentiator — with no geometry at all, which is the worst possible place to have a
+hole).
+
+**When it becomes worth doing**, the shape is already known:
+- Source the reform parent mapping (ADR-005). That unlocks the 49–69 band and is the gating item.
+- Use spatial-then-name matching, never name alone. Record a per-record `confidence` and commit
+  the match report. Unmatched stays `null`.
+- Dissolve commune polygons by **our** `wilaya_num` to derive wilaya boundaries. Never take
+  upstream ADM1 wilaya shapes: they are 48 units, so this dissolve is the only route to a
+  69-wilaya boundary set, and that set would not exist anywhere else.
+- **Licence isolation is mandatory, not tidiness.** CC BY-SA 2.0 is share-alike. It cannot sit in
+  this repo's CC0 data or in the npm package. It needs its own package and its own `LICENSE`, and
+  centroids derived from those polygons inherit the same obligation — so the plan's original idea
+  of putting centroids in the main CC0 package does not survive contact with the licence.
+
+**Cost, accepted.** The package stays names-and-postal-codes while competitors ship maps. In
+exchange it does not ship 97 knowingly-misplaced polygons three days after fixing 26
+knowingly-misattributed postal codes.
+
 ## Recorded, deliberately not fixed
 
 - **`DairaFlat` has no `wilaya_ar`** (8 fields) while `CommuneFlat` does (12). Almost certainly an
