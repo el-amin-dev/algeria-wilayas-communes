@@ -129,7 +129,7 @@
       "nom_ar": "تيارت",
       "nom_fr": "Tiaret",
       "nom_en": "Tiaret",
-      "nb_dairas": 13,
+      "nb_dairas": 12,
       "nb_communes": 36
     },
     {
@@ -147,7 +147,7 @@
       "nom_ar": "الجزائر",
       "nom_fr": "Alger",
       "nom_en": "Algiers",
-      "nb_dairas": 15,
+      "nb_dairas": 13,
       "nb_communes": 57
     },
     {
@@ -183,7 +183,7 @@
       "nom_ar": "سعيدة",
       "nom_fr": "Saida",
       "nom_en": "Saida",
-      "nb_dairas": 8,
+      "nb_dairas": 7,
       "nb_communes": 16
     },
     {
@@ -210,7 +210,7 @@
       "nom_ar": "عنابة",
       "nom_fr": "Annaba",
       "nom_en": "Annaba",
-      "nb_dairas": 7,
+      "nb_dairas": 6,
       "nb_communes": 12
     },
     {
@@ -282,7 +282,7 @@
       "nom_ar": "وهران",
       "nom_fr": "Oran",
       "nom_en": "Oran",
-      "nb_dairas": 10,
+      "nb_dairas": 9,
       "nb_communes": 26
     },
     {

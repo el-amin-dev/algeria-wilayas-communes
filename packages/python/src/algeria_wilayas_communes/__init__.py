@@ -1,4 +1,4 @@
-"""Algeria's administrative divisions: 69 wilayas, 591 daires, 1541 communes.
+"""Algeria's administrative divisions: 69 wilayas, 585 daires, 1541 communes.
 
 Names in Arabic, French and English with postal codes, current as of the
 2025/2026 reform (*Loi 26-06*). Zero runtime dependencies.

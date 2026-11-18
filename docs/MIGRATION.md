@@ -187,7 +187,7 @@ catches what, because they are not the same strength:
   `getCommunes().push(x)` throws a `TypeError` at run time even from untyped
   JavaScript.
 
-**Individual records are *not* deep-frozen.** Freezing 2201 records and their
+**Individual records are *not* deep-frozen.** Freezing 2195 records and their
 nested `name` objects would mean thousands of `Object.freeze` calls on the import
 path, which is exactly the cost this package spent a session removing. So
 `getCommunes()[0].name.fr = "X"` from plain JavaScript still succeeds — it is

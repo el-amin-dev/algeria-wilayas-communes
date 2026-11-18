@@ -4,7 +4,7 @@
   "nom_ar": "سعيدة",
   "nom_fr": "Saida",
   "nom_en": "Saida",
-  "nb_dairas": 8,
+  "nb_dairas": 7,
   "nb_communes": 16,
   "dairas": [
     {
@@ -149,23 +149,15 @@
           "nom_fr": "Moulay Larbi",
           "nom_en": "Moulay Larbi",
           "code_postal": "20014"
-        }
-      ],
-      "nb_communes": 2
-    },
-    {
-      "nom_ar": "عين بسام",
-      "nom_fr": "Ain Bessem",
-      "nom_en": "Ain Bessem",
-      "communes": [
+        },
         {
           "nom_ar": "عين الحجر",
           "nom_fr": "Ain El Hadjar",
           "nom_en": "Ain El Hadjar",
-          "code_postal": "10031"
+          "code_postal": null
         }
       ],
-      "nb_communes": 1
+      "nb_communes": 3
     }
   ]
 }

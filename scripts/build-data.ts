@@ -71,6 +71,7 @@ const REPO_ROOT = resolve(SCRIPT_DIR, "..");
 const SOURCE_REL = "data/algeria.json";
 const OVERRIDES_REL = "data/raw/en-overrides.json";
 const REFORM_REL = "data/raw/reform.json";
+const CORRECTIONS_REL = "data/raw/postal-corrections.json";
 const BY_WILAYA_DIR_REL = "data/by-wilaya";
 const GENERATED_DIR_REL = "packages/js/src/generated";
 const FIXTURES_DIR_REL = "shared/fixtures";
@@ -85,7 +86,12 @@ const OUTPUT_DIRS = [BY_WILAYA_DIR_REL, GENERATED_DIR_REL, FIXTURES_DIR_REL] as 
 
 /** Ground truth for the current dataset. Assertions 1, 3, 4 and 9 pin these. */
 const EXPECTED_WILAYA_COUNT = 69;
-const EXPECTED_DAIRA_COUNT = 591;
+// 585, not 591. Six invented daira containers were removed by the correction
+// ledger (data/raw/postal-corrections.json, docs/DECISIONS.md ADR-018) -- each
+// held exactly one commune that the upstream name-join had filed under another
+// wilaya's daira. The commune count is UNCHANGED at 1541: nothing was deleted,
+// six records were re-parented. Lower this only alongside a ledger entry.
+const EXPECTED_DAIRA_COUNT = 585;
 const EXPECTED_COMMUNE_COUNT = 1541;
 
 /** Provenance, emitted into `meta.ts`. Bumped by hand per data release. */
@@ -177,6 +183,18 @@ interface Algeria {
   readonly codes_postaux_renseignes: number;
   readonly codes_postaux_manquants: number;
   readonly wilayas: readonly Wilaya[];
+}
+
+/** One row of the correction ledger. See readCorrections. */
+interface CorrectionEntry {
+  readonly wilaya: string;
+  readonly commune: string;
+  readonly dairaFrom: string;
+  readonly dairaTo: string;
+  readonly postalCodeFrom: string | null;
+  readonly postalCodeTo: string | null;
+  readonly source: string;
+  readonly confidence: string;
 }
 
 type Failures = string[];
@@ -640,7 +658,7 @@ function reportDuplicateKeys(
 
 /**
  * Assertion 19 — mints one id at a time and fails on a collision, naming BOTH
- * offending records. All 591 daira ids and all 1541 commune ids must be unique.
+ * offending records. All 585 daira ids and all 1541 commune ids must be unique.
  */
 function claimId(
   owners: Map<string, string>,
@@ -996,7 +1014,7 @@ interface Model {
  *
  * The wilaya prefix is NOT optional: 38 commune nom_fr values are duplicated
  * across wilayas (`Sidi Ameur` in 32 and 64, `Souk El Had` in 35 and 48), and
- * there are only 545 distinct daira names for 591 daïras.
+ * there are only 545 distinct daira names for 585 daïras.
  *
  * English names are `override ?? nom_fr`. `nom_en` differs from `nom_fr` for
  * exactly ONE record in the whole dataset (wilaya 16, Alger → Algiers), so
@@ -1357,7 +1375,7 @@ function emitDairas(model: Model): string {
     "// for a daira. Only a wilaya `code` is a real government identifier.",
     "//",
     '// An id is `<wilaya code>-<slug(daira nom_fr)>`, e.g. "16-baraki". The wilaya',
-    "// prefix is not decoration: there are only 545 distinct daira names for 591",
+    "// prefix is not decoration: there are only 545 distinct daira names for 585",
     "// daïras. The ids are stable by promise, and a consumer who puts one in a",
     "// database column needs to know it is ours, not the government's.",
     "",
@@ -1778,7 +1796,7 @@ function sha256Hex(value: string): string {
 /**
  * The ids fixture — the exhaustive byte-identity pin.
  *
- * 591 daira ids + 1541 commune ids, in document order. A port that gets the
+ * 585 daira ids + 1541 commune ids, in document order. A port that gets the
  * slug rule even slightly wrong diverges here, on a named record, rather than
  * silently producing a database column of ids that will not join.
  */
@@ -1833,7 +1851,7 @@ function emitNormalizeFixture(model: Model): unknown {
  * Every number here was measured from `data/`, never assumed, and each is
  * load-bearing somewhere: 38 shared postal codes is why `findByPostalCode`
  * returns a list; 1500 distinct commune names against 1541 records is why an
- * id carries its wilaya prefix; 545 distinct daira names against 591 pairs is
+ * id carries its wilaya prefix; 545 distinct daira names against 585 pairs is
  * the reform splitting daires across wilayas.
  */
 function emitGroundTruthFixture(model: Model): unknown {
@@ -2139,6 +2157,129 @@ function isParentWilayaCode(code: string): boolean {
 
 function reformFilledCount(reform: Reform): number {
   return reform.newWilayas.filter((entry) => entry.parentCode !== null).length;
+}
+
+/**
+ * `data/raw/postal-corrections.json` — the correction ledger.
+ *
+ * Hand-maintained, never written here. Each entry records one undone instance of
+ * the name-collision join artifact (ADR-018): a commune that was given a
+ * same-named commune's daira and/or postal code from a different wilaya.
+ *
+ * The entries are APPLIED by `scripts/apply-corrections.mjs`, which edits
+ * `data/algeria.json` -- because that file is itself published, and correcting
+ * it only in memory would leave every jq and CDN consumer on the wrong data
+ * while the packages were right. This generator's job is the other half: ASSERT
+ * that the data and the ledger still agree (A21-A24). The ledger is the
+ * specification, the data is the state, and a disagreement fails the build in
+ * either direction -- a hand-edit that reverts a correction, or a ledger entry
+ * nobody applied.
+ */
+function readCorrections(failures: Failures): readonly CorrectionEntry[] {
+  const raw = parseJsonText(readFileSync(join(REPO_ROOT, CORRECTIONS_REL), "utf8"));
+  const where = CORRECTIONS_REL;
+  if (!isRecord(raw)) {
+    failures.push(`[A0] ${where}: root must be a JSON object, got ${describe(raw)}`);
+    return [];
+  }
+  const list = readArray(raw, "corrections", where, failures);
+  return list.map((entry, index) => {
+    const at = `${where} corrections[${index}]`;
+    if (!isRecord(entry)) {
+      failures.push(`[A0] ${at}: must be an object, got ${describe(entry)}`);
+      return {
+        wilaya: "",
+        commune: "",
+        dairaFrom: "",
+        dairaTo: "",
+        postalCodeFrom: null,
+        postalCodeTo: null,
+        source: "",
+        confidence: "",
+      };
+    }
+    return {
+      wilaya: readString(entry, "wilaya", at, failures),
+      commune: readString(entry, "commune", at, failures),
+      dairaFrom: readString(entry, "dairaFrom", at, failures),
+      dairaTo: readString(entry, "dairaTo", at, failures),
+      postalCodeFrom: readNullableString(entry, "postalCodeFrom", at, failures),
+      postalCodeTo: readNullableString(entry, "postalCodeTo", at, failures),
+      source: readString(entry, "source", at, failures),
+      confidence: readString(entry, "confidence", at, failures),
+    };
+  });
+}
+
+/**
+ * A21-A24 — the ledger and the data must agree.
+ *
+ * A21  every entry resolves to exactly one commune, sitting in `dairaTo`
+ * A22  that commune's code_postal is exactly `postalCodeTo`
+ * A23  `dairaFrom` no longer holds it (the move actually happened), and if the
+ *      container was emptied it is gone rather than left behind as an empty daira
+ * A24  every entry carries a citation
+ *
+ * A24 is the one that matters most, and it mirrors the reform table's rule
+ * (shared/contract/reform.md): SUPPLYING a value is the act that requires the
+ * source, not labelling it. A corrected postal code is served to every consumer
+ * with the full authority of the package, and a wrong one misroutes real post.
+ * `postalCodeTo: null` still needs a source, because "this code provably belongs
+ * to another wilaya's commune" is itself a claim.
+ */
+function assertCorrections(
+  source: Algeria,
+  corrections: readonly CorrectionEntry[],
+  failures: Failures,
+): void {
+  for (const c of corrections) {
+    const label = `${CORRECTIONS_REL} ${c.wilaya}/${c.commune}`;
+
+    if (c.source.trim() === "") {
+      failures.push(`[A24] ${label}: a correction must carry a source`);
+    }
+
+    const wilaya = source.wilayas.find((w) => w.code === c.wilaya);
+    if (!wilaya) {
+      failures.push(`[A21] ${label}: no wilaya with code ${c.wilaya}`);
+      continue;
+    }
+
+    const target = wilaya.dairas.find((d) => d.nom_fr === c.dairaTo);
+    if (!target) {
+      failures.push(`[A21] ${label}: target daira "${c.dairaTo}" is not in wilaya ${c.wilaya}`);
+      continue;
+    }
+    const landed = target.communes.filter((x) => x.nom_fr === c.commune);
+    if (landed.length !== 1) {
+      failures.push(
+        `[A21] ${label}: expected exactly 1 "${c.commune}" in daira "${c.dairaTo}", found ${landed.length} — ` +
+          `run \`node scripts/apply-corrections.mjs\``,
+      );
+      continue;
+    }
+    if (landed[0]?.code_postal !== c.postalCodeTo) {
+      failures.push(
+        `[A22] ${label}: code_postal is ${JSON.stringify(landed[0]?.code_postal)}, ` +
+          `ledger says ${JSON.stringify(c.postalCodeTo)}`,
+      );
+    }
+
+    // The move must have actually happened. If dairaFrom still exists it must no
+    // longer hold this commune; an emptied container must have been removed, not
+    // left as a zero-commune daira.
+    const from = wilaya.dairas.find((d) => d.nom_fr === c.dairaFrom);
+    if (from && c.dairaFrom !== c.dairaTo) {
+      if (from.communes.some((x) => x.nom_fr === c.commune)) {
+        failures.push(`[A23] ${label}: still present in daira "${c.dairaFrom}"`);
+      }
+      if (from.communes.length === 0) {
+        failures.push(
+          `[A23] ${label}: daira "${c.dairaFrom}" is empty and should have been removed`,
+        );
+      }
+    }
+  }
 }
 
 /**
@@ -2525,6 +2666,7 @@ async function main(): Promise<void> {
   const source = readSource(failures);
   const overrides = readOverrides(failures);
   const reform = readReform(failures);
+  const corrections = readCorrections(failures);
 
   // Phase 5 — the model has to exist before the gate: assertions 5, 17, 18 and
   // 19 are checks on the ids it mints.
@@ -2535,6 +2677,7 @@ async function main(): Promise<void> {
 
   // Phase 7 — into the SAME accumulator, so one run reports everything.
   assertReform(source, reform, failures, warnings);
+  assertCorrections(source, corrections, failures);
 
   if (failures.length > 0) {
     for (const failure of failures) console.error(failure);

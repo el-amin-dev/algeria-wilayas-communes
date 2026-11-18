@@ -49,7 +49,7 @@
   | -------------------------- | ------------------------------------------------ | ----------- |
   | `algeria-wilayas-communes` | full API — accessors, search, reform, v1 shims   | 96.92 kB    |
   | `…/wilayas`                | 69 wilaya records                                | **2.36 kB** |
-  | `…/dairas`                 | wilayas + 591 daïras                             | 16.7 kB     |
+  | `…/dairas`                 | wilayas + 585 daïras                             | 16.7 kB     |
   | `…/communes`               | wilayas + daïras + 1541 communes + postal lookup | 64.8 kB     |
   | `…/zod`                    | optional Zod schemas                             | 48.9 kB     |
   | `…/legacy`                 | the byte-exact v1 snake_case surface             | 65.0 kB     |

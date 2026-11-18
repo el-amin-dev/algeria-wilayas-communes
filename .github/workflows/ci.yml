@@ -51,6 +51,30 @@ jobs:
       - name: Run integrity checks
         run: python3 shared/validate.py
 
+      # apply-corrections.mjs uses only node: built-ins, so it needs no install --
+      # but it does need an interpreter, and this job otherwise sets up only
+      # Python and jq. Pinning it beats relying on whatever the runner image
+      # happens to ship, which is how the Python 3.9 job broke when
+      # ubuntu-latest rolled to 26.04.
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      # The correction ledger (data/raw/postal-corrections.json) is a
+      # specification, not documentation: scripts/apply-corrections.mjs writes it
+      # into data/algeria.json and build-data.ts asserts A21-A24 that the two
+      # still agree. Checking the schema here catches a malformed entry before
+      # those assertions have to interpret it, and `--check` catches a ledger
+      # entry that nobody applied.
+      - name: Validate the correction ledger schema
+        run: |
+          check-jsonschema --schemafile shared/schema/corrections.schema.json \
+            data/raw/postal-corrections.json
+
+      - name: Correction ledger is applied to the dataset
+        run: node scripts/apply-corrections.mjs --check
+
   # The Python package had NO CI coverage at all before session 5: it was never
   # built, imported, tested, type-checked or linted by any workflow, while the
   # JavaScript side accumulated 1136 tests. The two shipped from the same tag.

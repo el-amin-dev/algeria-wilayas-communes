@@ -170,7 +170,7 @@ A reader learns the shape once. Mixed examples make every module look like a dif
 
 Four exceptions stay, because in each the specific value *is* the fact being shown: the frozen v1
 README examples (`16`, `"16000"`, `"adrar"`), which are pinned as tests; `16` → `Algiers`, the only
-record in 2201 where `nom_en !== nom_fr`; `6` → `codeText` `"06"`, which is why `codeText` exists;
+record in 2195 where `nom_en !== nom_fr`; `6` → `codeText` `"06"`, which is why `codeText` exists;
 and the reform API, where `parentWilaya` only exists on codes 59–69 and `68`/`69` under `17` Djelfa
 is the one candidate row showing a single mère splitting into two — the reason
 `resolveCurrentWilaya` returns an array.
@@ -311,7 +311,7 @@ Proven on bytes rather than inferred from the totals — an esbuild bundle of no
 | root, `getWilayas` only | 64.8 kB | **shaken out** | **still present** |
 | `/wilayas`, `getWilayas` only | 2.1 kB | absent | absent |
 
-So tree-shaking is working — it removes the 4402-key search corpus and the reform resolvers — and it
+So tree-shaking is working — it removes the 4390-key search corpus and the reform resolvers — and it
 still cannot remove the commune table, because `asof.ts` references it unconditionally. The 30×
 difference between rows two and three is the entire case for the split.
 
@@ -362,7 +362,7 @@ Implemented from that description, two real records come out wrong:
 | `B. B. Arreridj` | `b.-b.-arreridj` | `b-b-arreridj` |
 | `Z'barbar (El Isseri )` | `zbarbar-(el-isseri-)` | `zbarbar-el-isseri` |
 
-Two ids in 2132. Nothing crashes, no test fails on its own, and a consumer joining the npm and PyPI
+Two ids in 2126. Nothing crashes, no test fails on its own, and a consumer joining the npm and PyPI
 datasets on `id` gets two silent mismatches.
 
 **Decision.** `shared/` is a first-class tier, in three layers:
@@ -375,8 +375,8 @@ datasets on `id` gets two silent mismatches.
 
 The fixtures are ordinary build outputs — written by `pnpm build:data`, verified by `--check`, swept
 for orphans — so a behaviour change that is not reflected in them fails the build. `ids.json` is the
-exhaustive slug proof (all 2132). `normalize.json` carries named edge cases plus a SHA-256 of the
-sorted key set, so a port can prove all 4402 keys match without shipping a second copy of them.
+exhaustive slug proof (all 2126). `normalize.json` carries named edge cases plus a SHA-256 of the
+sorted key set, so a port can prove all 4390 keys match without shipping a second copy of them.
 `search.json` records full ordered results with scores for 35 queries.
 
 `schema/` and `scripts/validate.py` moved into the tier as well, since both were already
@@ -384,7 +384,7 @@ language-neutral. `validate.py` moved **byte-identically**, so the standing inva
 deliberately independent second opinion in another language survives untouched.
 
 **It paid for itself immediately.** The Python port was written against the fixtures and matched on
-the first run: 2132 ids, 4402 keys by digest, and all 35 search cases including scores and ordering.
+the first run: 2126 ids, 4390 keys by digest, and all 35 search cases including scores and ordering.
 
 **Given up:** `build-data.ts` now owns files outside `packages/js`, and its `main()` had to become
 async — the search fixture is produced by running the real `search()`, which reads the generated
@@ -484,7 +484,7 @@ Python 3.8 reached end of life in October 2024.
 
 **`slots=True` was considered and rejected**, so nobody re-opens it. It is the shape the record
 model wants, but it landed in `dataclasses` in 3.10. The memory it costs to go without is
-**bounded** — 2201 records, so a `__dict__` per instance is a few hundred KB, noise beside the
+**bounded** — 2195 records, so a `__dict__` per instance is a few hundred KB, noise beside the
 parsed JSON already resident. The install-base cost of dropping 3.9 is *not* bounded: it is every
 user on a distro Python. And `slots=True` is a pure optimization with no API effect, so it drops in
 unchanged the moment the floor moves.
@@ -655,7 +655,7 @@ path. One at a time.
 
 **Context.** `data/algeria.json` inherited its trilingual names and postal codes from the
 community corpus `othmanus/algeria-cities`, joined on commune name. The ids contract already
-establishes why that is dangerous: 1541 communes carry only 1500 distinct French names, and 591
+establishes why that is dangerous: 1541 communes carry only 1500 distinct French names, and 585
 (wilaya, daira) pairs carry only 545 distinct daira names (`shared/contract/ids.md`). A
 name-keyed join against data that ambiguous does not fail loudly — it silently drags a
 homonym's wilaya, daira and postal code across together.
@@ -674,7 +674,7 @@ This supersedes part of `docs/DATA_PROVENANCE.md`. That document described all 9
 prefix-divergent rows in wilayas 1–58 as "known to be correct" and used the 6.7% figure to
 justify keeping the prefix cross-check a warning. The 58 rows in wilayas 49–58 do support that.
 The 36 in 01–48 do not: **every one of them** correlates with a shared postal code, and in 30 of
-the 38 shared codes every sharer carries the same name. That is not a coincidence, it is a join.
+the 33 shared codes every sharer carries the same name. That is not a coincidence, it is a join.
 
 **Detector 2 — invented daira containers.** The expensive half. A daira holding exactly one
 commune, whose name is also a daira of another wilaya where it is larger. 39 candidates. This
@@ -704,23 +704,48 @@ premise of the ids contract. Separating them needs an external source per record
 called all 39 defects would be wrong about at least one, and the project's governing rule is that
 we do not guess.
 
-**Decision, and why the fix is not in this change.** Correcting a daira attribution changes a
-commune's id. Ids are a permanent public contract, and v2.0.0 has not shipped, so this is the one
-free window to change them — which argues for fixing it *now*. Against that: 32 of the 36 rows
-are still unsourced, and applying a partial fix would leave the dataset in a state no document
-describes, with some ids corrected and some not. Nulling the 36 codes wholesale was considered and
-rejected: `null` in this dataset means "published as absent" (`docs/DATA_PROVENANCE.md`), and
-these codes are published — just against the wrong commune. Overloading `null` with "we think this
-is misattributed" would break the one guarantee the field has.
+**Decision: a correction LEDGER, not 30 hand-edits.**
 
-So: **the audit ships, the counts stop being advertised as verified, and the correction gets its
-own release** once all 36 are sourced. The postal-prefix cross-check stays a warning, because
-A21 cannot become a build failure until the data it would fail on is fixed.
+Six of the rows are now sourced and corrected. The mechanism matters more than the six:
 
-**Cost, accepted.** v2.0.0 ships with 36 known-misattributed postal codes and up to 39 suspect
-daira containers, now documented rather than implied-correct. That is strictly better than the
-status quo, where the same defects shipped in v1.0.0 undetected and `DATA_PROVENANCE.md` asserted
-they were fine.
+- `data/raw/postal-corrections.json` holds one entry per correction, each carrying `dairaFrom`
+  → `dairaTo`, `postalCodeFrom` → `postalCodeTo`, a **citation**, and a confidence. It is
+  hand-maintained and never written by a generator, like `en-overrides.json` and `reform.json`.
+- `scripts/apply-corrections.mjs` applies it to `data/algeria.json`, re-parenting the commune,
+  deleting a container the move empties, and recomputing every denormalized counter. Idempotent,
+  with a `--check` mode.
+- `scripts/build-data.ts` asserts **A21–A24**: each entry resolves to exactly one commune, in
+  `dairaTo`, with `postalCodeTo`; `dairaFrom` no longer holds it and was not left empty; and
+  every entry has a source. The ledger is the specification, the data is the state, and the build
+  fails in **either** direction — a hand-edit that reverts a correction, or a ledger entry nobody
+  applied. All four were verified to fire by tampering.
+
+**Why the correction goes into `data/algeria.json` rather than staying an in-memory overlay.**
+That file is itself published — jq users and CDN consumers read it directly off jsDelivr. An
+overlay applied only at build time would leave the packages right and the raw JSON wrong, with
+nothing anywhere reporting the split.
+
+**What changed.** 591 → **585** daïras: six invented one-commune containers removed. Communes are
+**unchanged at 1541** — nothing was deleted, six records were re-parented. Postal codes 1514 →
+**1511**, shared codes 38 → **33**, and the dataset now has **zero** codes shared by two communes
+of the same wilaya. Three counts now match the official figures they previously contradicted:
+Alger 15 → **13** daïras, Oran 10 → **9**, Annaba 7 → **6**.
+
+**`null` now has two causes, and the docs say so.** 27 communes were never published with a code;
+**3 were withdrawn** because they shipped a code belonging to another wilaya's commune and no
+replacement is sourced. Withdrawal was chosen over leaving a known-wrong value, and over
+inventing a plausible one. Each withdrawal is cited in the ledger, so it is auditable: you can
+see what it used to say, why it stopped, and on whose authority.
+
+One withdrawal was a deliberate retreat. The source for Alger's `Hammamet` gives `16060`, but our
+data already assigns `16060` to `Rais Hamidou`, and writing it would have created the dataset's
+only same-wilaya shared code. One infobox does not settle which of the two is wrong, so the
+daïra correction landed and the code did not.
+
+**What is left.** The audit reports **30** rows and **33** container candidates, down from 36 and
+39. The remaining rows are unsourced, and A21 cannot be promoted to a hard failure on the
+artifact signature until they are — that gate is still future work. `warnReformPostalPrefix()`
+stays a warning for wilayas 49–69, which is the case it was written for.
 
 ## ADR-019 — The MCP server is its own package, and is NOT on the `v*` tag
 

@@ -15,7 +15,7 @@
  *
  * `SEARCH_KEYS` ships sorted ascending by UTF-16 code unit. That sort order **is**
  * the prefix index — two binary searches give the `[lo, hi)` range of every key
- * with a given prefix, at ~13 comparisons for 4402 keys, with zero extra bundle
+ * with a given prefix, at ~13 comparisons for 4390 keys, with zero extra bundle
  * bytes and zero build cost on first search. A trie would buy an asymptotic
  * advantage worth those 13 comparisons in exchange for thousands of node
  * allocations. It was considered and rejected; see session 2's spec.
@@ -27,7 +27,7 @@
  *
  * ## Packed refs
  *
- * `SEARCH_REFS[i]` is an integer, not an object — 4402 object literals in the
+ * `SEARCH_REFS[i]` is an integer, not an object — 4390 object literals in the
  * module graph would dwarf the data they describe:
  *
  * ```text
@@ -92,7 +92,7 @@ export interface SearchOptions {
    *
    * `"en"` **aliases** `"fr"`: `name.en` differs from `name.fr` for exactly one
    * record in the whole dataset (wilaya 16, `Alger` / `Algiers`), so shipping a
-   * third full key layer would add 2201 keys — about a third of the index — to
+   * third full key layer would add 2195 keys — about a third of the index — to
    * serve one row. Instead `"en"` searches the French keys plus a one-entry
    * override table, and a hit on that table reports `matched: "en"`.
    *
@@ -137,7 +137,7 @@ export interface SearchOptions {
    * The highest-leverage option in the API, and a genuine **candidate
    * reduction** rather than a filter over results: the two tiers that *scan* —
    * substring and fuzzy — walk a reverse index of that wilaya's key positions
-   * instead of the 4402-key array. A bucket is ~162 keys for Setif and ~20 for
+   * instead of the 4390-key array. A bucket is ~162 keys for Setif and ~20 for
    * the smallest wilayas.
    *
    * The exact and prefix tiers keep the global structures (a `Map` lookup and
@@ -340,7 +340,7 @@ let exactIndex: Map<string, readonly number[]> | undefined;
  * An array value, because one key legitimately belongs to several records: the
  * key `"adrar"` is the wilaya, its daïra and its commune.
  *
- * 4402 insertions on first search, comfortably inside the 2 ms budget. Never
+ * 4390 insertions on first search, comfortably inside the 2 ms budget. Never
  * built at module scope.
  *
  * @returns The exact-match index.
@@ -370,7 +370,7 @@ let wilayaKeysIndex: Map<WilayaCode, readonly number[]> | undefined;
  *
  * This is what makes `opts.wilaya` an actual **candidate reduction** rather than
  * a filter applied to results. A bucket holds roughly
- * `2 × (1 + dairaCount + communeCount)` keys: 162 of 4402 for Setif, about 20
+ * `2 × (1 + dairaCount + communeCount)` keys: 162 of 4390 for Setif, about 20
  * for the smallest wilayas.
  *
  * **Only the two scanning tiers use it.** The exact tier answers from a `Map`
@@ -557,11 +557,11 @@ function wilayaCodeOfRef(ref: number): WilayaCode | undefined {
  * Whether a candidate survives the kind and wilaya-scope filters.
  *
  * Called **before** the query is compared against the candidate's key, which is
- * the whole point: with `opts.wilaya` set, 2141 of the 2201 records are rejected
+ * the whole point: with `opts.wilaya` set, 2141 of the 2195 records are rejected
  * by a shift and a mask rather than by a string scan.
  *
  * Deduplication is deliberately *not* checked here. `seen` only matters for a
- * candidate that actually matched, and testing a `Set` 4402 times per query
+ * candidate that actually matched, and testing a `Set` 4390 times per query
  * costs more than the handful of duplicate emits it prevents — so the tiers test
  * it after the comparison instead, via {@link unseen}.
  */
@@ -787,10 +787,10 @@ function substringScore(q: string, key: string): number {
  * properties
  * of the generated corpus, both pinned by tests:
  *
- * - **no `ar` key contains a Latin alphanumeric** (0 of 2201), so a query
+ * - **no `ar` key contains a Latin alphanumeric** (0 of 2195), so a query
  *   containing one can never be a substring of an `ar` key — the `ar` half of
  *   the array is skipped;
- * - **no `fr` key contains a non-ASCII character** (0 of 2201), so a query
+ * - **no `fr` key contains a non-ASCII character** (0 of 2195), so a query
  *   containing one can never be a substring of an `fr` key — the `fr` half is
  *   skipped;
  * - a query containing both matches nothing at all, and the tier is skipped
@@ -803,7 +803,7 @@ function substringScore(q: string, key: string): number {
  * it would misclassify those 926 keys and silently drop them from every
  * substring search.
  *
- * That halves a 4402-key scan for every real query, and it is not the
+ * That halves a 4390-key scan for every real query, and it is not the
  * script-detection branch `normalize()` deliberately avoids: nothing here
  * changes how a string is folded, only which candidates cannot possibly contain
  * it.
@@ -871,7 +871,7 @@ function tierSubstring(ctx: Ctx): void {
   if (candidates === undefined) {
     // The one tier with no structure to exploit: every key has to be looked at.
     // Deliberately inlined rather than calling `substringAt` — this is the only
-    // loop in the library that runs 4402 times per query, and hoisting `q` and
+    // loop in the library that runs 4390 times per query, and hoisting `q` and
     // the array bound out of it measured ~30% faster than the call-per-key form.
     const q = ctx.q;
     const n = SEARCH_KEYS.length;
@@ -891,7 +891,7 @@ function tierSubstring(ctx: Ctx): void {
       emit(ref, key, substringScore(q, key), matchedOf(ref), ctx);
     }
   } else {
-    // Scoped: ~162 keys for Setif instead of 4402. This is where `opts.wilaya`
+    // Scoped: ~162 keys for Setif instead of 4390. This is where `opts.wilaya`
     // earns its description as the highest-leverage option in the API.
     for (const i of candidates) {
       if (ctx.out.length >= ctx.limit) return;
@@ -1004,7 +1004,7 @@ function boundedLevenshtein(a: string, b: string, max: number): number {
 /**
  * The fuzzy tier.
  *
- * Runs over a prefiltered candidate set, never over all 4402 keys:
+ * Runs over a prefiltered candidate set, never over all 4390 keys:
  *
  * - **first-character bucket** — only keys whose first character equals the
  *   query's, via the free `[lo, hi)` range map;

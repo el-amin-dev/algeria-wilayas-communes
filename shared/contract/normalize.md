@@ -102,7 +102,7 @@ the score sort them".
 ## The key set
 
 The corpus is normalized once at build time into `SEARCH_KEYS`: `name.fr` and
-`name.ar` for all 2201 records = **4402 keys**, of which **3055 are distinct**.
+`name.ar` for all 2195 records = **4390 keys**, of which **3055 are distinct**.
 `normalize.json` records both counts plus a SHA-256 of the sorted keys joined on
 `\n`, so a second implementation can prove its whole key set matches without
 shipping a second copy of it. See [`search.md`](search.md) for the ordering and

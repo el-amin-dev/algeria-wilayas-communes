@@ -117,7 +117,7 @@ const byWilayaLoose = byWilaya as (num: number | string) => Wilaya | undefined;
 
 // ── `# algeria-wilayas-communes` — the headline ──────────────────────────────
 //
-// Line 3 of the README: "69 wilayas, 591 daïras, 1541 communes (2025/2026
+// Line 3 of the README: "69 wilayas, 585 daïras, 1541 communes (2025/2026
 // reform, Loi 26-06) with Arabic / French / English names and postal codes",
 // and the `npm install algeria-wilayas-communes` line above the fold.
 
@@ -130,9 +130,9 @@ describe("README `# algeria-wilayas-communes` — the headline", () => {
     expect(pkg.name).toBe("algeria-wilayas-communes");
   });
 
-  it("ships 69 wilayas, 591 daïras and 1541 communes", () => {
+  it("ships 69 wilayas, 585 daïras and 1541 communes", () => {
     expect(getWilayas()).toHaveLength(69);
-    expect(getDairas()).toHaveLength(591);
+    expect(getDairas()).toHaveLength(585);
     expect(getCommunes()).toHaveLength(1541);
   });
 
@@ -202,17 +202,19 @@ describe("README `## Usage` snippet 1 — through `/legacy`, the exact v1 contra
     expect(getWilayas().length).toBe(69);
   });
 
-  it("`getDairas().length` → 591", () => {
-    expect(getDairas().length).toBe(591);
+  it("`getDairas().length` → 585", () => {
+    expect(getDairas().length).toBe(585);
   });
 
   it("`getCommunes().length` → 1541", () => {
     expect(getCommunes().length).toBe(1541);
   });
 
-  it('`byWilaya(16).nom_en` → "Algiers", with 15 daïras and 57 communes', () => {
+  it('`byWilaya(16).nom_en` → "Algiers", with 13 daïras and 57 communes', () => {
     expect(byWilaya(16)?.nom_en).toBe("Algiers");
-    expect(byWilaya(16)?.nb_dairas).toBe(15);
+    // 13, not 15: two phantom containers (`El Marsa`, `Bir Mokadem`) were
+    // removed, which is exactly the count fr.wikipedia gives for Alger.
+    expect(byWilaya(16)?.nb_dairas).toBe(13);
     expect(byWilaya(16)?.nb_communes).toBe(57);
   });
 
@@ -233,7 +235,7 @@ describe("README `## Usage` snippet 1 — through `/legacy`, the exact v1 contra
   it("`getAll()` → the full nested tree, wilaya > daïra > commune", () => {
     const all = getAll();
     expect(all.nb_wilayas).toBe(69);
-    expect(all.nb_dairas).toBe(591);
+    expect(all.nb_dairas).toBe(585);
     expect(all.nb_communes).toBe(1541);
     expect(all.wilayas).toHaveLength(69);
 
@@ -294,7 +296,7 @@ describe("README `## API` table", () => {
       dairas += w.dairas.length;
       for (const d of w.dairas) communes += d.communes.length;
     }
-    expect(dairas).toBe(591);
+    expect(dairas).toBe(585);
     expect(communes).toBe(1541);
   });
 
@@ -310,9 +312,9 @@ describe("README `## API` table", () => {
     }
   });
 
-  it("row 3 — `getDairas()` is 591 flat daïras, EACH WITH ITS WILAYA", () => {
+  it("row 3 — `getDairas()` is 585 flat daïras, EACH WITH ITS WILAYA", () => {
     const dairas = getDairas();
-    expect(dairas).toHaveLength(591);
+    expect(dairas).toHaveLength(585);
     for (const d of dairas) {
       expect(typeof d.wilaya_num).toBe("number");
       expect(d.wilaya_code).toBe(String(d.wilaya_num).padStart(2, "0"));
@@ -516,10 +518,10 @@ describe("README `## API` — all eight v1 type names resolve", () => {
 // would never notice.
 
 describe("README `## Notes`", () => {
-  it("note 2 — 27 communes have `code_postal: null`", () => {
-    expect(getCommunes().filter((c) => c.code_postal === null)).toHaveLength(27);
+  it("note 2 — 30 communes have `code_postal: null`", () => {
+    expect(getCommunes().filter((c) => c.code_postal === null)).toHaveLength(30);
     // The complement, so a bug that nulled everything cannot pass note 2.
-    expect(getCommunes().filter((c) => c.code_postal !== null)).toHaveLength(1514);
+    expect(getCommunes().filter((c) => c.code_postal !== null)).toHaveLength(1511);
   });
 
   it('note 1 — the ONE exonym: `nom_en !== nom_fr` only for the wilaya "Alger"', () => {
@@ -547,8 +549,8 @@ describe("README `## Notes`", () => {
     expect(differing).toEqual(["Alger"]);
   });
 
-  it("note 3 — 591 daïra rows, 545 distinct names: the reform split daïras across wilayas", () => {
-    expect(getDairas()).toHaveLength(591);
+  it("note 3 — 585 daïra rows, 545 distinct names: the reform split daïras across wilayas", () => {
+    expect(getDairas()).toHaveLength(585);
     expect(new Set(getDairas().map((d) => d.nom_fr)).size).toBe(545);
     // The claim is specifically that a repeated name sits under MORE THAN ONE
     // wilaya, not that a wilaya lists the same daïra twice.

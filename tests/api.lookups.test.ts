@@ -100,7 +100,7 @@ describe("getDaira", () => {
     expect(daira?.communeCount).toBe(4);
   });
 
-  it("resolves every one of the 591 ids", () => {
+  it("resolves every one of the 585 ids", () => {
     const unresolved = getDairas()
       .filter((d) => getDaira(d.id) === undefined)
       .map((d) => d.id);
@@ -108,7 +108,7 @@ describe("getDaira", () => {
   });
 
   it("keeps the wilaya prefix load-bearing — the same slug in two wilayas is two records", () => {
-    // 591 daïras carry only 545 distinct names, so an id without the wilaya
+    // 585 daïras carry only 545 distinct names, so an id without the wilaya
     // prefix would collide. `Sidi Ameur` exists in wilaya 32 and wilaya 64.
     expect(getDaira("32-sidi-ameur")?.wilaya).toBe(32);
     expect(getDaira("64-sidi-ameur")?.wilaya).toBe(64);
@@ -198,7 +198,7 @@ describe("byWilaya", () => {
     );
   });
 
-  it("builds every one of the 69 trees, totalling 591 daïras and 1541 communes", () => {
+  it("builds every one of the 69 trees, totalling 585 daïras and 1541 communes", () => {
     let dairas = 0;
     let communes = 0;
     const missing: WilayaCode[] = [];
@@ -212,7 +212,7 @@ describe("byWilaya", () => {
       communes += tree.dairas.reduce((n, d) => n + d.communes.length, 0);
     }
     expect(missing).toEqual([]);
-    expect(dairas).toBe(591);
+    expect(dairas).toBe(585);
     expect(communes).toBe(1541);
   });
 
@@ -279,7 +279,7 @@ describe("getDairasOfWilaya", () => {
     expect(dairas.map((d) => d.id)).toContain("19-ain-azel");
   });
 
-  it("totals 591 over all 69 codes, with no record counted twice", () => {
+  it("totals 585 over all 69 codes, with no record counted twice", () => {
     const seen = new Set<string>();
     let total = 0;
     for (const code of ALL_CODES) {
@@ -287,8 +287,8 @@ describe("getDairasOfWilaya", () => {
       total += dairas.length;
       for (const d of dairas) seen.add(d.id);
     }
-    expect(total).toBe(591);
-    expect(seen.size).toBe(591);
+    expect(total).toBe(585);
+    expect(seen.size).toBe(585);
   });
 
   it("agrees with the wilaya record's own denormalized counter for all 69", () => {

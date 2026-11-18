@@ -75,7 +75,7 @@ export { findCommune, getAll } from "./compat";
 // the boundaries came from and as of when, and a constant they can log or assert
 // on answers that in one line.
 //
-// `COMMUNES_MISSING_POSTAL_CODE` is the honest counterpart: the 27 commune ids
+// `COMMUNES_MISSING_POSTAL_CODE` is the honest counterpart: the 30 commune ids
 // with no published postal code, shipped as a list so a consumer needing
 // complete coverage can see exactly which rows to handle. None of them may ever
 // be filled by guessing from a neighbour or from the wilaya prefix.

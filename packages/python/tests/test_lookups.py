@@ -54,7 +54,7 @@ def test_get_wilaya_code_text_is_the_padded_form() -> None:
 
 
 def test_the_single_english_exonym() -> None:
-    """Wilaya 16 is the one record in 2201 where ``en`` differs from ``fr``."""
+    """Wilaya 16 is the one record in 2195 where ``en`` differs from ``fr``."""
     wilaya = get_wilaya(16)
     assert wilaya is not None
     assert wilaya.name.fr == "Alger"
@@ -114,7 +114,7 @@ def test_lookups_return_the_same_objects_as_the_bulk_accessors() -> None:
 def test_find_by_postal_code_always_returns_a_tuple() -> None:
     """Never a bare record, even when exactly one commune matches.
 
-    38 of the 1471 distinct codes are shared, so a single-record return type
+    38 of the 1474 distinct codes are shared, so a single-record return type
     would be wrong for those and would force callers to handle two shapes.
     """
     hit = find_by_postal_code(CANONICAL_POSTAL)
@@ -135,7 +135,7 @@ def test_find_by_postal_code_returns_every_sharer() -> None:
         for code in {c.postal_code for c in get_communes() if c.postal_code}
         if len(find_by_postal_code(code)) > 1
     ]
-    assert len(shared) == 38
+    assert len(shared) == 33
 
     sample = find_by_postal_code(sorted(shared)[0])
     assert len({c.id for c in sample}) == len(sample)
@@ -185,7 +185,9 @@ def test_the_arabic_layer_collides_more_than_the_french_one() -> None:
     assert [c.id for c in matches] == [
         "10-ain-bessem-ain-el-hadjar",
         "19-ain-azel-ain-lahdjar",
-        "20-ain-bessem-ain-el-hadjar",
+        # Re-parented from the phantom daira ``Ain Bessem`` to Saida's real
+        # ``Ain El Hadjar``, which changed its id. See docs/DECISIONS.md ADR-018.
+        "20-ain-el-hadjar-ain-el-hadjar",
     ]
     assert {c.name.fr for c in matches} == {"Ain El Hadjar", "Ain Lahdjar"}
     # Document order, matching every other accessor.

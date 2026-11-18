@@ -74,7 +74,7 @@ rules this project follows.
 | Release | What it may contain | Record count |
 |---|---|---|
 | **Patch** (`2.0.0` → `2.0.1`) | a correction to an existing record: a spelling, a diacritic, an Arabic or English name, a postal code that was wrong. Bug fixes with no API surface change. | unchanged |
-| **Minor** (`2.0.0` → `2.1.0`) | records **added**; a `null` **filled** (for example one of the [27 missing postal codes](DATA_PROVENANCE.md#the-27-communes-with-no-postal-code) is finally assigned, or a `parentCode` in the reform mapping is sourced); new functions, new subpaths, new optional fields. | may grow |
+| **Minor** (`2.0.0` → `2.1.0`) | records **added**; a `null` **filled** (for example one of the [30 missing postal codes](DATA_PROVENANCE.md#the-30-communes-with-no-postal-code) is finally assigned, or a `parentCode` in the reform mapping is sourced); new functions, new subpaths, new optional fields. | may grow |
 | **Major** (`2.x.y` → `3.0.0`) | a record **removed** or **renumbered**; a field removed or retyped; an API removed; a runtime floor raised. | may shrink or be renumbered |
 
 Read the boundaries the way a consumer feels them:
@@ -291,8 +291,8 @@ accurate — and one of those, found once, ends the dataset's usefulness permane
 
 Concretely, this is why:
 
-- 27 communes ship with `code_postal: null` rather than a plausible neighbouring code
-  ([the full list](DATA_PROVENANCE.md#the-27-communes-with-no-postal-code));
+- 30 communes ship with `code_postal: null` rather than a plausible neighbouring code
+  ([the full list](DATA_PROVENANCE.md#the-30-communes-with-no-postal-code));
 - all 11 reform `parentCode` values ship `null` rather than the postal-prefix heuristic that
   would have filled them;
 - a data fix without a citable source is not merged ([`../CONTRIBUTING.md`](../CONTRIBUTING.md)).

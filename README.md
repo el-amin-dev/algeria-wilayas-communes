@@ -1,10 +1,10 @@
 # Algeria Wilayas, Daïras & Communes 🇩🇿
 
-Up-to-date administrative divisions of **Algeria** — **69 wilayas**, **591 daïras**, and **1541 communes** — reflecting the **2025/2026 reform (Loi 26-06)**. Every name in **Arabic, French, and English**, with **postal codes** where available.
+Up-to-date administrative divisions of **Algeria** — **69 wilayas**, **585 daïras**, and **1541 communes** — reflecting the **2025/2026 reform (Loi 26-06)**. Every name in **Arabic, French, and English**, with **postal codes** where available.
 
-> 🇫🇷 Découpage administratif de l'Algérie à jour : **69 wilayas**, **591 daïras**, **1541 communes** (réforme 2025/2026, Loi 26-06) — noms en arabe / français / anglais avec **codes postaux**, en JSON.
+> 🇫🇷 Découpage administratif de l'Algérie à jour : **69 wilayas**, **585 daïras**, **1541 communes** (réforme 2025/2026, Loi 26-06) — noms en arabe / français / anglais avec **codes postaux**, en JSON.
 >
-> 🇩🇿 التقسيم الإداري للجزائر محدّث: **69 ولاية**، **591 دائرة**، **1541 بلدية** (إصلاح 2025/2026) — الأسماء بالعربية والفرنسية والإنجليزية مع **الرموز البريدية**، بصيغة JSON.
+> 🇩🇿 التقسيم الإداري للجزائر محدّث: **69 ولاية**، **585 دائرة**، **1541 بلدية** (إصلاح 2025/2026) — الأسماء بالعربية والفرنسية والإنجليزية مع **الرموز البريدية**، بصيغة JSON.
 
 Plain JSON. No framework, no runtime, no lock-in. Use it from **jq, JavaScript/TypeScript, Python, Java**, or anything that reads a file.
 
@@ -30,7 +30,7 @@ The nested file `data/algeria.json` is the single source of truth. Everything el
 |------|-----------|
 | `data/algeria.json` | Full nested tree: **wilaya → daïra → commune** (source of truth) |
 | `data/wilayas.json` | Flat list of the **69 wilayas** |
-| `data/dairas.json` | Flat list of the **591 daïras** |
+| `data/dairas.json` | Flat list of the **585 daïras** |
 | `data/communes.json` | Flat list of the **1541 communes** (with wilaya + daïra + postal code) |
 | `data/by-wilaya/NN.json` | One file per wilaya (`01.json` … `69.json`) — grab just what you need |
 
@@ -102,8 +102,8 @@ More ready-to-copy commands (lookups by postal code, per-wilaya queries, rebuild
 
 ## Good to know
 
-- **Daïra layer:** wilaya → commune reflects the current 69-wilaya structure; daïra → commune membership comes from the pre-2025 structure regrouped under the new wilayas. Where the reform split a daïra across two wilayas, it appears under each — so the daïra count is **591**, not ~548.
-- **Postal codes:** 27 of 1541 communes have `code_postal: null` (small communes missing from the reference data). Corrections welcome.
+- **Daïra layer:** wilaya → commune reflects the current 69-wilaya structure; daïra → commune membership comes from the pre-2025 structure regrouped under the new wilayas. Where the reform split a daïra across two wilayas, it appears under each — so the daïra count is **585**, not ~548.
+- **Postal codes:** 30 of 1541 communes have `code_postal: null` (small communes missing from the reference data). Corrections welcome.
 - **Known defect, being fixed:** 36 communes in wilayas 01–48 carry a postal code that belongs to a same-named commune in another wilaya, and 26 of those also sit in a daïra imported along with it — a name-collision artifact from the upstream corpus. Run `node scripts/audit-postal-attribution.mjs` for the current list. Four have been verified wrong by hand; the rest await sourcing, which is why nothing has been changed rather than partially changed. Full reasoning in [docs/DECISIONS.md](docs/DECISIONS.md) ADR-018.
 
 Spotted something wrong? Please **[open an issue or PR](../../issues/new/choose)** — see [CONTRIBUTING.md](CONTRIBUTING.md). Edit only `data/algeria.json`; CI validates the rest.
@@ -152,7 +152,7 @@ import { findByPostalCode } from "algeria-wilayas-communes";
 findByPostalCode("19018").map((c) => c.name.fr); // → ["Ain Lahdjar"]
 ```
 
-A postal code can map to more than one commune (38 codes are shared), so this always returns an array. Codes are **strings**, not integers — `"05000"` is real, and parsing it as a number loses the leading zero.
+A postal code can map to more than one commune (33 codes are shared), so this always returns an array. Codes are **strings**, not integers — `"05000"` is real, and parsing it as a number loses the leading zero.
 
 ### How do I get all the communes of a wilaya?
 
@@ -164,7 +164,7 @@ getCommunesOfWilaya(19).length; // → communes of Setif
 
 ### Is there a list of Algerian communes in Arabic?
 
-Yes — every one of the 69 wilayas, 591 daïras and 1541 communes carries `name.ar` alongside `name.fr` and `name.en`. Search works in Arabic too, including without diacritics:
+Yes — every one of the 69 wilayas, 585 daïras and 1541 communes carries `name.ar` alongside `name.fr` and `name.en`. Search works in Arabic too, including without diacritics:
 
 ```js
 import { search } from "algeria-wilayas-communes";

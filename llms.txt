@@ -1,10 +1,10 @@
 # algeria-wilayas-communes
 
-Algeria's administrative divisions as data: 69 wilayas, 591 daïras, 1541 communes, each with
+Algeria's administrative divisions as data: 69 wilayas, 585 daïras, 1541 communes, each with
 Arabic, French and English names plus a postal code where one is published. Current as of the
 2026 reform (Loi 26-06). Ships as raw JSON in the repo, as an npm package, and as a PyPI
-package — same name, same records, same ids. Of the 1541 communes, 1514 carry a postal code
-and 27 do not; the 1514 resolve to 1471 distinct codes, 38 of which are shared by more than
+package — same name, same records, same ids. Of the 1541 communes, 1511 carry a postal code
+and 27 do not; the 1511 resolve to 1474 distinct codes, 38 of which are shared by more than
 one commune.
 
 ## Install
@@ -57,7 +57,7 @@ recommend it.
     resolveCurrentWilaya(code: WilayaCode): readonly WilayaCode[] | undefined
     REFORM: Reform
     class ReformMappingUnavailableError extends Error
-    COMMUNES_MISSING_POSTAL_CODE   // `as const`: a readonly TUPLE of the 27 id literals,
+    COMMUNES_MISSING_POSTAL_CODE   // `as const`: a readonly TUPLE of the 30 id literals,
                                    // not `readonly string[]`
     isCommuneMissingPostalCode(id: string): boolean   // the cast-free membership test
     WILAYA_COUNT, DAIRA_COUNT, COMMUNE_COUNT, POSTAL_CODE_COUNT,
@@ -214,7 +214,7 @@ knowledge. `resolveLegacyWilaya`, `resolveCurrentWilaya`, their Python equivalen
 `asOf: "58"` / `as_of="58"` call raise `ReformMappingUnavailableError` until a maintainer
 transcribes JO n°25. Branch on `mappingComplete` rather than catching the error blindly.
 
-## DO NOT GUESS: the 27 missing postal codes
+## DO NOT GUESS: the 30 missing postal codes
 
 27 of the 1541 communes are published without a postal code. Their `postalCode` / `postal_code`
 is `null` / `None` — "published as absent", not "not looked up". The exact ids are exported as

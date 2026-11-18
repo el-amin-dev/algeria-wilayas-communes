@@ -12,7 +12,7 @@
  *
  * - **No `asOf` parameter.** See `tiers/wilayas.ts`.
  * - **No `findCommunesByName`, no `search`.** Name lookup needs the normalized
- *   4402-key corpus in `generated/search-keys.ts` (109 kB) — an order of
+ *   4390-key corpus in `generated/search-keys.ts` (109 kB) — an order of
  *   magnitude more than the commune records themselves. Both live at the root,
  *   which is the entry that already pays for them.
  *
@@ -62,9 +62,9 @@ let postalIndex: Map<string, readonly Commune[]> | undefined;
 /**
  * Postal code → every commune carrying it.
  *
- * The value is an array **always**. 1514 communes share 1471 distinct codes, so
- * 38 codes map to more than one commune; a single-valued map would drop the
- * losers silently. The 27 communes with `postalCode === null` are skipped —
+ * The value is an array **always**. 1511 communes share 1474 distinct codes, so
+ * 33 codes map to more than one commune; a single-valued map would drop the
+ * losers silently. The 30 communes with `postalCode === null` are skipped —
  * their ids are listed in `COMMUNES_MISSING_POSTAL_CODE`.
  */
 function postalIdx(): Map<string, readonly Commune[]> {
@@ -143,7 +143,7 @@ export function getCommunes(): readonly Commune[] {
  * getCommune("19-ain-azel-ain-lahdjar")?.name.fr;     // → "Ain Lahdjar"
  * getCommune("19-ain-azel-ain-lahdjar")?.postalCode;  // → "19018"
  * getCommune("19-ain-azel-ain-lahdjar")?.daira;       // → "19-ain-azel"
- * getCommune("32-sidi-ameur-sidi-ameur")?.postalCode; // → null (one of the 27)
+ * getCommune("32-sidi-ameur-sidi-ameur")?.postalCode; // → null (one of the 30)
  * getCommune("nope");                                 // → undefined
  * ```
  *
@@ -156,7 +156,7 @@ export function getCommune(id: string): Commune | undefined {
 /**
  * All communes sharing a 5-digit postal code.
  *
- * Postal codes are not unique: 38 of the 1471 distinct codes in the dataset are
+ * Postal codes are not unique: 38 of the 1474 distinct codes in the dataset are
  * shared by more than one commune, so this always returns an array.
  *
  * @param code - A 5-digit postal code, e.g. `"19018"`. A plain `string`, not a
@@ -173,7 +173,7 @@ export function getCommune(id: string): Commune | undefined {
  * // → ["Ain Lahdjar"]              — 19018 belongs to exactly one commune
  *
  * findByPostalCode("10031").map((c) => c.wilaya);
- * // → [10, 20]                     — one of the 38 shared codes
+ * // → [10, 20]                     — one of the 33 shared codes
  *
  * findByPostalCode("00000");        // → []  — well-formed, matches nothing
  * ```

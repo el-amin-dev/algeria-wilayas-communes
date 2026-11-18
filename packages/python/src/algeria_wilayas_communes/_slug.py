@@ -8,7 +8,7 @@ while a key keeps Arabic.
 
 The normative description is ``shared/contract/slug.md``. The conformance
 fixtures are ``shared/fixtures/slug.json`` and ``shared/fixtures/ids.json``, the
-latter being the exhaustive proof: all 2132 ids are produced through here, and
+latter being the exhaustive proof: all 2126 ids are produced through here, and
 every one must be byte-identical to the JavaScript package's.
 
 Every non-ASCII character in this module is written as a ``\\u`` escape, on
@@ -61,7 +61,7 @@ def slug(value: str) -> str:
     And the ``[a-z0-9-]`` filter runs **after** the whitespace pass, so a real
     separator survives while punctuation does not. Dropping that step gives
     ``b.-b.-arreridj`` and ``zbarbar-(el-isseri-)`` for two real records - two
-    wrong ids out of 2132, with nothing crashing and no test failing, which is
+    wrong ids out of 2126, with nothing crashing and no test failing, which is
     exactly the kind of divergence the shared fixtures exist to catch.
 
     Args:

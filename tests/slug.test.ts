@@ -84,7 +84,7 @@ const WELL_FORMED = /^[a-z0-9]+(-[a-z0-9]+)*$/;
 
 describe("slug — structural properties over every name in the dataset", () => {
   it("has the expected number of names to slug", () => {
-    expect(dairaNames).toHaveLength(591);
+    expect(dairaNames).toHaveLength(585);
     expect(communeNames).toHaveLength(1541);
   });
 

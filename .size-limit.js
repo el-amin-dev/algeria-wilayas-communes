@@ -104,7 +104,7 @@ export default [
     // `generated/communes`. The reference is unconditional in the module graph
     // even though the call is conditional, so no bundler may drop it.
     //
-    // Tree-shaking does work here — it removes the 4402-key search corpus and
+    // Tree-shaking does work here — it removes the 4390-key search corpus and
     // the reform resolvers, 96.9 kB down to 64.7 kB. It just cannot remove the
     // communes. That 64.7 kB against `/wilayas`'s 2.36 kB is the entire
     // justification for the metadata split, measured rather than asserted, and

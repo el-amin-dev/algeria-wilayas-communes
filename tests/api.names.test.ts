@@ -35,7 +35,7 @@ describe("findCommunesByName — the duplicated names", () => {
       "32-sidi-ameur-sidi-ameur",
       "64-sidi-ameur-sidi-ameur",
     ]);
-    // Both of them are also among the 27 communes with no postal code, so this
+    // Both of them are also among the 30 communes with no postal code, so this
     // pair cannot be disambiguated by postal code either.
     expect(hits.map((c) => c.postalCode)).toEqual([null, null]);
   });

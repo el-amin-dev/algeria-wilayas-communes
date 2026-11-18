@@ -311,8 +311,8 @@ describe("flat files cross-checked field-by-field against data/algeria.json", ()
   });
 
   it("data/dairas.json header and record count", () => {
-    expect(dairasFile.nb_dairas).toBe(591);
-    expect(dairasFile.dairas).toHaveLength(591);
+    expect(dairasFile.nb_dairas).toBe(585);
+    expect(dairasFile.dairas).toHaveLength(585);
   });
 
   it("data/communes.json header and record count", () => {
@@ -356,10 +356,10 @@ describe("flat files cross-checked field-by-field against data/algeria.json", ()
     expect(mismatches).toEqual([]);
   });
 
-  it("every one of the 591 daira rows matches the nested source", () => {
-    expect(expectedDairaRows).toHaveLength(591);
+  it("every one of the 585 daira rows matches the nested source", () => {
+    expect(expectedDairaRows).toHaveLength(585);
     const mismatches: string[] = [];
-    for (let i = 0; i < 591; i++) {
+    for (let i = 0; i < 585; i++) {
       const row = dairasFile.dairas[i];
       const src = expectedDairaRows[i];
       if (row === undefined || src === undefined) {

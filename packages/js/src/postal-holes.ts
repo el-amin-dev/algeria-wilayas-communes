@@ -1,7 +1,7 @@
 /**
- * The membership test for the 27 communes published without a postal code.
+ * The membership test for the 30 communes published without a postal code.
  *
- * `COMMUNES_MISSING_POSTAL_CODE` is a `readonly` TUPLE of 27 id *literals*, not
+ * `COMMUNES_MISSING_POSTAL_CODE` is a `readonly` TUPLE of 30 id *literals*, not
  * a `readonly string[]`. That is deliberate — it lets a consumer write
  * `"19-ain-azel-ain-lahdjar" satisfies MissingPostalCodeId` and get a compile
  * error on a typo — but it has one hostile consequence: `.includes(id)` for an
@@ -33,7 +33,7 @@ import { COMMUNES_MISSING_POSTAL_CODE } from "./generated/communes";
 export type MissingPostalCodeId = (typeof COMMUNES_MISSING_POSTAL_CODE)[number];
 
 /**
- * Is this commune one of the 27 published without a postal code?
+ * Is this commune one of the 30 published without a postal code?
  *
  * Returns `false` for an id that does not exist at all — the question is
  * "is this a known hole", not "is this a valid id". Use `getCommune(id)` to

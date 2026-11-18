@@ -13,10 +13,10 @@
   "reforme": "69 wilayas (Loi 26-06, 2025/2026)",
   "hierarchie": "pays > wilaya > daira > commune",
   "nb_wilayas": 69,
-  "nb_dairas": 591,
+  "nb_dairas": 585,
   "nb_communes": 1541,
-  "codes_postaux_renseignes": 1514,
-  "codes_postaux_manquants": 27,
+  "codes_postaux_renseignes": 1511,
+  "codes_postaux_manquants": 30,
   "note_daira": "Appartenance daira->commune issue de la structure officielle pre-2025, regroupee sous les 69 nouvelles wilayas. Une daira scindee par la reforme apparait sous chaque wilaya concernee.",
   "sources": [
     "ONS Code Geographique National / Loi 19-12 (2019) / Loi 26-06 (2026)",
@@ -3574,7 +3574,7 @@
       "nom_ar": "تيارت",
       "nom_fr": "Tiaret",
       "nom_en": "Tiaret",
-      "nb_dairas": 13,
+      "nb_dairas": 12,
       "nb_communes": 36,
       "dairas": [
         {
@@ -3721,23 +3721,15 @@
               "nom_fr": "Medrissa",
               "nom_en": "Medrissa",
               "code_postal": "14013"
-            }
-          ],
-          "nb_communes": 4
-        },
-        {
-          "nom_ar": "تنس",
-          "nom_fr": "Tenes",
-          "nom_en": "Tenes",
-          "communes": [
+            },
             {
               "nom_ar": "سيدي عبد الرحمن",
               "nom_fr": "Sidi Abderrahmane",
               "nom_en": "Sidi Abderrahmane",
-              "code_postal": "02066"
+              "code_postal": "14028"
             }
           ],
-          "nb_communes": 1
+          "nb_communes": 5
         },
         {
           "nom_ar": "رحوية",
@@ -4486,7 +4478,7 @@
       "nom_ar": "الجزائر",
       "nom_fr": "Alger",
       "nom_en": "Algiers",
-      "nb_dairas": 15,
+      "nb_dairas": 13,
       "nb_communes": 57,
       "dairas": [
         {
@@ -4587,23 +4579,15 @@
               "nom_fr": "Bordj El Bahri",
               "nom_en": "Bordj El Bahri",
               "code_postal": "16046"
-            }
-          ],
-          "nb_communes": 6
-        },
-        {
-          "nom_ar": "المرسى",
-          "nom_fr": "El Marsa",
-          "nom_en": "El Marsa",
-          "communes": [
+            },
             {
               "nom_ar": "المرسى",
               "nom_fr": "El Marsa",
               "nom_en": "El Marsa",
-              "code_postal": "02015"
+              "code_postal": "16111"
             }
           ],
-          "nb_communes": 1
+          "nb_communes": 7
         },
         {
           "nom_ar": "بئر توتة",
@@ -4761,23 +4745,15 @@
               "nom_fr": "Ouled Fayet",
               "nom_en": "Ouled Fayet",
               "code_postal": "16094"
-            }
-          ],
-          "nb_communes": 4
-        },
-        {
-          "nom_ar": "بئر مقدم",
-          "nom_fr": "Bir Mokadem",
-          "nom_en": "Bir Mokadem",
-          "communes": [
+            },
             {
               "nom_ar": "الحمامات",
               "nom_fr": "Hammamet",
               "nom_en": "Hammamet",
-              "code_postal": "12016"
+              "code_postal": null
             }
           ],
-          "nb_communes": 1
+          "nb_communes": 5
         },
         {
           "nom_ar": "سيدي امحمد",
@@ -5924,7 +5900,7 @@
       "nom_ar": "سعيدة",
       "nom_fr": "Saida",
       "nom_en": "Saida",
-      "nb_dairas": 8,
+      "nb_dairas": 7,
       "nb_communes": 16,
       "dairas": [
         {
@@ -6069,23 +6045,15 @@
               "nom_fr": "Moulay Larbi",
               "nom_en": "Moulay Larbi",
               "code_postal": "20014"
-            }
-          ],
-          "nb_communes": 2
-        },
-        {
-          "nom_ar": "عين بسام",
-          "nom_fr": "Ain Bessem",
-          "nom_en": "Ain Bessem",
-          "communes": [
+            },
             {
               "nom_ar": "عين الحجر",
               "nom_fr": "Ain El Hadjar",
               "nom_en": "Ain El Hadjar",
-              "code_postal": "10031"
+              "code_postal": null
             }
           ],
-          "nb_communes": 1
+          "nb_communes": 3
         }
       ]
     },
@@ -6889,7 +6857,7 @@
       "nom_ar": "عنابة",
       "nom_fr": "Annaba",
       "nom_en": "Annaba",
-      "nb_dairas": 7,
+      "nb_dairas": 6,
       "nb_communes": 12,
       "dairas": [
         {
@@ -6988,23 +6956,15 @@
               "nom_fr": "Cheurfa",
               "nom_en": "Cheurfa",
               "code_postal": "23025"
-            }
-          ],
-          "nb_communes": 2
-        },
-        {
-          "nom_ar": "العلمة",
-          "nom_fr": "El Eulma",
-          "nom_en": "El Eulma",
-          "communes": [
+            },
             {
               "nom_ar": "العلمة",
               "nom_fr": "El Eulma",
               "nom_en": "El Eulma",
-              "code_postal": "19001"
+              "code_postal": null
             }
           ],
-          "nb_communes": 1
+          "nb_communes": 3
         },
         {
           "nom_ar": "شطايبي",
@@ -8897,7 +8857,7 @@
       "nom_ar": "وهران",
       "nom_fr": "Oran",
       "nom_en": "Oran",
-      "nb_dairas": 10,
+      "nb_dairas": 9,
       "nb_communes": 26,
       "dairas": [
         {
@@ -9025,20 +8985,6 @@
           "nb_communes": 3
         },
         {
-          "nom_ar": "البويرة",
-          "nom_fr": "Bouira",
-          "nom_en": "Bouira",
-          "communes": [
-            {
-              "nom_ar": "عين الترك",
-              "nom_fr": "Ain Turk",
-              "nom_en": "Ain Turk",
-              "code_postal": "10033"
-            }
-          ],
-          "nb_communes": 1
-        },
-        {
           "nom_ar": "وهران",
           "nom_fr": "Oran",
           "nom_en": "Oran",
@@ -9074,9 +9020,15 @@
               "nom_fr": "Bousfer",
               "nom_en": "Bousfer",
               "code_postal": "31025"
+            },
+            {
+              "nom_ar": "عين الترك",
+              "nom_fr": "Ain Turk",
+              "nom_en": "Ain Turk",
+              "code_postal": "31300"
             }
           ],
-          "nb_communes": 3
+          "nb_communes": 4
         },
         {
           "nom_ar": "وادي تليلات",

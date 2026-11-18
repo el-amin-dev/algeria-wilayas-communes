@@ -4,7 +4,7 @@
   "nom_ar": "الجزائر",
   "nom_fr": "Alger",
   "nom_en": "Algiers",
-  "nb_dairas": 15,
+  "nb_dairas": 13,
   "nb_communes": 57,
   "dairas": [
     {
@@ -105,23 +105,15 @@
           "nom_fr": "Bordj El Bahri",
           "nom_en": "Bordj El Bahri",
           "code_postal": "16046"
-        }
-      ],
-      "nb_communes": 6
-    },
-    {
-      "nom_ar": "المرسى",
-      "nom_fr": "El Marsa",
-      "nom_en": "El Marsa",
-      "communes": [
+        },
         {
           "nom_ar": "المرسى",
           "nom_fr": "El Marsa",
           "nom_en": "El Marsa",
-          "code_postal": "02015"
+          "code_postal": "16111"
         }
       ],
-      "nb_communes": 1
+      "nb_communes": 7
     },
     {
       "nom_ar": "بئر توتة",
@@ -279,23 +271,15 @@
           "nom_fr": "Ouled Fayet",
           "nom_en": "Ouled Fayet",
           "code_postal": "16094"
-        }
-      ],
-      "nb_communes": 4
-    },
-    {
-      "nom_ar": "بئر مقدم",
-      "nom_fr": "Bir Mokadem",
-      "nom_en": "Bir Mokadem",
-      "communes": [
+        },
         {
           "nom_ar": "الحمامات",
           "nom_fr": "Hammamet",
           "nom_en": "Hammamet",
-          "code_postal": "12016"
+          "code_postal": null
         }
       ],
-      "nb_communes": 1
+      "nb_communes": 5
     },
     {
       "nom_ar": "سيدي امحمد",

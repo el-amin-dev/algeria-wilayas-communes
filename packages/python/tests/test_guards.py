@@ -116,11 +116,11 @@ def test_assert_wilaya_code_rejects_the_same_things_the_predicate_does() -> None
 
 
 def test_every_real_postal_code_is_well_formed() -> None:
-    """All 1514 non-null codes in the dataset, not a sample."""
+    """All 1511 non-null codes in the dataset, not a sample."""
     from algeria_wilayas_communes import get_communes
 
     present = [c for c in get_communes() if c.postal_code is not None]
-    assert len(present) == 1514
+    assert len(present) == 1511
     assert all(is_postal_code(c.postal_code) for c in present)
 
 

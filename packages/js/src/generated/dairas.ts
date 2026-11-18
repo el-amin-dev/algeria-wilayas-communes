@@ -3,7 +3,7 @@
 // for a daira. Only a wilaya `code` is a real government identifier.
 //
 // An id is `<wilaya code>-<slug(daira nom_fr)>`, e.g. "16-baraki". The wilaya
-// prefix is not decoration: there are only 545 distinct daira names for 591
+// prefix is not decoration: there are only 545 distinct daira names for 585
 // daïras. The ids are stable by promise, and a consumer who puts one in a
 // database column needs to know it is ours, not the government's.
 
@@ -165,8 +165,7 @@ export const DAIRAS = [
   { id: "14-sougueur", wilaya: 14, name: { ar: "السوقر", fr: "Sougueur", en: "Sougueur" }, communeCount: 4 },
   { id: "14-meghila", wilaya: 14, name: { ar: "مغيلة", fr: "Meghila", en: "Meghila" }, communeCount: 3 },
   { id: "14-frenda", wilaya: 14, name: { ar: "فرندة", fr: "Frenda", en: "Frenda" }, communeCount: 3 },
-  { id: "14-ain-kermes", wilaya: 14, name: { ar: "عين كرمس", fr: "Ain Kermes", en: "Ain Kermes" }, communeCount: 4 },
-  { id: "14-tenes", wilaya: 14, name: { ar: "تنس", fr: "Tenes", en: "Tenes" }, communeCount: 1 },
+  { id: "14-ain-kermes", wilaya: 14, name: { ar: "عين كرمس", fr: "Ain Kermes", en: "Ain Kermes" }, communeCount: 5 },
   { id: "14-rahouia", wilaya: 14, name: { ar: "رحوية", fr: "Rahouia", en: "Rahouia" }, communeCount: 2 },
   { id: "14-oued-lili", wilaya: 14, name: { ar: "وادي ليلي", fr: "Oued Lili", en: "Oued Lili" }, communeCount: 3 },
   { id: "14-mechraa-sfa", wilaya: 14, name: { ar: "مشرع الصفا", fr: "Mechraa Sfa", en: "Mechraa Sfa" }, communeCount: 3 },
@@ -197,14 +196,12 @@ export const DAIRAS = [
   { id: "15-maatkas", wilaya: 15, name: { ar: "معاتقة", fr: "Maatkas", en: "Maatkas" }, communeCount: 2 },
   { id: "16-hussein-dey", wilaya: 16, name: { ar: "حسين داي", fr: "Hussein Dey", en: "Hussein Dey" }, communeCount: 4 },
   { id: "16-baraki", wilaya: 16, name: { ar: "براقي", fr: "Baraki", en: "Baraki" }, communeCount: 3 },
-  { id: "16-dar-el-beida", wilaya: 16, name: { ar: "الدار البيضاء", fr: "Dar El Beida", en: "Dar El Beida" }, communeCount: 6 },
-  { id: "16-el-marsa", wilaya: 16, name: { ar: "المرسى", fr: "El Marsa", en: "El Marsa" }, communeCount: 1 },
+  { id: "16-dar-el-beida", wilaya: 16, name: { ar: "الدار البيضاء", fr: "Dar El Beida", en: "Dar El Beida" }, communeCount: 7 },
   { id: "16-birtouta", wilaya: 16, name: { ar: "بئر توتة", fr: "Birtouta", en: "Birtouta" }, communeCount: 3 },
   { id: "16-rouiba", wilaya: 16, name: { ar: "الرويبة", fr: "Rouiba", en: "Rouiba" }, communeCount: 3 },
   { id: "16-zeralda", wilaya: 16, name: { ar: "زرالدة", fr: "Zeralda", en: "Zeralda" }, communeCount: 5 },
   { id: "16-draria", wilaya: 16, name: { ar: "الدرارية", fr: "Draria", en: "Draria" }, communeCount: 5 },
-  { id: "16-cheraga", wilaya: 16, name: { ar: "الشراقة", fr: "Cheraga", en: "Cheraga" }, communeCount: 4 },
-  { id: "16-bir-mokadem", wilaya: 16, name: { ar: "بئر مقدم", fr: "Bir Mokadem", en: "Bir Mokadem" }, communeCount: 1 },
+  { id: "16-cheraga", wilaya: 16, name: { ar: "الشراقة", fr: "Cheraga", en: "Cheraga" }, communeCount: 5 },
   { id: "16-sidi-mhamed", wilaya: 16, name: { ar: "سيدي امحمد", fr: "Sidi M'hamed", en: "Sidi M'hamed" }, communeCount: 4 },
   { id: "16-bir-mourad-rais", wilaya: 16, name: { ar: "بئر مراد رايس", fr: "Bir Mourad Rais", en: "Bir Mourad Rais" }, communeCount: 5 },
   { id: "16-bab-el-oued", wilaya: 16, name: { ar: "باب الوادي", fr: "Bab El Oued", en: "Bab El Oued" }, communeCount: 5 },
@@ -253,8 +250,7 @@ export const DAIRAS = [
   { id: "20-el-hassasna", wilaya: 20, name: { ar: "الحساسنة", fr: "El Hassasna", en: "El Hassasna" }, communeCount: 2 },
   { id: "20-sidi-boubekeur", wilaya: 20, name: { ar: "سيدي بوبكر", fr: "Sidi Boubekeur", en: "Sidi Boubekeur" }, communeCount: 4 },
   { id: "20-youb", wilaya: 20, name: { ar: "يوب", fr: "Youb", en: "Youb" }, communeCount: 2 },
-  { id: "20-ain-el-hadjar", wilaya: 20, name: { ar: "عين الحجر", fr: "Ain El Hadjar", en: "Ain El Hadjar" }, communeCount: 2 },
-  { id: "20-ain-bessem", wilaya: 20, name: { ar: "عين بسام", fr: "Ain Bessem", en: "Ain Bessem" }, communeCount: 1 },
+  { id: "20-ain-el-hadjar", wilaya: 20, name: { ar: "عين الحجر", fr: "Ain El Hadjar", en: "Ain El Hadjar" }, communeCount: 3 },
   { id: "21-sidi-mezghiche", wilaya: 21, name: { ar: "سيدي مزغيش", fr: "Sidi Mezghiche", en: "Sidi Mezghiche" }, communeCount: 3 },
   { id: "21-el-harrouch", wilaya: 21, name: { ar: "الحروش", fr: "El Harrouch", en: "El Harrouch" }, communeCount: 5 },
   { id: "21-el-hadaiek", wilaya: 21, name: { ar: "الحدائق", fr: "El Hadaiek", en: "El Hadaiek" }, communeCount: 3 },
@@ -288,8 +284,7 @@ export const DAIRAS = [
   { id: "23-berrahal", wilaya: 23, name: { ar: "برحال", fr: "Berrahal", en: "Berrahal" }, communeCount: 3 },
   { id: "23-el-hadjar", wilaya: 23, name: { ar: "الحجار", fr: "El Hadjar", en: "El Hadjar" }, communeCount: 2 },
   { id: "23-el-bouni", wilaya: 23, name: { ar: "البوني", fr: "El Bouni", en: "El Bouni" }, communeCount: 1 },
-  { id: "23-ain-el-berda", wilaya: 23, name: { ar: "عين الباردة", fr: "Ain El Berda", en: "Ain El Berda" }, communeCount: 2 },
-  { id: "23-el-eulma", wilaya: 23, name: { ar: "العلمة", fr: "El Eulma", en: "El Eulma" }, communeCount: 1 },
+  { id: "23-ain-el-berda", wilaya: 23, name: { ar: "عين الباردة", fr: "Ain El Berda", en: "Ain El Berda" }, communeCount: 3 },
   { id: "23-chetaibi", wilaya: 23, name: { ar: "شطايبي", fr: "Chetaibi", en: "Chetaibi" }, communeCount: 1 },
   { id: "24-guelaat-bousbaa", wilaya: 24, name: { ar: "قلعة بوصبع", fr: "Guelaat Bousbaa", en: "Guelaat Bousbaa" }, communeCount: 6 },
   { id: "24-hammam-debagh", wilaya: 24, name: { ar: "حمام دباغ", fr: "Hammam Debagh", en: "Hammam Debagh" }, communeCount: 3 },
@@ -370,9 +365,8 @@ export const DAIRAS = [
   { id: "31-bir-el-djir", wilaya: 31, name: { ar: "بئر الجير", fr: "Bir El Djir", en: "Bir El Djir" }, communeCount: 3 },
   { id: "31-arzew", wilaya: 31, name: { ar: "أرزيو", fr: "Arzew", en: "Arzew" }, communeCount: 2 },
   { id: "31-bethioua", wilaya: 31, name: { ar: "بطيوة", fr: "Bethioua", en: "Bethioua" }, communeCount: 3 },
-  { id: "31-bouira", wilaya: 31, name: { ar: "البويرة", fr: "Bouira", en: "Bouira" }, communeCount: 1 },
   { id: "31-oran", wilaya: 31, name: { ar: "وهران", fr: "Oran", en: "Oran" }, communeCount: 1 },
-  { id: "31-ain-turk", wilaya: 31, name: { ar: "عين الترك", fr: "Ain Turk", en: "Ain Turk" }, communeCount: 3 },
+  { id: "31-ain-turk", wilaya: 31, name: { ar: "عين الترك", fr: "Ain Turk", en: "Ain Turk" }, communeCount: 4 },
   { id: "31-oued-tlelat", wilaya: 31, name: { ar: "وادي تليلات", fr: "Oued Tlelat", en: "Oued Tlelat" }, communeCount: 4 },
   { id: "31-boutlelis", wilaya: 31, name: { ar: "بوتليليس", fr: "Boutlelis", en: "Boutlelis" }, communeCount: 3 },
   { id: "32-labiodh-sidi-cheikh", wilaya: 32, name: { ar: "الأبيض سيدي الشيخ", fr: "Labiodh Sidi Cheikh", en: "Labiodh Sidi Cheikh" }, communeCount: 2 },

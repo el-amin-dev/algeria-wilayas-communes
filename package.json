@@ -9,6 +9,8 @@
   "scripts": {
     "build:data": "tsx scripts/build-data.ts",
     "data:diff": "node scripts/data-diff.mjs",
+    "corrections": "node scripts/apply-corrections.mjs",
+    "corrections:check": "node scripts/apply-corrections.mjs --check",
     "build": "pnpm -F algeria-wilayas-communes build",
     "lint:publish": "pnpm -F algeria-wilayas-communes lint:publish",
     "pack:check": "node benchmarks/pack-check.mjs",

@@ -1,7 +1,7 @@
 {
   "$schema": "https://datapackage.org/profiles/2.0/datapackage.json",
   "name": "algeria-wilayas-communes",
-  "title": "Algeria administrative divisions — 69 wilayas, 591 daïras, 1541 communes",
+  "title": "Algeria administrative divisions — 69 wilayas, 585 daïras, 1541 communes",
   "description": "Algeria's administrative divisions current as of the 2026 reform (Loi 26-06). Trilingual names (Arabic, French, English) and postal codes. Most other sources still say 58 wilayas, which was correct only until April 2026.",
   "version": "2.0.0",
   "created": "2026-07-20",
@@ -94,7 +94,7 @@
       "path": "data/dairas.json",
       "format": "json",
       "mediatype": "application/json",
-      "description": "591 daïra entries under the `dairas` key. This counts (wilaya, daïra) PAIRS: a daïra the reform split across two wilayas appears under each, so 591 is not the official daïra count. No wilaya_ar field, unlike communes.",
+      "description": "585 daïra entries under the `dairas` key. This counts (wilaya, daïra) PAIRS: a daïra the reform split across two wilayas appears under each, so 585 is not the official daïra count. No wilaya_ar field, unlike communes.",
       "schema": {
         "fields": [
           {
@@ -191,7 +191,7 @@
           {
             "name": "code_postal",
             "type": "string",
-            "description": "5-digit code as a STRING; \"05000\" is real and loses its zero as an integer. null for 27 communes, meaning published-as-absent, NOT not-looked-up. 38 codes are shared by more than one commune.",
+            "description": "5-digit code as a STRING; \"05000\" is real and loses its zero as an integer. null for 30 communes, meaning published-as-absent, NOT not-looked-up. 33 codes are shared by more than one commune.",
             "constraints": {
               "pattern": "^[0-9]{5}$"
             }

@@ -84,7 +84,7 @@ def js_search() -> Any:
 
 
 class TestRecordIdentity:
-    """All 2132 synthesized ids, byte-identical and in the same order."""
+    """All 2126 synthesized ids, byte-identical and in the same order."""
 
     def test_daira_ids(self, js_ids: Any) -> None:
         python_ids = [daira.id for daira in get_dairas()]
@@ -98,7 +98,7 @@ class TestRecordIdentity:
         # Guards against a bundle that loaded but returned nothing: two empty
         # lists compare equal, and the test above would pass while proving
         # nothing at all.
-        assert len(js_ids["dairas"]) == 591
+        assert len(js_ids["dairas"]) == 585
         assert len(js_ids["communes"]) == 1541
 
 

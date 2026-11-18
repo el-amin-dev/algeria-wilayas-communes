@@ -1,0 +1,71 @@
+{
+  "$comment": "THE CORRECTION LEDGER. Hand-maintained, never written by a generator. Each entry undoes one instance of the name-collision join artifact described in docs/DECISIONS.md ADR-018: a commune that was given a same-named commune's daira and/or postal code from a different wilaya. An entry is APPLIED to data/algeria.json by scripts/build-data.ts, and assertions A21-A24 fail the build if the data and this ledger ever disagree. Supplying a corrected value REQUIRES a source, exactly as it does for the reform table - see shared/contract/reform.md for the reasoning. postalCodeTo:null means WITHDRAWN: the shipped code provably belongs to another wilaya's commune, and no replacement has been sourced yet. That is not the same as the 27 communes that were published without a code at all.",
+  "corrections": [
+    {
+      "wilaya": "14",
+      "commune": "Sidi Abderrahmane",
+      "dairaFrom": "Tenes",
+      "dairaTo": "Ain Kermes",
+      "postalCodeFrom": "02066",
+      "postalCodeTo": "14028",
+      "source": "fr.wikipedia.org/wiki/Sidi_Abderrahmane_(Tiaret) — wilaya Tiaret, daira Ain Kermes, code postal 14028, ONS 1438",
+      "confidence": "probable",
+      "note": "Shipped under Tenes, which is a daira of 02 Chlef, with Chlef's postal code."
+    },
+    {
+      "wilaya": "16",
+      "commune": "El Marsa",
+      "dairaFrom": "El Marsa",
+      "dairaTo": "Dar El Beida",
+      "postalCodeFrom": "02015",
+      "postalCodeTo": "16111",
+      "source": "fr.wikipedia.org/wiki/El_Marsa_(Alger) and Liste des communes de la wilaya d'Alger — daira Dar El Beida, code postal 16111, ONS 1640. Alger officially has 13 dairas; El Marsa is not one of them.",
+      "confidence": "probable",
+      "note": "Self-named phantom daira. Shipped with 02 Chlef's postal code."
+    },
+    {
+      "wilaya": "16",
+      "commune": "Hammamet",
+      "dairaFrom": "Bir Mokadem",
+      "dairaTo": "Cheraga",
+      "postalCodeFrom": "12016",
+      "postalCodeTo": null,
+      "source": "fr.wikipedia.org/wiki/Hammamet_(Alger) and Daïras de la wilaya d'Alger — daira Cheraga, ONS 1624; Alger officially has 13 dairas and Bir Mokadem is a daira of 12 Tebessa. The same infobox gives code postal 16060, which is NOT written: our data already assigns 16060 to 16-bab-el-oued-rais-hamidou, and taking it would create the dataset's only postal code shared by two communes of the SAME wilaya. One of the two is wrong and a single infobox does not settle which, so the code is withdrawn pending a source.",
+      "confidence": "probable",
+      "note": "Daira sourced and corrected; postal code WITHDRAWN rather than replaced. Resolving it means establishing whether 16060 belongs to Hammamet or to Rais Hamidou."
+    },
+    {
+      "wilaya": "31",
+      "commune": "Ain Turk",
+      "dairaFrom": "Bouira",
+      "dairaTo": "Ain Turk",
+      "postalCodeFrom": "10033",
+      "postalCodeTo": "31300",
+      "source": "fr.wikipedia.org/wiki/Aïn_El_Turk — wilaya Oran, daira Aïn El Turck, code postal 31300, ONS 3109. fr.wikipedia.org/wiki/Wilaya_d'Oran — Oran has 9 dairas and no daira named Bouira; daira Aïn-el-Turk holds Aïn El Turk, Mers el-Kébir, El Ançor, Bousfer.",
+      "confidence": "probable",
+      "note": "The clearest case: we shipped 10 dairas for Oran, and its real Ain Turk daira was missing its own seat commune."
+    },
+    {
+      "wilaya": "23",
+      "commune": "El Eulma",
+      "dairaFrom": "El Eulma",
+      "dairaTo": "Ain El Berda",
+      "postalCodeFrom": "19001",
+      "postalCodeTo": null,
+      "source": "fr.wikipedia.org/wiki/Daïras_de_la_wilaya_d'Annaba — Annaba has 6 dairas and 12 communes; daira Aïn Berda holds Aïn Berda, Cheurfa and Eulma. 19001 is 19 Setif's El Eulma.",
+      "confidence": "probable",
+      "note": "Daira sourced, postal code WITHDRAWN: no 23xxx value for this commune has been sourced."
+    },
+    {
+      "wilaya": "20",
+      "commune": "Ain El Hadjar",
+      "dairaFrom": "Ain Bessem",
+      "dairaTo": "Ain El Hadjar",
+      "postalCodeFrom": "10031",
+      "postalCodeTo": null,
+      "source": "fr.wikipedia.org/wiki/Aïn_El_Hadjar_(Saïda) — wilaya Saïda, daira Aïn El Hadjar, ONS 2003. fr.wikipedia.org/wiki/Wilaya_de_Saïda — Saïda has 6 dairas; Ain Bessem is a daira of 10 Bouira.",
+      "confidence": "probable",
+      "note": "Daira sourced, postal code WITHDRAWN: two sources disagree (20100 vs 20001), so neither is written. It shipped holding 10031, byte-identical to Bouira's own Ain El Hadjar."
+    }
+  ]
+}

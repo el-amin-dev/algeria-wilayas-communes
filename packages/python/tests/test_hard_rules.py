@@ -243,7 +243,7 @@ class TestPublicSurface:
 
     def test_the_lazy_constants_behave_like_constants(self) -> None:
         assert package.REFORM.law == "Loi 26-06"
-        assert len(package.COMMUNES_MISSING_POSTAL_CODE) == 27
+        assert len(package.COMMUNES_MISSING_POSTAL_CODE) == 30
 
     def test_no_debug_hook_leaks_to_the_top_level(self) -> None:
         # __index_state__, __reset_indexes__ and friends exist for these tests

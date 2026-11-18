@@ -75,8 +75,8 @@ describe("/wilayas matches the root", () => {
 });
 
 describe("/dairas matches the root", () => {
-  it("getDairas() returns the same 591 records", () => {
-    expect(dairasEntry.getDairas()).toHaveLength(591);
+  it("getDairas() returns the same 585 records", () => {
+    expect(dairasEntry.getDairas()).toHaveLength(585);
     expect(dairasEntry.getDairas()).toEqual(root.getDairas());
   });
 
@@ -124,8 +124,8 @@ describe("/communes matches the root", () => {
     expect(communesEntry.getCommunesOfWilaya(NOT_A_CODE)).toEqual([]);
   });
 
-  it("exposes the 27 communes with no postal code", () => {
-    expect(communesEntry.COMMUNES_MISSING_POSTAL_CODE).toHaveLength(27);
+  it("exposes the 30 communes with no postal code", () => {
+    expect(communesEntry.COMMUNES_MISSING_POSTAL_CODE).toHaveLength(30);
     expect(communesEntry.COMMUNES_MISSING_POSTAL_CODE).toEqual(root.COMMUNES_MISSING_POSTAL_CODE);
   });
 

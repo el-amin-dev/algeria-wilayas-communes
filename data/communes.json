@@ -5565,13 +5565,13 @@
       "wilaya_ar": "تيارت",
       "wilaya_fr": "Tiaret",
       "wilaya_en": "Tiaret",
-      "daira_ar": "تنس",
-      "daira_fr": "Tenes",
-      "daira_en": "Tenes",
+      "daira_ar": "عين كرمس",
+      "daira_fr": "Ain Kermes",
+      "daira_en": "Ain Kermes",
       "nom_ar": "سيدي عبد الرحمن",
       "nom_fr": "Sidi Abderrahmane",
       "nom_en": "Sidi Abderrahmane",
-      "code_postal": "02066"
+      "code_postal": "14028"
     },
     {
       "wilaya_num": 14,
@@ -6937,13 +6937,13 @@
       "wilaya_ar": "الجزائر",
       "wilaya_fr": "Alger",
       "wilaya_en": "Algiers",
-      "daira_ar": "المرسى",
-      "daira_fr": "El Marsa",
-      "daira_en": "El Marsa",
+      "daira_ar": "الدار البيضاء",
+      "daira_fr": "Dar El Beida",
+      "daira_en": "Dar El Beida",
       "nom_ar": "المرسى",
       "nom_fr": "El Marsa",
       "nom_en": "El Marsa",
-      "code_postal": "02015"
+      "code_postal": "16111"
     },
     {
       "wilaya_num": 16,
@@ -7231,13 +7231,13 @@
       "wilaya_ar": "الجزائر",
       "wilaya_fr": "Alger",
       "wilaya_en": "Algiers",
-      "daira_ar": "بئر مقدم",
-      "daira_fr": "Bir Mokadem",
-      "daira_en": "Bir Mokadem",
+      "daira_ar": "الشراقة",
+      "daira_fr": "Cheraga",
+      "daira_en": "Cheraga",
       "nom_ar": "الحمامات",
       "nom_fr": "Hammamet",
       "nom_en": "Hammamet",
-      "code_postal": "12016"
+      "code_postal": null
     },
     {
       "wilaya_num": 16,
@@ -9247,13 +9247,13 @@
       "wilaya_ar": "سعيدة",
       "wilaya_fr": "Saida",
       "wilaya_en": "Saida",
-      "daira_ar": "عين بسام",
-      "daira_fr": "Ain Bessem",
-      "daira_en": "Ain Bessem",
+      "daira_ar": "عين الحجر",
+      "daira_fr": "Ain El Hadjar",
+      "daira_en": "Ain El Hadjar",
       "nom_ar": "عين الحجر",
       "nom_fr": "Ain El Hadjar",
       "nom_en": "Ain El Hadjar",
-      "code_postal": "10031"
+      "code_postal": null
     },
     {
       "wilaya_num": 21,
@@ -10661,13 +10661,13 @@
       "wilaya_ar": "عنابة",
       "wilaya_fr": "Annaba",
       "wilaya_en": "Annaba",
-      "daira_ar": "العلمة",
-      "daira_fr": "El Eulma",
-      "daira_en": "El Eulma",
+      "daira_ar": "عين الباردة",
+      "daira_fr": "Ain El Berda",
+      "daira_en": "Ain El Berda",
       "nom_ar": "العلمة",
       "nom_fr": "El Eulma",
       "nom_en": "El Eulma",
-      "code_postal": "19001"
+      "code_postal": null
     },
     {
       "wilaya_num": 23,
@@ -13685,20 +13685,6 @@
       "wilaya_ar": "وهران",
       "wilaya_fr": "Oran",
       "wilaya_en": "Oran",
-      "daira_ar": "البويرة",
-      "daira_fr": "Bouira",
-      "daira_en": "Bouira",
-      "nom_ar": "عين الترك",
-      "nom_fr": "Ain Turk",
-      "nom_en": "Ain Turk",
-      "code_postal": "10033"
-    },
-    {
-      "wilaya_num": 31,
-      "wilaya_code": "31",
-      "wilaya_ar": "وهران",
-      "wilaya_fr": "Oran",
-      "wilaya_en": "Oran",
       "daira_ar": "وهران",
       "daira_fr": "Oran",
       "daira_en": "Oran",
@@ -13748,6 +13734,20 @@
       "nom_fr": "Bousfer",
       "nom_en": "Bousfer",
       "code_postal": "31025"
+    },
+    {
+      "wilaya_num": 31,
+      "wilaya_code": "31",
+      "wilaya_ar": "وهران",
+      "wilaya_fr": "Oran",
+      "wilaya_en": "Oran",
+      "daira_ar": "عين الترك",
+      "daira_fr": "Ain Turk",
+      "daira_en": "Ain Turk",
+      "nom_ar": "عين الترك",
+      "nom_fr": "Ain Turk",
+      "nom_en": "Ain Turk",
+      "code_postal": "31300"
     },
     {
       "wilaya_num": 31,

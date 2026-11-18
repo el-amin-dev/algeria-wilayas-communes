@@ -1,5 +1,5 @@
 /**
- * `algeria-wilayas-communes/dairas` — **the 69 wilayas plus the 591 daïras.**
+ * `algeria-wilayas-communes/dairas` — **the 69 wilayas plus the 585 daïras.**
  *
  * The middle tier: enough to render a wilaya → daïra cascade without shipping
  * the 1541 communes. Records are identical to the root's, and as with
