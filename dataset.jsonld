@@ -1,13 +1,13 @@
 {
   "@context": "https://schema.org",
   "@type": "Dataset",
-  "name": "Algeria administrative divisions — 69 wilayas, 585 daïras, 1541 communes",
+  "name": "Algeria administrative divisions — 69 wilayas, 566 daïras, 1541 communes",
   "alternateName": [
     "Découpage administratif de l'Algérie",
     "التقسيم الإداري للجزائر",
     "algeria-wilayas-communes"
   ],
-  "description": "Every Algerian administrative division below the national level, current as of the 2026 reform (Loi 26-06, Journal Officiel n°25): 69 wilayas, 585 daïra entries and 1541 communes. Each record carries Arabic, French and English names, and each commune a 5-digit postal code where one is published (1511 of 1541). Published as plain JSON, as an npm package, as a PyPI package, and as an MCP server. Note that most other sources still describe Algeria as having 58 wilayas, which was correct only until April 2026.",
+  "description": "Every Algerian administrative division below the national level, current as of the 2026 reform (Loi 26-06, Journal Officiel n°25): 69 wilayas, 566 daïra entries and 1541 communes. Each record carries Arabic, French and English names, and each commune a 5-digit postal code where one is published (1496 of 1541). Published as plain JSON, as an npm package, as a PyPI package, and as an MCP server. Note that most other sources still describe Algeria as having 58 wilayas, which was correct only until April 2026.",
   "url": "https://github.com/el-amin-dev/algeria-wilayas-communes",
   "sameAs": [
     "https://www.npmjs.com/package/algeria-wilayas-communes",
@@ -65,7 +65,7 @@
     {
       "@type": "PropertyValue",
       "name": "dairas",
-      "value": 585
+      "value": 566
     },
     {
       "@type": "PropertyValue",
@@ -75,12 +75,12 @@
     {
       "@type": "PropertyValue",
       "name": "communes with a postal code",
-      "value": 1511
+      "value": 1496
     },
     {
       "@type": "PropertyValue",
       "name": "communes without a postal code",
-      "value": 30
+      "value": 45
     }
   ],
   "distribution": [

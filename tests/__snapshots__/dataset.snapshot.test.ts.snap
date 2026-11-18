@@ -1,16 +1,16 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`dataset fingerprint > COMMUNES fingerprint is unchanged 1`] = `"a23fa10b20ebc7a25338d4bbd4fd1e8906afbfbb04b6b2ad46caf5099611cee6"`;
+exports[`dataset fingerprint > COMMUNES fingerprint is unchanged 1`] = `"b45ad91aa135605f48ab63585a6a4f5a72534e5c8b65ffdbae7f1b40ae1a5981"`;
 
-exports[`dataset fingerprint > DAIRAS fingerprint is unchanged 1`] = `"dfd94f8c87327fc71d6503b0a7175b674777bd5e6e22a1a4f246f8874eae2f5b"`;
+exports[`dataset fingerprint > DAIRAS fingerprint is unchanged 1`] = `"1305a12a0634228fb328a673b65c72615a60476dd55d752873ef5fa42656f3bd"`;
 
-exports[`dataset fingerprint > WILAYAS fingerprint is unchanged 1`] = `"1002beb252ca46f60edfb50d4b944a08324b286f9122c12f0ff1afe302e357aa"`;
+exports[`dataset fingerprint > WILAYAS fingerprint is unchanged 1`] = `"2727f1ac7bdd0c416ad3a6da8bdb5af871bb23451e42a83d68ac7303075bf9c7"`;
 
 exports[`dataset summary > dataset summary is unchanged 1`] = `
 {
   "communes": 1541,
-  "dairas": 585,
-  "distinctPostalCodes": 1474,
+  "dairas": 566,
+  "distinctPostalCodes": 1479,
   "missing": [
     "04-souk-naamane-ouled-zouai",
     "05-ouled-si-slimane-lemcene",
@@ -22,7 +22,9 @@ exports[`dataset summary > dataset summary is unchanged 1`] = `
     "16-cheraga-hammamet",
     "19-el-eulma-guelta-zerka",
     "20-ain-el-hadjar-ain-el-hadjar",
+    "20-el-hassasna-maamora",
     "21-ain-kechra-ouldja-boulbalout",
+    "21-ben-azzouz-el-marsa",
     "23-ain-el-berda-el-eulma",
     "23-berrahal-treat",
     "24-guelaat-bousbaa-beni-mezline",
@@ -31,19 +33,32 @@ exports[`dataset summary > dataset summary is unchanged 1`] = `
     "26-souaghi-sidi-ziane",
     "26-tablat-mezerana",
     "27-bouguirat-safsaf",
+    "27-mesra-mansourah",
     "28-khoubana-el-houamed",
+    "29-ain-fares-ain-fares",
+    "29-mohammadia-mohammadia",
     "29-tizi-tizi",
     "32-sidi-ameur-sidi-ameur",
     "34-el-hamadia-elhammadia",
+    "34-mansourah-ouled-sidi-brahim",
     "35-boudouaou-el-kharrouba",
+    "35-isser-timezrit",
     "35-thenia-souk-el-had",
+    "36-el-tarf-zitouna",
+    "38-bordj-bounaama-sidi-slimane",
+    "38-lazharia-larbaa",
+    "39-robbah-el-ogla",
     "41-merahna-sidi-fredj",
+    "46-beni-saf-emir-abdelkader",
     "46-hammam-bou-hadjar-chentouf",
+    "47-mansourah-mansoura",
+    "48-ammi-moussa-el-hassi",
+    "48-ammi-moussa-el-ouldja",
     "48-thenia-souk-el-had",
     "64-sidi-ameur-sidi-ameur",
     "66-chahbounia-bouaiche",
   ],
-  "missingPostalCode": 30,
+  "missingPostalCode": 45,
   "perWilaya": [
     [
       1,
@@ -322,8 +337,8 @@ exports[`dataset summary > dataset summary is unchanged 1`] = `
       8,
     ],
   ],
-  "sharedPostalCodes": 33,
+  "sharedPostalCodes": 17,
   "wilayas": 69,
-  "withPostalCode": 1511,
+  "withPostalCode": 1496,
 }
 `;

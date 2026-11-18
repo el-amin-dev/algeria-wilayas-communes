@@ -189,11 +189,11 @@ describe('getWilayas({ asOf: "58" })', () => {
     expect(setif58?.communeCount).toBe(getWilaya(19)?.communeCount);
   });
 
-  it("totals to the same 585 daïras and 1541 communes across the 58 records", async () => {
+  it("totals to the same 566 daïras and 1541 communes across the 58 records", async () => {
     // Nothing may be lost or double-counted in the re-attachment.
     const { getWilayas } = await load();
     const legacy = getWilayas({ asOf: "58" });
-    expect(legacy.reduce((n, w) => n + w.dairaCount, 0)).toBe(585);
+    expect(legacy.reduce((n, w) => n + w.dairaCount, 0)).toBe(566);
     expect(legacy.reduce((n, w) => n + w.communeCount, 0)).toBe(1541);
   });
 
@@ -233,11 +233,11 @@ describe('getWilaya(code, { asOf: "58" })', () => {
 // ── 3. Daïras and communes — never merged, never dropped ────────────────────
 
 describe('getDairas({ asOf: "58" })', () => {
-  it("still returns all 585 daïras", async () => {
+  it("still returns all 566 daïras", async () => {
     // Merging two same-named daïras under one mère would assert they are the
-    // same daïra — a claim the dataset does not make. 585 in both views.
+    // same daïra — a claim the dataset does not make. 566 in both views.
     const { getDairas } = await load();
-    expect(getDairas({ asOf: "58" })).toHaveLength(585);
+    expect(getDairas({ asOf: "58" })).toHaveLength(566);
   });
 
   it("re-attributes the daïras of a new wilaya to its mère", async () => {

@@ -86,12 +86,16 @@ const OUTPUT_DIRS = [BY_WILAYA_DIR_REL, GENERATED_DIR_REL, FIXTURES_DIR_REL] as 
 
 /** Ground truth for the current dataset. Assertions 1, 3, 4 and 9 pin these. */
 const EXPECTED_WILAYA_COUNT = 69;
-// 585, not 591. Six invented daira containers were removed by the correction
-// ledger (data/raw/postal-corrections.json, docs/DECISIONS.md ADR-018) -- each
-// held exactly one commune that the upstream name-join had filed under another
-// wilaya's daira. The commune count is UNCHANGED at 1541: nothing was deleted,
-// six records were re-parented. Lower this only alongside a ledger entry.
-const EXPECTED_DAIRA_COUNT = 585;
+// 566, not 591. Twenty-five invented daira containers have been removed by the
+// correction ledger (data/raw/postal-corrections.json, docs/DECISIONS.md
+// ADR-018) -- each held exactly one commune that the upstream name-join had
+// filed under another wilaya's daira. The commune count is UNCHANGED at 1541:
+// nothing was deleted, twenty-five records were re-parented.
+//
+// Lower this only alongside a ledger entry. Every removal is cited, and A21-A24
+// fail the build if the data and the ledger disagree, so this number is not a
+// free parameter -- it is the ledger's arithmetic consequence.
+const EXPECTED_DAIRA_COUNT = 566;
 const EXPECTED_COMMUNE_COUNT = 1541;
 
 /** Provenance, emitted into `meta.ts`. Bumped by hand per data release. */
@@ -658,7 +662,7 @@ function reportDuplicateKeys(
 
 /**
  * Assertion 19 — mints one id at a time and fails on a collision, naming BOTH
- * offending records. All 585 daira ids and all 1541 commune ids must be unique.
+ * offending records. All 566 daira ids and all 1541 commune ids must be unique.
  */
 function claimId(
   owners: Map<string, string>,
@@ -1014,11 +1018,11 @@ interface Model {
  *
  * The wilaya prefix is NOT optional: 38 commune nom_fr values are duplicated
  * across wilayas (`Sidi Ameur` in 32 and 64, `Souk El Had` in 35 and 48), and
- * there are only 545 distinct daira names for 585 daïras.
+ * there are only 545 distinct daira names for 566 daïras.
  *
  * English names are `override ?? nom_fr`. `nom_en` differs from `nom_fr` for
  * exactly ONE record in the whole dataset (wilaya 16, Alger → Algiers), so
- * shipping 2195 duplicate English strings would be ~99.9% wasted payload.
+ * shipping 2176 duplicate English strings would be ~99.9% wasted payload.
  *
  * Carries assertions 5, 17, 18 and 19.
  */
@@ -1375,7 +1379,7 @@ function emitDairas(model: Model): string {
     "// for a daira. Only a wilaya `code` is a real government identifier.",
     "//",
     '// An id is `<wilaya code>-<slug(daira nom_fr)>`, e.g. "16-baraki". The wilaya',
-    "// prefix is not decoration: there are only 545 distinct daira names for 585",
+    "// prefix is not decoration: there are only 545 distinct daira names for 566",
     "// daïras. The ids are stable by promise, and a consumer who puts one in a",
     "// database column needs to know it is ours, not the government's.",
     "",
@@ -1464,7 +1468,7 @@ function emitCommunes(model: Model): string {
  *
  * `kind` is the low-order pair of bits and the array index is everything above
  * the language bit, so a reference is one small integer rather than an object:
- * 4390 object literals in the module graph would dominate the generated file
+ * 4352 object literals in the module graph would dominate the generated file
  * and allocate on every module evaluation.
  *
  *   ref = (index << 3) | (kind << 1) | lang
@@ -1497,10 +1501,10 @@ interface SearchEntry {
 /**
  * Builds the sorted key/ref pair list.
  *
- * Two layers only — `fr` and `ar`, 2195 records each, 4390 keys. There is
+ * Two layers only — `fr` and `ar`, 2176 records each, 4352 keys. There is
  * deliberately NO `en` layer: `name.en` differs from `name.fr` for exactly one
  * record in the whole dataset (wilaya 16, `Alger` / `Algiers`), so a third full
- * layer would add 2195 keys — roughly a third of the index's bytes — to serve a
+ * layer would add 2176 keys — roughly a third of the index's bytes — to serve a
  * single record. `lang: "en"` searches the `fr` keys plus `EN_OVERRIDES`
  * instead, which is a real bundle saving and no public-API change.
  */
@@ -1516,14 +1520,14 @@ function collectSearchEntries(model: Model): SearchEntry[] {
   model.dairas.forEach((daira, index) => add(daira.name, index, SEARCH_KIND_DAIRA));
   model.communes.forEach((commune, index) => add(commune.name, index, SEARCH_KIND_COMMUNE));
 
-  // Sorted at BUILD time, which is itself the optimization: a .sort() over 4390
+  // Sorted at BUILD time, which is itself the optimization: a .sort() over 4352
   // strings on the first search would cost more than every query the process
   // will ever run. The sort order IS the prefix index — no trie is shipped or
   // built, only two binary searches over this array at run time.
   //
   // The tie-break on `ref` is not cosmetic. `Array.prototype.sort` is only
   // guaranteed stable within one engine version, and 1347 of these keys are
-  // duplicates (4390 keys, 3055 distinct). Without the tie-break the emitted
+  // duplicates (4352 keys, 3055 distinct). Without the tie-break the emitted
   // bytes could differ between Node versions, which would break the
   // byte-identity discipline every other emitter in this file holds to.
   //
@@ -1604,7 +1608,7 @@ function emitSearchKeys(model: Model): string {
     "/**",
     " * Normalized search keys, sorted ascending by UTF-16 code unit.",
     " *",
-    " * 2195 records x 2 language layers (fr, ar) = 4390 keys. There is no `en`",
+    " * 2176 records x 2 language layers (fr, ar) = 4352 keys. There is no `en`",
     " * layer: `name.en` differs from `name.fr` for exactly one record in the",
     ' * dataset, so `lang: "en"` searches these keys plus `EN_OVERRIDES`.',
     " *",
@@ -1623,7 +1627,7 @@ function emitSearchKeys(model: Model): string {
     " *   kind  bits 1..2 0 = wilaya, 1 = daira, 2 = commune",
     " *   index bits 3..  position in WILAYAS / DAIRAS / COMMUNES",
     " *",
-    " * Packed integers rather than objects: 4390 object literals would dominate",
+    " * Packed integers rather than objects: 4352 object literals would dominate",
     " * this file's bytes and allocate on every module evaluation.",
     " */",
     "export const SEARCH_REFS: readonly number[] = [",
@@ -1735,9 +1739,9 @@ const SEARCH_FIXTURE_CASES: ReadonlyArray<{
 /**
  * Inputs that pin the slug rule's edges.
  *
- * `ids.json` is already the exhaustive proof — all 2126 ids are derived through
+ * `ids.json` is already the exhaustive proof — all 2107 ids are derived through
  * `slug()` — so this table exists for the cases that would otherwise only be
- * observable as a diff in a 2126-line file, and it names what each one tests.
+ * observable as a diff in a 2107-line file, and it names what each one tests.
  */
 const SLUG_FIXTURE_CASES: readonly string[] = [
   "Sidi M'hamed", // apostrophe deleted, not hyphenated
@@ -1796,7 +1800,7 @@ function sha256Hex(value: string): string {
 /**
  * The ids fixture — the exhaustive byte-identity pin.
  *
- * 585 daira ids + 1541 commune ids, in document order. A port that gets the
+ * 566 daira ids + 1541 commune ids, in document order. A port that gets the
  * slug rule even slightly wrong diverges here, on a named record, rather than
  * silently producing a database column of ids that will not join.
  */
@@ -1821,7 +1825,7 @@ function emitSlugFixture(): unknown {
  * The normalize fixture: named edge cases, plus a digest of the whole key set.
  *
  * The digest is what makes this exhaustive without shipping a second copy of
- * the 4390 keys that `search-keys.ts` already holds. A mismatch says "your
+ * the 4352 keys that `search-keys.ts` already holds. A mismatch says "your
  * normalizer disagrees somewhere"; the named cases above are what localize it,
  * and the cross-language test diffs the actual keys when one is needed.
  */
@@ -1851,7 +1855,7 @@ function emitNormalizeFixture(model: Model): unknown {
  * Every number here was measured from `data/`, never assumed, and each is
  * load-bearing somewhere: 38 shared postal codes is why `findByPostalCode`
  * returns a list; 1500 distinct commune names against 1541 records is why an
- * id carries its wilaya prefix; 545 distinct daira names against 585 pairs is
+ * id carries its wilaya prefix; 545 distinct daira names against 566 pairs is
  * the reform splitting daires across wilayas.
  */
 function emitGroundTruthFixture(model: Model): unknown {
@@ -1890,7 +1894,7 @@ function emitGroundTruthFixture(model: Model): unknown {
       dairaWilayaNamePairs: new Set(model.dairas.map((d) => `${d.wilaya} ${d.name.fr}`)).size,
       distinctDairaNames: new Set(model.dairas.map((d) => d.name.fr)).size,
     },
-    // Exactly one record in 2195 has an English exonym.
+    // Exactly one record in 2176 has an English exonym.
     exonyms,
     // The 27 communes published without a postal code. They cannot be filled —
     // no available source has them — and inventing one would end the package's

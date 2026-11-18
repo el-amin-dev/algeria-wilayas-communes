@@ -4,7 +4,7 @@
   "nom_ar": "غليزان",
   "nom_fr": "Relizane",
   "nom_en": "Relizane",
-  "nb_dairas": 16,
+  "nb_dairas": 14,
   "nb_communes": 38,
   "dairas": [
     {
@@ -43,9 +43,21 @@
           "nom_fr": "Ammi Moussa",
           "nom_en": "Ammi Moussa",
           "code_postal": "48004"
+        },
+        {
+          "nom_ar": "الحاسي",
+          "nom_fr": "El Hassi",
+          "nom_en": "El Hassi",
+          "code_postal": null
+        },
+        {
+          "nom_ar": "الولجة",
+          "nom_fr": "El Ouldja",
+          "nom_en": "El Ouldja",
+          "code_postal": null
         }
       ],
-      "nb_communes": 2
+      "nb_communes": 4
     },
     {
       "nom_ar": "زمورة",
@@ -150,20 +162,6 @@
         }
       ],
       "nb_communes": 2
-    },
-    {
-      "nom_ar": "بئر العرش",
-      "nom_fr": "Bir El Arch",
-      "nom_en": "Bir El Arch",
-      "communes": [
-        {
-          "nom_ar": "الولجة",
-          "nom_fr": "El Ouldja",
-          "nom_en": "El Ouldja",
-          "code_postal": "19046"
-        }
-      ],
-      "nb_communes": 1
     },
     {
       "nom_ar": "يلل",
@@ -288,20 +286,6 @@
         }
       ],
       "nb_communes": 2
-    },
-    {
-      "nom_ar": "عين جاسر",
-      "nom_fr": "Ain Djasser",
-      "nom_en": "Ain Djasser",
-      "communes": [
-        {
-          "nom_ar": "الحاسي",
-          "nom_fr": "El Hassi",
-          "nom_en": "El Hassi",
-          "code_postal": "05116"
-        }
-      ],
-      "nb_communes": 1
     },
     {
       "nom_ar": "سيدي أمحمد بن علي",

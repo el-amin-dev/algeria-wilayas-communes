@@ -226,7 +226,7 @@ export const wilayaSchema = z.object({
  * - **Membership is checked with the wilaya-scoped lookup and matched on `id`.**
  *   38 commune names repeat across wilayas (`Sidi Ameur` in 32 and 64,
  *   `Souk El Had` in 35 and 48), so a name is not a key.
- * - **The postal code is never used to derive the commune.** 33 postal codes are
+ * - **The postal code is never used to derive the commune.** 17 postal codes are
  *   shared by more than one commune, so a code alone does not identify one.
  *
  * `postalCode` is required here, unlike on {@link communeSchema} — a record may
@@ -284,7 +284,7 @@ export const addressSchema = z
       });
     }
 
-    // The 30 communes with no postal code in the reference data are exempt:
+    // The 45 communes with no postal code in the reference data are exempt:
     // our gap must not become the user's error.
     if (commune.postalCode !== null && commune.postalCode !== value.postalCode) {
       ctx.addIssue({

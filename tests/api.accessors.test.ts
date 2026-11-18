@@ -126,9 +126,9 @@ describe("the exported API surface", () => {
 // ── Counts, through the public accessors ────────────────────────────────────
 
 describe("bulk accessors", () => {
-  it("returns 69 wilayas, 585 daïras and 1541 communes", () => {
+  it("returns 69 wilayas, 566 daïras and 1541 communes", () => {
     expect(getWilayas()).toHaveLength(69);
-    expect(getDairas()).toHaveLength(585);
+    expect(getDairas()).toHaveLength(566);
     expect(getCommunes()).toHaveLength(1541);
   });
 
@@ -149,7 +149,7 @@ describe("bulk accessors", () => {
 
   it("sums the denormalized counters back to the record counts", () => {
     expect(getWilayas().reduce((n, w) => n + w.communeCount, 0)).toBe(1541);
-    expect(getWilayas().reduce((n, w) => n + w.dairaCount, 0)).toBe(585);
+    expect(getWilayas().reduce((n, w) => n + w.dairaCount, 0)).toBe(566);
     expect(getDairas().reduce((n, d) => n + d.communeCount, 0)).toBe(1541);
   });
 });
@@ -298,7 +298,7 @@ describe("record shapes, anchored on real records", () => {
     const setif = getWilayas().find((w) => w.code === 19);
     expect(setif?.name.fr).toBe("Setif");
     expect(setif?.name.ar).toBe("سطيف");
-    // `en` equals `fr` here, as it does for 2200 of the 2195 records.
+    // `en` equals `fr` here, as it does for 2200 of the 2176 records.
     expect(setif?.name.en).toBe("Setif");
     expect(setif?.dairaCount).toBe(20);
     expect(setif?.communeCount).toBe(60);
@@ -307,7 +307,7 @@ describe("record shapes, anchored on real records", () => {
   it("references the parent wilaya by NUMBER on a daira and a commune", () => {
     // Not by object. `d.wilaya` is `19`, not `{ code: 19, ... }` — the generated
     // shape is kept verbatim through the accessor layer, so a consumer joins on
-    // the code rather than paying for a denormalized back-reference on 2126
+    // the code rather than paying for a denormalized back-reference on 2107
     // records.
     const daira = getDairas().find((d) => d.id === "19-ain-azel");
     expect(daira?.wilaya).toBe(19);
@@ -370,20 +370,20 @@ describe("record shapes, anchored on real records", () => {
 
 // ── Postal-code nulls, through the public API ───────────────────────────────
 
-describe("the 30 communes with no postal code", () => {
-  it("has 30 nulls and 1511 present", () => {
-    expect(getCommunes().filter((c) => c.postalCode === null)).toHaveLength(30);
-    expect(getCommunes().filter((c) => c.postalCode !== null)).toHaveLength(1511);
+describe("the 45 communes with no postal code", () => {
+  it("has 45 nulls and 1496 present", () => {
+    expect(getCommunes().filter((c) => c.postalCode === null)).toHaveLength(45);
+    expect(getCommunes().filter((c) => c.postalCode !== null)).toHaveLength(1496);
   });
 
-  it("re-exports the 30 ids, and they agree with the records in both directions", () => {
-    // The 30 CANNOT be filled — no available source has them. They ship as
+  it("re-exports the 45 ids, and they agree with the records in both directions", () => {
+    // The 45 CANNOT be filled — no available source has them. They ship as
     // `null` behind an exported array rather than being guessed. Never invent a
     // record: one fabricated postal code ends the package's credibility.
-    expect(COMMUNES_MISSING_POSTAL_CODE).toHaveLength(30);
+    expect(COMMUNES_MISSING_POSTAL_CODE).toHaveLength(45);
 
     const listed = new Set<string>(COMMUNES_MISSING_POSTAL_CODE);
-    expect(listed.size).toBe(30);
+    expect(listed.size).toBe(45);
 
     const unlisted = getCommunes()
       .filter((c) => c.postalCode === null && !listed.has(c.id))
@@ -448,10 +448,10 @@ describe("the size constants", () => {
     // cross-language fixture proves the records agree; this proves the numbers
     // a consumer reads without touching a record agree too.
     expect(api.WILAYA_COUNT).toBe(69);
-    expect(api.DAIRA_COUNT).toBe(585);
+    expect(api.DAIRA_COUNT).toBe(566);
     expect(api.COMMUNE_COUNT).toBe(1541);
-    expect(api.POSTAL_CODE_COUNT).toBe(1511);
-    expect(api.MISSING_POSTAL_CODE_COUNT).toBe(30);
+    expect(api.POSTAL_CODE_COUNT).toBe(1496);
+    expect(api.MISSING_POSTAL_CODE_COUNT).toBe(45);
   });
 });
 

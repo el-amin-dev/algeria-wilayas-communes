@@ -271,15 +271,15 @@ describe("the derived API refuses to answer while mappingComplete is false", () 
 // ── 6. The default path is unconditionally safe ─────────────────────────────
 
 describe("every default-path call still works with the mapping unfilled", () => {
-  it("returns the full 69 / 585 / 1541 dataset", () => {
+  it("returns the full 69 / 566 / 1541 dataset", () => {
     expect(getWilayas()).toHaveLength(69);
-    expect(getDairas()).toHaveLength(585);
+    expect(getDairas()).toHaveLength(566);
     expect(getCommunes()).toHaveLength(1541);
   });
 
   it('accepts an explicit asOf: "69" everywhere the option exists', () => {
     expect(getWilayas({ asOf: "69" })).toHaveLength(69);
-    expect(getDairas({ asOf: "69" })).toHaveLength(585);
+    expect(getDairas({ asOf: "69" })).toHaveLength(566);
     expect(getCommunes({ asOf: "69" })).toHaveLength(1541);
     expect(getWilaya(19, { asOf: "69" })?.name.fr).toBe("Setif");
     expect(getCommune(COMMUNE_ID, { asOf: "69" })?.name.fr).toBe("Ain Lahdjar");

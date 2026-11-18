@@ -9,12 +9,12 @@ records, with the same scores, in the same order.
 
 ## The key index
 
-Built from `normalize(name.fr)` and `normalize(name.ar)` for all 2195 records —
-**4390 keys**, two language layers. See [`normalize.md`](normalize.md).
+Built from `normalize(name.fr)` and `normalize(name.ar)` for all 2176 records —
+**4352 keys**, two language layers. See [`normalize.md`](normalize.md).
 
 There is deliberately **no `en` layer**. `name.en` differs from `name.fr` for
 exactly one record in the whole dataset (wilaya 16, `Alger` / `Algiers`), so a
-third full layer would add 2195 keys — about a third of the index — to serve one
+third full layer would add 2176 keys — about a third of the index — to serve one
 record. Instead `lang: "en"` searches the `fr` keys **plus** a one-entry override
 table. `lang: "en"` therefore sets the language filter to `fr` *and* enables the
 overrides; with no `lang` given, the overrides are not consulted at all, so a
@@ -42,7 +42,7 @@ Keys are sorted ascending, tie-broken by `ref` ascending. Both halves matter:
 - The sort order **is** the prefix index. No trie is built; prefix lookup is two
   binary searches over this array. The comparison used to sort and the
   comparison used to search must be the same, or every prefix lookup misses.
-- The `ref` tie-break is not cosmetic. 1347 of the 4390 keys are duplicates, so
+- The `ref` tie-break is not cosmetic. 1347 of the 4352 keys are duplicates, so
   without it the emitted order — and therefore which rows survive `limit` —
   could differ between runtimes.
 
@@ -131,7 +131,7 @@ immediately, before any allocation.
 
 ### Prefilters
 
-Fuzzy runs only on prefiltered candidates, never over all 4390 keys:
+Fuzzy runs only on prefiltered candidates, never over all 4352 keys:
 
 - **length delta ≤ maxDistance** — a subtraction, before any allocation;
 - **first-character bucket** — free, because the keys are already sorted, so the
@@ -144,7 +144,7 @@ possible prefilter and it cuts the candidate set by roughly 20–30×.
 ## `wilaya` scoping
 
 When `wilaya=` is given, the candidate set is resolved through the per-wilaya
-index **before any key comparison**, taking the corpus from 2195 records down to
+index **before any key comparison**, taking the corpus from 2176 records down to
 typically 10–60. One dict lookup for a 40–200× reduction. It is the
 highest-leverage option in the API.
 

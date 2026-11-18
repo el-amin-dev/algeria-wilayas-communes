@@ -14,7 +14,7 @@
  * | level | `asOf: "69"` (default) | `asOf: "58"` |
  * |---|---|---|
  * | wilayas | 69 records | **58** records; 59–69 absent; each mère's `dairaCount` / `communeCount` **recomputed** |
- * | daïras | 585 records | **585** records — never merged, never dropped; only the wilaya attribution is rewritten |
+ * | daïras | 566 records | **566** records — never merged, never dropped; only the wilaya attribution is rewritten |
  * | communes | 1541 records | **1541** records, same order; only the wilaya attribution is rewritten |
  *
  * Three invariants that are easy to break and silent when broken:
@@ -26,7 +26,7 @@
  *    every cached key in every consumer's database would become ambiguous.
  * 2. **Postal codes never change** either. A postal code is a postal code; they
  *    were assigned under the 58-map and have not been reissued.
- * 3. **Daïras are never merged.** There are 585 daïras over only 545 distinct
+ * 3. **Daïras are never merged.** There are 566 daïras over only 545 distinct
  *    names, so two same-named daïras landing under one mère is expected.
  *    Merging them would assert they are the same daïra — a claim the dataset
  *    does not make.
@@ -257,20 +257,20 @@ export function wilaya58(code: WilayaCode): Wilaya | undefined {
 }
 
 // ---------------------------------------------------------------------------
-// 3. dairas58 — all 585 daïras, re-attributed
+// 3. dairas58 — all 566 daïras, re-attributed
 // ---------------------------------------------------------------------------
 
 let dairas58Value: readonly Daira[] | undefined;
 
 /**
- * All **585** daïras in dataset order, with the wilaya attribution of every
+ * All **566** daïras in dataset order, with the wilaya attribution of every
  * daïra under `59`..`69` rewritten to its mère.
  *
- * The count is 585 in both views. A daïra whose wilaya is unchanged is handed
+ * The count is 566 in both views. A daïra whose wilaya is unchanged is handed
  * back as the **same object** the default path returns — no copy, and
  * `getDairas()[i] === getDairas({ asOf: "58" })[i]` for the 1–58 rows.
  *
- * @returns All 585 daïras, frozen.
+ * @returns All 566 daïras, frozen.
  * @throws {ReformMappingUnavailableError} while the mapping is unfilled.
  */
 export function dairas58(): readonly Daira[] {
@@ -279,7 +279,7 @@ export function dairas58(): readonly Daira[] {
     const out: Daira[] = [];
     for (const generated of DAIRAS) {
       // Widened to `Daira` before the spread. `DAIRAS` is an `as const` tuple of
-      // 585 distinct literal object types, and spreading that union directly
+      // 566 distinct literal object types, and spreading that union directly
       // makes tsc give up with TS2590 ("union type too complex to represent").
       const d: Daira = generated;
       const parent = legacyOf(d.wilaya);

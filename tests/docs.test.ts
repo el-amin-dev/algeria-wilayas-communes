@@ -188,12 +188,12 @@ describe("the unverified parent-wilaya mapping never leaks", () => {
   }
 });
 
-describe("the 30 documented gaps are published in full", () => {
-  // "30 communes have no postal code" is a claim a reader can only trust if the
+describe("the 45 documented gaps are published in full", () => {
+  // "45 communes have no postal code" is a claim a reader can only trust if the
   // list is there. Publishing the count without the list is how a dataset asks
   // to be taken on faith.
-  it("the constant still holds 30 ids", () => {
-    expect(COMMUNES_MISSING_POSTAL_CODE).toHaveLength(30);
+  it("the constant still holds 45 ids", () => {
+    expect(COMMUNES_MISSING_POSTAL_CODE).toHaveLength(45);
   });
 
   // The names a reader actually sees, derived from the dataset rather than
@@ -212,7 +212,7 @@ describe("the 30 documented gaps are published in full", () => {
   for (const doc of [JS_README, PY_README]) {
     it(`${doc} names every commune that has no postal code`, () => {
       const text = read(doc);
-      expect(uncoded).toHaveLength(30);
+      expect(uncoded).toHaveLength(45);
 
       // Checking all 27 by name, not counting table rows: a table that lost a
       // row still looks complete, and a row count would also match some

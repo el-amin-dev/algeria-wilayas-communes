@@ -180,7 +180,7 @@ describe("cli-core: output content", () => {
 
   it("version reports the same counts the library exports", () => {
     const v = JSON.parse(cli("version", "--json").out) as Record<string, unknown>;
-    expect(v).toMatchObject({ wilayas: 69, dairas: 585, communes: 1541, dataVersion: "2.0.0" });
+    expect(v).toMatchObject({ wilayas: 69, dairas: 566, communes: 1541, dataVersion: "2.0.0" });
   });
 
   it("dairas lists every daira of the wilaya", () => {

@@ -94,7 +94,7 @@ A miss is null/None, never an empty list.
 ## What `asOf: "58"` means when it is eventually available
 
 Only **wilaya attribution** is rewritten. Specifically: 58 wilaya records, with
-59–69 absent and their counts re-aggregated onto the parent; **585 daires and
+59–69 absent and their counts re-aggregated onto the parent; **566 daires and
 1541 communes unchanged, in the same order**; **ids never change**; postal codes
 never change; daires are never merged.
 

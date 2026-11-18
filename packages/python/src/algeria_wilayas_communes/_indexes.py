@@ -143,7 +143,7 @@ def wilayas_pre_reform() -> tuple[Wilaya, ...]:
 
     Only **wilaya attribution** is rewritten, which is what makes the 58 map a
     view rather than a second dataset: 59..69 are absent and their daira and
-    commune counts are re-aggregated onto the wilaya mère; the 585 daires and
+    commune counts are re-aggregated onto the wilaya mère; the 566 daires and
     1541 communes are unchanged, in the same order, with the same ids and the
     same postal codes. Daires are never merged.
 
@@ -185,7 +185,7 @@ def is_pre_reform_wilaya(code: int) -> bool:
 
 
 def all_dairas() -> tuple[Daira, ...]:
-    """The 585 daires, in document order.
+    """The 566 daires, in document order.
 
     Built from ``algeria.json`` rather than ``dairas.json``, because
     ``dairas.json`` has **no ``wilaya_ar`` field** while ``communes.json`` does
@@ -268,8 +268,8 @@ def postal_index() -> dict[str, tuple[Commune, ...]]:
     """``postal code -> communes``. The value is a tuple, **always**.
 
     This is the single most common place to get the model wrong. There are
-    1474 distinct non-null postal codes across 1511 communes with a code, so
-    **33 codes are shared by more than one commune**. A ``Dict[str, Commune]``
+    1479 distinct non-null postal codes across 1496 communes with a code, so
+    **17 codes are shared by more than one commune**. A ``Dict[str, Commune]``
     would silently drop records depending on insertion order.
     """
     global _commune_by_postal
@@ -333,7 +333,7 @@ def communes_of_wilaya() -> dict[int, tuple[Commune, ...]]:
 
 
 def communes_missing_postal_code() -> tuple[str, ...]:
-    """The ids of the 30 communes published without a postal code.
+    """The ids of the 45 communes published without a postal code.
 
     Derived from the data, never hand-copied: a transcribed list is one more
     thing to drift.

@@ -267,7 +267,7 @@ class TestAFilledMapping:
         legacy_view = _api.get_wilayas(as_of="58")
         assert sum(w.daira_count for w in legacy_view) == sum(w.daira_count for w in current)
         assert sum(w.commune_count for w in legacy_view) == sum(w.commune_count for w in current)
-        assert len(_api.get_dairas()) == 585
+        assert len(_api.get_dairas()) == 566
         assert len(_api.get_communes()) == 1541
         assert _api.get_commune("19-ain-azel-ain-lahdjar").postal_code == "19018"
 

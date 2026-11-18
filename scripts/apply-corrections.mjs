@@ -59,16 +59,27 @@ for (const c of corrections) {
     continue;
   }
 
-  // Already applied? Then the commune sits in dairaTo with postalCodeTo.
+  // The commune may already be in dairaTo -- either because the correction has
+  // run before, or because this is a POSTAL-ONLY correction where dairaFrom and
+  // dairaTo are the same daira and only the code is wrong. Ghardaia's `Mansoura`
+  // is that case: its daira is genuine (officially spelled `Mansoura`), and only
+  // the postal code came from a homonym.
   const inTarget = target.communes.find((x) => x.nom_fr === c.commune);
   if (inTarget) {
-    if (inTarget.code_postal !== c.postalCodeTo) {
-      problems.push(
-        `${c.wilaya}/${c.commune}: in "${c.dairaTo}" but code_postal is ` +
-          `${JSON.stringify(inTarget.code_postal)}, ledger says ${JSON.stringify(c.postalCodeTo)}`,
+    if (inTarget.code_postal === c.postalCodeTo) {
+      alreadyDone.push(`${c.wilaya}/${c.commune}`);
+    } else if (inTarget.code_postal === c.postalCodeFrom) {
+      inTarget.code_postal = c.postalCodeTo;
+      applied.push(
+        `${c.wilaya}/${c.commune}: code only, ` +
+          `${JSON.stringify(c.postalCodeFrom)} -> ${JSON.stringify(c.postalCodeTo)}`,
       );
     } else {
-      alreadyDone.push(`${c.wilaya}/${c.commune}`);
+      problems.push(
+        `${c.wilaya}/${c.commune}: in "${c.dairaTo}" but code_postal is ` +
+          `${JSON.stringify(inTarget.code_postal)}, ledger says ${JSON.stringify(c.postalCodeTo)} ` +
+          `(and the pre-correction value was ${JSON.stringify(c.postalCodeFrom)})`,
+      );
     }
     continue;
   }

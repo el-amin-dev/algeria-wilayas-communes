@@ -68,7 +68,7 @@ export type { Daira } from "./generated/dairas";
  *
  * `id` is library-assigned (`"19-ain-azel-ain-lahdjar"`), not a government
  * identifier. `postalCode` is `PostalCode | null`, never optional: `null` says
- * *published as absent* for the 30 communes with no code, where `undefined`
+ * *published as absent* for the 45 communes with no code, where `undefined`
  * would say *we did not look*.
  *
  * @example
@@ -258,7 +258,7 @@ export interface WilayaTree extends Wilaya {
  *
  * type AlgerName = NameOf<16>;
  * // → { readonly ar: "الجزائر"; readonly fr: "Alger"; readonly en: "Algiers" }
- * //   the one record in 2195 where `en` differs from `fr`
+ * //   the one record in 2176 where `en` differs from `fr`
  * ```
  *
  * @since 2.0.0

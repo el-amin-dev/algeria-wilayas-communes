@@ -127,7 +127,7 @@ def test_record_field_names() -> None:
 def test_parent_references_are_scalars_that_resolve() -> None:
     """Parents are carried by id/code, and every one of them resolves.
 
-    Denormalizing parent names into each record would be 2195 chances for a copy
+    Denormalizing parent names into each record would be 2176 chances for a copy
     to go stale. A dangling reference is the failure this rules out.
     """
     daira = get_daira(CANONICAL_DAIRA)
@@ -251,7 +251,7 @@ def test_asymmetry_matches_the_shared_fixture(ground_truth: dict[str, Any]) -> N
 
 
 def test_daira_arabic_names_survive_the_asymmetry() -> None:
-    """A daira's own Arabic name is populated for all 585.
+    """A daira's own Arabic name is populated for all 566.
 
     ``dairas.json`` carries ``nom_ar`` but no ``wilaya_ar``, so building the
     daira index from that file alone would leave a hole the moment anything

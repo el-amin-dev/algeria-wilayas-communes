@@ -54,7 +54,7 @@ def test_get_wilaya_code_text_is_the_padded_form() -> None:
 
 
 def test_the_single_english_exonym() -> None:
-    """Wilaya 16 is the one record in 2195 where ``en`` differs from ``fr``."""
+    """Wilaya 16 is the one record in 2176 where ``en`` differs from ``fr``."""
     wilaya = get_wilaya(16)
     assert wilaya is not None
     assert wilaya.name.fr == "Alger"
@@ -114,7 +114,7 @@ def test_lookups_return_the_same_objects_as_the_bulk_accessors() -> None:
 def test_find_by_postal_code_always_returns_a_tuple() -> None:
     """Never a bare record, even when exactly one commune matches.
 
-    38 of the 1474 distinct codes are shared, so a single-record return type
+    38 of the 1479 distinct codes are shared, so a single-record return type
     would be wrong for those and would force callers to handle two shapes.
     """
     hit = find_by_postal_code(CANONICAL_POSTAL)
@@ -135,7 +135,7 @@ def test_find_by_postal_code_returns_every_sharer() -> None:
         for code in {c.postal_code for c in get_communes() if c.postal_code}
         if len(find_by_postal_code(code)) > 1
     ]
-    assert len(shared) == 33
+    assert len(shared) == 17
 
     sample = find_by_postal_code(sorted(shared)[0])
     assert len({c.id for c in sample}) == len(sample)

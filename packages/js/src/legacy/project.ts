@@ -147,7 +147,7 @@ export function buildAlgeria(): Algeria {
     for (const w of WILAYAS) {
       const dairas: Daira[] = [];
       /* v8 ignore next 3 -- the two `?? []` arms are unreachable on this
-         dataset: all 69 wilayas have at least one daira and all 585 dairas have
+         dataset: all 69 wilayas have at least one daira and all 566 dairas have
          at least one commune, and build-data.ts asserts both. Kept rather than
          asserted non-null so a future data hole degrades to an empty list
          instead of a TypeError deep inside the projection. */
@@ -252,13 +252,13 @@ export function buildWilayasFlat(): WilayaFlat[] {
 }
 
 // ---------------------------------------------------------------------------
-// 3. buildDairasFlat — `getDairas()`, 585 rows, NO `wilaya_ar`
+// 3. buildDairasFlat — `getDairas()`, 566 rows, NO `wilaya_ar`
 // ---------------------------------------------------------------------------
 
 let dairasFlatValue: DairaFlat[] | undefined;
 
 /**
- * The 585 rows of `data/dairas.json`, in document order.
+ * The 566 rows of `data/dairas.json`, in document order.
  *
  * !! READ BEFORE "FIXING" THE MISSING `wilaya_ar` BELOW !!
  *
@@ -275,11 +275,11 @@ let dairasFlatValue: DairaFlat[] | undefined;
  * something to slip in here. The identical note lives on `DairaFlat` in
  * `./types.ts` and in `scripts/build-data.ts` Phase 3.
  *
- * @returns The memoized 585 flat daïras. Same reference on every call, not frozen.
+ * @returns The memoized 566 flat daïras. Same reference on every call, not frozen.
  *
  * @example
  * ```ts
- * buildDairasFlat().length;                                    // → 585
+ * buildDairasFlat().length;                                    // → 566
  * buildDairasFlat().filter((d) => d.wilaya_num === 19).length; // → 20   (Setif)
  * Object.keys(buildDairasFlat()[0] ?? {}).length;              // → 8    (no wilaya_ar)
  * ```

@@ -8,7 +8,7 @@ Thanks for helping keep this dataset accurate. Fixes to names, postal codes, and
 
 ## Two ways to contribute
 
-Both paths share one requirement: **a data fix without a citable source is not merged.** Not because we doubt you — because at 2195 records nobody can re-derive from memory why a name or a postal code says what it says, and a dataset whose corrections are unsourced stops being worth trusting within a few dozen merges. A source also makes triage cheap: a reviewer confirms the citation instead of re-researching the fix. The issue template [`.github/ISSUE_TEMPLATE/data-fix.yml`](.github/ISSUE_TEMPLATE/data-fix.yml) has a required source field, so a data-fix issue arrives actionable.
+Both paths share one requirement: **a data fix without a citable source is not merged.** Not because we doubt you — because at 2176 records nobody can re-derive from memory why a name or a postal code says what it says, and a dataset whose corrections are unsourced stops being worth trusting within a few dozen merges. A source also makes triage cheap: a reviewer confirms the citation instead of re-researching the fix. The issue template [`.github/ISSUE_TEMPLATE/data-fix.yml`](.github/ISSUE_TEMPLATE/data-fix.yml) has a required source field, so a data-fix issue arrives actionable.
 
 A link to the Journal Officiel, an APC or wilaya site, Algérie Poste, or the ONS is ideal. A photograph of a signpost is a start. "I live there" is a reason to look for the document, not a substitute for it.
 

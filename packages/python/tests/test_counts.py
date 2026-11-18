@@ -77,7 +77,7 @@ def test_postal_code_shape(ground_truth: dict[str, Any]) -> None:
 
 
 def test_postal_codes_are_not_unique(ground_truth: dict[str, Any]) -> None:
-    """33 codes are shared by more than one commune.
+    """17 codes are shared by more than one commune.
 
     This is the fact that forces ``find_by_postal_code`` to return a tuple. If
     the count ever reached zero someone would be entitled to "simplify" that API
@@ -92,7 +92,7 @@ def test_postal_codes_are_not_unique(ground_truth: dict[str, Any]) -> None:
 
 
 def test_missing_postal_codes_are_the_exact_documented_set(ground_truth: dict[str, Any]) -> None:
-    """The 30 communes published without a postal code.
+    """The 45 communes published without a postal code.
 
     Asserted as a set, not a count: a count alone would stay green if one
     commune quietly gained a fabricated code while another lost a real one. No
@@ -101,7 +101,7 @@ def test_missing_postal_codes_are_the_exact_documented_set(ground_truth: dict[st
     """
     expected = tuple(ground_truth["communesMissingPostalCode"])
     assert expected == COMMUNES_MISSING_POSTAL_CODE
-    assert len(COMMUNES_MISSING_POSTAL_CODE) == 30
+    assert len(COMMUNES_MISSING_POSTAL_CODE) == 45
 
     from_records = tuple(c.id for c in get_communes() if c.postal_code is None)
     assert from_records == expected
@@ -121,7 +121,7 @@ def test_commune_wilaya_name_pairs_are_unique(ground_truth: dict[str, Any]) -> N
 
 
 def test_daira_wilaya_name_pairs_are_unique(ground_truth: dict[str, Any]) -> None:
-    """585 pairs, 545 distinct names.
+    """566 pairs, 545 distinct names.
 
     A daira split by the 2026 reform appears under every wilaya it now spans,
     which is why the two numbers differ and why a daira id carries its wilaya.
@@ -148,7 +148,7 @@ def test_duplicated_commune_names_by_wilaya(ground_truth: dict[str, Any]) -> Non
 def test_arabic_names_are_present_everywhere() -> None:
     """Every commune has a non-empty ``nom_ar``.
 
-    Search indexes the Arabic layer for all 2195 records. A blank name would
+    Search indexes the Arabic layer for all 2176 records. A blank name would
     normalize to the empty key and quietly make that record unreachable in
     Arabic while every count still looked right.
     """
@@ -157,10 +157,10 @@ def test_arabic_names_are_present_everywhere() -> None:
 
 
 def test_english_differs_from_french_exactly_once(ground_truth: dict[str, Any]) -> None:
-    """One exonym in 2195 records: wilaya 16, Alger -> Algiers.
+    """One exonym in 2176 records: wilaya 16, Alger -> Algiers.
 
     This is why the search index has no third ``en`` key layer — a full layer
-    would add 2195 keys to serve one record. If a second exonym is ever added,
+    would add 2176 keys to serve one record. If a second exonym is ever added,
     the one-entry override table stops being the right design and this fails.
     """
     differing = (

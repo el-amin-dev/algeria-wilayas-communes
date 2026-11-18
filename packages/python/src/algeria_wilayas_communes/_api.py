@@ -79,14 +79,14 @@ def get_wilayas(*, as_of: str = "69") -> tuple[Wilaya, ...]:
 
 
 def get_dairas() -> tuple[Daira, ...]:
-    """All 585 daires, in document order.
+    """All 566 daires, in document order.
 
-    585 pairs carry only 545 distinct names, because a daira split by the 2026
+    566 pairs carry only 545 distinct names, because a daira split by the 2026
     reform appears under each wilaya it now spans.
 
     Example:
         >>> len(get_dairas())
-        585
+        566
     """
     return _indexes.all_dairas()
 
@@ -210,7 +210,7 @@ def get_communes_of_wilaya(code: WilayaLike) -> tuple[Commune, ...]:
 def find_by_postal_code(code: str) -> tuple[Commune, ...]:
     """All communes sharing a 5-digit postal code.
 
-    Postal codes are **not unique**: 38 of the 1474 distinct codes in the
+    Postal codes are **not unique**: 38 of the 1479 distinct codes in the
     dataset are shared by more than one commune, so this always returns a tuple.
     Treating it as a single-record lookup silently drops data.
 

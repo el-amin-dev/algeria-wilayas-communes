@@ -21,7 +21,7 @@
  * exceptions are deliberate and cannot be moved: the Bejaia block, because the
  * Arabic-and-Latin acceptance sentence is written about it, and everything
  * touching `lang: "en"` or the Alger misspellings, because wilaya 16 is the only
- * record in all 2195 whose `name.en` differs from its `name.fr`.
+ * record in all 2176 whose `name.en` differs from its `name.fr`.
  *
  * `__searchStats` is imported here on purpose: proving that `limit` stops the
  * scan needs an instrumented comparison counter, because a timing-based
@@ -282,12 +282,12 @@ describe("search — the empty query", () => {
 describe("search — lang", () => {
   it("finds Algiers for wilaya 16 via the 1-entry en override", () => {
     // The one place Alger MUST stay the anchor: `name.en` differs from
-    // `name.fr` for exactly one record in all 2195, and wilaya 16 is it. Setif's
+    // `name.fr` for exactly one record in all 2176, and wilaya 16 is it. Setif's
     // `en` is `Setif`, so Setif physically cannot demonstrate this path.
     //
     // That single difference is also precisely why there is no separate `en`
     // key layer at all: `lang: "en"` searches the fr keys plus a one-row
-    // override table. 2195 duplicate keys saved, zero API change.
+    // override table. 2176 duplicate keys saved, zero API change.
     const top = search("algiers", { lang: "en" })[0];
     expect(top?.kind).toBe("wilaya");
     expect(top?.item.name.en).toBe("Algiers");
@@ -401,7 +401,7 @@ describe("search — the script prune", () => {
   it("returns [] for a mixed-script query, which can match no single layer", () => {
     // "ain عين" contains both a Latin letter and an Arabic letter. No key in
     // either layer can contain both, so the query is unsatisfiable — and the
-    // runtime must reach that conclusion by pruning, not by scanning 4390 keys
+    // runtime must reach that conclusion by pruning, not by scanning 4352 keys
     // and finding nothing.
     expect(search("ain عين")).toEqual([]);
     expect(search("عين ain")).toEqual([]);
@@ -565,7 +565,7 @@ describe("search — wilaya scoping", () => {
   });
 
   it("cuts the work, not just the output, on a query that has to scan", () => {
-    // The candidate set drops from 2195 records to the 80 daïras and communes
+    // The candidate set drops from 2176 records to the 80 daïras and communes
     // of wilaya 19 BEFORE any key comparison runs, so a query that reaches the
     // linear substring tier does ~26× less work scoped than unscoped. Measured
     // on this checkout: 2203 comparisons unscoped, 83 scoped.
@@ -710,8 +710,8 @@ describe("search — limit", () => {
     // and `out.length < Infinity` is always true, so it needs no special case —
     // but it MUST NOT be swept into the "not a usable number" fallback along
     // with NaN and the negatives, or the answer silently truncates to 20.
-    expect(search("ain", { limit: Number.POSITIVE_INFINITY })).toHaveLength(181);
-    expect(search("ain", { limit: 1000 })).toHaveLength(181);
+    expect(search("ain", { limit: Number.POSITIVE_INFINITY })).toHaveLength(178);
+    expect(search("ain", { limit: 1000 })).toHaveLength(178);
     expect(search("ain")).toHaveLength(20);
   });
 
@@ -981,7 +981,7 @@ describe("search — fuzzy", () => {
   it.each(["algier", "alget", "algeirs"])(
     "returns nothing at all for %o with fuzzy off",
     (query) => {
-      // None of the three is a substring of ANY of the 4390 keys — verified — so
+      // None of the three is a substring of ANY of the 4352 keys — verified — so
       // the non-fuzzy call genuinely has nothing to return. If `fuzzy` were
       // decorative, or defaulted to true, these would come back populated.
       expect(search(query)).toEqual([]);

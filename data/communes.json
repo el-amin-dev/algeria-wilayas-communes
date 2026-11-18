@@ -9093,20 +9093,6 @@
       "wilaya_ar": "سعيدة",
       "wilaya_fr": "Saida",
       "wilaya_en": "Saida",
-      "daira_ar": "سور الغزلان",
-      "daira_fr": "Sour El Ghozlane",
-      "daira_en": "Sour El Ghozlane",
-      "nom_ar": "المعمورة",
-      "nom_fr": "Maamora",
-      "nom_en": "Maamora",
-      "code_postal": "10071"
-    },
-    {
-      "wilaya_num": 20,
-      "wilaya_code": "20",
-      "wilaya_ar": "سعيدة",
-      "wilaya_fr": "Saida",
-      "wilaya_en": "Saida",
       "daira_ar": "الحساسنة",
       "daira_fr": "El Hassasna",
       "daira_en": "El Hassasna",
@@ -9128,6 +9114,20 @@
       "nom_fr": "Ain Sekhouna",
       "nom_en": "Ain Sekhouna",
       "code_postal": "20009"
+    },
+    {
+      "wilaya_num": 20,
+      "wilaya_code": "20",
+      "wilaya_ar": "سعيدة",
+      "wilaya_fr": "Saida",
+      "wilaya_en": "Saida",
+      "daira_ar": "الحساسنة",
+      "daira_fr": "El Hassasna",
+      "daira_en": "El Hassasna",
+      "nom_ar": "المعمورة",
+      "nom_fr": "Maamora",
+      "nom_en": "Maamora",
+      "code_postal": null
     },
     {
       "wilaya_num": 20,
@@ -9709,20 +9709,6 @@
       "wilaya_ar": "سكيكدة",
       "wilaya_fr": "Skikda",
       "wilaya_en": "Skikda",
-      "daira_ar": "المرسى",
-      "daira_fr": "El Marsa",
-      "daira_en": "El Marsa",
-      "nom_ar": "المرسى",
-      "nom_fr": "El Marsa",
-      "nom_en": "El Marsa",
-      "code_postal": "02015"
-    },
-    {
-      "wilaya_num": 21,
-      "wilaya_code": "21",
-      "wilaya_ar": "سكيكدة",
-      "wilaya_fr": "Skikda",
-      "wilaya_en": "Skikda",
       "daira_ar": "بن عزوز",
       "daira_fr": "Ben Azzouz",
       "daira_en": "Ben Azzouz",
@@ -9744,6 +9730,20 @@
       "nom_fr": "Bekkouche Lakhdar",
       "nom_en": "Bekkouche Lakhdar",
       "code_postal": "21009"
+    },
+    {
+      "wilaya_num": 21,
+      "wilaya_code": "21",
+      "wilaya_ar": "سكيكدة",
+      "wilaya_fr": "Skikda",
+      "wilaya_en": "Skikda",
+      "daira_ar": "بن عزوز",
+      "daira_fr": "Ben Azzouz",
+      "daira_en": "Ben Azzouz",
+      "nom_ar": "المرسى",
+      "nom_fr": "El Marsa",
+      "nom_en": "El Marsa",
+      "code_postal": null
     },
     {
       "wilaya_num": 21,
@@ -11837,13 +11837,13 @@
       "wilaya_ar": "المدية",
       "wilaya_fr": "Medea",
       "wilaya_en": "Medea",
-      "daira_ar": "أولاد ابراهيم",
-      "daira_fr": "Ouled Brahim",
-      "daira_en": "Ouled Brahim",
+      "daira_ar": "العمارية",
+      "daira_fr": "El Omaria",
+      "daira_en": "El Omaria",
       "nom_ar": "أولاد إبراهيم",
       "nom_fr": "Ouled Brahim",
       "nom_en": "Ouled Brahim",
-      "code_postal": "20002"
+      "code_postal": "26230"
     },
     {
       "wilaya_num": 26,
@@ -12369,13 +12369,13 @@
       "wilaya_ar": "مستغانم",
       "wilaya_fr": "Mostaganem",
       "wilaya_en": "Mostaganem",
-      "daira_ar": "منصورة",
-      "daira_fr": "Mansourah",
-      "daira_en": "Mansourah",
+      "daira_ar": "ماسرة",
+      "daira_fr": "Mesra",
+      "daira_en": "Mesra",
       "nom_ar": "منصورة",
       "nom_fr": "Mansourah",
       "nom_en": "Mansourah",
-      "code_postal": "13062"
+      "code_postal": null
     },
     {
       "wilaya_num": 28,
@@ -12831,13 +12831,13 @@
       "wilaya_ar": "معسكر",
       "wilaya_fr": "Mascara",
       "wilaya_en": "Mascara",
-      "daira_ar": "الدار البيضاء",
-      "daira_fr": "Dar El Beida",
-      "daira_en": "Dar El Beida",
+      "daira_ar": "المحمدية",
+      "daira_fr": "Mohammadia",
+      "daira_en": "Mohammadia",
       "nom_ar": "المحمدية",
       "nom_fr": "Mohammadia",
       "nom_en": "Mohammadia",
-      "code_postal": "16058"
+      "code_postal": null
     },
     {
       "wilaya_num": 29,
@@ -13013,6 +13013,20 @@
       "wilaya_ar": "معسكر",
       "wilaya_fr": "Mascara",
       "wilaya_en": "Mascara",
+      "daira_ar": "عين فارس",
+      "daira_fr": "Ain Fares",
+      "daira_en": "Ain Fares",
+      "nom_ar": "عين فارس",
+      "nom_fr": "Ain Fares",
+      "nom_en": "Ain Fares",
+      "code_postal": null
+    },
+    {
+      "wilaya_num": 29,
+      "wilaya_code": "29",
+      "wilaya_ar": "معسكر",
+      "wilaya_fr": "Mascara",
+      "wilaya_en": "Mascara",
       "daira_ar": "بوحنيفية",
       "daira_fr": "Bouhanifia",
       "daira_en": "Bouhanifia",
@@ -13048,20 +13062,6 @@
       "nom_fr": "Hacine",
       "nom_en": "Hacine",
       "code_postal": "29014"
-    },
-    {
-      "wilaya_num": 29,
-      "wilaya_code": "29",
-      "wilaya_ar": "معسكر",
-      "wilaya_fr": "Mascara",
-      "wilaya_en": "Mascara",
-      "daira_ar": "عين الملح",
-      "daira_fr": "Ain El Melh",
-      "daira_en": "Ain El Melh",
-      "nom_ar": "عين فارس",
-      "nom_fr": "Ain Fares",
-      "nom_en": "Ain Fares",
-      "code_postal": "28023"
     },
     {
       "wilaya_num": 29,
@@ -13419,20 +13419,6 @@
       "wilaya_ar": "ورقلة",
       "wilaya_fr": "Ouargla",
       "wilaya_en": "Ouargla",
-      "daira_ar": "عين البيضاء",
-      "daira_fr": "Ain Beida",
-      "daira_en": "Ain Beida",
-      "nom_ar": "عين البيضاء",
-      "nom_fr": "Ain Beida",
-      "nom_en": "Ain Beida",
-      "code_postal": "04001"
-    },
-    {
-      "wilaya_num": 30,
-      "wilaya_code": "30",
-      "wilaya_ar": "ورقلة",
-      "wilaya_fr": "Ouargla",
-      "wilaya_en": "Ouargla",
       "daira_ar": "سيدي خويلد",
       "daira_fr": "Sidi Khouiled",
       "daira_en": "Sidi Khouiled",
@@ -13454,6 +13440,20 @@
       "nom_fr": "Sidi Khouiled",
       "nom_en": "Sidi Khouiled",
       "code_postal": "30035"
+    },
+    {
+      "wilaya_num": 30,
+      "wilaya_code": "30",
+      "wilaya_ar": "ورقلة",
+      "wilaya_fr": "Ouargla",
+      "wilaya_en": "Ouargla",
+      "daira_ar": "سيدي خويلد",
+      "daira_fr": "Sidi Khouiled",
+      "daira_en": "Sidi Khouiled",
+      "nom_ar": "عين البيضاء",
+      "nom_fr": "Ain Beida",
+      "nom_en": "Ain Beida",
+      "code_postal": "30120"
     },
     {
       "wilaya_num": 30,
@@ -14175,20 +14175,6 @@
       "wilaya_ar": "برج بوعريريج",
       "wilaya_fr": "Bordj Bou Arreridj",
       "wilaya_en": "Bordj Bou Arreridj",
-      "daira_ar": "أولاد سيدي ابراهيم",
-      "daira_fr": "Ouled Sidi Brahim",
-      "daira_en": "Ouled Sidi Brahim",
-      "nom_ar": "أولاد سيدي ابراهيم",
-      "nom_fr": "Ouled Sidi-Brahim",
-      "nom_en": "Ouled Sidi-Brahim",
-      "code_postal": "28032"
-    },
-    {
-      "wilaya_num": 34,
-      "wilaya_code": "34",
-      "wilaya_ar": "برج بوعريريج",
-      "wilaya_fr": "Bordj Bou Arreridj",
-      "wilaya_en": "Bordj Bou Arreridj",
       "daira_ar": "عين تاغروت",
       "daira_fr": "Ain Taghrout",
       "daira_en": "Ain Taghrout",
@@ -14490,6 +14476,20 @@
       "nom_fr": "Ben Daoud",
       "nom_en": "Ben Daoud",
       "code_postal": "34073"
+    },
+    {
+      "wilaya_num": 34,
+      "wilaya_code": "34",
+      "wilaya_ar": "برج بوعريريج",
+      "wilaya_fr": "Bordj Bou Arreridj",
+      "wilaya_en": "Bordj Bou Arreridj",
+      "daira_ar": "المنصورة",
+      "daira_fr": "Mansourah",
+      "daira_en": "Mansourah",
+      "nom_ar": "أولاد سيدي ابراهيم",
+      "nom_fr": "Ouled Sidi-Brahim",
+      "nom_en": "Ouled Sidi-Brahim",
+      "code_postal": null
     },
     {
       "wilaya_num": 34,
@@ -14819,20 +14819,6 @@
       "wilaya_ar": "بومرداس",
       "wilaya_fr": "Boumerdes",
       "wilaya_en": "Boumerdes",
-      "daira_ar": "تيمزريت",
-      "daira_fr": "Timezrit",
-      "daira_en": "Timezrit",
-      "nom_ar": "تيمزريت",
-      "nom_fr": "Timezrit",
-      "nom_en": "Timezrit",
-      "code_postal": "06019"
-    },
-    {
-      "wilaya_num": 35,
-      "wilaya_code": "35",
-      "wilaya_ar": "بومرداس",
-      "wilaya_fr": "Boumerdes",
-      "wilaya_en": "Boumerdes",
       "daira_ar": "برج منايل",
       "daira_fr": "Bordj Menaiel",
       "daira_en": "Bordj Menaiel",
@@ -14924,6 +14910,20 @@
       "nom_fr": "Si Mustapha",
       "nom_en": "Si Mustapha",
       "code_postal": "35028"
+    },
+    {
+      "wilaya_num": 35,
+      "wilaya_code": "35",
+      "wilaya_ar": "بومرداس",
+      "wilaya_fr": "Boumerdes",
+      "wilaya_en": "Boumerdes",
+      "daira_ar": "يسر",
+      "daira_fr": "Isser",
+      "daira_en": "Isser",
+      "nom_ar": "تيمزريت",
+      "nom_fr": "Timezrit",
+      "nom_en": "Timezrit",
+      "code_postal": null
     },
     {
       "wilaya_num": 35,
@@ -15085,13 +15085,13 @@
       "wilaya_ar": "الطارف",
       "wilaya_fr": "El Tarf",
       "wilaya_en": "El Tarf",
-      "daira_ar": "الزيتونة",
-      "daira_fr": "Zitouna",
-      "daira_en": "Zitouna",
+      "daira_ar": "الطارف",
+      "daira_fr": "El Tarf",
+      "daira_en": "El Tarf",
       "nom_ar": "الزيتونة",
       "nom_fr": "Zitouna",
       "nom_en": "Zitouna",
-      "code_postal": "21028"
+      "code_postal": null
     },
     {
       "wilaya_num": 36,
@@ -15141,20 +15141,6 @@
       "wilaya_ar": "الطارف",
       "wilaya_fr": "El Tarf",
       "wilaya_en": "El Tarf",
-      "daira_ar": "بوتليليس",
-      "daira_fr": "Boutlelis",
-      "daira_en": "Boutlelis",
-      "nom_ar": "عين الكرمة",
-      "nom_fr": "Ain Kerma",
-      "nom_en": "Ain Kerma",
-      "code_postal": "31059"
-    },
-    {
-      "wilaya_num": 36,
-      "wilaya_code": "36",
-      "wilaya_ar": "الطارف",
-      "wilaya_fr": "El Tarf",
-      "wilaya_en": "El Tarf",
       "daira_ar": "بوحجار",
       "daira_fr": "Bouhadjar",
       "daira_en": "Bouhadjar",
@@ -15190,6 +15176,20 @@
       "nom_fr": "Oued Zitoun",
       "nom_en": "Oued Zitoun",
       "code_postal": "36044"
+    },
+    {
+      "wilaya_num": 36,
+      "wilaya_code": "36",
+      "wilaya_ar": "الطارف",
+      "wilaya_fr": "El Tarf",
+      "wilaya_en": "El Tarf",
+      "daira_ar": "بوحجار",
+      "daira_fr": "Bouhadjar",
+      "daira_en": "Bouhadjar",
+      "nom_ar": "عين الكرمة",
+      "nom_fr": "Ain Kerma",
+      "nom_en": "Ain Kerma",
+      "code_postal": "36330"
     },
     {
       "wilaya_num": 36,
@@ -15589,6 +15589,20 @@
       "wilaya_ar": "تيسمسيلت",
       "wilaya_fr": "Tissemsilt",
       "wilaya_en": "Tissemsilt",
+      "daira_ar": "برج بونعامة",
+      "daira_fr": "Bordj Bounaama",
+      "daira_en": "Bordj Bounaama",
+      "nom_ar": "سيدي سليمان",
+      "nom_fr": "Sidi Slimane",
+      "nom_en": "Sidi Slimane",
+      "code_postal": null
+    },
+    {
+      "wilaya_num": 38,
+      "wilaya_code": "38",
+      "wilaya_ar": "تيسمسيلت",
+      "wilaya_fr": "Tissemsilt",
+      "wilaya_en": "Tissemsilt",
       "daira_ar": "عماري",
       "daira_fr": "Ammari",
       "daira_en": "Ammari",
@@ -15631,20 +15645,6 @@
       "wilaya_ar": "تيسمسيلت",
       "wilaya_fr": "Tissemsilt",
       "wilaya_en": "Tissemsilt",
-      "daira_ar": "بوعلام",
-      "daira_fr": "Boualem",
-      "daira_en": "Boualem",
-      "nom_ar": "سيدي سليمان",
-      "nom_fr": "Sidi Slimane",
-      "nom_en": "Sidi Slimane",
-      "code_postal": "30030"
-    },
-    {
-      "wilaya_num": 38,
-      "wilaya_code": "38",
-      "wilaya_ar": "تيسمسيلت",
-      "wilaya_fr": "Tissemsilt",
-      "wilaya_en": "Tissemsilt",
       "daira_ar": "الأزهرية",
       "daira_fr": "Lazharia",
       "daira_en": "Lazharia",
@@ -15673,13 +15673,13 @@
       "wilaya_ar": "تيسمسيلت",
       "wilaya_fr": "Tissemsilt",
       "wilaya_en": "Tissemsilt",
-      "daira_ar": "الأربعاء",
-      "daira_fr": "Larbaa",
-      "daira_en": "Larbaa",
+      "daira_ar": "الأزهرية",
+      "daira_fr": "Lazharia",
+      "daira_en": "Lazharia",
       "nom_ar": "الأربعاء",
       "nom_fr": "Larbaa",
       "nom_en": "Larbaa",
-      "code_postal": "09002"
+      "code_postal": null
     },
     {
       "wilaya_num": 38,
@@ -15750,20 +15750,6 @@
       "nom_fr": "Taleb Larbi",
       "nom_en": "Taleb Larbi",
       "code_postal": "39019"
-    },
-    {
-      "wilaya_num": 39,
-      "wilaya_code": "39",
-      "wilaya_ar": "الوادي",
-      "wilaya_fr": "El Oued",
-      "wilaya_en": "El Oued",
-      "daira_ar": "العقلة",
-      "daira_fr": "El Ogla",
-      "daira_en": "El Ogla",
-      "nom_ar": "العقلة",
-      "nom_fr": "El Ogla",
-      "nom_en": "El Ogla",
-      "code_postal": "12015"
     },
     {
       "wilaya_num": 39,
@@ -15890,6 +15876,20 @@
       "nom_fr": "Robbah",
       "nom_en": "Robbah",
       "code_postal": "39017"
+    },
+    {
+      "wilaya_num": 39,
+      "wilaya_code": "39",
+      "wilaya_ar": "الوادي",
+      "wilaya_fr": "El Oued",
+      "wilaya_en": "El Oued",
+      "daira_ar": "الرباح",
+      "daira_fr": "Robbah",
+      "daira_en": "Robbah",
+      "nom_ar": "العقلة",
+      "nom_fr": "El Ogla",
+      "nom_en": "El Ogla",
+      "code_postal": null
     },
     {
       "wilaya_num": 39,
@@ -16961,13 +16961,13 @@
       "wilaya_ar": "تيبازة",
       "wilaya_fr": "Tipaza",
       "wilaya_en": "Tipaza",
-      "daira_ar": "خميستي",
-      "daira_fr": "Khemisti",
-      "daira_en": "Khemisti",
+      "daira_ar": "بواسماعيل",
+      "daira_fr": "Bou Ismail",
+      "daira_en": "Bou Ismail",
       "nom_ar": "خميستي",
       "nom_fr": "Khemisti",
       "nom_en": "Khemisti",
-      "code_postal": "38016"
+      "code_postal": "42016"
     },
     {
       "wilaya_num": 42,
@@ -17871,13 +17871,13 @@
       "wilaya_ar": "عين الدفلى",
       "wilaya_fr": "Ain Defla",
       "wilaya_en": "Ain Defla",
-      "daira_ar": "أولاد ابراهيم",
-      "daira_fr": "Ouled Brahim",
-      "daira_en": "Ouled Brahim",
+      "daira_ar": "عين الاشياخ",
+      "daira_fr": "Ain Lechiakh",
+      "daira_en": "Ain Lechiakh",
       "nom_ar": "عين السلطان",
       "nom_fr": "Ain-Soltane",
       "nom_en": "Ain-Soltane",
-      "code_postal": "20029"
+      "code_postal": "44240"
     },
     {
       "wilaya_num": 44,
@@ -18515,13 +18515,13 @@
       "wilaya_ar": "عين تموشنت",
       "wilaya_fr": "Ain Temouchent",
       "wilaya_en": "Ain Temouchent",
-      "daira_ar": "الطاهير",
-      "daira_fr": "Taher",
-      "daira_en": "Taher",
+      "daira_ar": "بني صاف",
+      "daira_fr": "Beni Saf",
+      "daira_en": "Beni Saf",
       "nom_ar": "الأمير عبد القادر",
       "nom_fr": "Emir Abdelkader",
       "nom_en": "Emir Abdelkader",
-      "code_postal": "18010"
+      "code_postal": null
     },
     {
       "wilaya_num": 46,
@@ -18605,7 +18605,7 @@
       "nom_ar": "المنصورة",
       "nom_fr": "Mansoura",
       "nom_en": "Mansoura",
-      "code_postal": "34008"
+      "code_postal": null
     },
     {
       "wilaya_num": 47,
@@ -18781,6 +18781,34 @@
       "wilaya_ar": "غليزان",
       "wilaya_fr": "Relizane",
       "wilaya_en": "Relizane",
+      "daira_ar": "عمي موسى",
+      "daira_fr": "Ammi Moussa",
+      "daira_en": "Ammi Moussa",
+      "nom_ar": "الحاسي",
+      "nom_fr": "El Hassi",
+      "nom_en": "El Hassi",
+      "code_postal": null
+    },
+    {
+      "wilaya_num": 48,
+      "wilaya_code": "48",
+      "wilaya_ar": "غليزان",
+      "wilaya_fr": "Relizane",
+      "wilaya_en": "Relizane",
+      "daira_ar": "عمي موسى",
+      "daira_fr": "Ammi Moussa",
+      "daira_en": "Ammi Moussa",
+      "nom_ar": "الولجة",
+      "nom_fr": "El Ouldja",
+      "nom_en": "El Ouldja",
+      "code_postal": null
+    },
+    {
+      "wilaya_num": 48,
+      "wilaya_code": "48",
+      "wilaya_ar": "غليزان",
+      "wilaya_fr": "Relizane",
+      "wilaya_en": "Relizane",
       "daira_ar": "زمورة",
       "daira_fr": "Zemmoura",
       "daira_en": "Zemmoura",
@@ -18942,20 +18970,6 @@
       "nom_fr": "Had Echkalla",
       "nom_en": "Had Echkalla",
       "code_postal": "48050"
-    },
-    {
-      "wilaya_num": 48,
-      "wilaya_code": "48",
-      "wilaya_ar": "غليزان",
-      "wilaya_fr": "Relizane",
-      "wilaya_en": "Relizane",
-      "daira_ar": "بئر العرش",
-      "daira_fr": "Bir El Arch",
-      "daira_en": "Bir El Arch",
-      "nom_ar": "الولجة",
-      "nom_fr": "El Ouldja",
-      "nom_en": "El Ouldja",
-      "code_postal": "19046"
     },
     {
       "wilaya_num": 48,
@@ -19152,20 +19166,6 @@
       "nom_fr": "Relizane",
       "nom_en": "Relizane",
       "code_postal": "48000"
-    },
-    {
-      "wilaya_num": 48,
-      "wilaya_code": "48",
-      "wilaya_ar": "غليزان",
-      "wilaya_fr": "Relizane",
-      "wilaya_en": "Relizane",
-      "daira_ar": "عين جاسر",
-      "daira_fr": "Ain Djasser",
-      "daira_en": "Ain Djasser",
-      "nom_ar": "الحاسي",
-      "nom_fr": "El Hassi",
-      "nom_en": "El Hassi",
-      "code_postal": "05116"
     },
     {
       "wilaya_num": 48,

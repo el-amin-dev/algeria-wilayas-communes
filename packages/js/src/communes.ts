@@ -3,7 +3,7 @@
  * communes, with the postal-code lookup.**
  *
  * The full administrative hierarchy as flat records, without the root entry's
- * search corpus (`generated/search-keys.ts`, 4390 normalized keys), reform
+ * search corpus (`generated/search-keys.ts`, 4352 normalized keys), reform
  * resolvers or v1 compatibility layer. Import this when you need commune data
  * and lookups by id, wilaya or postal code, but not fuzzy name search.
  *

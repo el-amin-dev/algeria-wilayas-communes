@@ -4,7 +4,7 @@
   "nom_ar": "سعيدة",
   "nom_fr": "Saida",
   "nom_en": "Saida",
-  "nb_dairas": 7,
+  "nb_dairas": 6,
   "nb_communes": 16,
   "dairas": [
     {
@@ -48,20 +48,6 @@
       "nb_communes": 3
     },
     {
-      "nom_ar": "سور الغزلان",
-      "nom_fr": "Sour El Ghozlane",
-      "nom_en": "Sour El Ghozlane",
-      "communes": [
-        {
-          "nom_ar": "المعمورة",
-          "nom_fr": "Maamora",
-          "nom_en": "Maamora",
-          "code_postal": "10071"
-        }
-      ],
-      "nb_communes": 1
-    },
-    {
       "nom_ar": "الحساسنة",
       "nom_fr": "El Hassasna",
       "nom_en": "El Hassasna",
@@ -77,9 +63,15 @@
           "nom_fr": "Ain Sekhouna",
           "nom_en": "Ain Sekhouna",
           "code_postal": "20009"
+        },
+        {
+          "nom_ar": "المعمورة",
+          "nom_fr": "Maamora",
+          "nom_en": "Maamora",
+          "code_postal": null
         }
       ],
-      "nb_communes": 2
+      "nb_communes": 3
     },
     {
       "nom_ar": "سيدي بوبكر",

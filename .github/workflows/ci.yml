@@ -146,7 +146,7 @@ jobs:
 
   # The two packages describe one dataset and must agree about it. Locally the
   # conformance and cross-language tests skip when packages/js/dist is absent,
-  # which means the assertion that actually matters -- that 2126 record ids and
+  # which means the assertion that actually matters -- that 2107 record ids and
   # every search result are identical across the two languages -- can silently
   # never run. This job has both toolchains, so it runs them for real.
   #
@@ -439,7 +439,7 @@ jobs:
               import("./packages/js/dist/legacy.mjs"),
             ]).then(([w, d, c, l]) => {
               if (w.getWilayas().length !== 69) throw new Error("/wilayas broken");
-              if (d.getDairas().length !== 585) throw new Error("/dairas broken");
+              if (d.getDairas().length !== 566) throw new Error("/dairas broken");
               if (c.getCommunes().length !== 1541) throw new Error("/communes broken");
               if (l.default.getWilayas().length !== 69) throw new Error("/legacy default export broken");
               console.log("subpaths ok on " + process.version);

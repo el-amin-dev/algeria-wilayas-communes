@@ -4,7 +4,7 @@
   "nom_ar": "سكيكدة",
   "nom_fr": "Skikda",
   "nom_en": "Skikda",
-  "nb_dairas": 14,
+  "nb_dairas": 13,
   "nb_communes": 38,
   "dairas": [
     {
@@ -288,20 +288,6 @@
       "nb_communes": 3
     },
     {
-      "nom_ar": "المرسى",
-      "nom_fr": "El Marsa",
-      "nom_en": "El Marsa",
-      "communes": [
-        {
-          "nom_ar": "المرسى",
-          "nom_fr": "El Marsa",
-          "nom_en": "El Marsa",
-          "code_postal": "02015"
-        }
-      ],
-      "nb_communes": 1
-    },
-    {
       "nom_ar": "بن عزوز",
       "nom_fr": "Ben Azzouz",
       "nom_en": "Ben Azzouz",
@@ -317,9 +303,15 @@
           "nom_fr": "Bekkouche Lakhdar",
           "nom_en": "Bekkouche Lakhdar",
           "code_postal": "21009"
+        },
+        {
+          "nom_ar": "المرسى",
+          "nom_fr": "El Marsa",
+          "nom_en": "El Marsa",
+          "code_postal": null
         }
       ],
-      "nb_communes": 2
+      "nb_communes": 3
     },
     {
       "nom_ar": "سكيكدة",

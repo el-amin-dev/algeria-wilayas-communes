@@ -1,6 +1,6 @@
 # Data provenance
 
-Where the 69 wilayas, 585 daïras and 1541 communes came from, what has been verified and
+Where the 69 wilayas, 566 daïras and 1541 communes came from, what has been verified and
 when, and — stated openly rather than hidden — exactly what is missing.
 
 Companion documents: [`DATA_POLICY.md`](DATA_POLICY.md) (versioning),
@@ -121,20 +121,20 @@ commune, a wilaya prefix, or any other inference.
 | Quantity | Value |
 |---|---|
 | Communes | **1541** |
-| Communes with a postal code | **1511** |
+| Communes with a postal code | **1496** |
 | Communes with `code_postal: null` | **27** |
-| Distinct non-null postal codes | **1474** |
+| Distinct non-null postal codes | **1479** |
 | Codes shared by more than one commune | **38** |
 | Malformed codes | **0** |
 
 Two consequences that are structural, not incidental:
 
-- **A postal-code lookup returns a list, never a single record.** 1511 communes carry only
-  1474 distinct codes, so 33 codes are shared. A `Map<string, Commune>` or a
+- **A postal-code lookup returns a list, never a single record.** 1496 communes carry only
+  1479 distinct codes, so 17 codes are shared. A `Map<string, Commune>` or a
   `dict[str, Commune]` would silently drop records depending on insertion order. Both
   packages return a collection. See [`../shared/contract/ids.md`](../shared/contract/ids.md).
 - **A postal code is not an identifier.** It does not identify a commune, it is not unique,
-  and 30 communes do not have one at all. Use the wilaya code plus the record id.
+  and 45 communes do not have one at all. Use the wilaya code plus the record id.
 
 Every code is validated as exactly five ASCII digits at build time. (This is stricter than it
 looks: Python's `\d` and `str.isdigit()` accept Arabic-Indic digits, so `"١٦٠٠٠"` would pass
@@ -142,26 +142,46 @@ a naive check in one language and fail in the other — the validation uses an e
 `[0-9]` class in both. See the language notes in
 [`../shared/contract/README.md`](../shared/contract/README.md).)
 
-### The 30 communes with no postal code
+### The 45 communes with no postal code
 
 These are published as `null`, and none has been guessed. They are exported as a list —
 `COMMUNES_MISSING_POSTAL_CODE` in both packages — and pinned in
 `shared/fixtures/ground-truth.json`, so the count cannot silently drift.
 
-**`null` has two causes, and the distinction matters.** 27 of the 30 are *never published*: no
-source available to this project has a code for them. The other **3 were withdrawn** — they
+**`null` has two causes, and the distinction matters.** 27 of the 45 are *never published*: no
+source available to this project has a code for them. The other **18 were withdrawn** — they
 shipped holding a code that provably belongs to a same-named commune in a different wilaya, and
-no replacement has been sourced yet:
+no replacement has been sourced:
 
-| commune | shipped | why withdrawn |
+| commune | shipped | that code's wilaya |
 |---|---|---|
-| `20-ain-el-hadjar-ain-el-hadjar` (Saïda) | `10031` | Byte-identical to 10 Bouira's own Aïn El Hadjar. Two sources disagree on the Saïda value (`20100` vs `20001`), so neither is written. |
-| `23-ain-el-berda-el-eulma` (Annaba) | `19001` | 19 Sétif's El Eulma. No 23xxx value sourced. |
-| `16-cheraga-hammamet` (Alger) | `12016` | 12 Tébessa's Bir Mokadem row. Its source gives `16060`, which is NOT written: our data already assigns `16060` to `16-bab-el-oued-rais-hamidou`, and taking it would create the dataset's only code shared by two communes of the **same** wilaya. One of the two is wrong and one infobox does not settle which. |
+| `16-cheraga-hammamet` (Alger) | `12016` | 12 |
+| `23-ain-el-berda-el-eulma` (Annaba) | `19001` | 19 |
+| `20-ain-el-hadjar-ain-el-hadjar` (Saida) | `10031` | 10 |
+| `20-el-hassasna-maamora` (Saida) | `10071` | 10 |
+| `21-ben-azzouz-el-marsa` (Skikda) | `02015` | 02 |
+| `27-mesra-mansourah` (Mostaganem) | `13062` | 13 |
+| `29-ain-fares-ain-fares` (Mascara) | `28023` | 28 |
+| `29-mohammadia-mohammadia` (Mascara) | `16058` | 16 |
+| `34-mansourah-ouled-sidi-brahim` (Bordj Bou Arreridj) | `28032` | 28 |
+| `35-isser-timezrit` (Boumerdes) | `06019` | 06 |
+| `36-el-tarf-zitouna` (El Tarf) | `21028` | 21 |
+| `38-lazharia-larbaa` (Tissemsilt) | `09002` | 09 |
+| `38-bordj-bounaama-sidi-slimane` (Tissemsilt) | `30030` | 30 |
+| `39-robbah-el-ogla` (El Oued) | `12015` | 12 |
+| `46-beni-saf-emir-abdelkader` (Ain Temouchent) | `18010` | 18 |
+| `47-mansourah-mansoura` (Ghardaia) | `34008` | 34 |
+| `48-ammi-moussa-el-hassi` (Relizane) | `05116` | 05 |
+| `48-ammi-moussa-el-ouldja` (Relizane) | `19046` | 19 |
 
-Both are recorded in `data/raw/postal-corrections.json` with their citations, and the build
-fails if the ledger and the data disagree (assertions A21–A24). A withdrawal is therefore
-**auditable**: you can see what it used to say, why it stopped saying it, and who says so.
+Every withdrawal is recorded in `data/raw/postal-corrections.json` with its citation, and the
+build fails if the ledger and the data disagree (assertions A21–A24). A withdrawal is therefore
+**auditable**: you can see what it used to say, why it stopped saying it, and on whose authority.
+
+Two are withdrawn for a reason other than "no source": Alger's `Hammamet`, whose source gives
+`16060` — a value our data already assigns to `Rais Hamidou`, so writing it would create the only
+postal code shared by two communes of one wilaya — and Mascara's `Ain Fares`, whose source offers
+two candidates (`29140`, `29530`) and settles neither.
 
 For a consumer the two causes behave identically — `postalCode === null`, do not invent one —
 which is why they share the one exported list rather than splitting the public API.
@@ -252,7 +272,7 @@ The dataset's own note on how the hierarchy was reassembled around them, quoted 
 > 69 nouvelles wilayas. Une daira scindee par la reforme apparait sous chaque wilaya
 > concernee."*
 
-That is why a daïra name can legitimately appear under more than one wilaya: 585
+That is why a daïra name can legitimately appear under more than one wilaya: 566
 (wilaya, daïra) pairs carry only 545 distinct names, because the reform split some daïras
 across new wilaya boundaries. `El Marsa` appears under 2, 16 and 21; `Ain Bessem` under 10 and
 20.
@@ -379,7 +399,7 @@ directory). A disclaimer attached to a guess is still a guess once it is inside 
 ## 5. Names, and what has *not* been normalized
 
 - Every wilaya, daïra and commune carries `nom_ar`, `nom_fr` and `nom_en`.
-- **`nom_en` equals `nom_fr` for all but one record in 2195.** Algerian place names are
+- **`nom_en` equals `nom_fr` for all but one record in 2176.** Algerian place names are
   written in the Latin alphabet in French, and genuine English exonyms are almost
   non-existent. The one is **Algiers** (wilaya 16, `nom_fr` `Alger`). No other English name
   has been invented to make the field look useful.
@@ -406,14 +426,14 @@ library-assigned, not official. What that does and does not promise is set out i
 | Claim | Value | Pinned by |
 |---|---|---|
 | Wilayas | 69 | build assertion; `WILAYA_COUNT`; `shared/validate.py` |
-| Daïras | 585 | build assertion; `DAIRA_COUNT` |
+| Daïras | 566 | build assertion; `DAIRA_COUNT` |
 | Communes | 1541 | build assertion; `COMMUNE_COUNT` |
-| Communes with a postal code | 1511 | `POSTAL_CODE_COUNT`; `ground-truth.json` |
+| Communes with a postal code | 1496 | `POSTAL_CODE_COUNT`; `ground-truth.json` |
 | Communes without one | 27 | `MISSING_POSTAL_CODE_COUNT`; `COMMUNES_MISSING_POSTAL_CODE` |
-| Distinct postal codes | 1474 | `ground-truth.json` |
+| Distinct postal codes | 1479 | `ground-truth.json` |
 | Codes shared by >1 commune | 38 | `ground-truth.json` |
 | Malformed postal codes | 0 | build assertion |
-| Synthesized ids | 2126, all unique, none malformed | build assertions; `shared/fixtures/ids.json` |
+| Synthesized ids | 2107, all unique, none malformed | build assertions; `shared/fixtures/ids.json` |
 | Reform `parentCode` values supplied | **0 of 11** | `REFORM.mappingComplete === false` |
 | Data edition | `DATA_VERSION` `"2.0.0"` | `meta.ts`, `_constants.py` |
 | Source law | `"Loi 26-06 du 4 avril 2026, JO n°25"` | `SOURCE_LAW` |

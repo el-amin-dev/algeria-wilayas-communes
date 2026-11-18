@@ -85,7 +85,7 @@ describe("import-time purity", () => {
   });
 
   it("builds no asOf structure when only the entry point is imported", async () => {
-    // The whole 58-view — 58 recomputed wilaya records, 585 re-attributed
+    // The whole 58-view — 58 recomputed wilaya records, 566 re-attributed
     // daïras, 1541 re-attributed communes and two Maps over them — is derived
     // work that only a caller who passes `{ asOf: "58" }` may pay for. A single
     // eager build here would land the reform layer in the bundle of every
@@ -138,7 +138,7 @@ describe("import-time purity", () => {
     // The two entry points are disjoint by construction. A v1 consumer who
     // imports `algeria-wilayas-communes/legacy` gets the four snake_case
     // projections and nothing else — no normalized wrappers, and above all not
-    // the 2195-key search index, which is v2's largest structure and has no v1
+    // the 2176-key search index, which is v2's largest structure and has no v1
     // counterpart (`findCommune` is a `nom_fr` substring scan, deliberately).
     await import("../packages/js/src/legacy/index");
     const { __indexState } = await import("../packages/js/src/indexes");
@@ -298,7 +298,7 @@ describe("the empty query is answered before any work happens", () => {
     // Setif with `limit: 5` is answered entirely by the prefix tier walking the
     // globally sorted key array, so neither the first-character bucket map nor
     // the per-wilaya key list is ever needed — even though a wilaya scope was
-    // requested. Building `wilayaKeys` here would be 2195 records of work to
+    // requested. Building `wilayaKeys` here would be 2176 records of work to
     // answer a question that never asked for it.
     const api = await import("../packages/js/src/index");
     expect(api.search("ain", { wilaya: 19, limit: 5 })).toHaveLength(5);

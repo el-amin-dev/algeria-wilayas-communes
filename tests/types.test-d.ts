@@ -162,7 +162,7 @@ describe("byWilaya — literal-argument narrowing", () => {
   });
 
   it("narrows the English exonym on the one record that has one", () => {
-    // Wilaya 16 is the ONLY record in all 2195 where `name.en` differs from
+    // Wilaya 16 is the ONLY record in all 2176 where `name.en` differs from
     // `name.fr`, so it is the only place where narrowing `name` on a literal
     // proves anything about the `en` field. Setif's would just be `"Setif"`.
     const alger = byWilaya(16);

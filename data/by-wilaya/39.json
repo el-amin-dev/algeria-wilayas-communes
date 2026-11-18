@@ -4,7 +4,7 @@
   "nom_ar": "الوادي",
   "nom_fr": "El Oued",
   "nom_en": "El Oued",
-  "nb_dairas": 11,
+  "nb_dairas": 10,
   "nb_communes": 22,
   "dairas": [
     {
@@ -32,20 +32,6 @@
         }
       ],
       "nb_communes": 3
-    },
-    {
-      "nom_ar": "العقلة",
-      "nom_fr": "El Ogla",
-      "nom_en": "El Ogla",
-      "communes": [
-        {
-          "nom_ar": "العقلة",
-          "nom_fr": "El Ogla",
-          "nom_en": "El Ogla",
-          "code_postal": "12015"
-        }
-      ],
-      "nb_communes": 1
     },
     {
       "nom_ar": "المقرن",
@@ -137,9 +123,15 @@
           "nom_fr": "Robbah",
           "nom_en": "Robbah",
           "code_postal": "39017"
+        },
+        {
+          "nom_ar": "العقلة",
+          "nom_fr": "El Ogla",
+          "nom_en": "El Ogla",
+          "code_postal": null
         }
       ],
-      "nb_communes": 2
+      "nb_communes": 3
     },
     {
       "nom_ar": "قمار",

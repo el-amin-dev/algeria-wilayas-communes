@@ -4,7 +4,7 @@
   "nom_ar": "برج بوعريريج",
   "nom_fr": "Bordj Bou Arreridj",
   "nom_en": "Bordj Bou Arreridj",
-  "nb_dairas": 11,
+  "nb_dairas": 10,
   "nb_communes": 34,
   "dairas": [
     {
@@ -38,20 +38,6 @@
         }
       ],
       "nb_communes": 4
-    },
-    {
-      "nom_ar": "أولاد سيدي ابراهيم",
-      "nom_fr": "Ouled Sidi Brahim",
-      "nom_en": "Ouled Sidi Brahim",
-      "communes": [
-        {
-          "nom_ar": "أولاد سيدي ابراهيم",
-          "nom_fr": "Ouled Sidi-Brahim",
-          "nom_en": "Ouled Sidi-Brahim",
-          "code_postal": "28032"
-        }
-      ],
-      "nb_communes": 1
     },
     {
       "nom_ar": "عين تاغروت",
@@ -229,9 +215,15 @@
           "nom_fr": "Ben Daoud",
           "nom_en": "Ben Daoud",
           "code_postal": "34073"
+        },
+        {
+          "nom_ar": "أولاد سيدي ابراهيم",
+          "nom_fr": "Ouled Sidi-Brahim",
+          "nom_en": "Ouled Sidi-Brahim",
+          "code_postal": null
         }
       ],
-      "nb_communes": 4
+      "nb_communes": 5
     },
     {
       "nom_ar": "رأس الوادي",

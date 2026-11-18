@@ -51,7 +51,7 @@ def test_punctuation_is_dropped_not_turned_into_a_separator() -> None:
     turn separators into hyphens, collapse, trim" — which omits the step that
     deletes everything outside ``[a-z0-9-]`` *after* the whitespace pass. That
     omission produces ``b.-b.-arreridj`` and ``zbarbar-(el-isseri-)`` for these
-    two real records: 2 wrong ids out of 2126, nothing crashes, no test in
+    two real records: 2 wrong ids out of 2107, nothing crashes, no test in
     either package fails on its own, and a consumer joining the two datasets on
     id gets two silent mismatches.
     """
@@ -111,25 +111,25 @@ def test_arabic_only_input_slugs_to_empty() -> None:
 
 
 def test_daira_ids_are_unique() -> None:
-    """585 ids, 0 collisions.
+    """566 ids, 0 collisions.
 
-    Only ``(wilaya, nom_fr)`` is unique — 585 daires share just 545 distinct
+    Only ``(wilaya, nom_fr)`` is unique — 566 daires share just 545 distinct
     names — so the wilaya prefix is what makes the id safe, not decoration.
     """
     ids = [d.id for d in get_dairas()]
-    assert len(ids) == 585
-    assert len(set(ids)) == 585
+    assert len(ids) == 566
+    assert len(set(ids)) == 566
 
 
 def test_commune_ids_are_unique() -> None:
-    """1541 ids, 0 collisions, despite 33 shared French names."""
+    """1541 ids, 0 collisions, despite 17 shared French names."""
     ids = [c.id for c in get_communes()]
     assert len(ids) == 1541
     assert len(set(ids)) == 1541
 
 
 def test_no_id_is_empty_or_malformed() -> None:
-    """Every one of the 2126 ids, not a sample.
+    """Every one of the 2107 ids, not a sample.
 
     A malformed id ships silently: it looks like a string, serializes fine, and
     only fails when someone tries to route on it or join against it.

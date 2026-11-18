@@ -57,7 +57,7 @@ import {
 
 import type { Commune, SearchResult, Wilaya } from "./index";
 
-const USAGE = `algeria-wilayas-communes — Algeria's 69 wilayas, 585 daïras, 1541 communes
+const USAGE = `algeria-wilayas-communes — Algeria's 69 wilayas, 566 daïras, 1541 communes
 
 Usage
   npx algeria-wilayas-communes <command> [argument] [flags]

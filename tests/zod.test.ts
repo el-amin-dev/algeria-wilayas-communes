@@ -1,7 +1,7 @@
 /**
  * The `/zod` schemas, exercised against the real dataset rather than fixtures.
  *
- * The round-trip cases are the point: parsing all 1541 communes, 585 daïras and
+ * The round-trip cases are the point: parsing all 1541 communes, 566 daïras and
  * 69 wilayas through their schemas is what proves the schema and the API have
  * not drifted apart. A hand-written fixture would keep passing after the data
  * shape changed underneath it.
@@ -71,11 +71,11 @@ describe("record schemas round-trip the whole dataset", () => {
     expect(failed).toEqual([]);
     // The .nullable() is load-bearing: without it exactly these 27 fail.
     const nulls = getCommunes().filter((c) => c.postalCode === null);
-    expect(nulls).toHaveLength(30);
+    expect(nulls).toHaveLength(45);
     expect(nulls.every((c) => communeSchema.safeParse(c).success)).toBe(true);
   });
 
-  it("all 585 daïras parse", () => {
+  it("all 566 daïras parse", () => {
     expect(getDairas().filter((d) => !dairaSchema.safeParse(d).success)).toEqual([]);
   });
 
@@ -115,7 +115,7 @@ describe("addressSchema", () => {
     expect(r.error?.issues.map((i) => i.path)).toEqual([["postalCode"]]);
   });
 
-  it("does NOT check the postal code for the 30 communes that have none", () => {
+  it("does NOT check the postal code for the 45 communes that have none", () => {
     // Rejecting a user's input because our dataset has a hole would be a bug,
     // not validation. Any 5-digit code is accepted for these.
     const hole = getCommunes().find((c) => c.postalCode === null)!;

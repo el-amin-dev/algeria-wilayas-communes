@@ -203,7 +203,7 @@ export interface Reform {
 // resolvers would start answering from a mapping that is still all `null`, which
 // is the precise wrong answer ADR-005 guards against. The cost is 13 small
 // allocations (one wrapper, one array, 11 entries) and 13 constant-time
-// property-descriptor flips — bounded, and independent of the 2195-record
+// property-descriptor flips — bounded, and independent of the 2176-record
 // dataset. It does not weaken the no-work-at-import-time invariant: that rule
 // forbids INDEX CONSTRUCTION on the import path, not a fixed-size freeze. Same
 // reasoning as the three freezes in `api.ts`.

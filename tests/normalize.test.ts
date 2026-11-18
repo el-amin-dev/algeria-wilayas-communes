@@ -15,7 +15,7 @@
  * returns `[]` and looks like a data problem. Nothing else in the test suite
  * can catch that, because every other search test would also just go quiet.
  *
- * So this file re-derives all 4390 keys from `WILAYAS` / `DAIRAS` / `COMMUNES`
+ * So this file re-derives all 4352 keys from `WILAYAS` / `DAIRAS` / `COMMUNES`
  * using the runtime `normalize()` and the documented ref packing, sorts them the
  * documented way, and asserts byte-for-byte equality with the generated arrays.
  */
@@ -173,13 +173,13 @@ describe("normalize — build-time and run-time cannot drift", () => {
     expect(rebuildKeysFromCorpus().refs).toEqual([...SEARCH_REFS]);
   });
 
-  it("has 4390 keys — 2195 records × (fr + ar) — and 3055 distinct ones", () => {
-    // 69 + 585 + 1541 = 2195 records, two language layers each. The distinct
+  it("has 4352 keys — 2176 records × (fr + ar) — and 3055 distinct ones", () => {
+    // 69 + 566 + 1541 = 2176 records, two language layers each. The distinct
     // count is far lower because a wilaya, its seat daïra and its seat commune
     // usually share a name: `bejaia` appears three times in the fr layer alone.
     // That collapse is expected and is why every key carries its own ref.
-    expect(SEARCH_KEYS).toHaveLength(4390);
-    expect(SEARCH_REFS).toHaveLength(4390);
+    expect(SEARCH_KEYS).toHaveLength(4352);
+    expect(SEARCH_REFS).toHaveLength(4352);
     expect(new Set(SEARCH_KEYS).size).toBe(3055);
   });
 
@@ -237,8 +237,8 @@ describe("normalize — build-time and run-time cannot drift", () => {
     // vacuously if the lang bit stopped being read correctly and one layer came
     // out empty — the strongest way to break this test is to make it inspect
     // nothing.
-    expect(frSeen).toBe(2195);
-    expect(arSeen).toBe(2195);
+    expect(frSeen).toBe(2176);
+    expect(arSeen).toBe(2176);
 
     expect(frWithArabic).toEqual([]);
     // The `fr` layer really is pure ASCII — normalization has stripped every
@@ -301,7 +301,7 @@ describe("normalize — build-time and run-time cannot drift", () => {
 
   it("has exactly one English override, and it is Algiers for wilaya 16", () => {
     // `name.en` differs from `name.fr` for exactly one record in the whole
-    // dataset, so there is no `en` key layer at all — 2195 duplicate keys saved.
+    // dataset, so there is no `en` key layer at all — 2176 duplicate keys saved.
     // A second override slipping in, or this one being lost, both change the
     // meaning of `lang: "en"` silently.
     expect(EN_OVERRIDES).toHaveLength(1);
@@ -321,7 +321,7 @@ describe("normalize — build-time and run-time cannot drift", () => {
 
   it("carries no separate `en` key layer", () => {
     // `algiers` is reachable only through EN_OVERRIDES. If someone "fixes" the
-    // build by emitting a third layer, SEARCH_KEYS gains 2195 entries and this
+    // build by emitting a third layer, SEARCH_KEYS gains 2176 entries and this
     // fails before the length assertion does.
     expect(SEARCH_KEYS.filter((k) => k === "algiers")).toEqual([]);
   });
